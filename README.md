@@ -1,17 +1,39 @@
-# Eric Njanga portfolio
+# Eric Njanga Portfolio
 
-Portfolio of Eric Njanga.
+This is the portfolio of **Eric Njanga**, built using [Next.js](https://nextjs.org/) and styled with the [IBM Carbon Design System](https://carbondesignsystem.com/).
 
-## Installation
+It consumes a custom-built [React component library](https://github.com/ericnjanga/enjanga-next-3-components-lib) designed specifically for this project.
 
-- Run yarn install
+> 📦 The component library is live on [Chromatic](https://www.chromatic.com/library?appId=6856ac512f4faa67a7d9c5c2) for real-time previews and documentation.
 
-## Note
+---
 
-- Project built on Next.js, IBM Carbon Design System, TypeScript, and ContentFul headless CMS.
-- Major components are comsummed as NPM packages from the [Portfolio Components Library](https://github.com/ericnjanga/enjanga-next-3-components-lib)
+## 🚀 Stack & Features
 
-## Accessibility features
+- **Next.js (React)** – Fast, production-ready React framework
+- **TypeScript** – Strongly typed JavaScript for better maintainability
+- **IBM Carbon Design System** – Accessible, modular design framework
+- **Eric Njanga Component Library** – Reusable, styled UI components
+- **SASS (SCSS)** – Modular and customizable styling
 
-- Skip Navigation Link (allows keyboard and screen reader users to jump straight to the main content of the page)
-- Making home page section focusable on scroll for keyboard/screen readers users
+------------ (the part below needs refinement | last uodate: Jun 21, 2024) ------------
+
+## 📁 Project Structure
+
+...
+
+## 📦 Getting Started
+
+...
+
+## 🧪 Testing
+
+...
+
+## 📚 Component Library
+
+...
+
+## 📄 License
+
+...
