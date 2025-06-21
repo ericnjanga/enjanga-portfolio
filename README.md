@@ -1,36 +1,17 @@
-# Carbon Tutorial for NextJS 13
+# Eric Njanga portfolio
 
-This tutorial will guide you in creating a NextJS app with the [Carbon Design System](https://www.carbondesignsystem.com/). We’ll teach you the ins and outs of using Carbon React components, while introducing web development best practices along the way.
+Portfolio of Eric Njanga.
 
-Get started by visiting the [tutorial instructions](https://carbondesignsystem.com/developing/react-tutorial/overview/).
+## Installation
 
-## Create NextJS 13 app
+- Run yarn install
 
-```bash
-yarn create next-app
+## Note
 
-✔ What is your project named? … next-base
-✔ Would you like to use TypeScript? … *No / Yes
-✔ Would you like to use ESLint? … No / *Yes
-✔ Would you like to use Tailwind CSS? … *No / Yes
-✔ Would you like to use `src/` directory? … No / *Yes
-✔ Would you like to use App Router? (recommended) … No / *Yes
-✔ Would you like to customize the default import alias? … *No / Yes
+- Project built on Next.js, IBM Carbon Design System, TypeScript, and ContentFul headless CMS.
+- Major components are comsummed as NPM packages from the [Portfolio Components Library](https://github.com/ericnjanga/enjanga-next-3-components-lib)
 
-cd carbon-tutorial-nextjs
-yarn dev
-```
+## Accessibility features
 
-Configure paths in `jsconfig.json`
-
-```
-{
-  "compilerOptions": {
-    "baseUrl": "./src",
-    "paths": {
-      "@/components/*": ["components/*"],
-      "@/app/*": ["app/*"]
-   }
-  }
-}
-```
+- Skip Navigation Link (allows keyboard and screen reader users to jump straight to the main content of the page)
+- Making home page section focusable on scroll for keyboard/screen readers users

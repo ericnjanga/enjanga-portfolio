@@ -1,0 +1,12 @@
+@use '@carbon/react';
+
+.cds--content {
+  padding: 0;
+}
+
+.testbox {
+  scroll-margin-top: 80px; /* Adjust based on your header height */
+  border: 2px solid red;
+  min-height: 500px;
+  padding: 1 rem;
+}
