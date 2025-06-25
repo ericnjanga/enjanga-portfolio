@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Banner } from '@/src/components/Banner';
+import { Banner } from 'enjanga-next-3-components-lib'; // ENJ NPM component library
 import { Grid, Column } from '@carbon/react';
 
 export default function BlogRoot() {

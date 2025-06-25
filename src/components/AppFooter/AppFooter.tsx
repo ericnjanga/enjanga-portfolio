@@ -1,8 +1,11 @@
 import styles from './_appFooter.module.scss';
 import { Content, Grid, Column } from '@carbon/react';
-import { HeadlinedList } from 'enjanga-next-3-components-lib'; // ENJ NPM component library
-import { ContactButton } from '../ContactButton';
-import { BrandName } from '../BrandName';
+// ENJ NPM component library
+import {
+  BrandName,
+  HeadlinedList,
+  ContactButton,
+} from 'enjanga-next-3-components-lib';
 import clsx from 'clsx';
 
 const AppFooter = () => {
@@ -109,7 +112,17 @@ const AppFooter = () => {
 
                   {/* Col 2: Row 2: Col 2 */}
                   <Column lg={4} md={4} sm={4} className="">
-                    <ContactButton />
+                    <ContactButton
+                      btnText="Get in touch with me"
+                      btnIcon="Email"
+                      btnKind="primary"
+                      btnSize="md"
+                      modalLabel="Contact Form"
+                      modalHeading="Get in touch with Eric"
+                      modalSubHeading="Biscuit tootsie roll fruitcake gummies marshmallow bear claw pie cotton candy tootsie roll. "
+                      modalPrimaryButtonText="Send Message"
+                      modalSecondaryButtonText="Cancel"
+                    />
                   </Column>
                 </Grid>
               </Column>

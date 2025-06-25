@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import styles from './page.module.css';
 import { useSearchParams, usePathname } from 'next/navigation';
 import { Grid, Column } from '@carbon/react';
-import { Banner } from '@/src/components/Banner';
+import { Banner } from 'enjanga-next-3-components-lib'; // ENJ NPM component library
 import clsx from 'clsx';
 import ContentExpertise from './ContentExpertise';
 import ContentAbout from './ContentAbout';

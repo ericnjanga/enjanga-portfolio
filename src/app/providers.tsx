@@ -2,7 +2,8 @@
 
 import { Content, Theme } from '@carbon/react';
 import { ReactNode } from 'react';
-import { AppHeader } from '@/src/components/AppHeader';
+import { AppHeader, BrandName } from 'enjanga-next-3-components-lib'; // ENJ NPM component library
+import { GlobalActions, GlobalNav } from '../components/GlobalMenus';
 import { SkipNavigationLink } from '@/src/components/SkipNavigationLink';
 import AppFooter from '../components/AppFooter/AppFooter';
 
@@ -15,7 +16,13 @@ export function Providers({ children }: RootLayoutProps) {
     <div>
       <SkipNavigationLink destinationId="main-content" />
       <Theme theme="g10">
-        <AppHeader />
+        <AppHeader
+          brandLabel="Eric Njanga"
+          brandRoute="/"
+          brand={<BrandName />}
+          navigation={<GlobalNav />}
+          globalBarItems={<GlobalActions />}
+        />
       </Theme>
       <Content>{children}</Content>
       <AppFooter />
