@@ -18,14 +18,20 @@
     "incremental": true,
     "baseUrl": ".",
     "paths": {
-      "enjanga-next-3-components-lib": ["node_modules/enjanga-next-3-components-lib"],
-      "@/*": ["./*"]
+      "enjanga-next-3-components-lib": [
+        "node_modules/enjanga-next-3-components-lib"
+      ],
+      "@/*": [
+        "./*"
+      ]
     },
     "plugins": [
       {
         "name": "next"
       }
-    ]
+    ],
+    "allowJs": true,
+    "noEmit": true
   },
   "include": [
     "**/*.ts",
