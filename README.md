@@ -34,6 +34,10 @@ It consumes a custom-built [React component library](https://github.com/ericnjan
 
 ...
 
+### What is being used
+
+- Design tokens: spacing, colors, ...
+
 ## 📄 License
 
 ...

@@ -1,5 +1,50 @@
-@use '@carbon/react/scss/colors';
+@use '@carbon/react/scss/colors' as *;
+@use '@carbon/react/scss/spacing' as *;
+@use '@carbon/react/scss/breakpoint' as *;
 
 .footer {
-  background-color: colors.$gray-20;
+  // ...
+  --enj-footer-padd: #{$spacing-09};
+  --enj-footer-marg: #{$spacing-05};
+  --enj-block-marg: #{$spacing-06};
+
+  // ...
+  padding: var(--enj-footer-padd) 0;
+  background-color: $gray-20;
+
+  &__col1 {
+    margin-bottom: var(--enj-block-marg);
+  }
+
+  .list {
+    margin-bottom: var(--enj-block-marg);
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  .copyright {
+    margin-bottom: var(--enj-block-marg);
+  }
+
+  @include breakpoint('md') {
+    border: 4px solid purple;
+    --enj-footer-padd: #{$spacing-10};
+  }
+
+  @include breakpoint('lg') {
+    border: 4px solid rgb(0, 68, 128);
+    --enj-footer-padd: #{$spacing-11};
+    --enj-footer-marg: #{$spacing-07};
+    --enj-block-marg: 0;
+  }
+
+  @include breakpoint('xlg') {
+    border: 4px solid rgb(0, 128, 13);
+    --enj-footer-padd: #{$spacing-12};
+  }
+
+  hr {
+    margin: var(--enj-footer-marg) 0;
+  }
 }

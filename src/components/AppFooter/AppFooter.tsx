@@ -60,7 +60,7 @@ const AppFooter = () => {
       <Content>
         <Grid className="app-footer__wrapper">
           {/* Col 1: Logo */}
-          <Column lg={4} md={3} sm={4} className="app-footer__col1">
+          <Column lg={4} md={3} sm={4} className={clsx(styles.footer__col1)}>
             <BrandLogo value="Brand Logo Here ..." />
           </Column>
 
@@ -71,7 +71,7 @@ const AppFooter = () => {
               <Column lg={12} md={4} sm={4} className="app-footer__col2-row1">
                 <Grid>
                   {/* Col 2: Row 1: Col 1 */}
-                  <Column lg={4} md={4} sm={4} className="">
+                  <Column lg={4} md={4} sm={4} className={clsx(styles.list)}>
                     <HeadlinedList
                       heading={{ content: 'Main Navigation', h: 'h4' }}
                       list={{ content: mockData.listMainNav }}
@@ -79,7 +79,7 @@ const AppFooter = () => {
                   </Column>
 
                   {/* Col 2: Row 1: Col 2 */}
-                  <Column lg={4} md={4} sm={4} className="">
+                  <Column lg={4} md={4} sm={4} className={clsx(styles.list)}>
                     <HeadlinedList
                       heading={{ content: 'Professional Links', h: 'h4' }}
                       list={{ content: mockData.proLinks }}
@@ -87,7 +87,7 @@ const AppFooter = () => {
                   </Column>
 
                   {/* Col 2: Row 1: Col 3 */}
-                  <Column lg={4} md={4} sm={4} className="">
+                  <Column lg={4} md={4} sm={4} className={clsx(styles.list)}>
                     <HeadlinedList
                       heading={{ content: 'Blog', h: 'h4' }}
                       list={{ content: mockData.proLinks }}
@@ -105,7 +105,12 @@ const AppFooter = () => {
               <Column lg={12} md={4} sm={4} className="">
                 <Grid className="tabs-group-content">
                   {/* Col 2: Row 2: Col 1 */}
-                  <Column lg={8} md={4} sm={4} className="">
+                  <Column
+                    lg={8}
+                    md={4}
+                    sm={4}
+                    className={clsx(styles.copyright)}
+                  >
                     <b>Copyright: </b> Cupcake ipsum dolor sit amet. Lemon drops
                     croissant.
                   </Column>
