@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react';
 import Link from 'next/link';
-import { AppHeader, BrandName } from 'enjanga-next-3-components-lib'; // ENJ NPM component library
+import { AppHeader, BrandLogo } from 'enjanga-next-3-components-lib'; // ENJ NPM component library
 import { GlobalActions, GlobalNav } from '../components/GlobalMenus';
 import { Content } from '@carbon/react';
 import { useRouter } from 'next/navigation';
@@ -21,7 +21,7 @@ export default function NotFound() {
       <AppHeader
         brandLabel="Eric Njanga"
         brandRoute="/"
-        brand={<BrandName />}
+        brand={<BrandLogo value="Brand Logo Here ..." />}
         navigation={<GlobalNav />}
         globalBarItems={<GlobalActions />}
       />

@@ -2,7 +2,7 @@ import styles from './_appFooter.module.scss';
 import { Content, Grid, Column } from '@carbon/react';
 // ENJ NPM component library
 import {
-  BrandName,
+  BrandLogo,
   HeadlinedList,
   ContactButton,
 } from 'enjanga-next-3-components-lib';
@@ -10,7 +10,7 @@ import clsx from 'clsx';
 
 const AppFooter = () => {
   const mockData = {
-    brandName: '**** ******',
+    BrandLogo: '**** ******',
     listMainNav: [
       {
         name: 'Link 1',
@@ -61,7 +61,7 @@ const AppFooter = () => {
         <Grid className="app-footer__wrapper">
           {/* Col 1: Logo */}
           <Column lg={4} md={3} sm={4} className="app-footer__col1">
-            <BrandName />
+            <BrandLogo value="Brand Logo Here ..." />
           </Column>
 
           {/* Col 2: Nav + copyright */}
