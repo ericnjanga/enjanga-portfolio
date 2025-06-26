@@ -3,12 +3,12 @@
 @use '@carbon/react/scss/breakpoint' as *;
 
 .footer {
-  // ...
+  // Variables ...
   --enj-footer-padd: #{$spacing-09};
   --enj-footer-marg: #{$spacing-05};
   --enj-block-marg: #{$spacing-06};
 
-  // ...
+  // Declarations ...
   padding: var(--enj-footer-padd) 0;
   background-color: $gray-20;
 

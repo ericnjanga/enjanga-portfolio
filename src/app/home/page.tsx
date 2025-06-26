@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect } from 'react';
-import styles from './page.module.css';
 import { useSearchParams, usePathname } from 'next/navigation';
 import { Grid, Column } from '@carbon/react';
 import { Banner } from 'enjanga-next-3-components-lib'; // ENJ NPM component library
@@ -9,6 +8,7 @@ import clsx from 'clsx';
 import ContentExpertise from './ContentExpertise';
 import ContentAbout from './ContentAbout';
 import ContentBestWork from './ContentBestWork';
+import styles from './page.module.scss';
 
 export default function LandingPage() {
   const searchParams = useSearchParams();
@@ -57,7 +57,7 @@ export default function LandingPage() {
   }, [section, pathname]);
 
   return (
-    <div className={clsx(styles.main, 'landing-page')}>
+    <div className={clsx(styles.homePage, 'landing-page')}>
       <Banner
         title={mockData.banner.title}
         subtitle={mockData.banner.subtitle}
@@ -67,7 +67,7 @@ export default function LandingPage() {
 
         <Column lg={16} md={8} sm={4} className="landing-page__r2">
           <section
-            className="testbox"
+            className={clsx(styles.pageSection, 'testbox')}
             id="scope-of-expertise"
             aria-labelledby="expertise-heading"
             tabIndex={-1} // Make focusable by default
@@ -79,7 +79,7 @@ export default function LandingPage() {
       </Grid>
 
       <section
-        className="testbox"
+        className={clsx(styles.pageSection, 'testbox')}
         id="about-me"
         aria-labelledby="about-me-heading"
         tabIndex={-1} // Make focusable by default
@@ -96,7 +96,7 @@ export default function LandingPage() {
       <Grid fullWidth>
         <Column lg={16} md={8} sm={4}>
           <section
-            className="testbox"
+            className={styles.pageSection}
             id="best-work"
             aria-labelledby="best-work-heading"
             tabIndex={-1} // Make focusable by default
