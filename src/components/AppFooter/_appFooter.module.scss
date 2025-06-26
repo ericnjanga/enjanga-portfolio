@@ -28,19 +28,16 @@
   }
 
   @include breakpoint('md') {
-    border: 4px solid purple;
     --enj-footer-padd: #{$spacing-10};
   }
 
   @include breakpoint('lg') {
-    border: 4px solid rgb(0, 68, 128);
     --enj-footer-padd: #{$spacing-11};
     --enj-footer-marg: #{$spacing-07};
     --enj-block-marg: 0;
   }
 
   @include breakpoint('xlg') {
-    border: 4px solid rgb(0, 128, 13);
     --enj-footer-padd: #{$spacing-12};
   }
 
