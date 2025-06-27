@@ -2,6 +2,23 @@
 
 .homePage {
   .pageSection {
+    position: relative;
     margin-bottom: $spacing-13;
+  }
+
+  .section-expertises {
+    &-heading,
+    &-tabs {
+      position: absolute;
+    }
+    &-heading {
+      top: -100px;
+      // border: 10px solid rgb(128, 81, 0);
+    }
+
+    &-tabs {
+      top: -41px;
+      // border: 10px solid purple;
+    }
   }
 }

@@ -5,7 +5,7 @@ import { useSearchParams, usePathname } from 'next/navigation';
 import { Grid, Column } from '@carbon/react';
 import { Banner } from 'enjanga-next-3-components-lib'; // ENJ NPM component library
 import clsx from 'clsx';
-import ContentExpertise from './ContentExpertise';
+import ContentExpertise from './expertise/ContentExpertise';
 import ContentAbout from './ContentAbout';
 import ContentBestWork from './ContentBestWork';
 import styles from './page.module.scss';
@@ -57,7 +57,7 @@ export default function LandingPage() {
   }, [section, pathname]);
 
   return (
-    <div className={clsx(styles.homePage, 'landing-page')}>
+    <div className={clsx(styles.homePage)}>
       <Banner
         title={mockData.banner.title}
         subtitle={mockData.banner.subtitle}
@@ -67,13 +67,21 @@ export default function LandingPage() {
 
         <Column lg={16} md={8} sm={4} className="landing-page__r2">
           <section
-            className={clsx(styles.pageSection, 'testbox')}
-            id="scope-of-expertise"
-            aria-labelledby="expertise-heading"
+            className={clsx(styles.pageSection, 'testbox section-expertises')}
+            id="section-expertises"
+            aria-labelledby="section-expertises-heading"
             tabIndex={-1} // Make focusable by default
           >
-            <h2 id="expertise-heading">Scope of Expertise</h2>
-            <ContentExpertise />
+            <h2
+              id="section-expertises-heading"
+              className={clsx(styles['section-expertises-heading'])}
+            >
+              Scope of Expertise
+            </h2>
+
+            <ContentExpertise
+              className={clsx(styles['section-expertises-tabs'])}
+            />
           </section>
         </Column>
       </Grid>

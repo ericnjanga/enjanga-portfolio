@@ -1,49 +1,72 @@
 'use client';
 
-import { CustomTile } from 'enjanga-next-3-components-lib'; // ENJ NPM component library
-import { Grid, Column } from '@carbon/react';
+// components/Tabs.tsx
+import React, { useState } from 'react';
+import { Tabs, Tab, TabList, TabPanels, TabPanel } from '@carbon/react';
+import { User, Settings, Code, Dashboard } from '@carbon/icons-react';
+import Expertise1Tab from './Expertise1Tab';
+import Expertise2Tab from './Expertise2Tab';
+import Expertise3Tab from './Expertise3Tab';
+import Expertise4Tab from './Expertise4Tab';
+import Expertise5Tab from './Expertise5Tab';
 
-// import {
-//   Tabs,
-//   Tab,
-//   TabList,
-//   TabPanels,
-//   TabPanel,
-//   Grid,
-//   Column,
-// } from '@carbon/react';
-import { User, Code, Settings } from '@carbon/icons-react';
+interface ExpertiseTabs {
+  className: string;
+}
 
-const ContentExpertise = () => (
-  <div>
-    <Grid className="">
-      <Column lg={5} md={6} sm={4} className="">
-        <h3>Section title xxxx-xxxxxx</h3>
-        <p>
-          Cupcake ipsum dolor sit amet marshmallow I love muffin. Sesame snaps
-          bonbon pudding halvah candy canes lollipop bear claw. Apple pie
-          cupcake brownie oat cake candy canes gummies liquorice halvah apple
-          pie.
-        </p>
-      </Column>
-      <Column lg={{ span: 10, offset: 6 }} md={8} sm={4} className="">
-        <Grid className="tabs-group-content">
-          <Column lg={5} md={4} sm={4}>
-            <CustomTile title="title" text="component text ..." />
-          </Column>
-          <Column lg={5} md={4} sm={4}>
-            <CustomTile title="title" text="component text ..." />
-          </Column>
-          <Column lg={5} md={4} sm={4}>
-            <CustomTile title="title" text="component text ..." />
-          </Column>
-          <Column lg={5} md={4} sm={4}>
-            <CustomTile title="title" text="component text ..." />
-          </Column>
-        </Grid>
-      </Column>
-    </Grid>
-  </div>
+const ExpertiseTabs = ({ className }: ExpertiseTabs) => {
+  const [selectedTabIndex, setSelectedTabIndex] = useState(0);
+
+  return (
+    <Tabs
+      selectedIndex={selectedTabIndex}
+      onChange={({ selectedIndex }) => setSelectedTabIndex(selectedIndex)}
+    >
+      <TabList aria-label="Example tabs" className={className}>
+        <Tab renderIcon={Dashboard}>Front-end Development</Tab>
+        <Tab renderIcon={User}>Prototyping</Tab>
+        <Tab renderIcon={Settings}>Design Systems</Tab>
+        <Tab renderIcon={Settings}>Collaboration</Tab>
+        <Tab renderIcon={Settings}>Tooling</Tab>
+      </TabList>
+      <TabPanels>
+        <TabPanel>
+          <div className="tab-content">
+            <Expertise1Tab />
+          </div>
+        </TabPanel>
+        <TabPanel>
+          <div className="tab-content">
+            <Expertise2Tab />
+          </div>
+        </TabPanel>
+        <TabPanel>
+          <div className="tab-content">
+            <Expertise3Tab />
+          </div>
+        </TabPanel>
+        <TabPanel>
+          <div className="tab-content">
+            <Expertise4Tab />
+          </div>
+        </TabPanel>
+        <TabPanel>
+          <div className="tab-content">
+            <Expertise5Tab />
+          </div>
+        </TabPanel>
+      </TabPanels>
+    </Tabs>
+  );
+};
+
+// export default ExpertiseTabs;
+
+const ContentExpertise = ({ className }: ExpertiseTabs) => (
+  <>
+    <ExpertiseTabs className={className} />
+  </>
+
   // <Tabs>
   //     <TabList aria-label="Example tabs">
   //       <Tab renderIcon={User}>Profile</Tab>
