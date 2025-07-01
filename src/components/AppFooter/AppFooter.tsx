@@ -1,5 +1,6 @@
 import styles from './_appFooter.module.scss';
 import { Content, Grid, Column } from '@carbon/react';
+import { AppUseUtility } from '@/src/utils/UtilityContext';
 // ENJ NPM component library
 import {
   BrandLogo,
@@ -9,6 +10,7 @@ import {
 import clsx from 'clsx';
 
 const AppFooter = () => {
+  const { brand } = AppUseUtility();
   const mockData = {
     BrandLogo: '**** ******',
     listMainNav: [
@@ -61,7 +63,7 @@ const AppFooter = () => {
         <Grid className="app-footer__wrapper">
           {/* Col 1: Logo */}
           <Column lg={4} md={3} sm={4} className={clsx(styles.footer__col1)}>
-            <BrandLogo value="Brand Logo Here ..." />
+            <BrandLogo value={brand.name} />
           </Column>
 
           {/* Col 2: Nav + copyright */}

@@ -6,20 +6,23 @@ import { AppHeader, BrandLogo } from 'enjanga-next-3-components-lib'; // ENJ NPM
 import { GlobalActions, GlobalNav } from '../components/GlobalMenus';
 import { SkipNavigationLink } from '@/src/components/SkipNavigationLink';
 import AppFooter from '../components/AppFooter/AppFooter';
+import { AppUseUtility } from '../utils/UtilityContext';
 
 interface RootLayoutProps {
   children: ReactNode;
 }
 
 export function Providers({ children }: RootLayoutProps) {
+  const { brand } = AppUseUtility();
+
   return (
     <div>
       <SkipNavigationLink destinationId="main-content" />
       <Theme theme="g10">
         <AppHeader
-          brandLabel="Eric Njanga"
+          brandLabel={brand.name}
           brandRoute="/"
-          brand={<BrandLogo value="Brand Logo Here ..." />}
+          brand={<BrandLogo value={brand.name} />}
           navigation={<GlobalNav />}
           globalBarItems={<GlobalActions />}
         />

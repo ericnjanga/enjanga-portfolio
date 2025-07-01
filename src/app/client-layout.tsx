@@ -3,6 +3,7 @@
 import { useEffect } from 'react';
 import smoothscroll from 'smoothscroll-polyfill';
 import { Providers } from './providers';
+import { AppUtilityProvider } from '../utils/UtilityContext';
 
 /**
  * Client component wrapper that handles client-side logic globally (polyfill, context providers). This way, we'll keep layout.tsx fully server-oriented.
@@ -24,5 +25,9 @@ export default function ClientLayout({
     smoothscroll.polyfill();
   }, []);
 
-  return <Providers>{children}</Providers>;
+  return (
+    <AppUtilityProvider>
+      <Providers>{children}</Providers>
+    </AppUtilityProvider>
+  );
 }

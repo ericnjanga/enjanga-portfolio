@@ -1,23 +1,28 @@
 @use '@carbon/react/scss/spacing' as *;
 
 .homePage {
+  // Variables ...
+  --enj-home-exprt-head-top: -80px;
+  --enj-home-exprt-tabs-top: -41px;
+
   .pageSection {
     position: relative;
     margin-bottom: $spacing-13;
   }
 
   .section-expertises {
+    // Declarations ...
     &-heading,
     &-tabs {
       position: absolute;
     }
     &-heading {
-      top: -100px;
+      top: var(--enj-home-exprt-head-top);
       // border: 10px solid rgb(128, 81, 0);
     }
 
     &-tabs {
-      top: -41px;
+      top: var(--enj-home-exprt-tabs-top);
       // border: 10px solid purple;
     }
   }
