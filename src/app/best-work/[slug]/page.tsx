@@ -13,7 +13,7 @@ interface ProjectPageProps {
 
 const ProjectPage = ({ params }: ProjectPageProps) => (
   <div className={clsx(styles.articlePage)}>
-    <Banner className={styles.banner} title={params.slug} />
+    <Banner isJumbtron={false} className={styles.banner} title={params.slug} />
     <article className={styles.article}>
       <Grid fullWidth>
         <Column lg={10} md={8} sm={4} className="...">

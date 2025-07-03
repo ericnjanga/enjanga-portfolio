@@ -3,23 +3,20 @@
 
 .articlePage {
   // Variables ...
-  // (Same spacing rules must apply on home/page.modules.scss > .pageSection)
   --enj-articlePage-Banner-marg: #{$spacing-07};
 
   // Declarations ...
-  // background-color: $gray-20;
-
   .banner,
   .article {
     margin-bottom: var(--enj-articlePage-Banner-marg);
   }
 
-  // @include breakpoint('md') {
-  //   border: 5px solid orange;
-  // }
+  @include breakpoint('md') {
+    --enj-articlePage-Banner-marg: #{$spacing-08};
+  }
 
   @include breakpoint('lg') {
-    --enj-articlePage-Banner-marg: #{$spacing-13};
+    --enj-articlePage-Banner-marg: #{$spacing-10};
   }
 
   // @include breakpoint('xlg') {
