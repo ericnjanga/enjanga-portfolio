@@ -4,11 +4,11 @@ import { useEffect } from 'react';
 import { useSearchParams, usePathname } from 'next/navigation';
 import { Grid, Column } from '@carbon/react';
 import { Banner } from 'enjanga-next-3-components-lib'; // ENJ NPM component library
-import clsx from 'clsx';
 import ContentExpertise from './expertise/ContentExpertise';
 import ContentAbout from './ContentAbout';
 import ContentBestWork from './ContentBestWork';
 import styles from './page.module.scss';
+import clsx from 'clsx';
 
 export default function LandingPage() {
   const searchParams = useSearchParams();
@@ -67,13 +67,13 @@ export default function LandingPage() {
 
         <Column lg={16} md={8} sm={4} className="landing-page__r2">
           <section
-            className={clsx(styles.pageSection, 'testbox section-expertises')}
-            id="section-expertises"
-            aria-labelledby="section-expertises-heading"
+            className={clsx(styles.pageSection, 'smt-box section-expertises')}
+            id="scope-of-expertise"
+            aria-labelledby="scope-of-expertise-heading"
             tabIndex={-1} // Make focusable by default
           >
             <h2
-              id="section-expertises-heading"
+              id="scope-of-expertise-heading"
               className={clsx(styles['section-expertises-heading'])}
             >
               Scope of Expertise
@@ -86,25 +86,25 @@ export default function LandingPage() {
         </Column>
       </Grid>
 
-      <section
-        className={clsx(styles.pageSection, 'testbox')}
-        id="about-me"
-        aria-labelledby="about-me-heading"
-        tabIndex={-1} // Make focusable by default
-      >
-        <Grid fullWidth>
-          <Column lg={16} md={8} sm={4}>
+      <Grid fullWidth>
+        <Column lg={16} md={8} sm={4}>
+          <section
+            className={clsx(styles.pageSection, 'smt-box')}
+            id="about-me"
+            aria-labelledby="about-me-heading"
+            tabIndex={-1} // Make focusable by default
+          >
             <h2 id="about-me-heading">About me</h2>
 
             <ContentAbout />
-          </Column>
-        </Grid>
-      </section>
+          </section>
+        </Column>
+      </Grid>
 
       <Grid fullWidth>
         <Column lg={16} md={8} sm={4}>
           <section
-            className={styles.pageSection}
+            className={clsx(styles.pageSection, 'smt-box')}
             id="best-work"
             aria-labelledby="best-work-heading"
             tabIndex={-1} // Make focusable by default
@@ -113,34 +113,6 @@ export default function LandingPage() {
             <ContentBestWork />
           </section>
         </Column>
-
-        {/* <div className={styles.description}>
-        
-
-        
-
-        
-      </div>
-
-      <div className={styles.grid}>
-        <h2>
-          <Link href="/blog/article-page" passHref legacyBehavior>
-            Article page
-          </Link>
-        </h2>
-
-        <h2>
-          <Link href="/blog/article-page" passHref legacyBehavior>
-            Article page
-          </Link>
-        </h2>
-
-        <h2>
-          <Link href="/blog/article-page" passHref legacyBehavior>
-            Article page
-          </Link>
-        </h2>
-      </div> */}
       </Grid>
     </div>
   );

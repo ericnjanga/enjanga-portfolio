@@ -4,9 +4,15 @@
   padding: 0;
 }
 
-.testbox {
-  scroll-margin-top: 80px; /* Adjust based on your header height */
-  border: 2px solid red;
-  min-height: 500px;
-  padding: 1 rem;
+/**
+ * smt-box: Scroll Margin Top Box
+ Gap between the viewport top and the component's top-edge 
+**/
+.smt-box {
+  scroll-margin-top: 80px;
+
+  // The gap is higher for this specific section
+  &#scope-of-expertise {
+    scroll-margin-top: 160px;
+  }
 }

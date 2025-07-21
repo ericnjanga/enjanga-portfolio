@@ -1,13 +1,23 @@
 @use '@carbon/react/scss/spacing' as *;
+@use '@carbon/react/scss/breakpoint' as *;
 
 .homePage {
   // Variables ...
   --enj-home-exprt-head-top: -80px;
   --enj-home-exprt-tabs-top: -41px;
+  --enj-home-section-sapcing: #{$spacing-08};
 
   .pageSection {
     position: relative;
-    margin-bottom: $spacing-13;
+    margin-bottom: var(--enj-home-section-sapcing);
+
+    @include breakpoint('md') {
+      --enj-home-section-sapcing: #{$spacing-11};
+    }
+
+    @include breakpoint('lg') {
+      --enj-home-section-sapcing: #{$spacing-13};
+    }
   }
 
   .section-expertises {
@@ -18,7 +28,17 @@
     }
     &-heading {
       top: var(--enj-home-exprt-head-top);
-      // border: 10px solid rgb(128, 81, 0);
+
+      @include breakpoint('md') {
+        --enj-home-exprt-head-top: -90px;
+      }
+
+      @include breakpoint('lg') {
+        --enj-home-exprt-head-top: -110px;
+      }
+
+      // @include breakpoint('xlg') {
+      // }
     }
 
     &-tabs {

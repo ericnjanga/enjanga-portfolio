@@ -1,0 +1,93 @@
+@use '@carbon/react/scss/breakpoint' as *;
+
+:root {
+  --enj-gridoct-gap: 4px;
+}
+
+/**
+ * 4 cells grid
+ * ------
+**/
+.grid-of-customTiles {
+  .tabs-group-content,
+  .tabs-group-content--single-col {
+    .cds--css-grid-column {
+      &:nth-of-type(1n) {
+        border: 2px solid blue;
+        margin-top: var(--enj-gridoct-gap);
+      }
+    }
+  }
+}
+
+.grid-of-customTiles-1 {
+  border: 10px solid rgb(210, 30, 201);
+
+  .tabs-group-content--single-col {
+    .cds--css-grid-column {
+      @include breakpoint('md') {
+        margin-left: calc(var(--enj-gridoct-gap) / 2);
+      }
+    }
+  }
+
+  .tabs-group-content {
+    .cds--css-grid-column {
+      @include breakpoint('md') {
+        &:nth-of-type(2n + 1) {
+          margin-right: calc(var(--enj-gridoct-gap) / 2);
+          border: 2px solid rgb(17, 255, 0);
+          // margin-top: var(--enj-gridoct-gap);
+        }
+        &:nth-of-type(2n) {
+          margin-left: calc(var(--enj-gridoct-gap) / 2);
+          border: 2px solid orange;
+        }
+      }
+
+      @include breakpoint('lg') {
+        border: 2px solid rgb(94, 255, 0);
+      }
+
+      @include breakpoint('xlg') {
+        border: 2px solid rgb(255, 153, 0);
+      }
+    }
+  }
+}
+
+/**
+ * 4 cells grid
+ * ------
+**/
+.grid-of-customTiles-2 {
+  border: 10px solid chocolate;
+
+  .tabs-group-content {
+    .cds--css-grid-column {
+      @include breakpoint('md') {
+        &:nth-of-type(2n + 1) {
+          margin-right: calc(var(--enj-gridoct-gap) / 2);
+          border: 2px solid rgb(17, 255, 0);
+          // margin-top: var(--enj-gridoct-gap);
+        }
+        &:nth-of-type(2n) {
+          margin-left: calc(var(--enj-gridoct-gap) / 2);
+          border: 2px solid orange;
+        }
+      }
+
+      @include breakpoint('lg') {
+        border: 2px solid rgb(94, 255, 0);
+      }
+
+      @include breakpoint('xlg') {
+        border: 2px solid rgb(255, 153, 0);
+      }
+    }
+  }
+
+  // .enj-CustomTile {
+  //   margin-bottom: 4px;
+  // }
+}
