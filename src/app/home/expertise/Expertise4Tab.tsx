@@ -22,6 +22,7 @@ const Expertise4Tab = ({ className }: Expertise4Tab) => (
       <Grid className="tabs-group-content">
         <Column lg={5} md={4} sm={4}>
           <CustomTile
+            showsModal={true}
             className="home-customTile"
             title="section 4 - expertise 4"
             text="Apple pie cupcake
@@ -30,6 +31,7 @@ const Expertise4Tab = ({ className }: Expertise4Tab) => (
         </Column>
         <Column lg={5} md={4} sm={4}>
           <CustomTile
+            showsModal={true}
             className="home-customTile"
             title="section 4 - expertise 4"
             text="Apple pie cupcake
@@ -38,6 +40,7 @@ const Expertise4Tab = ({ className }: Expertise4Tab) => (
         </Column>
         <Column lg={5} md={4} sm={4}>
           <CustomTile
+            showsModal={true}
             className="home-customTile"
             title="section 4 - expertise 4"
             text="Apple pie cupcake
@@ -46,6 +49,7 @@ const Expertise4Tab = ({ className }: Expertise4Tab) => (
         </Column>
         <Column lg={5} md={4} sm={4}>
           <CustomTile
+            showsModal={true}
             className="home-customTile"
             title="section 4 - expertise 4"
             text="Apple pie cupcake

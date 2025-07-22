@@ -1,7 +1,8 @@
 @use '@carbon/react/scss/breakpoint' as *;
 
 :root {
-  --enj-gridoct-gap: 4px;
+  --enj-grid-content-gap: 4px;
+  --enj-grid-content-padd: 1.5rem;
 }
 
 /**
@@ -13,7 +14,7 @@
   .tabs-group-content--single-col {
     .cds--css-grid-column {
       &:nth-of-type(1n) {
-        margin-top: var(--enj-gridoct-gap);
+        margin-top: var(--enj-grid-content-gap);
       }
     }
   }
@@ -23,7 +24,7 @@
   .tabs-group-content--single-col {
     .cds--css-grid-column {
       @include breakpoint('md') {
-        margin-left: calc(var(--enj-gridoct-gap) / 2);
+        margin-left: calc(var(--enj-grid-content-gap) / 2);
       }
     }
   }
@@ -32,10 +33,10 @@
     .cds--css-grid-column {
       @include breakpoint('md') {
         &:nth-of-type(2n + 1) {
-          margin-right: calc(var(--enj-gridoct-gap) / 2);
+          margin-right: calc(var(--enj-grid-content-gap) / 2);
         }
         &:nth-of-type(2n) {
-          margin-left: calc(var(--enj-gridoct-gap) / 2);
+          margin-left: calc(var(--enj-grid-content-gap) / 2);
         }
       }
 
@@ -56,10 +57,10 @@
     .cds--css-grid-column {
       @include breakpoint('md') {
         &:nth-of-type(2n + 1) {
-          margin-right: calc(var(--enj-gridoct-gap) / 2);
+          margin-right: calc(var(--enj-grid-content-gap) / 2);
         }
         &:nth-of-type(2n) {
-          margin-left: calc(var(--enj-gridoct-gap) / 2);
+          margin-left: calc(var(--enj-grid-content-gap) / 2);
         }
       }
 
@@ -68,6 +69,22 @@
 
       // @include breakpoint('xlg') {
       // }
+    }
+  }
+
+  &.grid-of-customTiles-padding {
+    padding-top: var(--enj-grid-content-padd);
+
+    @include breakpoint('md') {
+      --enj-grid-content-padd: 2rem;
+    }
+
+    @include breakpoint('lg') {
+      --enj-grid-content-padd: 4rem;
+    }
+
+    @include breakpoint('xlg') {
+      --enj-grid-content-padd: 6.5rem;
     }
   }
 }

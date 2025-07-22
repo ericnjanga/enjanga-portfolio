@@ -13,6 +13,7 @@ const ContentAbout = () => (
       <Grid className="tabs-group-content--single-col">
         <Column lg={16} md={8} sm={4}>
           <CustomTile
+            showsModal={true}
             className="home-customTile"
             iconName="Leadership"
             title="title"
@@ -25,6 +26,7 @@ const ContentAbout = () => (
       <Grid className="tabs-group-content">
         <Column lg={5} md={4} sm={4}>
           <CustomTile
+            showsModal={true}
             className="home-customTile"
             iconName="App Developer"
             title="title"
@@ -33,6 +35,7 @@ const ContentAbout = () => (
         </Column>
         <Column lg={5} md={4} sm={4}>
           <CustomTile
+            showsModal={true}
             className="home-customTile"
             iconName="Hills"
             title="title"

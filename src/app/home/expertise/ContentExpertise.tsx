@@ -31,27 +31,27 @@ const ExpertiseTabs = ({ className }: ExpertiseTabs) => {
         <Tab renderIcon={Settings}>Tooling</Tab>
       </TabList>
       <TabPanels>
-        <TabPanel className="grid-of-customTiles grid-of-customTiles-2">
+        <TabPanel className="grid-of-customTiles grid-of-customTiles-2 grid-of-customTiles-padding">
           <div className="tab-content">
             <Expertise1Tab />
           </div>
         </TabPanel>
-        <TabPanel className="grid-of-customTiles grid-of-customTiles-2">
+        <TabPanel className="grid-of-customTiles grid-of-customTiles-2 grid-of-customTiles-padding">
           <div className="tab-content">
             <Expertise2Tab />
           </div>
         </TabPanel>
-        <TabPanel className="grid-of-customTiles grid-of-customTiles-2">
+        <TabPanel className="grid-of-customTiles grid-of-customTiles-2 grid-of-customTiles-padding">
           <div className="tab-content">
             <Expertise3Tab />
           </div>
         </TabPanel>
-        <TabPanel className="grid-of-customTiles grid-of-customTiles-2">
+        <TabPanel className="grid-of-customTiles grid-of-customTiles-2 grid-of-customTiles-padding">
           <div className="tab-content">
             <Expertise4Tab />
           </div>
         </TabPanel>
-        <TabPanel className="grid-of-customTiles grid-of-customTiles-2">
+        <TabPanel className="grid-of-customTiles grid-of-customTiles-2 grid-of-customTiles-padding">
           <div className="tab-content">
             <Expertise5Tab />
           </div>
