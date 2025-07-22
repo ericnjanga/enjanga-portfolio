@@ -1,0 +1,116 @@
+@use '@carbon/react/scss/spacing' as *;
+@use '@carbon/react/scss/breakpoint' as *;
+
+.homePage {
+  // Variables ...
+  --enj-home-exprt-head-top: -80px;
+  --enj-home-exprt-tabs-top: -41px;
+  --enj-home-section-sapcing: #{$spacing-08};
+
+  --enj-home-aboutSec-height: 730px;
+  --enj-home-aboutSec-title-top: -2rem;
+  --enj-home-section-title-mb: 0.25rem;
+  --enj-home-expertSec-intro-mg: 0 0 1rem 0;
+
+  .pageSection {
+    position: relative;
+    margin-bottom: var(--enj-home-section-sapcing);
+
+    @include breakpoint('md') {
+      --enj-home-section-sapcing: #{$spacing-11};
+    }
+
+    @include breakpoint('lg') {
+      --enj-home-section-sapcing: #{$spacing-13};
+    }
+  }
+
+  // Custom tile found in many places all over the app
+  .home-customTile {
+    .enj-CustomTile-title {
+      margin: 0;
+    }
+  }
+
+  .sectionTitle {
+    margin-bottom: var(--enj-home-section-title-mb);
+
+    @include breakpoint('md') {
+      --enj-home-section-title-mb: 0.5rem;
+    }
+
+    @include breakpoint('lg') {
+      --enj-home-section-title-mb: 0.75rem;
+    }
+  }
+
+  .aboutSection {
+    background-color: turquoise;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: var(--enj-home-aboutSec-height);
+
+    @include breakpoint('md') {
+      --enj-home-aboutSec-height: 540px;
+    }
+
+    @include breakpoint('lg') {
+      --enj-home-aboutSec-height: 620px;
+    }
+
+    @include breakpoint('xlg') {
+      --enj-home-aboutSec-height: 650px;
+    }
+
+    .sectionTitle {
+      position: absolute;
+      top: var(--enj-home-aboutSec-title-top);
+
+      @include breakpoint('md') {
+        --enj-home-aboutSec-title-top: -2.5rem;
+      }
+
+      @include breakpoint('lg') {
+        --enj-home-aboutSec-title-top: -3.2rem;
+      }
+
+      // @include breakpoint('xlg') {
+      // }
+    }
+  }
+
+  .section-expertises {
+    // Declarations ...
+    .sectionTitle,
+    .expertise-section-tabs {
+      position: absolute;
+    }
+
+    #scope-of-expertise-heading {
+      top: var(--enj-home-exprt-head-top);
+
+      @include breakpoint('md') {
+        --enj-home-exprt-head-top: -90px;
+      }
+
+      @include breakpoint('lg') {
+        --enj-home-exprt-head-top: -110px;
+      }
+
+      // @include breakpoint('xlg') {
+      // }
+    }
+
+    .expertise-section-tabs {
+      top: var(--enj-home-exprt-tabs-top);
+    }
+
+    .tab-content {
+      .intro-text {
+        margin: var(--enj-home-expertSec-intro-mg);
+      }
+    }
+  }
+}

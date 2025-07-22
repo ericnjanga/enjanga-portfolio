@@ -13,9 +13,10 @@ const ContentAbout = () => (
       <Grid className="tabs-group-content--single-col">
         <Column lg={16} md={8} sm={4}>
           <CustomTile
+            className="home-customTile"
             iconName="Leadership"
             title="title"
-            text="component text ..."
+            text="Sugar plum sugar plum pie I love gummi bears sweet roll bear claw. Jelly-o dessert cookie."
           />
         </Column>
       </Grid>
@@ -24,16 +25,18 @@ const ContentAbout = () => (
       <Grid className="tabs-group-content">
         <Column lg={5} md={4} sm={4}>
           <CustomTile
+            className="home-customTile"
             iconName="App Developer"
             title="title"
-            text="component text ..."
+            text="Sugar plum sugar plum pie I love gummi bears sweet roll bear claw. Jelly-o dessert cookie."
           />
         </Column>
         <Column lg={5} md={4} sm={4}>
           <CustomTile
+            className="home-customTile"
             iconName="Hills"
             title="title"
-            text="component text ..."
+            text="Sugar plum sugar plum pie I love gummi bears sweet roll bear claw. Jelly-o dessert cookie."
           />
         </Column>
       </Grid>
