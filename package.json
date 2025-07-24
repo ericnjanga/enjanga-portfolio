@@ -17,6 +17,9 @@
   },
   "dependencies": {
     "@carbon/react": "^1.84.0",
+    "@tanstack/react-query": "^5.83.0",
+    "@tanstack/react-query-devtools": "^5.83.0",
+    "axios": "^1.11.0",
     "carbon-components": "^10.58.15",
     "carbon-components-react": "^8.67.0",
     "clsx": "^2.1.1",

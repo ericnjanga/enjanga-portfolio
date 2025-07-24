@@ -3,7 +3,7 @@
 import { useEffect } from 'react';
 import { HeaderMenuItem } from '@carbon/react';
 import Link from 'next/link';
-import { useSectionNavigation } from '@/src/utils/navigation';
+import { useSectionNavigation } from '@utils/navigation';
 import { usePathname } from 'next/navigation';
 
 export const GlobalNav = () => {

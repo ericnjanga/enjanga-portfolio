@@ -1,6 +1,6 @@
 import styles from './_appFooter.module.scss';
 import { Content, Grid, Column } from '@carbon/react';
-import { AppUseUtility } from '@/src/utils/UtilityContext';
+import { AppUseUtility } from '@utils/UtilityContext';
 // ENJ NPM component library
 import {
   BrandLogo,
