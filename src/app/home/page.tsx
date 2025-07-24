@@ -7,25 +7,17 @@ import { Banner } from 'enjanga-next-3-components-lib'; // ENJ NPM component lib
 import ContentExpertise from './expertise/ContentExpertise';
 import ContentAbout from './ContentAbout';
 import ContentBestWork from './ContentBestWork';
-import clsx from 'clsx';
 import './../home/_home.scss';
+import { ContentfulFetcher } from '@/libs/ContentfulFetcher';
 
 export default function LandingPage() {
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const section = searchParams.get('section');
 
-  const mockData = {
-    banner: {
-      title: 'Bridging Design & Code',
-      subtitle:
-        'With 15+ years of experience, I specialize in transforming complex business requirements into intuitive, high-performance web applications. I lead end-to-end UX and front-end development through agile, cross-functional collaboration—delivering results that drive business impact.',
-    },
-  };
-
   const handleScroll = () => {
     // Logic to detect which section is in view
-    console.log('Which section is in view???');
+    // console.log('Which section is in view???');
   };
 
   /**
@@ -58,10 +50,12 @@ export default function LandingPage() {
 
   return (
     <div className="homePage">
-      <Banner
-        title={mockData.banner.title}
-        subtitle={mockData.banner.subtitle}
-      />
+      <ContentfulFetcher>
+        {({ title, description }) => (
+          <Banner title={title} subtitle={description} />
+        )}
+      </ContentfulFetcher>
+
       <Grid fullWidth>
         <Column lg={16} md={8} sm={4} className="landing-page__banner"></Column>
 
