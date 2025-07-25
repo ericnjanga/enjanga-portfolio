@@ -50,7 +50,7 @@ export default function LandingPage() {
 
   return (
     <div className="homePage">
-      <ContentfulFetcher>
+      <ContentfulFetcher dataFor="Landing Page Banner">
         {({ title, description }) => (
           <Banner title={title} subtitle={description} />
         )}
