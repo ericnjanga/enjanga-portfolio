@@ -7,6 +7,7 @@ import React, {
 } from 'react';
 import { useContentful } from '@/hooks/useContentful';
 import { queryData } from './queries';
+import { contentDataIds } from './CMS-references';
 
 interface ContentContextValue {
   id?: string;
@@ -22,7 +23,9 @@ const ContentContext = createContext<ContentContextValue | undefined>(
 
 // Provider Component with Render Props support
 interface ContentfulFetcherProps {
-  dataFor: 'Landing Page Banner' | 'Best work'; // Describe which type of content must be fetched
+  // Describe which type of content must be fetched
+  dataFor: 'Landing Page Banner' | 'Best work list' | 'Single work';
+  contentId?: string;
   children: (props: ContentContextValue) => ReactNode;
 }
 
@@ -50,16 +53,25 @@ export const ContentfulFetcher: React.FC<ContentfulFetcherProps> = ({
       paramInUse.query = queryData.infoBlockById;
       paramInUse.variables = {
         ...paramInUse.variables,
-        sectionId: '4llAs4gW4mc1fikxbW6u4V',
+        sectionId: contentDataIds['Landing page banner'],
       };
       break;
 
-    case 'Best work':
-      paramInUse.trackingInfo = 'Best work';
+    case 'Best work list':
+      paramInUse.trackingInfo = 'Best work list';
       paramInUse.query = queryData.projectById;
       paramInUse.variables = {
         ...paramInUse.variables,
-        sectionId: '5y2JSha3mykWdGkUf6XcQp',
+        sectionId: contentDataIds['Best work list'][0],
+      };
+      break;
+
+    case 'Single work':
+      paramInUse.trackingInfo = 'Single work';
+      paramInUse.query = queryData.projectById;
+      paramInUse.variables = {
+        ...paramInUse.variables,
+        sectionId: contentDataIds['Best work list'][0],
       };
       break;
   }
@@ -81,7 +93,7 @@ export const ContentfulFetcher: React.FC<ContentfulFetcherProps> = ({
   const description =
     data?.en?.description?.json?.content[0]?.content[0]?.value ?? '';
 
-  if (paramInUse.trackingInfo === 'Best work') {
+  if (paramInUse.trackingInfo === 'Best work list') {
     console.log('>>>>>>> data?.en?.sys?.id = ', data?.en?.sys?.id);
   }
 

@@ -5,7 +5,7 @@ import { ContentfulFetcher } from '@/libs/ContentfulFetcher';
 const ContentBestWork = () => (
   <Grid className="tabs-group-content">
     <Column lg={16} md={8} sm={4} className="landing-page__tab-content">
-      <ContentfulFetcher dataFor="Best work">
+      <ContentfulFetcher dataFor="Best work list">
         {({ id, title, blurb }) => (
           <CustomTile
             linksTo={`best-work/${id}`}
