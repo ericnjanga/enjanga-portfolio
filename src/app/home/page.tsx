@@ -51,8 +51,13 @@ export default function LandingPage() {
   return (
     <div className="homePage">
       <ContentfulFetcher dataFor="Landing Page Banner">
-        {({ title, description }) => (
-          <Banner title={title} subtitle={description} />
+        {({ title, richDescription }) => (
+          <Banner
+            title={title}
+            richDescription={richDescription}
+            showRichDescription={true}
+            isHuge={true}
+          />
         )}
       </ContentfulFetcher>
 

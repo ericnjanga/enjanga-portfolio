@@ -8,12 +8,14 @@ import React, {
 import { useContentful } from '@/hooks/useContentful';
 import { queryData } from './queries';
 import { contentDataIds } from './CMS-references';
+import type { Node } from '@contentful/rich-text-types';
 
 interface ContentContextValue {
   id?: string;
   title: string;
   blurb?: string;
-  description: string;
+  plainDescription?: string;
+  richDescription?: { json: { content: Node[] } };
 }
 
 // Creating CMS data's wrapping context
@@ -45,6 +47,9 @@ export const ContentfulFetcher: React.FC<ContentfulFetcherProps> = ({
     queryKey: '',
     trackingInfo: '',
   };
+  // ...
+  let plainDescription;
+  let richDescription;
 
   // ...
   switch (dataFor) {
@@ -87,11 +92,17 @@ export const ContentfulFetcher: React.FC<ContentfulFetcherProps> = ({
   });
 
   // ...
+  switch (dataFor) {
+    case 'Single work':
+    case 'Landing Page Banner':
+      richDescription = data?.en?.description;
+      break;
+  }
+
+  // ...
   const id = data?.en?.sys?.id ?? '';
   const title = data?.en?.title ?? '';
   const blurb = data?.en?.blurb ?? '';
-  const description =
-    data?.en?.description?.json?.content[0]?.content[0]?.value ?? '';
 
   if (paramInUse.trackingInfo === 'Best work list') {
     console.log('>>>>>>> data?.en?.sys?.id = ', data?.en?.sys?.id);
@@ -108,7 +119,13 @@ export const ContentfulFetcher: React.FC<ContentfulFetcherProps> = ({
    * ----------------------
    */
 
-  const value: ContentContextValue = { id, title, blurb, description };
+  const value: ContentContextValue = {
+    id,
+    title,
+    blurb,
+    plainDescription,
+    richDescription,
+  };
 
   return <>{children(value)}</>;
 };
