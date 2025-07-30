@@ -6,9 +6,10 @@ import React, {
   ReactNode,
 } from 'react';
 import { useContentful } from '@/hooks/useContentful';
-import { queryData } from './queries';
+import { queryData } from './CMS-content-queries';
 import { contentDataIds } from './CMS-references';
 import type { Node } from '@contentful/rich-text-types';
+import { InformationBlock } from './CMS-content-types';
 
 interface ContentContextValue {
   id?: string;
@@ -16,6 +17,7 @@ interface ContentContextValue {
   blurb?: string;
   plainDescription?: string;
   richDescription?: { json: { content: Node[] } };
+  items?: InformationBlock[];
 }
 
 // Creating CMS data's wrapping context
@@ -26,7 +28,11 @@ const ContentContext = createContext<ContentContextValue | undefined>(
 // Provider Component with Render Props support
 interface ContentfulFetcherProps {
   // Describe which type of content must be fetched
-  dataFor: 'Landing Page Banner' | 'Best work list' | 'Single work';
+  dataFor:
+    | 'Landing Page Banner'
+    | 'Best work list'
+    | 'Single work'
+    | 'Scope of expertise list';
   contentId?: string;
   children: (props: ContentContextValue) => ReactNode;
 }
@@ -43,7 +49,12 @@ export const ContentfulFetcher: React.FC<ContentfulFetcherProps> = ({
   const activeLang = 'en-CA'; // useContext(LanguageContext);
   let paramInUse = {
     query: '',
-    variables: { locale1: 'en-CA', locale2: 'fr', sectionId: '' },
+    variables: {
+      locale1: 'en-CA',
+      locale2: 'fr',
+      sectionId: '',
+      parentRefId: '',
+    },
     queryKey: '',
     trackingInfo: '',
   };
@@ -79,6 +90,15 @@ export const ContentfulFetcher: React.FC<ContentfulFetcherProps> = ({
         sectionId: contentDataIds['Best work list'][0],
       };
       break;
+
+    case 'Scope of expertise list':
+      paramInUse.trackingInfo = 'Scope of expertise list';
+      paramInUse.query = queryData.infoBlockByParent;
+      paramInUse.variables = {
+        ...paramInUse.variables,
+        parentRefId: contentDataIds['Scope of expertise CatId'],
+      };
+      break;
   }
 
   // ...
@@ -103,9 +123,10 @@ export const ContentfulFetcher: React.FC<ContentfulFetcherProps> = ({
   const id = data?.en?.sys?.id ?? '';
   const title = data?.en?.title ?? '';
   const blurb = data?.en?.blurb ?? '';
+  const items = data?.en?.items;
 
-  if (paramInUse.trackingInfo === 'Best work list') {
-    console.log('>>>>>>> data?.en?.sys?.id = ', data?.en?.sys?.id);
+  if (paramInUse.trackingInfo === 'Scope of expertise list') {
+    console.log('>>>>>>> data?.en?.items = ', data?.en?.items);
   }
 
   // // Display a placeholder is there is no modal context or the data fetching is not yet completed
@@ -125,6 +146,7 @@ export const ContentfulFetcher: React.FC<ContentfulFetcherProps> = ({
     blurb,
     plainDescription,
     richDescription,
+    items,
   };
 
   return <>{children(value)}</>;
