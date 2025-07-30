@@ -4,11 +4,12 @@ import { useEffect } from 'react';
 import { useSearchParams, usePathname } from 'next/navigation';
 import { Grid, Column } from '@carbon/react';
 import { Banner } from 'enjanga-next-3-components-lib'; // ENJ NPM component library
-import ContentExpertise from './expertise/ContentExpertise';
+import SectionOfTabs from '../../components/SectionOfTabs/index';
 import ContentAbout from './ContentAbout';
 import ContentBestWork from './ContentBestWork';
 import './../home/_home.scss';
 import { ContentfulFetcher } from '@/libs/ContentfulFetcher';
+import { sortByOrderProp } from '@utils/helpers';
 
 export default function LandingPage() {
   const searchParams = useSearchParams();
@@ -61,24 +62,25 @@ export default function LandingPage() {
         )}
       </ContentfulFetcher>
 
-      <Grid fullWidth>
-        <Column lg={16} md={8} sm={4} className="landing-page__banner"></Column>
-
-        <Column lg={16} md={8} sm={4} className="landing-page__r2">
-          <section
-            className="pageSection smt-box section-expertises"
-            id="scope-of-expertise"
-            aria-labelledby="scope-of-expertise-heading"
-            tabIndex={-1} // Make focusable by default
-          >
-            <h2 id="scope-of-expertise-heading" className="sectionTitle">
-              Scope of Expertise
-            </h2>
-
-            <ContentExpertise className="expertise-section-tabs" />
-          </section>
-        </Column>
-      </Grid>
+      <ContentfulFetcher dataFor="Scope of expertise list">
+        {({ items }) => {
+          const orderedItems = sortByOrderProp(items);
+          return (
+            <section
+              className="pageSection smt-box section-expertises"
+              id="scope-of-expertise"
+              aria-labelledby="scope-of-expertise-heading"
+              tabIndex={-1} // Make focusable by default
+            >
+              <SectionOfTabs
+                title="Scope of Expertise"
+                className="expertise-section-tabs"
+                listOfItems={orderedItems}
+              />
+            </section>
+          );
+        }}
+      </ContentfulFetcher>
 
       <section
         className="pageSection aboutSection smt-box"
