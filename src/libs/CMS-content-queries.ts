@@ -54,25 +54,44 @@ export const queryData = {
       $locale1: String!, 
       $locale2: String!
     ) {
-        en: infoBlock(id: $sectionId, locale: $locale1) {  
-          title
-          blurb
-          description {
-            json
-          } 
-        }
-        fr: infoBlock(id: $sectionId, locale: $locale2) {  
-          title
-          blurb
-          description {
-            json
-          } 
-        }
+      en: infoBlock(id: $sectionId, locale: $locale1) {  
+        title
+        blurb
+        description {
+          json
+        } 
       }
+      fr: infoBlock(id: $sectionId, locale: $locale2) {  
+        title
+        blurb
+        description {
+          json
+        } 
+      }
+    }
   `,
   infoBlockByParent: `
-    query infoBlocksByParent($parentRefId: String!) {
-      infoBlockCollection(where: { parentId: $parentRefId }) {
+    query infoBlocksByParent(
+      $parentRefId: String!,
+      $locale1: String!, 
+      $locale2: String!
+    ) {
+      en: infoBlockCollection(where: { parentId: $parentRefId }, locale: $locale1) {
+        items {
+          sys {
+            id
+          }
+          parentId
+          order
+          icon
+          title
+          blurb
+          description {
+            json
+          }
+        }
+      }
+      fr: infoBlockCollection(where: { parentId: $parentRefId }, locale: $locale2) {
         items {
           parentId
           title
