@@ -9,7 +9,6 @@ import ContentAbout from './ContentAbout';
 import ContentBestWork from './ContentBestWork';
 import './../home/_home.scss';
 import { ContentfulFetcher } from '@/libs/ContentfulFetcher';
-import { sortByOrderProp } from '@utils/helpers';
 
 export default function LandingPage() {
   const searchParams = useSearchParams();
@@ -62,24 +61,21 @@ export default function LandingPage() {
         )}
       </ContentfulFetcher>
 
-      <ContentfulFetcher dataFor="Scope of expertise list">
-        {({ items }) => {
-          const orderedItems = sortByOrderProp(items);
-          return (
-            <section
-              className="pageSection smt-box section-expertises"
-              id="scope-of-expertise"
-              aria-labelledby="scope-of-expertise-heading"
-              tabIndex={-1} // Make focusable by default
-            >
-              <SectionOfTabs
-                title="Scope of Expertise"
-                className="expertise-section-tabs"
-                listOfItems={orderedItems}
-              />
-            </section>
-          );
-        }}
+      <ContentfulFetcher dataFor="List of Scope of expertise">
+        {({ orderedItems }) => (
+          <section
+            className="pageSection smt-box section-expertises"
+            id="scope-of-expertise"
+            aria-labelledby="scope-of-expertise-heading"
+            tabIndex={-1} // Make focusable by default
+          >
+            <SectionOfTabs
+              title="Scope of Expertise"
+              className="expertise-section-tabs"
+              listOfItems={orderedItems}
+            />
+          </section>
+        )}
       </ContentfulFetcher>
 
       <section
