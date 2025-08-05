@@ -2,12 +2,7 @@
 
 // components/Tabs.tsx
 import React, { useState } from 'react';
-import { Tabs, TabPanels, TabPanel } from '@carbon/react';
-import Expertise1Tab from './tabsContent/Expertise1Tab';
-import Expertise2Tab from './tabsContent/Expertise2Tab';
-import Expertise3Tab from './tabsContent/Expertise3Tab';
-import Expertise4Tab from './tabsContent/Expertise4Tab';
-import Expertise5Tab from './tabsContent/Expertise5Tab';
+import { Tabs } from '@carbon/react';
 import './../../app/styles/articlePage.module.scss';
 import './_SectionOfTabs.scss';
 import { Grid, Column } from '@carbon/react';

@@ -1,4 +1,4 @@
-import { Tabs, Tab, TabList, TabPanels, TabPanel } from '@carbon/react';
+import { Tab, TabList } from '@carbon/react';
 import { User, Settings, Code, Dashboard } from '@carbon/icons-react';
 import { InformationBlock } from '@/libs/CMS-content-types';
 
