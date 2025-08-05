@@ -7,9 +7,10 @@ import React, {
 } from 'react';
 import { useContentful } from '@/hooks/useContentful';
 import { queryData } from './CMS-content-queries';
-import { contentDataIds } from './CMS-references';
+import { cmsContentIds } from './CMS-references';
 import type { Node } from '@contentful/rich-text-types';
 import { InformationBlock } from './CMS-content-types';
+import { sortByOrderProp } from '@utils/helpers';
 
 interface ContentContextValue {
   id?: string;
@@ -17,7 +18,8 @@ interface ContentContextValue {
   blurb?: string;
   plainDescription?: string;
   richDescription?: { json: { content: Node[] } };
-  items?: InformationBlock[];
+  items?: InformationBlock[]; // Unordered list of items
+  orderedItems?: InformationBlock[]; // Ordered list of items
 }
 
 // Creating CMS data's wrapping context
@@ -27,18 +29,21 @@ const ContentContext = createContext<ContentContextValue | undefined>(
 
 // Provider Component with Render Props support
 interface ContentfulFetcherProps {
-  // Describe which type of content must be fetched
-  dataFor:
-    | 'Landing Page Banner'
-    | 'Best work list'
+  dataFor: // Describe which type of content must be fetched
+  | 'Landing Page Banner'
     | 'Single work'
-    | 'Scope of expertise list';
-  contentId?: string;
+    | 'InfoBlock by parentId'
+    | 'List of Best Work'
+    | 'List of Scope of expertise'
+    | 'List of Blog Posts';
+
+  contentId?: string; // ...
   children: (props: ContentContextValue) => ReactNode;
 }
 
 export const ContentfulFetcher: React.FC<ContentfulFetcherProps> = ({
   dataFor,
+  contentId = '',
   children,
 }) => {
   /**
@@ -69,16 +74,7 @@ export const ContentfulFetcher: React.FC<ContentfulFetcherProps> = ({
       paramInUse.query = queryData.infoBlockById;
       paramInUse.variables = {
         ...paramInUse.variables,
-        sectionId: contentDataIds['Landing page banner'],
-      };
-      break;
-
-    case 'Best work list':
-      paramInUse.trackingInfo = 'Best work list';
-      paramInUse.query = queryData.projectById;
-      paramInUse.variables = {
-        ...paramInUse.variables,
-        sectionId: contentDataIds['Best work list'][0],
+        sectionId: cmsContentIds.categories['Landing page banner'],
       };
       break;
 
@@ -87,16 +83,42 @@ export const ContentfulFetcher: React.FC<ContentfulFetcherProps> = ({
       paramInUse.query = queryData.projectById;
       paramInUse.variables = {
         ...paramInUse.variables,
-        sectionId: contentDataIds['Best work list'][0],
+        sectionId: cmsContentIds.categories['List of Best Work'][0],
       };
       break;
 
-    case 'Scope of expertise list':
-      paramInUse.trackingInfo = 'Scope of expertise list';
-      paramInUse.query = queryData.infoBlockByParent;
+    case 'InfoBlock by parentId':
+      paramInUse.trackingInfo = 'InfoBlock by parentId';
+      paramInUse.query = queryData.infoBlockByParentCollection;
       paramInUse.variables = {
         ...paramInUse.variables,
-        parentRefId: contentDataIds['Scope of expertise CatId'],
+        parentRefId: contentId,
+      };
+      break;
+
+    case 'List of Best Work':
+      paramInUse.trackingInfo = 'List of Best Work';
+      paramInUse.query = queryData.projectById;
+      paramInUse.variables = {
+        ...paramInUse.variables,
+        sectionId: cmsContentIds.categories['List of Best Work'][0],
+      };
+      break;
+
+    case 'List of Scope of expertise':
+      paramInUse.trackingInfo = 'List of Scope of expertise';
+      paramInUse.query = queryData.infoBlockByParentCollection;
+      paramInUse.variables = {
+        ...paramInUse.variables,
+        parentRefId: cmsContentIds.categories['Scope of expertise'],
+      };
+      break;
+
+    case 'List of Blog Posts':
+      paramInUse.trackingInfo = 'List of Blog Posts';
+      paramInUse.query = queryData.blogPostCollection;
+      paramInUse.variables = {
+        ...paramInUse.variables,
       };
       break;
   }
@@ -124,9 +146,16 @@ export const ContentfulFetcher: React.FC<ContentfulFetcherProps> = ({
   const title = data?.en?.title ?? '';
   const blurb = data?.en?.blurb ?? '';
   const items = data?.en?.items;
+  let orderedItems;
 
-  if (paramInUse.trackingInfo === 'Scope of expertise list') {
-    console.log('>>>>>>> data?.en?.items = ', data?.en?.items);
+  // Sort the list of items by the "order" property (item.order)
+  switch (paramInUse.trackingInfo) {
+    case 'List of Scope of expertise':
+    case 'InfoBlock by parentId':
+    case 'List of Blog Posts':
+      console.log('>>>>>>> data?.en?.items = ', data?.en?.items);
+      orderedItems = sortByOrderProp(items);
+      break;
   }
 
   // // Display a placeholder is there is no modal context or the data fetching is not yet completed
@@ -147,6 +176,7 @@ export const ContentfulFetcher: React.FC<ContentfulFetcherProps> = ({
     plainDescription,
     richDescription,
     items,
+    orderedItems,
   };
 
   return <>{children(value)}</>;

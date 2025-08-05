@@ -1,5 +1,9 @@
 // "Fetching a specific section by id" (GraphQL query)
 export const queryData = {
+  /**
+   * Single records
+   * ------------------
+   */
   pageSection: `
     query getPageSectionEntryQuery($sectionId: String!, $locale1: String!, $locale2: String!) {
       en: pageSection(id: $sectionId, locale: $locale1) {  
@@ -16,38 +20,7 @@ export const queryData = {
       }
     }
   `,
-  projectsCollection: `
-    query getProjectCollection($locale1: String!, $locale2: String!) {
-      en: projectCollection(locale: $locale1) { 
-        items {
-          title
-          blurb
-          description {
-            json
-          }
-          image {
-            url
-            title
-            description
-          }
-        } 
-      }
-      fr: projectCollection(locale: $locale2) { 
-        items {
-          title
-          blurb
-          description {
-            json
-          }
-          image {
-            url
-            title
-            description
-          }
-        } 
-      }
-    }
-  `,
+
   infoBlockById: `
     query getInfoBlockEntryQuery(
       $sectionId: String!, 
@@ -67,71 +40,6 @@ export const queryData = {
         description {
           json
         } 
-      }
-    }
-  `,
-  infoBlockByParent: `
-    query infoBlocksByParent(
-      $parentRefId: String!,
-      $locale1: String!, 
-      $locale2: String!
-    ) {
-      en: infoBlockCollection(where: { parentId: $parentRefId }, locale: $locale1) {
-        items {
-          sys {
-            id
-          }
-          parentId
-          order
-          icon
-          title
-          blurb
-          description {
-            json
-          }
-        }
-      }
-      fr: infoBlockCollection(where: { parentId: $parentRefId }, locale: $locale2) {
-        items {
-          parentId
-          title
-          blurb
-          description {
-            json
-          }
-        }
-      }
-    }
-  `,
-  expertiseSpecificationCollection: `
-    query getExpertiseSpecificationCollection(
-      $parentId: String!
-      $locale1: String!
-      $locale2: String!
-    ) {
-      en: expertiseSpecificationCollection(
-        locale: $locale1
-        where: { parentId: $parentId }
-      ) {
-        items {
-          title
-          blurb
-          description {
-            json
-          }
-        }
-      }
-      fr: expertiseSpecificationCollection(
-        locale: $locale2
-        where: { parentId: $parentId }
-      ) {
-        items {
-          title
-          blurb
-          description {
-            json
-          }
-        }
       }
     }
   `,
@@ -164,27 +72,102 @@ export const queryData = {
 
       }
   `,
-};
 
-// projectsCollection: `
-// query getProjectCollection($locale1: String!, $locale2: String!) {
-//   en: projectCollection(locale: $locale1) {
-//     items {
-//       title
-//       blurb
-//       description {
-//         json
-//       }
-//     }
-//   }
-//   fr: projectCollection(locale: $locale2) {
-//     items {
-//       title
-//       blurb
-//       description {
-//         json
-//       }
-//     }
-//   }
-// }
-// `,
+  /**
+   * Collections (multiple records)
+   * ------------------
+   */
+  projectsCollection: `
+    query getProjectCollectionQuery($locale1: String!, $locale2: String!) {
+      en: projectCollection(locale: $locale1) { 
+        items {
+          title
+          blurb
+          description {
+            json
+          }
+          image {
+            url
+            title
+            description
+          }
+        } 
+      }
+      fr: projectCollection(locale: $locale2) { 
+        items {
+          title
+          blurb
+          description {
+            json
+          }
+          image {
+            url
+            title
+            description
+          }
+        } 
+      }
+    }
+  `,
+  infoBlockByParentCollection: `
+    query infoBlocksByParentQuery(
+      $parentRefId: String!,
+      $locale1: String!, 
+      $locale2: String!
+    ) {
+      en: infoBlockCollection(where: { parentId: $parentRefId }, locale: $locale1) {
+        items {
+          sys {
+            id
+          }
+          parentId
+          order
+          icon
+          title
+          blurb
+          description {
+            json
+          }
+        }
+      }
+      fr: infoBlockCollection(where: { parentId: $parentRefId }, locale: $locale2) {
+        items {
+          sys {
+            id
+          }
+          parentId
+          order
+          icon
+          title
+          blurb
+          description {
+            json
+          }
+        }
+      }
+    }
+  `,
+  blogPostCollection: `
+    query blogPostCollectionQuery(
+      $locale1: String!, 
+      $locale2: String!
+    ) {
+      en: blogPostCollection(locale: $locale1) {
+        items {
+          sys {
+            id
+          }
+          title
+        }
+      }
+      fr: blogPostCollection(locale: $locale2) {
+        items {
+          sys {
+            id
+          }
+          title
+        }
+      }
+    }
+  `,
+};
