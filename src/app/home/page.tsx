@@ -53,10 +53,14 @@ export default function LandingPage() {
       <ContentfulFetcher dataFor="Landing Page Banner">
         {({ title, richDescription }) => (
           <Banner
-            title={title}
-            richDescription={richDescription}
-            showRichDescription={true}
-            isHuge={true}
+            featuredText={{
+              heading: {
+                children: '..#####..',
+              },
+              smartText: {
+                plainText: '..####..',
+              },
+            }}
           />
         )}
       </ContentfulFetcher>
@@ -77,6 +81,9 @@ export default function LandingPage() {
           </section>
         )}
       </ContentfulFetcher>
+
+      {/* 
+      
 
       <section
         className="pageSection aboutSection smt-box"
@@ -110,7 +117,7 @@ export default function LandingPage() {
             <ContentBestWork />
           </section>
         </Column>
-      </Grid>
+      </Grid> */}
     </div>
   );
 }

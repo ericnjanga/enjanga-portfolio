@@ -8,10 +8,7 @@ interface SectionTabPanelsProps {
   listOfItems?: InformationBlock[];
 }
 
-const SectionTabPanels = ({
-  listOfItems,
-  className,
-}: SectionTabPanelsProps) => {
+const SectionTabPanels = ({ listOfItems }: SectionTabPanelsProps) => {
   if (!listOfItems) {
     return (
       <div className="skeleton-animation">Skeleton - SectionTabPanels</div>

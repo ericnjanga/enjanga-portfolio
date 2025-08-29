@@ -4,7 +4,7 @@ import { InformationBlock } from '@/libs/CMS-content-types';
 
 interface SectionTabsListProps {
   className?: string;
-  listOfItems: InformationBlock[];
+  listOfItems?: InformationBlock[];
 }
 
 const SectionTabsList = ({ listOfItems, className }: SectionTabsListProps) => {

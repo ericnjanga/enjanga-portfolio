@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { Banner, CustomTile } from 'enjanga-next-3-components-lib'; // ENJ NPM component library
 import { Grid, Column } from '@carbon/react';
 import { ContentfulFetcher } from '@/libs/ContentfulFetcher';
+import { Children } from 'react';
 
 export default function BlogRoot() {
   const mockData = {
@@ -14,7 +15,16 @@ export default function BlogRoot() {
 
   return (
     <>
-      <Banner title={mockData.banner.title} />
+      <Banner
+        featuredText={{
+          heading: {
+            children: '..#####..',
+          },
+          smartText: {
+            plainText: '..####..',
+          },
+        }}
+      />
       <Grid fullWidth>
         <ContentfulFetcher dataFor="List of Blog Posts">
           {({ orderedItems }) =>

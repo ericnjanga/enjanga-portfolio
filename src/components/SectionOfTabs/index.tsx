@@ -25,10 +25,6 @@ const SectionOfTabs = ({
   title,
   listOfItems,
 }: SectionOfTabsProps) => {
-  if (!listOfItems) {
-    return <p>Skeleton - SectionOfTabs</p>;
-  }
-
   const [selectedTabIndex, setSelectedTabIndex] = useState(0);
 
   return (

@@ -26,10 +26,17 @@ const SectionTabContent = ({ tab, className }: SectionTabContentProps) => (
             return orderedItems?.map((tab) => (
               <Column key={tab.sys.id} lg={5} md={4} sm={4}>
                 <CustomTile
-                  showsModal={true}
-                  className="home-customTile"
-                  title={tab.title}
-                  text={tab.blurb}
+                  featuredText={{
+                    heading: {
+                      children: tab.title,
+                    },
+                    smartText: {
+                      plainText: tab.blurb,
+                    },
+                  }}
+                  layoutStyle="card"
+                  modalIsAvailable={true}
+                  modalRichDescription={tab.description}
                 />
               </Column>
             ));
