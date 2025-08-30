@@ -127,31 +127,3 @@ export default function LandingPage() {
     </div>
   );
 }
-
-// orderedItems?.map((item) => {
-//   console.log('===BestWork===', item);
-//   return (
-//     <Column key={item.sys.id} lg={16} md={8} sm={4}>
-//       <CustomTile
-//         featuredText={{
-//           heading: {
-//             children: 'title',
-//           },
-//           smartText: {
-//             plainText: 'Sugar plum sugar plum pie I love gummi bears sweet roll bear claw. Jelly-o dessert cookie.',
-//           },
-//         }}
-//         layoutStyle="banner"
-//         modalIsAvailable={true}
-//         // modalRichDescription={tab.description}
-//         media='pictogram'
-//         mediaPictogram='Leadership'
-
-//         // linksTo={`best-work/${id}`}
-//         // stackOrder="horizontal"
-//         // title={title}
-//         // text={blurb}
-//       />
-//     </Column>
-//   );
-// })

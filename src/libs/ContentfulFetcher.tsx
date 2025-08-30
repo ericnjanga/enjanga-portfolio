@@ -83,7 +83,7 @@ export const ContentfulFetcher: React.FC<ContentfulFetcherProps> = ({
       paramInUse.query = queryData.projectById;
       paramInUse.variables = {
         ...paramInUse.variables,
-        sectionId: cmsContentIds.categories['List of Best Work'][0],
+        sectionId: contentId,
       };
       break;
 
@@ -170,6 +170,10 @@ export const ContentfulFetcher: React.FC<ContentfulFetcherProps> = ({
    * Fetching ContentFul data in all languages, and handling errors and loading time
    * ----------------------
    */
+
+  if (paramInUse.trackingInfo === 'Single work') {
+    console.log(`.....title=${title}`);
+  }
 
   const value: ContentContextValue = {
     id,
