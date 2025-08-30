@@ -80,7 +80,10 @@ export const queryData = {
   projectsCollection: `
     query getProjectCollectionQuery($locale1: String!, $locale2: String!) {
       en: projectCollection(locale: $locale1) { 
-        items {
+        items { 
+          sys {
+            id
+          }
           title
           blurb
           description {
@@ -94,7 +97,10 @@ export const queryData = {
         } 
       }
       fr: projectCollection(locale: $locale2) { 
-        items {
+        items { 
+          sys {
+            id
+          }
           title
           blurb
           description {

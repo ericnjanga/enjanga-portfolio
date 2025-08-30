@@ -18,7 +18,16 @@ export default function BlogArticlePage({ params }: ArticlePageProps) {
 
   return (
     <>
-      <Banner title={mockData.banner.title} />
+      <Banner
+        featuredText={{
+          heading: {
+            children: mockData.banner.title,
+          },
+          smartText: {},
+          isHidden: 'smartText',
+        }}
+      />
+
       <Grid fullWidth>
         <Column lg={10} md={8} sm={4} className="landing-page__banner">
           <h3>Article content</h3>

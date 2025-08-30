@@ -66,24 +66,25 @@ export default function LandingPage() {
       </ContentfulFetcher>
 
       <ContentfulFetcher dataFor="List of Scope of expertise">
-        {({ orderedItems }) => (
-          <section
-            className="pageSection smt-box section-expertises"
-            id="scope-of-expertise"
-            aria-labelledby="scope-of-expertise-heading"
-            tabIndex={-1} // Make focusable by default
-          >
-            <SectionOfTabs
-              title="Scope of Expertise"
-              className="expertise-section-tabs"
-              listOfItems={orderedItems}
-            />
-          </section>
-        )}
-      </ContentfulFetcher>
+        {({ orderedItems }) => {
+          console.log(`****** [List of Scope of expertise]: ${orderedItems}`);
 
-      {/* 
-      
+          return (
+            <section
+              className="pageSection smt-box section-expertises"
+              id="scope-of-expertise"
+              aria-labelledby="scope-of-expertise-heading"
+              tabIndex={-1} // Make focusable by default
+            >
+              <SectionOfTabs
+                title="Scope of Expertise"
+                className="expertise-section-tabs"
+                listOfItems={orderedItems}
+              />
+            </section>
+          );
+        }}
+      </ContentfulFetcher>
 
       <section
         className="pageSection aboutSection smt-box"
@@ -114,10 +115,43 @@ export default function LandingPage() {
             <h2 id="best-work-heading" className="sectionTitle">
               Best Work
             </h2>
-            <ContentBestWork />
+
+            <ContentfulFetcher dataFor="List of Best Work">
+              {({ orderedItems }) => (
+                <ContentBestWork listOfItems={orderedItems} />
+              )}
+            </ContentfulFetcher>
           </section>
         </Column>
-      </Grid> */}
+      </Grid>
     </div>
   );
 }
+
+// orderedItems?.map((item) => {
+//   console.log('===BestWork===', item);
+//   return (
+//     <Column key={item.sys.id} lg={16} md={8} sm={4}>
+//       <CustomTile
+//         featuredText={{
+//           heading: {
+//             children: 'title',
+//           },
+//           smartText: {
+//             plainText: 'Sugar plum sugar plum pie I love gummi bears sweet roll bear claw. Jelly-o dessert cookie.',
+//           },
+//         }}
+//         layoutStyle="banner"
+//         modalIsAvailable={true}
+//         // modalRichDescription={tab.description}
+//         media='pictogram'
+//         mediaPictogram='Leadership'
+
+//         // linksTo={`best-work/${id}`}
+//         // stackOrder="horizontal"
+//         // title={title}
+//         // text={blurb}
+//       />
+//     </Column>
+//   );
+// })

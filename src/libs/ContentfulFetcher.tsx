@@ -98,10 +98,9 @@ export const ContentfulFetcher: React.FC<ContentfulFetcherProps> = ({
 
     case 'List of Best Work':
       paramInUse.trackingInfo = 'List of Best Work';
-      paramInUse.query = queryData.projectById;
+      paramInUse.query = queryData.projectsCollection;
       paramInUse.variables = {
         ...paramInUse.variables,
-        sectionId: cmsContentIds.categories['List of Best Work'][0],
       };
       break;
 
@@ -153,7 +152,10 @@ export const ContentfulFetcher: React.FC<ContentfulFetcherProps> = ({
     case 'List of Scope of expertise':
     case 'InfoBlock by parentId':
     case 'List of Blog Posts':
-      console.log('>>>>>>> data?.en?.items = ', data?.en?.items);
+    case 'List of Best Work':
+      // if (paramInUse.trackingInfo==='List of Best Work') {
+      //   console.log('>>>[****]>>>> data?.en?.items = ', data?.en?.items);
+      // }
       orderedItems = sortByOrderProp(items);
       break;
   }

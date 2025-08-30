@@ -13,11 +13,21 @@ const ContentAbout = () => (
       <Grid className="tabs-group-content--single-col">
         <Column lg={16} md={8} sm={4}>
           <CustomTile
-            showsModal={true}
             className="home-customTile"
-            iconName="Leadership"
-            title="title"
-            text="Sugar plum sugar plum pie I love gummi bears sweet roll bear claw. Jelly-o dessert cookie."
+            featuredText={{
+              heading: {
+                children: 'title',
+              },
+              smartText: {
+                plainText:
+                  'Sugar plum sugar plum pie I love gummi bears sweet roll bear claw. Jelly-o dessert cookie.',
+              },
+            }}
+            layoutStyle="card"
+            modalIsAvailable={true}
+            // modalRichDescription={tab.description}
+            media="pictogram"
+            mediaPictogram="Leadership"
           />
         </Column>
       </Grid>
@@ -26,20 +36,40 @@ const ContentAbout = () => (
       <Grid className="tabs-group-content">
         <Column lg={5} md={4} sm={4}>
           <CustomTile
-            showsModal={true}
             className="home-customTile"
-            iconName="App Developer"
-            title="title"
-            text="Sugar plum sugar plum pie I love gummi bears sweet roll bear claw. Jelly-o dessert cookie."
+            featuredText={{
+              heading: {
+                children: 'title',
+              },
+              smartText: {
+                plainText:
+                  'Sugar plum sugar plum pie I love gummi bears sweet roll bear claw. Jelly-o dessert cookie.',
+              },
+            }}
+            layoutStyle="card"
+            modalIsAvailable={true}
+            // modalRichDescription={tab.description}
+            media="pictogram"
+            mediaPictogram="App Developer"
           />
         </Column>
         <Column lg={5} md={4} sm={4}>
           <CustomTile
-            showsModal={true}
             className="home-customTile"
-            iconName="Hills"
-            title="title"
-            text="Sugar plum sugar plum pie I love gummi bears sweet roll bear claw. Jelly-o dessert cookie."
+            featuredText={{
+              heading: {
+                children: 'title',
+              },
+              smartText: {
+                plainText:
+                  'Sugar plum sugar plum pie I love gummi bears sweet roll bear claw. Jelly-o dessert cookie.',
+              },
+            }}
+            layoutStyle="card"
+            modalIsAvailable={true}
+            // modalRichDescription={tab.description}
+            media="pictogram"
+            mediaPictogram="Hills"
           />
         </Column>
       </Grid>

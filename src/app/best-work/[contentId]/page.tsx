@@ -17,7 +17,16 @@ const ProjectPage = ({ params }: ProjectPageProps) => (
     <ContentfulFetcher dataFor="Single work" contentId={params.contentId}>
       {({ title, richDescription }) => (
         <>
-          <Banner className={styles.banner} title={title} />
+          <Banner
+            featuredText={{
+              heading: {
+                children: title,
+              },
+              smartText: {},
+              isHidden: 'smartText',
+            }}
+          />
+
           <article className={styles.article}>
             <Grid fullWidth>
               <Column lg={10} md={8} sm={4} className="...">
