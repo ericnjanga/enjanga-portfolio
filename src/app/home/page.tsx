@@ -55,10 +55,10 @@ export default function LandingPage() {
           <Banner
             featuredText={{
               heading: {
-                children: '..#####..',
+                children: title,
               },
               smartText: {
-                plainText: '..####..',
+                richText: richDescription,
               },
             }}
           />
