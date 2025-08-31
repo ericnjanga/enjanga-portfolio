@@ -67,8 +67,6 @@ export default function LandingPage() {
 
       <ContentfulFetcher dataFor="List of Scope of expertise">
         {({ orderedItems }) => {
-          console.log(`****** [List of Scope of expertise]: ${orderedItems}`);
-
           return (
             <section
               className="pageSection smt-box section-expertises"

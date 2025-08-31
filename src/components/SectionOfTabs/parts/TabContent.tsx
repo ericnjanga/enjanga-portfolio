@@ -29,6 +29,7 @@ const SectionTabContent = ({ tab, className }: SectionTabContentProps) => (
                   featuredText={{
                     heading: {
                       children: tab.title,
+                      level: 3,
                     },
                     smartText: {
                       plainText: tab.blurb,

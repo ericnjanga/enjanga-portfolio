@@ -7,38 +7,46 @@ import { ContentfulFetcher } from '@/libs/ContentfulFetcher';
 import { Children } from 'react';
 
 export default function BlogRoot() {
-  const mockData = {
-    banner: {
-      title: 'Blog root page',
-    },
-  };
-
   return (
     <>
       <Banner
         featuredText={{
           heading: {
-            children: '..#####..',
+            children: '*** Blog page',
           },
-          smartText: {
-            plainText: '..####..',
-          },
+          smartText: {},
+          isHidden: 'smartText',
         }}
       />
       <Grid fullWidth>
         <ContentfulFetcher dataFor="List of Blog Posts">
           {({ orderedItems }) =>
             orderedItems?.map((item) => {
-              console.log('======', item);
               return (
-                <Column
-                  key={item.sys.id}
-                  lg={5}
-                  md={4}
-                  sm={4}
-                  className="landing-page__banner"
-                >
-                  <CustomTile title={item.title} />
+                <Column key={item.sys.id} lg={8} md={4} sm={4} className="...">
+                  {/* <CustomTile title={item.title} /> */}
+
+                  <CustomTile
+                    featuredText={{
+                      heading: {
+                        children: item.title,
+                        level: 3,
+                      },
+                      smartText: {
+                        plainText: item.blurb,
+                      },
+                    }}
+                    layoutStyle="card"
+                    modalIsAvailable={false}
+                    // modalRichDescription={tab.description}
+                    media="image"
+                    mediaImage={item.image?.url}
+                    // TODO: Troubleshoot this type validation whenever possible
+                    linksTo={`/blog/${item?.sys?.id}`}
+                    // stackOrder="horizontal"
+                    // title={title}
+                    // text={blurb}
+                  />
                 </Column>
               );
             })

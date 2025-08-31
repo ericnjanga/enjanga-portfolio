@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import { contentfulDataQuery } from '../libs/contentfulDataQuery';
+import { contentfulDataQuery } from '@/libs/contentfulDataQuery';
 
 export const useContentful = ({
   query,

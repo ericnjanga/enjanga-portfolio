@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
 import ClientLayout from './client-layout';
 import 'enjanga-next-3-components-lib/styles.css';
-import './styles/globals.scss';
+import './../styles/globals.scss';
 import { ReactNode } from 'react';
 
 export const metadata: Metadata = {
-  title: 'Eric Njanga',
+  title: '++Eric Njanga',
   description: 'Software engineer & Design technologist',
 };
 

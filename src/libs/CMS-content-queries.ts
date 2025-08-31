@@ -72,6 +72,35 @@ export const queryData = {
 
       }
   `,
+  blogPostById: `
+    query blogPostEntryQuery(
+      $sectionId: String!, 
+      $locale1: String!, 
+      $locale2: String!
+    ) {
+        en: blogPost(id: $sectionId, locale: $locale1) {  
+          sys {
+            id
+          }
+          title
+          blurb
+          description {
+            json
+          }
+        }
+        fr: blogPost(id: $sectionId, locale: $locale2) {  
+          sys {
+            id
+          }
+          title
+          blurb
+          description {
+            json
+          }
+        }
+
+      }
+  `,
 
   /**
    * Collections (multiple records)
@@ -164,6 +193,12 @@ export const queryData = {
             id
           }
           title
+          blurb
+          image {
+            url
+            title
+            description
+          }
         }
       }
       fr: blogPostCollection(locale: $locale2) {
@@ -172,6 +207,12 @@ export const queryData = {
             id
           }
           title
+          blurb
+          image {
+            url
+            title
+            description
+          }
         }
       }
     }

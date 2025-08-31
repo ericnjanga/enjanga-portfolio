@@ -16,6 +16,11 @@ interface ContentContextValue {
   id?: string;
   title: string;
   blurb?: string;
+  image?: {
+    url: string;
+    title: string;
+    description: string;
+  };
   plainDescription?: string;
   richDescription?: { json: { content: Node[] } };
   items?: InformationBlock[]; // Unordered list of items
@@ -31,7 +36,8 @@ const ContentContext = createContext<ContentContextValue | undefined>(
 interface ContentfulFetcherProps {
   dataFor: // Describe which type of content must be fetched
   | 'Landing Page Banner'
-    | 'Single work'
+    | 'Single Work'
+    | 'Single Blog Post'
     | 'InfoBlock by parentId'
     | 'List of Best Work'
     | 'List of Scope of expertise'
@@ -78,9 +84,18 @@ export const ContentfulFetcher: React.FC<ContentfulFetcherProps> = ({
       };
       break;
 
-    case 'Single work':
-      paramInUse.trackingInfo = 'Single work';
+    case 'Single Work':
+      paramInUse.trackingInfo = 'Single Work';
       paramInUse.query = queryData.projectById;
+      paramInUse.variables = {
+        ...paramInUse.variables,
+        sectionId: contentId,
+      };
+      break;
+
+    case 'Single Blog Post':
+      paramInUse.trackingInfo = 'Single Blog Post';
+      paramInUse.query = queryData.blogPostById;
       paramInUse.variables = {
         ...paramInUse.variables,
         sectionId: contentId,
@@ -134,8 +149,9 @@ export const ContentfulFetcher: React.FC<ContentfulFetcherProps> = ({
 
   // ...
   switch (dataFor) {
-    case 'Single work':
+    case 'Single Work':
     case 'Landing Page Banner':
+    case 'Single Blog Post':
       richDescription = data?.en?.description;
       break;
   }
@@ -144,8 +160,15 @@ export const ContentfulFetcher: React.FC<ContentfulFetcherProps> = ({
   const id = data?.en?.sys?.id ?? '';
   const title = data?.en?.title ?? '';
   const blurb = data?.en?.blurb ?? '';
+  const image = data?.en?.image;
   const items = data?.en?.items;
   let orderedItems;
+
+  // TODO: DELETE AFTER OPTIMIZATION
+  // ---------------
+  // if (dataFor==='Single Blog Post') {
+  //   console.log(`************* data: `, data);
+  // }
 
   // Sort the list of items by the "order" property (item.order)
   switch (paramInUse.trackingInfo) {
@@ -153,6 +176,8 @@ export const ContentfulFetcher: React.FC<ContentfulFetcherProps> = ({
     case 'InfoBlock by parentId':
     case 'List of Blog Posts':
     case 'List of Best Work':
+      // TODO: DELETE AFTER OPTIMIZATION
+      // ---------------
       // if (paramInUse.trackingInfo==='List of Best Work') {
       //   console.log('>>>[****]>>>> data?.en?.items = ', data?.en?.items);
       // }
@@ -171,14 +196,17 @@ export const ContentfulFetcher: React.FC<ContentfulFetcherProps> = ({
    * ----------------------
    */
 
-  if (paramInUse.trackingInfo === 'Single work') {
-    console.log(`.....title=${title}`);
-  }
+  // TODO: DELETE AFTER OPTIMIZATION
+  // ---------------
+  // if (paramInUse.trackingInfo === 'Single Work') {
+  //   console.log(`.....title=${title}`);
+  // }
 
   const value: ContentContextValue = {
     id,
     title,
     blurb,
+    image,
     plainDescription,
     richDescription,
     items,

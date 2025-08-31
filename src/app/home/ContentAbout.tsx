@@ -1,6 +1,6 @@
 import { Grid, Column } from '@carbon/react';
 import { CustomTile } from 'enjanga-next-3-components-lib'; // ENJ NPM component library
-import './../styles/_grid-of-customTiles.scss';
+import '@/styles/_grid-of-customTiles.scss';
 
 const ContentAbout = () => (
   <Grid className="grid-of-customTiles grid-of-customTiles-1">
@@ -17,6 +17,7 @@ const ContentAbout = () => (
             featuredText={{
               heading: {
                 children: 'title',
+                level: 3,
               },
               smartText: {
                 plainText:

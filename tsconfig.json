@@ -19,6 +19,7 @@
     "baseUrl": "./src",
     "paths": {
       "@utils/*": ["utils/*"],
+      "@styles/*": ["styles/*"],
       "enjanga-next-3-components-lib": [
         "node_modules/enjanga-next-3-components-lib"
       ],

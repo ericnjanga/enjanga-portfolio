@@ -2,8 +2,6 @@ import { Grid, Column } from '@carbon/react';
 import { CustomTile } from 'enjanga-next-3-components-lib'; // ENJ NPM component library
 import { InformationBlock } from '@/libs/CMS-content-types';
 
-// type ValidRoute = `/${string}` | `/${string}/${string}/`;
-
 const ContentBestWork = ({
   listOfItems,
 }: {
@@ -17,6 +15,7 @@ const ContentBestWork = ({
             featuredText={{
               heading: {
                 children: item.title,
+                level: 3,
               },
               smartText: {
                 plainText: item.blurb,

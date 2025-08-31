@@ -9,5 +9,10 @@ export interface InformationBlock {
   icon?: string;
   title: string;
   blurb?: string;
+  image?: {
+    url: string;
+    title: string;
+    description: string;
+  };
   description?: { json: { content: Node[] } };
 }
