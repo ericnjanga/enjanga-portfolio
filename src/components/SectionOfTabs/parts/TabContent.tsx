@@ -29,15 +29,17 @@ const SectionTabContent = ({ tab, className }: SectionTabContentProps) => (
                   featuredText={{
                     heading: {
                       children: tab.title,
-                      level: 3,
+                      level: 4,
                     },
                     smartText: {
                       plainText: tab.blurb,
                     },
                   }}
                   layoutStyle="card"
-                  modalIsAvailable={true}
-                  modalRichDescription={tab.description}
+                  modalIsAvailable={false}
+                  media="pictogram"
+                  mediaPictogram="App Developer"
+                  // modalRichDescription={tab.description}
                 />
               </Column>
             ));
