@@ -2,6 +2,7 @@ import { CustomTile } from 'enjanga-next-3-components-lib'; // ENJ NPM component
 import { Grid, Column } from '@carbon/react';
 import { ContentfulFetcher } from '@/libs/ContentfulFetcher';
 import { InformationBlock } from '@/libs/CMS-content-types';
+import { CP_nameType } from 'enjanga-next-3-components-lib';
 
 interface SectionTabContentProps {
   tab: InformationBlock;
@@ -38,7 +39,11 @@ const SectionTabContent = ({ tab, className }: SectionTabContentProps) => (
                   layoutStyle="card"
                   modalIsAvailable={false}
                   media="pictogram"
-                  mediaPictogram="App Developer"
+                  mediaPictogram={
+                    tab?.icon
+                      ? (tab.icon as CP_nameType)
+                      : ('App Developer' as CP_nameType)
+                  }
                   // modalRichDescription={tab.description}
                 />
               </Column>

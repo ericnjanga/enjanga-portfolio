@@ -41,7 +41,8 @@ interface ContentfulFetcherProps {
     | 'InfoBlock by parentId'
     | 'List of Best Work'
     | 'List of Scope of expertise'
-    | 'List of Blog Posts';
+    | 'List of Blog Posts'
+    | 'List of About Info';
 
   contentId?: string; // ...
   children: (props: ContentContextValue) => ReactNode;
@@ -128,6 +129,15 @@ export const ContentfulFetcher: React.FC<ContentfulFetcherProps> = ({
       };
       break;
 
+    case 'List of About Info':
+      paramInUse.trackingInfo = 'List of About Info';
+      paramInUse.query = queryData.infoBlockByParentCollection;
+      paramInUse.variables = {
+        ...paramInUse.variables,
+        parentRefId: cmsContentIds.categories['About section'],
+      };
+      break;
+
     case 'List of Blog Posts':
       paramInUse.trackingInfo = 'List of Blog Posts';
       paramInUse.query = queryData.blogPostCollection;
@@ -176,6 +186,7 @@ export const ContentfulFetcher: React.FC<ContentfulFetcherProps> = ({
     case 'InfoBlock by parentId':
     case 'List of Blog Posts':
     case 'List of Best Work':
+    case 'List of About Info':
       // TODO: DELETE AFTER OPTIMIZATION
       // ---------------
       // if (paramInUse.trackingInfo==='List of Best Work') {
