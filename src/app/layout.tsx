@@ -5,8 +5,10 @@ import './../styles/globals.scss';
 import { ReactNode } from 'react';
 
 export const metadata: Metadata = {
-  title: '++Eric Njanga',
-  description: 'Software engineer & Design technologist',
+  title:
+    'Eric Njanga | Solution Engineer | Showcasing Business Impact Through Technical Storytelling',
+  description:
+    'Solution Engineer with 10+ years of experience creating high-performance web applications, showcasing business impact through technical storytelling.',
 };
 
 interface RootLayoutProps {
