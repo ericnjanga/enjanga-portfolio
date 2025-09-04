@@ -75,7 +75,7 @@ const AppFooter = () => {
                   {/* Col 2: Row 1: Col 1 */}
                   <Column lg={4} md={4} sm={4} className={clsx(styles.list)}>
                     <HeadlinedList
-                      heading={{ content: 'Main Navigation', h: 'h4' }}
+                      heading={{ children: 'Main Navigation', level: 4 }}
                       list={{ content: mockData.listMainNav }}
                     />
                   </Column>
@@ -83,7 +83,7 @@ const AppFooter = () => {
                   {/* Col 2: Row 1: Col 2 */}
                   <Column lg={4} md={4} sm={4} className={clsx(styles.list)}>
                     <HeadlinedList
-                      heading={{ content: 'Professional Links', h: 'h4' }}
+                      heading={{ children: 'Professional Links', level: 4 }}
                       list={{ content: mockData.proLinks }}
                     />
                   </Column>
@@ -91,7 +91,7 @@ const AppFooter = () => {
                   {/* Col 2: Row 1: Col 3 */}
                   <Column lg={4} md={4} sm={4} className={clsx(styles.list)}>
                     <HeadlinedList
-                      heading={{ content: 'Blog', h: 'h4' }}
+                      heading={{ children: 'Blog', level: 4 }}
                       list={{ content: mockData.proLinks }}
                     />
                   </Column>

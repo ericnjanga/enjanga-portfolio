@@ -38,7 +38,7 @@ export default function NotFound() {
           }}
         >
           <h1>404 - Page Not Found</h1>
-          <p>The page you're looking for doesn't exist or has been moved.</p>
+          <p>{`The page you're looking for doesn't exist or has been moved.`}</p>
           <Link
             href="/"
             style={{

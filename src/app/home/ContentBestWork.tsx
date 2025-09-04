@@ -26,8 +26,6 @@ const ContentBestWork = ({
             // modalRichDescription={tab.description}
             media="pictogram"
             mediaPictogram="Leadership"
-            // TODO: Troubleshoot this type validation whenever possible
-            linksTo={`/best-work/${item?.sys?.id}`}
             // stackOrder="horizontal"
             // title={title}
             // text={blurb}

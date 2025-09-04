@@ -1,10 +1,13 @@
 'use client';
 
 import Link from 'next/link';
-import { Banner, CustomTile } from 'enjanga-next-3-components-lib'; // ENJ NPM component library
+import {
+  Banner,
+  CustomTile,
+  CTL_valid_linkTo,
+} from 'enjanga-next-3-components-lib'; // ENJ NPM component library
 import { Grid, Column } from '@carbon/react';
 import { ContentfulFetcher } from '@/libs/ContentfulFetcher';
-import { Children } from 'react';
 
 export default function BlogRoot() {
   return (
@@ -37,12 +40,10 @@ export default function BlogRoot() {
                       },
                     }}
                     layoutStyle="card"
-                    modalIsAvailable={false}
                     // modalRichDescription={tab.description}
                     media="image"
                     mediaImage={item.image?.url}
-                    // TODO: Troubleshoot this type validation whenever possible
-                    linksTo={`/blog/${item?.sys?.id}`}
+                    linksTo={`/blog/${item?.sys?.id}` as CTL_valid_linkTo}
                     // stackOrder="horizontal"
                     // title={title}
                     // text={blurb}
