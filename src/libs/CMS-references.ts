@@ -5,5 +5,6 @@ export const cmsContentIds = {
     'List of Best Work': ['5y2JSha3mykWdGkUf6XcQp'],
     'Scope of expertise': '5OpXyMfZfJlGQzTKJSn9Hw',
     'About section': '2yc27jrBHSGwDBau6c8qfA',
+    'Featured Image': '2eSLi2IP4sZrrPK0AeQPk7',
   },
 };

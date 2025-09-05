@@ -23,7 +23,9 @@ const BlogArticlePage = ({ params }: ArticlePageProps) => (
           />
 
           <article className={styles.article}>
-            <Grid fullWidth>
+            <Grid>
+              {' '}
+              {/* fullWidth */}
               <Column lg={10} md={8} sm={4} className="...">
                 <CMSRichText data={richDescription} />
               </Column>

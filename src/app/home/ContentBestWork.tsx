@@ -23,9 +23,10 @@ const ContentBestWork = ({
             }}
             layoutStyle="banner"
             modalIsAvailable={false}
+            linksTo={`/best-work/${item.sys.id}`}
             // modalRichDescription={tab.description}
-            media="pictogram"
-            mediaPictogram="Leadership"
+            // media="pictogram"
+            // mediaPictogram="Leadership"
             // stackOrder="horizontal"
             // title={title}
             // text={blurb}

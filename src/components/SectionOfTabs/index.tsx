@@ -28,7 +28,9 @@ const SectionOfTabs = ({
   const [selectedTabIndex, setSelectedTabIndex] = useState(0);
 
   return (
-    <Grid fullWidth className="SectionOfTabs">
+    <Grid className="SectionOfTabs">
+      {' '}
+      {/*  fullWidth */}
       <Column lg={16} md={8} sm={4} className="landing-page__r2">
         <h2 id="scope-of-expertise-heading" className="sectionTitle">
           {title}

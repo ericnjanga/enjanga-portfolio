@@ -9,6 +9,8 @@ import ContentAbout from './ContentAbout';
 import ContentBestWork from './ContentBestWork';
 import './../home/_home.scss';
 import { ContentfulFetcher } from '@/libs/ContentfulFetcher';
+import { BackgroundSection } from '@/components/BackgroundSection';
+import { cmsContentIds } from '@/libs/CMS-references';
 
 export default function LandingPage() {
   const searchParams = useSearchParams();
@@ -84,25 +86,35 @@ export default function LandingPage() {
         }}
       </ContentfulFetcher>
 
-      <section
+      <BackgroundSection
         className="pageSection aboutSection smt-box"
         id="about-me"
-        aria-labelledby="about-me-heading"
+        ariaLabelledby="about-me-heading"
         tabIndex={-1} // Make focusable by default
+        parallax={true}
+        imageId={cmsContentIds.categories['Featured Image']}
       >
-        <Grid fullWidth className="sectionTitle">
-          <Column lg={16} md={8} sm={4}>
-            <h2 id="about-me-heading">About me</h2>
-          </Column>
-        </Grid>
-        <Grid fullWidth>
-          <Column lg={16} md={8} sm={4}>
-            <ContentAbout />
-          </Column>
-        </Grid>
-      </section>
+        <>
+          <Grid className="sectionTitle">
+            {' '}
+            {/*  fullWidth */}
+            <Column lg={16} md={8} sm={4}>
+              <h2 id="about-me-heading">About me</h2>
+            </Column>
+          </Grid>
+          <Grid>
+            {' '}
+            {/*  fullWidth */}
+            <Column lg={16} md={8} sm={4}>
+              <ContentAbout />
+            </Column>
+          </Grid>
+        </>
+      </BackgroundSection>
 
-      <Grid fullWidth>
+      <Grid>
+        {' '}
+        {/*  fullWidth */}
         <Column lg={16} md={8} sm={4}>
           <section
             className="pageSection smt-box"

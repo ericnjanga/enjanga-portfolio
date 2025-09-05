@@ -21,7 +21,9 @@ export default function BlogRoot() {
           isHidden: 'smartText',
         }}
       />
-      <Grid fullWidth>
+      <Grid>
+        {' '}
+        {/* fullWidth */}
         <ContentfulFetcher dataFor="List of Blog Posts">
           {({ orderedItems }) =>
             orderedItems?.map((item) => {
