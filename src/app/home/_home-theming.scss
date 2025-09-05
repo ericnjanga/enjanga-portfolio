@@ -1,0 +1,37 @@
+@use '@carbon/styles/scss/themes' as *;
+@use '@carbon/styles/scss/theme' as *;
+@use '@carbon/react/scss/colors' as *;
+@use '@carbon/react/scss/spacing' as *;
+@use '@carbon/react/scss/breakpoint' as *;
+
+.section-expertises {
+  #scope-of-expertise-heading {
+    color: $text-on-color;
+  }
+
+  .expertise-section-tabs {
+    button.cds--tabs__nav-item--selected {
+      color: $purple-40;
+      -webkit-border-after: 2px solid var(--cds-border-interactive, $purple-40);
+      border-block-end: 2px solid var(--cds-border-interactive, $purple-40);
+
+      .cds--tabs__nav-item--icon svg {
+        color: $purple-40;
+      }
+    }
+
+    button.cds--tabs__nav-item:not(.cds--tabs__nav-item--selected) {
+      color: $gray-20;
+
+      &:hover {
+        color: $blue-40 !important;
+        -webkit-border-after: 2px solid var(--cds-border-interactive, $blue-40) !important;
+        border-block-end: 2px solid var(--cds-border-interactive, $blue-40) !important;
+
+        .cds--tabs__nav-item--icon svg {
+          color: $purple-40;
+        }
+      }
+    }
+  }
+}

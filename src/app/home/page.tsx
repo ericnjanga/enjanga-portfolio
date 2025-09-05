@@ -8,6 +8,7 @@ import SectionOfTabs from '../../components/SectionOfTabs/index';
 import ContentAbout from './ContentAbout';
 import ContentBestWork from './ContentBestWork';
 import './../home/_home.scss';
+import './../home/_home-theming.scss';
 import { ContentfulFetcher } from '@/libs/ContentfulFetcher';
 import { BackgroundSection } from '@/components/BackgroundSection';
 import { cmsContentIds } from '@/libs/CMS-references';
