@@ -1,5 +1,15 @@
+@use '@carbon/styles/scss/themes' as *;
+@use '@carbon/styles/scss/theme' as *;
+@use '@carbon/react/scss/colors' as *;
 @use '@carbon/react/scss/spacing' as *;
 @use '@carbon/react/scss/breakpoint' as *;
+
+/**
+ * TO DO:
+ --------
+  Find these design tokens and replace them in the code:
+  - #8f8793;
+ */
 
 .homePage {
   // Variables ...
@@ -45,7 +55,7 @@
   }
 
   .aboutSection {
-    background-color: turquoise;
+    background-color: #8f8793;
     position: relative;
     display: flex;
     flex-direction: column;
