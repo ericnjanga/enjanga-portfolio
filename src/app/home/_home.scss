@@ -3,6 +3,7 @@
 @use '@carbon/react/scss/colors' as *;
 @use '@carbon/react/scss/spacing' as *;
 @use '@carbon/react/scss/breakpoint' as *;
+@use './../../styles/utils/mixins';
 
 /**
  * TO DO:
@@ -15,7 +16,6 @@
   // Variables ...
   --enj-home-exprt-head-top: -80px;
   --enj-home-exprt-tabs-top: -41px;
-  --enj-home-section-sapcing: #{$spacing-08};
 
   --enj-home-aboutSec-height: 730px;
   --enj-home-aboutSec-title-top: -2rem;
@@ -24,15 +24,7 @@
 
   .pageSection {
     position: relative;
-    margin-bottom: var(--enj-home-section-sapcing);
-
-    @include breakpoint('md') {
-      --enj-home-section-sapcing: #{$spacing-11};
-    }
-
-    @include breakpoint('lg') {
-      --enj-home-section-sapcing: #{$spacing-13};
-    }
+    @include mixins.PSS-marginBottom-xxl;
   }
 
   // Custom tile found in many places all over the app

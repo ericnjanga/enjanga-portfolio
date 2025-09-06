@@ -1,8 +1,8 @@
 @use '@carbon/react/scss/breakpoint' as *;
+@use './utils/mixins';
 
 :root {
   --enj-grid-content-gap: 4px;
-  --enj-grid-content-padd: 1.5rem;
 }
 
 /**
@@ -63,28 +63,10 @@
           margin-left: calc(var(--enj-grid-content-gap) / 2);
         }
       }
-
-      // @include breakpoint('lg') {
-      // }
-
-      // @include breakpoint('xlg') {
-      // }
     }
   }
 
   &.grid-of-customTiles-padding {
-    padding-top: var(--enj-grid-content-padd);
-
-    @include breakpoint('md') {
-      --enj-grid-content-padd: 2rem;
-    }
-
-    @include breakpoint('lg') {
-      --enj-grid-content-padd: 4rem;
-    }
-
-    @include breakpoint('xlg') {
-      --enj-grid-content-padd: 6.5rem;
-    }
+    @include mixins.PCS-paddingTop;
   }
 }

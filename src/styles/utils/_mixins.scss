@@ -1,0 +1,48 @@
+@use '@carbon/react/scss/breakpoint' as *;
+@use '@carbon/react/scss/spacing' as *;
+@use './vars';
+
+// PSS: Page Section Spacing
+@mixin PSS-marginBottom-xxl {
+  margin-bottom: var(--enj-page-section-sapcing-xxl);
+
+  @include breakpoint('md') {
+    --enj-page-section-sapcing-xxl: #{$spacing-11};
+  }
+
+  @include breakpoint('lg') {
+    --enj-page-section-sapcing-xxl: #{$spacing-13};
+  }
+}
+@mixin PSS-marginBottom-xl {
+  margin-bottom: var(--enj-page-section-sapcing-xl);
+
+  @include breakpoint('md') {
+    --enj-page-section-sapcing-xl: 2rem;
+  }
+
+  @include breakpoint('lg') {
+    --enj-page-section-sapcing-xl: 4rem;
+  }
+
+  @include breakpoint('xlg') {
+    --enj-page-section-sapcing-xl: 6.5rem;
+  }
+}
+
+// PSS: Page Content Spacing
+@mixin PCS-paddingTop {
+  padding-top: var(--enj-page-section-sapcing-xl);
+
+  @include breakpoint('md') {
+    --enj-page-section-sapcing-xl: 2rem;
+  }
+
+  @include breakpoint('lg') {
+    --enj-page-section-sapcing-xl: 4rem;
+  }
+
+  @include breakpoint('xlg') {
+    --enj-page-section-sapcing-xl: 6.5rem;
+  }
+}

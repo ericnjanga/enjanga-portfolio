@@ -3,7 +3,8 @@
 // components/Tabs.tsx
 import React, { useState } from 'react';
 import { Tabs } from '@carbon/react';
-import '@/styles/articlePage.module.scss';
+// import '@/styles/articlePage.module.scss';
+import './../../styles/_articlePage.scss';
 import './_SectionOfTabs.scss';
 import { Grid, Column } from '@carbon/react';
 import { InformationBlock } from '@/libs/CMS-content-types';

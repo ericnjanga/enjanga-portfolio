@@ -64,6 +64,7 @@ export default function LandingPage() {
                 richText: richDescription,
               },
             }}
+            isHuge={true}
           />
         )}
       </ContentfulFetcher>
