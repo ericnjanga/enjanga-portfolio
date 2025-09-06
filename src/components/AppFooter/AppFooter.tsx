@@ -118,7 +118,7 @@ const AppFooter = () => {
                   </Column>
 
                   {/* Col 2: Row 2: Col 2 */}
-                  <Column lg={4} md={4} sm={4} className="">
+                  {/* <Column lg={4} md={4} sm={4} className="">
                     <ContactButton
                       btnText="Get in touch with me"
                       btnIcon="Email"
@@ -130,7 +130,7 @@ const AppFooter = () => {
                       modalPrimaryButtonText="Send Message"
                       modalSecondaryButtonText="Cancel"
                     />
-                  </Column>
+                  </Column> */}
                 </Grid>
               </Column>
             </Grid>

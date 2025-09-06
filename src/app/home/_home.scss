@@ -110,6 +110,10 @@
     .tab-content {
       .intro-text {
         margin: var(--enj-home-expertSec-intro-mg);
+
+        p {
+          font-size: 1.15rem;
+        }
       }
     }
   }

@@ -1,0 +1,19 @@
+@use '@carbon/styles/scss/themes' as *;
+@use '@carbon/styles/scss/theme' as *;
+@use '@carbon/react/scss/colors' as *;
+
+.enj-AppHeader {
+  // Correcting menu item padding
+  // NOTE: I might have a problem on mobile
+  .cds--header__name,
+  a.cds--header__menu-item {
+    padding: 0.8rem 1rem;
+  }
+
+  .cds--header__name,
+  a.cds--header__menu-item {
+    &:hover {
+      background-color: $purple-30;
+    }
+  }
+}

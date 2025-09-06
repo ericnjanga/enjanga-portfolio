@@ -4,19 +4,32 @@
 @use '@carbon/react/scss/spacing' as *;
 @use '@carbon/react/scss/breakpoint' as *;
 
+/**
+ * TO DO:
+ --------
+  Find these design tokens and replace them in the code:
+  - #fc52ff
+  - #fd88ff
+ */
+
 .section-expertises {
   #scope-of-expertise-heading {
     color: $text-on-color;
   }
 
   .expertise-section-tabs {
+    // Increase all button's font size (for better readability)
+    button {
+      font-size: 1.1rem;
+    }
+
     button.cds--tabs__nav-item--selected {
-      color: $purple-40;
-      -webkit-border-after: 2px solid var(--cds-border-interactive, $purple-40);
-      border-block-end: 2px solid var(--cds-border-interactive, $purple-40);
+      color: #fc52ff;
+      -webkit-border-after: 2px solid var(--cds-border-interactive, #fc52ff);
+      border-block-end: 2px solid var(--cds-border-interactive, #fc52ff);
 
       .cds--tabs__nav-item--icon svg {
-        color: $purple-40;
+        color: #fc52ff;
       }
     }
 
@@ -24,12 +37,12 @@
       color: $gray-20;
 
       &:hover {
-        color: $blue-40 !important;
-        -webkit-border-after: 2px solid var(--cds-border-interactive, $blue-40) !important;
-        border-block-end: 2px solid var(--cds-border-interactive, $blue-40) !important;
+        color: #fd88ff !important;
+        -webkit-border-after: 2px solid var(--cds-border-interactive, #fd88ff) !important;
+        border-block-end: 2px solid var(--cds-border-interactive, #fd88ff) !important;
 
         .cds--tabs__nav-item--icon svg {
-          color: $purple-40;
+          color: #fd88ff;
         }
       }
     }
