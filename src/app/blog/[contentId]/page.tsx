@@ -5,9 +5,7 @@ import { Grid, Column } from '@carbon/react';
 import { ContentfulFetcher } from '@/libs/ContentfulFetcher';
 import { ArticlePageProps } from '@/libs/types';
 import { CMSRichText } from 'enjanga-next-3-components-lib';
-import './../../../styles/_articlePage.scss';
-// import styles from '@/styles/articlePage.module.scss';
-// import clsx from 'clsx';
+import './../../../styles/_blogs-and-articles.scss';
 
 const BlogArticlePage = ({ params }: ArticlePageProps) => (
   <div className="articlePage">
@@ -15,7 +13,7 @@ const BlogArticlePage = ({ params }: ArticlePageProps) => (
       {({ title, richDescription }) => (
         <>
           <Banner
-            className="articlePage-banner"
+            className="page-banner"
             featuredText={{
               heading: {
                 children: title,
@@ -25,7 +23,7 @@ const BlogArticlePage = ({ params }: ArticlePageProps) => (
             }}
           />
 
-          <article className="articlePage-content">
+          <article className="page-content">
             <Grid>
               {' '}
               {/* fullWidth */}

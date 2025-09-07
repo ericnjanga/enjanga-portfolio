@@ -2,16 +2,17 @@
 @use '@carbon/react/scss/breakpoint' as *;
 @use './../styles/utils/mixins';
 
-.articlePage {
+.articlePage,
+.blogPage {
   // Variables ...
   --enj-articlePage-Banner-marg: #{$spacing-07};
 
   // Declarations ...
-  .articlePage-banner {
+  .page-banner {
     // margin-bottom: var(--enj-articlePage-Banner-marg);
     @include mixins.PSS-marginBottom-xl;
   }
-  .articlePage-content {
+  .page-content {
     // margin-bottom: var(--enj-articlePage-Banner-marg);
     @include mixins.PSS-marginBottom-xxl;
   }
