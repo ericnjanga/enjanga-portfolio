@@ -8,7 +8,6 @@ const ContentAbout = () => (
   <Grid className="grid-of-customTiles grid-of-customTiles-1">
     <ContentfulFetcher dataFor="List of About Info">
       {({ orderedItems }) => {
-        console.log('+++++++', orderedItems && orderedItems[1]);
         const card1 = orderedItems && orderedItems[0];
         const card2 = orderedItems && orderedItems[1];
         const card3 = orderedItems && orderedItems[2];
