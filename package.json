@@ -16,7 +16,7 @@
     "format:diff": "prettier --list-different \"**/*.{js,ts,md,scss}\""
   },
   "dependencies": {
-    "@carbon/react": "^1.84.0",
+    "@carbon/react": "^1.90.0",
     "@contentful/rich-text-types": "^17.1.0",
     "@tanstack/react-query": "^5.83.0",
     "@tanstack/react-query-devtools": "^5.83.0",

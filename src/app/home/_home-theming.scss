@@ -8,7 +8,7 @@
  * TO DO:
  --------
   Find these design tokens and replace them in the code:
-  - #fc52ff
+  - #00D5FF
   - #fd88ff
  */
 
@@ -24,17 +24,17 @@
     }
 
     button.cds--tabs__nav-item--selected {
-      color: #fc52ff;
-      -webkit-border-after: 2px solid var(--cds-border-interactive, #fc52ff);
-      border-block-end: 2px solid var(--cds-border-interactive, #fc52ff);
+      color: #00d5ff;
+      -webkit-border-after: 2px solid var(--cds-border-interactive, #00d5ff);
+      border-block-end: 2px solid var(--cds-border-interactive, #00d5ff);
 
       .cds--tabs__nav-item--icon svg {
-        color: #fc52ff;
+        color: #00d5ff;
       }
     }
 
     button.cds--tabs__nav-item:not(.cds--tabs__nav-item--selected) {
-      color: $gray-20;
+      color: $text-on-color;
 
       &:hover {
         color: #fd88ff !important;

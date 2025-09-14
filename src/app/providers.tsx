@@ -30,7 +30,9 @@ export function Providers({ children }: RootLayoutProps) {
             globalBarItems={<GlobalActions />}
           />
         </Theme>
-        <Content>{children}</Content>
+        <main id="main-content">
+          <Content>{children}</Content>
+        </main>
         <AppFooter />
       </div>
     </QueryClientProvider>
