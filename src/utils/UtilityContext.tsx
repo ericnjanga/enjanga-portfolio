@@ -39,7 +39,7 @@ interface UtilityContextType {
 
 const defaultUtilityContext: UtilityContextType = {
   brand: {
-    name: '--Eric Njanga',
+    name: 'Eric Njanga',
     slogan: 'Software engineer & Design technologist',
   },
 };
