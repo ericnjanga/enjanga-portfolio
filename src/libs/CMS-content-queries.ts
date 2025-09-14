@@ -43,6 +43,8 @@ export const queryData = {
       }
     }
   `,
+
+  // description {...} has been inhanced to display images
   projectById: `
     query projectEntryQuery(
       $sectionId: String!, 
@@ -57,6 +59,16 @@ export const queryData = {
           blurb
           description {
             json
+            links {
+              assets {
+                block {
+                  sys { id }
+                  url
+                  title
+                  description
+                }
+              }
+            }
           }
         }
         fr: project(id: $sectionId, locale: $locale2) {  
@@ -67,6 +79,16 @@ export const queryData = {
           blurb
           description {
             json
+            links {
+              assets {
+                block {
+                  sys { id }
+                  url
+                  title
+                  description
+                }
+              }
+            }
           }
         }
 
