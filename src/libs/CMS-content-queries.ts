@@ -108,6 +108,16 @@ export const queryData = {
           blurb
           description {
             json
+            links {
+              assets {
+                block {
+                  sys { id }
+                  url
+                  title
+                  description
+                }
+              }
+            }
           }
         }
         fr: blogPost(id: $sectionId, locale: $locale2) {  
@@ -118,6 +128,16 @@ export const queryData = {
           blurb
           description {
             json
+            links {
+              assets {
+                block {
+                  sys { id }
+                  url
+                  title
+                  description
+                }
+              }
+            }
           }
         }
 
