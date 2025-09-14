@@ -1,0 +1,95 @@
+@use '@carbon/styles/scss/themes' as *;
+@use '@carbon/styles/scss/theme' as *;
+@use '@carbon/react/scss/colors' as *;
+@use '@carbon/react/scss/spacing' as *;
+@use '@carbon/react/scss/breakpoint' as *;
+
+/**
+ * TO DO:
+ --------
+  Find these design tokens and replace them in the code:
+  - #00D5FF 
+ */
+
+.app-footer {
+  // Variables ...
+  --enj-footer-padd: #{$spacing-09};
+  --enj-footer-marg: #{$spacing-05};
+  --enj-block-marg: #{$spacing-06};
+
+  // Declarations ...
+  padding: var(--enj-footer-padd) 0;
+  background-color: $cool-gray-90;
+
+  &__col1 {
+    margin-bottom: var(--enj-block-marg);
+  }
+
+  &__logo {
+    font-size: 1.9rem;
+  }
+
+  .enj-BrandLogo--text {
+    color: $cool-gray-40;
+  }
+
+  .enj-CMSRichText {
+    p:last-of-type,
+    ul {
+      margin-bottom: 0;
+      li {
+        color: $text-on-color;
+
+        a {
+          color: $text-on-color;
+          text-decoration: none;
+          &:hover {
+            color: #00d5ff;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+
+    // List headings ...
+    h3 {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #00d5ff;
+    }
+
+    a {
+      color: $purple-70;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  .copyright {
+    margin-bottom: var(--enj-block-marg);
+
+    .enj-CMSRichText {
+      color: $cool-gray-30;
+    }
+  }
+
+  @include breakpoint('md') {
+    --enj-footer-padd: #{$spacing-10};
+  }
+
+  @include breakpoint('lg') {
+    --enj-footer-padd: #{$spacing-11};
+    --enj-footer-marg: #{$spacing-07};
+    --enj-block-marg: 0;
+  }
+
+  @include breakpoint('xlg') {
+    --enj-footer-padd: #{$spacing-12};
+  }
+
+  hr {
+    margin: var(--enj-footer-marg) 0;
+    border-color: $cool-gray-60;
+  }
+}
