@@ -36,6 +36,7 @@ const ContentContext = createContext<ContentContextValue | undefined>(
 interface ContentfulFetcherProps {
   dataFor: // Describe which type of content must be fetched
   | 'Landing Page Banner'
+    | 'Blog Page Banner'
     | 'Footer Copyright'
     | 'Single Work'
     | 'Single Blog Post'
@@ -83,7 +84,16 @@ export const ContentfulFetcher: React.FC<ContentfulFetcherProps> = ({
       paramInUse.query = queryData.infoBlockById;
       paramInUse.variables = {
         ...paramInUse.variables,
-        sectionId: cmsContentIds.categories['Landing page banner'],
+        sectionId: cmsContentIds.categories['Landing Page Banner'],
+      };
+      break;
+
+    case 'Blog Page Banner':
+      paramInUse.trackingInfo = 'Blog Page Banner';
+      paramInUse.query = queryData.infoBlockById;
+      paramInUse.variables = {
+        ...paramInUse.variables,
+        sectionId: cmsContentIds.categories['Blog Page Banner'],
       };
       break;
 
@@ -180,6 +190,7 @@ export const ContentfulFetcher: React.FC<ContentfulFetcherProps> = ({
   // ...
   switch (dataFor) {
     case 'Landing Page Banner':
+    case 'Blog Page Banner':
     case 'Footer Copyright':
     case 'Single Work':
     case 'Single Blog Post':
@@ -197,9 +208,9 @@ export const ContentfulFetcher: React.FC<ContentfulFetcherProps> = ({
 
   // TODO: DELETE AFTER OPTIMIZATION
   // ---------------
-  // if (dataFor==='Single Blog Post') {
-  //   console.log(`************* data: `, data);
-  // }
+  if (dataFor === 'Blog Page Banner') {
+    console.log(`************* data: `, data);
+  }
 
   // Sort the list of items by the "order" property (item.order)
   switch (paramInUse.trackingInfo) {

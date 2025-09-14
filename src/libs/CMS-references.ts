@@ -1,7 +1,8 @@
 // ...
 export const cmsContentIds = {
   categories: {
-    'Landing page banner': '4llAs4gW4mc1fikxbW6u4V',
+    'Landing Page Banner': '4llAs4gW4mc1fikxbW6u4V',
+    'Blog Page Banner': '1KZzwxEzfTs7rLABpVpjX1',
     'Footer Copyright': '2KSc8hw8VvMNS5rXQP8GEZ',
     'List of Best Work': ['5y2JSha3mykWdGkUf6XcQp'],
     'Scope of expertise': '5OpXyMfZfJlGQzTKJSn9Hw',

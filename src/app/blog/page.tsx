@@ -13,16 +13,21 @@ import './../../styles/_blogs-and-articles.scss';
 export default function BlogRoot() {
   return (
     <div className="blogPage">
-      <Banner
-        className="page-banner"
-        featuredText={{
-          heading: {
-            children: '*** Blog page',
-          },
-          smartText: {},
-          isHidden: 'smartText',
-        }}
-      />
+      <ContentfulFetcher dataFor="Blog Page Banner">
+        {({ title, richDescription }) => (
+          <Banner
+            className="page-banner"
+            featuredText={{
+              heading: {
+                children: title,
+              },
+              smartText: {
+                richText: richDescription,
+              },
+            }}
+          />
+        )}
+      </ContentfulFetcher>
 
       <article className="page-content">
         <Grid>
@@ -48,7 +53,7 @@ export default function BlogRoot() {
                         smartText: {
                           plainText: item.blurb,
                         },
-                        headingMaxLength: 60,
+                        headingMaxLength: 50,
                         plainTextMaxLength: 120,
                       }}
                       layoutStyle="card"
