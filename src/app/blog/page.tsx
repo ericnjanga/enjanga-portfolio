@@ -39,26 +39,22 @@ export default function BlogRoot() {
                     sm={4}
                     className="..."
                   >
-                    {/* <CustomTile title={item.title} /> */}
-
                     <CustomTile
                       featuredText={{
                         heading: {
                           children: item.title,
-                          level: 3,
+                          level: 2,
                         },
                         smartText: {
                           plainText: item.blurb,
                         },
+                        headingMaxLength: 60,
+                        plainTextMaxLength: 120,
                       }}
                       layoutStyle="card"
-                      // modalRichDescription={tab.description}
                       media="image"
                       mediaImage={item.image?.url}
                       linksTo={`/blog/${item?.sys?.id}` as CTL_valid_linkTo}
-                      // stackOrder="horizontal"
-                      // title={title}
-                      // text={blurb}
                     />
                   </Column>
                 );
