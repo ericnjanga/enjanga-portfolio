@@ -36,13 +36,15 @@ const ContentContext = createContext<ContentContextValue | undefined>(
 interface ContentfulFetcherProps {
   dataFor: // Describe which type of content must be fetched
   | 'Landing Page Banner'
+    | 'Footer Copyright'
     | 'Single Work'
     | 'Single Blog Post'
     | 'InfoBlock by parentId'
     | 'List of Best Work'
     | 'List of Scope of expertise'
     | 'List of Blog Posts'
-    | 'List of About Info';
+    | 'List of About Info'
+    | 'List of Footer Links';
 
   contentId?: string; // ...
   children: (props: ContentContextValue) => ReactNode;
@@ -82,6 +84,15 @@ export const ContentfulFetcher: React.FC<ContentfulFetcherProps> = ({
       paramInUse.variables = {
         ...paramInUse.variables,
         sectionId: cmsContentIds.categories['Landing page banner'],
+      };
+      break;
+
+    case 'Footer Copyright':
+      paramInUse.trackingInfo = 'Footer Copyright';
+      paramInUse.query = queryData.infoBlockById;
+      paramInUse.variables = {
+        ...paramInUse.variables,
+        sectionId: cmsContentIds.categories['Footer Copyright'],
       };
       break;
 
@@ -138,6 +149,15 @@ export const ContentfulFetcher: React.FC<ContentfulFetcherProps> = ({
       };
       break;
 
+    case 'List of Footer Links':
+      paramInUse.trackingInfo = 'List of Footer Links';
+      paramInUse.query = queryData.infoBlockByParentCollection;
+      paramInUse.variables = {
+        ...paramInUse.variables,
+        parentRefId: cmsContentIds.categories['Footer section'],
+      };
+      break;
+
     case 'List of Blog Posts':
       paramInUse.trackingInfo = 'List of Blog Posts';
       paramInUse.query = queryData.blogPostCollection;
@@ -159,8 +179,9 @@ export const ContentfulFetcher: React.FC<ContentfulFetcherProps> = ({
 
   // ...
   switch (dataFor) {
-    case 'Single Work':
     case 'Landing Page Banner':
+    case 'Footer Copyright':
+    case 'Single Work':
     case 'Single Blog Post':
       richDescription = data?.en?.description;
       break;
@@ -187,6 +208,7 @@ export const ContentfulFetcher: React.FC<ContentfulFetcherProps> = ({
     case 'List of Blog Posts':
     case 'List of Best Work':
     case 'List of About Info':
+    case 'List of Footer Links':
       // TODO: DELETE AFTER OPTIMIZATION
       // ---------------
       // if (paramInUse.trackingInfo==='List of Best Work') {
