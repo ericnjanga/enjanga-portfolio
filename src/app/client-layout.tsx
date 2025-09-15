@@ -6,23 +6,25 @@ import { Providers } from './providers';
 import { AppUtilityProvider } from '../utils/UtilityContext';
 
 /**
- * Client component wrapper that handles client-side logic globally (polyfill, context providers). This way, we'll keep layout.tsx fully server-oriented.
- * @param param0
- * @returns
+ * Client component wrapper that handles client-side logic globally (polyfill, context providers).
+ * This keeps layout.tsx server-only, while polyfills and contexts load on the client.
  */
-
 export default function ClientLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  /**
-   * Enabling scroll polyfill to support Safari and old browsers
-   * WHY? Because "scrollIntoView({ ... })" doesn't work in Safari
-   * Initializing it once when the app loads
-   */
   useEffect(() => {
+    // Smooth scroll polyfill (needed for Safari / old browsers)
     smoothscroll.polyfill();
+
+    // Only load inert polyfill if not supported natively
+    if (
+      typeof HTMLElement !== 'undefined' &&
+      !('inert' in HTMLElement.prototype)
+    ) {
+      import('wicg-inert').catch(() => {});
+    }
   }, []);
 
   return (
