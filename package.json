@@ -24,7 +24,7 @@
     "carbon-components": "^10.58.15",
     "carbon-components-react": "^8.67.0",
     "clsx": "^2.1.1",
-    "enjanga-next-3-components-lib": "^1.0.0",
+    "enjanga-next-3-components-lib": "^1.0.2",
     "eslint": "8.44.0",
     "eslint-config-next": "13.4.9",
     "next": "13.4.9",

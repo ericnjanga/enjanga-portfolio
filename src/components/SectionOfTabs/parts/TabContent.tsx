@@ -44,7 +44,6 @@ const SectionTabContent = ({ tab, className }: SectionTabContentProps) => (
                       ? (tab.icon as CP_nameType)
                       : ('App Developer' as CP_nameType)
                   }
-                  // modalRichDescription={tab.description}
                 />
               </Column>
             ));
