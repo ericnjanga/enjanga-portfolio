@@ -1,7 +1,8 @@
-import { Tabs, Tab, TabList, TabPanels, TabPanel } from '@carbon/react';
-import { User, Settings, Code, Dashboard } from '@carbon/icons-react';
+import { TabPanels, TabPanel } from '@carbon/react';
 import { InformationBlock } from '@/libs/CMS-content-types';
 import SectionTabContent from './TabContent';
+import { CustomTile } from 'enjanga-next-3-components-lib'; // ENJ NPM component library
+import { Grid, Column } from '@carbon/react';
 
 interface SectionTabPanelsProps {
   className?: string;
@@ -10,9 +11,7 @@ interface SectionTabPanelsProps {
 
 const SectionTabPanels = ({ listOfItems }: SectionTabPanelsProps) => {
   if (!listOfItems) {
-    return (
-      <div className="skeleton-animation">Skeleton - SectionTabPanels</div>
-    );
+    return <TabPanelsSkeleton />;
   }
 
   return (
@@ -30,5 +29,38 @@ const SectionTabPanels = ({ listOfItems }: SectionTabPanelsProps) => {
     </TabPanels>
   );
 };
+
+/**
+ * TODO: Move this skeleton somewhere else
+ * @returns
+ */
+const TabPanelsSkeleton = () => (
+  <Grid>
+    <Column lg={5} md={4} sm={4}>
+      <CustomTile
+        featuredText={{
+          heading: {},
+          smartText: {},
+        }}
+      />
+    </Column>
+    <Column lg={5} md={4} sm={4}>
+      <CustomTile
+        featuredText={{
+          heading: {},
+          smartText: {},
+        }}
+      />
+    </Column>
+    <Column lg={5} md={4} sm={4}>
+      <CustomTile
+        featuredText={{
+          heading: {},
+          smartText: {},
+        }}
+      />
+    </Column>
+  </Grid>
+);
 
 export default SectionTabPanels;

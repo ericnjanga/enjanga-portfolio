@@ -16,13 +16,13 @@
     "format:diff": "prettier --list-different \"**/*.{js,ts,md,scss}\""
   },
   "dependencies": {
-    "@carbon/react": "^1.90.0",
+    "@carbon/icons-react": "^11.67.0",
+    "@carbon/react": "^1.91.0",
     "@contentful/rich-text-types": "^17.1.0",
     "@tanstack/react-query": "^5.83.0",
     "@tanstack/react-query-devtools": "^5.83.0",
     "axios": "^1.11.0",
     "carbon-components": "^10.58.15",
-    "carbon-components-react": "^8.67.0",
     "clsx": "^2.1.1",
     "enjanga-next-3-components-lib": "^1.0.2",
     "eslint": "8.44.0",

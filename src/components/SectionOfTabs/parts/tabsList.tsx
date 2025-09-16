@@ -23,9 +23,9 @@ const iconMap: Record<string, React.ComponentType> = {
 };
 
 const SectionTabsList = ({ listOfItems, className }: SectionTabsListProps) => {
-  if (!listOfItems) {
-    return <div className="skeleton-animation">Skeleton - SectionTabsList</div>;
-  }
+  // if (!listOfItems) {
+  //   return <div className="skeleton-animation">Skeleton - SectionTabsList</div>;
+  // }
 
   return (
     <TabList aria-label="List of expertises" className={className}>

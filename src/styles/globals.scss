@@ -1,6 +1,9 @@
+// Carbon core styles
+@use 'carbon-components/scss/globals/scss/styles.scss' as carbon;
+
 @use '@carbon/styles/scss/themes' as *;
 @use '@carbon/styles/scss/theme' as *;
-@use '@carbon/react/scss/colors' as *;
+@use '@carbon/react/scss/colors' as colors;
 @use '@carbon/react';
 @use './enj-AppHeader';
 
@@ -24,5 +27,5 @@
 .skeleton-animation {
   margin: 3rem;
   padding: 3rem;
-  background-color: $purple-30;
+  background-color: colors.$purple-30;
 }

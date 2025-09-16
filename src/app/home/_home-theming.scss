@@ -1,6 +1,6 @@
-@use '@carbon/styles/scss/themes' as *;
-@use '@carbon/styles/scss/theme' as *;
-@use '@carbon/react/scss/colors' as *;
+@use '@carbon/styles/scss/themes' as themes;
+@use '@carbon/styles/scss/theme' as theme;
+// @use '@carbon/react/scss/colors' as colors;
 @use '@carbon/react/scss/spacing' as *;
 @use '@carbon/react/scss/breakpoint' as *;
 
@@ -14,7 +14,7 @@
 
 .section-expertises {
   #scope-of-expertise-heading {
-    color: $text-on-color;
+    color: theme.$text-on-color;
   }
 
   .expertise-section-tabs {
@@ -34,7 +34,7 @@
     }
 
     button.cds--tabs__nav-item:not(.cds--tabs__nav-item--selected) {
-      color: $text-on-color;
+      color: theme.$text-on-color;
 
       &:hover {
         color: #fd88ff !important;
