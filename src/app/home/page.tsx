@@ -3,7 +3,7 @@
 import { useEffect } from 'react';
 import { useSearchParams, usePathname } from 'next/navigation';
 import { Grid, Column } from '@carbon/react';
-import { Banner } from 'enjanga-next-3-components-lib'; // ENJ NPM component library
+import { Banner } from 'enjanga-components-library'; // ENJ NPM component library
 import SectionOfTabs from '../../components/SectionOfTabs/index';
 import ContentAbout from './ContentAbout';
 import ContentBestWork from './ContentBestWork';

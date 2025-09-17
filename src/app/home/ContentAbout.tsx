@@ -1,8 +1,8 @@
 import { Grid, Column } from '@carbon/react';
-import { CustomTile } from 'enjanga-next-3-components-lib'; // ENJ NPM component library
+import { CustomTile } from 'enjanga-components-library'; // ENJ NPM component library
 import '@/styles/_grid-of-customTiles.scss';
 import { ContentfulFetcher } from '@/libs/ContentfulFetcher';
-import { CP_nameType } from 'enjanga-next-3-components-lib';
+import { CP_nameType } from 'enjanga-components-library';
 
 const ContentAbout = () => (
   <Grid className="grid-of-customTiles grid-of-customTiles-1">

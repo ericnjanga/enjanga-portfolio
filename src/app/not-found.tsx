@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react';
 import Link from 'next/link';
-import { AppHeader, BrandLogo } from 'enjanga-next-3-components-lib'; // ENJ NPM component library
+import { AppHeader, BrandLogo } from 'enjanga-components-library'; // ENJ NPM component library
 import { GlobalActions, GlobalNav } from '../components/GlobalMenus';
 import { Content } from '@carbon/react';
 import { useRouter } from 'next/navigation';

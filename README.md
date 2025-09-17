@@ -2,7 +2,7 @@
 
 This is the portfolio of **Eric Njanga**, built using [Next.js](https://nextjs.org/) and styled with the [IBM Carbon Design System](https://carbondesignsystem.com/).
 
-It consumes a custom-built [React component library](https://github.com/ericnjanga/enjanga-next-3-components-lib) designed specifically for this project.
+It consumes a custom-built [React component library](https://github.com/ericnjanga/enjanga-components-library) designed specifically for this project.
 
 > 📦 The component library is live on [Chromatic](https://6856ac512f4faa67a7d9c5c2-rnaolxiygb.chromatic.com/) for real-time previews and documentation.
 
@@ -121,7 +121,7 @@ Accessibility and visual testing are validated in Storybook via the component li
 
 ## 📚 Component Library
 
-This project relies heavily on the [Eric Njanga Component Library](https://www.npmjs.com/package/enjanga-next-3-components-lib).  
+This project relies heavily on the [Eric Njanga Component Library](https://github.com/ericnjanga/enjanga-components-library).  
 Some examples of components in use:
 
 - [CustomTile](https://6856ac512f4faa67a7d9c5c2-rnaolxiygb.chromatic.com/?path=/docs/external-components-customtile--overview)

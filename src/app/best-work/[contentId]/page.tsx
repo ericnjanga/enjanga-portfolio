@@ -1,7 +1,7 @@
 'use client';
 
 import type { Metadata } from 'next';
-import { Banner, CMSRichText } from 'enjanga-next-3-components-lib'; // ENJ NPM component library
+import { Banner, CMSRichText } from 'enjanga-components-library'; // ENJ NPM component library
 import { Grid, Column } from '@carbon/react';
 import { ContentfulFetcher } from '@/libs/ContentfulFetcher';
 import { ArticlePageProps } from '@/libs/types';

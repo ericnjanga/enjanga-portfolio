@@ -1,5 +1,5 @@
 {
-  "name": "enjanga-next-3",
+  "name": "enjanga-portfolio",
   "version": "0.1.0",
   "private": true,
   "repository": "git@github.com:carbon-design-system/carbon-tutorial-nextjs.git",
@@ -23,8 +23,7 @@
     "@tanstack/react-query-devtools": "^5.83.0",
     "axios": "^1.11.0",
     "carbon-components": "^10.58.15",
-    "clsx": "^2.1.1",
-    "enjanga-next-3-components-lib": "^1.0.2",
+    "clsx": "^2.1.1",  
     "eslint": "8.44.0",
     "eslint-config-next": "13.4.9",
     "next": "13.4.9",

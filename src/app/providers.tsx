@@ -3,7 +3,7 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Content, Theme } from '@carbon/react';
 import { ReactNode } from 'react';
-import { AppHeader, BrandLogo } from 'enjanga-next-3-components-lib'; // ENJ NPM component library
+import { AppHeader, BrandLogo } from 'enjanga-components-library'; // ENJ NPM component library
 import { GlobalActions, GlobalNav } from '../components/GlobalMenus';
 import { SkipNavigationLink } from '@/components/SkipNavigationLink';
 import AppFooter from '../components/AppFooter/AppFooter';

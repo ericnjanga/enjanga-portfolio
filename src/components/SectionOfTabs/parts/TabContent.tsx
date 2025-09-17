@@ -1,8 +1,8 @@
-import { CustomTile } from 'enjanga-next-3-components-lib'; // ENJ NPM component library
+import { CustomTile } from 'enjanga-components-library'; // ENJ NPM component library
 import { Grid, Column } from '@carbon/react';
 import { ContentfulFetcher } from '@/libs/ContentfulFetcher';
 import { InformationBlock } from '@/libs/CMS-content-types';
-import { CP_nameType } from 'enjanga-next-3-components-lib';
+import { CP_nameType } from 'enjanga-components-library';
 
 interface SectionTabContentProps {
   tab: InformationBlock;

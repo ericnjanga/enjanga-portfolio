@@ -7,7 +7,7 @@ import {
   CMSRichText,
   BrandLogo,
   ContactButton,
-} from 'enjanga-next-3-components-lib';
+} from 'enjanga-components-library';
 import { ContentfulFetcher } from '@/libs/ContentfulFetcher';
 
 const AppFooter = () => {

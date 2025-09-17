@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import ClientLayout from './client-layout';
-import 'enjanga-next-3-components-lib/styles.css';
+import 'enjanga-components-library/styles.css';
 import './../styles/globals.scss';
 import { ReactNode } from 'react';
 
