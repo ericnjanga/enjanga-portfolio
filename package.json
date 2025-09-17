@@ -1,6 +1,6 @@
 {
   "name": "enjanga-portfolio",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "repository": "git@github.com:ericnjanga/enjanga-portfolio.git",
   "bugs": "https://github.com/ericnjanga/enjanga-portfolio/issues",
@@ -17,28 +17,16 @@
   },
   "dependencies": {
     "enjanga-core-setup": "^1.0.0",
-    "enjanga-components-library": "^1.0.0",
-    "eslint": "8.44.0",
-    "eslint-config-next": "13.4.9"
+    "enjanga-components-library": "^1.0.6"
   },
   "devDependencies": {
-    "@commitlint/cli": "7.5.2",
-    "@commitlint/config-conventional": "7.5.0",
     "@types/node": "^20.0.0",
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",
-    "@types/smoothscroll-polyfill": "^0.3.4",
-    "@zeit/next-css": "^1.0.1",
-    "husky": "1.3.1",
-    "lint-staged": "8.1.5",
-    "mini-css-extract-plugin": "^2.9.2",
-    "prettier": "^2.8.8",
-    "typescript": "^5.0.0"
-  },
-  "peerDependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "next": "^13.0.0 || ^14.0.0 || ^15.0.0"
+    "typescript": "^5.0.0",
+    "eslint": "8.44.0",
+    "eslint-config-next": "13.4.9",
+    "prettier": "^2.8.8"
   },
   "browserslist": [
     ">0.2%",
@@ -53,23 +41,12 @@
     }
   },
   "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
+    "extends": ["@commitlint/config-conventional"]
   },
   "lint-staged": {
-    "*.{js,ts,tsx}": [
-      "prettier --cache --write",
-      "git add"
-    ],
-    "*.{scss,css}": [
-      "prettier --cache --write",
-      "git add"
-    ],
-    "*.md": [
-      "prettier --cache --write",
-      "git add"
-    ]
+    "*.{js,ts,tsx}": ["prettier --cache --write", "git add"],
+    "*.{scss,css}": ["prettier --cache --write", "git add"],
+    "*.md": ["prettier --cache --write", "git add"]
   },
   "prettier": {
     "jsxBracketSameLine": true,
