@@ -16,17 +16,16 @@
     "format:diff": "prettier --list-different \"**/*.{js,ts,md,scss}\""
   },
   "dependencies": {
-    "enjanga-core-setup": "^1.0.0",
-    "enjanga-components-library": "^1.0.6"
+    "enjanga-core-setup": "^1.0.2"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",
-    "typescript": "^5.0.0",
     "eslint": "8.44.0",
     "eslint-config-next": "13.4.9",
-    "prettier": "^2.8.8"
+    "prettier": "^2.8.8",
+    "typescript": "^5.0.0"
   },
   "browserslist": [
     ">0.2%",
@@ -41,12 +40,23 @@
     }
   },
   "commitlint": {
-    "extends": ["@commitlint/config-conventional"]
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
   },
   "lint-staged": {
-    "*.{js,ts,tsx}": ["prettier --cache --write", "git add"],
-    "*.{scss,css}": ["prettier --cache --write", "git add"],
-    "*.md": ["prettier --cache --write", "git add"]
+    "*.{js,ts,tsx}": [
+      "prettier --cache --write",
+      "git add"
+    ],
+    "*.{scss,css}": [
+      "prettier --cache --write",
+      "git add"
+    ],
+    "*.md": [
+      "prettier --cache --write",
+      "git add"
+    ]
   },
   "prettier": {
     "jsxBracketSameLine": true,
