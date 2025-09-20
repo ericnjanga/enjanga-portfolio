@@ -1,11 +1,10 @@
 'use client'; // Add this if using client-side components
 
 import { useEffect } from 'react';
-import Link from 'next/link';
-import { AppHeader, BrandLogo } from 'enjanga-components-library'; // ENJ NPM component library
+import { Link, useRouter } from "enjanga-core-setup/next";
+import { AppHeader, BrandLogo } from 'enjanga-components-library';
 import { GlobalActions, GlobalNav } from '../components/GlobalMenus';
 import { Content } from '@carbon/react';
-import { useRouter } from 'next/navigation';
 
 export default function NotFound() {
   const router = useRouter();

@@ -16,7 +16,7 @@
     "format:diff": "prettier --list-different \"**/*.{js,ts,md,scss}\""
   },
   "dependencies": {
-    "enjanga-core-setup": "^1.0.2"
+    "enjanga-core-setup": "^1.0.14"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",

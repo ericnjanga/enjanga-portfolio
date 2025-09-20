@@ -1,4 +1,4 @@
-import { CustomTile } from 'enjanga-components-library'; // ENJ NPM component library
+import { CustomTile } from 'enjanga-components-library';
 import { Grid, Column } from '@carbon/react';
 import { ContentfulFetcher } from '@/libs/ContentfulFetcher';
 import { InformationBlock } from '@/libs/CMS-content-types';

@@ -1,9 +1,9 @@
 'use client';
 
 import { useEffect } from 'react';
-import { useSearchParams, usePathname } from 'next/navigation';
+import { useSearchParams, usePathname } from "enjanga-core-setup/next";
 import { Grid, Column } from '@carbon/react';
-import { Banner } from 'enjanga-components-library'; // ENJ NPM component library
+import { Banner } from 'enjanga-components-library';
 import SectionOfTabs from '../../components/SectionOfTabs/index';
 import ContentAbout from './ContentAbout';
 import ContentBestWork from './ContentBestWork';

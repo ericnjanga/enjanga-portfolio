@@ -1,10 +1,8 @@
 'use client';
 
-import { useEffect } from 'react';
 import { HeaderMenuItem } from '@carbon/react';
-import Link from 'next/link';
+import { Link, usePathname } from "enjanga-core-setup/next";
 import { useSectionNavigation } from '@utils/navigation';
-import { usePathname } from 'next/navigation';
 
 export const GlobalNav = () => {
   const pathname = usePathname();

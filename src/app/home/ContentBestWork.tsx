@@ -1,5 +1,5 @@
 import { Grid, Column } from '@carbon/react';
-import { CustomTile } from 'enjanga-components-library'; // ENJ NPM component library
+import { CustomTile } from 'enjanga-components-library';
 import { InformationBlock } from '@/libs/CMS-content-types';
 
 const ContentBestWork = ({

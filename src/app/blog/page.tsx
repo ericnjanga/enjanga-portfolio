@@ -1,11 +1,10 @@
 'use client';
 
-import Link from 'next/link';
 import {
   Banner,
   CustomTile,
   CTL_valid_linkTo,
-} from 'enjanga-components-library'; // ENJ NPM component library
+} from 'enjanga-components-library';
 import { Grid, Column } from '@carbon/react';
 import { ContentfulFetcher } from '@/libs/ContentfulFetcher';
 import './../../styles/_blogs-and-articles.scss';
