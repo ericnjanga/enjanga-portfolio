@@ -14,10 +14,34 @@ It consumes a custom-built [React component library](https://github.com/ericnjan
 - **TypeScript** – Strongly typed JavaScript for better maintainability
 - **IBM Carbon Design System** – Accessible, modular design framework
 - **Eric Njanga Component Library** – Reusable, styled UI components
+- **enjanga-core-setup** – Shared design tokens, utilities, and framework setup
 - **SASS (SCSS)** – Modular and customizable styling
 - **Contentful (CMS)** – Headless CMS for managing content
 - **i18n** – Multi-language support (English & French)
 - **Accessibility (a11y)** – Following WCAG 2.2 standards
+
+---
+
+## 📦 Dependencies
+
+This project relies on a layered architecture of packages:
+
+1. **[enjanga-core-setup](https://github.com/ericnjanga/enjanga-core-setup)**  
+   Provides a shared foundation for all projects, including:
+   - Carbon design tokens (spacing, typography, colors, motion, etc.)
+   - Core SCSS utilities and variables
+   - Shared Next.js and React configurations
+
+2. **[enjanga-components-library](https://github.com/ericnjanga/enjanga-components-library)**  
+   Built on top of `enjanga-core-setup`. Exposes reusable UI components styled with Carbon and custom global/component styles.
+
+3. **enjanga-portfolio (this project)**  
+   Consumes the component library for real-world usage in a production portfolio site.
+
+This dependency chain ensures:
+- No version mismatch across projects
+- Centralized design token management
+- Consistent styling and theming across applications
 
 ---
 
@@ -132,7 +156,7 @@ Some examples of components in use:
 
 ### What is being used
 
-- **Design tokens** – spacing, colors, typography
+- **Design tokens** – spacing, colors, typography (via `enjanga-core-setup`)
 - **Prebuilt components** – styled and accessible out-of-the-box
 - **Storybook** – documentation and visual previews
 
