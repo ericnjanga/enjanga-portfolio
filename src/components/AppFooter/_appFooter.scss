@@ -1,8 +1,4 @@
-// @use '@carbon/styles/scss/themes' as *;
-@use '@carbon/styles/scss/theme' as theme;
-@use '@carbon/react/scss/colors' as colors;
-@use '@carbon/react/scss/spacing' as *;
-@use '@carbon/react/scss/breakpoint' as *;
+@use 'enjanga-core-setup/styles' as core;
 
 /**
  * TO DO:
@@ -13,13 +9,13 @@
 
 .app-footer {
   // Variables ...
-  --enj-footer-padd: #{$spacing-09};
-  --enj-footer-marg: #{$spacing-05};
-  --enj-block-marg: #{$spacing-06};
+  --enj-footer-padd: #{core.$spacing-09};
+  --enj-footer-marg: #{core.$spacing-05};
+  --enj-block-marg: #{core.$spacing-06};
 
   // Declarations ...
   padding: var(--enj-footer-padd) 0;
-  background-color: colors.$cool-gray-90;
+  background-color: core.$cool-gray-90;
 
   &__col1 {
     margin-bottom: var(--enj-block-marg);
@@ -30,7 +26,7 @@
   }
 
   .enj-BrandLogo--text {
-    color: colors.$cool-gray-40;
+    color: core.$cool-gray-40;
   }
 
   .enj-CMSRichText {
@@ -38,10 +34,10 @@
     ul {
       margin-bottom: 0;
       li {
-        color: theme.$text-on-color;
+        color: core.$text-on-color;
 
         a {
-          color: theme.$text-on-color;
+          color: core.$text-on-color;
           text-decoration: none;
           &:hover {
             color: #00d5ff;
@@ -59,7 +55,7 @@
     }
 
     a {
-      color: colors.$purple-70;
+      color: core.$purple-70;
       &:hover {
         text-decoration: none;
       }
@@ -70,26 +66,26 @@
     margin-bottom: var(--enj-block-marg);
 
     .enj-CMSRichText {
-      color: colors.$cool-gray-30;
+      color: core.$cool-gray-30;
     }
   }
 
-  @include breakpoint('md') {
-    --enj-footer-padd: #{$spacing-10};
+  @include core.breakpoint('md') {
+    --enj-footer-padd: #{core.$spacing-10};
   }
 
-  @include breakpoint('lg') {
-    --enj-footer-padd: #{$spacing-11};
-    --enj-footer-marg: #{$spacing-07};
+  @include core.breakpoint('lg') {
+    --enj-footer-padd: #{core.$spacing-11};
+    --enj-footer-marg: #{core.$spacing-07};
     --enj-block-marg: 0;
   }
 
-  @include breakpoint('xlg') {
-    --enj-footer-padd: #{$spacing-12};
+  @include core.breakpoint('xlg') {
+    --enj-footer-padd: #{core.$spacing-12};
   }
 
   hr {
     margin: var(--enj-footer-marg) 0;
-    border-color: colors.$cool-gray-60;
+    border-color: core.$cool-gray-60;
   }
 }

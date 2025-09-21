@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import ClientLayout from './client-layout';
-import 'enjanga-components-library/styles.css';
-import './../styles/globals.scss';
+import 'enjanga-core-setup/carbon-css'; // Carbon global styles
+import 'enjanga-components-library/styles.css'; // Custom library styles
+import './../styles/_index.scss';
 import { ReactNode } from 'react';
 
 export const metadata: Metadata = {

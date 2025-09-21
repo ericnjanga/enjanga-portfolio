@@ -1,8 +1,4 @@
-@use '@carbon/styles/scss/themes' as themes;
-@use '@carbon/styles/scss/theme' as theme;
-// @use '@carbon/react/scss/colors' as colors;
-@use '@carbon/react/scss/spacing' as *;
-@use '@carbon/react/scss/breakpoint' as *;
+@use 'enjanga-core-setup/styles' as core;
 
 /**
  * TO DO:
@@ -14,7 +10,7 @@
 
 .section-expertises {
   #scope-of-expertise-heading {
-    color: theme.$text-on-color;
+    color: core.$text-on-color;
   }
 
   .expertise-section-tabs {
@@ -34,7 +30,7 @@
     }
 
     button.cds--tabs__nav-item:not(.cds--tabs__nav-item--selected) {
-      color: theme.$text-on-color;
+      color: core.$text-on-color;
 
       &:hover {
         color: #fd88ff !important;

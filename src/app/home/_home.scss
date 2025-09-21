@@ -1,8 +1,4 @@
-// @use '@carbon/styles/scss/themes' as themes;
-// @use '@carbon/styles/scss/theme' as theme;
-// @use '@carbon/react/scss/colors' as colors;
-@use '@carbon/react/scss/spacing' as *;
-@use '@carbon/react/scss/breakpoint' as *;
+@use 'enjanga-core-setup/styles' as core;
 @use './../../styles/utils/mixins';
 
 /**
@@ -37,11 +33,11 @@
   .sectionTitle {
     margin-bottom: var(--enj-home-section-title-mb);
 
-    @include breakpoint('md') {
+    @include core.breakpoint('md') {
       --enj-home-section-title-mb: 0.5rem;
     }
 
-    @include breakpoint('lg') {
+    @include core.breakpoint('lg') {
       --enj-home-section-title-mb: 0.75rem;
     }
   }
@@ -54,15 +50,15 @@
     justify-content: flex-end;
     min-height: var(--enj-home-aboutSec-height);
 
-    @include breakpoint('md') {
+    @include core.breakpoint('md') {
       --enj-home-aboutSec-height: 540px;
     }
 
-    @include breakpoint('lg') {
+    @include core.breakpoint('lg') {
       --enj-home-aboutSec-height: 620px;
     }
 
-    @include breakpoint('xlg') {
+    @include core.breakpoint('xlg') {
       --enj-home-aboutSec-height: 650px;
     }
 
@@ -70,15 +66,15 @@
       position: absolute;
       top: var(--enj-home-aboutSec-title-top);
 
-      @include breakpoint('md') {
+      @include core.breakpoint('md') {
         --enj-home-aboutSec-title-top: -2.5rem;
       }
 
-      @include breakpoint('lg') {
+      @include core.breakpoint('lg') {
         --enj-home-aboutSec-title-top: -3.2rem;
       }
 
-      // @include breakpoint('xlg') {
+      // @include core.breakpoint('xlg') {
       // }
     }
   }
@@ -93,15 +89,15 @@
     #scope-of-expertise-heading {
       top: var(--enj-home-exprt-head-top);
 
-      @include breakpoint('md') {
+      @include core.breakpoint('md') {
         --enj-home-exprt-head-top: -90px;
       }
 
-      @include breakpoint('lg') {
+      @include core.breakpoint('lg') {
         --enj-home-exprt-head-top: -110px;
       }
 
-      // @include breakpoint('xlg') {
+      // @include core.breakpoint('xlg') {
       // }
     }
 

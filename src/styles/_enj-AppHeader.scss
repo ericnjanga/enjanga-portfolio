@@ -1,6 +1,4 @@
-// @use '@carbon/styles/scss/themes' as *;
-// @use '@carbon/styles/scss/theme' as *;
-@use '@carbon/react/scss/colors' as colors;
+@use 'enjanga-core-setup/styles' as core;
 
 .enj-AppHeader {
   // Correcting menu item padding
@@ -13,7 +11,7 @@
   .cds--header__name,
   a.cds--header__menu-item {
     &:hover {
-      background-color: colors.$purple-30;
+      background-color: core.$purple-30;
     }
   }
 }

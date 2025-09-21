@@ -1,4 +1,4 @@
-@use '@carbon/react/scss/breakpoint' as *;
+@use 'enjanga-core-setup/styles' as core;
 @use './utils/mixins';
 
 :root {
@@ -23,7 +23,7 @@
 .grid-of-customTiles-1 {
   .tabs-group-content--single-col {
     .cds--css-grid-column {
-      @include breakpoint('md') {
+      @include core.breakpoint('md') {
         margin-left: calc(var(--enj-grid-content-gap) / 2);
       }
     }
@@ -31,7 +31,7 @@
 
   .tabs-group-content {
     .cds--css-grid-column {
-      @include breakpoint('md') {
+      @include core.breakpoint('md') {
         &:nth-of-type(2n + 1) {
           margin-right: calc(var(--enj-grid-content-gap) / 2);
         }
@@ -40,9 +40,9 @@
         }
       }
 
-      // @include breakpoint('lg') {
+      // @include core.breakpoint('lg') {
       // }
-      // @include breakpoint('xlg') {
+      // @include core.breakpoint('xlg') {
       // }
     }
   }
@@ -55,7 +55,7 @@
 .grid-of-customTiles-2 {
   .tabs-group-content {
     .cds--css-grid-column {
-      @include breakpoint('md') {
+      @include core.breakpoint('md') {
         &:nth-of-type(2n + 1) {
           margin-right: calc(var(--enj-grid-content-gap) / 2);
         }

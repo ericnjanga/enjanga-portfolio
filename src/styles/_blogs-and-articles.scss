@@ -1,11 +1,10 @@
-@use '@carbon/react/scss/spacing' as *;
-@use '@carbon/react/scss/breakpoint' as *;
+@use 'enjanga-core-setup/styles' as core;
 @use './../styles/utils/mixins';
 
 .articlePage,
 .blogPage {
   // Variables ...
-  --enj-articlePage-Banner-marg: #{$spacing-07};
+  --enj-articlePage-Banner-marg: #{core.$spacing-07};
   --enj-articlePage-grid-col-2n-1-marg: 0 0 2.2rem 0;
   --enj-articlePage-grid-col-2n-marg: 0 0 2.2rem 0;
 
@@ -17,17 +16,17 @@
     @include mixins.PSS-marginBottom-xxl;
   }
 
-  @include breakpoint('md') {
-    --enj-articlePage-Banner-marg: #{$spacing-08};
+  @include core.breakpoint('md') {
+    --enj-articlePage-Banner-marg: #{core.$spacing-08};
   }
 
-  @include breakpoint('lg') {
-    --enj-articlePage-Banner-marg: #{$spacing-10};
+  @include core.breakpoint('lg') {
+    --enj-articlePage-Banner-marg: #{core.$spacing-10};
     --enj-articlePage-grid-col-2n-1-marg: 0 2rem calc(2rem * 2.7) 0;
     --enj-articlePage-grid-col-2n-marg: 0 0 calc(2rem * 2.7) 2rem;
   }
 
-  @include breakpoint('xlg') {
+  @include core.breakpoint('xlg') {
     --enj-articlePage-grid-col-2n-1-marg: 0 2.5rem calc(2.5rem * 2.7) 0;
     --enj-articlePage-grid-col-2n-marg: 0 0 calc(2.5rem * 2.7) 2.5rem;
   }
