@@ -16,11 +16,12 @@
     "format:diff": "prettier --list-different \"**/*.{js,ts,md,scss}\""
   },
   "dependencies": {
-    "enjanga-components-library": "^1.0.14",
-    "enjanga-core-setup": "^1.0.14",
+    "enjanga-components-library": "^1.0.19",
+    "enjanga-core-setup": "^1.0.19",
     "next": "^15.5.3",
     "react": "^19.1.1",
-    "react-dom": "^19.1.1"
+    "react-dom": "^19.1.1",
+    "react-is": "^19.0.0"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",
