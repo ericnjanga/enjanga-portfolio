@@ -688,29 +688,29 @@
   dependencies:
     tslib "^2.8.0"
 
-"@tanstack/query-core@5.89.0":
-  version "5.89.0"
-  resolved "https://registry.yarnpkg.com/@tanstack/query-core/-/query-core-5.89.0.tgz#67862fa9aa036942b1906bc51385115a2bbec45a"
-  integrity sha512-joFV1MuPhSLsKfTzwjmPDrp8ENfZ9N23ymFu07nLfn3JCkSHy0CFgsyhHTJOmWaumC/WiNIKM0EJyduCF/Ih/Q==
+"@tanstack/query-core@5.90.1":
+  version "5.90.1"
+  resolved "https://registry.yarnpkg.com/@tanstack/query-core/-/query-core-5.90.1.tgz#53c2e1a59ca2607d2ae0c6403cd13de04c1f161a"
+  integrity sha512-hmi8i+mWP3QnD8yq3+6LWri9IEZAlFbpbM/UVB+TJtp5RIxUfzuARqyW39b+HCfBKKnFKSHWMXNB5YN8lo/E/Q==
 
-"@tanstack/query-devtools@5.87.3":
-  version "5.87.3"
-  resolved "https://registry.yarnpkg.com/@tanstack/query-devtools/-/query-devtools-5.87.3.tgz#0cfff30823f837d6b9ead08f8d1b16459203fdb2"
-  integrity sha512-LkzxzSr2HS1ALHTgDmJH5eGAVsSQiuwz//VhFW5OqNk0OQ+Fsqba0Tsf+NzWRtXYvpgUqwQr4b2zdFZwxHcGvg==
+"@tanstack/query-devtools@5.90.1":
+  version "5.90.1"
+  resolved "https://registry.yarnpkg.com/@tanstack/query-devtools/-/query-devtools-5.90.1.tgz#c57a739a5293f4960a4a6b6fb4b7e4a56e6bd932"
+  integrity sha512-GtINOPjPUH0OegJExZ70UahT9ykmAhmtNVcmtdnOZbxLwT7R5OmRztR5Ahe3/Cu7LArEmR6/588tAycuaWb1xQ==
 
 "@tanstack/react-query-devtools@^5.83.0":
-  version "5.89.0"
-  resolved "https://registry.yarnpkg.com/@tanstack/react-query-devtools/-/react-query-devtools-5.89.0.tgz#ca9cc274cbec7c1479ab67335282a06b4566d164"
-  integrity sha512-Syc4UjZeIJCkXCRGyQcWwlnv89JNb98MMg/DAkFCV3rwOcknj98+nG3Nm6xLXM6ne9sK6RZeDJMPLKZUh6NUGA==
+  version "5.90.1"
+  resolved "https://registry.yarnpkg.com/@tanstack/react-query-devtools/-/react-query-devtools-5.90.1.tgz#a6f6e717bd534298528d0c85aa569a1866b4936a"
+  integrity sha512-otOjczcUft13RZlWi8JHIWei1MLuRf0AK+hyEEAm0/IqKUbs/0ZXj0wlc+P1XdE0nYcOMuHK69496FvP/9g3LQ==
   dependencies:
-    "@tanstack/query-devtools" "5.87.3"
+    "@tanstack/query-devtools" "5.90.1"
 
 "@tanstack/react-query@^5.83.0":
-  version "5.89.0"
-  resolved "https://registry.yarnpkg.com/@tanstack/react-query/-/react-query-5.89.0.tgz#ae295ced60d1aee555337a572ad4045e2af3d00a"
-  integrity sha512-SXbtWSTSRXyBOe80mszPxpEbaN4XPRUp/i0EfQK1uyj3KCk/c8FuPJNIRwzOVe/OU3rzxrYtiNabsAmk1l714A==
+  version "5.90.1"
+  resolved "https://registry.yarnpkg.com/@tanstack/react-query/-/react-query-5.90.1.tgz#46f90bafd0b98fa5e2f3212722c2e8dc171ee93d"
+  integrity sha512-tN7Fx2HuV2SBhl+STgL8enbfSInRoNU1B1+5LIU62klcMElE4lFzol4aReuRSUeD6ntzPayK0KrM6w9+ZlHEkw==
   dependencies:
-    "@tanstack/query-core" "5.89.0"
+    "@tanstack/query-core" "5.90.1"
 
 "@tybys/wasm-util@^0.10.0":
   version "0.10.1"
@@ -1361,17 +1361,20 @@ emoji-regex@^9.2.2:
   resolved "https://registry.yarnpkg.com/emoji-regex/-/emoji-regex-9.2.2.tgz#840c8803b0d8047f4ff0cf963176b32d4ef3ed72"
   integrity sha512-L18DaJsXSUk2+42pv8mLs5jJT2hqFkFE4j21wOmgbUqsZ2hL72NsUU785g9RXgo3s0ZNgVl42TiHp3ZtOv/Vyg==
 
-enjanga-components-library@^1.0.12, enjanga-components-library@^1.0.19:
-  version "1.0.19"
-  resolved "https://registry.yarnpkg.com/enjanga-components-library/-/enjanga-components-library-1.0.19.tgz#b7fad377264bc50dc0a2512c5d8f6b1c9fc49b75"
-  integrity sha512-3pUWpCcw/UMyW8y4FIHuwvAjlHzTE67of0I36/1x7Ky/nqJEDq7Xw86RFxSRCpV12/p2RxSwzpjYmss+ZE/gig==
-  dependencies:
-    enjanga-core-setup "^1.0.19"
+enjanga-components-library@^1.0.12:
+  version "1.0.21"
+  resolved "https://registry.yarnpkg.com/enjanga-components-library/-/enjanga-components-library-1.0.21.tgz#848870a018388603a2a92da85af932b538987114"
+  integrity sha512-UH9ndrgjKHNJvdSTBtRXPpbXo64LISTONHQkT8engxEzhY0RJ1YjLGlYYs3S8LKRjHZgXdQZahe2Gm6pV9Wmpg==
 
-enjanga-core-setup@^1.0.19:
-  version "1.0.19"
-  resolved "https://registry.yarnpkg.com/enjanga-core-setup/-/enjanga-core-setup-1.0.19.tgz#f1a2c6cedef2d52d421ee8199c065640c4a1d821"
-  integrity sha512-mquFkwMgp8oYssfhO27kQoD330d3YV6bahrw4kQaMj0vqE+NLX7RTu9qb4RsH3Tah0dR2uMzzz7aM43BiAKTGA==
+enjanga-components-library@^1.0.22:
+  version "1.0.22"
+  resolved "https://registry.yarnpkg.com/enjanga-components-library/-/enjanga-components-library-1.0.22.tgz#e8fa95fdb9807bee17865d482bf4385fdcacd5fb"
+  integrity sha512-3qbSN/X1rsrWhsglNqhqmwF1ht7+8LNb7SOUL0rY9o7I/iDpZo2vGvJNpBZ/Sdl1jHd7Q/ZOZgvNpBHMhA6Exw==
+
+enjanga-core-setup@^1.0.20:
+  version "1.0.20"
+  resolved "https://registry.yarnpkg.com/enjanga-core-setup/-/enjanga-core-setup-1.0.20.tgz#435963a92c236703619c342b19a79e25abdae435"
+  integrity sha512-VS8J+uD/U4Nv/3I0l9OPnmG1naXWnYckJbxUH77u9H2zkYM2cDaQvaTDIWL+UXqT4OC4xf+EnzgyeMaMQbdKIw==
   dependencies:
     "@carbon/icons-react" "^11.67.0"
     "@carbon/pictograms-react" "^11.67.0"

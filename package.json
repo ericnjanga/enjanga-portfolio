@@ -11,13 +11,14 @@
     "start": "next start",
     "lint": "next lint && tsc --noEmit",
     "ci-check": "yarn format:diff",
-    "clean": "yarn cache clean && yarn install",
+    "clean": "rm -rf node_modules dist && yarn cache clean && yarn install",
+    "clean:hard": "rm -rf node_modules dist yarn.lock && yarn cache clean && yarn install",
     "format": "prettier --write \"**/*.{js,ts,md,scss}\"",
     "format:diff": "prettier --list-different \"**/*.{js,ts,md,scss}\""
   },
   "dependencies": {
-    "enjanga-components-library": "^1.0.19",
-    "enjanga-core-setup": "^1.0.19",
+    "enjanga-components-library": "^1.0.22",
+    "enjanga-core-setup": "^1.0.20",
     "next": "^15.5.3",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
