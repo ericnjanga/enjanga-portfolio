@@ -7,7 +7,7 @@ import { ReactNode } from 'react';
 
 export const metadata: Metadata = {
   title:
-    'Eric Njanga | Solution Engineer | Showcasing Business Impact Through Technical Storytelling',
+    'Bilingual Software Engineer | Front-End & Design Technology Specialist | Building UX-Focused Engineering Solutions | Turning Ideas into Business-Ready Solutions',
   description:
     'Solution Engineer with 10+ years of experience creating high-performance web applications, showcasing business impact through technical storytelling.',
 };
