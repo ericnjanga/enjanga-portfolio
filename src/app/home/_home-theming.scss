@@ -17,30 +17,45 @@
     // Increase all button's font size (for better readability)
     button {
       font-size: 1.1rem;
+      padding: 1rem 1.5rem;
     }
 
-    button.cds--tabs__nav-item--selected {
-      color: #00d5ff;
-      -webkit-border-after: 2px solid var(--cds-border-interactive, #00d5ff);
-      border-block-end: 2px solid var(--cds-border-interactive, #00d5ff);
-
+    // Active tab (selected)
+    button.cds--tabs__nav-item.cds--tabs__nav-item--selected {
+      background-color: #3E3E3E;
+      border-top: 2px solid #0F62FE; // TODO: Convert to enjanga-core-setup color token
+      color: #ffffff; // Ensure text is visible on dark background
+      
       .cds--tabs__nav-item--icon svg {
-        color: #00d5ff;
+        color: #ffffff; // Match icon color to text
       }
     }
 
+    // Inactive tabs (not selected)
     button.cds--tabs__nav-item:not(.cds--tabs__nav-item--selected) {
-      color: core.$text-on-color;
-
+      background-color: #21272A;
+      border-top: 2px solid #3E3E3E;
+      color: #ffffff; // Ensure text is visible on dark background
+      
+      .cds--tabs__nav-item--icon svg {
+        color: #ffffff; // Match icon color to text
+      }
+      
+      // Hover state for inactive tabs
       &:hover {
-        color: #fd88ff !important;
-        -webkit-border-after: 2px solid var(--cds-border-interactive, #fd88ff) !important;
-        border-block-end: 2px solid var(--cds-border-interactive, #fd88ff) !important;
-
+        background-color: #3E3E3E;
+        border-top-color: #3E3E3E; // Updated to #3E3E3E
+        color: #fff!important; // Explicitly set to #fff as requested
+        
         .cds--tabs__nav-item--icon svg {
-          color: #fd88ff;
+          color: #fff; // Match icon color to hover text
         }
       }
+    }
+
+    // Remove default Carbon bottom border
+    .cds--tabs__nav-item {
+      border-bottom: none !important;
     }
   }
 }

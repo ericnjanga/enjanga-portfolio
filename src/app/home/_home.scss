@@ -11,7 +11,7 @@
 .homePage {
   // Variables ...
   --enj-home-exprt-head-top: -80px;
-  --enj-home-exprt-tabs-top: -41px;
+  --enj-home-exprt-tabs-top: -57px;
 
   --enj-home-aboutSec-height: 730px;
   --enj-home-aboutSec-title-top: -2rem;
@@ -94,7 +94,7 @@
       }
 
       @include core.breakpoint('lg') {
-        --enj-home-exprt-head-top: -110px;
+        --enj-home-exprt-head-top: -135px;
       }
 
       // @include core.breakpoint('xlg') {

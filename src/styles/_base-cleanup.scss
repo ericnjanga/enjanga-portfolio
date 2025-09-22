@@ -22,3 +22,15 @@
   padding: 3rem;
   background-color: core.$purple-30;
 }
+
+
+
+/**
+ * Prevent the fixed top nav from obstructing the main content.
+ * (For that, we push the main content down t a height equal to the top nav
+ * TODO: We need to check responsiveness
+*/
+#main-content {
+  --enjanga-top-nav-height: 3rem;
+  margin-top: var(--enjanga-top-nav-height);
+}
