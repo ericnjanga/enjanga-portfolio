@@ -11,8 +11,8 @@
     "start": "next start",
     "lint": "next lint && tsc --noEmit",
     "ci-check": "yarn format:diff",
-    "clean": "rm -rf node_modules dist && yarn cache clean && yarn install",
-    "clean:hard": "rm -rf node_modules dist yarn.lock && yarn cache clean && yarn install",
+    "clean": "rimraf node_modules .next dist && yarn install",
+    "clean:hard": "rimraf node_modules .next dist yarn.lock && yarn cache clean && yarn install",
     "format": "prettier --write \"**/*.{js,ts,md,scss}\"",
     "format:diff": "prettier --list-different \"**/*.{js,ts,md,scss}\""
   },
