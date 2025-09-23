@@ -3,7 +3,7 @@
 import { useEffect } from 'react';
 import { useSearchParams, usePathname } from "enjanga-core-setup/next";
 import { Grid, Column } from '@carbon/react';
-import { Banner } from 'enjanga-components-library';
+import { Banner, CustomQuotes, CQ_quote_propsType } from 'enjanga-components-library';
 import SectionOfTabs from '../../components/SectionOfTabs/index';
 import ContentAbout from './ContentAbout';
 import ContentBestWork from './ContentBestWork';
@@ -12,6 +12,7 @@ import './../home/_home-theming.scss';
 import { ContentfulFetcher } from '@/libs/ContentfulFetcher';
 import { BackgroundSection } from '@/components/BackgroundSection';
 import { cmsContentIds } from '@/libs/CMS-references';
+import { InformationBlock } from '@/libs/CMS-content-types'; 
 
 export default function LandingPage() {
   const searchParams = useSearchParams();
@@ -81,7 +82,7 @@ export default function LandingPage() {
               <SectionOfTabs
                 title="Scope of Expertise"
                 className="expertise-section-tabs"
-                listOfItems={orderedItems}
+                listOfItems={orderedItems as InformationBlock[]}
               />
             </section>
           );
@@ -114,6 +115,38 @@ export default function LandingPage() {
         </>
       </BackgroundSection>
 
+
+
+      <Grid>
+        <Column lg={16} md={8} sm={4}>
+          <section
+            className="pageSection smt-box"
+            id="engineer-quotes"
+            aria-labelledby="best-work-heading"
+            tabIndex={-1} // Make focusable by default
+          >
+            <h2 id="engineer-quotes-heading" style={{ display: 'none'}}>
+              Quotes
+            </h2>
+
+
+            <ContentfulFetcher dataFor="List of quotes">
+              {({ orderedItems }) => (
+                <CustomQuotes
+                  className="engineer-quotes-component"
+                  quotes={orderedItems as CQ_quote_propsType[]}
+                />
+              )}
+            </ContentfulFetcher>
+          </section>
+        </Column>
+      </Grid>
+
+
+
+
+
+
       <Grid>
         {' '}
         {/*  fullWidth */}
@@ -130,7 +163,7 @@ export default function LandingPage() {
 
             <ContentfulFetcher dataFor="List of Best Work">
               {({ orderedItems }) => (
-                <ContentBestWork listOfItems={orderedItems} />
+                <ContentBestWork listOfItems={orderedItems as InformationBlock[]} />
               )}
             </ContentfulFetcher>
           </section>

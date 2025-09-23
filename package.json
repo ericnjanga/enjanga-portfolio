@@ -17,7 +17,7 @@
     "format:diff": "prettier --list-different \"**/*.{js,ts,md,scss}\""
   },
   "dependencies": {
-    "enjanga-components-library": "^1.0.22",
+    "enjanga-components-library": "^1.0.25",
     "enjanga-core-setup": "^1.0.20",
     "next": "^15.5.3",
     "react": "^19.1.1",
@@ -31,6 +31,7 @@
     "eslint": "8.44.0",
     "eslint-config-next": "13.4.9",
     "prettier": "^2.8.8",
+    "rimraf": "^6.0.1",
     "typescript": "^5.0.0"
   },
   "browserslist": [

@@ -10,6 +10,7 @@ import { queryData } from './CMS-content-queries';
 import { cmsContentIds } from './CMS-references';
 import type { Node } from '@contentful/rich-text-types';
 import { InformationBlock } from './CMS-content-types';
+import { CQ_quote_propsType } from 'enjanga-components-library';
 import { sortByOrderProp } from '@utils/helpers';
 
 interface ContentContextValue {
@@ -24,7 +25,7 @@ interface ContentContextValue {
   plainDescription?: string;
   richDescription?: { json: { content: Node[] } };
   items?: InformationBlock[]; // Unordered list of items
-  orderedItems?: InformationBlock[]; // Ordered list of items
+  orderedItems?: InformationBlock[] | CQ_quote_propsType[]; // Ordered list of items
 }
 
 // Creating CMS data's wrapping context
@@ -40,8 +41,9 @@ interface ContentfulFetcherProps {
     | 'Footer Copyright'
     | 'Single Work'
     | 'Single Blog Post'
-    | 'InfoBlock by parentId'
+    | 'InfoBlock by parentId' 
     | 'List of Best Work'
+    | 'List of quotes'
     | 'List of Scope of expertise'
     | 'List of Blog Posts'
     | 'List of About Info'
@@ -141,6 +143,14 @@ export const ContentfulFetcher: React.FC<ContentfulFetcherProps> = ({
       };
       break;
 
+    case 'List of quotes':
+      paramInUse.trackingInfo = 'List of quotes';
+      paramInUse.query = queryData.quotesCollection;
+      paramInUse.variables = {
+        ...paramInUse.variables,
+      };
+      break;
+
     case 'List of Scope of expertise':
       paramInUse.trackingInfo = 'List of Scope of expertise';
       paramInUse.query = queryData.infoBlockByParentCollection;
@@ -218,15 +228,17 @@ export const ContentfulFetcher: React.FC<ContentfulFetcherProps> = ({
     case 'InfoBlock by parentId':
     case 'List of Blog Posts':
     case 'List of Best Work':
+    case 'List of quotes':
     case 'List of About Info':
     case 'List of Footer Links':
-      // TODO: DELETE AFTER OPTIMIZATION
-      // ---------------
-      // if (paramInUse.trackingInfo==='List of Best Work') {
+      // // TODO: DELETE AFTER OPTIMIZATION
+      // // ---------------
+      // if (paramInUse.trackingInfo==='List of quotes') {
+      //   console.log('>>>[1111]>>>> data = ', data);
       //   console.log('>>>[****]>>>> data?.en?.items = ', data?.en?.items);
       // }
       orderedItems = sortByOrderProp(items);
-      break;
+      break; 
   }
 
   // // Display a placeholder is there is no modal context or the data fetching is not yet completed

@@ -186,6 +186,30 @@ export const queryData = {
       }
     }
   `,
+  quotesCollection: `
+    query getQuoteCollectionQuery($locale1: String!, $locale2: String!) {
+      en: quoteCollection(locale: $locale1) { 
+        items { 
+          sys {
+            id
+          }  
+          description {
+            json
+          } 
+        } 
+      }
+      fr: quoteCollection(locale: $locale2) { 
+        items { 
+          sys {
+            id
+          } 
+          description {
+            json
+          } 
+        } 
+      }
+    }
+  `,
   infoBlockByParentCollection: `
     query infoBlocksByParentQuery(
       $parentRefId: String!,
