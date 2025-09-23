@@ -5,6 +5,20 @@ import { Grid, Column } from '@carbon/react';
 import { ContentfulFetcher } from '@/libs/ContentfulFetcher';
 import { ArticlePageProps } from '@/libs/types';
 import './../../../styles/_blogs-and-articles.scss';
+import { generateParamsForContent } from '@/libs/generateStaticParams';
+
+/*
+ * This function tells Next.js which dynamic routes to pre-render at build time
+ * when running in static export mode (output: "export").
+ * It calls our shared utility (generateParamsForContent) to fetch all blog posts
+ * from Contentful, then returns their IDs as route params.
+ * Example: if Contentful has posts with sys.id = "abc" and "xyz",
+ * Next.js will generate /blog/abc and /blog/xyz as static pages.
+*/
+export async function generateStaticParams() {
+  return generateParamsForContent('List of Blog Posts');
+}
+
 
 const BlogArticlePage = ({ params }: ArticlePageProps) => (
   <div className="articlePage">

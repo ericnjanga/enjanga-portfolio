@@ -6,14 +6,20 @@ import { Grid, Column } from '@carbon/react';
 import { ContentfulFetcher } from '@/libs/ContentfulFetcher';
 import { ArticlePageProps } from '@/libs/types';
 import './../../../styles/_blogs-and-articles.scss';
-// import styles from '@/styles/articlePage.module.scss';
-// import clsx from 'clsx';
+import { generateParamsForContent } from '@/libs/generateStaticParams';
 
-// TODO: Update metadata for every dynamica page change (metadata cannot be updated on 'use client' pages)
-// export const metadata: Metadata = {
-//   title: '??????Eric Njanga',
-//   description: '??????Software engineer & Design technologist',
-// };
+/*
+ * This function tells Next.js which dynamic routes to pre-render at build time
+ * when running in static export mode (output: "export").
+ * It uses our shared utility (generateParamsForContent) to fetch all "Best Work"
+ * entries from Contentful, then returns their IDs as route params.
+ * Example: if Contentful has works with sys.id = "alpha" and "beta",
+ * Next.js will generate /best-work/alpha and /best-work/beta as static pages.
+*/
+export async function generateStaticParams() {
+  return generateParamsForContent('List of Best Work');
+}
+
 
 const ProjectPage = ({ params }: ArticlePageProps) => (
   <div className="articlePage">
