@@ -1,0 +1,506 @@
+{
+  "data": {
+    "en": {
+      "sys": {
+        "id": "19oHD8PCWxtpsAQ0vrZm80"
+      },
+      "title": "From Carbon to Storybook: My Workflow for Testing Accessibility in React Apps",
+      "blurb": "Discover my workflow for testing React app accessibility using Carbon, Lighthouse, WAVE, and Storybook to build inclusive experiences.",
+      "description": {
+        "json": {
+          "data": {},
+          "content": [
+            {
+              "data": {},
+              "content": [
+                {
+                  "data": {},
+                  "marks": [],
+                  "value": "The Carbon Design System ",
+                  "nodeType": "text"
+                },
+                {
+                  "data": {
+                    "uri": "https://carbondesignsystem.com/guidelines/accessibility/overview/"
+                  },
+                  "content": [
+                    {
+                      "data": {},
+                      "marks": [],
+                      "value": "bakes in WCAG 2.2 AA standards,",
+                      "nodeType": "text"
+                    }
+                  ],
+                  "nodeType": "hyperlink"
+                },
+                {
+                  "data": {},
+                  "marks": [],
+                  "value": " so most of the heavy lifting is already done. That means instead of chasing every accessibility guideline, I could focus on fixing the smaller, trickier issues in my app.",
+                  "nodeType": "text"
+                }
+              ],
+              "nodeType": "paragraph"
+            },
+            {
+              "data": {},
+              "content": [],
+              "nodeType": "hr"
+            },
+            {
+              "data": {},
+              "content": [
+                {
+                  "data": {},
+                  "marks": [],
+                  "value": "Accessibility tools making the job easier",
+                  "nodeType": "text"
+                }
+              ],
+              "nodeType": "heading-2"
+            },
+            {
+              "data": {},
+              "content": [
+                {
+                  "data": {},
+                  "marks": [],
+                  "value": "Chrome's Lighthouse on large screens",
+                  "nodeType": "text"
+                }
+              ],
+              "nodeType": "heading-3"
+            },
+            {
+              "data": {},
+              "content": [
+                {
+                  "data": {},
+                  "marks": [],
+                  "value": "Lighthouse is my go-to for quick accessibility checks. It runs right in Chrome DevTools and flags issues with clear guidance. For example, it caught a skip link that wasn’t focusable because I hadn’t connected it to the page’s main content.",
+                  "nodeType": "text"
+                }
+              ],
+              "nodeType": "paragraph"
+            },
+            {
+              "data": {
+                "target": {
+                  "sys": {
+                    "id": "7bj07xgEpukSUXTwgoW3ya",
+                    "type": "Link",
+                    "linkType": "Asset"
+                  }
+                }
+              },
+              "content": [],
+              "nodeType": "embedded-asset-block"
+            },
+            {
+              "data": {},
+              "content": [
+                {
+                  "data": {},
+                  "marks": [],
+                  "value": "",
+                  "nodeType": "text"
+                }
+              ],
+              "nodeType": "paragraph"
+            },
+            {
+              "data": {},
+              "content": [
+                {
+                  "data": {},
+                  "marks": [],
+                  "value": "It also flagged a problem with headings in my blog cards — they weren’t ordered sequentially. That’s a developer slip-up, and exactly the kind of issue Lighthouse makes easy to spot.",
+                  "nodeType": "text"
+                }
+              ],
+              "nodeType": "paragraph"
+            },
+            {
+              "data": {
+                "target": {
+                  "sys": {
+                    "id": "3ezdFZMoSulTiwuIM4Im9t",
+                    "type": "Link",
+                    "linkType": "Asset"
+                  }
+                }
+              },
+              "content": [],
+              "nodeType": "embedded-asset-block"
+            },
+            {
+              "data": {},
+              "content": [],
+              "nodeType": "hr"
+            },
+            {
+              "data": {},
+              "content": [
+                {
+                  "data": {},
+                  "marks": [],
+                  "value": "Chrome's Lighthouse on smaller screens",
+                  "nodeType": "text"
+                }
+              ],
+              "nodeType": "heading-3"
+            },
+            {
+              "data": {},
+              "content": [
+                {
+                  "data": {},
+                  "marks": [],
+                  "value": "Testing on mobile gave me different insights. Lighthouse showed that my sidebar navigation had nested ",
+                  "nodeType": "text"
+                },
+                {
+                  "data": {},
+                  "marks": [
+                    {
+                      "type": "code"
+                    }
+                  ],
+                  "value": "<ul>",
+                  "nodeType": "text"
+                },
+                {
+                  "data": {},
+                  "marks": [],
+                  "value": " elements without proper ",
+                  "nodeType": "text"
+                },
+                {
+                  "data": {},
+                  "marks": [
+                    {
+                      "type": "code"
+                    }
+                  ],
+                  "value": "<li>",
+                  "nodeType": "text"
+                },
+                {
+                  "data": {},
+                  "marks": [],
+                  "value": " wrappers. Not something I would’ve noticed right away, but a real accessibility concern.",
+                  "nodeType": "text"
+                }
+              ],
+              "nodeType": "paragraph"
+            },
+            {
+              "data": {
+                "target": {
+                  "sys": {
+                    "id": "4SqK1L7iKrbc08SvzGPmsg",
+                    "type": "Link",
+                    "linkType": "Asset"
+                  }
+                }
+              },
+              "content": [],
+              "nodeType": "embedded-asset-block"
+            },
+            {
+              "data": {},
+              "content": [],
+              "nodeType": "hr"
+            },
+            {
+              "data": {},
+              "content": [
+                {
+                  "data": {},
+                  "marks": [],
+                  "value": "Additional testing with Chrome's WAVE",
+                  "nodeType": "text"
+                }
+              ],
+              "nodeType": "heading-3"
+            },
+            {
+              "data": {},
+              "content": [
+                {
+                  "data": {},
+                  "marks": [],
+                  "value": "While Lighthouse is great for big-picture checks, WAVE adds another layer by visually marking accessibility issues right on the page. It makes it super easy to catch ARIA roles, contrast errors, and structural hiccups I might otherwise miss.",
+                  "nodeType": "text"
+                }
+              ],
+              "nodeType": "paragraph"
+            },
+            {
+              "data": {
+                "target": {
+                  "sys": {
+                    "id": "3UReSUXSoP7hRpLFp2QSUJ",
+                    "type": "Link",
+                    "linkType": "Asset"
+                  }
+                }
+              },
+              "content": [],
+              "nodeType": "embedded-asset-block"
+            },
+            {
+              "data": {},
+              "content": [],
+              "nodeType": "hr"
+            },
+            {
+              "data": {},
+              "content": [
+                {
+                  "data": {},
+                  "marks": [],
+                  "value": "Testing components in isolation with storybook",
+                  "nodeType": "text"
+                }
+              ],
+              "nodeType": "heading-2"
+            },
+            {
+              "data": {},
+              "content": [
+                {
+                  "data": {},
+                  "marks": [],
+                  "value": "I also ran tests directly inside Storybook using the a11y addon. This was a game-changer: I could check each component in isolation before plugging it into the app. It saved me from spreading accessibility mistakes across multiple pages.",
+                  "nodeType": "text"
+                }
+              ],
+              "nodeType": "paragraph"
+            },
+            {
+              "data": {
+                "target": {
+                  "sys": {
+                    "id": "jBYz4brqqBjYzcDol6xdk",
+                    "type": "Link",
+                    "linkType": "Asset"
+                  }
+                }
+              },
+              "content": [],
+              "nodeType": "embedded-asset-block"
+            },
+            {
+              "data": {},
+              "content": [],
+              "nodeType": "hr"
+            },
+            {
+              "data": {},
+              "content": [
+                {
+                  "data": {},
+                  "marks": [],
+                  "value": "✨ Takeaway",
+                  "nodeType": "text"
+                }
+              ],
+              "nodeType": "heading-2"
+            },
+            {
+              "data": {},
+              "content": [
+                {
+                  "data": {},
+                  "marks": [],
+                  "value": "When assessing your React app’s accessibility:",
+                  "nodeType": "text"
+                }
+              ],
+              "nodeType": "paragraph"
+            },
+            {
+              "data": {},
+              "content": [
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "content": [
+                        {
+                          "data": {},
+                          "marks": [],
+                          "value": "Start with a strong foundation (Carbon helps a lot).",
+                          "nodeType": "text"
+                        }
+                      ],
+                      "nodeType": "paragraph"
+                    }
+                  ],
+                  "nodeType": "list-item"
+                },
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "content": [
+                        {
+                          "data": {},
+                          "marks": [],
+                          "value": "Run Lighthouse scans on desktop and mobile.",
+                          "nodeType": "text"
+                        }
+                      ],
+                      "nodeType": "paragraph"
+                    }
+                  ],
+                  "nodeType": "list-item"
+                },
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "content": [
+                        {
+                          "data": {},
+                          "marks": [],
+                          "value": "Use WAVE for deeper semantic and ARIA insights.",
+                          "nodeType": "text"
+                        }
+                      ],
+                      "nodeType": "paragraph"
+                    }
+                  ],
+                  "nodeType": "list-item"
+                },
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "content": [
+                        {
+                          "data": {},
+                          "marks": [],
+                          "value": "Test components early in Storybook with the a11y addon.",
+                          "nodeType": "text"
+                        }
+                      ],
+                      "nodeType": "paragraph"
+                    }
+                  ],
+                  "nodeType": "list-item"
+                },
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "content": [
+                        {
+                          "data": {},
+                          "marks": [],
+                          "value": "And remember: tools guide you, but accessibility depends on developer choices.",
+                          "nodeType": "text"
+                        }
+                      ],
+                      "nodeType": "paragraph"
+                    }
+                  ],
+                  "nodeType": "list-item"
+                }
+              ],
+              "nodeType": "unordered-list"
+            },
+            {
+              "data": {},
+              "content": [],
+              "nodeType": "hr"
+            },
+            {
+              "data": {},
+              "content": [
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "marks": [],
+                      "value": "The goal isn’t just passing tests — it’s building experiences everyone can use.",
+                      "nodeType": "text"
+                    }
+                  ],
+                  "nodeType": "paragraph"
+                }
+              ],
+              "nodeType": "blockquote"
+            },
+            {
+              "data": {},
+              "content": [
+                {
+                  "data": {},
+                  "marks": [],
+                  "value": "",
+                  "nodeType": "text"
+                }
+              ],
+              "nodeType": "paragraph"
+            }
+          ],
+          "nodeType": "document"
+        },
+        "links": {
+          "assets": {
+            "block": [
+              {
+                "sys": {
+                  "id": "7bj07xgEpukSUXTwgoW3ya"
+                },
+                "url": "https://images.ctfassets.net/z41mabrhnu57/7bj07xgEpukSUXTwgoW3ya/15cc09c0b96c2ade3429af5bc7c97b01/Accessibility_-_lighthourse_1.png",
+                "title": "Figure 1: Screenshot of Lighthouse score spotting a \"Skip links are not focusable\" issue on the home page.",
+                "description": "Screenshot of Lighthouse score spotting a \"Skip links are not focusable\" issue on the home page."
+              },
+              {
+                "sys": {
+                  "id": "3ezdFZMoSulTiwuIM4Im9t"
+                },
+                "url": "https://images.ctfassets.net/z41mabrhnu57/3ezdFZMoSulTiwuIM4Im9t/684b91b805a46df70477db45529d0822/Accessibility_-_lighthourse_2.png",
+                "title": "Figure 2: Screenshot of Lighthouse score spotting a \"Heading elements are not in a sequentially-descending order\" issue on the blog page.",
+                "description": "Screenshot of Lighthouse score spotting a \"Heading elements are not in a sequentially-descending order\" issue on the blog page."
+              },
+              {
+                "sys": {
+                  "id": "4SqK1L7iKrbc08SvzGPmsg"
+                },
+                "url": "https://images.ctfassets.net/z41mabrhnu57/4SqK1L7iKrbc08SvzGPmsg/b6ead84a2a709260dbeaed0dce0ab479/Accessibility_-_lighthourse_3.png",
+                "title": "Figure 3: Screenshot of Lighthouse score spotting a \"Lists do not contain only <li> elements and script supporting elements (<script> and <template>)\" issue on the mobile navigation.",
+                "description": "Screenshot of Lighthouse score spotting a \"Lists do not contain only <li> elements and script supporting elements (<script> and <template>)\" issue on the mobile navigation."
+              },
+              {
+                "sys": {
+                  "id": "3UReSUXSoP7hRpLFp2QSUJ"
+                },
+                "url": "https://images.ctfassets.net/z41mabrhnu57/3UReSUXSoP7hRpLFp2QSUJ/6339f01c9a54427f6afae9672309fbb1/Accessibility_-_lighthourse_4.png",
+                "title": "Figure 4: Screenshot of Chrome's WAVE displaying accessibility validation results.",
+                "description": "Screenshot of Chrome's WAVE displaying accessibility validation results."
+              },
+              {
+                "sys": {
+                  "id": "jBYz4brqqBjYzcDol6xdk"
+                },
+                "url": "https://images.ctfassets.net/z41mabrhnu57/jBYz4brqqBjYzcDol6xdk/ad529df2399b267aa59f651ee48c14a9/Accessibility_-_lighthourse_5.png",
+                "title": "Figure 5: Screenshot of Storybook's a11y addon displaying accessibility validation results.",
+                "description": "Screenshot of Storybook's a11y addon displaying accessibility validation results."
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}

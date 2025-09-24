@@ -1,5 +1,5 @@
 // src/libs/fetchEntries.ts
-import { queryData } from './CMS-content-queries';
+import { queryData } from './CMS-queryData';
 import { cmsContentIds } from './CMS-references';
 
 /**
@@ -165,10 +165,8 @@ export async function fetchEntriesDirect(
 
   // Normalize return shape so it's always an array
   return (
-    // data?.blogPostCollection?.items ??
-    // data?.projectsCollection?.items ??
-    // data?.infoBlockByParentCollection?.items ??
-    data?.en?.items ??
+    data?.en?.items ??  // For collections
+    data?.en ??         // For single entires
     (data ? [data] : []) // fallback if it's a single entry
   );
 }

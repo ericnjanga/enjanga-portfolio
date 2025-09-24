@@ -14,7 +14,10 @@
     "clean": "rimraf node_modules .next dist && yarn install",
     "clean:hard": "rimraf node_modules .next dist yarn.lock && yarn cache clean && yarn install",
     "format": "prettier --write \"**/*.{js,ts,md,scss}\"",
-    "format:diff": "prettier --list-different \"**/*.{js,ts,md,scss}\""
+    "format:diff": "prettier --list-different \"**/*.{js,ts,md,scss}\"",
+    "test": "vitest",
+    "test:watch": "vitest --watch",
+    "test:coverage": "vitest run --coverage"
   },
   "dependencies": {
     "enjanga-components-library": "^1.0.25",
@@ -25,14 +28,22 @@
     "react-is": "^19.0.0"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^6.8.0",
+    "@testing-library/react": "^16.3.0",
+    "@types/jest": "^30.0.0",
     "@types/node": "^20.0.0",
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",
+    "@vitejs/plugin-react": "^5.0.3",
     "eslint": "8.44.0",
     "eslint-config-next": "13.4.9",
+    "jsdom": "^27.0.0",
     "prettier": "^2.8.8",
     "rimraf": "^6.0.1",
-    "typescript": "^5.0.0"
+    "typescript": "^5.0.0",
+    "vite-tsconfig-paths": "^5.1.4",
+    "vitest": "^3.2.4",
+    "whatwg-fetch": "^3.6.20"
   },
   "browserslist": [
     ">0.2%",
