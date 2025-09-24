@@ -14,48 +14,54 @@ describe('fetchEntriesDirect', () => {
     global.fetch = vi.fn();
   });
 
+
+  
   /**
-   * Making sure normalized items are returned from the query
+   * Test ...
    */
-  it('returns normalized items from a collection query', async () => {
+  it('Returns a "Collection of Blog Posts" as expected', async () => {
     // Mock GraphQL response
     (global.fetch as any).mockResolvedValueOnce({
       ok: true,
       json: async () => blogPostsFixture,
     });
 
-    const result = await fetchEntriesDirect('List of Blog Posts');
+    const result = await fetchEntriesDirect('Collection of Blog Posts');
 
     expect(result).toEqual(blogPostsFixture.data.en.items);
   });
 
 
 
-
-  it('wraps a single entry into an array', async () => {
+  /**
+   * Test ...
+   */
+  it('Returns a "Single Blog Entry" into an array', async () => {
     (global.fetch as any).mockResolvedValueOnce({
       ok: true,
       json: async () => singleBlogPostFixture,
     });
 
-    const result = await fetchEntriesDirect('Single Blog Post');
+    const result = await fetchEntriesDirect('Single Blog Entry');
 
-    expect(result).toEqual(singleBlogPostFixture.data.en  );
+    expect(result).toEqual([singleBlogPostFixture.data.en]);
   });
 
 
 
+  /**
+   * Test ...
+   */
+  it('throws if fetch fails', async () => {
+    (global.fetch as any).mockResolvedValueOnce({
+      ok: false,
+      statusText: 'Unauthorized',
+    });
 
-  // it('throws if fetch fails', async () => {
-  //   (global.fetch as any).mockResolvedValueOnce({
-  //     ok: false,
-  //     statusText: 'Unauthorized',
-  //   });
-
-  //   await expect(fetchEntriesDirect('List of Blog Posts')).rejects.toThrow(
-  //     'Contentful fetch failed: Unauthorized'
-  //   );
-  // });
+    await expect(fetchEntriesDirect('Collection of Blog Posts')).rejects.toThrow(
+      'Contentful fetch failed: Unauthorized'
+    );
+  });
 
 
 

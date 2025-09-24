@@ -1,5 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import { contentfulDataQuery } from '@/libs/contentfulDataQuery';
+import { normalizeContentfulResponse } from '@/libs/contentfulNormalizer';
 
 export const useContentful = ({
   query,
@@ -14,6 +15,9 @@ export const useContentful = ({
 }) => {
   return useQuery({
     queryKey: [queryKey, variables],
-    queryFn: () => contentfulDataQuery({ query, variables, infoTracking }),
+    queryFn: async () => {
+      const rawData = await contentfulDataQuery({ query, variables, infoTracking });
+      return normalizeContentfulResponse(rawData);
+    },
   });
 };

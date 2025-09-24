@@ -9,7 +9,7 @@ import './../../../styles/_blogs-and-articles.scss';
 
 const BlogArticlePage = ({ params }: ArticlePageProps) => (
   <div className="articlePage">
-    <ContentfulFetcher dataFor="Single Blog Post" contentId={params.contentId}>
+    <ContentfulFetcher dataFor="Single Blog Entry" contentId={params.contentId}>
       {({ title, richDescription }) => (
         <>
           <Banner

@@ -5,7 +5,7 @@ import { fetchEntriesDirect } from '@/libs/fetchEntries';
  * Utility to generate static params for any content model
  */
 export async function generateParamsForContent(
-  dataFor: 'List of Blog Posts' | 'List of Best Work'
+  dataFor: 'Collection of Blog Posts' | 'List of Best Work'
 ) {
   const entries = await fetchEntriesDirect(dataFor);
 

@@ -1,6 +1,7 @@
 // src/libs/fetchEntries.ts
 import { queryData } from './CMS-queryData';
 import { cmsContentIds } from './CMS-references';
+import { normalizeContentfulResponse } from './contentfulNormalizer';
 
 /**
  * DataFor
@@ -12,26 +13,25 @@ import { cmsContentIds } from './CMS-references';
  * values can be passed to `getQueryConfig()` or `fetchEntriesDirect()`.
  *
  * Example:
- *   const posts = await fetchEntriesDirect("List of Blog Posts");
+ *   const posts = await fetchEntriesDirect("Collection of Blog Posts");
  */
 export type DataFor =
   | 'Landing Page Banner'
   | 'Blog Page Banner'
   | 'Footer Copyright'
   | 'Single Work'
-  | 'Single Blog Post'
+  | 'Single Blog Entry'
   | 'InfoBlock by parentId'
   | 'List of Best Work'
   | 'List of quotes'
   | 'List of Scope of expertise'
-  | 'List of Blog Posts'
+  | 'Collection of Blog Posts'
   | 'List of About Info'
   | 'List of Footer Links';
 
 
 
-/**
- * getQueryConfig()
+/** 
  * ------------------------------------------------------------------
  * Returns the appropriate GraphQL query, variables, and tracking info
  * for a given content type (`dataFor`) and optional `contentId`.
@@ -46,7 +46,7 @@ export type DataFor =
  * @returns         An object with `{ query, variables, trackingInfo }`
  *
  * Example:
- *   const { query, variables } = getQueryConfig("Single Blog Post", "abc123");
+ *   const { query, variables } = getQueryConfig("Single Blog Entry", "abc123");
  */
 export function getQueryConfig(dataFor: DataFor, contentId?: string) {
   let query = '';
@@ -83,8 +83,8 @@ export function getQueryConfig(dataFor: DataFor, contentId?: string) {
       variables.sectionId = contentId ?? '';
       break;
 
-    case 'Single Blog Post':
-      trackingInfo = 'Single Blog Post';
+    case 'Single Blog Entry':
+      trackingInfo = 'Single Blog Entry';
       query = queryData.blogPostById;
       variables.sectionId = contentId ?? '';
       break;
@@ -123,8 +123,8 @@ export function getQueryConfig(dataFor: DataFor, contentId?: string) {
       variables.parentRefId = cmsContentIds.categories['Footer section'];
       break;
 
-    case 'List of Blog Posts':
-      trackingInfo = 'List of Blog Posts';
+    case 'Collection of Blog Posts':
+      trackingInfo = 'Collection of Blog Posts';
       query = queryData.blogPostCollection;
       break;
   }
@@ -163,12 +163,5 @@ export async function fetchEntriesDirect(
 
   const { data } = await res.json();
 
-  // Normalize return shape so it's always an array
-  return (
-    data?.en?.items ??  // For collections
-    data?.en ??         // For single entires
-    (data ? [data] : []) // fallback if it's a single entry
-  );
+  return normalizeContentfulResponse(data);
 }
-
-

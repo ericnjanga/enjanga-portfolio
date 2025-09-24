@@ -9,6 +9,7 @@ import { CQ_quote_propsType } from 'enjanga-components-library';
 import { sortByOrderProp } from '@utils/helpers';
 import { getQueryConfig, DataFor } from './fetchEntries';
 
+
 interface ContentContextValue {
   id?: string;
   title: string;
@@ -41,12 +42,23 @@ export const ContentfulFetcher: React.FC<ContentfulFetcherProps> = ({
 }) => {
   const { query, variables, trackingInfo } = getQueryConfig(dataFor, contentId);
 
-  const { data, isLoading, error } = useContentful({
+  const { data } = useContentful({
     query,
     variables,
     queryKey: `${trackingInfo}-${contentId}`,
     infoTracking: trackingInfo,
   });
+  
+
+
+
+  console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>');
+  console.log('>>>>> entries = ', data);
+  //   return entries.map((entry: { sys: { id: string } }) => ({
+  //   contentId: entry.sys.id,
+  // }));
+  console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>');
+  
 
   let plainDescription;
   let richDescription;
@@ -56,7 +68,9 @@ export const ContentfulFetcher: React.FC<ContentfulFetcherProps> = ({
     case 'Blog Page Banner':
     case 'Footer Copyright':
     case 'Single Work':
-    case 'Single Blog Post':
+    case 'Single Blog Entry':
+      if (dataFor==='Single Blog Entry') 
+      console.log('....-----data?', data);
       richDescription = data?.en?.description;
       break;
   }
@@ -71,7 +85,7 @@ export const ContentfulFetcher: React.FC<ContentfulFetcherProps> = ({
   switch (trackingInfo) {
     case 'List of Scope of expertise':
     case 'InfoBlock by parentId':
-    case 'List of Blog Posts':
+    case 'Collection of Blog Posts':
     case 'List of Best Work':
     case 'List of quotes':
     case 'List of About Info':

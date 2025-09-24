@@ -33,7 +33,7 @@ export default function BlogRoot() {
         <Grid>
           {' '}
           {/* fullWidth */}
-          <ContentfulFetcher dataFor="List of Blog Posts">
+          <ContentfulFetcher dataFor="Collection of Blog Posts">
             {({ orderedItems }) =>
               orderedItems?.map((item) => {
                 return (
