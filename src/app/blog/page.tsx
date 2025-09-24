@@ -7,6 +7,7 @@ import {
 } from 'enjanga-components-library';
 import { Grid, Column } from '@carbon/react';
 import { ContentfulFetcher } from '@/libs/ContentfulFetcher';
+import { InformationBlock } from '@/libs/CMS-content-types';
 import './../../styles/_blogs-and-articles.scss';
 
 export default function BlogRoot() {
@@ -37,7 +38,7 @@ export default function BlogRoot() {
               orderedItems?.map((item) => {
                 return (
                   <Column
-                    key={item.sys.id}
+                    key={item?.sys?.id}
                     lg={8}
                     md={4}
                     sm={4}
@@ -46,18 +47,18 @@ export default function BlogRoot() {
                     <CustomTile
                       featuredText={{
                         heading: {
-                          children: item.title,
+                          children: item?.title,
                           level: 2,
                         },
                         smartText: {
-                          plainText: item.blurb,
+                          plainText: item?.blurb,
                         },
                         headingMaxLength: 50,
                         plainTextMaxLength: 120,
                       }}
                       layoutStyle="card"
                       media="image"
-                      mediaImage={item.image?.url}
+                      mediaImage={item?.image?.url}
                       linksTo={`/blog/${item?.sys?.id}` as CTL_valid_linkTo}
                     />
                   </Column>
