@@ -1,12 +1,6 @@
-'use client';
-
-import type { Metadata } from 'next';
-import { Banner, CMSRichText } from 'enjanga-components-library';
-import { Grid, Column } from '@carbon/react';
-import { ContentfulFetcher } from '@/libs/ContentfulFetcher';
-import { ArticlePageProps } from '@/libs/types';
-import './../../../styles/_blogs-and-articles.scss';
+// src/app/best-work/[contentId]/page.tsx  (server component by default)
 import { generateParamsForContent } from '@/libs/generateStaticParams';
+import ProjectPage from './ProjectPage';
 
 /*
  * This function tells Next.js which dynamic routes to pre-render at build time
@@ -21,35 +15,6 @@ export async function generateStaticParams() {
 }
 
 
-const ProjectPage = ({ params }: ArticlePageProps) => (
-  <div className="articlePage">
-    <ContentfulFetcher dataFor="Single Work" contentId={params.contentId}>
-      {({ title, richDescription }) => (
-        <>
-          <Banner
-            className="page-banner"
-            featuredText={{
-              heading: {
-                children: title,
-              },
-              smartText: {},
-              isHidden: 'smartText',
-            }}
-          />
-
-          <article className="page-content">
-            <Grid>
-              {' '}
-              {/* fullWidth */}
-              <Column lg={10} md={8} sm={4} className="...">
-                <CMSRichText data={richDescription} />
-              </Column>
-            </Grid>
-          </article>
-        </>
-      )}
-    </ContentfulFetcher>
-  </div>
-);
-
-export default ProjectPage;
+export default function Page({ params }: { params: { contentId: string } }) {
+  return <ProjectPage params={params} />;
+}

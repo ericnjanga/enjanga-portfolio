@@ -29,7 +29,7 @@ export type DataFor =
   | 'List of Footer Links';
 
 
-  
+
 /**
  * getQueryConfig()
  * ------------------------------------------------------------------
@@ -144,11 +144,13 @@ export async function fetchEntriesDirect(
 ) {
   const { query, variables } = getQueryConfig(dataFor, contentId);
 
-  const endpoint = `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`;
+  const SPACE_ID = process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID;
+  const ACCESS_TOKEN = process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN;
+  const endpoint = `https://graphql.contentful.com/content/v1/spaces/${SPACE_ID}`;
   const res = await fetch(endpoint, {
     method: 'POST',
     headers: {
-      Authorization: `Bearer ${process.env.CONTENTFUL_DELIVERY_TOKEN}`,
+      Authorization: `Bearer ${ACCESS_TOKEN}`,
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({ query, variables }),
@@ -163,9 +165,12 @@ export async function fetchEntriesDirect(
 
   // Normalize return shape so it's always an array
   return (
-    data?.blogPostCollection?.items ??
-    data?.projectsCollection?.items ??
-    data?.infoBlockByParentCollection?.items ??
+    // data?.blogPostCollection?.items ??
+    // data?.projectsCollection?.items ??
+    // data?.infoBlockByParentCollection?.items ??
+    data?.en?.items ??
     (data ? [data] : []) // fallback if it's a single entry
   );
 }
+
+
