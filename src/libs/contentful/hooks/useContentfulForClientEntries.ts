@@ -1,8 +1,8 @@
 import { useQuery } from '@tanstack/react-query';
-import { contentfulDataQuery } from '@/libs/contentfulDataQuery';
-import { normalizeContentfulResponse } from '@/libs/contentfulNormalizer';
+import { contentfulDataQuery } from '@/libs/contentful/contentful-dataQuery';
+import { normalizeContentfulResponse } from '@/libs/contentful/contentful-contentNormalizer';
 
-export const useContentful = ({
+export const useContentfulForClientEntries = ({
   query,
   variables,
   queryKey,

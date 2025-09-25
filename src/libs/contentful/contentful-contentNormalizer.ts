@@ -1,4 +1,4 @@
-// src/libs/contentfulNormalizer.ts
+// src/libs/contentful-contentNormalizer.ts
 
 /**
  * This function takes the raw GraphQL response (whether from server or client) and returns a consistent shape (e.g. array of { sys, title, ... }).

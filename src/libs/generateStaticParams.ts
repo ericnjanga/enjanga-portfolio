@@ -1,5 +1,5 @@
 // src/libs/generateStaticParams.ts
-import { fetchEntriesDirect } from '@/libs/fetchEntries';
+import { contentfulForServerEntriesFetch } from './contentful/contentful-forServerFetchEntries';
 
 /**
  * Utility to generate static params for any content model
@@ -7,7 +7,7 @@ import { fetchEntriesDirect } from '@/libs/fetchEntries';
 export async function generateParamsForContent(
   dataFor: 'Collection of Blog Posts' | 'List of Best Work'
 ) {
-  const entries = await fetchEntriesDirect(dataFor);
+  const entries = await contentfulForServerEntriesFetch(dataFor);
 
   if (!Array.isArray(entries)) {
     console.warn(`generateParamsForContent: unexpected data shape for ${dataFor}`);

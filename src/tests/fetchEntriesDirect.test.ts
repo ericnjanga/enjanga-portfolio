@@ -1,6 +1,6 @@
-// tests/fetchEntriesDirect.test.ts
+// tests/contentfulForServerEntriesFetch.test.ts
 import { vi, describe, it, expect } from 'vitest';
-import { fetchEntriesDirect } from '@/libs/fetchEntries';
+import { contentfulForServerEntriesFetch } from '@/libs/contentful/contentful-forServerFetchEntries';
 
 // blogPostsFixture is a saved JSON response from the real Contentful GraphQL API.
 // It represents the shape of data returned for blogPostCollection queries,
@@ -9,7 +9,7 @@ import blogPostsFixture from './fixtures/blogPosts.fixture.json';
 import singleBlogPostFixture from './fixtures/singleBlogPost.fixture.json';
 
 
-describe('fetchEntriesDirect', () => {
+describe('contentfulForServerEntriesFetch', () => {
   beforeEach(() => {
     global.fetch = vi.fn();
   });
@@ -26,7 +26,7 @@ describe('fetchEntriesDirect', () => {
       json: async () => blogPostsFixture,
     });
 
-    const result = await fetchEntriesDirect('Collection of Blog Posts');
+    const result = await contentfulForServerEntriesFetch('Collection of Blog Posts');
 
     expect(result).toEqual(blogPostsFixture.data.en.items);
   });
@@ -42,7 +42,7 @@ describe('fetchEntriesDirect', () => {
       json: async () => singleBlogPostFixture,
     });
 
-    const result = await fetchEntriesDirect('Single Blog Entry');
+    const result = await contentfulForServerEntriesFetch('Single Blog Entry');
 
     expect(result).toEqual([singleBlogPostFixture.data.en]);
   });
@@ -58,7 +58,7 @@ describe('fetchEntriesDirect', () => {
       statusText: 'Unauthorized',
     });
 
-    await expect(fetchEntriesDirect('Collection of Blog Posts')).rejects.toThrow(
+    await expect(contentfulForServerEntriesFetch('Collection of Blog Posts')).rejects.toThrow(
       'Contentful fetch failed: Unauthorized'
     );
   });

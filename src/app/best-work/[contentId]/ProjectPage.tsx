@@ -3,13 +3,13 @@
  
 import { Banner, CMSRichText } from 'enjanga-components-library';
 import { Grid, Column } from '@carbon/react';
-import { ContentfulFetcher } from '@/libs/ContentfulFetcher';
+import { ContentfulDataProvider } from '@/libs/contentful/contentful-dataProvider';
 import { ArticlePageProps } from '@/libs/types';
 import './../../../styles/_blogs-and-articles.scss'; 
   
 const ProjectPage = ({ params }: ArticlePageProps) => (
   <div className="articlePage">
-    <ContentfulFetcher dataFor="Single Work" contentId={params.contentId}>
+    <ContentfulDataProvider dataFor="Single Work" contentId={params.contentId}>
       {({ title, richDescription }) => (
         <>
           <Banner
@@ -34,7 +34,7 @@ const ProjectPage = ({ params }: ArticlePageProps) => (
           </article>
         </>
       )}
-    </ContentfulFetcher>
+    </ContentfulDataProvider>
   </div>
 );
 

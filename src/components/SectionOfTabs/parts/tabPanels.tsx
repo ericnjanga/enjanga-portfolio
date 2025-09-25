@@ -1,5 +1,5 @@
 import { TabPanels, TabPanel } from '@carbon/react';
-import { InformationBlock } from '@/libs/CMS-content-types';
+import { InformationBlock } from '@/libs/contentful/types';
 import SectionTabContent from './TabContent';
 import { CustomTile } from 'enjanga-components-library';
 import { Grid, Column } from '@carbon/react';

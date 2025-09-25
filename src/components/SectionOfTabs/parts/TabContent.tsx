@@ -1,7 +1,7 @@
 import { CustomTile } from 'enjanga-components-library';
 import { Grid, Column } from '@carbon/react';
-import { ContentfulFetcher } from '@/libs/ContentfulFetcher';
-import { InformationBlock } from '@/libs/CMS-content-types';
+import { ContentfulDataProvider } from '@/libs/contentful/contentful-dataProvider';
+import { InformationBlock } from '@/libs/contentful/types';
 import { CP_nameType } from 'enjanga-components-library';
 
 interface SectionTabContentProps {
@@ -19,7 +19,7 @@ const SectionTabContent = ({ tab, className }: SectionTabContentProps) => (
     </Column>
     <Column lg={{ span: 10, offset: 6 }} md={8} sm={4}>
       <Grid className="tabs-group-content">
-        <ContentfulFetcher
+        <ContentfulDataProvider
           dataFor="InfoBlock by parentId"
           contentId={tab.sys.id}
         >
@@ -48,7 +48,7 @@ const SectionTabContent = ({ tab, className }: SectionTabContentProps) => (
               </Column>
             ));
           }}
-        </ContentfulFetcher>
+        </ContentfulDataProvider>
       </Grid>
     </Column>
   </Grid>

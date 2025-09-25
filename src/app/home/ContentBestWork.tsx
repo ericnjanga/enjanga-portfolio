@@ -1,6 +1,6 @@
 import { Grid, Column } from '@carbon/react';
 import { CustomTile } from 'enjanga-components-library';
-import { InformationBlock } from '@/libs/CMS-content-types';
+import { InformationBlock } from '@/libs/contentful/types';
 
 const ContentBestWork = ({
   listOfItems,

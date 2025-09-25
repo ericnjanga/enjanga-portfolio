@@ -1,12 +1,12 @@
 import { Grid, Column } from '@carbon/react';
 import { CustomTile } from 'enjanga-components-library';
 import '@/styles/_grid-of-customTiles.scss';
-import { ContentfulFetcher } from '@/libs/ContentfulFetcher';
+import { ContentfulDataProvider } from '@/libs/contentful/contentful-dataProvider';
 import { CP_nameType } from 'enjanga-components-library';
 
 const ContentAbout = () => (
   <Grid className="grid-of-customTiles grid-of-customTiles-1">
-    <ContentfulFetcher dataFor="List of About Info">
+    <ContentfulDataProvider dataFor="List of About Info">
       {({ orderedItems }) => {
         const card1 = orderedItems && orderedItems[0];
         const card2 = orderedItems && orderedItems[1];
@@ -89,7 +89,7 @@ const ContentAbout = () => (
           </>
         );
       }}
-    </ContentfulFetcher>
+    </ContentfulDataProvider>
   </Grid>
 );
 

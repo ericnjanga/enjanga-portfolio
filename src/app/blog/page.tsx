@@ -6,14 +6,14 @@ import {
   CTL_valid_linkTo,
 } from 'enjanga-components-library';
 import { Grid, Column } from '@carbon/react';
-import { ContentfulFetcher } from '@/libs/ContentfulFetcher';
-import { InformationBlock } from '@/libs/CMS-content-types';
+import { ContentfulDataProvider } from '@/libs/contentful/contentful-dataProvider';
+import { InformationBlock } from '@/libs/contentful/types';
 import './../../styles/_blogs-and-articles.scss';
 
 export default function BlogRoot() {
   return (
     <div className="blogPage">
-      <ContentfulFetcher dataFor="Blog Page Banner">
+      <ContentfulDataProvider dataFor="Blog Page Banner">
         {({ title, richDescription }) => (
           <Banner
             className="page-banner"
@@ -27,13 +27,13 @@ export default function BlogRoot() {
             }}
           />
         )}
-      </ContentfulFetcher>
+      </ContentfulDataProvider>
 
       <article className="page-content">
         <Grid>
           {' '}
           {/* fullWidth */}
-          <ContentfulFetcher dataFor="Collection of Blog Posts">
+          <ContentfulDataProvider dataFor="Collection of Blog Posts">
             {({ orderedItems }) =>
               orderedItems?.map((item) => {
                 return (
@@ -65,7 +65,7 @@ export default function BlogRoot() {
                 );
               })
             }
-          </ContentfulFetcher>
+          </ContentfulDataProvider>
         </Grid>
       </article>
     </div>

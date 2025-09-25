@@ -9,10 +9,10 @@ import ContentAbout from './ContentAbout';
 import ContentBestWork from './ContentBestWork';
 import './../home/_home.scss';
 import './../home/_home-theming.scss';
-import { ContentfulFetcher } from '@/libs/ContentfulFetcher';
+import { ContentfulDataProvider } from '@/libs/contentful/contentful-dataProvider';
 import { BackgroundSection } from '@/components/BackgroundSection';
-import { cmsContentIds } from '@/libs/CMS-references';
-import { InformationBlock } from '@/libs/CMS-content-types'; 
+import { contentfulContentIds } from '@/libs/contentful/contentful-queryConfig';
+import { InformationBlock } from '@/libs/contentful/types'; 
 
 export default function LandingPage() {
   const searchParams = useSearchParams();
@@ -54,7 +54,7 @@ export default function LandingPage() {
 
   return (
     <div className="homePage">
-      <ContentfulFetcher dataFor="Landing Page Banner">
+      <ContentfulDataProvider dataFor="Landing Page Banner">
         {({ title, richDescription }) => (
           <Banner
             featuredText={{
@@ -68,9 +68,9 @@ export default function LandingPage() {
             isHuge={true}
           />
         )}
-      </ContentfulFetcher>
+      </ContentfulDataProvider>
 
-      <ContentfulFetcher dataFor="List of Scope of expertise">
+      <ContentfulDataProvider dataFor="List of Scope of expertise">
         {({ orderedItems }) => {
           return (
             <section
@@ -87,7 +87,7 @@ export default function LandingPage() {
             </section>
           );
         }}
-      </ContentfulFetcher>
+      </ContentfulDataProvider>
 
       <BackgroundSection
         className="pageSection aboutSection smt-box"
@@ -95,7 +95,7 @@ export default function LandingPage() {
         ariaLabelledby="about-me-heading"
         tabIndex={-1} // Make focusable by default
         parallax={true}
-        imageId={cmsContentIds.categories['Featured Image']}
+        imageId={contentfulContentIds.categories['Featured Image']}
       >
         <>
           <Grid className="sectionTitle">
@@ -130,14 +130,14 @@ export default function LandingPage() {
             </h2>
 
 
-            <ContentfulFetcher dataFor="List of quotes">
+            <ContentfulDataProvider dataFor="List of quotes">
               {({ orderedItems }) => (
                 <CustomQuotes
                   className="engineer-quotes-component"
                   quotes={orderedItems as CQ_quote_propsType[]}
                 />
               )}
-            </ContentfulFetcher>
+            </ContentfulDataProvider>
           </section>
         </Column>
       </Grid>
@@ -161,11 +161,11 @@ export default function LandingPage() {
               Best Work
             </h2>
 
-            <ContentfulFetcher dataFor="List of Best Work">
+            <ContentfulDataProvider dataFor="List of Best Work">
               {({ orderedItems }) => (
                 <ContentBestWork listOfItems={orderedItems as InformationBlock[]} />
               )}
-            </ContentfulFetcher>
+            </ContentfulDataProvider>
           </section>
         </Column>
       </Grid>

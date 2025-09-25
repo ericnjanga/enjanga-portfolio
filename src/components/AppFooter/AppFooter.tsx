@@ -8,7 +8,7 @@ import {
   BrandLogo,
   ContactButton,
 } from 'enjanga-components-library';
-import { ContentfulFetcher } from '@/libs/ContentfulFetcher';
+import { ContentfulDataProvider } from '@/libs/contentful/contentful-dataProvider';
 
 const AppFooter = () => {
   const { brand } = AppUseUtility();
@@ -25,7 +25,7 @@ const AppFooter = () => {
             <Grid className="">
               <Column lg={12} md={4} sm={4} className="app-footer__col2-row1">
                 <Grid>
-                  <ContentfulFetcher dataFor="List of Footer Links">
+                  <ContentfulDataProvider dataFor="List of Footer Links">
                     {({ orderedItems }) => {
                       return orderedItems?.map((item) => {
                         return (
@@ -35,7 +35,7 @@ const AppFooter = () => {
                         );
                       });
                     }}
-                  </ContentfulFetcher>
+                  </ContentfulDataProvider>
                 </Grid>
               </Column>
 
@@ -46,11 +46,11 @@ const AppFooter = () => {
               <Column lg={12} md={4} sm={4} className="">
                 <Grid className="tabs-group-content">
                   <Column lg={8} md={4} sm={4} className="copyright">
-                    <ContentfulFetcher dataFor="Footer Copyright">
+                    <ContentfulDataProvider dataFor="Footer Copyright">
                       {({ richDescription }) => (
                         <CMSRichText data={richDescription} />
                       )}
-                    </ContentfulFetcher>
+                    </ContentfulDataProvider>
                   </Column>
 
                   {/* Col 2: Row 2: Col 2 */}

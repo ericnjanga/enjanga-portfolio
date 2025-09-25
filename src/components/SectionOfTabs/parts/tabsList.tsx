@@ -6,7 +6,7 @@ import {
   Platforms,
 } from '@carbon/icons-react';
 import { Tab, TabList } from '@carbon/react';
-import { InformationBlock } from '@/libs/CMS-content-types';
+import { InformationBlock } from '@/libs/contentful/types';
 
 interface SectionTabsListProps {
   className?: string;

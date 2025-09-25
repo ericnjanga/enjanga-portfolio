@@ -1,7 +1,25 @@
-// src/libs/fetchEntries.ts
-import { queryData } from './CMS-queryData';
-import { cmsContentIds } from './CMS-references';
-import { normalizeContentfulResponse } from './contentfulNormalizer';
+
+import { queryData } from './GraphQL-query';
+
+
+
+// ...
+export const contentfulContentIds = {
+  categories: {
+    'Landing Page Banner': '4llAs4gW4mc1fikxbW6u4V',
+    'Blog Page Banner': '1KZzwxEzfTs7rLABpVpjX1',
+    'Footer Copyright': '2KSc8hw8VvMNS5rXQP8GEZ',
+    'List of Best Work': ['5y2JSha3mykWdGkUf6XcQp'],
+    'Scope of expertise': '5OpXyMfZfJlGQzTKJSn9Hw',
+    'About section': '2yc27jrBHSGwDBau6c8qfA',
+    'Featured Image': '2eSLi2IP4sZrrPK0AeQPk7',
+    'Footer section': '2uxFOT0LB1ET4SfM4dNWvo',
+  },
+};
+
+
+
+
 
 /**
  * DataFor
@@ -10,10 +28,10 @@ import { normalizeContentfulResponse } from './contentfulNormalizer';
  * that can be requested from Contentful.
  *
  * This ensures type safety throughout the app: only these
- * values can be passed to `getQueryConfig()` or `fetchEntriesDirect()`.
+ * values can be passed to `getContentfulQueryConfig()` or `contentfulForServerEntriesFetch()`.
  *
  * Example:
- *   const posts = await fetchEntriesDirect("Collection of Blog Posts");
+ *   const posts = await contentfulForServerEntriesFetch("Collection of Blog Posts");
  */
 export type DataFor =
   | 'Landing Page Banner'
@@ -31,14 +49,15 @@ export type DataFor =
 
 
 
+
 /** 
  * ------------------------------------------------------------------
  * Returns the appropriate GraphQL query, variables, and tracking info
  * for a given content type (`dataFor`) and optional `contentId`.
  *
  * This function centralizes all query/variable logic so that
- * both client-side (ContentfulFetcher) and server-side utilities
- * (like `fetchEntriesDirect` and `generateStaticParams`) can reuse
+ * both client-side (ContentfulDataProvider) and server-side utilities
+ * (like `contentfulForServerEntriesFetch` and `generateStaticParams`) can reuse
  * the same configuration without duplicating switch statements.
  *
  * @param dataFor   One of the supported `DataFor` values
@@ -46,9 +65,9 @@ export type DataFor =
  * @returns         An object with `{ query, variables, trackingInfo }`
  *
  * Example:
- *   const { query, variables } = getQueryConfig("Single Blog Entry", "abc123");
+ *   const { query, variables } = getContentfulQueryConfig("Single Blog Entry", "abc123");
  */
-export function getQueryConfig(dataFor: DataFor, contentId?: string) {
+export function getContentfulQueryConfig(dataFor: DataFor, contentId?: string) {
   let query = '';
   let variables: Record<string, any> = {
     locale1: 'en-CA',
@@ -62,19 +81,19 @@ export function getQueryConfig(dataFor: DataFor, contentId?: string) {
     case 'Landing Page Banner':
       trackingInfo = 'Landing Page Banner';
       query = queryData.infoBlockById;
-      variables.sectionId = cmsContentIds.categories['Landing Page Banner'];
+      variables.sectionId = contentfulContentIds.categories['Landing Page Banner'];
       break;
 
     case 'Blog Page Banner':
       trackingInfo = 'Blog Page Banner';
       query = queryData.infoBlockById;
-      variables.sectionId = cmsContentIds.categories['Blog Page Banner'];
+      variables.sectionId = contentfulContentIds.categories['Blog Page Banner'];
       break;
 
     case 'Footer Copyright':
       trackingInfo = 'Footer Copyright';
       query = queryData.infoBlockById;
-      variables.sectionId = cmsContentIds.categories['Footer Copyright'];
+      variables.sectionId = contentfulContentIds.categories['Footer Copyright'];
       break;
 
     case 'Single Work':
@@ -108,19 +127,19 @@ export function getQueryConfig(dataFor: DataFor, contentId?: string) {
     case 'List of Scope of expertise':
       trackingInfo = 'List of Scope of expertise';
       query = queryData.infoBlockByParentCollection;
-      variables.parentRefId = cmsContentIds.categories['Scope of expertise'];
+      variables.parentRefId = contentfulContentIds.categories['Scope of expertise'];
       break;
 
     case 'List of About Info':
       trackingInfo = 'List of About Info';
       query = queryData.infoBlockByParentCollection;
-      variables.parentRefId = cmsContentIds.categories['About section'];
+      variables.parentRefId = contentfulContentIds.categories['About section'];
       break;
 
     case 'List of Footer Links':
       trackingInfo = 'List of Footer Links';
       query = queryData.infoBlockByParentCollection;
-      variables.parentRefId = cmsContentIds.categories['Footer section'];
+      variables.parentRefId = contentfulContentIds.categories['Footer section'];
       break;
 
     case 'Collection of Blog Posts':
@@ -132,36 +151,3 @@ export function getQueryConfig(dataFor: DataFor, contentId?: string) {
   return { query, variables, trackingInfo };
 }
 
-
-
-/**
- * Direct server-side fetch to Contentful GraphQL API.
- * Can be used in generateStaticParams() or getStaticProps().
- */
-export async function fetchEntriesDirect(
-  dataFor: DataFor,
-  contentId?: string
-) {
-  const { query, variables } = getQueryConfig(dataFor, contentId);
-
-  const SPACE_ID = process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID;
-  const ACCESS_TOKEN = process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN;
-  const endpoint = `https://graphql.contentful.com/content/v1/spaces/${SPACE_ID}`;
-  const res = await fetch(endpoint, {
-    method: 'POST',
-    headers: {
-      Authorization: `Bearer ${ACCESS_TOKEN}`,
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ query, variables }),
-    next: { revalidate: 60 },
-  });
-
-  if (!res.ok) {
-    throw new Error(`Contentful fetch failed: ${res.statusText}`);
-  }
-
-  const { data } = await res.json();
-
-  return normalizeContentfulResponse(data);
-}

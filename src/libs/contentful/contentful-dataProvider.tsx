@@ -1,13 +1,14 @@
-// src/libs/ContentfulFetcher.tsx
+// src/libs/ContentfulDataProvider.tsx
 'use client';
 
 import React, { createContext, useContext, ReactNode } from 'react';
-import { useContentful } from '@/hooks/useContentful';
+import { useContentfulForClientEntries } from './hooks/useContentfulForClientEntries';
 import type { Node } from '@contentful/rich-text-types';
-import { InformationBlock } from './CMS-content-types';
+import { InformationBlock } from './types';
 import { CQ_quote_propsType } from 'enjanga-components-library';
-import { sortByOrderProp } from '@utils/helpers';
-import { getQueryConfig, DataFor } from './fetchEntries';
+import { sortByOrderProp } from '@utils/helpers'; 
+import { getContentfulQueryConfig } from './contentful-queryConfig';
+import { DataFor } from './contentful-queryConfig';
 
 
 interface ContentContextValue {
@@ -29,20 +30,20 @@ const ContentContext = createContext<ContentContextValue | undefined>(
   undefined
 );
 
-interface ContentfulFetcherProps {
+interface ContentfulDataProviderProps {
   dataFor: DataFor;
   contentId?: string;
   children: (props: ContentContextValue) => ReactNode;
 }
 
-export const ContentfulFetcher: React.FC<ContentfulFetcherProps> = ({
+export const ContentfulDataProvider: React.FC<ContentfulDataProviderProps> = ({
   dataFor,
   contentId = '',
   children,
 }) => {
-  const { query, variables, trackingInfo } = getQueryConfig(dataFor, contentId);
+  const { query, variables, trackingInfo } = getContentfulQueryConfig(dataFor, contentId);
 
-  const { data } = useContentful({
+  const { data } = useContentfulForClientEntries({
     query,
     variables,
     queryKey: `${trackingInfo}-${contentId}`,
@@ -111,7 +112,7 @@ export const ContentfulFetcher: React.FC<ContentfulFetcherProps> = ({
 export const useContent = () => {
   const context = useContext(ContentContext);
   if (!context) {
-    throw new Error('useContent must be used within ContentfulFetcher');
+    throw new Error('useContent must be used within ContentfulDataProvider');
   }
   return context;
 };
