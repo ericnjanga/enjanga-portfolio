@@ -6,11 +6,11 @@ import {
   Platforms,
 } from '@carbon/icons-react';
 import { Tab, TabList } from '@carbon/react';
-import { InformationBlock } from '@/libs/contentful/types';
+import { IB_propsType } from '@/libs/contentful/types';
 
 interface SectionTabsListProps {
   className?: string;
-  listOfItems?: InformationBlock[];
+  listOfItems?: IB_propsType[];
 }
 
 // map string keys from CMS to actual icon components
@@ -37,7 +37,7 @@ const SectionTabsList = ({ listOfItems, className }: SectionTabsListProps) => {
          * 1) I've created a temporary solution to reduce item.title string size by striping anything after "&"
          * but this is just a temporary patch.
          * WHat should be done:
-         * 1) Creating a "shortTitle" field inside "InformationBlock" to render shorter titles
+         * 1) Creating a "shortTitle" field inside "IB_propsType" to render shorter titles
          */
         // remove any substring that starts with "& "
         let cleanTitle = item.title.replace(/&\s.*$/, '').trim();

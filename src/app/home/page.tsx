@@ -9,10 +9,10 @@ import ContentAbout from './ContentAbout';
 import ContentBestWork from './ContentBestWork';
 import './../home/_home.scss';
 import './../home/_home-theming.scss';
-import { ContentfulDataProvider } from '@/libs/contentful/contentful-dataProvider';
+import { ContentfulDataProvider } from '@/libs/contentful/dataProvider';
 import { BackgroundSection } from '@/components/BackgroundSection';
 import { contentfulContentIds } from '@/libs/contentful/contentful-queryConfig';
-import { InformationBlock } from '@/libs/contentful/types'; 
+import { IB_propsType } from '@/libs/contentful/types'; 
 
 export default function LandingPage() {
   const searchParams = useSearchParams();
@@ -82,7 +82,7 @@ export default function LandingPage() {
               <SectionOfTabs
                 title="Scope of Expertise"
                 className="expertise-section-tabs"
-                listOfItems={orderedItems as InformationBlock[]}
+                listOfItems={orderedItems as IB_propsType[]}
               />
             </section>
           );
@@ -163,7 +163,7 @@ export default function LandingPage() {
 
             <ContentfulDataProvider dataFor="List of Best Work">
               {({ orderedItems }) => (
-                <ContentBestWork listOfItems={orderedItems as InformationBlock[]} />
+                <ContentBestWork listOfItems={orderedItems as IB_propsType[]} />
               )}
             </ContentfulDataProvider>
           </section>

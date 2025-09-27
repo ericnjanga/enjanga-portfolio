@@ -31,19 +31,19 @@ export const contentfulContentIds = {
  * values can be passed to `getContentfulQueryConfig()` or `contentfulForServerEntriesFetch()`.
  *
  * Example:
- *   const posts = await contentfulForServerEntriesFetch("Collection of Blog Posts");
+ *   const posts = await contentfulForServerEntriesFetch("Blog Post Collection");
  */
 export type DataFor =
   | 'Landing Page Banner'
   | 'Blog Page Banner'
   | 'Footer Copyright'
   | 'Single Work'
-  | 'Single Blog Entry'
   | 'InfoBlock by parentId'
   | 'List of Best Work'
   | 'List of quotes'
   | 'List of Scope of expertise'
-  | 'Collection of Blog Posts'
+  | 'Blog Post Collection'
+  | 'Blog Post Entry'
   | 'List of About Info'
   | 'List of Footer Links';
 
@@ -65,7 +65,7 @@ export type DataFor =
  * @returns         An object with `{ query, variables, trackingInfo }`
  *
  * Example:
- *   const { query, variables } = getContentfulQueryConfig("Single Blog Entry", "abc123");
+ *   const { query, variables } = getContentfulQueryConfig("Blog Post Entry", "abc123");
  */
 export function getContentfulQueryConfig(dataFor: DataFor, contentId?: string) {
   let query = '';
@@ -75,75 +75,63 @@ export function getContentfulQueryConfig(dataFor: DataFor, contentId?: string) {
     sectionId: '',
     parentRefId: '',
   };
-  let trackingInfo = '';
+  let trackingInfo = dataFor;
 
   switch (dataFor) {
     case 'Landing Page Banner':
-      trackingInfo = 'Landing Page Banner';
       query = queryData.infoBlockById;
       variables.sectionId = contentfulContentIds.categories['Landing Page Banner'];
       break;
 
     case 'Blog Page Banner':
-      trackingInfo = 'Blog Page Banner';
       query = queryData.infoBlockById;
       variables.sectionId = contentfulContentIds.categories['Blog Page Banner'];
       break;
 
     case 'Footer Copyright':
-      trackingInfo = 'Footer Copyright';
       query = queryData.infoBlockById;
       variables.sectionId = contentfulContentIds.categories['Footer Copyright'];
       break;
 
     case 'Single Work':
-      trackingInfo = 'Single Work';
       query = queryData.projectById;
       variables.sectionId = contentId ?? '';
       break;
 
-    case 'Single Blog Entry':
-      trackingInfo = 'Single Blog Entry';
+    case 'Blog Post Entry':
       query = queryData.blogPostById;
       variables.sectionId = contentId ?? '';
       break;
 
     case 'InfoBlock by parentId':
-      trackingInfo = 'InfoBlock by parentId';
       query = queryData.infoBlockByParentCollection;
       variables.parentRefId = contentId ?? '';
       break;
 
     case 'List of Best Work':
-      trackingInfo = 'List of Best Work';
       query = queryData.projectsCollection;
       break;
 
     case 'List of quotes':
-      trackingInfo = 'List of quotes';
       query = queryData.quotesCollection;
       break;
 
     case 'List of Scope of expertise':
-      trackingInfo = 'List of Scope of expertise';
       query = queryData.infoBlockByParentCollection;
       variables.parentRefId = contentfulContentIds.categories['Scope of expertise'];
       break;
 
     case 'List of About Info':
-      trackingInfo = 'List of About Info';
       query = queryData.infoBlockByParentCollection;
       variables.parentRefId = contentfulContentIds.categories['About section'];
       break;
 
     case 'List of Footer Links':
-      trackingInfo = 'List of Footer Links';
       query = queryData.infoBlockByParentCollection;
       variables.parentRefId = contentfulContentIds.categories['Footer section'];
       break;
 
-    case 'Collection of Blog Posts':
-      trackingInfo = 'Collection of Blog Posts';
+    case 'Blog Post Collection':
       query = queryData.blogPostCollection;
       break;
   }

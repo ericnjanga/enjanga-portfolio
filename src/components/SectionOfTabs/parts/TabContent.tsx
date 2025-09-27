@@ -1,11 +1,11 @@
 import { CustomTile } from 'enjanga-components-library';
 import { Grid, Column } from '@carbon/react';
-import { ContentfulDataProvider } from '@/libs/contentful/contentful-dataProvider';
-import { InformationBlock } from '@/libs/contentful/types';
+import { ContentfulDataProvider } from '@/libs/contentful/dataProvider';
+import { IB_propsType } from '@/libs/contentful/types';
 import { CP_nameType } from 'enjanga-components-library';
 
 interface SectionTabContentProps {
-  tab: InformationBlock;
+  tab: IB_propsType;
   className?: string;
 }
 

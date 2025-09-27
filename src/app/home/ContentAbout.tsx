@@ -1,7 +1,7 @@
 import { Grid, Column } from '@carbon/react';
 import { CustomTile } from 'enjanga-components-library';
 import '@/styles/_grid-of-customTiles.scss';
-import { ContentfulDataProvider } from '@/libs/contentful/contentful-dataProvider';
+import { ContentfulDataProvider } from '@/libs/contentful/dataProvider';
 import { CP_nameType } from 'enjanga-components-library';
 
 const ContentAbout = () => (

@@ -2,10 +2,14 @@
 
 /**
  * This function takes the raw GraphQL response (whether from server or client) and returns a consistent shape (e.g. array of { sys, title, ... }).
+ * NOTE: Always returns a array. Either empty, or containing objects
  * @param data 
  * @returns 
  */
-export function normalizeContentfulResponse(data: any) { console.log('data ? ', data)
+export function normalizeContentfulResponse(data: any) { 
+  
+  // console.log('data >> ', data)
+
   // Always try to get items under `en.items`
   if (data?.en?.items) {
     return data.en.items; // items is an array

@@ -8,7 +8,7 @@ import {
   BrandLogo,
   ContactButton,
 } from 'enjanga-components-library';
-import { ContentfulDataProvider } from '@/libs/contentful/contentful-dataProvider';
+import { ContentfulDataProvider } from '@/libs/contentful/dataProvider';
 
 const AppFooter = () => {
   const { brand } = AppUseUtility();

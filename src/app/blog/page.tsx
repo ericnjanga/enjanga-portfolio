@@ -6,8 +6,8 @@ import {
   CTL_valid_linkTo,
 } from 'enjanga-components-library';
 import { Grid, Column } from '@carbon/react';
-import { ContentfulDataProvider } from '@/libs/contentful/contentful-dataProvider';
-import { InformationBlock } from '@/libs/contentful/types';
+import { ContentfulDataProvider } from '@/libs/contentful/dataProvider';
+import { IB_propsType } from '@/libs/contentful/types';
 import './../../styles/_blogs-and-articles.scss';
 
 export default function BlogRoot() {
@@ -33,7 +33,7 @@ export default function BlogRoot() {
         <Grid>
           {' '}
           {/* fullWidth */}
-          <ContentfulDataProvider dataFor="Collection of Blog Posts">
+          <ContentfulDataProvider dataFor="Blog Post Collection">
             {({ orderedItems }) =>
               orderedItems?.map((item) => {
                 return (

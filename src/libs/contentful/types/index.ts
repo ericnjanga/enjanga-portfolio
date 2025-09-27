@@ -1,6 +1,7 @@
 import type { Node } from '@contentful/rich-text-types';
 
-export interface InformationBlock {
+// Information Block proptypes
+export interface IB_propsType {
   sys: {
     id: string;
   };

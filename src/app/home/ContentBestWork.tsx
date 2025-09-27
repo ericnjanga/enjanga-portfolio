@@ -1,6 +1,6 @@
 import { Grid, Column } from '@carbon/react';
 import { CustomTile } from 'enjanga-components-library';
-import { InformationBlock } from '@/libs/contentful/types';
+import { IB_propsType } from '@/libs/contentful/types';
 
 
 
@@ -41,7 +41,7 @@ const ContentBestWorkSkeleton = () => (
 const ContentBestWork = ({
   listOfItems,
 }: {
-  listOfItems: InformationBlock[] | undefined;
+  listOfItems: IB_propsType[] | undefined;
 }) => (
   <Grid className="tabs-group-content">
     {!listOfItems && <ContentBestWorkSkeleton />}

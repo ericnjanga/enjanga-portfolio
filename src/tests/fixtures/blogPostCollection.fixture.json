@@ -1,0 +1,188 @@
+{
+  "data": {
+    "en": {
+      "items": [
+        {
+          "sys": {
+            "id": "19oHD8PCWxtpsAQ0vrZm80"
+          },
+          "title": "From Carbon to Storybook: My Workflow for Testing Accessibility in React Apps",
+          "blurb": "Discover my workflow for testing React app accessibility using Carbon, Lighthouse, WAVE, and Storybook to build inclusive experiences.",
+          "image": {
+            "url": "https://images.ctfassets.net/z41mabrhnu57/6hTMapgnzkflHzaFeiKhiN/aa73ad96d594246bc5fdc5b9a4e9c494/tech_patterns_17.png",
+            "title": "tech patterns 17",
+            "description": "tech patterns 17"
+          }
+        },
+        {
+          "sys": {
+            "id": "86pppo6sH5OcLgmBD6eWm"
+          },
+          "title": "Saving Time & Ensuring Consistency: The Power of a Custom Tile Component ",
+          "blurb": "Build faster and ensure perfect consistency with this flexible Tile component designed for reusability and scalability.",
+          "image": {
+            "url": "https://images.ctfassets.net/z41mabrhnu57/2KhrfQhQzqKGm3jKE0y1Nd/4cc461cb1613af1af6f6d684acefd59a/tech_patterns_13.png",
+            "title": "tech patterns 13",
+            "description": null
+          }
+        },
+        {
+          "sys": {
+            "id": "56rHsiMdcQbrG3qaJIT42b"
+          },
+          "title": "Page title dynamic updates in a NextJs application",
+          "blurb": "Gummi bears cookie cake gummi bears biscuit tart jelly beans sugar plum. Marzipan chocolate dessert soufflé macaroon bear claw cookie jelly bear claw.",
+          "image": {
+            "url": "https://images.ctfassets.net/z41mabrhnu57/hwkdeAzPlVcEmRNT5C83o/cba375e8f76284aecaee486b64709a30/tech_patterns_1.png",
+            "title": "tech patterns 1",
+            "description": null
+          }
+        },
+        {
+          "sys": {
+            "id": "5RV2b2vfypSkH2OJHCamXX"
+          },
+          "title": "Accessibility: Study of a component",
+          "blurb": "Gummi bears cookie cake gummi bears biscuit tart jelly beans sugar plum. Marzipan chocolate dessert soufflé macaroon bear claw cookie jelly bear claw.",
+          "image": {
+            "url": "https://images.ctfassets.net/z41mabrhnu57/1EnpA9yRObesPuLUq2zw6T/6af556d2a1a957ad5300c462fa831b2d/tech_patterns_2.png",
+            "title": "tech patterns 2",
+            "description": null
+          }
+        },
+        {
+          "sys": {
+            "id": "a1WrpFNXrT5im1DZdZeEb"
+          },
+          "title": "Skeleton animation: Study and practical application",
+          "blurb": "Gummi bears cookie cake gummi bears biscuit tart jelly beans sugar plum. Marzipan chocolate dessert soufflé macaroon bear claw cookie jelly bear claw.",
+          "image": {
+            "url": "https://images.ctfassets.net/z41mabrhnu57/6bfbg4z0Q6T3VZSAa7PDYJ/99d263aea9c8c92fe2cd58be91bb1737/tech_patterns_3.png",
+            "title": "tech patterns 3",
+            "description": null
+          }
+        },
+        {
+          "sys": {
+            "id": "3zLF16dmvLB8Y9QLdVXm08"
+          },
+          "title": "Responsiveness: The container-based approach",
+          "blurb": "Gummi bears cookie cake gummi bears biscuit tart jelly beans sugar plum. Marzipan chocolate dessert soufflé macaroon bear claw cookie jelly bear claw.",
+          "image": {
+            "url": "https://images.ctfassets.net/z41mabrhnu57/1W8EbGJta00dF4T8rpUslN/6486f4decd2121b418eb0d4a3976c906/tech_patterns_4.png",
+            "title": "tech patterns 4",
+            "description": null
+          }
+        },
+        {
+          "sys": {
+            "id": "4TJprSYDXTbk0PsYqRhMTm"
+          },
+          "title": "Component composition",
+          "blurb": "Gummi bears cookie cake gummi bears biscuit tart jelly beans sugar plum. Marzipan chocolate dessert soufflé macaroon bear claw cookie jelly bear claw.",
+          "image": {
+            "url": "https://images.ctfassets.net/z41mabrhnu57/5xBOSyd2HdmWodTkWsmAi6/3e9dfc33a1aa00e39124093bd598fe60/tech_patterns_5.png",
+            "title": "tech patterns 5",
+            "description": null
+          }
+        },
+        {
+          "sys": {
+            "id": "4swiQMSS89Rw5FYuw3Y4pU"
+          },
+          "title": "Study of component's reusability",
+          "blurb": "Gummi bears cookie cake gummi bears biscuit tart jelly beans sugar plum. Marzipan chocolate dessert soufflé macaroon bear claw cookie jelly bear claw.",
+          "image": {
+            "url": "https://images.ctfassets.net/z41mabrhnu57/34E5ZvJ1Jy0FKJeHJhIBHW/a068208a8138a0d82a9984b3e4c8f415/tech_patterns_6.png",
+            "title": "tech patterns 6",
+            "description": null
+          }
+        },
+        {
+          "sys": {
+            "id": "2Om2JrczDT76XF3UAbZw8"
+          },
+          "title": "NextJS: Effectiveness in professional React applications",
+          "blurb": "Gummi bears cookie cake gummi bears biscuit tart jelly beans sugar plum. Marzipan chocolate dessert soufflé macaroon bear claw cookie jelly bear claw.",
+          "image": {
+            "url": "https://images.ctfassets.net/z41mabrhnu57/Pe1FzDSZOwkI7Ea1Dwk0G/99eecbbf30045cbc2e8bb56fb71a4f9a/tech_patterns_9.png",
+            "title": "tech patterns 9",
+            "description": null
+          }
+        },
+        {
+          "sys": {
+            "id": "4Avw4K5OGJ8qohMVUMiNOu"
+          },
+          "title": "Props validation: A practical example",
+          "blurb": "Gummi bears cookie cake gummi bears biscuit tart jelly beans sugar plum. Marzipan chocolate dessert soufflé macaroon bear claw cookie jelly bear claw.",
+          "image": {
+            "url": "https://images.ctfassets.net/z41mabrhnu57/3Lx1h8xDd1j0YIxzpoajTj/86eb31a3cfaac024025bfd8ed24cbf4f/tech_patterns_11.png",
+            "title": "tech patterns 11",
+            "description": null
+          }
+        },
+        {
+          "sys": {
+            "id": "6Uyr7BQ6NMHwABBnXHwGDj"
+          },
+          "title": "The importance of Props validation",
+          "blurb": "Gummi bears cookie cake gummi bears biscuit tart jelly beans sugar plum. Marzipan chocolate dessert soufflé macaroon bear claw cookie jelly bear claw.",
+          "image": {
+            "url": "https://images.ctfassets.net/z41mabrhnu57/3jLsuFgEiehwnkKqOSlqcY/edb3a17377c0713fc796c03a4682ce39/tech_patterns_8.png",
+            "title": "tech patterns 8",
+            "description": null
+          }
+        },
+        {
+          "sys": {
+            "id": "5mv4QaXWzqVAPH7TzyMXKi"
+          },
+          "title": "Storybook: Standards of components creation",
+          "blurb": "Gummi bears cookie cake gummi bears biscuit tart jelly beans sugar plum. Marzipan chocolate dessert soufflé macaroon bear claw cookie jelly bear claw.",
+          "image": {
+            "url": "https://images.ctfassets.net/z41mabrhnu57/6bfbg4z0Q6T3VZSAa7PDYJ/99d263aea9c8c92fe2cd58be91bb1737/tech_patterns_3.png",
+            "title": "tech patterns 3",
+            "description": null
+          }
+        },
+        {
+          "sys": {
+            "id": "7x5VF5tcp4XcpYdutT6SAV"
+          },
+          "title": "Storybook: An essential part of component development",
+          "blurb": "Gummi bears cookie cake gummi bears biscuit tart jelly beans sugar plum. Marzipan chocolate dessert soufflé macaroon bear claw cookie jelly bear claw.",
+          "image": {
+            "url": "https://images.ctfassets.net/z41mabrhnu57/18FxbkrwzJGpZ8OCMIGeXB/e276ad5569342964b2f0ebafd4410841/tech_patterns_7.png",
+            "title": "tech patterns 7",
+            "description": null
+          }
+        },
+        {
+          "sys": {
+            "id": "0LowVJwLymJyn1aHSkRDp"
+          },
+          "title": "Tabs component: Structural analysis",
+          "blurb": "Gummi bears cookie cake gummi bears biscuit tart jelly beans sugar plum. Marzipan chocolate dessert soufflé macaroon bear claw cookie jelly bear claw.",
+          "image": {
+            "url": "https://images.ctfassets.net/z41mabrhnu57/5p4aAL9M9iSAJO1mBF4kcy/d4ddf46a50cadc26e9d383a4c7fd2b15/tech_patterns_15.png",
+            "title": "tech patterns 15",
+            "description": null
+          }
+        },
+        {
+          "sys": {
+            "id": "7fTo5F57yK1o8pZAm6WrCc"
+          },
+          "title": "Carbon design system: Deep analysis",
+          "blurb": "Gummi bears cookie cake gummi bears biscuit tart jelly beans sugar plum. Marzipan chocolate dessert soufflé macaroon bear claw cookie jelly bear claw.",
+          "image": {
+            "url": "https://images.ctfassets.net/z41mabrhnu57/42rdhfv5LJbsi5BrpDaGxH/dc06b75cda5fd722da33b9885d204471/tech_patterns_10.png",
+            "title": "tech patterns 10",
+            "description": null
+          }
+        }
+      ]
+    }
+  }
+}

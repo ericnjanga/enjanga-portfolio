@@ -1,12 +1,12 @@
 import { TabPanels, TabPanel } from '@carbon/react';
-import { InformationBlock } from '@/libs/contentful/types';
+import { IB_propsType } from '@/libs/contentful/types';
 import SectionTabContent from './TabContent';
 import { CustomTile } from 'enjanga-components-library';
 import { Grid, Column } from '@carbon/react';
 
 interface SectionTabPanelsProps {
   className?: string;
-  listOfItems?: InformationBlock[];
+  listOfItems?: IB_propsType[];
 }
 
 const SectionTabPanels = ({ listOfItems }: SectionTabPanelsProps) => {

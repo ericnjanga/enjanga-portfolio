@@ -3,7 +3,7 @@
  
 import { Banner, CMSRichText } from 'enjanga-components-library';
 import { Grid, Column } from '@carbon/react';
-import { ContentfulDataProvider } from '@/libs/contentful/contentful-dataProvider';
+import { ContentfulDataProvider } from '@/libs/contentful/dataProvider';
 import { ArticlePageProps } from '@/libs/types';
 import './../../../styles/_blogs-and-articles.scss'; 
   
