@@ -40,7 +40,7 @@ const getFormatedDataForContext = (data: any, dataFor: DataFor): CDP_context_pro
     case 'Blog Post Collection':
     case 'List of Best Work':
     case 'List of quotes':
-    case 'List of About Info':
+    case 'About Info Collection':
     case 'List of Footer Links':
       orderedItems = sortByOrderProp(items);
       break;

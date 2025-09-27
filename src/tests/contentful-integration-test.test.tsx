@@ -1,6 +1,3 @@
-
-
-
 // -----------------------------------------------------------------------------
 // INTEGRATION TESTS (real Contentful calls)
 // Run only if RUN_INTEGRATION_TESTS=true is set
@@ -15,7 +12,7 @@ import { contentfulForServerEntriesFetch } from '@/libs/contentful/contentful-fo
 import { useContentfulForClientEntries } from '@/libs/contentful/hooks/useContentfulForClientEntries';
 import blogPostCollectionFixture from './fixtures/blogPostCollection.fixture.json';
 import blogPostsEntryFixture from './fixtures/blogPostEntry.fixture.json';
-
+import aboutInfoCollectionFixture from './fixtures/aboutInfoCollection.fixture.json';
 
 
 
@@ -31,8 +28,9 @@ const createWrapper = () => {
  
 
 
-
-// Tests
+// Tests:
+// Making sure Contentful entries fetched for both server and client-side
+// functions are consistent with entry fixtures.
 // -----------------------------------------------------------------------------
 describe.runIf(process.env.RUN_INTEGRATION_TESTS === 'true')(
   'Contentful client/server consistency (integration)',
@@ -82,5 +80,44 @@ describe.runIf(process.env.RUN_INTEGRATION_TESTS === 'true')(
       expect(serverResult).toEqual(clientResult);
       expect(serverResult).toEqual([blogPostsEntryFixture.data.en]);
     });
+
+
+
+    it(`["About Info Collection"] fetches the same normalized data (server + client)`, async () => {
+      const serverResult = await contentfulForServerEntriesFetch(
+        'About Info Collection'
+      );
+      expect(serverResult.length).toBeGreaterThan(0);
+
+      const { result } = renderHook(
+        () => useContentfulForClientEntries('About Info Collection'),
+        { wrapper: createWrapper() }
+      );
+
+      await waitFor(() => {
+        expect(result.current.isSuccess).toBe(true);
+      });
+
+      const clientResult = result.current.data;
+      expect(serverResult).toEqual(clientResult);
+      expect(serverResult).toEqual(aboutInfoCollectionFixture.data.en.items);
+    });
+
+
+
+
+    /*
+      TEST THAT REMAIN TO BE CONDUCTED:
+      ---------------------------------
+      | 'Landing Page Banner'
+      | 'Blog Page Banner'
+      | 'Footer Copyright'
+      | 'Single Work'
+      | 'InfoBlock by parentId'
+      | 'List of Best Work'
+      | 'List of quotes'
+      | 'List of Scope of expertise'
+      | 'List of Footer Links';
+    */
   }
 );

@@ -34,6 +34,10 @@ export const contentfulContentIds = {
  *   const posts = await contentfulForServerEntriesFetch("Blog Post Collection");
  */
 export type DataFor =
+  | 'Blog Post Collection'
+  | 'Blog Post Entry'
+  | 'About Info Collection'
+  
   | 'Landing Page Banner'
   | 'Blog Page Banner'
   | 'Footer Copyright'
@@ -42,9 +46,6 @@ export type DataFor =
   | 'List of Best Work'
   | 'List of quotes'
   | 'List of Scope of expertise'
-  | 'Blog Post Collection'
-  | 'Blog Post Entry'
-  | 'List of About Info'
   | 'List of Footer Links';
 
 
@@ -121,7 +122,7 @@ export function getContentfulQueryConfig(dataFor: DataFor, contentId?: string) {
       variables.parentRefId = contentfulContentIds.categories['Scope of expertise'];
       break;
 
-    case 'List of About Info':
+    case 'About Info Collection':
       query = queryData.infoBlockByParentCollection;
       variables.parentRefId = contentfulContentIds.categories['About section'];
       break;

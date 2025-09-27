@@ -5,9 +5,9 @@ import { getContentfulQueryConfig, DataFor } from '../contentful-queryConfig';
 
 /**
  * Direct client-side fetch to Contentful GraphQL API.
- * @param dataFor 
- * @param contentId 
- * @returns 
+ * @param dataFor
+ * @param contentId
+ * @returns
  */
 export const useContentfulForClientEntries = (
   dataFor: DataFor,

@@ -6,7 +6,7 @@ import { CP_nameType } from 'enjanga-components-library';
 
 const ContentAbout = () => (
   <Grid className="grid-of-customTiles grid-of-customTiles-1">
-    <ContentfulDataProvider dataFor="List of About Info">
+    <ContentfulDataProvider dataFor="About Info Collection">
       {({ orderedItems }) => {
         const card1 = orderedItems && orderedItems[0];
         const card2 = orderedItems && orderedItems[1];

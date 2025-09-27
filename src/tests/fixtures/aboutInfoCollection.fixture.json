@@ -1,0 +1,736 @@
+{
+  "data": {
+    "en": {
+      "items": [
+        {
+          "sys": {
+            "id": "7yvcjDVOZ4Sf67LWSSawgm"
+          },
+          "description": {
+            "json": {
+              "nodeType": "document",
+              "data": {},
+              "content": [
+                {
+                  "nodeType": "heading-3",
+                  "data": {},
+                  "content": [
+                    {
+                      "nodeType": "text",
+                      "value": "From Front-end development to Solution Engineering",
+                      "marks": [],
+                      "data": {}
+                    }
+                  ]
+                },
+                {
+                  "nodeType": "paragraph",
+                  "data": {},
+                  "content": [
+                    {
+                      "nodeType": "text",
+                      "value": "I am actively transitioning into a Solution Engineer role to leverage my unique background in design technology and my decade of front-end development experience.",
+                      "marks": [],
+                      "data": {}
+                    }
+                  ]
+                },
+                {
+                  "nodeType": "paragraph",
+                  "data": {},
+                  "content": [
+                    {
+                      "nodeType": "text",
+                      "value": "",
+                      "marks": [],
+                      "data": {}
+                    }
+                  ]
+                },
+                {
+                  "nodeType": "heading-3",
+                  "data": {},
+                  "content": [
+                    {
+                      "nodeType": "text",
+                      "value": "Demonstrating technology and showing business value",
+                      "marks": [],
+                      "data": {}
+                    }
+                  ]
+                },
+                {
+                  "nodeType": "paragraph",
+                  "data": {},
+                  "content": [
+                    {
+                      "nodeType": "text",
+                      "value": "I seek to join a team where I can partner directly with clients to understand their objectives. My goal is not just to sell a product, but to design and demonstrate the right solution to their biggest challenges.\nI will focus my expertise on delivering technology that provides measurable business value, ensuring solutions are not only feasible but also desirable and viable for the end-user. I am driven by solving real-world problems and building trust through clarity and credibility.",
+                      "marks": [],
+                      "data": {}
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          "parentId": "2yc27jrBHSGwDBau6c8qfA",
+          "order": 3,
+          "icon": "Hills",
+          "title": "Career objective",
+          "blurb": "Design Technologist evolving into Solution Engineering. Seeking to convey trust and demonstrate value to clients."
+        },
+        {
+          "sys": {
+            "id": "6vQYPEckr1QqrSYbvsRvF7"
+          },
+          "description": {
+            "json": {
+              "data": {},
+              "content": [
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "marks": [
+                        {
+                          "type": "bold"
+                        }
+                      ],
+                      "value": "A Foundation as a Design Technologist",
+                      "nodeType": "text"
+                    }
+                  ],
+                  "nodeType": "heading-3"
+                },
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "marks": [],
+                      "value": "I am a front-end developer with 10+ years of experience building scalable digital products. My curiosity about user behavior and a desire to perfectly translate design into code led me to become a Design Technologist.\nI hold six certifications in User Experience—from ",
+                      "nodeType": "text"
+                    },
+                    {
+                      "data": {},
+                      "marks": [
+                        {
+                          "type": "bold"
+                        }
+                      ],
+                      "value": "Design Thinking",
+                      "nodeType": "text"
+                    },
+                    {
+                      "data": {},
+                      "marks": [],
+                      "value": " to ",
+                      "nodeType": "text"
+                    },
+                    {
+                      "data": {},
+                      "marks": [
+                        {
+                          "type": "bold"
+                        }
+                      ],
+                      "value": "User Research",
+                      "nodeType": "text"
+                    },
+                    {
+                      "data": {},
+                      "marks": [],
+                      "value": "—which empower me to translate user needs and business goals into ",
+                      "nodeType": "text"
+                    },
+                    {
+                      "data": {},
+                      "marks": [
+                        {
+                          "type": "bold"
+                        }
+                      ],
+                      "value": "functional prototypes",
+                      "nodeType": "text"
+                    },
+                    {
+                      "data": {},
+                      "marks": [],
+                      "value": ". This unique role allowed me to become an expert at ",
+                      "nodeType": "text"
+                    },
+                    {
+                      "data": {},
+                      "marks": [
+                        {
+                          "type": "bold"
+                        }
+                      ],
+                      "value": "bridging the communication gap between designers and engineers",
+                      "nodeType": "text"
+                    },
+                    {
+                      "data": {},
+                      "marks": [],
+                      "value": ".",
+                      "nodeType": "text"
+                    }
+                  ],
+                  "nodeType": "paragraph"
+                },
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "marks": [],
+                      "value": "",
+                      "nodeType": "text"
+                    }
+                  ],
+                  "nodeType": "paragraph"
+                },
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "marks": [
+                        {
+                          "type": "bold"
+                        }
+                      ],
+                      "value": "A Solution Engineering Perspective",
+                      "nodeType": "text"
+                    }
+                  ],
+                  "nodeType": "heading-3"
+                },
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "marks": [],
+                      "value": "I evolved my role by applying critical thinking to lead product discussions and balance technical, design, user, and business concerns. I often volunteered to ",
+                      "nodeType": "text"
+                    },
+                    {
+                      "data": {},
+                      "marks": [
+                        {
+                          "type": "bold"
+                        }
+                      ],
+                      "value": "translate complex business requirements",
+                      "nodeType": "text"
+                    },
+                    {
+                      "data": {},
+                      "marks": [],
+                      "value": ", using rapid prototypes to ",
+                      "nodeType": "text"
+                    },
+                    {
+                      "data": {},
+                      "marks": [
+                        {
+                          "type": "bold"
+                        }
+                      ],
+                      "value": "demonstrate a solution's value",
+                      "nodeType": "text"
+                    },
+                    {
+                      "data": {},
+                      "marks": [],
+                      "value": " and ",
+                      "nodeType": "text"
+                    },
+                    {
+                      "data": {},
+                      "marks": [
+                        {
+                          "type": "bold"
+                        }
+                      ],
+                      "value": "technical feasibility",
+                      "nodeType": "text"
+                    },
+                    {
+                      "data": {},
+                      "marks": [],
+                      "value": ".\nThis naturally led me to work directly with clients. Leveraging my Design Thinking training, I excel at ",
+                      "nodeType": "text"
+                    },
+                    {
+                      "data": {},
+                      "marks": [
+                        {
+                          "type": "bold"
+                        }
+                      ],
+                      "value": "listening to understand their deepest challenges",
+                      "nodeType": "text"
+                    },
+                    {
+                      "data": {},
+                      "marks": [],
+                      "value": ", ",
+                      "nodeType": "text"
+                    },
+                    {
+                      "data": {},
+                      "marks": [
+                        {
+                          "type": "bold"
+                        }
+                      ],
+                      "value": "co-designing the right solution",
+                      "nodeType": "text"
+                    },
+                    {
+                      "data": {},
+                      "marks": [],
+                      "value": ", and guiding its technical execution.",
+                      "nodeType": "text"
+                    }
+                  ],
+                  "nodeType": "paragraph"
+                },
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "marks": [],
+                      "value": "",
+                      "nodeType": "text"
+                    }
+                  ],
+                  "nodeType": "paragraph"
+                },
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "marks": [
+                        {
+                          "type": "bold"
+                        }
+                      ],
+                      "value": "What I Bring to the Table",
+                      "nodeType": "text"
+                    }
+                  ],
+                  "nodeType": "heading-3"
+                },
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "marks": [],
+                      "value": "I offer ",
+                      "nodeType": "text"
+                    },
+                    {
+                      "data": {},
+                      "marks": [
+                        {
+                          "type": "bold"
+                        }
+                      ],
+                      "value": "a unique blend of user empathy and technical leadership",
+                      "nodeType": "text"
+                    },
+                    {
+                      "data": {},
+                      "marks": [],
+                      "value": ". I quickly develop a deep understanding of people, products, and processes. My expertise allows me to ",
+                      "nodeType": "text"
+                    },
+                    {
+                      "data": {},
+                      "marks": [
+                        {
+                          "type": "bold"
+                        }
+                      ],
+                      "value": "design technically credible concepts",
+                      "nodeType": "text"
+                    },
+                    {
+                      "data": {},
+                      "marks": [],
+                      "value": ", ",
+                      "nodeType": "text"
+                    },
+                    {
+                      "data": {},
+                      "marks": [
+                        {
+                          "type": "bold"
+                        }
+                      ],
+                      "value": "communicate them clearly,",
+                      "nodeType": "text"
+                    },
+                    {
+                      "data": {},
+                      "marks": [],
+                      "value": " and ",
+                      "nodeType": "text"
+                    },
+                    {
+                      "data": {},
+                      "marks": [
+                        {
+                          "type": "bold"
+                        }
+                      ],
+                      "value": "persuasively sell an idea grounded in a client's specific business needs",
+                      "nodeType": "text"
+                    },
+                    {
+                      "data": {},
+                      "marks": [],
+                      "value": ".",
+                      "nodeType": "text"
+                    }
+                  ],
+                  "nodeType": "paragraph"
+                }
+              ],
+              "nodeType": "document"
+            }
+          },
+          "parentId": "2yc27jrBHSGwDBau6c8qfA",
+          "order": 1,
+          "icon": "Leadership",
+          "title": "Introduction",
+          "blurb": "Leveraging my unique background to design, demonstrate, and deploy technology that delivers measurable value."
+        },
+        {
+          "sys": {
+            "id": "6cVb3cktahk9w0nbPu3o1I"
+          },
+          "description": {
+            "json": {
+              "data": {},
+              "content": [
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "marks": [],
+                      "value": "My skills are split across three key areas that enable me to effectively bridge business challenges with technical solutions:",
+                      "nodeType": "text"
+                    }
+                  ],
+                  "nodeType": "paragraph"
+                },
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "marks": [
+                        {
+                          "type": "bold"
+                        }
+                      ],
+                      "value": "",
+                      "nodeType": "text"
+                    }
+                  ],
+                  "nodeType": "paragraph"
+                },
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "marks": [],
+                      "value": "Solutioning & Strategy",
+                      "nodeType": "text"
+                    }
+                  ],
+                  "nodeType": "heading-3"
+                },
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "content": [
+                        {
+                          "data": {},
+                          "content": [
+                            {
+                              "data": {},
+                              "marks": [],
+                              "value": "Solution Design & Technical Discovery",
+                              "nodeType": "text"
+                            }
+                          ],
+                          "nodeType": "paragraph"
+                        }
+                      ],
+                      "nodeType": "list-item"
+                    },
+                    {
+                      "data": {},
+                      "content": [
+                        {
+                          "data": {},
+                          "content": [
+                            {
+                              "data": {},
+                              "marks": [],
+                              "value": "User Research & Design Thinking",
+                              "nodeType": "text"
+                            }
+                          ],
+                          "nodeType": "paragraph"
+                        }
+                      ],
+                      "nodeType": "list-item"
+                    },
+                    {
+                      "data": {},
+                      "content": [
+                        {
+                          "data": {},
+                          "content": [
+                            {
+                              "data": {},
+                              "marks": [],
+                              "value": "Requirements Analysis & Translation",
+                              "nodeType": "text"
+                            }
+                          ],
+                          "nodeType": "paragraph"
+                        }
+                      ],
+                      "nodeType": "list-item"
+                    },
+                    {
+                      "data": {},
+                      "content": [
+                        {
+                          "data": {},
+                          "content": [
+                            {
+                              "data": {},
+                              "marks": [],
+                              "value": "Proof-of-Concept (POC) Development",
+                              "nodeType": "text"
+                            }
+                          ],
+                          "nodeType": "paragraph"
+                        }
+                      ],
+                      "nodeType": "list-item"
+                    }
+                  ],
+                  "nodeType": "unordered-list"
+                },
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "marks": [],
+                      "value": "",
+                      "nodeType": "text"
+                    }
+                  ],
+                  "nodeType": "paragraph"
+                },
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "marks": [],
+                      "value": "Technical Execution",
+                      "nodeType": "text"
+                    }
+                  ],
+                  "nodeType": "heading-3"
+                },
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "content": [
+                        {
+                          "data": {},
+                          "content": [
+                            {
+                              "data": {},
+                              "marks": [],
+                              "value": "Front-End Development (React)",
+                              "nodeType": "text"
+                            }
+                          ],
+                          "nodeType": "paragraph"
+                        }
+                      ],
+                      "nodeType": "list-item"
+                    },
+                    {
+                      "data": {},
+                      "content": [
+                        {
+                          "data": {},
+                          "content": [
+                            {
+                              "data": {},
+                              "marks": [],
+                              "value": "Rapid Prototyping & Technical Feasibility Analysis",
+                              "nodeType": "text"
+                            }
+                          ],
+                          "nodeType": "paragraph"
+                        }
+                      ],
+                      "nodeType": "list-item"
+                    },
+                    {
+                      "data": {},
+                      "content": [
+                        {
+                          "data": {},
+                          "content": [
+                            {
+                              "data": {},
+                              "marks": [],
+                              "value": "Scalable Architecture & Web Performance",
+                              "nodeType": "text"
+                            }
+                          ],
+                          "nodeType": "paragraph"
+                        }
+                      ],
+                      "nodeType": "list-item"
+                    }
+                  ],
+                  "nodeType": "unordered-list"
+                },
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "marks": [],
+                      "value": "",
+                      "nodeType": "text"
+                    }
+                  ],
+                  "nodeType": "paragraph"
+                },
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "marks": [],
+                      "value": "Client & Communication",
+                      "nodeType": "text"
+                    }
+                  ],
+                  "nodeType": "heading-3"
+                },
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "content": [
+                        {
+                          "data": {},
+                          "content": [
+                            {
+                              "data": {},
+                              "marks": [],
+                              "value": "Technical Presentation & Demo Delivery",
+                              "nodeType": "text"
+                            }
+                          ],
+                          "nodeType": "paragraph"
+                        }
+                      ],
+                      "nodeType": "list-item"
+                    },
+                    {
+                      "data": {},
+                      "content": [
+                        {
+                          "data": {},
+                          "content": [
+                            {
+                              "data": {},
+                              "marks": [],
+                              "value": "Client Advisory & Stakeholder Management",
+                              "nodeType": "text"
+                            }
+                          ],
+                          "nodeType": "paragraph"
+                        }
+                      ],
+                      "nodeType": "list-item"
+                    },
+                    {
+                      "data": {},
+                      "content": [
+                        {
+                          "data": {},
+                          "content": [
+                            {
+                              "data": {},
+                              "marks": [],
+                              "value": "Bridging Communication between Technical and Non-Technical Teams",
+                              "nodeType": "text"
+                            }
+                          ],
+                          "nodeType": "paragraph"
+                        }
+                      ],
+                      "nodeType": "list-item"
+                    }
+                  ],
+                  "nodeType": "unordered-list"
+                },
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "marks": [],
+                      "value": "",
+                      "nodeType": "text"
+                    }
+                  ],
+                  "nodeType": "paragraph"
+                }
+              ],
+              "nodeType": "document"
+            }
+          },
+          "parentId": "2yc27jrBHSGwDBau6c8qfA",
+          "order": 2,
+          "icon": "App Developer",
+          "title": "Primary expertise",
+          "blurb": "Bridging user experience and technical execution through expert solution design, prototyping, and client-facing demos."
+        }
+      ]
+    }
+  }
+}

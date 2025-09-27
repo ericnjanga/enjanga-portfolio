@@ -5,7 +5,6 @@ import React, { createContext, useContext } from 'react';
 import { useContentfulForClientEntries } from '../hooks/useContentfulForClientEntries';
 import { CDP_context_propsType, CDP_propsType } from './types';
 import getFormatedDataForContext from './getFormatedDataForContext';
-// import { getContentfulQueryConfig } from './contentful-queryConfig';
 
 
 
