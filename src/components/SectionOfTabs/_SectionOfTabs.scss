@@ -1,7 +1,21 @@
-// .SectionOfTabs {
-//   border: 4px solid blue;
+.SectionOfTabs {
+  /* 
+    Override Carbon's default min-block-size on .cds--tabs.
+    By default, Carbon sets: min-block-size: var(--cds-layout-size-height-local);
+    In some layouts this forces an unnecessarily large block-size, which pushes
+    the tablist outside its container and causes a horizontal scrollbar.
+    
+    Setting min-block-size: auto lets the tab height be defined by its content
+    (and Carbon’s padding/line-height), preventing overflow without breaking
+    visual consistency.
+  */
+  .cds--tabs {
+    min-block-size: auto !important; /* allow height to shrink naturally */
+  }
 
-//   .landing-page__r2 {
-//     border: 2px solid rgb(195, 0, 255);
-//   }
-// }
+  // border: 4px solid blue;
+
+  // .landing-page__r2 {
+  //   border: 2px solid rgb(195, 0, 255);
+  // }
+}
