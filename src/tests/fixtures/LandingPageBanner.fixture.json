@@ -1,0 +1,28 @@
+{
+  "data": {
+    "en": {
+      "description": {
+        "json": {
+          "data": {},
+          "content": [
+            {
+              "data": {},
+              "content": [
+                {
+                  "data": {},
+                  "marks": [],
+                  "value": "Bilingual senior software engineer specializing in high-performance web applications and UI architecture. Adept at translating business requirements into technical solutions and leading engineering teams to deliver exceptional user experiences.",
+                  "nodeType": "text"
+                }
+              ],
+              "nodeType": "paragraph"
+            }
+          ],
+          "nodeType": "document"
+        }
+      },
+      "title": "Leading the UI architecture of large-scale technology solutions",
+      "blurb": null
+    }
+  }
+}

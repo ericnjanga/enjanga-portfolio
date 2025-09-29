@@ -10,9 +10,15 @@ import { renderHook, waitFor } from '@testing-library/react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { contentfulForServerEntriesFetch } from '@/libs/contentful/contentful-forServerFetchEntries';
 import { useContentfulForClientEntries } from '@/libs/contentful/hooks/useContentfulForClientEntries';
+import { contentfulContentIds } from '@/libs/contentful/contentful-queryConfig';
 import blogPostCollectionFixture from './fixtures/blogPostCollection.fixture.json';
 import blogPostsEntryFixture from './fixtures/blogPostEntry.fixture.json';
 import aboutInfoCollectionFixture from './fixtures/aboutInfoCollection.fixture.json';
+import LandingPageBannerFixture from './fixtures/LandingPageBanner.fixture.json';
+import BlogPageBannerFixture from './fixtures/BlogPageBanner.fixture.json';
+import FooterCopyrightFixture from './fixtures/FooterCopyright.fixture.json';
+
+
 
 
 
@@ -37,7 +43,13 @@ describe.runIf(process.env.RUN_INTEGRATION_TESTS === 'true')(
   () => {
     // ...
     const blogEntryId = '19oHD8PCWxtpsAQ0vrZm80';
+    const LandingPageBannerId = contentfulContentIds.categories['Landing Page Banner'];
+    const BlogPageBannerId = contentfulContentIds.categories['Blog Page Banner'];
+    const FooterCopyrightId = contentfulContentIds.categories['Footer Copyright'];
+ 
 
+ 
+    
     it(`["Blog Post Collection"] fetches the same normalized data (server + client)`, async () => {
       const serverResult = await contentfulForServerEntriesFetch(
         'Blog Post Collection'
@@ -105,13 +117,79 @@ describe.runIf(process.env.RUN_INTEGRATION_TESTS === 'true')(
 
 
 
+    it(`["Landing Page Banner"] fetches the same normalized data (server + client)`, async () => {
+      const serverResult = await contentfulForServerEntriesFetch(
+        'Landing Page Banner',
+        LandingPageBannerId
+      );
+      expect(serverResult.length).toBeGreaterThan(0);
+
+      const { result } = renderHook(
+        () => useContentfulForClientEntries('Landing Page Banner', LandingPageBannerId),
+        { wrapper: createWrapper() }
+      );
+
+      await waitFor(() => {
+        expect(result.current.isSuccess).toBe(true);
+      });
+
+      const clientResult = result.current.data;
+      expect(serverResult).toEqual(clientResult);
+      expect(serverResult).toEqual([LandingPageBannerFixture.data.en]);
+    });
+
+
+
+    it(`["Blog Page Banner"] fetches the same normalized data (server + client)`, async () => {
+      const serverResult = await contentfulForServerEntriesFetch(
+        'Blog Page Banner',
+        BlogPageBannerId
+      );
+      expect(serverResult.length).toBeGreaterThan(0);
+
+      const { result } = renderHook(
+        () => useContentfulForClientEntries('Blog Page Banner', BlogPageBannerId),
+        { wrapper: createWrapper() }
+      );
+
+      await waitFor(() => {
+        expect(result.current.isSuccess).toBe(true);
+      });
+
+      const clientResult = result.current.data;
+      expect(serverResult).toEqual(clientResult);
+      expect(serverResult).toEqual([BlogPageBannerFixture.data.en]);
+    });
+
+
+
+    it(`["Footer Copyright"] fetches the same normalized data (server + client)`, async () => {
+      const serverResult = await contentfulForServerEntriesFetch(
+        'Footer Copyright',
+        FooterCopyrightId
+      );
+      expect(serverResult.length).toBeGreaterThan(0);
+
+      const { result } = renderHook(
+        () => useContentfulForClientEntries('Footer Copyright', FooterCopyrightId),
+        { wrapper: createWrapper() }
+      );
+
+      await waitFor(() => {
+        expect(result.current.isSuccess).toBe(true);
+      });
+
+      const clientResult = result.current.data;
+      expect(serverResult).toEqual(clientResult);
+      expect(serverResult).toEqual([FooterCopyrightFixture.data.en]);
+    });
+
+
+
 
     /*
       TEST THAT REMAIN TO BE CONDUCTED:
-      ---------------------------------
-      | 'Landing Page Banner'
-      | 'Blog Page Banner'
-      | 'Footer Copyright'
+      ---------------------------------   
       | 'Single Work'
       | 'InfoBlock by parentId'
       | 'List of Best Work'

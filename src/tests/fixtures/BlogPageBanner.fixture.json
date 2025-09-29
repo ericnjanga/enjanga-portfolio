@@ -1,0 +1,28 @@
+{
+  "data": {
+    "en": {
+      "description": {
+        "json": {
+          "data": {},
+          "content": [
+            {
+              "data": {},
+              "content": [
+                {
+                  "data": {},
+                  "marks": [],
+                  "value": "Exploring the intersection of design, technology, and business storytelling — blending front-end engineering expertise with solution-driven thinking to create lasting impact.",
+                  "nodeType": "text"
+                }
+              ],
+              "nodeType": "paragraph"
+            }
+          ],
+          "nodeType": "document"
+        }
+      },
+      "title": "Beyond Interfaces: Engineering Value for Business",
+      "blurb": null
+    }
+  }
+}

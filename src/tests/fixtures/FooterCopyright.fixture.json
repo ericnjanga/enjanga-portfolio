@@ -1,0 +1,28 @@
+{
+  "data": {
+    "en": {
+      "description": {
+        "json": {
+          "nodeType": "document",
+          "data": {},
+          "content": [
+            {
+              "nodeType": "paragraph",
+              "data": {},
+              "content": [
+                {
+                  "nodeType": "text",
+                  "value": "Bilingual Design Technologist Evolving into Solution Engineering | Toronto, Canada.",
+                  "marks": [],
+                  "data": {}
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "title": "Footer Copyright",
+      "blurb": null
+    }
+  }
+}

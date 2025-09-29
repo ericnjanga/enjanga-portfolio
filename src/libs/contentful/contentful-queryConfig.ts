@@ -37,10 +37,10 @@ export type DataFor =
   | 'Blog Post Collection'
   | 'Blog Post Entry'
   | 'About Info Collection'
-  
   | 'Landing Page Banner'
   | 'Blog Page Banner'
   | 'Footer Copyright'
+  
   | 'Single Work'
   | 'InfoBlock by parentId'
   | 'List of Best Work'
