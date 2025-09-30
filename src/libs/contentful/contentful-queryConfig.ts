@@ -40,8 +40,8 @@ export type DataFor =
   | 'Landing Page Banner'
   | 'Blog Page Banner'
   | 'Footer Copyright'
+  | 'Case Study Entry'
   
-  | 'Single Work'
   | 'InfoBlock by parentId'
   | 'List of Best Work'
   | 'List of quotes'
@@ -94,7 +94,7 @@ export function getContentfulQueryConfig(dataFor: DataFor, contentId?: string) {
       variables.sectionId = contentfulContentIds.categories['Footer Copyright'];
       break;
 
-    case 'Single Work':
+    case 'Case Study Entry':
       query = queryData.projectById;
       variables.sectionId = contentId ?? '';
       break;

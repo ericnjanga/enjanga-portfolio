@@ -28,7 +28,7 @@ const getFormatedDataForContext = (data: any, dataFor: DataFor): CDP_context_pro
     case 'Landing Page Banner':
     case 'Blog Page Banner':
     case 'Footer Copyright':
-    case 'Single Work':
+    case 'Case Study Entry':
     case 'Blog Post Entry':
       if (dataFor==='Blog Post Entry') 
       console.log('....-----data?', data);

@@ -9,7 +9,7 @@ import './../../../styles/_blogs-and-articles.scss';
   
 const ProjectPage = ({ params }: ArticlePageProps) => (
   <div className="articlePage">
-    <ContentfulDataProvider dataFor="Single Work" contentId={params.contentId}>
+    <ContentfulDataProvider dataFor="Case Study Entry" contentId={params.contentId}>
       {({ title, richDescription }) => (
         <>
           <Banner

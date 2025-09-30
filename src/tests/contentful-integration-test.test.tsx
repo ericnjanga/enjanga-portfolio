@@ -14,9 +14,10 @@ import { contentfulContentIds } from '@/libs/contentful/contentful-queryConfig';
 import blogPostCollectionFixture from './fixtures/blogPostCollection.fixture.json';
 import blogPostsEntryFixture from './fixtures/blogPostEntry.fixture.json';
 import aboutInfoCollectionFixture from './fixtures/aboutInfoCollection.fixture.json';
-import LandingPageBannerFixture from './fixtures/LandingPageBanner.fixture.json';
-import BlogPageBannerFixture from './fixtures/BlogPageBanner.fixture.json';
-import FooterCopyrightFixture from './fixtures/FooterCopyright.fixture.json';
+import landingPageBannerFixture from './fixtures/landingPageBanner.fixture.json';
+import blogPageBannerFixture from './fixtures/blogPageBanner.fixture.json';
+import footerCopyrightFixture from './fixtures/footerCopyright.fixture.json';
+import CaseStudyEntryFixture from './fixtures/CaseStudyEntry.fixture.json';
 
 
 
@@ -43,9 +44,10 @@ describe.runIf(process.env.RUN_INTEGRATION_TESTS === 'true')(
   () => {
     // ...
     const blogEntryId = '19oHD8PCWxtpsAQ0vrZm80';
-    const LandingPageBannerId = contentfulContentIds.categories['Landing Page Banner'];
-    const BlogPageBannerId = contentfulContentIds.categories['Blog Page Banner'];
-    const FooterCopyrightId = contentfulContentIds.categories['Footer Copyright'];
+    const landingPageBannerId = contentfulContentIds.categories['Landing Page Banner'];
+    const blogPageBannerId = contentfulContentIds.categories['Blog Page Banner'];
+    const footerCopyrightId = contentfulContentIds.categories['Footer Copyright'];
+    const CaseStudyEntryId = '2UJqmr6lFkc80z1Qm3LUfr';
  
 
  
@@ -120,12 +122,12 @@ describe.runIf(process.env.RUN_INTEGRATION_TESTS === 'true')(
     it(`["Landing Page Banner"] fetches the same normalized data (server + client)`, async () => {
       const serverResult = await contentfulForServerEntriesFetch(
         'Landing Page Banner',
-        LandingPageBannerId
+        landingPageBannerId
       );
       expect(serverResult.length).toBeGreaterThan(0);
 
       const { result } = renderHook(
-        () => useContentfulForClientEntries('Landing Page Banner', LandingPageBannerId),
+        () => useContentfulForClientEntries('Landing Page Banner', landingPageBannerId),
         { wrapper: createWrapper() }
       );
 
@@ -135,7 +137,7 @@ describe.runIf(process.env.RUN_INTEGRATION_TESTS === 'true')(
 
       const clientResult = result.current.data;
       expect(serverResult).toEqual(clientResult);
-      expect(serverResult).toEqual([LandingPageBannerFixture.data.en]);
+      expect(serverResult).toEqual([landingPageBannerFixture.data.en]);
     });
 
 
@@ -143,12 +145,12 @@ describe.runIf(process.env.RUN_INTEGRATION_TESTS === 'true')(
     it(`["Blog Page Banner"] fetches the same normalized data (server + client)`, async () => {
       const serverResult = await contentfulForServerEntriesFetch(
         'Blog Page Banner',
-        BlogPageBannerId
+        blogPageBannerId
       );
       expect(serverResult.length).toBeGreaterThan(0);
 
       const { result } = renderHook(
-        () => useContentfulForClientEntries('Blog Page Banner', BlogPageBannerId),
+        () => useContentfulForClientEntries('Blog Page Banner', blogPageBannerId),
         { wrapper: createWrapper() }
       );
 
@@ -158,7 +160,7 @@ describe.runIf(process.env.RUN_INTEGRATION_TESTS === 'true')(
 
       const clientResult = result.current.data;
       expect(serverResult).toEqual(clientResult);
-      expect(serverResult).toEqual([BlogPageBannerFixture.data.en]);
+      expect(serverResult).toEqual([blogPageBannerFixture.data.en]);
     });
 
 
@@ -166,12 +168,12 @@ describe.runIf(process.env.RUN_INTEGRATION_TESTS === 'true')(
     it(`["Footer Copyright"] fetches the same normalized data (server + client)`, async () => {
       const serverResult = await contentfulForServerEntriesFetch(
         'Footer Copyright',
-        FooterCopyrightId
+        footerCopyrightId
       );
       expect(serverResult.length).toBeGreaterThan(0);
 
       const { result } = renderHook(
-        () => useContentfulForClientEntries('Footer Copyright', FooterCopyrightId),
+        () => useContentfulForClientEntries('Footer Copyright', footerCopyrightId),
         { wrapper: createWrapper() }
       );
 
@@ -181,7 +183,30 @@ describe.runIf(process.env.RUN_INTEGRATION_TESTS === 'true')(
 
       const clientResult = result.current.data;
       expect(serverResult).toEqual(clientResult);
-      expect(serverResult).toEqual([FooterCopyrightFixture.data.en]);
+      expect(serverResult).toEqual([footerCopyrightFixture.data.en]);
+    });
+
+
+
+    it(`["Case Study Entry"] fetches the same normalized data (server + client)`, async () => {
+      const serverResult = await contentfulForServerEntriesFetch(
+        'Case Study Entry',
+        CaseStudyEntryId
+      );
+      expect(serverResult.length).toBeGreaterThan(0);
+
+      const { result } = renderHook(
+        () => useContentfulForClientEntries('Case Study Entry', CaseStudyEntryId),
+        { wrapper: createWrapper() }
+      );
+
+      await waitFor(() => {
+        expect(result.current.isSuccess).toBe(true);
+      });
+
+      const clientResult = result.current.data;
+      expect(serverResult).toEqual(clientResult);
+      expect(serverResult).toEqual([CaseStudyEntryFixture.data.en]);
     });
 
 
@@ -189,8 +214,7 @@ describe.runIf(process.env.RUN_INTEGRATION_TESTS === 'true')(
 
     /*
       TEST THAT REMAIN TO BE CONDUCTED:
-      ---------------------------------   
-      | 'Single Work'
+      ---------------------------------    
       | 'InfoBlock by parentId'
       | 'List of Best Work'
       | 'List of quotes'
