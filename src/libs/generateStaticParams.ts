@@ -5,7 +5,7 @@ import { contentfulForServerEntriesFetch } from './contentful/contentful-forServ
  * Utility to generate static params for any content model
  */
 export async function generateParamsForContent(
-  dataFor: 'Blog Post Collection' | 'List of Best Work'
+  dataFor: 'Blog Post Collection' | 'Case Study Collection'
 ) {
   const entries = await contentfulForServerEntriesFetch(dataFor);
 

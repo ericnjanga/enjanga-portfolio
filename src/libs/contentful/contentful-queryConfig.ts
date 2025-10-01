@@ -9,11 +9,11 @@ export const contentfulContentIds = {
     'Landing Page Banner': '4llAs4gW4mc1fikxbW6u4V',
     'Blog Page Banner': '1KZzwxEzfTs7rLABpVpjX1',
     'Footer Copyright': '2KSc8hw8VvMNS5rXQP8GEZ',
-    'List of Best Work': ['5y2JSha3mykWdGkUf6XcQp'],
-    'Scope of expertise': '5OpXyMfZfJlGQzTKJSn9Hw',
-    'About section': '2yc27jrBHSGwDBau6c8qfA',
+    'Case Study Collection': ['5y2JSha3mykWdGkUf6XcQp'],
+    'Scope of expertise Collection': '5OpXyMfZfJlGQzTKJSn9Hw',
+    'About Info Collection': '2yc27jrBHSGwDBau6c8qfA',
     'Featured Image': '2eSLi2IP4sZrrPK0AeQPk7',
-    'Footer section': '2uxFOT0LB1ET4SfM4dNWvo',
+    'Footer Links Collection': '2uxFOT0LB1ET4SfM4dNWvo',
   },
 };
 
@@ -35,18 +35,17 @@ export const contentfulContentIds = {
  */
 export type DataFor =
   | 'Blog Post Collection'
-  | 'Blog Post Entry'
   | 'About Info Collection'
+  | 'Scope of expertise Collection'
+  | 'Expertise Entry Collection'
+  | 'Blog Post Entry'
   | 'Landing Page Banner'
   | 'Blog Page Banner'
   | 'Footer Copyright'
   | 'Case Study Entry'
-  
-  | 'InfoBlock by parentId'
-  | 'List of Best Work'
-  | 'List of quotes'
-  | 'List of Scope of expertise'
-  | 'List of Footer Links';
+  | 'Case Study Collection'
+  | 'Quotes Entry Collection'
+  | 'Footer Links Collection';
 
 
 
@@ -78,20 +77,26 @@ export function getContentfulQueryConfig(dataFor: DataFor, contentId?: string) {
   };
   let trackingInfo = dataFor;
 
-  switch (dataFor) {
+  switch (dataFor) { 
+    case 'Expertise Entry Collection':
+    case 'Scope of expertise Collection':
+    case 'About Info Collection':
+    case 'Footer Links Collection':
+      if (dataFor==='Expertise Entry Collection') {
+        const expertiseId = contentId;
+        query = queryData.infoBlockByParentCollection;
+        variables.parentRefId = expertiseId ?? '';
+      } else {
+        query = queryData.infoBlockByParentCollection;
+        variables.parentRefId = contentfulContentIds.categories[dataFor];
+      }
+      break;
+
     case 'Landing Page Banner':
-      query = queryData.infoBlockById;
-      variables.sectionId = contentfulContentIds.categories['Landing Page Banner'];
-      break;
-
     case 'Blog Page Banner':
-      query = queryData.infoBlockById;
-      variables.sectionId = contentfulContentIds.categories['Blog Page Banner'];
-      break;
-
     case 'Footer Copyright':
       query = queryData.infoBlockById;
-      variables.sectionId = contentfulContentIds.categories['Footer Copyright'];
+      variables.sectionId = contentfulContentIds.categories[dataFor];
       break;
 
     case 'Case Study Entry':
@@ -104,32 +109,12 @@ export function getContentfulQueryConfig(dataFor: DataFor, contentId?: string) {
       variables.sectionId = contentId ?? '';
       break;
 
-    case 'InfoBlock by parentId':
-      query = queryData.infoBlockByParentCollection;
-      variables.parentRefId = contentId ?? '';
-      break;
-
-    case 'List of Best Work':
+    case 'Case Study Collection':
       query = queryData.projectsCollection;
       break;
 
-    case 'List of quotes':
+    case 'Quotes Entry Collection':
       query = queryData.quotesCollection;
-      break;
-
-    case 'List of Scope of expertise':
-      query = queryData.infoBlockByParentCollection;
-      variables.parentRefId = contentfulContentIds.categories['Scope of expertise'];
-      break;
-
-    case 'About Info Collection':
-      query = queryData.infoBlockByParentCollection;
-      variables.parentRefId = contentfulContentIds.categories['About section'];
-      break;
-
-    case 'List of Footer Links':
-      query = queryData.infoBlockByParentCollection;
-      variables.parentRefId = contentfulContentIds.categories['Footer section'];
       break;
 
     case 'Blog Post Collection':

@@ -25,7 +25,7 @@ const AppFooter = () => {
             <Grid className="">
               <Column lg={12} md={4} sm={4} className="app-footer__col2-row1">
                 <Grid>
-                  <ContentfulDataProvider dataFor="List of Footer Links">
+                  <ContentfulDataProvider dataFor="Footer Links Collection">
                     {({ orderedItems }) => {
                       return orderedItems?.map((item) => {
                         return (

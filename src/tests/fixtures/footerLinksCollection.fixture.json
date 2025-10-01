@@ -1,0 +1,572 @@
+{
+  "data": {
+    "en": {
+      "items": [
+        {
+          "sys": {
+            "id": "3Fo2dEcwjF2C7hCjGzLitJ"
+          },
+          "description": {
+            "json": {
+              "nodeType": "document",
+              "data": {},
+              "content": [
+                {
+                  "nodeType": "heading-3",
+                  "data": {},
+                  "content": [
+                    {
+                      "nodeType": "text",
+                      "value": "Published Work",
+                      "marks": [],
+                      "data": {}
+                    }
+                  ]
+                },
+                {
+                  "nodeType": "unordered-list",
+                  "data": {},
+                  "content": [
+                    {
+                      "nodeType": "list-item",
+                      "data": {},
+                      "content": [
+                        {
+                          "nodeType": "paragraph",
+                          "data": {},
+                          "content": [
+                            {
+                              "nodeType": "text",
+                              "value": "",
+                              "marks": [],
+                              "data": {}
+                            },
+                            {
+                              "nodeType": "hyperlink",
+                              "data": {
+                                "uri": "https://github.com/ericnjanga/enjanga-components-library"
+                              },
+                              "content": [
+                                {
+                                  "nodeType": "text",
+                                  "value": "Component Library",
+                                  "marks": [],
+                                  "data": {}
+                                }
+                              ]
+                            },
+                            {
+                              "nodeType": "text",
+                              "value": " (",
+                              "marks": [],
+                              "data": {}
+                            },
+                            {
+                              "nodeType": "hyperlink",
+                              "data": {
+                                "uri": "https://6856ac512f4faa67a7d9c5c2-rnaolxiygb.chromatic.com/"
+                              },
+                              "content": [
+                                {
+                                  "nodeType": "text",
+                                  "value": "Storybook",
+                                  "marks": [],
+                                  "data": {}
+                                }
+                              ]
+                            },
+                            {
+                              "nodeType": "text",
+                              "value": ", ",
+                              "marks": [],
+                              "data": {}
+                            },
+                            {
+                              "nodeType": "hyperlink",
+                              "data": {
+                                "uri": "https://www.npmjs.com/package/enjanga-components-library"
+                              },
+                              "content": [
+                                {
+                                  "nodeType": "text",
+                                  "value": "NPM",
+                                  "marks": [],
+                                  "data": {}
+                                }
+                              ]
+                            },
+                            {
+                              "nodeType": "text",
+                              "value": ")",
+                              "marks": [],
+                              "data": {}
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "nodeType": "list-item",
+                      "data": {},
+                      "content": [
+                        {
+                          "nodeType": "paragraph",
+                          "data": {},
+                          "content": [
+                            {
+                              "nodeType": "text",
+                              "value": "",
+                              "marks": [],
+                              "data": {}
+                            },
+                            {
+                              "nodeType": "hyperlink",
+                              "data": {
+                                "uri": "https://github.com/ericnjanga/enjanga-next-3"
+                              },
+                              "content": [
+                                {
+                                  "nodeType": "text",
+                                  "value": "ENjanga Portfolio (GitHub)",
+                                  "marks": [],
+                                  "data": {}
+                                }
+                              ]
+                            },
+                            {
+                              "nodeType": "text",
+                              "value": "",
+                              "marks": [],
+                              "data": {}
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "nodeType": "list-item",
+                      "data": {},
+                      "content": [
+                        {
+                          "nodeType": "paragraph",
+                          "data": {},
+                          "content": [
+                            {
+                              "nodeType": "text",
+                              "value": "",
+                              "marks": [],
+                              "data": {}
+                            },
+                            {
+                              "nodeType": "hyperlink",
+                              "data": {
+                                "uri": "https://github.com/ericnjanga/enjanga-core-setup"
+                              },
+                              "content": [
+                                {
+                                  "nodeType": "text",
+                                  "value": "Unified Dependency Management",
+                                  "marks": [],
+                                  "data": {}
+                                }
+                              ]
+                            },
+                            {
+                              "nodeType": "text",
+                              "value": " (NPM)",
+                              "marks": [],
+                              "data": {}
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "nodeType": "paragraph",
+                  "data": {},
+                  "content": [
+                    {
+                      "nodeType": "text",
+                      "value": "",
+                      "marks": [],
+                      "data": {}
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          "parentId": "2uxFOT0LB1ET4SfM4dNWvo",
+          "order": 2,
+          "icon": null,
+          "title": "Footer links (Published Work)",
+          "blurb": null
+        },
+        {
+          "sys": {
+            "id": "2ywSJ82pI7PZQ7f8YkeTaZ"
+          },
+          "description": {
+            "json": {
+              "data": {},
+              "content": [
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "marks": [],
+                      "value": "Navigation",
+                      "nodeType": "text"
+                    }
+                  ],
+                  "nodeType": "heading-3"
+                },
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "content": [
+                        {
+                          "data": {},
+                          "content": [
+                            {
+                              "data": {},
+                              "marks": [],
+                              "value": "",
+                              "nodeType": "text"
+                            },
+                            {
+                              "data": {
+                                "uri": "http://localhost:3000/"
+                              },
+                              "content": [
+                                {
+                                  "data": {},
+                                  "marks": [],
+                                  "value": "Introduction",
+                                  "nodeType": "text"
+                                }
+                              ],
+                              "nodeType": "hyperlink"
+                            },
+                            {
+                              "data": {},
+                              "marks": [],
+                              "value": "",
+                              "nodeType": "text"
+                            }
+                          ],
+                          "nodeType": "paragraph"
+                        }
+                      ],
+                      "nodeType": "list-item"
+                    },
+                    {
+                      "data": {},
+                      "content": [
+                        {
+                          "data": {},
+                          "content": [
+                            {
+                              "data": {},
+                              "marks": [],
+                              "value": "",
+                              "nodeType": "text"
+                            },
+                            {
+                              "data": {
+                                "uri": "http://localhost:3000/?section=scope-of-expertise"
+                              },
+                              "content": [
+                                {
+                                  "data": {},
+                                  "marks": [],
+                                  "value": "Scope of Expertise",
+                                  "nodeType": "text"
+                                }
+                              ],
+                              "nodeType": "hyperlink"
+                            },
+                            {
+                              "data": {},
+                              "marks": [],
+                              "value": "",
+                              "nodeType": "text"
+                            }
+                          ],
+                          "nodeType": "paragraph"
+                        }
+                      ],
+                      "nodeType": "list-item"
+                    },
+                    {
+                      "data": {},
+                      "content": [
+                        {
+                          "data": {},
+                          "content": [
+                            {
+                              "data": {},
+                              "marks": [],
+                              "value": "",
+                              "nodeType": "text"
+                            },
+                            {
+                              "data": {
+                                "uri": "http://localhost:3000/?section=about-me"
+                              },
+                              "content": [
+                                {
+                                  "data": {},
+                                  "marks": [],
+                                  "value": "About me",
+                                  "nodeType": "text"
+                                }
+                              ],
+                              "nodeType": "hyperlink"
+                            },
+                            {
+                              "data": {},
+                              "marks": [],
+                              "value": "",
+                              "nodeType": "text"
+                            }
+                          ],
+                          "nodeType": "paragraph"
+                        }
+                      ],
+                      "nodeType": "list-item"
+                    },
+                    {
+                      "data": {},
+                      "content": [
+                        {
+                          "data": {},
+                          "content": [
+                            {
+                              "data": {},
+                              "marks": [],
+                              "value": "",
+                              "nodeType": "text"
+                            },
+                            {
+                              "data": {
+                                "uri": "http://localhost:3000/?section=best-work"
+                              },
+                              "content": [
+                                {
+                                  "data": {},
+                                  "marks": [],
+                                  "value": "Best Work",
+                                  "nodeType": "text"
+                                }
+                              ],
+                              "nodeType": "hyperlink"
+                            },
+                            {
+                              "data": {},
+                              "marks": [],
+                              "value": "",
+                              "nodeType": "text"
+                            }
+                          ],
+                          "nodeType": "paragraph"
+                        }
+                      ],
+                      "nodeType": "list-item"
+                    },
+                    {
+                      "data": {},
+                      "content": [
+                        {
+                          "data": {},
+                          "content": [
+                            {
+                              "data": {},
+                              "marks": [],
+                              "value": "",
+                              "nodeType": "text"
+                            },
+                            {
+                              "data": {
+                                "uri": "http://localhost:3000/blog/"
+                              },
+                              "content": [
+                                {
+                                  "data": {},
+                                  "marks": [],
+                                  "value": "Blog",
+                                  "nodeType": "text"
+                                }
+                              ],
+                              "nodeType": "hyperlink"
+                            },
+                            {
+                              "data": {},
+                              "marks": [],
+                              "value": "",
+                              "nodeType": "text"
+                            }
+                          ],
+                          "nodeType": "paragraph"
+                        }
+                      ],
+                      "nodeType": "list-item"
+                    }
+                  ],
+                  "nodeType": "unordered-list"
+                },
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "marks": [],
+                      "value": "",
+                      "nodeType": "text"
+                    }
+                  ],
+                  "nodeType": "paragraph"
+                }
+              ],
+              "nodeType": "document"
+            }
+          },
+          "parentId": "2uxFOT0LB1ET4SfM4dNWvo",
+          "order": 1,
+          "icon": null,
+          "title": "Footer links (Navigation)",
+          "blurb": null
+        },
+        {
+          "sys": {
+            "id": "6XukzQnoHL3FSqnbiNrI4L"
+          },
+          "description": {
+            "json": {
+              "data": {},
+              "content": [
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "marks": [],
+                      "value": "Professional Links",
+                      "nodeType": "text"
+                    }
+                  ],
+                  "nodeType": "heading-3"
+                },
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "content": [
+                        {
+                          "data": {},
+                          "content": [
+                            {
+                              "data": {},
+                              "marks": [],
+                              "value": "",
+                              "nodeType": "text"
+                            },
+                            {
+                              "data": {
+                                "uri": "https://www.linkedin.com/in/ericnjanga/"
+                              },
+                              "content": [
+                                {
+                                  "data": {},
+                                  "marks": [],
+                                  "value": "Eric Njanga - LinkedIn",
+                                  "nodeType": "text"
+                                }
+                              ],
+                              "nodeType": "hyperlink"
+                            },
+                            {
+                              "data": {},
+                              "marks": [],
+                              "value": "",
+                              "nodeType": "text"
+                            }
+                          ],
+                          "nodeType": "paragraph"
+                        }
+                      ],
+                      "nodeType": "list-item"
+                    },
+                    {
+                      "data": {},
+                      "content": [
+                        {
+                          "data": {},
+                          "content": [
+                            {
+                              "data": {},
+                              "marks": [],
+                              "value": "",
+                              "nodeType": "text"
+                            },
+                            {
+                              "data": {
+                                "uri": "https://github.com/ericnjanga"
+                              },
+                              "content": [
+                                {
+                                  "data": {},
+                                  "marks": [],
+                                  "value": "Eric Njanga - GitHub",
+                                  "nodeType": "text"
+                                }
+                              ],
+                              "nodeType": "hyperlink"
+                            },
+                            {
+                              "data": {},
+                              "marks": [],
+                              "value": "",
+                              "nodeType": "text"
+                            }
+                          ],
+                          "nodeType": "paragraph"
+                        }
+                      ],
+                      "nodeType": "list-item"
+                    }
+                  ],
+                  "nodeType": "unordered-list"
+                },
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "marks": [],
+                      "value": "",
+                      "nodeType": "text"
+                    }
+                  ],
+                  "nodeType": "paragraph"
+                }
+              ],
+              "nodeType": "document"
+            }
+          },
+          "parentId": "2uxFOT0LB1ET4SfM4dNWvo",
+          "order": 3,
+          "icon": null,
+          "title": "Footer links (Professional Links)",
+          "blurb": null
+        }
+      ]
+    }
+  }
+}

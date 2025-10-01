@@ -17,7 +17,12 @@ import aboutInfoCollectionFixture from './fixtures/aboutInfoCollection.fixture.j
 import landingPageBannerFixture from './fixtures/landingPageBanner.fixture.json';
 import blogPageBannerFixture from './fixtures/blogPageBanner.fixture.json';
 import footerCopyrightFixture from './fixtures/footerCopyright.fixture.json';
-import CaseStudyEntryFixture from './fixtures/CaseStudyEntry.fixture.json';
+import caseStudyEntryFixture from './fixtures/caseStudyEntry.fixture.json';
+import scopeOfExpCollectionFixture from './fixtures/scopeOfExpCollection.fixture.json';
+import scopeOfExpCollectionEntryFixture from './fixtures/scopeOfExpCollectionEntry.fixture.json';
+import caseStudyCollectionFixture from './fixtures/caseStudyCollection.fixture.json';
+import quoteEntryCollectionFixture from './fixtures/quoteEntryCollection.fixture.json';
+import footerLinksCollectionFixture from './fixtures/footerLinksCollection.fixture.json';
 
 
 
@@ -47,8 +52,12 @@ describe.runIf(process.env.RUN_INTEGRATION_TESTS === 'true')(
     const landingPageBannerId = contentfulContentIds.categories['Landing Page Banner'];
     const blogPageBannerId = contentfulContentIds.categories['Blog Page Banner'];
     const footerCopyrightId = contentfulContentIds.categories['Footer Copyright'];
-    const CaseStudyEntryId = '2UJqmr6lFkc80z1Qm3LUfr';
- 
+    const scopeOfExpCollRefId = contentfulContentIds.categories['Scope of expertise Collection'];
+    const footerLinksCollRefId = contentfulContentIds.categories['Footer Links Collection'];
+    const caseStudyEntryId = '2UJqmr6lFkc80z1Qm3LUfr';
+    const scopeOfExpCollEntryId = '6Y19zH13dUQ6mRHnNSdJGY';
+    const caseStudyCollRefId = '5y2JSha3mykWdGkUf6XcQp';
+
 
  
     
@@ -74,6 +83,142 @@ describe.runIf(process.env.RUN_INTEGRATION_TESTS === 'true')(
 
 
 
+    it(`["About Info Collection"] fetches the same normalized data (server + client)`, async () => {
+      const serverResult = await contentfulForServerEntriesFetch(
+        'About Info Collection'
+      );
+      expect(serverResult.length).toBeGreaterThan(0);
+
+      const { result } = renderHook(
+        () => useContentfulForClientEntries('About Info Collection'),
+        { wrapper: createWrapper() }
+      );
+
+      await waitFor(() => {
+        expect(result.current.isSuccess).toBe(true);
+      });
+
+      const clientResult = result.current.data;
+      expect(serverResult).toEqual(clientResult);
+      expect(serverResult).toEqual(aboutInfoCollectionFixture.data.en.items);
+    });
+
+
+
+    it(`["Scope of expertise Collection"] fetches the same normalized data (server + client)`, async () => {
+      const serverResult = await contentfulForServerEntriesFetch(
+        'Scope of expertise Collection',
+        scopeOfExpCollRefId
+      );
+      expect(serverResult.length).toBeGreaterThan(0);
+
+      const { result } = renderHook(
+        () => useContentfulForClientEntries('Scope of expertise Collection', scopeOfExpCollRefId),
+        { wrapper: createWrapper() }
+      );
+
+      await waitFor(() => {
+        expect(result.current.isSuccess).toBe(true);
+      });
+
+      const clientResult = result.current.data;
+      expect(serverResult).toEqual(clientResult);
+      expect(serverResult).toEqual(scopeOfExpCollectionFixture.data.en.items);
+    });
+
+
+
+    it(`["Expertise Entry Collection"] fetches the same normalized data (server + client)`, async () => {
+      const serverResult = await contentfulForServerEntriesFetch(
+        'Expertise Entry Collection',
+        scopeOfExpCollEntryId
+      );
+      expect(serverResult.length).toBeGreaterThan(0);
+
+      const { result } = renderHook(
+        () => useContentfulForClientEntries('Expertise Entry Collection', scopeOfExpCollEntryId),
+        { wrapper: createWrapper() }
+      );
+
+      await waitFor(() => {
+        expect(result.current.isSuccess).toBe(true);
+      });
+
+      const clientResult = result.current.data;
+      expect(serverResult).toEqual(clientResult);
+      expect(serverResult).toEqual(scopeOfExpCollectionEntryFixture.data.en.items);
+    });
+
+
+
+    it(`["Case Study Collection"] fetches the same normalized data (server + client)`, async () => {
+      const serverResult = await contentfulForServerEntriesFetch(
+        'Case Study Collection',
+        caseStudyCollRefId
+      );
+      expect(serverResult.length).toBeGreaterThan(0);
+
+      const { result } = renderHook(
+        () => useContentfulForClientEntries('Case Study Collection', caseStudyCollRefId),
+        { wrapper: createWrapper() }
+      );
+
+      await waitFor(() => {
+        expect(result.current.isSuccess).toBe(true);
+      });
+
+      const clientResult = result.current.data;
+      expect(serverResult).toEqual(clientResult);
+      expect(serverResult).toEqual(caseStudyCollectionFixture.data.en.items);
+    });
+
+
+
+    it(`["Quotes Entry Collection"] fetches the same normalized data (server + client)`, async () => {
+      const serverResult = await contentfulForServerEntriesFetch(
+        'Quotes Entry Collection'
+      );
+      expect(serverResult.length).toBeGreaterThan(0);
+
+      const { result } = renderHook(
+        () => useContentfulForClientEntries('Quotes Entry Collection'),
+        { wrapper: createWrapper() }
+      );
+
+      await waitFor(() => {
+        expect(result.current.isSuccess).toBe(true);
+      });
+
+      const clientResult = result.current.data;
+      expect(serverResult).toEqual(clientResult);
+      expect(serverResult).toEqual(quoteEntryCollectionFixture.data.en.items);
+    });
+
+
+
+    it(`["Footer Links Collection"] fetches the same normalized data (server + client)`, async () => {
+      const serverResult = await contentfulForServerEntriesFetch(
+        'Footer Links Collection',
+        footerLinksCollRefId
+      );
+      expect(serverResult.length).toBeGreaterThan(0);
+
+      const { result } = renderHook(
+        () => useContentfulForClientEntries('Footer Links Collection', footerLinksCollRefId),
+        { wrapper: createWrapper() }
+      );
+
+      await waitFor(() => {
+        expect(result.current.isSuccess).toBe(true);
+      });
+
+      const clientResult = result.current.data;
+      expect(serverResult).toEqual(clientResult);
+      expect(serverResult).toEqual(footerLinksCollectionFixture.data.en.items);
+    });
+
+
+
     it(`["Blog Post Entry"] fetches the same normalized data (server + client)`, async () => {
       const serverResult = await contentfulForServerEntriesFetch(
         'Blog Post Entry',
@@ -93,28 +238,6 @@ describe.runIf(process.env.RUN_INTEGRATION_TESTS === 'true')(
       const clientResult = result.current.data;
       expect(serverResult).toEqual(clientResult);
       expect(serverResult).toEqual([blogPostsEntryFixture.data.en]);
-    });
-
-
-
-    it(`["About Info Collection"] fetches the same normalized data (server + client)`, async () => {
-      const serverResult = await contentfulForServerEntriesFetch(
-        'About Info Collection'
-      );
-      expect(serverResult.length).toBeGreaterThan(0);
-
-      const { result } = renderHook(
-        () => useContentfulForClientEntries('About Info Collection'),
-        { wrapper: createWrapper() }
-      );
-
-      await waitFor(() => {
-        expect(result.current.isSuccess).toBe(true);
-      });
-
-      const clientResult = result.current.data;
-      expect(serverResult).toEqual(clientResult);
-      expect(serverResult).toEqual(aboutInfoCollectionFixture.data.en.items);
     });
 
 
@@ -191,12 +314,12 @@ describe.runIf(process.env.RUN_INTEGRATION_TESTS === 'true')(
     it(`["Case Study Entry"] fetches the same normalized data (server + client)`, async () => {
       const serverResult = await contentfulForServerEntriesFetch(
         'Case Study Entry',
-        CaseStudyEntryId
+        caseStudyEntryId
       );
       expect(serverResult.length).toBeGreaterThan(0);
 
       const { result } = renderHook(
-        () => useContentfulForClientEntries('Case Study Entry', CaseStudyEntryId),
+        () => useContentfulForClientEntries('Case Study Entry', caseStudyEntryId),
         { wrapper: createWrapper() }
       );
 
@@ -206,20 +329,7 @@ describe.runIf(process.env.RUN_INTEGRATION_TESTS === 'true')(
 
       const clientResult = result.current.data;
       expect(serverResult).toEqual(clientResult);
-      expect(serverResult).toEqual([CaseStudyEntryFixture.data.en]);
+      expect(serverResult).toEqual([caseStudyEntryFixture.data.en]);
     });
-
-
-
-
-    /*
-      TEST THAT REMAIN TO BE CONDUCTED:
-      ---------------------------------    
-      | 'InfoBlock by parentId'
-      | 'List of Best Work'
-      | 'List of quotes'
-      | 'List of Scope of expertise'
-      | 'List of Footer Links';
-    */
   }
 );

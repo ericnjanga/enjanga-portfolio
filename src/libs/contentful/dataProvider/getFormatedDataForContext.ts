@@ -35,13 +35,13 @@ const getFormatedDataForContext = (data: any, dataFor: DataFor): CDP_context_pro
       richDescription = data?.en?.description;
       break;
 
-    case 'List of Scope of expertise':
-    case 'InfoBlock by parentId':
+    case 'Scope of expertise Collection':
+    case 'Expertise Entry Collection':
     case 'Blog Post Collection':
-    case 'List of Best Work':
-    case 'List of quotes':
+    case 'Case Study Collection':
+    case 'Quotes Entry Collection':
     case 'About Info Collection':
-    case 'List of Footer Links':
+    case 'Footer Links Collection':
       orderedItems = sortByOrderProp(items);
       break;
   }

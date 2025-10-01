@@ -28,7 +28,7 @@ const SectionTabsList = ({ listOfItems, className }: SectionTabsListProps) => {
   // }
 
   return (
-    <TabList aria-label="List of expertises" className={className}>
+    <TabList aria-label="Footer Links Collectionexpertises" className={className}>
       {listOfItems?.map((item) => {
         const IconComponent = iconMap[item?.icon || ''] || Code; // fallback to Code if not found
 

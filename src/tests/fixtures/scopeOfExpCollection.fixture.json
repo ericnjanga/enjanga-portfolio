@@ -1,0 +1,41 @@
+{
+  "data": {
+    "en": {
+      "items": [
+        {
+          "sys": {
+            "id": "6Y19zH13dUQ6mRHnNSdJGY"
+          },
+          "description": null,
+          "parentId": "5OpXyMfZfJlGQzTKJSn9Hw",
+          "order": 2,
+          "icon": "Platforms",
+          "title": "Technical Leadership",
+          "blurb": "Leading engineering efforts with a sense of ownership, a possibility-mindset, and a deep faith in collective success rooted in people empowerment."
+        },
+        {
+          "sys": {
+            "id": "2nj4T1TeTODIedwaaaXtel"
+          },
+          "description": null,
+          "parentId": "5OpXyMfZfJlGQzTKJSn9Hw",
+          "order": 1,
+          "icon": "Code",
+          "title": "Front-End Engineering",
+          "blurb": "Senior-level front-end expert with deep stack knowledge, specializing in designing and developing React applications—from isolated components to high-quality features."
+        },
+        {
+          "sys": {
+            "id": "3xZHP3PCR9P9mgFudZmM2F"
+          },
+          "description": null,
+          "parentId": "5OpXyMfZfJlGQzTKJSn9Hw",
+          "order": 4,
+          "icon": "LogoFigma",
+          "title": "Design Systems & Scalable UI",
+          "blurb": "Building design systems that unify UI, accelerate prototyping, and effectively tell the story of product value through seamless user experiences."
+        }
+      ]
+    }
+  }
+}

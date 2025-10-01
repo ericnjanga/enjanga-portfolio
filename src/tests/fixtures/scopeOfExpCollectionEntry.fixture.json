@@ -1,0 +1,52 @@
+{
+  "data": {
+    "en": {
+      "items": [
+        {
+          "sys": {
+            "id": "3OdQRBJJer7DYM5rwTKtnY"
+          },
+          "description": null,
+          "parentId": "6Y19zH13dUQ6mRHnNSdJGY",
+          "order": 4,
+          "icon": "Transform_01",
+          "title": "Translating Business Needs into Technical Solutions",
+          "blurb": "Translating customer requirements into actionable technical solutions, bridging the gap between business needs, and successful solution delivery."
+        },
+        {
+          "sys": {
+            "id": "7sGczDMSazcaB3DaDfkoab"
+          },
+          "description": null,
+          "parentId": "6Y19zH13dUQ6mRHnNSdJGY",
+          "order": 2,
+          "icon": "TransactionalTrust",
+          "title": "Back-End Collaboration & Systems Integration",
+          "blurb": "Partnering with back-end engineers to architect robust APIs and data structures, ensuring seamless integration for a flawless user experience."
+        },
+        {
+          "sys": {
+            "id": "4PmZWGuDm2xinNDlOTd33o"
+          },
+          "description": null,
+          "parentId": "6Y19zH13dUQ6mRHnNSdJGY",
+          "order": 3,
+          "icon": "Teacher",
+          "title": "Team Enablement & Technical Evangelism",
+          "blurb": "Driving team efficiency by mentoring team members, providing technical guidance, and fostering personal growth and collaboration."
+        },
+        {
+          "sys": {
+            "id": "hDtukbm5HJ9VQ37O4YeBY"
+          },
+          "description": null,
+          "parentId": "6Y19zH13dUQ6mRHnNSdJGY",
+          "order": 1,
+          "icon": "Presentation",
+          "title": "Design Collaboration & Implementation",
+          "blurb": "Partnering with design teams to translate vision into technically sound, scalable code, ensuring flawless implementation and pixel-perfect user experiences."
+        }
+      ]
+    }
+  }
+}

@@ -11,7 +11,7 @@ import ProjectPage from './ProjectPage';
  * Next.js will generate /best-work/alpha and /best-work/beta as static pages.
 */
 export async function generateStaticParams() {
-  return generateParamsForContent('List of Best Work');
+  return generateParamsForContent('Case Study Collection');
 }
 
 

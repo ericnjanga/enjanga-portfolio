@@ -70,7 +70,7 @@ export default function LandingPage() {
         )}
       </ContentfulDataProvider>
 
-      <ContentfulDataProvider dataFor="List of Scope of expertise">
+      <ContentfulDataProvider dataFor="Scope of expertise Collection">
         {({ orderedItems }) => {
           return (
             <section
@@ -130,7 +130,7 @@ export default function LandingPage() {
             </h2>
 
 
-            <ContentfulDataProvider dataFor="List of quotes">
+            <ContentfulDataProvider dataFor="Quotes Entry Collection">
               {({ orderedItems }) => (
                 <CustomQuotes
                   className="engineer-quotes-component"
@@ -161,7 +161,7 @@ export default function LandingPage() {
               Best Work
             </h2>
 
-            <ContentfulDataProvider dataFor="List of Best Work">
+            <ContentfulDataProvider dataFor="Case Study Collection">
               {({ orderedItems }) => (
                 <ContentBestWork listOfItems={orderedItems as IB_propsType[]} />
               )}
