@@ -11,7 +11,7 @@ import BlogArticlePage from './BlogArticlePage';
  * Next.js will generate /blog/abc and /blog/xyz as static pages.
 */
 export async function generateStaticParams() {
-  return generateParamsForContent('Blog Post Collection');
+  return generateParamsForContent('BlogPost Entry Collection');
 }
 
 export default function Page({ params }: { params: { contentId: string } }) {

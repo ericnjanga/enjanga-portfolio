@@ -15,6 +15,9 @@ import { contentfulContentIds } from '@/libs/contentful/contentful-queryConfig';
 import { IB_propsType } from '@/libs/contentful/types'; 
 
 export default function LandingPage() {
+  
+  console.log('********* RENDER LANDING PAGE');
+  
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const section = searchParams.get('section');
@@ -54,23 +57,28 @@ export default function LandingPage() {
 
   return (
     <div className="homePage">
-      <ContentfulDataProvider dataFor="Landing Page Banner">
-        {({ title, richDescription }) => (
-          <Banner
-            featuredText={{
-              heading: {
-                children: title,
-              },
-              smartText: {
-                richText: richDescription,
-              },
-            }}
-            isHuge={true}
-          />
-        )}
+      <ContentfulDataProvider dataFor="BannerHomePage Entry">
+        {(val) => {
+
+          console.log('99999999999999999999999999999999+++++?????+++++++', val);
+
+          return (
+                    <Banner
+                      featuredText={{
+                        heading: {
+                          children: val?.title,
+                        },
+                        smartText: {
+                          richText: val?.description,
+                        },
+                      }}
+                      isHuge={true}
+                    />
+                  )
+        }}
       </ContentfulDataProvider>
 
-      <ContentfulDataProvider dataFor="Scope of expertise Collection">
+      {/* <ContentfulDataProvider dataFor="scopeOfExp Parent Entry Collection">
         {({ orderedItems }) => {
           return (
             <section
@@ -87,9 +95,9 @@ export default function LandingPage() {
             </section>
           );
         }}
-      </ContentfulDataProvider>
+      </ContentfulDataProvider> */}
 
-      <BackgroundSection
+      {/* <BackgroundSection
         className="pageSection aboutSection smt-box"
         id="about-me"
         ariaLabelledby="about-me-heading"
@@ -100,24 +108,22 @@ export default function LandingPage() {
         <>
           <Grid className="sectionTitle">
             {' '}
-            {/*  fullWidth */}
             <Column lg={16} md={8} sm={4}>
               <h2 id="about-me-heading">About me</h2>
             </Column>
           </Grid>
           <Grid>
-            {' '}
-            {/*  fullWidth */}
+            {' '} 
             <Column lg={16} md={8} sm={4}>
               <ContentAbout />
             </Column>
           </Grid>
         </>
-      </BackgroundSection>
+      </BackgroundSection> */}
 
 
 
-      <Grid>
+      {/* <Grid>
         <Column lg={16} md={8} sm={4}>
           <section
             className="pageSection smt-box"
@@ -140,16 +146,15 @@ export default function LandingPage() {
             </ContentfulDataProvider>
           </section>
         </Column>
-      </Grid>
+      </Grid> */}
 
 
 
 
 
 
-      <Grid>
-        {' '}
-        {/*  fullWidth */}
+      {/* <Grid>
+        {' '} 
         <Column lg={16} md={8} sm={4}>
           <section
             className="pageSection smt-box"
@@ -161,14 +166,14 @@ export default function LandingPage() {
               Best Work
             </h2>
 
-            <ContentfulDataProvider dataFor="Case Study Collection">
+            <ContentfulDataProvider dataFor="CaseStudy Entry Collection">
               {({ orderedItems }) => (
                 <ContentBestWork listOfItems={orderedItems as IB_propsType[]} />
               )}
             </ContentfulDataProvider>
           </section>
         </Column>
-      </Grid>
+      </Grid> */}
     </div>
   );
 }

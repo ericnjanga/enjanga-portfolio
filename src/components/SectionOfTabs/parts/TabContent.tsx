@@ -20,7 +20,7 @@ const SectionTabContent = ({ tab, className }: SectionTabContentProps) => (
     <Column lg={{ span: 10, offset: 6 }} md={8} sm={4}>
       <Grid className="tabs-group-content">
         <ContentfulDataProvider
-          dataFor="Expertise Entry Collection"
+          dataFor="scopeOfExp Entry Collection"
           contentId={tab.sys.id}
         >
           {({ orderedItems }) => {

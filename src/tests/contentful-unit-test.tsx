@@ -37,13 +37,13 @@
 // };
 
 // describe('Contentful client/server consistency', () => {
-//   it(`Returns the same normalized array of ["Blog Post Collection"] for server and client fetch`, async () => {
+//   it(`Returns the same normalized array of ["BlogPost Entry Collection"] for server and client fetch`, async () => {
 //     // Server-side call
-//     const serverResult = await contentfulForServerEntriesFetch('Blog Post Collection');
+//     const serverResult = await contentfulForServerEntriesFetch('BlogPost Entry Collection');
 
 //     // // Client-side hook (React Query)
 //     // const { result } = renderHook(
-//     //   () => useContentfulForClientEntries('Blog Post Collection'),
+//     //   () => useContentfulForClientEntries('BlogPost Entry Collection'),
 //     //   { wrapper: createWrapper() }
 //     // );
 
@@ -78,11 +78,11 @@
 
 //   it('returns the same normalized array for server and client fetch (mocked)', async () => {
 //     const serverResult = await contentfulForServerEntriesFetch(
-//       'Blog Post Collection'
+//       'BlogPost Entry Collection'
 //     );
 
 //     const { result } = renderHook(
-//       () => useContentfulForClientEntries('Blog Post Collection'),
+//       () => useContentfulForClientEntries('BlogPost Entry Collection'),
 //       { wrapper: createWrapper() }
 //     );
 

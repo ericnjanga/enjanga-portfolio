@@ -6,8 +6,8 @@ import { AppUseUtility } from '@utils/UtilityContext';
 import {
   CMSRichText,
   BrandLogo,
-  ContactButton,
 } from 'enjanga-components-library';
+import { IB_propsType } from '@/libs/contentful/types';
 import { ContentfulDataProvider } from '@/libs/contentful/dataProvider';
 
 const AppFooter = () => {
@@ -25,7 +25,7 @@ const AppFooter = () => {
             <Grid className="">
               <Column lg={12} md={4} sm={4} className="app-footer__col2-row1">
                 <Grid>
-                  <ContentfulDataProvider dataFor="Footer Links Collection">
+                  {/* <ContentfulDataProvider dataFor="FooterLinks Entry Collection">
                     {({ orderedItems }) => {
                       return orderedItems?.map((item) => {
                         return (
@@ -35,7 +35,7 @@ const AppFooter = () => {
                         );
                       });
                     }}
-                  </ContentfulDataProvider>
+                  </ContentfulDataProvider> */}
                 </Grid>
               </Column>
 
@@ -46,11 +46,11 @@ const AppFooter = () => {
               <Column lg={12} md={4} sm={4} className="">
                 <Grid className="tabs-group-content">
                   <Column lg={8} md={4} sm={4} className="copyright">
-                    <ContentfulDataProvider dataFor="Footer Copyright">
-                      {({ richDescription }) => (
-                        <CMSRichText data={richDescription} />
+                    {/* <ContentfulDataProvider dataFor="FooterCopyright Entry">
+                      {({ description }) => (
+                        <CMSRichText data={description} />
                       )}
-                    </ContentfulDataProvider>
+                    </ContentfulDataProvider> */}
                   </Column>
 
                   {/* Col 2: Row 2: Col 2 */}

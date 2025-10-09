@@ -9,8 +9,8 @@ import './../../../styles/_blogs-and-articles.scss';
   
 const ProjectPage = ({ params }: ArticlePageProps) => (
   <div className="articlePage">
-    <ContentfulDataProvider dataFor="Case Study Entry" contentId={params.contentId}>
-      {({ title, richDescription }) => (
+    <ContentfulDataProvider dataFor="CaseStudy Entry" contentId={params.contentId}>
+      {({ title, description }) => (
         <>
           <Banner
             className="page-banner"
@@ -28,7 +28,7 @@ const ProjectPage = ({ params }: ArticlePageProps) => (
               {' '}
               {/* fullWidth */}
               <Column lg={10} md={8} sm={4} className="...">
-                <CMSRichText data={richDescription} />
+                <CMSRichText data={description} />
               </Column>
             </Grid>
           </article>

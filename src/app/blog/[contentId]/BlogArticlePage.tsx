@@ -9,7 +9,7 @@ import './../../../styles/_blogs-and-articles.scss';
 
 const BlogArticlePage = ({ params }: ArticlePageProps) => (
   <div className="articlePage">
-    <ContentfulDataProvider dataFor="Blog Post Entry" contentId={params.contentId}>
+    <ContentfulDataProvider dataFor="BlogPost Entry" contentId={params.contentId}>
       {({ title, richDescription }) => (
         <>
           <Banner

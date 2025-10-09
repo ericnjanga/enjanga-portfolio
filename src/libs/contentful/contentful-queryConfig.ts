@@ -6,14 +6,14 @@ import { queryData } from './GraphQL-query';
 // ...
 export const contentfulContentIds = {
   categories: {
-    'Landing Page Banner': '4llAs4gW4mc1fikxbW6u4V',
-    'Blog Page Banner': '1KZzwxEzfTs7rLABpVpjX1',
-    'Footer Copyright': '2KSc8hw8VvMNS5rXQP8GEZ',
-    'Case Study Collection': ['5y2JSha3mykWdGkUf6XcQp'],
-    'Scope of expertise Collection': '5OpXyMfZfJlGQzTKJSn9Hw',
-    'About Info Collection': '2yc27jrBHSGwDBau6c8qfA',
+    'BannerHomePage Entry': '4llAs4gW4mc1fikxbW6u4V',
+    'BannerBlogPage Entry': '1KZzwxEzfTs7rLABpVpjX1',
+    'FooterCopyright Entry': '2KSc8hw8VvMNS5rXQP8GEZ',
+    'CaseStudy Entry Collection': ['5y2JSha3mykWdGkUf6XcQp'],
+    'scopeOfExp Parent Entry Collection': '5OpXyMfZfJlGQzTKJSn9Hw',
+    'AboutInfo Entry Collection': '2yc27jrBHSGwDBau6c8qfA',
     'Featured Image': '2eSLi2IP4sZrrPK0AeQPk7',
-    'Footer Links Collection': '2uxFOT0LB1ET4SfM4dNWvo',
+    'FooterLinks Entry Collection': '2uxFOT0LB1ET4SfM4dNWvo',
   },
 };
 
@@ -31,21 +31,40 @@ export const contentfulContentIds = {
  * values can be passed to `getContentfulQueryConfig()` or `contentfulForServerEntriesFetch()`.
  *
  * Example:
- *   const posts = await contentfulForServerEntriesFetch("Blog Post Collection");
+ *   const posts = await contentfulForServerEntriesFetch("BlogPost Entry Collection");
  */
+export type dataFor1 = 'BannerHomePage Entry' | 'BannerBlogPage Entry' | 'FooterCopyright Entry' | 'CaseStudy Entry';
+
 export type DataFor =
-  | 'Blog Post Collection'
-  | 'About Info Collection'
-  | 'Scope of expertise Collection'
-  | 'Expertise Entry Collection'
-  | 'Blog Post Entry'
-  | 'Landing Page Banner'
-  | 'Blog Page Banner'
-  | 'Footer Copyright'
-  | 'Case Study Entry'
-  | 'Case Study Collection'
-  | 'Quotes Entry Collection'
-  | 'Footer Links Collection';
+  | 'BlogPost Entry Collection'
+  | 'AboutInfo Entry Collection'
+  | 'scopeOfExp Parent Entry Collection'
+  | 'scopeOfExp Entry Collection'
+  | 'CaseStudy Entry Collection'
+  | 'FooterLinks Entry Collection'
+  | 'BlogPost Entry'
+  | 'BannerHomePage Entry'
+  | 'BannerBlogPage Entry'
+  | 'FooterCopyright Entry'
+  | 'CaseStudy Entry'
+  | 'Quotes Entry Collection';
+
+// export type DataFor_blockInfo =
+//   | 'BlogPost Entry Collection'
+//   | 'AboutInfo Entry Collection'
+//   | 'scopeOfExp Parent Entry Collection'
+//   | 'scopeOfExp Entry Collection'
+//   | 'CaseStudy Entry Collection'
+//   | 'FooterLinks Entry Collection'
+//   | 'BlogPost Entry'
+//   | 'BannerHomePage Entry'
+//   | 'BannerBlogPage Entry'
+//   | 'FooterCopyright Entry'
+//   | 'CaseStudy Entry';
+  
+
+// export type DataFor_quotes = 
+//   | 'Quotes Entry Collection';
 
 
 
@@ -65,7 +84,7 @@ export type DataFor =
  * @returns         An object with `{ query, variables, trackingInfo }`
  *
  * Example:
- *   const { query, variables } = getContentfulQueryConfig("Blog Post Entry", "abc123");
+ *   const { query, variables } = getContentfulQueryConfig("BlogPost Entry", "abc123");
  */
 export function getContentfulQueryConfig(dataFor: DataFor, contentId?: string) {
   let query = '';
@@ -78,11 +97,11 @@ export function getContentfulQueryConfig(dataFor: DataFor, contentId?: string) {
   let trackingInfo = dataFor;
 
   switch (dataFor) { 
-    case 'Expertise Entry Collection':
-    case 'Scope of expertise Collection':
-    case 'About Info Collection':
-    case 'Footer Links Collection':
-      if (dataFor==='Expertise Entry Collection') {
+    case 'scopeOfExp Entry Collection':
+    case 'scopeOfExp Parent Entry Collection':
+    case 'AboutInfo Entry Collection':
+    case 'FooterLinks Entry Collection':
+      if (dataFor==='scopeOfExp Entry Collection') {
         const expertiseId = contentId;
         query = queryData.infoBlockByParentCollection;
         variables.parentRefId = expertiseId ?? '';
@@ -92,24 +111,24 @@ export function getContentfulQueryConfig(dataFor: DataFor, contentId?: string) {
       }
       break;
 
-    case 'Landing Page Banner':
-    case 'Blog Page Banner':
-    case 'Footer Copyright':
+    case 'BannerHomePage Entry':
+    case 'BannerBlogPage Entry':
+    case 'FooterCopyright Entry':
       query = queryData.infoBlockById;
       variables.sectionId = contentfulContentIds.categories[dataFor];
       break;
 
-    case 'Case Study Entry':
+    case 'CaseStudy Entry':
       query = queryData.projectById;
       variables.sectionId = contentId ?? '';
       break;
 
-    case 'Blog Post Entry':
+    case 'BlogPost Entry':
       query = queryData.blogPostById;
       variables.sectionId = contentId ?? '';
       break;
 
-    case 'Case Study Collection':
+    case 'CaseStudy Entry Collection':
       query = queryData.projectsCollection;
       break;
 
@@ -117,7 +136,7 @@ export function getContentfulQueryConfig(dataFor: DataFor, contentId?: string) {
       query = queryData.quotesCollection;
       break;
 
-    case 'Blog Post Collection':
+    case 'BlogPost Entry Collection':
       query = queryData.blogPostCollection;
       break;
   }

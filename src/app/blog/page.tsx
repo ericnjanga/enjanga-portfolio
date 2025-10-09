@@ -13,8 +13,8 @@ import './../../styles/_blogs-and-articles.scss';
 export default function BlogRoot() {
   return (
     <div className="blogPage">
-      <ContentfulDataProvider dataFor="Blog Page Banner">
-        {({ title, richDescription }) => (
+      <ContentfulDataProvider dataFor="BannerBlogPage Entry">
+        {({ title, description }) => (
           <Banner
             className="page-banner"
             featuredText={{
@@ -22,7 +22,7 @@ export default function BlogRoot() {
                 children: title,
               },
               smartText: {
-                richText: richDescription,
+                richText: description,
               },
             }}
           />
@@ -33,7 +33,7 @@ export default function BlogRoot() {
         <Grid>
           {' '}
           {/* fullWidth */}
-          <ContentfulDataProvider dataFor="Blog Post Collection">
+          {/* <ContentfulDataProvider dataFor="BlogPost Entry Collection">
             {({ orderedItems }) =>
               orderedItems?.map((item) => {
                 return (
@@ -65,7 +65,7 @@ export default function BlogRoot() {
                 );
               })
             }
-          </ContentfulDataProvider>
+          </ContentfulDataProvider> */}
         </Grid>
       </article>
     </div>
