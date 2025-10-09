@@ -58,24 +58,19 @@ export default function LandingPage() {
   return (
     <div className="homePage">
       <ContentfulDataProvider dataFor="BannerHomePage Entry">
-        {(val) => {
-
-          console.log('99999999999999999999999999999999+++++?????+++++++', val);
-
-          return (
-                    <Banner
-                      featuredText={{
-                        heading: {
-                          children: val?.title,
-                        },
-                        smartText: {
-                          richText: val?.description,
-                        },
-                      }}
-                      isHuge={true}
-                    />
-                  )
-        }}
+        {(val) => (
+          <Banner
+            featuredText={{
+              heading: {
+                children: val?.title,
+              },
+              smartText: {
+                richText: val?.description,
+              },
+            }}
+            isHuge={true}
+          /> 
+        )}
       </ContentfulDataProvider>
 
       {/* <ContentfulDataProvider dataFor="scopeOfExp Parent Entry Collection">
