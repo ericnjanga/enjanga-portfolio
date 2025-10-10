@@ -3,8 +3,8 @@ import type { Node } from '@contentful/rich-text-types';
 // EntryGroup1:
 // This regroups the following: 'BannerHomePage Entry' | 'BannerBlogPage Entry' | 'FooterCopyright Entry' | 'CaseStudy Entry'
 export type EntryGroup1_propsType = {
-  title: string,
-  description: { json: { content: Node[] } },
+  title?: string,
+  description?: { json: { content: Node[] } },
 };
  
 
