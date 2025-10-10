@@ -46,11 +46,11 @@ const AppFooter = () => {
               <Column lg={12} md={4} sm={4} className="">
                 <Grid className="tabs-group-content">
                   <Column lg={8} md={4} sm={4} className="copyright">
-                    {/* <ContentfulDataProvider dataFor="FooterCopyright Entry">
+                    <ContentfulDataProvider dataFor="FooterCopyright Entry">
                       {({ description }) => (
                         <CMSRichText data={description} />
                       )}
-                    </ContentfulDataProvider> */}
+                    </ContentfulDataProvider>
                   </Column>
 
                   {/* Col 2: Row 2: Col 2 */}
