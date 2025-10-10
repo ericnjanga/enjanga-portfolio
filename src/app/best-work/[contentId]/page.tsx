@@ -22,13 +22,14 @@ export async function generateStaticParams() {
 }
 
 
-export default async function Page({ params }: { params: { contentId: string } }) {
+export default async function Page(props: { params: Promise<{ contentId: string }> }) {
   /**
-   * By the time Page() executes, `params` is already a plain JavaScript object,
-   * not a Promise. Next.js resolves it for us before rendering.
-   * 
-   * This is why we can use `params` directly, without awaiting or fulfilling it.
+   * In the latest Next.js App Router, `params` can be a React-wrapped Promise
+   * during server rendering. It must be awaited before accessing its properties.
+   *
+   * This ensures that React has resolved the async boundary before we read values
+   * like `contentId`.
    */
-  const data = { contentId: params.contentId };
-  return <ProjectPage params={data} />;
+  const { contentId } = await props.params; 
+  return <ProjectPage params={{ contentId }} />;
 }
