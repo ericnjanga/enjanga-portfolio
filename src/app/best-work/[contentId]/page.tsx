@@ -11,10 +11,24 @@ import ProjectPage from './ProjectPage';
  * Next.js will generate /best-work/alpha and /best-work/beta as static pages.
 */
 export async function generateStaticParams() {
+  /**
+   * Although generateStaticParams() is asynchronous, Next.js automatically
+   * awaits it internally when pre-generating static pages.
+   * 
+   * In other words, generateStaticParams() itself returns a Promise, but by the time
+   * the static build completes, Next.js has already resolved that Promise.
+   */
   return generateParamsForContent('CaseStudy Entry Collection');
 }
 
 
-export default function Page({ params }: { params: { contentId: string } }) {
-  return <ProjectPage params={params} />;
+export default async function Page({ params }: { params: { contentId: string } }) {
+  /**
+   * By the time Page() executes, `params` is already a plain JavaScript object,
+   * not a Promise. Next.js resolves it for us before rendering.
+   * 
+   * This is why we can use `params` directly, without awaiting or fulfilling it.
+   */
+  const data = { contentId: params.contentId };
+  return <ProjectPage params={data} />;
 }

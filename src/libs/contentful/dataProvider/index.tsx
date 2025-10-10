@@ -23,12 +23,11 @@ export const ContentfulDataProvider = ({
 }: CDP_propsType) => {
   
   /**
-   * TODO: This skeleton is not working (Findout what the correct skeleton is in the component library)
-   * Maybe I need to move this skeleton to a separate file
+   * TODO: All context skeletons should be coming from the component library
    */
   const contextSkeleton: EntryGroup1_propsType = {
-    title: '',
-    description: { json: { content: [] } }
+    title: undefined,
+    description: undefined
   };
   const [contextValue, setContextValue] = useState<EntryGroup1_propsType>(contextSkeleton);
   const { data } = useContentfulForClientEntries(dataFor, contentId);
