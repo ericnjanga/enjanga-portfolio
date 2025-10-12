@@ -1,4 +1,9 @@
+@use 'enjanga-core-setup/styles' as core; 
+
 .SectionOfTabs {
+  // --enj-home-quotes-font-size: 1.25rem;
+  // --enj-home-quotes-line-height: 2rem;
+
   /* 
     Override Carbon's default min-block-size on .cds--tabs.
     By default, Carbon sets: min-block-size: var(--cds-layout-size-height-local);
@@ -9,13 +14,39 @@
     (and Carbon’s padding/line-height), preventing overflow without breaking
     visual consistency.
   */
-  .cds--tabs {
-    min-block-size: auto !important; /* allow height to shrink naturally */
+  .cds--tabs { 
+    // inline-size: auto;
+    // border: 4px solid orange;
   }
 
-  // border: 4px solid blue;
 
-  // .landing-page__r2 {
-  //   border: 2px solid rgb(195, 0, 255);
-  // }
+  @include core.breakpoint('sm') {
+    border: 5px solid blueviolet;
+  }
+
+  @include core.breakpoint('md') {
+    border: 5px solid blue;
+    // --enj-home-quotes-font-size: 1.25rem;
+    // --enj-home-quotes-line-height: 2rem;
+  }
+
+  @include core.breakpoint('lg') {
+    border: 5px solid brown; 
+    // --enj-home-quotes-font-size: 1.4rem;
+    // --enj-home-quotes-line-height: 2.25rem;
+  }
+
+  @include core.breakpoint('xlg') {
+    border: 5px solid mediumorchid;
+    // --enj-home-quotes-font-size: 1.563rem;
+    // --enj-home-quotes-line-height: 2.625rem;
+  }
+
+  @include core.breakpoint('max') {
+    border: 5px dashed mediumvioletred; 
+    // --enj-home-quotes-font-size: 1.75rem;
+    // --enj-home-quotes-line-height: 2.875rem;
+  }
+
+  // border: 14px solid blue;
 }

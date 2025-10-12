@@ -1,0 +1,41 @@
+@use 'enjanga-core-setup/styles' as core; 
+
+/**
+ * Quote section
+ * ----------------------------
+**/
+
+.engineer-quotes-component {
+  --enj-home-quotes-font-size: 1.15rem;
+  --enj-home-quotes-line-height: 1.9rem;
+
+  padding: 0; // Cancelling library component padding
+  .enj-CMSRichText {
+    p {
+      font-size: var(--enj-home-quotes-font-size);
+      line-height: var(--enj-home-quotes-line-height);
+    }
+  }
+
+  // @include core.breakpoint('sm') {}
+
+  @include core.breakpoint('md') { 
+    --enj-home-quotes-font-size: 1.25rem;
+    --enj-home-quotes-line-height: 2rem;
+  }
+
+  @include core.breakpoint('lg') { 
+    --enj-home-quotes-font-size: 1.4rem;
+    --enj-home-quotes-line-height: 2.25rem;
+  }
+
+  @include core.breakpoint('xlg') { 
+    --enj-home-quotes-font-size: 1.563rem;
+    --enj-home-quotes-line-height: 2.625rem;
+  }
+
+  @include core.breakpoint('max') { 
+    --enj-home-quotes-font-size: 1.75rem;
+    --enj-home-quotes-line-height: 2.875rem;
+  }
+}

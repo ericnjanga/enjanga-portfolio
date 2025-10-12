@@ -8,6 +8,7 @@ import SectionOfTabs from '../../components/SectionOfTabs/index';
 import ContentAbout from './ContentAbout';
 import ContentBestWork from './ContentBestWork';
 import './../home/_home.scss';
+import './../home/styles/_quotes.scss';
 import './../home/_home-theming.scss';
 import { ContentfulDataProvider } from '@/libs/contentful/dataProvider';
 import { BackgroundSection } from '@/components/BackgroundSection';
