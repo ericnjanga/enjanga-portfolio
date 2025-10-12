@@ -1,12 +1,10 @@
 import { TabPanels, TabPanel } from '@carbon/react';
-import { IB_propsType } from '@/libs/contentful/types';
+import { EntryGroup2_propsType } from '@/libs/contentful/types';
 import SectionTabContent from './TabContent';
-import { CustomTile } from 'enjanga-components-library';
-import { Grid, Column } from '@carbon/react';
 
 interface SectionTabPanelsProps {
   className?: string;
-  listOfItems?: IB_propsType[];
+  listOfItems?: EntryGroup2_propsType[];
 }
 
 const SectionTabPanels = ({ listOfItems }: SectionTabPanelsProps) => {
@@ -18,11 +16,11 @@ const SectionTabPanels = ({ listOfItems }: SectionTabPanelsProps) => {
     <TabPanels>
       {listOfItems?.map((item) => (
         <TabPanel
-          key={item.sys.id}
-          className="grid-of-customTiles grid-of-customTiles-2 grid-of-customTiles-padding"
-        >
+          key={item?.sys?.id}
+          className="grid-of-customTiles grid-of-customTiles-2 grid-of-customTiles-padding">
           <div className="tab-content">
             <SectionTabContent tab={item} />
+            {!item?.sys?.id && <TabPanelsSkeleton />}
           </div>
         </TabPanel>
       ))}
@@ -35,32 +33,24 @@ const SectionTabPanels = ({ listOfItems }: SectionTabPanelsProps) => {
  * @returns
  */
 const TabPanelsSkeleton = () => (
-  <Grid>
-    <Column lg={5} md={4} sm={4}>
-      <CustomTile
-        featuredText={{
-          heading: {},
-          smartText: {},
-        }}
-      />
-    </Column>
-    <Column lg={5} md={4} sm={4}>
-      <CustomTile
-        featuredText={{
-          heading: {},
-          smartText: {},
-        }}
-      />
-    </Column>
-    <Column lg={5} md={4} sm={4}>
-      <CustomTile
-        featuredText={{
-          heading: {},
-          smartText: {},
-        }}
-      />
-    </Column>
-  </Grid>
+  <div className="skeleton-text-wrapper">
+    <p
+      className="skeleton skeleton-text skeleton-bot-spacing-2"
+      role="presentation"
+      style={{ width: '80%' }}></p>
+    <p
+      className="skeleton skeleton-text skeleton-bot-spacing-2"
+      role="presentation"
+      style={{ width: '80%' }}></p>
+    <p
+      className="skeleton skeleton-text skeleton-bot-spacing-2"
+      role="presentation"
+      style={{ width: '80%' }}></p>
+    <p
+      className="skeleton skeleton-text skeleton-bot-spacing-2"
+      role="presentation"
+      style={{ width: '80%' }}></p>
+  </div>
 );
 
 export default SectionTabPanels;

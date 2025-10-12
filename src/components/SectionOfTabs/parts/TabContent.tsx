@@ -1,11 +1,11 @@
 import { CustomTile } from 'enjanga-components-library';
 import { Grid, Column } from '@carbon/react';
 import { ContentfulDataProvider } from '@/libs/contentful/dataProvider';
-import { IB_propsType } from '@/libs/contentful/types';
+import { EntryGroup2_propsType } from '@/libs/contentful/types';
 import { CP_nameType } from 'enjanga-components-library';
 
 interface SectionTabContentProps {
-  tab: IB_propsType;
+  tab: EntryGroup2_propsType;
   className?: string;
 }
 
@@ -21,7 +21,7 @@ const SectionTabContent = ({ tab, className }: SectionTabContentProps) => (
       <Grid className="tabs-group-content">
         <ContentfulDataProvider
           dataFor="scopeOfExp Entry Collection"
-          contentId={tab.sys.id}
+          contentId={tab?.sys?.id}
         >
           {({ orderedItems }) => {
             return orderedItems?.map((tab) => (

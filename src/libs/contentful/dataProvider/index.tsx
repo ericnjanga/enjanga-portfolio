@@ -3,15 +3,23 @@
 
 import React, { createContext, useContext } from 'react';
 import { useContentfulForClientEntries } from '../hooks/useContentfulForClientEntries';
-import { CDP_propsType } from './types';
-import { EntryGroup1_propsType } from '../types';
+import { CDP_propsType } from '../types';
+import type { 
+  dataFor1, dataFor2,
+  CDP_context1, CDP_context2,
+} from '../types';
+import { 
+  skeleton_context1,
+  skeleton_context2,
+  getDataType
+} from '../types'; 
 import getFormatedDataForContext from './getFormatedDataForContext';
 import { useEffect, useState } from 'react';
 
 
 
-const ContentContext = createContext<EntryGroup1_propsType | undefined>(
-  undefined
+const ContentContext = createContext<CDP_context1 | CDP_context2>(
+  skeleton_context1
 );
 
 
@@ -22,14 +30,10 @@ export const ContentfulDataProvider = ({
   children,
 }: CDP_propsType) => {
   
-  /**
-   * TODO: All context skeletons should be coming from the component library
-   */
-  const contextSkeleton: EntryGroup1_propsType = {
-    title: undefined,
-    description: undefined
-  };
-  const [contextValue, setContextValue] = useState<EntryGroup1_propsType>(contextSkeleton);
+  const contextType = getDataType(dataFor);
+  const [contextValue, setContextValue] = useState<CDP_context1 | CDP_context2>(skeleton_context1);
+  const [contextEG1, setContextEG1] = useState<CDP_context1>(skeleton_context1);
+  const [contextEG2, setContextEG2] = useState<CDP_context2>(skeleton_context2);
   const { data } = useContentfulForClientEntries(dataFor, contentId);
 
 
@@ -37,22 +41,41 @@ export const ContentfulDataProvider = ({
     let isMounted = true;
 
     if (Array.isArray(data) && data.length > 0) {
-      const formatedData = getFormatedDataForContext(data, dataFor);
-
-      if (isMounted && formatedData) {
-        setContextValue(formatedData);
+      if (getDataType(dataFor)==='dataFor1') {
+        let formatedData1 = getFormatedDataForContext(data, dataFor as dataFor1);
+        if (isMounted && formatedData1?.__isNormalized) {
+          setContextEG1(formatedData1);
+        }
+      }
+      if (getDataType(dataFor)==='dataFor2') {
+        let formatedData2 = getFormatedDataForContext(data, dataFor as dataFor2);
+        if (isMounted && formatedData2?.__isNormalized) {
+          setContextEG2(formatedData2);
+        }
       }
 
+       console.log('+++++++++++++++++++++++++++++++++++contextType***', contextType );
+        
+     
       return () => {
         isMounted = false;
       };
     }
-  }, [data, dataFor]);
+  }, [data, dataFor, contextType]);
 
   return (
-    <ContentContext.Provider value={contextValue}>
-      {children(contextValue)}
-    </ContentContext.Provider>
+    <>
+      {contextType==='dataFor1' &&
+        <ContentContext.Provider value={contextEG1}>
+          {children(contextEG1)}
+        </ContentContext.Provider>
+      }
+      {contextType==='dataFor2' &&
+        <ContentContext.Provider value={contextEG2}>
+          {children(contextEG2)}
+        </ContentContext.Provider>
+      }
+    </>
   );
 };
 

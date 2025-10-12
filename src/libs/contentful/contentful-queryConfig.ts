@@ -1,5 +1,6 @@
 
 import { queryData } from './GraphQL-query';
+import type { DataFor } from './types';
 
 
 
@@ -16,57 +17,6 @@ export const contentfulContentIds = {
     'FooterLinks Entry Collection': '2uxFOT0LB1ET4SfM4dNWvo',
   },
 };
-
-
-
-
-
-/**
- * DataFor
- * ------------------------------------------------------------------
- * A strongly-typed union of all supported content models
- * that can be requested from Contentful.
- *
- * This ensures type safety throughout the app: only these
- * values can be passed to `getContentfulQueryConfig()` or `contentfulForServerEntriesFetch()`.
- *
- * Example:
- *   const posts = await contentfulForServerEntriesFetch("BlogPost Entry Collection");
- */
-export type dataFor1 = 'BannerHomePage Entry' | 'BannerBlogPage Entry' | 'FooterCopyright Entry' | 'CaseStudy Entry';
-
-export type DataFor =
-  | 'BlogPost Entry Collection'
-  | 'AboutInfo Entry Collection'
-  | 'scopeOfExp Parent Entry Collection'
-  | 'scopeOfExp Entry Collection'
-  | 'CaseStudy Entry Collection'
-  | 'FooterLinks Entry Collection'
-  | 'BlogPost Entry'
-  | 'BannerHomePage Entry'
-  | 'BannerBlogPage Entry'
-  | 'FooterCopyright Entry'
-  | 'CaseStudy Entry'
-  | 'Quotes Entry Collection';
-
-// export type DataFor_blockInfo =
-//   | 'BlogPost Entry Collection'
-//   | 'AboutInfo Entry Collection'
-//   | 'scopeOfExp Parent Entry Collection'
-//   | 'scopeOfExp Entry Collection'
-//   | 'CaseStudy Entry Collection'
-//   | 'FooterLinks Entry Collection'
-//   | 'BlogPost Entry'
-//   | 'BannerHomePage Entry'
-//   | 'BannerBlogPage Entry'
-//   | 'FooterCopyright Entry'
-//   | 'CaseStudy Entry';
-  
-
-// export type DataFor_quotes = 
-//   | 'Quotes Entry Collection';
-
-
 
 
 /** 

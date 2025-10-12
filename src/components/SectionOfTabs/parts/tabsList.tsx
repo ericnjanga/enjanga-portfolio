@@ -6,11 +6,11 @@ import {
   Platforms,
 } from '@carbon/icons-react';
 import { Tab, TabList } from '@carbon/react';
-import { IB_propsType } from '@/libs/contentful/types';
+import { EntryGroup2_propsType } from '@/libs/contentful/types'; 
 
 interface SectionTabsListProps {
   className?: string;
-  listOfItems?: IB_propsType[];
+  listOfItems?: EntryGroup2_propsType[];
 }
 
 // map string keys from CMS to actual icon components
@@ -28,7 +28,7 @@ const SectionTabsList = ({ listOfItems, className }: SectionTabsListProps) => {
   // }
 
   return (
-    <TabList aria-label="FooterLinks Entry Collectionexpertises" className={className}>
+    <TabList aria-label="xxx" className={className}>
       {listOfItems?.map((item) => {
         const IconComponent = iconMap[item?.icon || ''] || Code; // fallback to Code if not found
 
@@ -40,9 +40,10 @@ const SectionTabsList = ({ listOfItems, className }: SectionTabsListProps) => {
          * 1) Creating a "shortTitle" field inside "IB_propsType" to render shorter titles
          */
         // remove any substring that starts with "& "
-        let cleanTitle = item.title.replace(/&\s.*$/, '').trim();
+        let cleanTitle = item?.title?.replace(/&\s.*$/, '').trim();
         return (
-          <Tab key={item.sys.id} renderIcon={IconComponent}>
+          <Tab key={item?.sys?.id} renderIcon={IconComponent}>
+            {!cleanTitle && <div className='skeleton skeleton-text' role="presentation" style={{ width: '115px' }}></div>}
             {cleanTitle}
           </Tab>
         );

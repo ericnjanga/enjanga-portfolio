@@ -1,17 +1,19 @@
-import { DataFor, dataFor1 } from "../contentful-queryConfig";
 import { sortByOrderProp } from '@utils/helpers'; 
-import { 
-  EntryGroup1_propsType, 
+import type { 
+  DataFor, dataFor1, dataFor2,
+  CDP_context1,
+  CDP_context2
 } from "../types";
 
 
 
 
 // import { CQ_quote_propsType } from 'enjanga-components-library';
-function getFormatedDataForContext(data: any[], dataFor: dataFor1): EntryGroup1_propsType;
+function getFormatedDataForContext(data: any[], dataFor: dataFor1): CDP_context1;
+function getFormatedDataForContext(data: any[], dataFor: dataFor2): CDP_context2;
 
 
-function getFormatedDataForContext(data: any[], dataFor: dataFor1): EntryGroup1_propsType { 
+function getFormatedDataForContext(data: any[], dataFor: dataFor1 | dataFor2): CDP_context1 | CDP_context2 { 
   let contextValue;   
 
   switch (dataFor) {
@@ -21,14 +23,27 @@ function getFormatedDataForContext(data: any[], dataFor: dataFor1): EntryGroup1_
     case 'CaseStudy Entry': 
       const value = data?.shift();
       contextValue = {
-        title: value?.title,
-        description: value?.description,
+        item: {
+          title: value?.title,
+          description: value?.description,
+        },
         __isNormalized: true
-      } as EntryGroup1_propsType;
+      } as CDP_context1;
+    break;
 
-    // console.log('???????????????????????');
+
+
+    case 'scopeOfExp Parent Entry Collection':
+      contextValue = {
+        items: data,
+        __isNormalized: true
+      } as CDP_context2;
+      // const value1 = data?.shift();
+
+    console.log('++++++++>>>>>>>>>>>>+++++++++++++++++');
+    console.log('????? data = ', data );
     // console.log('????? contextValue = ', contextValue, value);
-    // console.log('???????????????????????');
+    console.log('++++++++>>>>>>>>>>>>+++++++++++++++++');
     break;
   }
 

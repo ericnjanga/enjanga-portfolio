@@ -6,14 +6,14 @@ import { Tabs } from '@carbon/react';
 import './../../styles/_blogs-and-articles.scss';
 import './_SectionOfTabs.scss';
 import { Grid, Column } from '@carbon/react';
-import { IB_propsType } from '@/libs/contentful/types';
+import { EntryGroup2_propsType } from '@/libs/contentful/types';
 import SectionTabsList from './parts/tabsList';
 import SectionTabPanels from './parts/tabPanels';
 
 interface SectionOfTabsProps {
   title: string;
   className: string;
-  listOfItems?: IB_propsType[];
+  listOfItems?: EntryGroup2_propsType[];
 }
 interface TabsProps {
   title: string;

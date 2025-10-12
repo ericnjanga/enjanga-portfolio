@@ -17,11 +17,12 @@ import bannerBlogPageEntryFixture from './fixtures/bannerBlogPageEntry.fixture.j
 import footerCopyrightEntryFixture from './fixtures/footerCopyrightEntry.fixture.json';
 import caseStudyEntryFixture from './fixtures/caseStudyEntry.fixture.json';
 
+import scopeOfExpCollectionFixture from './fixtures/scopeOfExpCollection.fixture.json';
+import scopeOfExpCollectionEntryFixture from './fixtures/scopeOfExpCollectionEntry.fixture.json';
+
 import blogPostCollectionFixture from './fixtures/blogPostCollection.fixture.json';
 import blogPostsEntryFixture from './fixtures/blogPostEntry.fixture.json';
 import aboutInfoCollectionFixture from './fixtures/aboutInfoCollection.fixture.json';
-import scopeOfExpCollectionFixture from './fixtures/scopeOfExpCollection.fixture.json';
-import scopeOfExpCollectionEntryFixture from './fixtures/scopeOfExpCollectionEntry.fixture.json';
 import caseStudyCollectionFixture from './fixtures/caseStudyCollection.fixture.json';
 import quoteEntryCollectionFixture from './fixtures/quoteEntryCollection.fixture.json';
 import footerLinksCollectionFixture from './fixtures/footerLinksCollection.fixture.json';
@@ -148,6 +149,52 @@ describe.runIf(process.env.RUN_INTEGRATION_TESTS === 'true')(
       expect(serverResult).toEqual(clientResult);
       expect(serverResult).toEqual([caseStudyEntryFixture.data.en]);
     });
+
+
+
+    it(`["scopeOfExp Parent Entry Collection"] fetches the same normalized data (server + client)`, async () => {
+      const serverResult = await contentfulForServerEntriesFetch(
+        'scopeOfExp Parent Entry Collection',
+        scopeOfExpCollRefId
+      );
+      expect(serverResult.length).toBeGreaterThan(0);
+
+      const { result } = renderHook(
+        () => useContentfulForClientEntries('scopeOfExp Parent Entry Collection', scopeOfExpCollRefId),
+        { wrapper: createWrapper() }
+      );
+
+      await waitFor(() => {
+        expect(result.current.isSuccess).toBe(true);
+      });
+
+      const clientResult = result.current.data;
+      expect(serverResult).toEqual(clientResult);
+      expect(serverResult).toEqual(scopeOfExpCollectionFixture.data.en.items);
+    });
+
+
+
+    it(`["scopeOfExp Entry Collection"] fetches the same normalized data (server + client)`, async () => {
+      const serverResult = await contentfulForServerEntriesFetch(
+        'scopeOfExp Entry Collection',
+        scopeOfExpCollEntryId
+      );
+      expect(serverResult.length).toBeGreaterThan(0);
+
+      const { result } = renderHook(
+        () => useContentfulForClientEntries('scopeOfExp Entry Collection', scopeOfExpCollEntryId),
+        { wrapper: createWrapper() }
+      );
+
+      await waitFor(() => {
+        expect(result.current.isSuccess).toBe(true);
+      });
+
+      const clientResult = result.current.data;
+      expect(serverResult).toEqual(clientResult);
+      expect(serverResult).toEqual(scopeOfExpCollectionEntryFixture.data.en.items);
+    });
     
 
 
@@ -192,52 +239,6 @@ describe.runIf(process.env.RUN_INTEGRATION_TESTS === 'true')(
     //   const clientResult = result.current.data;
     //   expect(serverResult).toEqual(clientResult);
     //   expect(serverResult).toEqual(aboutInfoCollectionFixture.data.en.items);
-    // });
-
-
-
-    // it(`["scopeOfExp Parent Entry Collection"] fetches the same normalized data (server + client)`, async () => {
-    //   const serverResult = await contentfulForServerEntriesFetch(
-    //     'scopeOfExp Parent Entry Collection',
-    //     scopeOfExpCollRefId
-    //   );
-    //   expect(serverResult.length).toBeGreaterThan(0);
-
-    //   const { result } = renderHook(
-    //     () => useContentfulForClientEntries('scopeOfExp Parent Entry Collection', scopeOfExpCollRefId),
-    //     { wrapper: createWrapper() }
-    //   );
-
-    //   await waitFor(() => {
-    //     expect(result.current.isSuccess).toBe(true);
-    //   });
-
-    //   const clientResult = result.current.data;
-    //   expect(serverResult).toEqual(clientResult);
-    //   expect(serverResult).toEqual(scopeOfExpCollectionFixture.data.en.items);
-    // });
-
-
-
-    // it(`["scopeOfExp Entry Collection"] fetches the same normalized data (server + client)`, async () => {
-    //   const serverResult = await contentfulForServerEntriesFetch(
-    //     'scopeOfExp Entry Collection',
-    //     scopeOfExpCollEntryId
-    //   );
-    //   expect(serverResult.length).toBeGreaterThan(0);
-
-    //   const { result } = renderHook(
-    //     () => useContentfulForClientEntries('scopeOfExp Entry Collection', scopeOfExpCollEntryId),
-    //     { wrapper: createWrapper() }
-    //   );
-
-    //   await waitFor(() => {
-    //     expect(result.current.isSuccess).toBe(true);
-    //   });
-
-    //   const clientResult = result.current.data;
-    //   expect(serverResult).toEqual(clientResult);
-    //   expect(serverResult).toEqual(scopeOfExpCollectionEntryFixture.data.en.items);
     // });
 
 

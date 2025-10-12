@@ -12,7 +12,7 @@ import './../home/_home-theming.scss';
 import { ContentfulDataProvider } from '@/libs/contentful/dataProvider';
 import { BackgroundSection } from '@/components/BackgroundSection';
 import { contentfulContentIds } from '@/libs/contentful/contentful-queryConfig';
-import { IB_propsType } from '@/libs/contentful/types'; 
+import { IB_propsType, EntryGroup2_propsType, CDP_context1, CDP_context2 } from '@/libs/contentful/types'; 
 
 export default function LandingPage() {
   
@@ -58,14 +58,14 @@ export default function LandingPage() {
   return (
     <div className="homePage">
       <ContentfulDataProvider dataFor="BannerHomePage Entry">
-        {(val) => (
+        {({ item }) => (
           <Banner
             featuredText={{
               heading: {
-                children: val?.title,
+                children: item?.title,
               },
               smartText: {
-                richText: val?.description,
+                richText: item?.description,
               },
             }}
             isHuge={true}
@@ -73,8 +73,8 @@ export default function LandingPage() {
         )}
       </ContentfulDataProvider>
 
-      {/* <ContentfulDataProvider dataFor="scopeOfExp Parent Entry Collection">
-        {({ orderedItems }) => {
+      <ContentfulDataProvider dataFor="scopeOfExp Parent Entry Collection">
+        {({ items }) => {
           return (
             <section
               className="pageSection smt-box section-expertises"
@@ -85,12 +85,12 @@ export default function LandingPage() {
               <SectionOfTabs
                 title="Scope of Expertise"
                 className="expertise-section-tabs"
-                listOfItems={orderedItems as IB_propsType[]}
+                listOfItems={items as EntryGroup2_propsType[]}
               />
             </section>
           );
         }}
-      </ContentfulDataProvider> */}
+      </ContentfulDataProvider>
 
       {/* <BackgroundSection
         className="pageSection aboutSection smt-box"
