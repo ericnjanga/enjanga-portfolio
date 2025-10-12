@@ -1,0 +1,38 @@
+@use 'enjanga-core-setup/styles' as core; 
+
+/**
+ * Expertise section (panels)
+ * ----------------------------
+**/ 
+.section-expertises {
+  // Variables ...
+  --enj-tabspanel-introhead-font-size: 1rem;
+  --enj-tabspanel-intro-mg: 0 0 1.2rem 0;
+
+  .enjanga-tabpanel-xxx {
+    // Eliminate subgrid extra margin
+    > .cds--css-grid-column {
+      margin: 0;
+    }
+  }
+
+
+  .tab-content {  
+    .intro-text {
+      margin: var(--enj-tabspanel-intro-mg);
+
+      p {
+        font-size: var(--enj-tabspanel-introhead-font-size);
+      }
+    }
+  }
+
+
+  /**
+   * Variables' responsiveness
+   * --------------------
+  */
+  @include core.breakpoint('lg') { 
+    --enj-tabspanel-introhead-font-size: 1.15rem;
+  }
+}

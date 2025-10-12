@@ -3,9 +3,9 @@
 /**
  * Quote section
  * ----------------------------
-**/
-
+**/ 
 .engineer-quotes-component {
+  // Variables ...
   --enj-home-quotes-font-size: 1.15rem;
   --enj-home-quotes-line-height: 1.9rem;
 
@@ -17,8 +17,11 @@
     }
   }
 
-  // @include core.breakpoint('sm') {}
 
+  /**
+   * Variables' responsiveness
+   * --------------------
+  */
   @include core.breakpoint('md') { 
     --enj-home-quotes-font-size: 1.25rem;
     --enj-home-quotes-line-height: 2rem;

@@ -1,0 +1,98 @@
+@use 'enjanga-core-setup/styles' as core; 
+
+.section-expertises { 
+  // Variables ...
+  --enj-tabs-label-display: none;
+  --enj-tabs-icon-padding-in-strt: 0;
+  --enj-tabs-icon-dim: 1.5rem;
+  --enj-tabs-heading-top: -110px;
+  --enj-tabs-wrapper-top: -58px;
+  --enj-tabs-section-marg-bot: 4rem;
+
+  // Declarations ...
+  margin-bottom: var(--enj-tabs-section-marg-bot)!important;
+
+
+  .sectionTitle,
+  .expertise-section-tabs-wrapper {
+    position: absolute;
+  }
+
+
+  // [*] Heading
+  #scope-of-expertise-heading {
+    top: var(--enj-tabs-heading-top);
+
+    @include core.breakpoint('md') {
+      --enj-tabs-heading-top: -120px;
+    }
+
+    @include core.breakpoint('lg') {
+      --enj-tabs-heading-top: -130px;
+    }
+
+    @include core.breakpoint('xlg') {
+      --enj-tabs-heading-top: -140px;
+    }
+  }
+
+
+  // [*] Tabs wrapper
+  .expertise-section-tabs-wrapper {
+    top: var(--enj-tabs-wrapper-top);
+  }
+
+
+  /* 
+    [*]
+    Override Carbon's default min-block-size on .cds--tabs.
+    By default, Carbon sets: min-block-size: var(--cds-layout-size-height-local);
+    In some layouts this forces an unnecessarily large block-size, which pushes
+    the tablist outside its container and causes a horizontal scrollbar.
+    
+    Setting min-block-size: auto lets the tab height be defined by its content
+    (and Carbon’s padding/line-height), preventing overflow without breaking
+    visual consistency.
+  */
+  .cds--tabs { 
+    inline-size: auto; 
+
+    /**
+     * Reorganize tabs display for responsiveness
+    **/
+    .cds--tabs__nav-item-label {
+      display: var(--enj-tabs-label-display);
+    }
+    .cds--tabs__nav-item--icon {
+      padding-inline-start: var(--enj-tabs-icon-padding-in-strt);
+      svg {
+        width: var(--enj-tabs-icon-dim);
+        height: var(--enj-tabs-icon-dim);
+      }
+    }
+  }
+
+
+  /**
+   * Variables' responsiveness
+   * --------------------
+  */
+  @include core.breakpoint('md') { 
+    --enj-tabs-section-marg-bot: 5.5rem;
+  }
+
+  @include core.breakpoint('lg') { 
+    --enj-tabs-section-marg-bot: 10rem;
+    --enj-tabs-label-display: inline-block;
+    --enj-tabs-icon-padding-in-strt: 0.5rem;
+  --enj-tabs-icon-dim: 1rem;
+  }
+
+  @include core.breakpoint('xlg') { 
+    --enj-tabs-section-marg-bot: 10rem;
+  }
+
+  @include core.breakpoint('max') { 
+    --enj-tabs-section-marg-bot: 10rem;
+  } 
+}

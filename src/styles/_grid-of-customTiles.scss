@@ -2,7 +2,7 @@
 @use './utils/mixins';
 
 :root {
-  --enj-grid-content-gap: 4px;
+  --enj-grid-content-gap: 10px;
 }
 
 /**
@@ -24,6 +24,7 @@
   .tabs-group-content--single-col {
     .cds--css-grid-column {
       @include core.breakpoint('md') {
+        --enj-grid-content-gap: 6px;
         margin-left: calc(var(--enj-grid-content-gap) / 2);
       }
     }

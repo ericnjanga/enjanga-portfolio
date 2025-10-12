@@ -4,7 +4,6 @@
 import React, { useState } from 'react';
 import { Tabs } from '@carbon/react';
 import './../../styles/_blogs-and-articles.scss';
-import './_SectionOfTabs.scss';
 import { Grid, Column } from '@carbon/react';
 import { ContentModel2 } from '@/libs/contentful/types';
 import SectionTabsList from './parts/tabsList';

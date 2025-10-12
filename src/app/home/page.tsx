@@ -9,6 +9,8 @@ import ContentAbout from './ContentAbout';
 import ContentBestWork from './ContentBestWork';
 import './../home/_home.scss';
 import './../home/styles/_quotes.scss';
+import './../home/styles/expertises/_panels.scss';
+import './../home/styles/expertises/_tabs.scss';
 import './../home/_home-theming.scss';
 import { ContentfulDataProvider } from '@/libs/contentful/dataProvider';
 import { BackgroundSection } from '@/components/BackgroundSection';
@@ -86,7 +88,7 @@ export default function LandingPage() {
             >
               <SectionOfTabs
                 title="Scope of Expertise"
-                className="expertise-section-tabs"
+                className="expertise-section-tabs-wrapper"
                 listOfItems={items as ContentModel2[]}
               />
             </section>

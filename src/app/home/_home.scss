@@ -10,13 +10,9 @@
 
 .homePage {
   // Variables ...
-  --enj-home-exprt-head-top: -80px;
-  --enj-home-exprt-tabs-top: -57px;
-
   --enj-home-aboutSec-height: 730px;
   --enj-home-aboutSec-title-top: -2rem;
   --enj-home-section-title-mb: 0.25rem;
-  --enj-home-expertSec-intro-mg: 0 0 1rem 0;
 
 
 
@@ -81,40 +77,4 @@
     }
   }
 
-  .section-expertises {
-    // Declarations ...
-    .sectionTitle,
-    .expertise-section-tabs {
-      position: absolute;
-    }
-
-    #scope-of-expertise-heading {
-      top: var(--enj-home-exprt-head-top);
-
-      @include core.breakpoint('md') {
-        --enj-home-exprt-head-top: -90px;
-      }
-
-      @include core.breakpoint('lg') {
-        --enj-home-exprt-head-top: -135px;
-      }
-
-      // @include core.breakpoint('xlg') {
-      // }
-    }
-
-    .expertise-section-tabs {
-      top: var(--enj-home-exprt-tabs-top);
-    }
-
-    .tab-content {
-      .intro-text {
-        margin: var(--enj-home-expertSec-intro-mg);
-
-        p {
-          font-size: 1.15rem;
-        }
-      }
-    }
-  }
 }

@@ -14,7 +14,7 @@ const SectionTabPanels = ({ listOfItems }: SectionTabPanelsProps) => (
         key={item?.sys?.id ?? index}
         className="grid-of-customTiles grid-of-customTiles-2 grid-of-customTiles-padding">
         <div className="tab-content">
-          <SectionTabContent tab={item} />
+          <SectionTabContent className='enjanga-tabpanel-xxx' tab={item} />
         </div>
       </TabPanel>
     ))}
