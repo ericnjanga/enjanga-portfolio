@@ -92,7 +92,7 @@ export default function LandingPage() {
         }}
       </ContentfulDataProvider>
 
-      {/* <BackgroundSection
+      <BackgroundSection
         className="pageSection aboutSection smt-box"
         id="about-me"
         ariaLabelledby="about-me-heading"
@@ -114,7 +114,7 @@ export default function LandingPage() {
             </Column>
           </Grid>
         </>
-      </BackgroundSection> */}
+      </BackgroundSection>
 
 
 

@@ -1,6 +1,6 @@
 
 import { queryData } from './GraphQL-query';
-import type { DataFor } from './types';
+import type { dataFor1, dataFor2 } from './types';
 
 
 
@@ -36,7 +36,7 @@ export const contentfulContentIds = {
  * Example:
  *   const { query, variables } = getContentfulQueryConfig("BlogPost Entry", "abc123");
  */
-export function getContentfulQueryConfig(dataFor: DataFor, contentId?: string) {
+export function getContentfulQueryConfig(dataFor: dataFor1 | dataFor2, contentId?: string) {
   let query = '';
   let variables: Record<string, any> = {
     locale1: 'en-CA',
@@ -50,7 +50,7 @@ export function getContentfulQueryConfig(dataFor: DataFor, contentId?: string) {
     case 'scopeOfExp Entry Collection':
     case 'scopeOfExp Parent Entry Collection':
     case 'AboutInfo Entry Collection':
-    case 'FooterLinks Entry Collection':
+    // case 'FooterLinks Entry Collection':
       if (dataFor==='scopeOfExp Entry Collection') {
         const expertiseId = contentId;
         query = queryData.infoBlockByParentCollection;
@@ -73,22 +73,22 @@ export function getContentfulQueryConfig(dataFor: DataFor, contentId?: string) {
       variables.sectionId = contentId ?? '';
       break;
 
-    case 'BlogPost Entry':
-      query = queryData.blogPostById;
-      variables.sectionId = contentId ?? '';
-      break;
+    // case 'BlogPost Entry':
+    //   query = queryData.blogPostById;
+    //   variables.sectionId = contentId ?? '';
+    //   break;
 
-    case 'CaseStudy Entry Collection':
-      query = queryData.projectsCollection;
-      break;
+    // case 'CaseStudy Entry Collection':
+    //   query = queryData.projectsCollection;
+    //   break;
 
-    case 'Quotes Entry Collection':
-      query = queryData.quotesCollection;
-      break;
+    // case 'Quotes Entry Collection':
+    //   query = queryData.quotesCollection;
+    //   break;
 
-    case 'BlogPost Entry Collection':
-      query = queryData.blogPostCollection;
-      break;
+    // case 'BlogPost Entry Collection':
+    //   query = queryData.blogPostCollection;
+    //   break;
   }
 
   return { query, variables, trackingInfo };

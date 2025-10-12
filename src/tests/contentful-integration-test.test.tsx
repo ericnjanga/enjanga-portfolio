@@ -195,6 +195,28 @@ describe.runIf(process.env.RUN_INTEGRATION_TESTS === 'true')(
       expect(serverResult).toEqual(clientResult);
       expect(serverResult).toEqual(scopeOfExpCollectionEntryFixture.data.en.items);
     });
+
+
+
+    it(`["AboutInfo Entry Collection"] fetches the same normalized data (server + client)`, async () => {
+      const serverResult = await contentfulForServerEntriesFetch(
+        'AboutInfo Entry Collection'
+      );
+      expect(serverResult.length).toBeGreaterThan(0);
+
+      const { result } = renderHook(
+        () => useContentfulForClientEntries('AboutInfo Entry Collection'),
+        { wrapper: createWrapper() }
+      );
+
+      await waitFor(() => {
+        expect(result.current.isSuccess).toBe(true);
+      });
+
+      const clientResult = result.current.data;
+      expect(serverResult).toEqual(clientResult);
+      expect(serverResult).toEqual(aboutInfoCollectionFixture.data.en.items);
+    });
     
 
 
@@ -217,28 +239,6 @@ describe.runIf(process.env.RUN_INTEGRATION_TESTS === 'true')(
     //   const clientResult = result.current.data;
     //   expect(serverResult).toEqual(clientResult);
     //   expect(serverResult).toEqual(blogPostCollectionFixture.data.en.items);
-    // });
-
-
-
-    // it(`["AboutInfo Entry Collection"] fetches the same normalized data (server + client)`, async () => {
-    //   const serverResult = await contentfulForServerEntriesFetch(
-    //     'AboutInfo Entry Collection'
-    //   );
-    //   expect(serverResult.length).toBeGreaterThan(0);
-
-    //   const { result } = renderHook(
-    //     () => useContentfulForClientEntries('AboutInfo Entry Collection'),
-    //     { wrapper: createWrapper() }
-    //   );
-
-    //   await waitFor(() => {
-    //     expect(result.current.isSuccess).toBe(true);
-    //   });
-
-    //   const clientResult = result.current.data;
-    //   expect(serverResult).toEqual(clientResult);
-    //   expect(serverResult).toEqual(aboutInfoCollectionFixture.data.en.items);
     // });
 
 

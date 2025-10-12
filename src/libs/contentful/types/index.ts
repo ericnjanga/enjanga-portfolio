@@ -19,7 +19,7 @@ import { ReactNode } from 'react';
  *   const posts = await contentfulForServerEntriesFetch("BlogPost Entry Collection");
  */
 export type dataFor1 = 'BannerHomePage Entry' | 'BannerBlogPage Entry' | 'FooterCopyright Entry' | 'CaseStudy Entry';
-export type dataFor2 = 'scopeOfExp Parent Entry Collection' | 'scopeOfExp Entry Collection';
+export type dataFor2 = 'scopeOfExp Parent Entry Collection' | 'scopeOfExp Entry Collection' | 'AboutInfo Entry Collection';
 export const getDataType = (dataFor: dataFor1 | dataFor2): string => {
   switch(dataFor) {
     case 'BannerHomePage Entry':
@@ -30,25 +30,18 @@ export const getDataType = (dataFor: dataFor1 | dataFor2): string => {
     
     case 'scopeOfExp Parent Entry Collection':
     case 'scopeOfExp Entry Collection':
+    case 'AboutInfo Entry Collection':
       return 'dataFor2';
   }
 };
 
-
-
+ 
 
 export type DataFor =
-  | 'BlogPost Entry Collection'
-  | 'AboutInfo Entry Collection'
-  | 'scopeOfExp Parent Entry Collection'
-  | 'scopeOfExp Entry Collection'
+  | 'BlogPost Entry Collection' 
   | 'CaseStudy Entry Collection'
   | 'FooterLinks Entry Collection'
-  | 'BlogPost Entry'
-  | 'BannerHomePage Entry'
-  | 'BannerBlogPage Entry'
-  | 'FooterCopyright Entry'
-  | 'CaseStudy Entry'
+  | 'BlogPost Entry'    
   | 'Quotes Entry Collection';
 
 

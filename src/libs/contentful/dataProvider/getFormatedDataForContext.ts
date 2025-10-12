@@ -35,6 +35,7 @@ function getFormatedDataForContext(data: any[], dataFor: dataFor1 | dataFor2): C
 
     case 'scopeOfExp Parent Entry Collection':
     case 'scopeOfExp Entry Collection':
+    case 'AboutInfo Entry Collection':
       contextValue = {
         items: sortByOrderProp(data),
         __isNormalized: true
