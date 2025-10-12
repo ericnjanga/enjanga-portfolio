@@ -19,7 +19,7 @@ import { ReactNode } from 'react';
  *   const posts = await contentfulForServerEntriesFetch("BlogPost Entry Collection");
  */
 export type dataFor1 = 'BannerHomePage Entry' | 'BannerBlogPage Entry' | 'FooterCopyright Entry' | 'CaseStudy Entry';
-export type dataFor2 = 'scopeOfExp Parent Entry Collection';
+export type dataFor2 = 'scopeOfExp Parent Entry Collection' | 'scopeOfExp Entry Collection';
 export const getDataType = (dataFor: dataFor1 | dataFor2): string => {
   switch(dataFor) {
     case 'BannerHomePage Entry':
@@ -29,6 +29,7 @@ export const getDataType = (dataFor: dataFor1 | dataFor2): string => {
       return 'dataFor1';
     
     case 'scopeOfExp Parent Entry Collection':
+    case 'scopeOfExp Entry Collection':
       return 'dataFor2';
   }
 };

@@ -34,11 +34,11 @@ function getFormatedDataForContext(data: any[], dataFor: dataFor1 | dataFor2): C
 
 
     case 'scopeOfExp Parent Entry Collection':
+    case 'scopeOfExp Entry Collection':
       contextValue = {
-        items: data,
+        items: sortByOrderProp(data),
         __isNormalized: true
       } as CDP_context2;
-      // const value1 = data?.shift();
 
     console.log('++++++++>>>>>>>>>>>>+++++++++++++++++');
     console.log('????? data = ', data );
@@ -48,38 +48,6 @@ function getFormatedDataForContext(data: any[], dataFor: dataFor1 | dataFor2): C
   }
 
   return contextValue;
-  // return {
-  //   id,
-  //   title,
-  //   blurb,
-  //   image,
-  //   plainDescription,
-  //   richDescription,
-  //   items,
-  //   orderedItems,
-  // };
-
-  //   case 'BlogPost Entry':
-  //     contextValue = {
-  //       sys     : data?.en?.sys?.id ?? '',
-  //       title   : data?.en?.title ?? '',
-  //       blurb   : data?.en?.blurb ?? '',
-  //       richDescription : data?.en?.description
-  //     };
-  //   break;
-
-    
-  //   case 'scopeOfExp Parent Entry Collection':
-  //   case 'scopeOfExp Entry Collection':
-  //   case 'AboutInfo Entry Collection':
-  //   case 'BlogPost Entry Collection':
-  //   case 'CaseStudy Entry Collection':
-  //   case 'FooterLinks Entry Collection':
-  //   case 'Quotes Entry Collection':
-  //     contextValue = { 
-  //       orderedItems: sortByOrderProp(items)
-  //     }
-  //   break;
 }
 
 export default getFormatedDataForContext;

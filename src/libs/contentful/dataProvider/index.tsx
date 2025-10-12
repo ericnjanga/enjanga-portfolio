@@ -31,7 +31,6 @@ export const ContentfulDataProvider = ({
 }: CDP_propsType) => {
   
   const contextType = getDataType(dataFor);
-  const [contextValue, setContextValue] = useState<CDP_context1 | CDP_context2>(skeleton_context1);
   const [contextEG1, setContextEG1] = useState<CDP_context1>(skeleton_context1);
   const [contextEG2, setContextEG2] = useState<CDP_context2>(skeleton_context2);
   const { data } = useContentfulForClientEntries(dataFor, contentId);

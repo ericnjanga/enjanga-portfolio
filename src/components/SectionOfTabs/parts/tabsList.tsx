@@ -28,8 +28,8 @@ const SectionTabsList = ({ listOfItems, className }: SectionTabsListProps) => {
   // }
 
   return (
-    <TabList aria-label="xxx" className={className}>
-      {listOfItems?.map((item) => {
+    <TabList aria-label="Scope of Expertise tabs" className={className}>
+      {listOfItems?.map((item, index) => {
         const IconComponent = iconMap[item?.icon || ''] || Code; // fallback to Code if not found
 
         /**
@@ -42,7 +42,7 @@ const SectionTabsList = ({ listOfItems, className }: SectionTabsListProps) => {
         // remove any substring that starts with "& "
         let cleanTitle = item?.title?.replace(/&\s.*$/, '').trim();
         return (
-          <Tab key={item?.sys?.id} renderIcon={IconComponent}>
+          <Tab key={item?.sys?.id ?? index} renderIcon={IconComponent}>
             {!cleanTitle && <div className='skeleton skeleton-text' role="presentation" style={{ width: '115px' }}></div>}
             {cleanTitle}
           </Tab>
