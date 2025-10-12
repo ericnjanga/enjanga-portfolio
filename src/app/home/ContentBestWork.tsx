@@ -46,9 +46,9 @@ const ContentBestWork = ({
   <Grid className="tabs-group-content">
     {!listOfItems && <ContentBestWorkSkeleton />}
 
-    {listOfItems?.map((item) => {
+    {listOfItems?.map((item, index) => {
       return (
-        <Column key={item.sys.id} lg={8} md={4} sm={4}>
+        <Column key={item?.sys?.id ?? index} lg={8} md={4} sm={4}>
           <CustomTile
             featuredText={{
               heading: {

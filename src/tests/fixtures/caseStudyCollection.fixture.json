@@ -8,125 +8,123 @@
           },
           "description": {
             "json": {
-              "nodeType": "document",
               "data": {},
               "content": [
                 {
-                  "nodeType": "heading-2",
                   "data": {},
                   "content": [
                     {
-                      "nodeType": "text",
+                      "data": {},
+                      "marks": [],
                       "value": "1. Context & Problem",
-                      "marks": [],
-                      "data": {}
+                      "nodeType": "text"
                     }
-                  ]
+                  ],
+                  "nodeType": "heading-2"
                 },
                 {
-                  "nodeType": "paragraph",
                   "data": {},
                   "content": [
                     {
-                      "nodeType": "text",
+                      "data": {},
+                      "marks": [],
                       "value": "As digital products scale, three recurring challenges surface:",
-                      "marks": [],
-                      "data": {}
+                      "nodeType": "text"
                     }
-                  ]
+                  ],
+                  "nodeType": "paragraph"
                 },
                 {
-                  "nodeType": "unordered-list",
                   "data": {},
                   "content": [
                     {
-                      "nodeType": "list-item",
                       "data": {},
                       "content": [
                         {
-                          "nodeType": "paragraph",
                           "data": {},
                           "content": [
                             {
-                              "nodeType": "text",
+                              "data": {},
+                              "marks": [
+                                {
+                                  "type": "bold"
+                                }
+                              ],
                               "value": "Content bottlenecks",
-                              "marks": [
-                                {
-                                  "type": "bold"
-                                }
-                              ],
-                              "data": {}
+                              "nodeType": "text"
                             },
                             {
-                              "nodeType": "text",
+                              "data": {},
+                              "marks": [],
                               "value": " — Marketing and business teams relied on developers for content updates, slowing time-to-market.",
-                              "marks": [],
-                              "data": {}
+                              "nodeType": "text"
                             }
-                          ]
+                          ],
+                          "nodeType": "paragraph"
                         }
-                      ]
+                      ],
+                      "nodeType": "list-item"
                     },
                     {
-                      "nodeType": "list-item",
                       "data": {},
                       "content": [
                         {
-                          "nodeType": "paragraph",
                           "data": {},
                           "content": [
                             {
-                              "nodeType": "text",
+                              "data": {},
+                              "marks": [
+                                {
+                                  "type": "bold"
+                                }
+                              ],
                               "value": "Inconsistent design",
-                              "marks": [
-                                {
-                                  "type": "bold"
-                                }
-                              ],
-                              "data": {}
+                              "nodeType": "text"
                             },
                             {
-                              "nodeType": "text",
-                              "value": " — New pages were built without a unified component system, causing design drift.",
+                              "data": {},
                               "marks": [],
-                              "data": {}
+                              "value": " — New pages were built without a unified component system, causing design drift.",
+                              "nodeType": "text"
                             }
-                          ]
+                          ],
+                          "nodeType": "paragraph"
                         }
-                      ]
+                      ],
+                      "nodeType": "list-item"
                     },
                     {
-                      "nodeType": "list-item",
                       "data": {},
                       "content": [
                         {
-                          "nodeType": "paragraph",
                           "data": {},
                           "content": [
                             {
-                              "nodeType": "text",
-                              "value": "Limited scalability",
+                              "data": {},
                               "marks": [
                                 {
                                   "type": "bold"
                                 }
                               ],
-                              "data": {}
+                              "value": "Limited scalability",
+                              "nodeType": "text"
                             },
                             {
-                              "nodeType": "text",
-                              "value": " — Each new feature required duplicated effort across content, code, and design.",
+                              "data": {},
                               "marks": [],
-                              "data": {}
+                              "value": " — Each new feature required duplicated effort across content, code, and design.",
+                              "nodeType": "text"
                             }
-                          ]
+                          ],
+                          "nodeType": "paragraph"
                         }
-                      ]
+                      ],
+                      "nodeType": "list-item"
                     }
-                  ]
+                  ],
+                  "nodeType": "unordered-list"
                 },
                 {
-                  "nodeType": "embedded-asset-block",
                   "data": {
                     "target": {
                       "sys": {
@@ -136,586 +134,586 @@
                       }
                     }
                   },
-                  "content": []
+                  "content": [],
+                  "nodeType": "embedded-asset-block"
                 },
                 {
-                  "nodeType": "paragraph",
                   "data": {},
                   "content": [
                     {
-                      "nodeType": "text",
+                      "data": {},
+                      "marks": [],
                       "value": "During my years as a front-end developer, I saw how these issues grow costly in enterprise environments. For this project, I set out to build not just a site, but a ",
-                      "marks": [],
-                      "data": {}
+                      "nodeType": "text"
                     },
                     {
-                      "nodeType": "text",
+                      "data": {},
+                      "marks": [
+                        {
+                          "type": "bold"
+                        }
+                      ],
                       "value": "scalable platform",
-                      "marks": [
-                        {
-                          "type": "bold"
-                        }
-                      ],
-                      "data": {}
+                      "nodeType": "text"
                     },
                     {
-                      "nodeType": "text",
+                      "data": {},
+                      "marks": [],
                       "value": " where design, content, and code worked together.",
-                      "marks": [],
-                      "data": {}
+                      "nodeType": "text"
                     }
-                  ]
+                  ],
+                  "nodeType": "paragraph"
                 },
                 {
-                  "nodeType": "hr",
                   "data": {},
-                  "content": []
+                  "content": [],
+                  "nodeType": "hr"
                 },
                 {
-                  "nodeType": "heading-2",
                   "data": {},
                   "content": [
                     {
-                      "nodeType": "text",
+                      "data": {},
+                      "marks": [],
                       "value": "2. Solution",
-                      "marks": [],
-                      "data": {}
+                      "nodeType": "text"
                     }
-                  ]
+                  ],
+                  "nodeType": "heading-2"
                 },
                 {
-                  "nodeType": "paragraph",
                   "data": {},
                   "content": [
                     {
-                      "nodeType": "text",
+                      "data": {},
+                      "marks": [],
                       "value": "I built a ",
-                      "marks": [],
-                      "data": {}
+                      "nodeType": "text"
                     },
                     {
-                      "nodeType": "text",
+                      "data": {},
+                      "marks": [
+                        {
+                          "type": "bold"
+                        }
+                      ],
                       "value": "React-based application with Next.js",
-                      "marks": [
-                        {
-                          "type": "bold"
-                        }
-                      ],
-                      "data": {}
+                      "nodeType": "text"
                     },
                     {
-                      "nodeType": "text",
+                      "data": {},
+                      "marks": [],
                       "value": ", powered by a ",
-                      "marks": [],
-                      "data": {}
+                      "nodeType": "text"
                     },
                     {
-                      "nodeType": "text",
+                      "data": {},
+                      "marks": [
+                        {
+                          "type": "bold"
+                        }
+                      ],
                       "value": "headless CMS (Contentful)",
-                      "marks": [
-                        {
-                          "type": "bold"
-                        }
-                      ],
-                      "data": {}
+                      "nodeType": "text"
                     },
                     {
-                      "nodeType": "text",
+                      "data": {},
+                      "marks": [],
                       "value": " and integrated with my ",
-                      "marks": [],
-                      "data": {}
+                      "nodeType": "text"
                     },
                     {
-                      "nodeType": "text",
+                      "data": {},
+                      "marks": [
+                        {
+                          "type": "bold"
+                        }
+                      ],
                       "value": "custom component library",
-                      "marks": [
-                        {
-                          "type": "bold"
-                        }
-                      ],
-                      "data": {}
+                      "nodeType": "text"
                     },
                     {
-                      "nodeType": "text",
+                      "data": {},
+                      "marks": [],
                       "value": ".",
-                      "marks": [],
-                      "data": {}
+                      "nodeType": "text"
                     }
-                  ]
+                  ],
+                  "nodeType": "paragraph"
                 },
                 {
-                  "nodeType": "paragraph",
                   "data": {},
                   "content": [
                     {
-                      "nodeType": "text",
-                      "value": "Key goals, each tied to business value:",
+                      "data": {},
                       "marks": [
                         {
                           "type": "bold"
                         }
                       ],
-                      "data": {}
+                      "value": "Key goals, each tied to business value:",
+                      "nodeType": "text"
                     }
-                  ]
+                  ],
+                  "nodeType": "paragraph"
                 },
                 {
-                  "nodeType": "unordered-list",
                   "data": {},
                   "content": [
                     {
-                      "nodeType": "list-item",
                       "data": {},
                       "content": [
                         {
-                          "nodeType": "paragraph",
                           "data": {},
                           "content": [
                             {
-                              "nodeType": "text",
+                              "data": {},
+                              "marks": [
+                                {
+                                  "type": "bold"
+                                }
+                              ],
                               "value": "Reusable, CMS-driven components →",
-                              "marks": [
-                                {
-                                  "type": "bold"
-                                }
-                              ],
-                              "data": {}
+                              "nodeType": "text"
                             },
                             {
-                              "nodeType": "text",
+                              "data": {},
+                              "marks": [],
                               "value": " Faster feature development and reduced duplication.",
-                              "marks": [],
-                              "data": {}
+                              "nodeType": "text"
                             }
-                          ]
+                          ],
+                          "nodeType": "paragraph"
                         }
-                      ]
+                      ],
+                      "nodeType": "list-item"
                     },
                     {
-                      "nodeType": "list-item",
                       "data": {},
                       "content": [
                         {
-                          "nodeType": "paragraph",
                           "data": {},
                           "content": [
                             {
-                              "nodeType": "text",
+                              "data": {},
+                              "marks": [
+                                {
+                                  "type": "bold"
+                                }
+                              ],
                               "value": "Design consistency →",
-                              "marks": [
-                                {
-                                  "type": "bold"
-                                }
-                              ],
-                              "data": {}
+                              "nodeType": "text"
                             },
                             {
-                              "nodeType": "text",
+                              "data": {},
+                              "marks": [],
                               "value": " Strengthening brand identity and reduced design drift.",
-                              "marks": [],
-                              "data": {}
+                              "nodeType": "text"
                             }
-                          ]
+                          ],
+                          "nodeType": "paragraph"
                         }
-                      ]
+                      ],
+                      "nodeType": "list-item"
                     },
                     {
-                      "nodeType": "list-item",
                       "data": {},
                       "content": [
                         {
-                          "nodeType": "paragraph",
                           "data": {},
                           "content": [
                             {
-                              "nodeType": "text",
+                              "data": {},
+                              "marks": [
+                                {
+                                  "type": "bold"
+                                }
+                              ],
                               "value": "Decoupled content from code →",
-                              "marks": [
-                                {
-                                  "type": "bold"
-                                }
-                              ],
-                              "data": {}
+                              "nodeType": "text"
                             },
                             {
-                              "nodeType": "text",
+                              "data": {},
+                              "marks": [],
                               "value": " Empowering business teams to update content without developer bottlenecks.",
-                              "marks": [],
-                              "data": {}
+                              "nodeType": "text"
                             }
-                          ]
+                          ],
+                          "nodeType": "paragraph"
                         }
-                      ]
+                      ],
+                      "nodeType": "list-item"
                     },
                     {
-                      "nodeType": "list-item",
                       "data": {},
                       "content": [
                         {
-                          "nodeType": "paragraph",
                           "data": {},
                           "content": [
                             {
-                              "nodeType": "text",
+                              "data": {},
+                              "marks": [
+                                {
+                                  "type": "bold"
+                                }
+                              ],
                               "value": "Accessibility baked in →",
-                              "marks": [
-                                {
-                                  "type": "bold"
-                                }
-                              ],
-                              "data": {}
+                              "nodeType": "text"
                             },
                             {
-                              "nodeType": "text",
-                              "value": " Minimizing compliance risks and broadened user reach.",
+                              "data": {},
                               "marks": [],
-                              "data": {}
+                              "value": " Minimizing compliance risks and broadened user reach.",
+                              "nodeType": "text"
                             }
-                          ]
+                          ],
+                          "nodeType": "paragraph"
                         }
-                      ]
+                      ],
+                      "nodeType": "list-item"
                     },
                     {
-                      "nodeType": "list-item",
                       "data": {},
                       "content": [
                         {
-                          "nodeType": "paragraph",
                           "data": {},
                           "content": [
                             {
-                              "nodeType": "text",
-                              "value": "SEO & performance →",
+                              "data": {},
                               "marks": [
                                 {
                                   "type": "bold"
                                 }
                               ],
-                              "data": {}
+                              "value": "SEO & performance →",
+                              "nodeType": "text"
                             },
                             {
-                              "nodeType": "text",
-                              "value": " Leveraging Next.js static site generation to deliver fast, optimized, and discoverable pages.",
+                              "data": {},
                               "marks": [],
-                              "data": {}
+                              "value": " Leveraging Next.js static site generation to deliver fast, optimized, and discoverable pages.",
+                              "nodeType": "text"
                             }
-                          ]
+                          ],
+                          "nodeType": "paragraph"
                         }
-                      ]
+                      ],
+                      "nodeType": "list-item"
                     }
-                  ]
+                  ],
+                  "nodeType": "unordered-list"
                 },
                 {
-                  "nodeType": "paragraph",
                   "data": {},
                   "content": [
                     {
-                      "nodeType": "text",
-                      "value": "🎥 ",
+                      "data": {},
                       "marks": [],
-                      "data": {}
+                      "value": "🎥 ",
+                      "nodeType": "text"
                     },
                     {
-                      "nodeType": "text",
-                      "value": "[Insert short video clip showing content being updated in Contentful and reflected live in the app]",
+                      "data": {},
                       "marks": [
                         {
                           "type": "italic"
                         }
                       ],
-                      "data": {}
+                      "value": "[Insert short video clip showing content being updated in Contentful and reflected live in the app]",
+                      "nodeType": "text"
                     }
-                  ]
+                  ],
+                  "nodeType": "paragraph"
                 },
                 {
-                  "nodeType": "hr",
                   "data": {},
-                  "content": []
+                  "content": [],
+                  "nodeType": "hr"
                 },
                 {
-                  "nodeType": "heading-2",
                   "data": {},
                   "content": [
                     {
-                      "nodeType": "text",
+                      "data": {},
+                      "marks": [],
                       "value": "3. Implementation",
-                      "marks": [],
-                      "data": {}
+                      "nodeType": "text"
                     }
-                  ]
+                  ],
+                  "nodeType": "heading-2"
                 },
                 {
-                  "nodeType": "paragraph",
                   "data": {},
                   "content": [
                     {
-                      "nodeType": "text",
-                      "value": "I built this app on top of ",
+                      "data": {},
                       "marks": [],
-                      "data": {}
+                      "value": "I built this app on top of ",
+                      "nodeType": "text"
                     },
                     {
-                      "nodeType": "hyperlink",
                       "data": {
                         "uri": "https://carbondesignsystem.com/"
                       },
                       "content": [
                         {
-                          "nodeType": "text",
-                          "value": "Carbon Design Systems",
+                          "data": {},
                           "marks": [],
-                          "data": {}
+                          "value": "Carbon Design Systems",
+                          "nodeType": "text"
                         }
-                      ]
+                      ],
+                      "nodeType": "hyperlink"
                     },
                     {
-                      "nodeType": "text",
+                      "data": {},
+                      "marks": [],
                       "value": ", chosen NextJS for its ",
-                      "marks": [],
-                      "data": {}
+                      "nodeType": "text"
                     },
                     {
-                      "nodeType": "text",
+                      "data": {},
+                      "marks": [
+                        {
+                          "type": "bold"
+                        }
+                      ],
                       "value": "built-in server-side rendering (SSR) and static site generation (SSG)",
-                      "marks": [
-                        {
-                          "type": "bold"
-                        }
-                      ],
-                      "data": {}
+                      "nodeType": "text"
                     },
                     {
-                      "nodeType": "text",
+                      "data": {},
+                      "marks": [],
                       "value": ", and went for ContentFul because it’s a ",
-                      "marks": [],
-                      "data": {}
+                      "nodeType": "text"
                     },
                     {
-                      "nodeType": "text",
+                      "data": {},
+                      "marks": [
+                        {
+                          "type": "bold"
+                        }
+                      ],
                       "value": "headless CMS with a clean GraphQL/REST API",
-                      "marks": [
-                        {
-                          "type": "bold"
-                        }
-                      ],
-                      "data": {}
+                      "nodeType": "text"
                     },
                     {
-                      "nodeType": "text",
+                      "data": {},
+                      "marks": [],
                       "value": ", which makes it easy to ",
-                      "marks": [],
-                      "data": {}
+                      "nodeType": "text"
                     },
                     {
-                      "nodeType": "text",
-                      "value": "fetch structured content",
+                      "data": {},
                       "marks": [
                         {
                           "type": "bold"
                         }
                       ],
-                      "data": {}
+                      "value": "fetch structured content",
+                      "nodeType": "text"
                     },
                     {
-                      "nodeType": "text",
+                      "data": {},
+                      "marks": [],
                       "value": ".",
-                      "marks": [],
-                      "data": {}
+                      "nodeType": "text"
                     }
-                  ]
+                  ],
+                  "nodeType": "paragraph"
                 },
                 {
-                  "nodeType": "heading-3",
                   "data": {},
                   "content": [
                     {
-                      "nodeType": "text",
+                      "data": {},
+                      "marks": [],
                       "value": "Tech Stack & Architecture",
-                      "marks": [],
-                      "data": {}
+                      "nodeType": "text"
                     }
-                  ]
+                  ],
+                  "nodeType": "heading-3"
                 },
                 {
-                  "nodeType": "unordered-list",
                   "data": {},
                   "content": [
                     {
-                      "nodeType": "list-item",
                       "data": {},
                       "content": [
                         {
-                          "nodeType": "paragraph",
                           "data": {},
                           "content": [
                             {
-                              "nodeType": "text",
+                              "data": {},
+                              "marks": [
+                                {
+                                  "type": "bold"
+                                }
+                              ],
                               "value": "Framework:",
-                              "marks": [
-                                {
-                                  "type": "bold"
-                                }
-                              ],
-                              "data": {}
+                              "nodeType": "text"
                             },
                             {
-                              "nodeType": "text",
+                              "data": {},
+                              "marks": [],
                               "value": " Next.js (for hybrid static & server-side rendering, SEO, and performance).",
-                              "marks": [],
-                              "data": {}
+                              "nodeType": "text"
                             }
-                          ]
+                          ],
+                          "nodeType": "paragraph"
                         }
-                      ]
+                      ],
+                      "nodeType": "list-item"
                     },
                     {
-                      "nodeType": "list-item",
                       "data": {},
                       "content": [
                         {
-                          "nodeType": "paragraph",
                           "data": {},
                           "content": [
                             {
-                              "nodeType": "text",
+                              "data": {},
+                              "marks": [
+                                {
+                                  "type": "bold"
+                                }
+                              ],
                               "value": "CMS:",
-                              "marks": [
-                                {
-                                  "type": "bold"
-                                }
-                              ],
-                              "data": {}
+                              "nodeType": "text"
                             },
                             {
-                              "nodeType": "text",
-                              "value": " Contentful (for structured content modeling and editorial flexibility).",
+                              "data": {},
                               "marks": [],
-                              "data": {}
+                              "value": " Contentful (for structured content modeling and editorial flexibility).",
+                              "nodeType": "text"
                             }
-                          ]
+                          ],
+                          "nodeType": "paragraph"
                         }
-                      ]
+                      ],
+                      "nodeType": "list-item"
                     },
                     {
-                      "nodeType": "list-item",
                       "data": {},
                       "content": [
                         {
-                          "nodeType": "paragraph",
                           "data": {},
                           "content": [
                             {
-                              "nodeType": "text",
-                              "value": "UI Foundation:",
+                              "data": {},
                               "marks": [
                                 {
                                   "type": "bold"
                                 }
                               ],
-                              "data": {}
+                              "value": "UI Foundation:",
+                              "nodeType": "text"
                             },
                             {
-                              "nodeType": "text",
-                              "value": " Custom React component library (",
+                              "data": {},
                               "marks": [],
-                              "data": {}
+                              "value": " Custom React component library (",
+                              "nodeType": "text"
                             },
                             {
-                              "nodeType": "hyperlink",
                               "data": {
                                 "uri": "http://localhost:3000/blog/19oHD8PCWxtpsAQ0vrZm80/"
                               },
                               "content": [
                                 {
-                                  "nodeType": "text",
-                                  "value": "ensuring accessibility,",
+                                  "data": {},
                                   "marks": [],
-                                  "data": {}
+                                  "value": "ensuring accessibility,",
+                                  "nodeType": "text"
                                 }
-                              ]
+                              ],
+                              "nodeType": "hyperlink"
                             },
                             {
-                              "nodeType": "text",
+                              "data": {},
+                              "marks": [],
                               "value": " consistency, and reusability).",
-                              "marks": [],
-                              "data": {}
+                              "nodeType": "text"
                             }
-                          ]
+                          ],
+                          "nodeType": "paragraph"
                         }
-                      ]
+                      ],
+                      "nodeType": "list-item"
                     },
                     {
-                      "nodeType": "list-item",
                       "data": {},
                       "content": [
                         {
-                          "nodeType": "paragraph",
                           "data": {},
                           "content": [
                             {
-                              "nodeType": "text",
+                              "data": {},
+                              "marks": [
+                                {
+                                  "type": "bold"
+                                }
+                              ],
                               "value": "Documentation:",
-                              "marks": [
-                                {
-                                  "type": "bold"
-                                }
-                              ],
-                              "data": {}
+                              "nodeType": "text"
                             },
                             {
-                              "nodeType": "text",
-                              "value": " Storybook (for component showcase and developer onboarding).",
+                              "data": {},
                               "marks": [],
-                              "data": {}
+                              "value": " Storybook (for component showcase and developer onboarding).",
+                              "nodeType": "text"
                             }
-                          ]
+                          ],
+                          "nodeType": "paragraph"
                         }
-                      ]
+                      ],
+                      "nodeType": "list-item"
                     },
                     {
-                      "nodeType": "list-item",
                       "data": {},
                       "content": [
                         {
-                          "nodeType": "paragraph",
                           "data": {},
                           "content": [
                             {
-                              "nodeType": "text",
-                              "value": "CI/CD:",
+                              "data": {},
                               "marks": [
                                 {
                                   "type": "bold"
                                 }
                               ],
-                              "data": {}
+                              "value": "CI/CD:",
+                              "nodeType": "text"
                             },
                             {
-                              "nodeType": "text",
-                              "value": " GitHub Actions (for automated build, test, and deploy).",
+                              "data": {},
                               "marks": [],
-                              "data": {}
+                              "value": " GitHub Actions (for automated build, test, and deploy).",
+                              "nodeType": "text"
                             }
-                          ]
+                          ],
+                          "nodeType": "paragraph"
                         }
-                      ]
+                      ],
+                      "nodeType": "list-item"
                     }
-                  ]
+                  ],
+                  "nodeType": "unordered-list"
                 },
                 {
-                  "nodeType": "heading-3",
                   "data": {},
                   "content": [
                     {
-                      "nodeType": "text",
-                      "value": "Example: Page Assembly with Contentful + Component Library",
+                      "data": {},
                       "marks": [],
-                      "data": {}
+                      "value": "Example: Page Assembly with Contentful + Component Library",
+                      "nodeType": "text"
                     }
-                  ]
+                  ],
+                  "nodeType": "heading-3"
                 },
                 {
-                  "nodeType": "embedded-asset-block",
                   "data": {
                     "target": {
                       "sys": {
@@ -725,754 +723,756 @@
                       }
                     }
                   },
-                  "content": []
+                  "content": [],
+                  "nodeType": "embedded-asset-block"
                 },
                 {
-                  "nodeType": "unordered-list",
                   "data": {},
                   "content": [
                     {
-                      "nodeType": "list-item",
                       "data": {},
                       "content": [
                         {
-                          "nodeType": "paragraph",
                           "data": {},
                           "content": [
                             {
-                              "nodeType": "text",
+                              "data": {},
+                              "marks": [
+                                {
+                                  "type": "bold"
+                                }
+                              ],
                               "value": "Content authors",
-                              "marks": [
-                                {
-                                  "type": "bold"
-                                }
-                              ],
-                              "data": {}
+                              "nodeType": "text"
                             },
                             {
-                              "nodeType": "text",
+                              "data": {},
+                              "marks": [],
                               "value": " build pages by combining reusable modules (hero banners, tiles, etc.).",
-                              "marks": [],
-                              "data": {}
+                              "nodeType": "text"
                             }
-                          ]
+                          ],
+                          "nodeType": "paragraph"
                         }
-                      ]
+                      ],
+                      "nodeType": "list-item"
                     },
                     {
-                      "nodeType": "list-item",
                       "data": {},
                       "content": [
                         {
-                          "nodeType": "paragraph",
                           "data": {},
                           "content": [
                             {
-                              "nodeType": "text",
+                              "data": {},
+                              "marks": [
+                                {
+                                  "type": "bold"
+                                }
+                              ],
                               "value": "React components",
-                              "marks": [
-                                {
-                                  "type": "bold"
-                                }
-                              ],
-                              "data": {}
+                              "nodeType": "text"
                             },
                             {
-                              "nodeType": "text",
+                              "data": {},
+                              "marks": [],
                               "value": " consume structured data from Contentful, rendering accessible, responsive layouts.",
-                              "marks": [],
-                              "data": {}
+                              "nodeType": "text"
                             }
-                          ]
+                          ],
+                          "nodeType": "paragraph"
                         }
-                      ]
+                      ],
+                      "nodeType": "list-item"
                     },
                     {
-                      "nodeType": "list-item",
                       "data": {},
                       "content": [
                         {
-                          "nodeType": "paragraph",
                           "data": {},
                           "content": [
                             {
-                              "nodeType": "text",
+                              "data": {},
+                              "marks": [
+                                {
+                                  "type": "bold"
+                                }
+                              ],
                               "value": "Design system tokens",
-                              "marks": [
-                                {
-                                  "type": "bold"
-                                }
-                              ],
-                              "data": {}
+                              "nodeType": "text"
                             },
                             {
-                              "nodeType": "text",
+                              "data": {},
+                              "marks": [],
                               "value": " ensure consistent typography, spacing, and color usage across all pages.",
-                              "marks": [],
-                              "data": {}
+                              "nodeType": "text"
                             }
-                          ]
+                          ],
+                          "nodeType": "paragraph"
                         }
-                      ]
+                      ],
+                      "nodeType": "list-item"
                     }
-                  ]
+                  ],
+                  "nodeType": "unordered-list"
                 },
                 {
-                  "nodeType": "paragraph",
                   "data": {},
                   "content": [
                     {
-                      "nodeType": "text",
-                      "value": "🎥 ",
+                      "data": {},
                       "marks": [],
-                      "data": {}
+                      "value": "🎥 ",
+                      "nodeType": "text"
                     },
                     {
-                      "nodeType": "text",
+                      "data": {},
+                      "marks": [
+                        {
+                          "type": "italic"
+                        }
+                      ],
                       "value": "[Optional video demo: a marketer edits content in Contentful → updates appear instantly on the site]",
-                      "marks": [
-                        {
-                          "type": "italic"
-                        }
-                      ],
-                      "data": {}
+                      "nodeType": "text"
                     }
-                  ]
+                  ],
+                  "nodeType": "paragraph"
                 },
                 {
-                  "nodeType": "hr",
                   "data": {},
-                  "content": []
+                  "content": [],
+                  "nodeType": "hr"
                 },
                 {
-                  "nodeType": "heading-2",
                   "data": {},
                   "content": [
                     {
-                      "nodeType": "text",
+                      "data": {},
+                      "marks": [],
                       "value": "4. Impact",
-                      "marks": [],
-                      "data": {}
+                      "nodeType": "text"
                     }
-                  ]
+                  ],
+                  "nodeType": "heading-2"
                 },
                 {
-                  "nodeType": "paragraph",
                   "data": {},
                   "content": [
                     {
-                      "nodeType": "text",
+                      "data": {},
+                      "marks": [],
                       "value": "✨ ",
-                      "marks": [],
-                      "data": {}
+                      "nodeType": "text"
                     },
                     {
-                      "nodeType": "text",
+                      "data": {},
+                      "marks": [
+                        {
+                          "type": "bold"
+                        }
+                      ],
                       "value": "Business + Technical Outcomes:",
-                      "marks": [
-                        {
-                          "type": "bold"
-                        }
-                      ],
-                      "data": {}
+                      "nodeType": "text"
                     }
-                  ]
+                  ],
+                  "nodeType": "paragraph"
                 },
                 {
-                  "nodeType": "paragraph",
                   "data": {},
                   "content": [
                     {
-                      "nodeType": "text",
+                      "data": {},
+                      "marks": [],
                       "value": "Integrating library components made the building process so much faster. The bulk of the development process had to do with the scaffholding, the routing system, pulling the content from ContentFul and more. Given that I completed the project on my own, here are some estimations:",
-                      "marks": [],
-                      "data": {}
+                      "nodeType": "text"
                     }
-                  ]
+                  ],
+                  "nodeType": "paragraph"
                 },
                 {
-                  "nodeType": "unordered-list",
                   "data": {},
                   "content": [
                     {
-                      "nodeType": "list-item",
                       "data": {},
                       "content": [
                         {
-                          "nodeType": "paragraph",
                           "data": {},
                           "content": [
                             {
-                              "nodeType": "text",
+                              "data": {},
+                              "marks": [
+                                {
+                                  "type": "bold"
+                                }
+                              ],
                               "value": "40% faster feature delivery",
-                              "marks": [
-                                {
-                                  "type": "bold"
-                                }
-                              ],
-                              "data": {}
+                              "nodeType": "text"
                             },
                             {
-                              "nodeType": "text",
+                              "data": {},
+                              "marks": [],
                               "value": " due to reusable, CMS-powered components.",
-                              "marks": [],
-                              "data": {}
+                              "nodeType": "text"
                             }
-                          ]
+                          ],
+                          "nodeType": "paragraph"
                         }
-                      ]
+                      ],
+                      "nodeType": "list-item"
                     },
                     {
-                      "nodeType": "list-item",
                       "data": {},
                       "content": [
                         {
-                          "nodeType": "paragraph",
                           "data": {},
                           "content": [
                             {
-                              "nodeType": "text",
+                              "data": {},
+                              "marks": [
+                                {
+                                  "type": "bold"
+                                }
+                              ],
                               "value": "Content author empowerment:",
-                              "marks": [
-                                {
-                                  "type": "bold"
-                                }
-                              ],
-                              "data": {}
+                              "nodeType": "text"
                             },
                             {
-                              "nodeType": "text",
+                              "data": {},
+                              "marks": [],
                               "value": " Easy to manage and publish without developer intervention, improving marketing agility.",
-                              "marks": [],
-                              "data": {}
+                              "nodeType": "text"
                             }
-                          ]
+                          ],
+                          "nodeType": "paragraph"
                         }
-                      ]
+                      ],
+                      "nodeType": "list-item"
                     },
                     {
-                      "nodeType": "list-item",
                       "data": {},
                       "content": [
                         {
-                          "nodeType": "paragraph",
                           "data": {},
                           "content": [
                             {
-                              "nodeType": "text",
+                              "data": {},
+                              "marks": [
+                                {
+                                  "type": "bold"
+                                }
+                              ],
                               "value": "Strengthened design consistency:",
-                              "marks": [
-                                {
-                                  "type": "bold"
-                                }
-                              ],
-                              "data": {}
+                              "nodeType": "text"
                             },
                             {
-                              "nodeType": "text",
+                              "data": {},
+                              "marks": [],
                               "value": " Reduced drift and accessibility gaps.",
-                              "marks": [],
-                              "data": {}
+                              "nodeType": "text"
                             }
-                          ]
+                          ],
+                          "nodeType": "paragraph"
                         }
-                      ]
+                      ],
+                      "nodeType": "list-item"
                     }
-                  ]
+                  ],
+                  "nodeType": "unordered-list"
                 },
                 {
-                  "nodeType": "paragraph",
                   "data": {},
                   "content": [
                     {
-                      "nodeType": "text",
-                      "value": "📸 ",
+                      "data": {},
                       "marks": [],
-                      "data": {}
+                      "value": "📸 ",
+                      "nodeType": "text"
                     },
                     {
-                      "nodeType": "text",
+                      "data": {},
+                      "marks": [
+                        {
+                          "type": "italic"
+                        }
+                      ],
                       "value": "[Insert chart or graphic comparing time-to-publish before vs. after CMS integration]",
-                      "marks": [
-                        {
-                          "type": "italic"
-                        }
-                      ],
-                      "data": {}
+                      "nodeType": "text"
                     }
-                  ]
+                  ],
+                  "nodeType": "paragraph"
                 },
                 {
-                  "nodeType": "paragraph",
                   "data": {},
                   "content": [
                     {
-                      "nodeType": "text",
+                      "data": {},
+                      "marks": [],
                       "value": "“These results validated that the platform was not just a technical improvement but a business-enabling solution.”",
-                      "marks": [],
-                      "data": {}
+                      "nodeType": "text"
                     }
-                  ]
+                  ],
+                  "nodeType": "paragraph"
                 },
                 {
-                  "nodeType": "hr",
                   "data": {},
-                  "content": []
+                  "content": [],
+                  "nodeType": "hr"
                 },
                 {
-                  "nodeType": "heading-2",
                   "data": {},
                   "content": [
                     {
-                      "nodeType": "text",
+                      "data": {},
+                      "marks": [],
                       "value": "5. Solution Engineering Mindset",
-                      "marks": [],
-                      "data": {}
+                      "nodeType": "text"
                     }
-                  ]
+                  ],
+                  "nodeType": "heading-2"
                 },
                 {
-                  "nodeType": "paragraph",
                   "data": {},
                   "content": [
                     {
-                      "nodeType": "text",
+                      "data": {},
+                      "marks": [],
                       "value": "This project demonstrates my approach as a ",
-                      "marks": [],
-                      "data": {}
+                      "nodeType": "text"
                     },
                     {
-                      "nodeType": "text",
+                      "data": {},
+                      "marks": [
+                        {
+                          "type": "bold"
+                        }
+                      ],
                       "value": "Design Technologist bridging design, engineering, and business goals",
-                      "marks": [
-                        {
-                          "type": "bold"
-                        }
-                      ],
-                      "data": {}
+                      "nodeType": "text"
                     },
                     {
-                      "nodeType": "text",
-                      "value": ":",
+                      "data": {},
                       "marks": [],
-                      "data": {}
+                      "value": ":",
+                      "nodeType": "text"
                     }
-                  ]
+                  ],
+                  "nodeType": "paragraph"
                 },
                 {
-                  "nodeType": "unordered-list",
                   "data": {},
                   "content": [
                     {
-                      "nodeType": "list-item",
                       "data": {},
                       "content": [
                         {
-                          "nodeType": "paragraph",
                           "data": {},
                           "content": [
                             {
-                              "nodeType": "text",
+                              "data": {},
+                              "marks": [
+                                {
+                                  "type": "bold"
+                                }
+                              ],
                               "value": "Business Alignment:",
-                              "marks": [
-                                {
-                                  "type": "bold"
-                                }
-                              ],
-                              "data": {}
+                              "nodeType": "text"
                             },
                             {
-                              "nodeType": "text",
+                              "data": {},
+                              "marks": [],
                               "value": " Designed architecture to reduce content bottlenecks and accelerate marketing initiatives.",
-                              "marks": [],
-                              "data": {}
+                              "nodeType": "text"
                             }
-                          ]
+                          ],
+                          "nodeType": "paragraph"
                         }
-                      ]
+                      ],
+                      "nodeType": "list-item"
                     },
                     {
-                      "nodeType": "list-item",
                       "data": {},
                       "content": [
                         {
-                          "nodeType": "paragraph",
                           "data": {},
                           "content": [
                             {
-                              "nodeType": "text",
+                              "data": {},
+                              "marks": [
+                                {
+                                  "type": "bold"
+                                }
+                              ],
                               "value": "Cross-Functional Collaboration:",
-                              "marks": [
-                                {
-                                  "type": "bold"
-                                }
-                              ],
-                              "data": {}
+                              "nodeType": "text"
                             },
                             {
-                              "nodeType": "text",
+                              "data": {},
+                              "marks": [],
                               "value": " Partnered with designers to define reusable modules, and with content stakeholders to model flexible structures in Contentful.",
-                              "marks": [],
-                              "data": {}
+                              "nodeType": "text"
                             }
-                          ]
+                          ],
+                          "nodeType": "paragraph"
                         }
-                      ]
+                      ],
+                      "nodeType": "list-item"
                     },
                     {
-                      "nodeType": "list-item",
                       "data": {},
                       "content": [
                         {
-                          "nodeType": "paragraph",
                           "data": {},
                           "content": [
                             {
-                              "nodeType": "text",
+                              "data": {},
+                              "marks": [
+                                {
+                                  "type": "bold"
+                                }
+                              ],
                               "value": "Scalability:",
-                              "marks": [
-                                {
-                                  "type": "bold"
-                                }
-                              ],
-                              "data": {}
+                              "nodeType": "text"
                             },
                             {
-                              "nodeType": "text",
-                              "value": " Built the app as a platform, not a one-off site, enabling long-term growth and reuse.",
+                              "data": {},
                               "marks": [],
-                              "data": {}
+                              "value": " Built the app as a platform, not a one-off site, enabling long-term growth and reuse.",
+                              "nodeType": "text"
                             }
-                          ]
+                          ],
+                          "nodeType": "paragraph"
                         }
-                      ]
+                      ],
+                      "nodeType": "list-item"
                     },
                     {
-                      "nodeType": "list-item",
                       "data": {},
                       "content": [
                         {
-                          "nodeType": "paragraph",
                           "data": {},
                           "content": [
                             {
-                              "nodeType": "text",
-                              "value": "Enablement:",
+                              "data": {},
                               "marks": [
                                 {
                                   "type": "bold"
                                 }
                               ],
-                              "data": {}
+                              "value": "Enablement:",
+                              "nodeType": "text"
                             },
                             {
-                              "nodeType": "text",
-                              "value": " Documentation and Storybook empowered developers to contribute confidently, while content teams gained autonomy.",
+                              "data": {},
                               "marks": [],
-                              "data": {}
+                              "value": " Documentation and Storybook empowered developers to contribute confidently, while content teams gained autonomy.",
+                              "nodeType": "text"
                             }
-                          ]
+                          ],
+                          "nodeType": "paragraph"
                         }
-                      ]
+                      ],
+                      "nodeType": "list-item"
                     }
-                  ]
+                  ],
+                  "nodeType": "unordered-list"
                 },
                 {
-                  "nodeType": "paragraph",
                   "data": {},
                   "content": [
                     {
-                      "nodeType": "text",
-                      "value": "🎥 ",
+                      "data": {},
                       "marks": [],
-                      "data": {}
+                      "value": "🎥 ",
+                      "nodeType": "text"
                     },
                     {
-                      "nodeType": "text",
-                      "value": "[Optional short video: walkthrough of component library in Storybook + integration with CMS]",
+                      "data": {},
                       "marks": [
                         {
                           "type": "italic"
                         }
                       ],
-                      "data": {}
+                      "value": "[Optional short video: walkthrough of component library in Storybook + integration with CMS]",
+                      "nodeType": "text"
                     }
-                  ]
+                  ],
+                  "nodeType": "paragraph"
                 },
                 {
-                  "nodeType": "hr",
                   "data": {},
-                  "content": []
+                  "content": [],
+                  "nodeType": "hr"
                 },
                 {
-                  "nodeType": "heading-2",
                   "data": {},
                   "content": [
                     {
-                      "nodeType": "text",
+                      "data": {},
+                      "marks": [],
                       "value": "6. Commitment to Quality",
-                      "marks": [],
-                      "data": {}
+                      "nodeType": "text"
                     }
-                  ]
+                  ],
+                  "nodeType": "heading-2"
                 },
                 {
-                  "nodeType": "paragraph",
                   "data": {},
                   "content": [
                     {
-                      "nodeType": "text",
+                      "data": {},
+                      "marks": [],
                       "value": "This application is more than a demo — it’s a blueprint for scalable, enterprise-grade digital platforms. My commitments include:",
-                      "marks": [],
-                      "data": {}
+                      "nodeType": "text"
                     }
-                  ]
+                  ],
+                  "nodeType": "paragraph"
                 },
                 {
-                  "nodeType": "ordered-list",
                   "data": {},
                   "content": [
                     {
-                      "nodeType": "list-item",
                       "data": {},
                       "content": [
                         {
-                          "nodeType": "paragraph",
                           "data": {},
                           "content": [
                             {
-                              "nodeType": "text",
+                              "data": {},
+                              "marks": [
+                                {
+                                  "type": "bold"
+                                }
+                              ],
                               "value": "Performance benchmarking",
-                              "marks": [
-                                {
-                                  "type": "bold"
-                                }
-                              ],
-                              "data": {}
+                              "nodeType": "text"
                             },
                             {
-                              "nodeType": "text",
+                              "data": {},
+                              "marks": [],
                               "value": " (Lighthouse scores and Core Web Vitals).",
-                              "marks": [],
-                              "data": {}
+                              "nodeType": "text"
                             }
-                          ]
+                          ],
+                          "nodeType": "paragraph"
                         }
-                      ]
+                      ],
+                      "nodeType": "list-item"
                     },
                     {
-                      "nodeType": "list-item",
                       "data": {},
                       "content": [
                         {
-                          "nodeType": "paragraph",
                           "data": {},
                           "content": [
                             {
-                              "nodeType": "text",
+                              "data": {},
+                              "marks": [
+                                {
+                                  "type": "bold"
+                                }
+                              ],
                               "value": "Comprehensive testing",
-                              "marks": [
-                                {
-                                  "type": "bold"
-                                }
-                              ],
-                              "data": {}
+                              "nodeType": "text"
                             },
                             {
-                              "nodeType": "text",
+                              "data": {},
+                              "marks": [],
                               "value": " (unit + integration).",
-                              "marks": [],
-                              "data": {}
+                              "nodeType": "text"
                             }
-                          ]
+                          ],
+                          "nodeType": "paragraph"
                         }
-                      ]
+                      ],
+                      "nodeType": "list-item"
                     },
                     {
-                      "nodeType": "list-item",
                       "data": {},
                       "content": [
                         {
-                          "nodeType": "paragraph",
                           "data": {},
                           "content": [
                             {
-                              "nodeType": "text",
+                              "data": {},
+                              "marks": [
+                                {
+                                  "type": "bold"
+                                }
+                              ],
                               "value": "SEO optimization",
-                              "marks": [
-                                {
-                                  "type": "bold"
-                                }
-                              ],
-                              "data": {}
+                              "nodeType": "text"
                             },
                             {
-                              "nodeType": "text",
-                              "value": " (leveraging Next.js static site generation)",
+                              "data": {},
                               "marks": [],
-                              "data": {}
+                              "value": " (leveraging Next.js static site generation)",
+                              "nodeType": "text"
                             }
-                          ]
+                          ],
+                          "nodeType": "paragraph"
                         }
-                      ]
+                      ],
+                      "nodeType": "list-item"
                     },
                     {
-                      "nodeType": "list-item",
                       "data": {},
                       "content": [
                         {
-                          "nodeType": "paragraph",
                           "data": {},
                           "content": [
                             {
-                              "nodeType": "text",
-                              "value": "Future roadmap",
+                              "data": {},
                               "marks": [
                                 {
                                   "type": "bold"
                                 }
                               ],
-                              "data": {}
+                              "value": "Future roadmap",
+                              "nodeType": "text"
                             },
                             {
-                              "nodeType": "text",
-                              "value": ": localization, visual regression testing, and multi-site scalability.",
+                              "data": {},
                               "marks": [],
-                              "data": {}
+                              "value": ": localization, visual regression testing, and multi-site scalability.",
+                              "nodeType": "text"
                             }
-                          ]
+                          ],
+                          "nodeType": "paragraph"
                         }
-                      ]
+                      ],
+                      "nodeType": "list-item"
                     }
-                  ]
+                  ],
+                  "nodeType": "ordered-list"
                 },
                 {
-                  "nodeType": "hr",
                   "data": {},
-                  "content": []
+                  "content": [],
+                  "nodeType": "hr"
                 },
                 {
-                  "nodeType": "heading-2",
                   "data": {},
                   "content": [
                     {
-                      "nodeType": "text",
+                      "data": {},
+                      "marks": [],
                       "value": "✨ Takeaway",
-                      "marks": [],
-                      "data": {}
+                      "nodeType": "text"
                     }
-                  ]
+                  ],
+                  "nodeType": "heading-2"
                 },
                 {
-                  "nodeType": "paragraph",
                   "data": {},
                   "content": [
                     {
-                      "nodeType": "text",
-                      "value": "This project reflects my role as a ",
+                      "data": {},
                       "marks": [],
-                      "data": {}
+                      "value": "This project reflects my role as a ",
+                      "nodeType": "text"
                     },
                     {
-                      "nodeType": "text",
-                      "value": "Design Technologist with solution engineering focus",
+                      "data": {},
                       "marks": [
                         {
                           "type": "bold"
                         }
                       ],
-                      "data": {}
+                      "value": "Design Technologist with solution engineering focus",
+                      "nodeType": "text"
                     },
                     {
-                      "nodeType": "text",
+                      "data": {},
+                      "marks": [],
                       "value": ":",
-                      "marks": [],
-                      "data": {}
+                      "nodeType": "text"
                     }
-                  ]
+                  ],
+                  "nodeType": "paragraph"
                 },
                 {
-                  "nodeType": "unordered-list",
                   "data": {},
                   "content": [
                     {
-                      "nodeType": "list-item",
                       "data": {},
                       "content": [
                         {
-                          "nodeType": "paragraph",
                           "data": {},
                           "content": [
                             {
-                              "nodeType": "text",
+                              "data": {},
+                              "marks": [],
                               "value": "I don’t just build features — I design systems.",
-                              "marks": [],
-                              "data": {}
+                              "nodeType": "text"
                             }
-                          ]
+                          ],
+                          "nodeType": "paragraph"
                         }
-                      ]
+                      ],
+                      "nodeType": "list-item"
                     },
                     {
-                      "nodeType": "list-item",
                       "data": {},
                       "content": [
                         {
-                          "nodeType": "paragraph",
                           "data": {},
                           "content": [
                             {
-                              "nodeType": "text",
-                              "value": "I don’t just code interfaces — I create scalable solutions that empower teams, improve workflows, and deliver measurable business impact.",
+                              "data": {},
                               "marks": [],
-                              "data": {}
+                              "value": "I don’t just code interfaces — I create scalable solutions that empower teams, improve workflows, and deliver measurable business impact.",
+                              "nodeType": "text"
                             }
-                          ]
+                          ],
+                          "nodeType": "paragraph"
                         }
-                      ]
+                      ],
+                      "nodeType": "list-item"
                     }
-                  ]
+                  ],
+                  "nodeType": "unordered-list"
                 },
                 {
-                  "nodeType": "paragraph",
                   "data": {},
                   "content": [
                     {
-                      "nodeType": "text",
-                      "value": "📸 ",
+                      "data": {},
                       "marks": [],
-                      "data": {}
+                      "value": "📸 ",
+                      "nodeType": "text"
                     },
                     {
-                      "nodeType": "text",
-                      "value": "[Insert hero screenshot of a polished, CMS-powered page built with your component library]",
+                      "data": {},
                       "marks": [
                         {
                           "type": "italic"
                         }
                       ],
-                      "data": {}
+                      "value": "[Insert hero screenshot of a polished, CMS-powered page built with your component library]",
+                      "nodeType": "text"
                     }
-                  ]
+                  ],
+                  "nodeType": "paragraph"
                 },
                 {
-                  "nodeType": "paragraph",
                   "data": {},
                   "content": [
                     {
-                      "nodeType": "text",
-                      "value": "",
+                      "data": {},
                       "marks": [],
-                      "data": {}
+                      "value": "",
+                      "nodeType": "text"
                     }
-                  ]
+                  ],
+                  "nodeType": "paragraph"
                 }
-              ]
+              ],
+              "nodeType": "document"
             }
           },
-          "image": null,
           "title": "Bridging Design and Engineering: A Next.js Contentful Platform",
-          "blurb": "A Next.js app powered by Contentful and a custom React component library — delivering scalable, accessible, CMS-driven experiences that accelerate content publishing and strengthen design consistency."
+          "blurb": "A Next.js app powered by Contentful and a custom React component library — delivering scalable, accessible, CMS-driven experiences that accelerate content publishing and strengthen design consistency.",
+          "order": 2
         },
         {
           "sys": {
@@ -1480,1504 +1480,1504 @@
           },
           "description": {
             "json": {
-              "nodeType": "document",
               "data": {},
               "content": [
                 {
-                  "nodeType": "heading-2",
                   "data": {},
                   "content": [
                     {
-                      "nodeType": "text",
+                      "data": {},
+                      "marks": [],
                       "value": "1. Context & Problem",
-                      "marks": [],
-                      "data": {}
+                      "nodeType": "text"
                     }
-                  ]
+                  ],
+                  "nodeType": "heading-2"
                 },
                 {
-                  "nodeType": "paragraph",
                   "data": {},
                   "content": [
                     {
-                      "nodeType": "text",
+                      "data": {},
+                      "marks": [],
                       "value": "I chose to build my 2025 portfolio in React, and reflecting on my 10 years of development experience, I decided to tackle three recurring challenges:",
-                      "marks": [],
-                      "data": {}
+                      "nodeType": "text"
                     }
-                  ]
+                  ],
+                  "nodeType": "paragraph"
                 },
                 {
-                  "nodeType": "unordered-list",
                   "data": {},
                   "content": [
                     {
-                      "nodeType": "list-item",
                       "data": {},
                       "content": [
                         {
-                          "nodeType": "paragraph",
                           "data": {},
                           "content": [
                             {
-                              "nodeType": "text",
+                              "data": {},
+                              "marks": [
+                                {
+                                  "type": "bold"
+                                }
+                              ],
                               "value": "Inconsistent UI",
-                              "marks": [
-                                {
-                                  "type": "bold"
-                                }
-                              ],
-                              "data": {}
+                              "nodeType": "text"
                             },
                             {
-                              "nodeType": "text",
+                              "data": {},
+                              "marks": [],
                               "value": " — Developers often re-implemented common components like buttons, modals, and accordions, leading to design drift.",
-                              "marks": [],
-                              "data": {}
+                              "nodeType": "text"
                             }
-                          ]
+                          ],
+                          "nodeType": "paragraph"
                         }
-                      ]
+                      ],
+                      "nodeType": "list-item"
                     },
                     {
-                      "nodeType": "list-item",
                       "data": {},
                       "content": [
                         {
-                          "nodeType": "paragraph",
                           "data": {},
                           "content": [
                             {
-                              "nodeType": "text",
+                              "data": {},
+                              "marks": [
+                                {
+                                  "type": "bold"
+                                }
+                              ],
                               "value": "Reduced productivity",
-                              "marks": [
-                                {
-                                  "type": "bold"
-                                }
-                              ],
-                              "data": {}
+                              "nodeType": "text"
                             },
                             {
-                              "nodeType": "text",
+                              "data": {},
+                              "marks": [],
                               "value": " — Duplicate code, common in many projects, slows down development and increases maintenance overhead.",
-                              "marks": [],
-                              "data": {}
+                              "nodeType": "text"
                             }
-                          ]
+                          ],
+                          "nodeType": "paragraph"
                         }
-                      ]
+                      ],
+                      "nodeType": "list-item"
                     },
                     {
-                      "nodeType": "list-item",
                       "data": {},
                       "content": [
                         {
-                          "nodeType": "paragraph",
                           "data": {},
                           "content": [
                             {
-                              "nodeType": "text",
+                              "data": {},
+                              "marks": [
+                                {
+                                  "type": "bold"
+                                }
+                              ],
                               "value": "Accessibility gaps",
-                              "marks": [
-                                {
-                                  "type": "bold"
-                                }
-                              ],
-                              "data": {}
+                              "nodeType": "text"
                             },
                             {
-                              "nodeType": "text",
+                              "data": {},
+                              "marks": [],
                               "value": " — Accessibility is now a business requirement. Embedding WCAG standards directly into library components proactively reduces compliance risks.",
-                              "marks": [],
-                              "data": {}
+                              "nodeType": "text"
                             }
-                          ]
+                          ],
+                          "nodeType": "paragraph"
                         }
-                      ]
+                      ],
+                      "nodeType": "list-item"
                     }
-                  ]
+                  ],
+                  "nodeType": "unordered-list"
                 },
                 {
-                  "nodeType": "paragraph",
                   "data": {},
                   "content": [
                     {
-                      "nodeType": "text",
+                      "data": {},
+                      "marks": [],
                       "value": "📸 ",
-                      "marks": [],
-                      "data": {}
+                      "nodeType": "text"
                     },
                     {
-                      "nodeType": "text",
+                      "data": {},
+                      "marks": [
+                        {
+                          "type": "italic"
+                        }
+                      ],
                       "value": "[Insert screenshot of two different button implementations before the library — to highlight inconsistency]",
-                      "marks": [
-                        {
-                          "type": "italic"
-                        }
-                      ],
-                      "data": {}
+                      "nodeType": "text"
                     }
-                  ]
+                  ],
+                  "nodeType": "paragraph"
                 },
                 {
-                  "nodeType": "paragraph",
                   "data": {},
                   "content": [
                     {
-                      "nodeType": "text",
+                      "data": {},
+                      "marks": [],
                       "value": "During my years as a front-end developer for large companies, I witnessed the challenges that come with scaling applications: increased ",
-                      "marks": [],
-                      "data": {}
+                      "nodeType": "text"
                     },
                     {
-                      "nodeType": "text",
+                      "data": {},
+                      "marks": [
+                        {
+                          "type": "bold"
+                        }
+                      ],
                       "value": "user experience",
-                      "marks": [
-                        {
-                          "type": "bold"
-                        }
-                      ],
-                      "data": {}
+                      "nodeType": "text"
                     },
                     {
-                      "nodeType": "text",
+                      "data": {},
+                      "marks": [],
                       "value": " complexity, longer ",
-                      "marks": [],
-                      "data": {}
+                      "nodeType": "text"
                     },
                     {
-                      "nodeType": "text",
+                      "data": {},
+                      "marks": [
+                        {
+                          "type": "bold"
+                        }
+                      ],
                       "value": "development cycles",
-                      "marks": [
-                        {
-                          "type": "bold"
-                        }
-                      ],
-                      "data": {}
+                      "nodeType": "text"
                     },
                     {
-                      "nodeType": "text",
+                      "data": {},
+                      "marks": [],
                       "value": ", and more ",
-                      "marks": [],
-                      "data": {}
+                      "nodeType": "text"
                     },
                     {
-                      "nodeType": "text",
+                      "data": {},
+                      "marks": [
+                        {
+                          "type": "bold"
+                        }
+                      ],
                       "value": "onboarding time",
-                      "marks": [
-                        {
-                          "type": "bold"
-                        }
-                      ],
-                      "data": {}
+                      "nodeType": "text"
                     },
                     {
-                      "nodeType": "text",
+                      "data": {},
+                      "marks": [],
                       "value": " for new engineers.",
-                      "marks": [],
-                      "data": {}
+                      "nodeType": "text"
                     }
-                  ]
+                  ],
+                  "nodeType": "paragraph"
                 },
                 {
-                  "nodeType": "hr",
                   "data": {},
-                  "content": []
+                  "content": [],
+                  "nodeType": "hr"
                 },
                 {
-                  "nodeType": "heading-2",
                   "data": {},
                   "content": [
                     {
-                      "nodeType": "text",
+                      "data": {},
+                      "marks": [],
                       "value": "2. Solution",
-                      "marks": [],
-                      "data": {}
+                      "nodeType": "text"
                     }
-                  ]
+                  ],
+                  "nodeType": "heading-2"
                 },
                 {
-                  "nodeType": "paragraph",
                   "data": {},
                   "content": [
                     {
-                      "nodeType": "text",
-                      "value": "I designed and built a React component library to centralize and standardize reusable UI elements. More importantly, I was committed to ",
+                      "data": {},
                       "marks": [],
-                      "data": {}
+                      "value": "I designed and built a React component library to centralize and standardize reusable UI elements. More importantly, I was committed to ",
+                      "nodeType": "text"
                     },
                     {
-                      "nodeType": "text",
-                      "value": "enterprise-grade quality,",
+                      "data": {},
                       "marks": [
                         {
                           "type": "bold"
                         }
                       ],
-                      "data": {}
+                      "value": "enterprise-grade quality,",
+                      "nodeType": "text"
                     },
                     {
-                      "nodeType": "text",
+                      "data": {},
+                      "marks": [],
                       "value": " ensuring that the library was not just functional, but scalable and impactful.",
-                      "marks": [],
-                      "data": {}
+                      "nodeType": "text"
                     }
-                  ]
+                  ],
+                  "nodeType": "paragraph"
                 },
                 {
-                  "nodeType": "paragraph",
                   "data": {},
                   "content": [
                     {
-                      "nodeType": "text",
+                      "data": {},
+                      "marks": [],
                       "value": "I framed the project around key goals, each directly mapped to a business outcome:",
-                      "marks": [],
-                      "data": {}
+                      "nodeType": "text"
                     }
-                  ]
+                  ],
+                  "nodeType": "paragraph"
                 },
                 {
-                  "nodeType": "unordered-list",
                   "data": {},
                   "content": [
                     {
-                      "nodeType": "list-item",
                       "data": {},
                       "content": [
                         {
-                          "nodeType": "paragraph",
                           "data": {},
                           "content": [
                             {
-                              "nodeType": "text",
+                              "data": {},
+                              "marks": [
+                                {
+                                  "type": "bold"
+                                }
+                              ],
                               "value": "Reusability & scalability",
-                              "marks": [
-                                {
-                                  "type": "bold"
-                                }
-                              ],
-                              "data": {}
+                              "nodeType": "text"
                             },
                             {
-                              "nodeType": "text",
+                              "data": {},
+                              "marks": [],
                               "value": " → Reduced duplicated code and enabled faster feature development.",
-                              "marks": [],
-                              "data": {}
+                              "nodeType": "text"
                             }
-                          ]
+                          ],
+                          "nodeType": "paragraph"
                         }
-                      ]
+                      ],
+                      "nodeType": "list-item"
                     },
                     {
-                      "nodeType": "list-item",
                       "data": {},
                       "content": [
                         {
-                          "nodeType": "paragraph",
                           "data": {},
                           "content": [
                             {
-                              "nodeType": "text",
+                              "data": {},
+                              "marks": [
+                                {
+                                  "type": "bold"
+                                }
+                              ],
                               "value": "Visual & functional consistency",
-                              "marks": [
-                                {
-                                  "type": "bold"
-                                }
-                              ],
-                              "data": {}
+                              "nodeType": "text"
                             },
                             {
-                              "nodeType": "text",
+                              "data": {},
+                              "marks": [],
                               "value": " → Strengthened brand identity and improved user trust.",
-                              "marks": [],
-                              "data": {}
+                              "nodeType": "text"
                             }
-                          ]
+                          ],
+                          "nodeType": "paragraph"
                         }
-                      ]
+                      ],
+                      "nodeType": "list-item"
                     },
                     {
-                      "nodeType": "list-item",
                       "data": {},
                       "content": [
                         {
-                          "nodeType": "paragraph",
                           "data": {},
                           "content": [
                             {
-                              "nodeType": "text",
+                              "data": {},
+                              "marks": [
+                                {
+                                  "type": "bold"
+                                }
+                              ],
                               "value": "Easy integration + clear documentation",
-                              "marks": [
-                                {
-                                  "type": "bold"
-                                }
-                              ],
-                              "data": {}
+                              "nodeType": "text"
                             },
                             {
-                              "nodeType": "text",
+                              "data": {},
+                              "marks": [],
                               "value": " → Lowered onboarding time for developers and accelerated adoption.",
-                              "marks": [],
-                              "data": {}
+                              "nodeType": "text"
                             }
-                          ]
+                          ],
+                          "nodeType": "paragraph"
                         }
-                      ]
+                      ],
+                      "nodeType": "list-item"
                     },
                     {
-                      "nodeType": "list-item",
                       "data": {},
                       "content": [
                         {
-                          "nodeType": "paragraph",
                           "data": {},
                           "content": [
                             {
-                              "nodeType": "text",
+                              "data": {},
+                              "marks": [
+                                {
+                                  "type": "bold"
+                                }
+                              ],
                               "value": "WCAG 2.1 AA accessibility compliance",
-                              "marks": [
-                                {
-                                  "type": "bold"
-                                }
-                              ],
-                              "data": {}
+                              "nodeType": "text"
                             },
                             {
-                              "nodeType": "text",
+                              "data": {},
+                              "marks": [],
                               "value": " → Improved inclusivity and minimized accessibility-related risks.",
-                              "marks": [],
-                              "data": {}
+                              "nodeType": "text"
                             }
-                          ]
+                          ],
+                          "nodeType": "paragraph"
                         }
-                      ]
+                      ],
+                      "nodeType": "list-item"
                     },
                     {
-                      "nodeType": "list-item",
                       "data": {},
                       "content": [
                         {
-                          "nodeType": "paragraph",
                           "data": {},
                           "content": [
                             {
-                              "nodeType": "text",
+                              "data": {},
+                              "marks": [
+                                {
+                                  "type": "bold"
+                                }
+                              ],
                               "value": "Responsiveness",
-                              "marks": [
-                                {
-                                  "type": "bold"
-                                }
-                              ],
-                              "data": {}
+                              "nodeType": "text"
                             },
                             {
-                              "nodeType": "text",
+                              "data": {},
+                              "marks": [],
                               "value": " → Delivered seamless user experiences across devices.",
-                              "marks": [],
-                              "data": {}
+                              "nodeType": "text"
                             }
-                          ]
+                          ],
+                          "nodeType": "paragraph"
                         }
-                      ]
+                      ],
+                      "nodeType": "list-item"
                     },
                     {
-                      "nodeType": "list-item",
                       "data": {},
                       "content": [
                         {
-                          "nodeType": "paragraph",
                           "data": {},
                           "content": [
                             {
-                              "nodeType": "text",
+                              "data": {},
+                              "marks": [
+                                {
+                                  "type": "bold"
+                                }
+                              ],
                               "value": "Performance",
-                              "marks": [
-                                {
-                                  "type": "bold"
-                                }
-                              ],
-                              "data": {}
+                              "nodeType": "text"
                             },
                             {
-                              "nodeType": "text",
-                              "value": " → Improved load times and UI responsiveness for better customer satisfaction.",
+                              "data": {},
                               "marks": [],
-                              "data": {}
+                              "value": " → Improved load times and UI responsiveness for better customer satisfaction.",
+                              "nodeType": "text"
                             }
-                          ]
+                          ],
+                          "nodeType": "paragraph"
                         }
-                      ]
+                      ],
+                      "nodeType": "list-item"
                     },
                     {
-                      "nodeType": "list-item",
                       "data": {},
                       "content": [
                         {
-                          "nodeType": "paragraph",
                           "data": {},
                           "content": [
                             {
-                              "nodeType": "text",
-                              "value": "Reliability through unit testing",
+                              "data": {},
                               "marks": [
                                 {
                                   "type": "bold"
                                 }
                               ],
-                              "data": {}
+                              "value": "Reliability through unit testing",
+                              "nodeType": "text"
                             },
                             {
-                              "nodeType": "text",
-                              "value": " → Reduced production bugs and improved overall product reliability.",
+                              "data": {},
                               "marks": [],
-                              "data": {}
+                              "value": " → Reduced production bugs and improved overall product reliability.",
+                              "nodeType": "text"
                             }
-                          ]
+                          ],
+                          "nodeType": "paragraph"
                         }
-                      ]
+                      ],
+                      "nodeType": "list-item"
                     }
-                  ]
+                  ],
+                  "nodeType": "unordered-list"
                 },
                 {
-                  "nodeType": "paragraph",
                   "data": {},
                   "content": [
                     {
-                      "nodeType": "text",
-                      "value": "🎥 ",
+                      "data": {},
                       "marks": [],
-                      "data": {}
+                      "value": "🎥 ",
+                      "nodeType": "text"
                     },
                     {
-                      "nodeType": "text",
-                      "value": "[Insert short video clip of navigating your Storybook environment — showing how a component is documented and tested]",
+                      "data": {},
                       "marks": [
                         {
                           "type": "italic"
                         }
                       ],
-                      "data": {}
+                      "value": "[Insert short video clip of navigating your Storybook environment — showing how a component is documented and tested]",
+                      "nodeType": "text"
                     }
-                  ]
+                  ],
+                  "nodeType": "paragraph"
                 },
                 {
-                  "nodeType": "hr",
                   "data": {},
-                  "content": []
+                  "content": [],
+                  "nodeType": "hr"
                 },
                 {
-                  "nodeType": "heading-2",
                   "data": {},
                   "content": [
                     {
-                      "nodeType": "text",
+                      "data": {},
+                      "marks": [],
                       "value": "3. Implementation",
-                      "marks": [],
-                      "data": {}
+                      "nodeType": "text"
                     }
-                  ]
+                  ],
+                  "nodeType": "heading-2"
                 },
                 {
-                  "nodeType": "paragraph",
                   "data": {},
                   "content": [
                     {
-                      "nodeType": "text",
-                      "value": "I built the library on top of Carbon Design Systems, chosen for its sleek, minimalist, and enterprise-focused design principles. This ensured that the components would not only look consistent but also align with enterprise-grade usability and ",
+                      "data": {},
                       "marks": [],
-                      "data": {}
+                      "value": "I built the library on top of Carbon Design Systems, chosen for its sleek, minimalist, and enterprise-focused design principles. This ensured that the components would not only look consistent but also align with enterprise-grade usability and ",
+                      "nodeType": "text"
                     },
                     {
-                      "nodeType": "hyperlink",
                       "data": {
                         "uri": "http://localhost:3000/blog/19oHD8PCWxtpsAQ0vrZm80/"
                       },
                       "content": [
                         {
-                          "nodeType": "text",
-                          "value": "accessibility standards (WCAG 2.1 AA)",
+                          "data": {},
                           "marks": [],
-                          "data": {}
+                          "value": "accessibility standards (WCAG 2.1 AA)",
+                          "nodeType": "text"
                         }
-                      ]
+                      ],
+                      "nodeType": "hyperlink"
                     },
                     {
-                      "nodeType": "text",
-                      "value": ". I also selected a stack that reflects my ambitions to build scalable, production-ready solutions:",
+                      "data": {},
                       "marks": [],
-                      "data": {}
+                      "value": ". I also selected a stack that reflects my ambitions to build scalable, production-ready solutions:",
+                      "nodeType": "text"
                     }
-                  ]
+                  ],
+                  "nodeType": "paragraph"
                 },
                 {
-                  "nodeType": "unordered-list",
                   "data": {},
                   "content": [
                     {
-                      "nodeType": "list-item",
                       "data": {},
                       "content": [
                         {
-                          "nodeType": "paragraph",
                           "data": {},
                           "content": [
                             {
-                              "nodeType": "text",
-                              "value": "Tech Stack:",
+                              "data": {},
                               "marks": [
                                 {
                                   "type": "bold"
                                 }
                               ],
-                              "data": {}
+                              "value": "Tech Stack:",
+                              "nodeType": "text"
                             },
                             {
-                              "nodeType": "text",
-                              "value": " React, TypeScript, Next.js, Storybook, Jest",
+                              "data": {},
                               "marks": [],
-                              "data": {}
+                              "value": " React, TypeScript, Next.js, Storybook, Jest",
+                              "nodeType": "text"
                             }
-                          ]
+                          ],
+                          "nodeType": "paragraph"
                         }
-                      ]
+                      ],
+                      "nodeType": "list-item"
                     },
                     {
-                      "nodeType": "list-item",
                       "data": {},
                       "content": [
                         {
-                          "nodeType": "paragraph",
                           "data": {},
                           "content": [
                             {
-                              "nodeType": "text",
-                              "value": "Design System:",
+                              "data": {},
                               "marks": [
                                 {
                                   "type": "bold"
                                 }
                               ],
-                              "data": {}
+                              "value": "Design System:",
+                              "nodeType": "text"
                             },
                             {
-                              "nodeType": "text",
-                              "value": " ",
+                              "data": {},
                               "marks": [],
-                              "data": {}
+                              "value": " ",
+                              "nodeType": "text"
                             },
                             {
-                              "nodeType": "hyperlink",
                               "data": {
                                 "uri": "https://carbondesignsystem.com/"
                               },
                               "content": [
                                 {
-                                  "nodeType": "text",
-                                  "value": "Carbon Design Systems",
+                                  "data": {},
                                   "marks": [],
-                                  "data": {}
+                                  "value": "Carbon Design Systems",
+                                  "nodeType": "text"
                                 }
-                              ]
+                              ],
+                              "nodeType": "hyperlink"
                             },
                             {
-                              "nodeType": "text",
+                              "data": {},
+                              "marks": [],
                               "value": " (components, tokens, types, etc.)",
-                              "marks": [],
-                              "data": {}
+                              "nodeType": "text"
                             }
-                          ]
+                          ],
+                          "nodeType": "paragraph"
                         }
-                      ]
+                      ],
+                      "nodeType": "list-item"
                     },
                     {
-                      "nodeType": "list-item",
                       "data": {},
                       "content": [
                         {
-                          "nodeType": "paragraph",
                           "data": {},
                           "content": [
                             {
-                              "nodeType": "text",
+                              "data": {},
+                              "marks": [
+                                {
+                                  "type": "bold"
+                                }
+                              ],
                               "value": "Architecture:",
-                              "marks": [
-                                {
-                                  "type": "bold"
-                                }
-                              ],
-                              "data": {}
+                              "nodeType": "text"
                             },
                             {
-                              "nodeType": "text",
-                              "value": " Published as a standalone npm package and integrated seamlessly into the main application",
+                              "data": {},
                               "marks": [],
-                              "data": {}
+                              "value": " Published as a standalone npm package and integrated seamlessly into the main application",
+                              "nodeType": "text"
                             }
-                          ]
+                          ],
+                          "nodeType": "paragraph"
                         }
-                      ]
+                      ],
+                      "nodeType": "list-item"
                     },
                     {
-                      "nodeType": "list-item",
                       "data": {},
                       "content": [
                         {
-                          "nodeType": "paragraph",
                           "data": {},
                           "content": [
                             {
-                              "nodeType": "text",
-                              "value": "Developer Tools:",
+                              "data": {},
                               "marks": [
                                 {
                                   "type": "bold"
                                 }
                               ],
-                              "data": {}
+                              "value": "Developer Tools:",
+                              "nodeType": "text"
                             },
                             {
-                              "nodeType": "text",
-                              "value": " Storybook (as a living style guide), GitHub Actions (for CI/CD)",
+                              "data": {},
                               "marks": [],
-                              "data": {}
+                              "value": " Storybook (as a living style guide), GitHub Actions (for CI/CD)",
+                              "nodeType": "text"
                             }
-                          ]
+                          ],
+                          "nodeType": "paragraph"
                         }
-                      ]
+                      ],
+                      "nodeType": "list-item"
                     }
-                  ]
+                  ],
+                  "nodeType": "unordered-list"
                 },
                 {
-                  "nodeType": "heading-4",
                   "data": {},
                   "content": [
                     {
-                      "nodeType": "text",
+                      "data": {},
+                      "marks": [],
                       "value": "Example: CustomTile Component",
-                      "marks": [],
-                      "data": {}
+                      "nodeType": "text"
                     }
-                  ]
+                  ],
+                  "nodeType": "heading-4"
                 },
                 {
-                  "nodeType": "paragraph",
                   "data": {},
                   "content": [
                     {
-                      "nodeType": "text",
-                      "value": "I designed the ",
+                      "data": {},
                       "marks": [],
-                      "data": {}
+                      "value": "I designed the ",
+                      "nodeType": "text"
                     },
                     {
-                      "nodeType": "hyperlink",
                       "data": {
                         "uri": "http://localhost:3000/blog/86pppo6sH5OcLgmBD6eWm/"
                       },
                       "content": [
                         {
-                          "nodeType": "text",
-                          "value": "CustomTile component",
+                          "data": {},
                           "marks": [],
-                          "data": {}
+                          "value": "CustomTile component",
+                          "nodeType": "text"
                         }
-                      ]
+                      ],
+                      "nodeType": "hyperlink"
                     },
                     {
-                      "nodeType": "text",
+                      "data": {},
+                      "marks": [],
                       "value": " to address the common trade-off between ",
-                      "marks": [],
-                      "data": {}
+                      "nodeType": "text"
                     },
                     {
-                      "nodeType": "text",
+                      "data": {},
+                      "marks": [
+                        {
+                          "type": "bold"
+                        }
+                      ],
                       "value": "presenting data clearly",
-                      "marks": [
-                        {
-                          "type": "bold"
-                        }
-                      ],
-                      "data": {}
+                      "nodeType": "text"
                     },
                     {
-                      "nodeType": "text",
+                      "data": {},
+                      "marks": [],
                       "value": " and ",
-                      "marks": [],
-                      "data": {}
+                      "nodeType": "text"
                     },
                     {
-                      "nodeType": "text",
+                      "data": {},
+                      "marks": [
+                        {
+                          "type": "bold"
+                        }
+                      ],
                       "value": "providing actionable user interfaces",
-                      "marks": [
-                        {
-                          "type": "bold"
-                        }
-                      ],
-                      "data": {}
+                      "nodeType": "text"
                     },
                     {
-                      "nodeType": "text",
+                      "data": {},
+                      "marks": [],
                       "value": ". This reflects my solution engineering approach: solving not only for UI aesthetics but also for usability, scalability, and business impact.",
-                      "marks": [],
-                      "data": {}
+                      "nodeType": "text"
                     }
-                  ]
+                  ],
+                  "nodeType": "paragraph"
                 },
                 {
-                  "nodeType": "paragraph",
                   "data": {},
                   "content": [
                     {
-                      "nodeType": "text",
-                      "value": "📸 ",
+                      "data": {},
                       "marks": [],
-                      "data": {}
+                      "value": "📸 ",
+                      "nodeType": "text"
                     },
                     {
-                      "nodeType": "text",
+                      "data": {},
+                      "marks": [
+                        {
+                          "type": "italic"
+                        }
+                      ],
                       "value": "[Insert screenshot of the CustomTile component expanded and collapsed]",
-                      "marks": [
-                        {
-                          "type": "italic"
-                        }
-                      ],
-                      "data": {}
+                      "nodeType": "text"
                     }
-                  ]
+                  ],
+                  "nodeType": "paragraph"
                 },
                 {
-                  "nodeType": "heading-3",
                   "data": {},
                   "content": [
                     {
-                      "nodeType": "text",
+                      "data": {},
+                      "marks": [],
                       "value": "Features:",
-                      "marks": [],
-                      "data": {}
+                      "nodeType": "text"
                     }
-                  ]
+                  ],
+                  "nodeType": "heading-3"
                 },
                 {
-                  "nodeType": "unordered-list",
                   "data": {},
                   "content": [
                     {
-                      "nodeType": "list-item",
                       "data": {},
                       "content": [
                         {
-                          "nodeType": "paragraph",
                           "data": {},
                           "content": [
                             {
-                              "nodeType": "text",
+                              "data": {},
+                              "marks": [
+                                {
+                                  "type": "bold"
+                                }
+                              ],
                               "value": "Multiple variants:",
-                              "marks": [
-                                {
-                                  "type": "bold"
-                                }
-                              ],
-                              "data": {}
+                              "nodeType": "text"
                             },
                             {
-                              "nodeType": "text",
+                              "data": {},
+                              "marks": [],
                               "value": " Banner and Card",
-                              "marks": [],
-                              "data": {}
+                              "nodeType": "text"
                             }
-                          ]
+                          ],
+                          "nodeType": "paragraph"
                         }
-                      ]
+                      ],
+                      "nodeType": "list-item"
                     },
                     {
-                      "nodeType": "list-item",
                       "data": {},
                       "content": [
                         {
-                          "nodeType": "paragraph",
                           "data": {},
                           "content": [
                             {
-                              "nodeType": "text",
+                              "data": {},
+                              "marks": [
+                                {
+                                  "type": "bold"
+                                }
+                              ],
                               "value": "Media display:",
-                              "marks": [
-                                {
-                                  "type": "bold"
-                                }
-                              ],
-                              "data": {}
+                              "nodeType": "text"
                             },
                             {
-                              "nodeType": "text",
+                              "data": {},
+                              "marks": [],
                               "value": " Image or icon (optional)",
-                              "marks": [],
-                              "data": {}
+                              "nodeType": "text"
                             }
-                          ]
+                          ],
+                          "nodeType": "paragraph"
                         }
-                      ]
+                      ],
+                      "nodeType": "list-item"
                     },
                     {
-                      "nodeType": "list-item",
                       "data": {},
                       "content": [
                         {
-                          "nodeType": "paragraph",
                           "data": {},
                           "content": [
                             {
-                              "nodeType": "text",
+                              "data": {},
+                              "marks": [
+                                {
+                                  "type": "bold"
+                                }
+                              ],
                               "value": "User interactions:",
-                              "marks": [
-                                {
-                                  "type": "bold"
-                                }
-                              ],
-                              "data": {}
+                              "nodeType": "text"
                             },
                             {
-                              "nodeType": "text",
+                              "data": {},
+                              "marks": [],
                               "value": " Supports routes, links, and modal windows",
-                              "marks": [],
-                              "data": {}
+                              "nodeType": "text"
                             }
-                          ]
+                          ],
+                          "nodeType": "paragraph"
                         }
-                      ]
+                      ],
+                      "nodeType": "list-item"
                     },
                     {
-                      "nodeType": "list-item",
                       "data": {},
                       "content": [
                         {
-                          "nodeType": "paragraph",
                           "data": {},
                           "content": [
                             {
-                              "nodeType": "text",
+                              "data": {},
+                              "marks": [
+                                {
+                                  "type": "bold"
+                                }
+                              ],
                               "value": "Flexible configuration:",
-                              "marks": [
-                                {
-                                  "type": "bold"
-                                }
-                              ],
-                              "data": {}
+                              "nodeType": "text"
                             },
                             {
-                              "nodeType": "text",
+                              "data": {},
+                              "marks": [],
                               "value": " Fully configurable via props, with documented usage in Storybook",
-                              "marks": [],
-                              "data": {}
+                              "nodeType": "text"
                             }
-                          ]
+                          ],
+                          "nodeType": "paragraph"
                         }
-                      ]
+                      ],
+                      "nodeType": "list-item"
                     }
-                  ]
+                  ],
+                  "nodeType": "unordered-list"
                 },
                 {
-                  "nodeType": "hr",
                   "data": {},
-                  "content": []
+                  "content": [],
+                  "nodeType": "hr"
                 },
                 {
-                  "nodeType": "heading-2",
                   "data": {},
                   "content": [
                     {
-                      "nodeType": "text",
+                      "data": {},
+                      "marks": [],
                       "value": "4. Impact",
-                      "marks": [],
-                      "data": {}
+                      "nodeType": "text"
                     }
-                  ]
+                  ],
+                  "nodeType": "heading-2"
                 },
                 {
-                  "nodeType": "paragraph",
                   "data": {},
                   "content": [
                     {
-                      "nodeType": "text",
-                      "value": "✨ ",
+                      "data": {},
                       "marks": [],
-                      "data": {}
+                      "value": "✨ ",
+                      "nodeType": "text"
                     },
                     {
-                      "nodeType": "text",
+                      "data": {},
+                      "marks": [
+                        {
+                          "type": "bold"
+                        }
+                      ],
                       "value": "Business + Technical Outcomes:",
-                      "marks": [
-                        {
-                          "type": "bold"
-                        }
-                      ],
-                      "data": {}
+                      "nodeType": "text"
                     }
-                  ]
+                  ],
+                  "nodeType": "paragraph"
                 },
                 {
-                  "nodeType": "paragraph",
                   "data": {},
                   "content": [
                     {
-                      "nodeType": "text",
+                      "data": {},
+                      "marks": [],
                       "value": "After piloting the library with a group of consumer developers who integrated it into their local apps and tested multiple use cases, I gathered the following results:",
-                      "marks": [],
-                      "data": {}
+                      "nodeType": "text"
                     }
-                  ]
+                  ],
+                  "nodeType": "paragraph"
                 },
                 {
-                  "nodeType": "unordered-list",
                   "data": {},
                   "content": [
                     {
-                      "nodeType": "list-item",
                       "data": {},
                       "content": [
                         {
-                          "nodeType": "paragraph",
                           "data": {},
                           "content": [
                             {
-                              "nodeType": "text",
+                              "data": {},
+                              "marks": [
+                                {
+                                  "type": "bold"
+                                }
+                              ],
                               "value": "30% faster feature development",
-                              "marks": [
-                                {
-                                  "type": "bold"
-                                }
-                              ],
-                              "data": {}
+                              "nodeType": "text"
                             },
                             {
-                              "nodeType": "text",
+                              "data": {},
+                              "marks": [],
                               "value": " due to readily available reusable components.",
-                              "marks": [],
-                              "data": {}
+                              "nodeType": "text"
                             }
-                          ]
+                          ],
+                          "nodeType": "paragraph"
                         }
-                      ]
+                      ],
+                      "nodeType": "list-item"
                     },
                     {
-                      "nodeType": "list-item",
                       "data": {},
                       "content": [
                         {
-                          "nodeType": "paragraph",
                           "data": {},
                           "content": [
                             {
-                              "nodeType": "text",
+                              "data": {},
+                              "marks": [
+                                {
+                                  "type": "bold"
+                                }
+                              ],
                               "value": "Consistency across the app",
-                              "marks": [
-                                {
-                                  "type": "bold"
-                                }
-                              ],
-                              "data": {}
+                              "nodeType": "text"
                             },
                             {
-                              "nodeType": "text",
+                              "data": {},
+                              "marks": [],
                               "value": ", significantly reducing design drift.",
-                              "marks": [],
-                              "data": {}
+                              "nodeType": "text"
                             }
-                          ]
+                          ],
+                          "nodeType": "paragraph"
                         }
-                      ]
+                      ],
+                      "nodeType": "list-item"
                     },
                     {
-                      "nodeType": "list-item",
                       "data": {},
                       "content": [
                         {
-                          "nodeType": "paragraph",
                           "data": {},
                           "content": [
                             {
-                              "nodeType": "text",
+                              "data": {},
+                              "marks": [
+                                {
+                                  "type": "bold"
+                                }
+                              ],
                               "value": "Improved onboarding",
-                              "marks": [
-                                {
-                                  "type": "bold"
-                                }
-                              ],
-                              "data": {}
+                              "nodeType": "text"
                             },
                             {
-                              "nodeType": "text",
+                              "data": {},
+                              "marks": [],
                               "value": ", enabling new developers to become productive more quickly.",
-                              "marks": [],
-                              "data": {}
+                              "nodeType": "text"
                             }
-                          ]
+                          ],
+                          "nodeType": "paragraph"
                         }
-                      ]
+                      ],
+                      "nodeType": "list-item"
                     }
-                  ]
+                  ],
+                  "nodeType": "unordered-list"
                 },
                 {
-                  "nodeType": "paragraph",
                   "data": {},
                   "content": [
                     {
-                      "nodeType": "text",
+                      "data": {},
+                      "marks": [],
                       "value": "These results validated that the library was not just a technical improvement but a business-enabling solution.",
-                      "marks": [],
-                      "data": {}
+                      "nodeType": "text"
                     }
-                  ]
+                  ],
+                  "nodeType": "paragraph"
                 },
                 {
-                  "nodeType": "paragraph",
                   "data": {},
                   "content": [
                     {
-                      "nodeType": "text",
-                      "value": "📸 ",
+                      "data": {},
                       "marks": [],
-                      "data": {}
+                      "value": "📸 ",
+                      "nodeType": "text"
                     },
                     {
-                      "nodeType": "text",
+                      "data": {},
+                      "marks": [
+                        {
+                          "type": "italic"
+                        }
+                      ],
                       "value": "[Insert chart or simple graphic comparing development time before vs. after the library]",
-                      "marks": [
-                        {
-                          "type": "italic"
-                        }
-                      ],
-                      "data": {}
+                      "nodeType": "text"
                     }
-                  ]
+                  ],
+                  "nodeType": "paragraph"
                 },
                 {
-                  "nodeType": "hr",
                   "data": {},
-                  "content": []
+                  "content": [],
+                  "nodeType": "hr"
                 },
                 {
-                  "nodeType": "heading-2",
                   "data": {},
                   "content": [
                     {
-                      "nodeType": "text",
+                      "data": {},
+                      "marks": [],
                       "value": "5. Solution Engineering Mindset",
-                      "marks": [],
-                      "data": {}
+                      "nodeType": "text"
                     }
-                  ]
+                  ],
+                  "nodeType": "heading-2"
                 },
                 {
-                  "nodeType": "paragraph",
                   "data": {},
                   "content": [
                     {
-                      "nodeType": "text",
+                      "data": {},
+                      "marks": [],
                       "value": "This project wasn’t just about UI components — it was about delivering a ",
-                      "marks": [],
-                      "data": {}
+                      "nodeType": "text"
                     },
                     {
-                      "nodeType": "text",
+                      "data": {},
+                      "marks": [
+                        {
+                          "type": "bold"
+                        }
+                      ],
                       "value": "solution with measurable impact",
-                      "marks": [
-                        {
-                          "type": "bold"
-                        }
-                      ],
-                      "data": {}
+                      "nodeType": "text"
                     },
                     {
-                      "nodeType": "text",
+                      "data": {},
+                      "marks": [],
                       "value": ":",
-                      "marks": [],
-                      "data": {}
+                      "nodeType": "text"
                     }
-                  ]
+                  ],
+                  "nodeType": "paragraph"
                 },
                 {
-                  "nodeType": "unordered-list",
                   "data": {},
                   "content": [
                     {
-                      "nodeType": "list-item",
                       "data": {},
                       "content": [
                         {
-                          "nodeType": "paragraph",
                           "data": {},
                           "content": [
                             {
-                              "nodeType": "text",
+                              "data": {},
+                              "marks": [
+                                {
+                                  "type": "bold"
+                                }
+                              ],
                               "value": "Business Alignment:",
-                              "marks": [
-                                {
-                                  "type": "bold"
-                                }
-                              ],
-                              "data": {}
+                              "nodeType": "text"
                             },
                             {
-                              "nodeType": "text",
+                              "data": {},
+                              "marks": [],
                               "value": " Faster time-to-market for features.",
-                              "marks": [],
-                              "data": {}
+                              "nodeType": "text"
                             }
-                          ]
+                          ],
+                          "nodeType": "paragraph"
                         }
-                      ]
+                      ],
+                      "nodeType": "list-item"
                     },
                     {
-                      "nodeType": "list-item",
                       "data": {},
                       "content": [
                         {
-                          "nodeType": "paragraph",
                           "data": {},
                           "content": [
                             {
-                              "nodeType": "text",
+                              "data": {},
+                              "marks": [
+                                {
+                                  "type": "bold"
+                                }
+                              ],
                               "value": "Collaboration:",
-                              "marks": [
-                                {
-                                  "type": "bold"
-                                }
-                              ],
-                              "data": {}
+                              "nodeType": "text"
                             },
                             {
-                              "nodeType": "text",
+                              "data": {},
+                              "marks": [],
                               "value": " Partnered with designers and product owners to align with design and UX goals.",
-                              "marks": [],
-                              "data": {}
+                              "nodeType": "text"
                             }
-                          ]
+                          ],
+                          "nodeType": "paragraph"
                         }
-                      ]
+                      ],
+                      "nodeType": "list-item"
                     },
                     {
-                      "nodeType": "list-item",
                       "data": {},
                       "content": [
                         {
-                          "nodeType": "paragraph",
                           "data": {},
                           "content": [
                             {
-                              "nodeType": "text",
+                              "data": {},
+                              "marks": [
+                                {
+                                  "type": "bold"
+                                }
+                              ],
                               "value": "Scalability:",
-                              "marks": [
-                                {
-                                  "type": "bold"
-                                }
-                              ],
-                              "data": {}
+                              "nodeType": "text"
                             },
                             {
-                              "nodeType": "text",
+                              "data": {},
+                              "marks": [],
                               "value": " Built as a foundation for a broader design system.",
-                              "marks": [],
-                              "data": {}
+                              "nodeType": "text"
                             }
-                          ]
+                          ],
+                          "nodeType": "paragraph"
                         }
-                      ]
+                      ],
+                      "nodeType": "list-item"
                     },
                     {
-                      "nodeType": "list-item",
                       "data": {},
                       "content": [
                         {
-                          "nodeType": "paragraph",
                           "data": {},
                           "content": [
                             {
-                              "nodeType": "text",
+                              "data": {},
+                              "marks": [
+                                {
+                                  "type": "bold"
+                                }
+                              ],
                               "value": "Enablement:",
-                              "marks": [
-                                {
-                                  "type": "bold"
-                                }
-                              ],
-                              "data": {}
+                              "nodeType": "text"
                             },
                             {
-                              "nodeType": "text",
+                              "data": {},
+                              "marks": [],
                               "value": " Packaged + documented for easy adoption across projects.",
-                              "marks": [],
-                              "data": {}
+                              "nodeType": "text"
                             }
-                          ]
+                          ],
+                          "nodeType": "paragraph"
                         }
-                      ]
+                      ],
+                      "nodeType": "list-item"
                     }
-                  ]
+                  ],
+                  "nodeType": "unordered-list"
                 },
                 {
-                  "nodeType": "paragraph",
                   "data": {},
                   "content": [
                     {
-                      "nodeType": "text",
+                      "data": {},
+                      "marks": [],
                       "value": "🎥 ",
-                      "marks": [],
-                      "data": {}
+                      "nodeType": "text"
                     },
                     {
-                      "nodeType": "text",
+                      "data": {},
+                      "marks": [
+                        {
+                          "type": "italic"
+                        }
+                      ],
                       "value": "[Optional short video walkthrough of your npm publishing process — showing how the library integrates seamlessly into another project]",
-                      "marks": [
-                        {
-                          "type": "italic"
-                        }
-                      ],
-                      "data": {}
+                      "nodeType": "text"
                     }
-                  ]
+                  ],
+                  "nodeType": "paragraph"
                 },
                 {
-                  "nodeType": "hr",
                   "data": {},
-                  "content": []
+                  "content": [],
+                  "nodeType": "hr"
                 },
                 {
-                  "nodeType": "heading-2",
                   "data": {},
                   "content": [
                     {
-                      "nodeType": "text",
+                      "data": {},
+                      "marks": [],
                       "value": "6. Commitment to Quality",
-                      "marks": [],
-                      "data": {}
+                      "nodeType": "text"
                     }
-                  ]
+                  ],
+                  "nodeType": "heading-2"
                 },
                 {
-                  "nodeType": "paragraph",
                   "data": {},
                   "content": [
                     {
-                      "nodeType": "text",
+                      "data": {},
+                      "marks": [],
                       "value": "The library is currently in a stable beta release. My commitment to enterprise-grade quality includes:",
-                      "marks": [],
-                      "data": {}
+                      "nodeType": "text"
                     }
-                  ]
+                  ],
+                  "nodeType": "paragraph"
                 },
                 {
-                  "nodeType": "ordered-list",
                   "data": {},
                   "content": [
                     {
-                      "nodeType": "list-item",
                       "data": {},
                       "content": [
                         {
-                          "nodeType": "paragraph",
                           "data": {},
                           "content": [
                             {
-                              "nodeType": "text",
+                              "data": {},
+                              "marks": [
+                                {
+                                  "type": "bold"
+                                }
+                              ],
                               "value": "Performance benchmarking",
-                              "marks": [
-                                {
-                                  "type": "bold"
-                                }
-                              ],
-                              "data": {}
+                              "nodeType": "text"
                             }
-                          ]
+                          ],
+                          "nodeType": "paragraph"
                         }
-                      ]
+                      ],
+                      "nodeType": "list-item"
                     },
                     {
-                      "nodeType": "list-item",
                       "data": {},
                       "content": [
                         {
-                          "nodeType": "paragraph",
                           "data": {},
                           "content": [
                             {
-                              "nodeType": "text",
-                              "value": "Comprehensive ",
+                              "data": {},
                               "marks": [],
-                              "data": {}
+                              "value": "Comprehensive ",
+                              "nodeType": "text"
                             },
                             {
-                              "nodeType": "text",
-                              "value": "unit test coverage",
+                              "data": {},
                               "marks": [
                                 {
                                   "type": "bold"
                                 }
                               ],
-                              "data": {}
+                              "value": "unit test coverage",
+                              "nodeType": "text"
                             },
                             {
-                              "nodeType": "text",
-                              "value": " ahead of its planned v1.0 release",
+                              "data": {},
                               "marks": [],
-                              "data": {}
+                              "value": " ahead of its planned v1.0 release",
+                              "nodeType": "text"
                             }
-                          ]
+                          ],
+                          "nodeType": "paragraph"
                         }
-                      ]
+                      ],
+                      "nodeType": "list-item"
                     }
-                  ]
+                  ],
+                  "nodeType": "ordered-list"
                 },
                 {
-                  "nodeType": "hr",
                   "data": {},
-                  "content": []
+                  "content": [],
+                  "nodeType": "hr"
                 },
                 {
-                  "nodeType": "paragraph",
                   "data": {},
                   "content": [
                     {
-                      "nodeType": "text",
+                      "data": {},
+                      "marks": [],
                       "value": "✨ ",
-                      "marks": [],
-                      "data": {}
+                      "nodeType": "text"
                     },
                     {
-                      "nodeType": "text",
+                      "data": {},
+                      "marks": [
+                        {
+                          "type": "bold"
+                        }
+                      ],
                       "value": "Takeaway:",
-                      "marks": [
-                        {
-                          "type": "bold"
-                        }
-                      ],
-                      "data": {}
+                      "nodeType": "text"
                     },
                     {
-                      "nodeType": "text",
+                      "data": {},
+                      "marks": [],
                       "value": "\n This project demonstrates my ability to identify inefficiencies, design scalable solutions, and deliver measurable business value — the same skills I aim to bring to a ",
-                      "marks": [],
-                      "data": {}
+                      "nodeType": "text"
                     },
                     {
-                      "nodeType": "text",
-                      "value": "Solution Engineer role",
+                      "data": {},
                       "marks": [
                         {
                           "type": "bold"
                         }
                       ],
-                      "data": {}
+                      "value": "Solution Engineer role",
+                      "nodeType": "text"
                     },
                     {
-                      "nodeType": "text",
-                      "value": ".",
+                      "data": {},
                       "marks": [],
-                      "data": {}
+                      "value": ".",
+                      "nodeType": "text"
                     }
-                  ]
+                  ],
+                  "nodeType": "paragraph"
                 },
                 {
-                  "nodeType": "paragraph",
                   "data": {},
                   "content": [
                     {
-                      "nodeType": "text",
-                      "value": "📸 ",
+                      "data": {},
                       "marks": [],
-                      "data": {}
+                      "value": "📸 ",
+                      "nodeType": "text"
                     },
                     {
-                      "nodeType": "text",
-                      "value": "[Insert hero screenshot of your Storybook homepage or a polished component gallery as the closing image]",
+                      "data": {},
                       "marks": [
                         {
                           "type": "italic"
                         }
                       ],
-                      "data": {}
+                      "value": "[Insert hero screenshot of your Storybook homepage or a polished component gallery as the closing image]",
+                      "nodeType": "text"
                     }
-                  ]
+                  ],
+                  "nodeType": "paragraph"
                 },
                 {
-                  "nodeType": "hr",
                   "data": {},
-                  "content": []
+                  "content": [],
+                  "nodeType": "hr"
                 },
                 {
-                  "nodeType": "heading-3",
                   "data": {},
                   "content": [
                     {
-                      "nodeType": "text",
+                      "data": {},
+                      "marks": [],
                       "value": "7. Your feedback matters",
-                      "marks": [],
-                      "data": {}
+                      "nodeType": "text"
                     }
-                  ]
+                  ],
+                  "nodeType": "heading-3"
                 },
                 {
-                  "nodeType": "paragraph",
                   "data": {},
                   "content": [
                     {
-                      "nodeType": "text",
+                      "data": {},
+                      "marks": [],
                       "value": "I'd love to get your feedback. What use cases would you use a component like this for? Check out the links below to explore the Storybook prototype and let me know your thoughts:",
-                      "marks": [],
-                      "data": {}
+                      "nodeType": "text"
                     }
-                  ]
+                  ],
+                  "nodeType": "paragraph"
                 },
                 {
-                  "nodeType": "unordered-list",
                   "data": {},
                   "content": [
                     {
-                      "nodeType": "list-item",
                       "data": {},
                       "content": [
                         {
-                          "nodeType": "paragraph",
                           "data": {},
                           "content": [
                             {
-                              "nodeType": "text",
-                              "value": "Eric Njanga’s Component Library ",
+                              "data": {},
                               "marks": [],
-                              "data": {}
+                              "value": "Eric Njanga’s Component Library ",
+                              "nodeType": "text"
                             },
                             {
-                              "nodeType": "text",
-                              "value": "[Link when storyBook is live]",
+                              "data": {},
                               "marks": [
                                 {
                                   "type": "italic"
                                 }
                               ],
-                              "data": {}
+                              "value": "[Link when storyBook is live]",
+                              "nodeType": "text"
                             }
-                          ]
+                          ],
+                          "nodeType": "paragraph"
                         }
-                      ]
+                      ],
+                      "nodeType": "list-item"
                     }
-                  ]
+                  ],
+                  "nodeType": "unordered-list"
                 },
                 {
-                  "nodeType": "paragraph",
                   "data": {},
                   "content": [
                     {
-                      "nodeType": "text",
-                      "value": "",
+                      "data": {},
                       "marks": [],
-                      "data": {}
+                      "value": "",
+                      "nodeType": "text"
                     }
-                  ]
+                  ],
+                  "nodeType": "paragraph"
                 }
-              ]
+              ],
+              "nodeType": "document"
             }
           },
-          "image": null,
           "title": "Accelerating Development with a Scalable React Component Library",
-          "blurb": "A scalable React component library built with accessibility, performance, and usability in mind — delivering faster development, consistent UI, and measurable business impact across projects."
+          "blurb": "A scalable React component library built with accessibility, performance, and usability in mind — delivering faster development, consistent UI, and measurable business impact across projects.",
+          "order": 1
         }
       ]
     }

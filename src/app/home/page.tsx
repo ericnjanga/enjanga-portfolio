@@ -145,11 +145,7 @@ export default function LandingPage() {
       </Grid>
 
 
-
-
-
-
-      {/* <Grid>
+      <Grid>
         {' '} 
         <Column lg={16} md={8} sm={4}>
           <section
@@ -163,13 +159,13 @@ export default function LandingPage() {
             </h2>
 
             <ContentfulDataProvider dataFor="CaseStudy Entry Collection">
-              {({ orderedItems }) => (
-                <ContentBestWork listOfItems={orderedItems as IB_propsType[]} />
+              {({ items }) => (
+                <ContentBestWork listOfItems={items} />
               )}
             </ContentfulDataProvider>
           </section>
         </Column>
-      </Grid> */}
+      </Grid>
     </div>
   );
 }

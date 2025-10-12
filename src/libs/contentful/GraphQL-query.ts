@@ -160,11 +160,7 @@ export const queryData = {
           description {
             json
           }
-          image {
-            url
-            title
-            description
-          }
+          order
         } 
       }
       fr: projectCollection(locale: $locale2) { 
@@ -177,11 +173,7 @@ export const queryData = {
           description {
             json
           }
-          image {
-            url
-            title
-            description
-          }
+          order
         } 
       }
     }

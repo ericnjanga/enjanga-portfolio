@@ -21,7 +21,8 @@ import { ReactNode } from 'react';
 export type dataFor1 = 'BannerHomePage Entry' | 'BannerBlogPage Entry' | 'FooterCopyright Entry' | 'CaseStudy Entry';
 export type dataFor2 = 'scopeOfExp Parent Entry Collection' | 'scopeOfExp Entry Collection' | 'AboutInfo Entry Collection';
 export type dataFor3 = 'Quotes Entry Collection';
-export const getDataType = (dataFor: dataFor1 | dataFor2 | dataFor3): string => {
+export type dataFor4 = 'CaseStudy Entry Collection';
+export const getDataType = (dataFor: dataFor1 | dataFor2 | dataFor3 | dataFor4): string => {
   switch(dataFor) {
     case 'BannerHomePage Entry':
     case 'BannerBlogPage Entry':
@@ -36,14 +37,16 @@ export const getDataType = (dataFor: dataFor1 | dataFor2 | dataFor3): string => 
 
     case 'Quotes Entry Collection':
       return 'dataFor3';
+
+    case 'CaseStudy Entry Collection':
+      return 'dataFor4';
   }
 };
 
  
 
 export type DataFor =
-  | 'BlogPost Entry Collection' 
-  | 'CaseStudy Entry Collection'
+  | 'BlogPost Entry Collection'  
   | 'FooterLinks Entry Collection'
   | 'BlogPost Entry';
 
@@ -51,8 +54,8 @@ export type DataFor =
 // EntryGroup1:
 // This regroups the following: 'BannerHomePage Entry' | 'BannerBlogPage Entry' | 'FooterCopyright Entry' | 'CaseStudy Entry'
 export type EntryGroup1_propsType = {
-  title?: string,
-  description?: { json: { content: Node[] } },
+  title?: string;
+  description?: { json: { content: Node[] } };
 };
 
 export type EntryGroup2_propsType = {
@@ -65,6 +68,17 @@ export type EntryGroup2_propsType = {
   title?: string;
   blurb?: string;
 };
+
+export type EntryGroup3_propsType = {
+  sys?: {
+    id?: string;
+  }; 
+  order?: number; 
+  title?: string;
+  blurb?: string;
+  description?: { json: { content: Node[] } };
+};
+ 
 
 
 // CDP: ContentfulDataProvider
@@ -80,10 +94,14 @@ export type CDP_context3 = {
   items: EntryGroup1_propsType[];
   __isNormalized?: boolean;
 };
+export type CDP_context4 = {
+  items: EntryGroup3_propsType[];
+  __isNormalized?: boolean;
+};
 
 
 export interface CDP_propsType {
-  dataFor: dataFor1 | dataFor2;
+  dataFor: dataFor1 | dataFor2 | dataFor3 | dataFor4;
   contentId?: string;
   children: (props: CDP_context1 | CDP_context2) => ReactNode;
 }
@@ -139,10 +157,27 @@ export const skeleton_context3: CDP_context3 = {
     description: undefined
   }]
 };
+export const skeleton_context4: CDP_context4 = {
+  items: [{
+    sys: {
+      id: undefined,
+    },
+    order: undefined,
+    title: undefined,
+    blurb: undefined,
+    description: undefined,
+  }, {
+    sys: {
+      id: undefined,
+    },
+    order: undefined,
+    title: undefined,
+    blurb: undefined,
+    description: undefined,
+  }]
+};
  
- 
-
-
+  
 
 export interface IB_propsType {
   sys: {

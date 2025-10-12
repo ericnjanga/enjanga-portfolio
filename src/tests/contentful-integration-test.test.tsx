@@ -239,6 +239,29 @@ describe.runIf(process.env.RUN_INTEGRATION_TESTS === 'true')(
       expect(serverResult).toEqual(clientResult);
       expect(serverResult).toEqual(quoteEntryCollectionFixture.data.en.items);
     });
+
+
+
+    it(`["CaseStudy Entry Collection"] fetches the same normalized data (server + client)`, async () => {
+      const serverResult = await contentfulForServerEntriesFetch(
+        'CaseStudy Entry Collection',
+        caseStudyCollRefId
+      );
+      expect(serverResult.length).toBeGreaterThan(0);
+
+      const { result } = renderHook(
+        () => useContentfulForClientEntries('CaseStudy Entry Collection', caseStudyCollRefId),
+        { wrapper: createWrapper() }
+      );
+
+      await waitFor(() => {
+        expect(result.current.isSuccess).toBe(true);
+      });
+
+      const clientResult = result.current.data;
+      expect(serverResult).toEqual(clientResult);
+      expect(serverResult).toEqual(caseStudyCollectionFixture.data.en.items);
+    });
     
 
 
@@ -261,29 +284,6 @@ describe.runIf(process.env.RUN_INTEGRATION_TESTS === 'true')(
     //   const clientResult = result.current.data;
     //   expect(serverResult).toEqual(clientResult);
     //   expect(serverResult).toEqual(blogPostCollectionFixture.data.en.items);
-    // });
-
-
-
-    // it(`["CaseStudy Entry Collection"] fetches the same normalized data (server + client)`, async () => {
-    //   const serverResult = await contentfulForServerEntriesFetch(
-    //     'CaseStudy Entry Collection',
-    //     caseStudyCollRefId
-    //   );
-    //   expect(serverResult.length).toBeGreaterThan(0);
-
-    //   const { result } = renderHook(
-    //     () => useContentfulForClientEntries('CaseStudy Entry Collection', caseStudyCollRefId),
-    //     { wrapper: createWrapper() }
-    //   );
-
-    //   await waitFor(() => {
-    //     expect(result.current.isSuccess).toBe(true);
-    //   });
-
-    //   const clientResult = result.current.data;
-    //   expect(serverResult).toEqual(clientResult);
-    //   expect(serverResult).toEqual(caseStudyCollectionFixture.data.en.items);
     // });
 
 

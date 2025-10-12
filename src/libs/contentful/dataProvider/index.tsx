@@ -5,13 +5,14 @@ import React, { createContext, useContext } from 'react';
 import { useContentfulForClientEntries } from '../hooks/useContentfulForClientEntries';
 import { CDP_propsType } from '../types';
 import type { 
-  dataFor1, dataFor2, dataFor3,
-  CDP_context1, CDP_context2, CDP_context3,
+  dataFor1, dataFor2, dataFor3, dataFor4,
+  CDP_context1, CDP_context2, CDP_context3, CDP_context4
 } from '../types';
 import { 
   skeleton_context1,
   skeleton_context2,
   skeleton_context3,
+  skeleton_context4,
   getDataType
 } from '../types'; 
 import getFormatedDataForContext from './getFormatedDataForContext';
@@ -19,7 +20,7 @@ import { useEffect, useState } from 'react';
 
 
 
-const ContentContext = createContext<CDP_context1 | CDP_context2 | CDP_context3>(
+const ContentContext = createContext<CDP_context1 | CDP_context2 | CDP_context3 | CDP_context4>(
   skeleton_context1
 );
 
@@ -35,6 +36,7 @@ export const ContentfulDataProvider = ({
   const [contextEG1, setContextEG1] = useState<CDP_context1>(skeleton_context1);
   const [contextEG2, setContextEG2] = useState<CDP_context2>(skeleton_context2);
   const [contextEG3, setContextEG3] = useState<CDP_context2>(skeleton_context3);
+  const [contextEG4, setContextEG4] = useState<CDP_context2>(skeleton_context4);
   const { data } = useContentfulForClientEntries(dataFor, contentId);
 
 
@@ -58,6 +60,12 @@ export const ContentfulDataProvider = ({
         let formatedData3 = getFormatedDataForContext(data, dataFor as dataFor3);
         if (isMounted && formatedData3?.__isNormalized) {
           setContextEG3(formatedData3);
+        }
+      }
+      if (getDataType(dataFor)==='dataFor4') {
+        let formatedData4 = getFormatedDataForContext(data, dataFor as dataFor4);
+        if (isMounted && formatedData4?.__isNormalized) {
+          setContextEG4(formatedData4);
         }
       }
 
@@ -84,6 +92,11 @@ export const ContentfulDataProvider = ({
       {contextType==='dataFor3' &&
         <ContentContext.Provider value={contextEG3}>
           {children(contextEG3)}
+        </ContentContext.Provider>
+      }
+      {contextType==='dataFor4' &&
+        <ContentContext.Provider value={contextEG4}>
+          {children(contextEG4)}
         </ContentContext.Provider>
       }
     </>

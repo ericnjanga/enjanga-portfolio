@@ -1,6 +1,6 @@
 
 import { queryData } from './GraphQL-query';
-import type { dataFor1, dataFor2, dataFor3 } from './types';
+import type { dataFor1, dataFor2, dataFor3, dataFor4 } from './types';
 
 
 
@@ -36,7 +36,7 @@ export const contentfulContentIds = {
  * Example:
  *   const { query, variables } = getContentfulQueryConfig("BlogPost Entry", "abc123");
  */
-export function getContentfulQueryConfig(dataFor: dataFor1 | dataFor2 | dataFor3, contentId?: string) {
+export function getContentfulQueryConfig(dataFor: dataFor1 | dataFor2 | dataFor3 | dataFor4, contentId?: string) {
   let query = '';
   let variables: Record<string, any> = {
     locale1: 'en-CA',
@@ -78,9 +78,9 @@ export function getContentfulQueryConfig(dataFor: dataFor1 | dataFor2 | dataFor3
     //   variables.sectionId = contentId ?? '';
     //   break;
 
-    // case 'CaseStudy Entry Collection':
-    //   query = queryData.projectsCollection;
-    //   break;
+    case 'CaseStudy Entry Collection':
+      query = queryData.projectsCollection;
+      break;
 
     case 'Quotes Entry Collection':
       query = queryData.quotesCollection;
