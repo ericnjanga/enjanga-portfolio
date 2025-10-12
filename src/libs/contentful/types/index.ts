@@ -2,10 +2,6 @@ import type { Node } from '@contentful/rich-text-types';
 import { ReactNode } from 'react';
 
 
-  
-
-
-
 /**
  * DataFor
  * ------------------------------------------------------------------
@@ -18,47 +14,64 @@ import { ReactNode } from 'react';
  * Example:
  *   const posts = await contentfulForServerEntriesFetch("BlogPost Entry Collection");
  */
-export type dataFor1 = 'BannerHomePage Entry' | 'BannerBlogPage Entry' | 'FooterCopyright Entry' | 'CaseStudy Entry';
-export type dataFor2 = 'scopeOfExp Parent Entry Collection' | 'scopeOfExp Entry Collection' | 'AboutInfo Entry Collection';
-export type dataFor3 = 'Quotes Entry Collection';
-export type dataFor4 = 'CaseStudy Entry Collection';
-export const getDataType = (dataFor: dataFor1 | dataFor2 | dataFor3 | dataFor4): string => {
+
+// DataFor1: ContentModel1 -> ContextType1
+export type DataFor1 = 'BannerHomePage Entry' | 'BannerBlogPage Entry' | 'FooterCopyright Entry' | 'CaseStudy Entry';
+
+// DataFor2: ContentModel2[] -> ContextType2
+export type DataFor2 = 'scopeOfExp Parent Entry Collection' | 'scopeOfExp Entry Collection' | 'AboutInfo Entry Collection';
+
+// DataFor3: ContentModel1[] -> ContextType3
+export type DataFor3 = 'Quotes Entry Collection';
+
+// DataFor4: ContentModel3[] -> ContextType4
+export type DataFor4 = 'CaseStudy Entry Collection';
+
+// DataFor5: ContentModel4[] -> ContextType5
+export type DataFor5 = 'FooterLinks Entry Collection';
+export const getDataType = (dataFor: DataFor1 | DataFor2 | DataFor3 | DataFor4 | DataFor5): string => {
   switch(dataFor) {
     case 'BannerHomePage Entry':
     case 'BannerBlogPage Entry':
     case 'FooterCopyright Entry':
     case 'CaseStudy Entry':
-      return 'dataFor1';
+      return 'DataFor1';
     
     case 'scopeOfExp Parent Entry Collection':
     case 'scopeOfExp Entry Collection':
     case 'AboutInfo Entry Collection':
-      return 'dataFor2';
+      return 'DataFor2';
 
     case 'Quotes Entry Collection':
-      return 'dataFor3';
+      return 'DataFor3';
 
     case 'CaseStudy Entry Collection':
-      return 'dataFor4';
+      return 'DataFor4';
+
+    case 'FooterLinks Entry Collection':
+      return 'DataFor5';
   }
 };
 
- 
+
 
 export type DataFor =
-  | 'BlogPost Entry Collection'  
-  | 'FooterLinks Entry Collection'
+  | 'BlogPost Entry Collection'   
   | 'BlogPost Entry';
 
+ 
 
-// EntryGroup1:
-// This regroups the following: 'BannerHomePage Entry' | 'BannerBlogPage Entry' | 'FooterCopyright Entry' | 'CaseStudy Entry'
-export type EntryGroup1_propsType = {
+/**
+ * Content Models groups:
+ * ------------------------------------------------------------------
+ * Shapes incoming content models from ContentFul into specific data structures.
+ */
+export type ContentModel1 = {
   title?: string;
   description?: { json: { content: Node[] } };
 };
 
-export type EntryGroup2_propsType = {
+export type ContentModel2 = {
   sys?: {
     id?: string;
   };
@@ -69,7 +82,7 @@ export type EntryGroup2_propsType = {
   blurb?: string;
 };
 
-export type EntryGroup3_propsType = {
+export type ContentModel3 = {
   sys?: {
     id?: string;
   }; 
@@ -78,50 +91,75 @@ export type EntryGroup3_propsType = {
   blurb?: string;
   description?: { json: { content: Node[] } };
 };
+
+export type ContentModel4 = {
+  sys?: {
+    id?: string;
+  }; 
+  order?: number; 
+  title?: string; 
+  description?: { json: { content: Node[] } };
+};
  
 
-
-// CDP: ContentfulDataProvider
-export type CDP_context1 = {
-  item: EntryGroup1_propsType;
+/**
+ * Context types:
+ * ------------------------------------------------------------------
+ * Define the context provider data structure based on which 
+ * content model is provided.
+ */ 
+export type ContextType1 = {
+  item: ContentModel1;
   __isNormalized?: boolean;
 };
-export type CDP_context2 = {
-  items: EntryGroup2_propsType[];
+export type ContextType2 = {
+  items: ContentModel2[];
   __isNormalized?: boolean;
 };
-export type CDP_context3 = {
-  items: EntryGroup1_propsType[];
+export type ContextType3 = {
+  items: ContentModel1[];
   __isNormalized?: boolean;
 };
-export type CDP_context4 = {
-  items: EntryGroup3_propsType[];
+export type ContextType4 = {
+  items: ContentModel3[];
   __isNormalized?: boolean;
 };
-
-
-export interface CDP_propsType {
-  dataFor: dataFor1 | dataFor2 | dataFor3 | dataFor4;
-  contentId?: string;
-  children: (props: CDP_context1 | CDP_context2) => ReactNode;
-}
-
-
+export type ContextType5 = {
+  items: ContentModel4[];
+  __isNormalized?: boolean;
+};
+ 
 
 /**
- * TODO: All context skeletons should be coming from the component library
- */
-export const skeleton_context1: CDP_context1 = {
+ * Context types:
+ * ------------------------------------------------------------------
+ * Define the context provider data structure based on which 
+ * content model is provided.
+ */ 
+export interface CDP_propsType {
+  dataFor: DataFor1 | DataFor2 | DataFor3 | DataFor4 | DataFor5;
+  contentId?: string;
+  children: (props: ContextType1 | ContextType2 | ContextType3 | ContextType4 | ContextType5) => ReactNode;
+}
+ 
+
+/**
+ * Context skeletons:
+ * ------------------------------------------------------------------
+ * Define the context provider's default value looks depending on 
+ * which context type we are returning
+ */ 
+export const skeleton_context1: ContextType1 = {
   item: {
     title: undefined,
     description: undefined
   }
 };
-export const skeleton_context2: CDP_context2 = {
+export const skeleton_context2: ContextType2 = {
   items: [
     {
       sys: {
-        id: undefined,
+        id: '0',
       },
       parentId: undefined,
       order: undefined,
@@ -131,7 +169,7 @@ export const skeleton_context2: CDP_context2 = {
     },
     {
       sys: {
-        id: undefined,
+        id: '1',
       },
       parentId: undefined,
       order: undefined,
@@ -141,7 +179,7 @@ export const skeleton_context2: CDP_context2 = {
     },
     {
       sys: {
-        id: undefined,
+        id: '2',
       },
       parentId: undefined,
       order: undefined,
@@ -151,16 +189,16 @@ export const skeleton_context2: CDP_context2 = {
     },
   ]
 };
-export const skeleton_context3: CDP_context3 = {
+export const skeleton_context3: ContextType3 = {
   items: [{
     title: undefined,
     description: undefined
   }]
 };
-export const skeleton_context4: CDP_context4 = {
+export const skeleton_context4: ContextType4 = {
   items: [{
     sys: {
-      id: undefined,
+      id: '0',
     },
     order: undefined,
     title: undefined,
@@ -168,7 +206,7 @@ export const skeleton_context4: CDP_context4 = {
     description: undefined,
   }, {
     sys: {
-      id: undefined,
+      id: '1',
     },
     order: undefined,
     title: undefined,
@@ -176,22 +214,27 @@ export const skeleton_context4: CDP_context4 = {
     description: undefined,
   }]
 };
- 
-  
-
-export interface IB_propsType {
-  sys: {
-    id: string;
-  };
-  parentId?: string;
-  order: number;
-  icon?: string;
-  title: string;
-  blurb?: string;
-  image?: {
-    url: string;
-    title: string;
-    description: string;
-  };
-  description?: { json: { content: Node[] } };
-}
+export const skeleton_context5: ContextType5 = {
+  items: [{
+    sys: {
+      id: '0',
+    },
+    order: undefined,
+    title: undefined, 
+    description: undefined,
+  }, {
+    sys: {
+      id: '1',
+    },
+    order: undefined,
+    title: undefined, 
+    description: undefined,
+  }, {
+    sys: {
+      id: '2',
+    },
+    order: undefined,
+    title: undefined, 
+    description: undefined,
+  }]
+};

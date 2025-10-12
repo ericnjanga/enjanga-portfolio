@@ -1,10 +1,10 @@
 import { TabPanels, TabPanel } from '@carbon/react';
-import { EntryGroup2_propsType } from '@/libs/contentful/types';
+import { ContentModel2 } from '@/libs/contentful/types';
 import SectionTabContent from './TabContent';
 
 interface SectionTabPanelsProps {
   className?: string;
-  listOfItems?: EntryGroup2_propsType[];
+  listOfItems?: ContentModel2[];
 }
 
 const SectionTabPanels = ({ listOfItems }: SectionTabPanelsProps) => (

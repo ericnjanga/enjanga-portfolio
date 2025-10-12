@@ -5,14 +5,15 @@ import React, { createContext, useContext } from 'react';
 import { useContentfulForClientEntries } from '../hooks/useContentfulForClientEntries';
 import { CDP_propsType } from '../types';
 import type { 
-  dataFor1, dataFor2, dataFor3, dataFor4,
-  CDP_context1, CDP_context2, CDP_context3, CDP_context4
+  DataFor1, DataFor2, DataFor3, DataFor4, DataFor5,
+  ContextType1, ContextType2, ContextType3, ContextType4, ContextType5
 } from '../types';
 import { 
   skeleton_context1,
   skeleton_context2,
   skeleton_context3,
   skeleton_context4,
+  skeleton_context5,
   getDataType
 } from '../types'; 
 import getFormatedDataForContext from './getFormatedDataForContext';
@@ -20,7 +21,7 @@ import { useEffect, useState } from 'react';
 
 
 
-const ContentContext = createContext<CDP_context1 | CDP_context2 | CDP_context3 | CDP_context4>(
+const ContentContext = createContext<ContextType1 | ContextType2 | ContextType3 | ContextType4 | ContextType5>(
   skeleton_context1
 );
 
@@ -33,10 +34,11 @@ export const ContentfulDataProvider = ({
 }: CDP_propsType) => {
   
   const contextType = getDataType(dataFor);
-  const [contextEG1, setContextEG1] = useState<CDP_context1>(skeleton_context1);
-  const [contextEG2, setContextEG2] = useState<CDP_context2>(skeleton_context2);
-  const [contextEG3, setContextEG3] = useState<CDP_context2>(skeleton_context3);
-  const [contextEG4, setContextEG4] = useState<CDP_context2>(skeleton_context4);
+  const [contextEG1, setContextEG1] = useState<ContextType1>(skeleton_context1);
+  const [contextEG2, setContextEG2] = useState<ContextType2>(skeleton_context2);
+  const [contextEG3, setContextEG3] = useState<ContextType3>(skeleton_context3);
+  const [contextEG4, setContextEG4] = useState<ContextType4>(skeleton_context4);
+  const [contextEG5, setContextEG5] = useState<ContextType5>(skeleton_context5);
   const { data } = useContentfulForClientEntries(dataFor, contentId);
 
 
@@ -44,28 +46,34 @@ export const ContentfulDataProvider = ({
     let isMounted = true;
 
     if (Array.isArray(data) && data.length > 0) {
-      if (getDataType(dataFor)==='dataFor1') {
-        let formatedData1 = getFormatedDataForContext(data, dataFor as dataFor1);
+      if (getDataType(dataFor)==='DataFor1') {
+        let formatedData1 = getFormatedDataForContext(data, dataFor as DataFor1);
         if (isMounted && formatedData1?.__isNormalized) {
           setContextEG1(formatedData1);
         }
       }
-      if (getDataType(dataFor)==='dataFor2') {
-        let formatedData2 = getFormatedDataForContext(data, dataFor as dataFor2);
+      if (getDataType(dataFor)==='DataFor2') {
+        let formatedData2 = getFormatedDataForContext(data, dataFor as DataFor2);
         if (isMounted && formatedData2?.__isNormalized) {
           setContextEG2(formatedData2);
         }
       }
-      if (getDataType(dataFor)==='dataFor3') {
-        let formatedData3 = getFormatedDataForContext(data, dataFor as dataFor3);
+      if (getDataType(dataFor)==='DataFor3') {
+        let formatedData3 = getFormatedDataForContext(data, dataFor as DataFor3);
         if (isMounted && formatedData3?.__isNormalized) {
           setContextEG3(formatedData3);
         }
       }
-      if (getDataType(dataFor)==='dataFor4') {
-        let formatedData4 = getFormatedDataForContext(data, dataFor as dataFor4);
+      if (getDataType(dataFor)==='DataFor4') {
+        let formatedData4 = getFormatedDataForContext(data, dataFor as DataFor4);
         if (isMounted && formatedData4?.__isNormalized) {
           setContextEG4(formatedData4);
+        }
+      }
+      if (getDataType(dataFor)==='DataFor5') {
+        let formatedData5 = getFormatedDataForContext(data, dataFor as DataFor5);
+        if (isMounted && formatedData5?.__isNormalized) {
+          setContextEG5(formatedData5);
         }
       }
 
@@ -79,24 +87,29 @@ export const ContentfulDataProvider = ({
 
   return (
     <>
-      {contextType==='dataFor1' &&
+      {contextType==='DataFor1' &&
         <ContentContext.Provider value={contextEG1}>
           {children(contextEG1)}
         </ContentContext.Provider>
       }
-      {contextType==='dataFor2' &&
+      {contextType==='DataFor2' &&
         <ContentContext.Provider value={contextEG2}>
           {children(contextEG2)}
         </ContentContext.Provider>
       }
-      {contextType==='dataFor3' &&
+      {contextType==='DataFor3' &&
         <ContentContext.Provider value={contextEG3}>
           {children(contextEG3)}
         </ContentContext.Provider>
       }
-      {contextType==='dataFor4' &&
+      {contextType==='DataFor4' &&
         <ContentContext.Provider value={contextEG4}>
           {children(contextEG4)}
+        </ContentContext.Provider>
+      }
+      {contextType==='DataFor5' &&
+        <ContentContext.Provider value={contextEG5}>
+          {children(contextEG5)}
         </ContentContext.Provider>
       }
     </>

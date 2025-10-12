@@ -262,6 +262,29 @@ describe.runIf(process.env.RUN_INTEGRATION_TESTS === 'true')(
       expect(serverResult).toEqual(clientResult);
       expect(serverResult).toEqual(caseStudyCollectionFixture.data.en.items);
     });
+
+
+
+    it(`["FooterLinks Entry Collection"] fetches the same normalized data (server + client)`, async () => {
+      const serverResult = await contentfulForServerEntriesFetch(
+        'FooterLinks Entry Collection',
+        footerLinksCollRefId
+      );
+      expect(serverResult.length).toBeGreaterThan(0);
+
+      const { result } = renderHook(
+        () => useContentfulForClientEntries('FooterLinks Entry Collection', footerLinksCollRefId),
+        { wrapper: createWrapper() }
+      );
+
+      await waitFor(() => {
+        expect(result.current.isSuccess).toBe(true);
+      });
+
+      const clientResult = result.current.data;
+      expect(serverResult).toEqual(clientResult);
+      expect(serverResult).toEqual(footerLinksCollectionFixture.data.en.items);
+    });
     
 
 
@@ -284,29 +307,6 @@ describe.runIf(process.env.RUN_INTEGRATION_TESTS === 'true')(
     //   const clientResult = result.current.data;
     //   expect(serverResult).toEqual(clientResult);
     //   expect(serverResult).toEqual(blogPostCollectionFixture.data.en.items);
-    // });
-
-
-
-    // it(`["FooterLinks Entry Collection"] fetches the same normalized data (server + client)`, async () => {
-    //   const serverResult = await contentfulForServerEntriesFetch(
-    //     'FooterLinks Entry Collection',
-    //     footerLinksCollRefId
-    //   );
-    //   expect(serverResult.length).toBeGreaterThan(0);
-
-    //   const { result } = renderHook(
-    //     () => useContentfulForClientEntries('FooterLinks Entry Collection', footerLinksCollRefId),
-    //     { wrapper: createWrapper() }
-    //   );
-
-    //   await waitFor(() => {
-    //     expect(result.current.isSuccess).toBe(true);
-    //   });
-
-    //   const clientResult = result.current.data;
-    //   expect(serverResult).toEqual(clientResult);
-    //   expect(serverResult).toEqual(footerLinksCollectionFixture.data.en.items);
     // });
 
 

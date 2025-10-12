@@ -1,6 +1,6 @@
 
 import { queryData } from './GraphQL-query';
-import type { dataFor1, dataFor2, dataFor3, dataFor4 } from './types';
+import type { DataFor1, DataFor2, DataFor3, DataFor4, DataFor5 } from './types';
 
 
 
@@ -36,7 +36,7 @@ export const contentfulContentIds = {
  * Example:
  *   const { query, variables } = getContentfulQueryConfig("BlogPost Entry", "abc123");
  */
-export function getContentfulQueryConfig(dataFor: dataFor1 | dataFor2 | dataFor3 | dataFor4, contentId?: string) {
+export function getContentfulQueryConfig(dataFor: DataFor1 | DataFor2 | DataFor3 | DataFor4 | DataFor5, contentId?: string) {
   let query = '';
   let variables: Record<string, any> = {
     locale1: 'en-CA',
@@ -50,7 +50,7 @@ export function getContentfulQueryConfig(dataFor: dataFor1 | dataFor2 | dataFor3
     case 'scopeOfExp Entry Collection':
     case 'scopeOfExp Parent Entry Collection':
     case 'AboutInfo Entry Collection':
-    // case 'FooterLinks Entry Collection':
+    case 'FooterLinks Entry Collection':
       if (dataFor==='scopeOfExp Entry Collection') {
         const expertiseId = contentId;
         query = queryData.infoBlockByParentCollection;

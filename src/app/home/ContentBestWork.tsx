@@ -1,51 +1,12 @@
 import { Grid, Column } from '@carbon/react';
-import { CustomTile } from 'enjanga-components-library';
-import { IB_propsType } from '@/libs/contentful/types';
+import { CustomTile } from 'enjanga-components-library'; 
+import { ContentModel3 } from '@/libs/contentful/types';
 
 
 
-const ContentBestWorkSkeleton = () => (
-  <>
-    <Column lg={8} md={4} sm={4}>
-      <CustomTile
-        featuredText={{
-          heading: {
-            children: undefined,
-            level: 3,
-          },
-          smartText: {
-            plainText: undefined,
-          },
-        }}
-        layoutStyle="card"
-      />
-    </Column>
-    <Column lg={8} md={4} sm={4}>
-      <CustomTile
-        featuredText={{
-          heading: {
-            children: undefined,
-            level: 3,
-          },
-          smartText: {
-            plainText: undefined,
-          },
-        }}
-        layoutStyle="card"
-      />
-    </Column>
-  </>
-);
 
-
-const ContentBestWork = ({
-  listOfItems,
-}: {
-  listOfItems: IB_propsType[] | undefined;
-}) => (
+const ContentBestWork = ({ listOfItems }: { listOfItems: ContentModel3[] }) => (
   <Grid className="tabs-group-content">
-    {!listOfItems && <ContentBestWorkSkeleton />}
-
     {listOfItems?.map((item, index) => {
       return (
         <Column key={item?.sys?.id ?? index} lg={8} md={4} sm={4}>
@@ -61,7 +22,7 @@ const ContentBestWork = ({
             }}
             layoutStyle="banner"
             modalIsAvailable={false}
-            linksTo={`/best-work/${item.sys.id}`}
+            linksTo={`/best-work/${item?.sys?.id}`}
           />
         </Column>
       );

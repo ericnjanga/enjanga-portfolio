@@ -6,14 +6,14 @@ import { Tabs } from '@carbon/react';
 import './../../styles/_blogs-and-articles.scss';
 import './_SectionOfTabs.scss';
 import { Grid, Column } from '@carbon/react';
-import { EntryGroup2_propsType } from '@/libs/contentful/types';
+import { ContentModel2 } from '@/libs/contentful/types';
 import SectionTabsList from './parts/tabsList';
 import SectionTabPanels from './parts/tabPanels';
 
 interface SectionOfTabsProps {
   title: string;
   className: string;
-  listOfItems?: EntryGroup2_propsType[];
+  listOfItems?: ContentModel2[];
 }
 interface TabsProps {
   title: string;
@@ -29,8 +29,6 @@ const SectionOfTabs = ({
 
   return (
     <Grid className="SectionOfTabs">
-      {' '}
-      {/*  fullWidth */}
       <Column lg={16} md={8} sm={4} className="landing-page__r2">
         <h2 id="scope-of-expertise-heading" className="sectionTitle">
           {title}

@@ -12,7 +12,7 @@ import './../home/_home-theming.scss';
 import { ContentfulDataProvider } from '@/libs/contentful/dataProvider';
 import { BackgroundSection } from '@/components/BackgroundSection';
 import { contentfulContentIds } from '@/libs/contentful/contentful-queryConfig';
-import { EntryGroup2_propsType, CDP_context1, CDP_context2 } from '@/libs/contentful/types'; 
+import { ContentModel2, ContextType1, ContextType2 } from '@/libs/contentful/types'; 
 
 export default function LandingPage() {
   
@@ -86,7 +86,7 @@ export default function LandingPage() {
               <SectionOfTabs
                 title="Scope of Expertise"
                 className="expertise-section-tabs"
-                listOfItems={items as EntryGroup2_propsType[]}
+                listOfItems={items as ContentModel2[]}
               />
             </section>
           );

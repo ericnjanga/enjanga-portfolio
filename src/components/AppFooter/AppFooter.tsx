@@ -24,9 +24,9 @@ const AppFooter = () => {
             <Grid className="">
               <Column lg={12} md={4} sm={4} className="app-footer__col2-row1">
                 <Grid>
-                  {/* <ContentfulDataProvider dataFor="FooterLinks Entry Collection">
-                    {({ orderedItems }) => {
-                      return orderedItems?.map((item) => {
+                  <ContentfulDataProvider dataFor="FooterLinks Entry Collection">
+                    {({ items }) => {
+                      return items?.map((item) => {
                         return (
                           <Column key={item?.sys.id} lg={4} md={4} sm={4}>
                             <CMSRichText data={item?.description} />
@@ -34,7 +34,7 @@ const AppFooter = () => {
                         );
                       });
                     }}
-                  </ContentfulDataProvider> */}
+                  </ContentfulDataProvider>
                 </Grid>
               </Column>
 
@@ -46,8 +46,8 @@ const AppFooter = () => {
                 <Grid className="tabs-group-content">
                   <Column lg={8} md={4} sm={4} className="copyright">
                     <ContentfulDataProvider dataFor="FooterCopyright Entry">
-                      {({ description }) => (
-                        <CMSRichText data={description} />
+                      {({ item }) => (
+                        <CMSRichText data={item?.description} />
                       )}
                     </ContentfulDataProvider>
                   </Column>
