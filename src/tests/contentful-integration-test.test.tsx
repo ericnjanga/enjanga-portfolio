@@ -217,6 +217,28 @@ describe.runIf(process.env.RUN_INTEGRATION_TESTS === 'true')(
       expect(serverResult).toEqual(clientResult);
       expect(serverResult).toEqual(aboutInfoCollectionFixture.data.en.items);
     });
+
+
+
+    it(`["Quotes Entry Collection"] fetches the same normalized data (server + client)`, async () => {
+      const serverResult = await contentfulForServerEntriesFetch(
+        'Quotes Entry Collection'
+      );
+      expect(serverResult.length).toBeGreaterThan(0);
+
+      const { result } = renderHook(
+        () => useContentfulForClientEntries('Quotes Entry Collection'),
+        { wrapper: createWrapper() }
+      );
+
+      await waitFor(() => {
+        expect(result.current.isSuccess).toBe(true);
+      });
+
+      const clientResult = result.current.data;
+      expect(serverResult).toEqual(clientResult);
+      expect(serverResult).toEqual(quoteEntryCollectionFixture.data.en.items);
+    });
     
 
 
@@ -262,28 +284,6 @@ describe.runIf(process.env.RUN_INTEGRATION_TESTS === 'true')(
     //   const clientResult = result.current.data;
     //   expect(serverResult).toEqual(clientResult);
     //   expect(serverResult).toEqual(caseStudyCollectionFixture.data.en.items);
-    // });
-
-
-
-    // it(`["Quotes Entry Collection"] fetches the same normalized data (server + client)`, async () => {
-    //   const serverResult = await contentfulForServerEntriesFetch(
-    //     'Quotes Entry Collection'
-    //   );
-    //   expect(serverResult.length).toBeGreaterThan(0);
-
-    //   const { result } = renderHook(
-    //     () => useContentfulForClientEntries('Quotes Entry Collection'),
-    //     { wrapper: createWrapper() }
-    //   );
-
-    //   await waitFor(() => {
-    //     expect(result.current.isSuccess).toBe(true);
-    //   });
-
-    //   const clientResult = result.current.data;
-    //   expect(serverResult).toEqual(clientResult);
-    //   expect(serverResult).toEqual(quoteEntryCollectionFixture.data.en.items);
     // });
 
 

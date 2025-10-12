@@ -7,7 +7,6 @@ import {
   CMSRichText,
   BrandLogo,
 } from 'enjanga-components-library';
-import { IB_propsType } from '@/libs/contentful/types';
 import { ContentfulDataProvider } from '@/libs/contentful/dataProvider';
 
 const AppFooter = () => {

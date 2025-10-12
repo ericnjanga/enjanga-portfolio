@@ -20,7 +20,8 @@ import { ReactNode } from 'react';
  */
 export type dataFor1 = 'BannerHomePage Entry' | 'BannerBlogPage Entry' | 'FooterCopyright Entry' | 'CaseStudy Entry';
 export type dataFor2 = 'scopeOfExp Parent Entry Collection' | 'scopeOfExp Entry Collection' | 'AboutInfo Entry Collection';
-export const getDataType = (dataFor: dataFor1 | dataFor2): string => {
+export type dataFor3 = 'Quotes Entry Collection';
+export const getDataType = (dataFor: dataFor1 | dataFor2 | dataFor3): string => {
   switch(dataFor) {
     case 'BannerHomePage Entry':
     case 'BannerBlogPage Entry':
@@ -32,6 +33,9 @@ export const getDataType = (dataFor: dataFor1 | dataFor2): string => {
     case 'scopeOfExp Entry Collection':
     case 'AboutInfo Entry Collection':
       return 'dataFor2';
+
+    case 'Quotes Entry Collection':
+      return 'dataFor3';
   }
 };
 
@@ -41,8 +45,7 @@ export type DataFor =
   | 'BlogPost Entry Collection' 
   | 'CaseStudy Entry Collection'
   | 'FooterLinks Entry Collection'
-  | 'BlogPost Entry'    
-  | 'Quotes Entry Collection';
+  | 'BlogPost Entry';
 
 
 // EntryGroup1:
@@ -71,6 +74,10 @@ export type CDP_context1 = {
 };
 export type CDP_context2 = {
   items: EntryGroup2_propsType[];
+  __isNormalized?: boolean;
+};
+export type CDP_context3 = {
+  items: EntryGroup1_propsType[];
   __isNormalized?: boolean;
 };
 
@@ -125,6 +132,12 @@ export const skeleton_context2: CDP_context2 = {
       blurb: undefined,
     },
   ]
+};
+export const skeleton_context3: CDP_context3 = {
+  items: [{
+    title: undefined,
+    description: undefined
+  }]
 };
  
  

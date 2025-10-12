@@ -12,7 +12,7 @@ import './../home/_home-theming.scss';
 import { ContentfulDataProvider } from '@/libs/contentful/dataProvider';
 import { BackgroundSection } from '@/components/BackgroundSection';
 import { contentfulContentIds } from '@/libs/contentful/contentful-queryConfig';
-import { IB_propsType, EntryGroup2_propsType, CDP_context1, CDP_context2 } from '@/libs/contentful/types'; 
+import { EntryGroup2_propsType, CDP_context1, CDP_context2 } from '@/libs/contentful/types'; 
 
 export default function LandingPage() {
   
@@ -73,6 +73,7 @@ export default function LandingPage() {
         )}
       </ContentfulDataProvider>
 
+
       <ContentfulDataProvider dataFor="scopeOfExp Parent Entry Collection">
         {({ items }) => {
           return (
@@ -91,6 +92,7 @@ export default function LandingPage() {
           );
         }}
       </ContentfulDataProvider>
+
 
       <BackgroundSection
         className="pageSection aboutSection smt-box"
@@ -117,8 +119,7 @@ export default function LandingPage() {
       </BackgroundSection>
 
 
-
-      {/* <Grid>
+      <Grid>
         <Column lg={16} md={8} sm={4}>
           <section
             className="pageSection smt-box"
@@ -132,16 +133,16 @@ export default function LandingPage() {
 
 
             <ContentfulDataProvider dataFor="Quotes Entry Collection">
-              {({ orderedItems }) => (
+              {({ items }) => (
                 <CustomQuotes
                   className="engineer-quotes-component"
-                  quotes={orderedItems as CQ_quote_propsType[]}
+                  quotes={items as CQ_quote_propsType[]}
                 />
               )}
             </ContentfulDataProvider>
           </section>
         </Column>
-      </Grid> */}
+      </Grid>
 
 
 

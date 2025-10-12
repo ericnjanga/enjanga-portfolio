@@ -5,12 +5,13 @@ import React, { createContext, useContext } from 'react';
 import { useContentfulForClientEntries } from '../hooks/useContentfulForClientEntries';
 import { CDP_propsType } from '../types';
 import type { 
-  dataFor1, dataFor2,
-  CDP_context1, CDP_context2,
+  dataFor1, dataFor2, dataFor3,
+  CDP_context1, CDP_context2, CDP_context3,
 } from '../types';
 import { 
   skeleton_context1,
   skeleton_context2,
+  skeleton_context3,
   getDataType
 } from '../types'; 
 import getFormatedDataForContext from './getFormatedDataForContext';
@@ -18,7 +19,7 @@ import { useEffect, useState } from 'react';
 
 
 
-const ContentContext = createContext<CDP_context1 | CDP_context2>(
+const ContentContext = createContext<CDP_context1 | CDP_context2 | CDP_context3>(
   skeleton_context1
 );
 
@@ -33,6 +34,7 @@ export const ContentfulDataProvider = ({
   const contextType = getDataType(dataFor);
   const [contextEG1, setContextEG1] = useState<CDP_context1>(skeleton_context1);
   const [contextEG2, setContextEG2] = useState<CDP_context2>(skeleton_context2);
+  const [contextEG3, setContextEG3] = useState<CDP_context2>(skeleton_context3);
   const { data } = useContentfulForClientEntries(dataFor, contentId);
 
 
@@ -52,10 +54,15 @@ export const ContentfulDataProvider = ({
           setContextEG2(formatedData2);
         }
       }
+      if (getDataType(dataFor)==='dataFor3') {
+        let formatedData3 = getFormatedDataForContext(data, dataFor as dataFor3);
+        if (isMounted && formatedData3?.__isNormalized) {
+          setContextEG3(formatedData3);
+        }
+      }
 
        console.log('+++++++++++++++++++++++++++++++++++contextType***', contextType );
-        
-     
+
       return () => {
         isMounted = false;
       };
@@ -72,6 +79,11 @@ export const ContentfulDataProvider = ({
       {contextType==='dataFor2' &&
         <ContentContext.Provider value={contextEG2}>
           {children(contextEG2)}
+        </ContentContext.Provider>
+      }
+      {contextType==='dataFor3' &&
+        <ContentContext.Provider value={contextEG3}>
+          {children(contextEG3)}
         </ContentContext.Provider>
       }
     </>
