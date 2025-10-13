@@ -38,10 +38,10 @@
 
         a {
           color: core.$text-on-color;
-          text-decoration: none;
+          text-decoration: underline;
           &:hover {
             color: #00d5ff;
-            text-decoration: underline;
+            text-decoration: none;
           }
         }
       }

@@ -10,9 +10,7 @@
 
 .homePage {
   // Variables ...
-  --enj-home-aboutSec-height: 730px;
-  --enj-home-aboutSec-title-top: -2rem;
-  --enj-home-section-title-mb: 0.25rem;
+  --enj-home-section-title-mb: 0.5rem;
 
 
 
@@ -31,49 +29,10 @@
   .sectionTitle {
     margin-bottom: var(--enj-home-section-title-mb);
 
-    @include core.breakpoint('md') {
-      --enj-home-section-title-mb: 0.5rem;
-    }
+    // @include core.breakpoint('md') {}
 
     @include core.breakpoint('lg') {
       --enj-home-section-title-mb: 0.75rem;
-    }
-  }
-
-  .aboutSection {
-    background-color: #8f8793;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    min-height: var(--enj-home-aboutSec-height);
-
-    @include core.breakpoint('md') {
-      --enj-home-aboutSec-height: 540px;
-    }
-
-    @include core.breakpoint('lg') {
-      --enj-home-aboutSec-height: 620px;
-    }
-
-    @include core.breakpoint('xlg') {
-      --enj-home-aboutSec-height: 650px;
-    }
-
-    #about-me-heading {
-      position: absolute;
-      top: var(--enj-home-aboutSec-title-top);
-
-      @include core.breakpoint('md') {
-        --enj-home-aboutSec-title-top: -2.5rem;
-      }
-
-      @include core.breakpoint('lg') {
-        --enj-home-aboutSec-title-top: -3.2rem;
-      }
-
-      // @include core.breakpoint('xlg') {
-      // }
     }
   }
 

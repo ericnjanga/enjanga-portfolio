@@ -20,6 +20,8 @@ const BackgroundSection: React.FC<BackgroundSectionProps> = ({
   children,
 }) => {
   const [imageUrl, setImageUrl] = useState<string | null>(null);
+  // CSS background-blend-mode: It applies a nice linear gradient which darkens the background image
+  const bgBlendMode = 'linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.8))'; 
 
   useEffect(() => {
     const fetchImage = async () => {
@@ -50,7 +52,7 @@ const BackgroundSection: React.FC<BackgroundSectionProps> = ({
       aria-labelledby={ariaLabelledby}
       tabIndex={tabIndex}
       style={{
-        backgroundImage: imageUrl ? `url(${imageUrl})` : undefined,
+        backgroundImage: imageUrl ? `${bgBlendMode}, url(${imageUrl})` : undefined,
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
