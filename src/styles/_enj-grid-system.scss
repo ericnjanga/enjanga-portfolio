@@ -1,0 +1,120 @@
+@use 'enjanga-core-setup/styles' as core;
+@use './utils/mixins';
+
+
+
+/**
+ * GRIDS
+ * ------------------------------------------
+**/
+
+:root {
+  --enj-grid-content-gap: 10px;
+}
+
+
+
+
+
+
+/**
+ * General grid system
+ * ------------------------------------------
+**/
+.enj-gridSys {
+  .enj-gridSys__cols-wrapper,
+  .enj-gridSys__offset-col {
+    .cds--css-grid-column {
+      &:nth-of-type(1n) {
+        margin-top: var(--enj-grid-content-gap);
+      }
+      &:first-of-type { // Don't apply top margin to first element 
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+
+
+/**
+ * Grid system 1
+ * ------------------------------------------
+**/
+.enj-gridSys-type-1 {
+  .enj-gridSys__cols-wrapper {
+    .cds--css-grid-column {
+      @include core.breakpoint('md') {
+        &:nth-of-type(2n + 1) {
+          margin-right: calc(var(--enj-grid-content-gap) / 2);
+        }
+        &:nth-of-type(2n) {
+          margin-left: calc(var(--enj-grid-content-gap) / 2);
+        }
+      }
+    }
+  }
+
+  &.enj-gridSys-padding {
+    @include mixins.PCS-paddingTop;
+  }
+}
+
+
+
+/**
+ * Grid system 2
+ * ------------------------------------------
+ * (Has an offset column)
+**/
+.enj-gridSys-type-2 {
+  .enj-gridSys__offset-col {
+    .cds--css-grid-column {
+      @include core.breakpoint('md') {
+        --enj-grid-content-gap: 6px;
+        margin-left: calc(var(--enj-grid-content-gap) / 2);
+      }
+    }
+  }
+
+  .enj-gridSys__cols-wrapper {
+    .cds--css-grid-column {
+      @include core.breakpoint('md') {
+        &:nth-of-type(2n + 1) {
+          margin-right: calc(var(--enj-grid-content-gap) / 2);
+        }
+        &:nth-of-type(2n) {
+          margin-left: calc(var(--enj-grid-content-gap) / 2);
+        }
+      }
+
+      // @include core.breakpoint('lg') {
+      // }
+      // @include core.breakpoint('xlg') {
+      // }
+    }
+  }
+}
+
+
+
+/**
+ * Grid system 3
+ * ------------------------------------------
+ * Only creates between vertical columns on mobile devices.
+**/
+.enj-gridSys-type-3 {
+  .cds--css-grid-column {
+    &:nth-of-type(1n) {
+      margin-top: var(--enj-grid-content-gap);
+    }
+    &:first-of-type { // Don't apply top margin to first element 
+      margin-top: 0;
+    }
+
+    @include core.breakpoint('md') {
+      --enj-grid-content-gap: 0;
+    }
+  }
+}
+

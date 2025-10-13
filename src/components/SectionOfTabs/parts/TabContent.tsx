@@ -24,7 +24,7 @@ const SectionTabContent = ({ tab, className }: SectionTabContentProps) => (
       
     </Column>
     <Column lg={{ span: 10, offset: 6 }} md={8} sm={4}>
-      <Grid className="tabs-group-content">
+      <Grid className="enj-gridSys__cols-wrapper">
         <ContentfulDataProvider
           dataFor="scopeOfExp Entry Collection"
           contentId={tab?.sys?.id}

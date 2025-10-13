@@ -10,12 +10,23 @@
   --enj-aboutSec-title-top: -2.4rem;
 
   // Declarations ...
-  background-color: #aaa4d4;
+  background-color: #0547c4;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   min-height: var(--enj-aboutSec-height);
+
+
+  // Override ":first-of-type" rule (_enj-grid-system) so that 
+  // the first element can have a top margin
+  .enj-gridSys {
+    .enj-gridSys__cols-wrapper {
+      .cds--css-grid-column:first-of-type {
+        margin-top: var(--enj-grid-content-gap);
+      }
+    }
+  }
 
   @include core.breakpoint('md') {
     --enj-aboutSec-height: 840px;

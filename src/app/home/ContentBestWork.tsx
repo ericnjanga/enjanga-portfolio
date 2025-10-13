@@ -6,7 +6,7 @@ import { ContentModel3 } from '@/libs/contentful/types';
 
 
 const ContentBestWork = ({ listOfItems }: { listOfItems: ContentModel3[] }) => (
-  <Grid className="tabs-group-content">
+  <Grid className="enj-gridSys enj-gridSys-type-3">
     {listOfItems?.map((item, index) => {
       return (
         <Column key={item?.sys?.id ?? index} lg={8} md={4} sm={4}>

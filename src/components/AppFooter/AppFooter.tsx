@@ -43,7 +43,7 @@ const AppFooter = () => {
               </Column>
 
               <Column lg={12} md={4} sm={4} className="">
-                <Grid className="tabs-group-content">
+                <Grid>
                   <Column lg={8} md={4} sm={4} className="copyright">
                     <ContentfulDataProvider dataFor="FooterCopyright Entry">
                       {({ item }) => (

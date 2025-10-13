@@ -1,11 +1,11 @@
 import { Grid, Column } from '@carbon/react';
 import { CustomTile } from 'enjanga-components-library';
-import '@/styles/_grid-of-customTiles.scss';
+import '@/styles/_enj-grid-system.scss';
 import { ContentfulDataProvider } from '@/libs/contentful/dataProvider';
 import { CP_nameType } from 'enjanga-components-library';
 
 const ContentAbout = () => (
-  <Grid className="grid-of-customTiles grid-of-customTiles-1">
+  <Grid className="enj-gridSys enj-gridSys-type-2">
     <ContentfulDataProvider dataFor="AboutInfo Entry Collection">
       {({ items }) => {
         const card1 = items && items[0];
@@ -20,7 +20,7 @@ const ContentAbout = () => (
               sm={4}
               className=""
             >
-              <Grid className="tabs-group-content--single-col">
+              <Grid className="enj-gridSys__offset-col">
                 <Column lg={16} md={8} sm={4}>
                   <CustomTile
                     className=""
@@ -44,7 +44,7 @@ const ContentAbout = () => (
             </Column>
 
             <Column lg={{ span: 10, offset: 6 }} md={8} sm={4} className="">
-              <Grid className="tabs-group-content">
+              <Grid className="enj-gridSys__cols-wrapper">
                 <Column lg={5} md={4} sm={4}>
                   <CustomTile
                     className=""

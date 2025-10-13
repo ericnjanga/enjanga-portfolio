@@ -12,7 +12,7 @@ const SectionTabPanels = ({ listOfItems }: SectionTabPanelsProps) => (
     {listOfItems?.map((item, index) => (
       <TabPanel
         key={item?.sys?.id ?? index}
-        className="grid-of-customTiles grid-of-customTiles-2 grid-of-customTiles-padding">
+        className="enj-gridSys enj-gridSys-type-1 enj-gridSys-padding">
         <div className="tab-content">
           <SectionTabContent className='enjanga-tabpanel-xxx' tab={item} />
         </div>
