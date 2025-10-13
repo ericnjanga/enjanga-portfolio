@@ -10,19 +10,27 @@
 .app-footer {
   // Variables ...
   --enj-footer-padd: #{core.$spacing-09};
-  --enj-footer-marg: #{core.$spacing-05};
+  --enj-footer-marg: #{core.$spacing-07};
   --enj-block-marg: #{core.$spacing-06};
+  --enj-footer-listLink-mrg: #{core.$spacing-06};
+  --enj-footer-listLink-first-child-mrg: #{core.$spacing-06};
 
   // Declarations ...
   padding: var(--enj-footer-padd) 0;
   background-color: core.$cool-gray-90;
 
-  &__col1 {
-    margin-bottom: var(--enj-block-marg);
-  }
-
   &__logo {
     font-size: 1.9rem;
+  }
+
+  .app-footer__list-links {
+    .cds--css-grid-column {
+      margin-top: var(--enj-footer-listLink-mrg);
+
+      &:first-of-type {
+        margin-top: var(--enj-footer-listLink-first-child-mrg);
+      }
+    }
   }
 
   .enj-BrandLogo--text {
@@ -72,12 +80,14 @@
 
   @include core.breakpoint('md') {
     --enj-footer-padd: #{core.$spacing-10};
+    --enj-footer-listLink-first-child-mrg: 0;
   }
 
   @include core.breakpoint('lg') {
     --enj-footer-padd: #{core.$spacing-11};
     --enj-footer-marg: #{core.$spacing-07};
     --enj-block-marg: 0;
+    --enj-footer-listLink-mrg: 0;
   }
 
   @include core.breakpoint('xlg') {
