@@ -1,7 +1,8 @@
 import { useQuery } from '@tanstack/react-query';
 import { contentfulDataQuery } from '@/libs/contentful/contentful-dataQuery';
 import { normalizeContentfulResponse } from '@/libs/contentful/contentful-contentNormalizer';
-import { getContentfulQueryConfig, DataFor } from '../contentful-queryConfig';
+import { getContentfulQueryConfig } from '../contentful-queryConfig';
+import type { DataFor1, DataFor2, DataFor3, DataFor4, DataFor5 } from '../types';
 
 /**
  * Direct client-side fetch to Contentful GraphQL API.
@@ -10,7 +11,7 @@ import { getContentfulQueryConfig, DataFor } from '../contentful-queryConfig';
  * @returns
  */
 export const useContentfulForClientEntries = (
-  dataFor: DataFor,
+  dataFor: DataFor1 | DataFor2 | DataFor3 | DataFor4 | DataFor5,
   contentId?: string
 ) => {
   const { query, variables, trackingInfo } = getContentfulQueryConfig(dataFor, contentId);

@@ -25,7 +25,7 @@ export type DataFor2 = 'scopeOfExp Parent Entry Collection' | 'scopeOfExp Entry 
 export type DataFor3 = 'Quotes Entry Collection';
 
 // DataFor4: ContentModel3[] -> ContextType4
-export type DataFor4 = 'CaseStudy Entry Collection';
+export type DataFor4 = 'CaseStudy Entry Collection' | 'BlogPost Entry Collection';
 
 // DataFor5: ContentModel4[] -> ContextType5
 export type DataFor5 = 'FooterLinks Entry Collection';
@@ -46,6 +46,7 @@ export const getDataType = (dataFor: DataFor1 | DataFor2 | DataFor3 | DataFor4 |
       return 'DataFor3';
 
     case 'CaseStudy Entry Collection':
+    case 'BlogPost Entry Collection':
       return 'DataFor4';
 
     case 'FooterLinks Entry Collection':
@@ -55,9 +56,7 @@ export const getDataType = (dataFor: DataFor1 | DataFor2 | DataFor3 | DataFor4 |
 
 
 
-export type DataFor =
-  | 'BlogPost Entry Collection'   
-  | 'BlogPost Entry';
+export type DataFor = 'BlogPost Entry';
 
  
 

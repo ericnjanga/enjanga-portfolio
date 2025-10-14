@@ -86,9 +86,9 @@ export function getContentfulQueryConfig(dataFor: DataFor1 | DataFor2 | DataFor3
       query = queryData.quotesCollection;
       break;
 
-    // case 'BlogPost Entry Collection':
-    //   query = queryData.blogPostCollection;
-    //   break;
+    case 'BlogPost Entry Collection':
+      query = queryData.blogPostCollection;
+      break;
   }
 
   return { query, variables, trackingInfo };

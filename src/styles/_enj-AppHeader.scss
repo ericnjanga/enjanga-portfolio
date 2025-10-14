@@ -11,7 +11,17 @@
   .cds--header__name,
   a.cds--header__menu-item {
     &:hover {
-      background-color: core.$purple-30;
+      color: #fff;
+      background-color: #0547c4;
+    }
+  }
+
+  .cds--header__action {
+    &:active {
+      background-color: #0547c4;
+      svg {
+        fill: #fff;
+      }
     }
   }
 }

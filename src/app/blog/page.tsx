@@ -13,15 +13,15 @@ export default function BlogRoot() {
   return (
     <div className="blogPage">
       <ContentfulDataProvider dataFor="BannerBlogPage Entry">
-        {({ title, description }) => (
+        {({ item }) => (
           <Banner
             className="page-banner"
             featuredText={{
               heading: {
-                children: title,
+                children: item.title,
               },
               smartText: {
-                richText: description,
+                richText: item.description,
               },
             }}
           />
@@ -32,9 +32,9 @@ export default function BlogRoot() {
         <Grid>
           {' '}
           {/* fullWidth */}
-          {/* <ContentfulDataProvider dataFor="BlogPost Entry Collection">
-            {({ orderedItems }) =>
-              orderedItems?.map((item) => {
+          <ContentfulDataProvider dataFor="BlogPost Entry Collection">
+            {({ items }) =>
+              items?.map((item) => {
                 return (
                   <Column
                     key={item?.sys?.id}
@@ -64,7 +64,7 @@ export default function BlogRoot() {
                 );
               })
             }
-          </ContentfulDataProvider> */}
+          </ContentfulDataProvider>
         </Grid>
       </article>
     </div>

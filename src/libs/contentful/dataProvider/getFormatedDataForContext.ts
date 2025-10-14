@@ -56,6 +56,10 @@ function getFormatedDataForContext(
         } as ContentModel1,
         __isNormalized: true,
       } as ContextType1;
+
+      if (dataFor === 'BannerBlogPage Entry') {
+        console.log('.....>', contextValue);
+      }
       break;
 
     case 'scopeOfExp Parent Entry Collection':
@@ -65,10 +69,6 @@ function getFormatedDataForContext(
         items: sortByOrderProp(data) as ContentModel2[],
         __isNormalized: true,
       } as ContextType2;
-      // console.log('++++++++>>>>>>>>>>>>+++++++++++++++++');
-      // console.log('????? data = ', data);
-      // // console.log('????? contextValue = ', contextValue, value);
-      // console.log('++++++++>>>>>>>>>>>>+++++++++++++++++');
       break;
 
     case 'Quotes Entry Collection':
@@ -79,6 +79,7 @@ function getFormatedDataForContext(
       break;
 
     case 'CaseStudy Entry Collection':
+    case 'BlogPost Entry Collection':
       contextValue = {
         items: data as ContentModel3[],
         __isNormalized: true,

@@ -5,7 +5,7 @@
 
 // tests/contentful-integration-test.test.tsx
 import React from 'react';
-import { vi, describe, it, expect, beforeEach } from 'vitest';
+import { describe, it, expect } from 'vitest';
 import { renderHook, waitFor } from '@testing-library/react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { contentfulForServerEntriesFetch } from '@/libs/contentful/contentful-forServerFetchEntries';
@@ -289,25 +289,25 @@ describe.runIf(process.env.RUN_INTEGRATION_TESTS === 'true')(
 
 
 
-    // it(`["BlogPost Entry Collection"] fetches the same normalized data (server + client)`, async () => {
-    //   const serverResult = await contentfulForServerEntriesFetch(
-    //     'BlogPost Entry Collection'
-    //   );
-    //   expect(serverResult.length).toBeGreaterThan(0);
+    it(`["BlogPost Entry Collection"] fetches the same normalized data (server + client)`, async () => {
+      const serverResult = await contentfulForServerEntriesFetch(
+        'BlogPost Entry Collection'
+      );
+      expect(serverResult.length).toBeGreaterThan(0);
 
-    //   const { result } = renderHook(
-    //     () => useContentfulForClientEntries('BlogPost Entry Collection'),
-    //     { wrapper: createWrapper() }
-    //   );
+      const { result } = renderHook(
+        () => useContentfulForClientEntries('BlogPost Entry Collection'),
+        { wrapper: createWrapper() }
+      );
 
-    //   await waitFor(() => {
-    //     expect(result.current.isSuccess).toBe(true);
-    //   });
+      await waitFor(() => {
+        expect(result.current.isSuccess).toBe(true);
+      });
 
-    //   const clientResult = result.current.data;
-    //   expect(serverResult).toEqual(clientResult);
-    //   expect(serverResult).toEqual(blogPostCollectionFixture.data.en.items);
-    // });
+      const clientResult = result.current.data;
+      expect(serverResult).toEqual(clientResult);
+      expect(serverResult).toEqual(blogPostCollectionFixture.data.en.items);
+    });
 
 
 
