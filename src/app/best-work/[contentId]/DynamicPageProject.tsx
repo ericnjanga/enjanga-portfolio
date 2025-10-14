@@ -1,13 +1,13 @@
-// src/app/best-work/[contentId]/ProjectPage.tsx
+// src/app/best-work/[contentId]/DynamicPageProject.tsx
 'use client';
  
 import { Banner, CMSRichText } from 'enjanga-components-library';
 import { Grid, Column } from '@carbon/react';
 import { ContentfulDataProvider } from '@/libs/contentful/dataProvider';
-import { ArticlePageProps } from '@/libs/types';
+import type { DynamicPageClient } from '@/libs/types';
 import './../../../styles/_blogs-and-articles.scss'; 
   
-const ProjectPage = ({ params }: ArticlePageProps) => (
+const DynamicPageProject = ({ params }: DynamicPageClient) => (
   <div className="articlePage">
     <ContentfulDataProvider dataFor="CaseStudy Entry" contentId={params.contentId}>
       {({ title, description }) => (
@@ -38,4 +38,4 @@ const ProjectPage = ({ params }: ArticlePageProps) => (
   </div>
 );
 
-export default ProjectPage;
+export default DynamicPageProject;

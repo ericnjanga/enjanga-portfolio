@@ -42,12 +42,17 @@ export const ContentfulDataProvider = ({
   const { data } = useContentfulForClientEntries(dataFor, contentId);
 
 
+        console.log(`---------.   ${dataFor} - ${contentId}   ---------`);
+  
+
+
   useEffect(() => {
     let isMounted = true;
 
     if (Array.isArray(data) && data.length > 0) {
       if (getDataType(dataFor)==='DataFor1') {
         let formatedData1 = getFormatedDataForContext(data, dataFor as DataFor1);
+        console.log(`**********.   ${dataFor}     **********`);
         if (isMounted && formatedData1?.__isNormalized) {
           setContextEG1(formatedData1);
         }
@@ -76,8 +81,6 @@ export const ContentfulDataProvider = ({
           setContextEG5(formatedData5);
         }
       }
-
-       console.log('+++++++++++++++++++++++++++++++++++contextType***', contextType );
 
       return () => {
         isMounted = false;

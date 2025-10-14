@@ -1,3 +1,4 @@
+// src/app/client-providers.tsx
 'use client';
 
 import { useEffect } from 'react';
@@ -6,19 +7,18 @@ import { Providers } from './providers';
 import { AppUtilityProvider } from '../utils/UtilityContext';
 
 /**
- * Client component wrapper that handles client-side logic globally (polyfill, context providers).
- * This keeps layout.tsx server-only, while polyfills and contexts load on the client.
+ * ClientProviders:
+ * Runs only on the client to set up polyfills and React contexts
+ * without marking the root layout as dynamic.
  */
-export default function ClientLayout({
+export default function ClientProviders({
   children,
 }: {
   children: React.ReactNode;
 }) {
   useEffect(() => {
-    // Smooth scroll polyfill (needed for Safari / old browsers)
     smoothscroll.polyfill();
 
-    // Only load inert polyfill if not supported natively
     if (
       typeof HTMLElement !== 'undefined' &&
       !('inert' in HTMLElement.prototype)

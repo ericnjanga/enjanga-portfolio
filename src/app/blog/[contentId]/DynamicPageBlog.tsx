@@ -1,21 +1,21 @@
-// src/app/blog/[contentId]/BlogArticlePage.tsx
+// src/app/blog/[contentId]/DynamicPageBlog.tsx
 'use client';
 
 import { Banner, CMSRichText } from 'enjanga-components-library';
 import { Grid, Column } from '@carbon/react';
 import { ContentfulDataProvider } from '@/libs/contentful/dataProvider';
-import { ArticlePageProps } from '@/libs/types';
+import type { DynamicPageClient } from '@/libs/types';
 import './../../../styles/_blogs-and-articles.scss';
 
-const BlogArticlePage = ({ params }: ArticlePageProps) => (
-  <div className="articlePage">
+const DynamicPageBlog = ({ params }: DynamicPageClient) => (
+  <div className="articlePage"><h1>+++++-----{params.contentId}++++</h1>
     <ContentfulDataProvider dataFor="BlogPost Entry" contentId={params.contentId}>
-      {({ title, richDescription }) => (
+      {({ item }) => (
         <>
           <Banner
             className="page-banner"
             featuredText={{
-              heading: { children: title },
+              heading: { children: item.title },
               smartText: {},
               isHidden: 'smartText',
             }}
@@ -23,7 +23,7 @@ const BlogArticlePage = ({ params }: ArticlePageProps) => (
           <article className="page-content">
             <Grid>
               <Column lg={10} md={8} sm={4}>
-                <CMSRichText data={richDescription} />
+                <CMSRichText data={item.description} />
               </Column>
             </Grid>
           </article>
@@ -33,4 +33,4 @@ const BlogArticlePage = ({ params }: ArticlePageProps) => (
   </div>
 );
 
-export default BlogArticlePage;
+export default DynamicPageBlog;

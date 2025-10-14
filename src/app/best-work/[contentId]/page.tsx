@@ -1,6 +1,7 @@
 // src/app/best-work/[contentId]/page.tsx  (server component by default)
 import { generateParamsForContent } from '@/libs/generateStaticParams';
-import ProjectPage from './ProjectPage';
+import DynamicPageProject from './DynamicPageProject';
+import type { DynamicPageServer } from '@/libs/types';
 
 /*
  * This function tells Next.js which dynamic routes to pre-render at build time
@@ -22,7 +23,7 @@ export async function generateStaticParams() {
 }
 
 
-export default async function Page(props: { params: Promise<{ contentId: string }> }) {
+export default async function Page(props: DynamicPageServer) {
   /**
    * In the latest Next.js App Router, `params` can be a React-wrapped Promise
    * during server rendering. It must be awaited before accessing its properties.
@@ -31,5 +32,5 @@ export default async function Page(props: { params: Promise<{ contentId: string 
    * like `contentId`.
    */
   const { contentId } = await props.params; 
-  return <ProjectPage params={{ contentId }} />;
+  return <DynamicPageProject params={{ contentId }} />;
 }

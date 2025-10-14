@@ -311,26 +311,26 @@ describe.runIf(process.env.RUN_INTEGRATION_TESTS === 'true')(
 
 
 
-    // it(`["BlogPost Entry"] fetches the same normalized data (server + client)`, async () => {
-    //   const serverResult = await contentfulForServerEntriesFetch(
-    //     'BlogPost Entry',
-    //     blogEntryId
-    //   );
-    //   expect(serverResult.length).toBeGreaterThan(0);
+    it(`["BlogPost Entry"] fetches the same normalized data (server + client)`, async () => {
+      const serverResult = await contentfulForServerEntriesFetch(
+        'BlogPost Entry',
+        blogEntryId
+      );
+      expect(serverResult.length).toBeGreaterThan(0);
 
-    //   const { result } = renderHook(
-    //     () => useContentfulForClientEntries('BlogPost Entry', blogEntryId),
-    //     { wrapper: createWrapper() }
-    //   );
+      const { result } = renderHook(
+        () => useContentfulForClientEntries('BlogPost Entry', blogEntryId),
+        { wrapper: createWrapper() }
+      );
 
-    //   await waitFor(() => {
-    //     expect(result.current.isSuccess).toBe(true);
-    //   });
+      await waitFor(() => {
+        expect(result.current.isSuccess).toBe(true);
+      });
 
-    //   const clientResult = result.current.data;
-    //   expect(serverResult).toEqual(clientResult);
-    //   expect(serverResult).toEqual([blogPostsEntryFixture.data.en]);
-    // });
+      const clientResult = result.current.data;
+      expect(serverResult).toEqual(clientResult);
+      expect(serverResult).toEqual([blogPostsEntryFixture.data.en]);
+    });
 
 
 

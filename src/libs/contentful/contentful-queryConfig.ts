@@ -73,10 +73,10 @@ export function getContentfulQueryConfig(dataFor: DataFor1 | DataFor2 | DataFor3
       variables.sectionId = contentId ?? '';
       break;
 
-    // case 'BlogPost Entry':
-    //   query = queryData.blogPostById;
-    //   variables.sectionId = contentId ?? '';
-    //   break;
+    case 'BlogPost Entry':
+      query = queryData.blogPostById;
+      variables.sectionId = contentId ?? '';
+      break;
 
     case 'CaseStudy Entry Collection':
       query = queryData.projectsCollection;

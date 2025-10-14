@@ -1,6 +1,7 @@
 // src/app/blog/[contentId]/page.tsx  (server component by default)
-import { generateParamsForContent } from '@/libs/generateStaticParams';
-import BlogArticlePage from './BlogArticlePage';
+import { generateParamsForContent } from '@/libs/generateStaticParams'; 
+import DynamicPageBlog from './DynamicPageBlog';
+import type { DynamicPageServer } from '@/libs/types';
 
 /*
  * This function tells Next.js which dynamic routes to pre-render at build time
@@ -11,9 +12,16 @@ import BlogArticlePage from './BlogArticlePage';
  * Next.js will generate /blog/abc and /blog/xyz as static pages.
 */
 export async function generateStaticParams() {
+  /**
+   * Although generateStaticParams() is asynchronous, Next.js automatically
+   * awaits it internally when pre-generating static pages.
+   * 
+   * In other words, generateStaticParams() itself returns a Promise, but by the time
+   * the static build completes, Next.js has already resolved that Promise.
+   */
   return generateParamsForContent('BlogPost Entry Collection');
 }
 
-export default function Page({ params }: { params: { contentId: string } }) {
-  return <BlogArticlePage params={params} />;
+export default function Page(props: DynamicPageServer) {
+  return <DynamicPageBlog params={props} />;
 }

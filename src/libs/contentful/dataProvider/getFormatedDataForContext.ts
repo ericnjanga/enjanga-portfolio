@@ -48,6 +48,7 @@ function getFormatedDataForContext(
     case 'BannerBlogPage Entry':
     case 'FooterCopyright Entry':
     case 'CaseStudy Entry':
+    case 'BlogPost Entry':
       const value = data?.shift();
       contextValue = {
         item: {
@@ -57,9 +58,9 @@ function getFormatedDataForContext(
         __isNormalized: true,
       } as ContextType1;
 
-      if (dataFor === 'BannerBlogPage Entry') {
-        console.log('.....>', contextValue);
-      }
+      // if (dataFor === 'BlogPost Entry') {
+      //   console.log('.....>', contextValue);
+      // }
       break;
 
     case 'scopeOfExp Parent Entry Collection':
@@ -93,6 +94,13 @@ function getFormatedDataForContext(
       } as ContextType5;
       break;
   }
+
+
+        
+        console.log('.....>', dataFor, contextValue);
+     
+
+
 
   return contextValue;
 }
