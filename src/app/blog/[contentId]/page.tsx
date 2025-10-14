@@ -22,6 +22,15 @@ export async function generateStaticParams() {
   return generateParamsForContent('BlogPost Entry Collection');
 }
 
-export default function Page(props: DynamicPageServer) {
-  return <DynamicPageBlog params={props} />;
+
+export default async function Page(props: DynamicPageServer) {
+  /**
+   * In the latest Next.js App Router, `params` can be a React-wrapped Promise
+   * during server rendering. It must be awaited before accessing its properties.
+   *
+   * This ensures that React has resolved the async boundary before we read values
+   * like `contentId`.
+   */
+  const { contentId } = await props.params;
+  return <DynamicPageBlog params={{ contentId }} />;
 }

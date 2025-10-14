@@ -19,7 +19,6 @@ import { useRouter, useSearchParams, usePathname } from "enjanga-core-setup/next
 
 export function useSectionNavigation() {
   const router = useRouter();
-  const searchParams = useSearchParams();
   const pathname = usePathname();
 
   const navigateToSection = (sectionId: string) => {

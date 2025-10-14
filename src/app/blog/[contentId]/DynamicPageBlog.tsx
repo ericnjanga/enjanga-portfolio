@@ -8,7 +8,7 @@ import type { DynamicPageClient } from '@/libs/types';
 import './../../../styles/_blogs-and-articles.scss';
 
 const DynamicPageBlog = ({ params }: DynamicPageClient) => (
-  <div className="articlePage"><h1>+++++-----{params.contentId}++++</h1>
+  <div className="articlePage">
     <ContentfulDataProvider dataFor="BlogPost Entry" contentId={params.contentId}>
       {({ item }) => (
         <>
