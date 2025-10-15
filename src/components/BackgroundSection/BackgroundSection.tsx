@@ -1,16 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import type { BackgroundSectionProps } from './types';
 
-type BackgroundSectionProps = {
-  id?: string;
-  className?: string;
-  ariaLabelledby?: string;
-  tabIndex?: number;
-  imageId: string; // Contentful asset ID
-  parallax?: boolean; // Enable/disable parallax
-  children: React.ReactNode;
-};
 
-const BackgroundSection: React.FC<BackgroundSectionProps> = ({
+const BackgroundSection = ({
   id,
   className,
   ariaLabelledby,
@@ -18,10 +10,11 @@ const BackgroundSection: React.FC<BackgroundSectionProps> = ({
   imageId,
   parallax = false,
   children,
-}) => {
+}: BackgroundSectionProps) => {
   const [imageUrl, setImageUrl] = useState<string | null>(null);
-  // CSS background-blend-mode: It applies a nice linear gradient which darkens the background image
-  const bgBlendMode = 'linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.8))'; 
+
+  // Dark gradient overlay (mobile-safe)
+  const gradient = 'linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.8))';
 
   useEffect(() => {
     const fetchImage = async () => {
@@ -45,6 +38,9 @@ const BackgroundSection: React.FC<BackgroundSectionProps> = ({
     if (imageId) fetchImage();
   }, [imageId]);
 
+  // Mobile detection to avoid parallax issues
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+
   return (
     <section
       id={id}
@@ -52,16 +48,18 @@ const BackgroundSection: React.FC<BackgroundSectionProps> = ({
       aria-labelledby={ariaLabelledby}
       tabIndex={tabIndex}
       style={{
-        backgroundImage: imageUrl ? `${bgBlendMode}, url(${imageUrl})` : undefined,
+        backgroundImage: imageUrl ? `${gradient}, url(${imageUrl})` : undefined,
+        backgroundBlendMode: 'multiply', // ✅ critical for the gradient to apply correctly
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
-        backgroundAttachment: parallax ? 'fixed' : 'scroll',
+        backgroundAttachment: parallax && !isMobile ? 'fixed' : 'scroll', // ✅ avoids mobile rendering bugs
       }}
     >
       {children}
     </section>
   );
 };
+
 
 export default BackgroundSection;
