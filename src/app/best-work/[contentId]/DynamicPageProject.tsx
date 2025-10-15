@@ -10,13 +10,13 @@ import './../../../styles/_blogs-and-articles.scss';
 const DynamicPageProject = ({ params }: DynamicPageClient) => (
   <div className="articlePage">
     <ContentfulDataProvider dataFor="CaseStudy Entry" contentId={params.contentId}>
-      {({ title, description }) => (
+      {({ item }) => (
         <>
           <Banner
             className="page-banner"
             featuredText={{
               heading: {
-                children: title,
+                children: item.title,
               },
               smartText: {},
               isHidden: 'smartText',
@@ -28,7 +28,7 @@ const DynamicPageProject = ({ params }: DynamicPageClient) => (
               {' '}
               {/* fullWidth */}
               <Column lg={10} md={8} sm={4} className="...">
-                <CMSRichText data={description} />
+                <CMSRichText data={item.description} />
               </Column>
             </Grid>
           </article>
