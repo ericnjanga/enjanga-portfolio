@@ -1,6 +1,6 @@
 import { CustomTile } from 'enjanga-components-library';
 import { Grid, Column } from '@carbon/react';
-import { ContentfulDataProvider } from '@/libs/contentful/dataProvider';
+import ContentfulDataProvider from '@/libs/contentful/dataProvider';
 import { ContentModel2 } from '@/libs/contentful/types';
 import { CP_nameType } from 'enjanga-components-library';
 

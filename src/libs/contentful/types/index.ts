@@ -76,6 +76,7 @@ export type ContentModel2 = {
   icon?: string;
   title?: string;
   blurb?: string;
+  description?: { json: { content: Node[] } };
 };
 
 export type ContentModel3 = {
@@ -86,6 +87,11 @@ export type ContentModel3 = {
   title?: string;
   blurb?: string;
   description?: { json: { content: Node[] } };
+  image?: {
+    url: string;
+    title: string;
+    description: string;
+  }
 };
 
 export type ContentModel4 = {
@@ -127,7 +133,7 @@ export type ContextType5 = {
  
 
 /**
- * Context types:
+ * CDP_EG1: Context Data Provider | EG: Entry Group
  * ------------------------------------------------------------------
  * Define the context provider data structure based on which 
  * content model is provided.
@@ -137,6 +143,34 @@ export interface CDP_propsType {
   contentId?: string;
   children: (props: ContextType1 | ContextType2 | ContextType3 | ContextType4 | ContextType5) => ReactNode;
 }
+export interface CDP_EG1 {
+  dataFor: DataFor1;
+  contentId?: string;
+  children: (props: ContextType1) => ReactNode;
+}
+export interface CDP_EG2 {
+  dataFor: DataFor2;
+  contentId?: string;
+  children: (props: ContextType2) => ReactNode;
+}
+export interface CDP_EG3 {
+  dataFor: DataFor3;
+  contentId?: string;
+  children: (props: ContextType3) => ReactNode;
+}
+ 
+export interface CDP_EG4 {
+  dataFor: DataFor4;
+  contentId?: string;
+  children: (props: ContextType4) => ReactNode;
+}
+export interface CDP_EG5 {
+  dataFor: DataFor5;
+  contentId?: string;
+  children: (props: ContextType5) => ReactNode;
+}
+ 
+ 
  
 
 /**

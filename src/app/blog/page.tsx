@@ -6,7 +6,7 @@ import {
   CTL_valid_linkTo,
 } from 'enjanga-components-library';
 import { Grid, Column } from '@carbon/react';
-import { ContentfulDataProvider } from '@/libs/contentful/dataProvider'; 
+import ContentfulDataProvider from '@/libs/contentful/dataProvider'; 
 import './../../styles/_blogs-and-articles.scss';
 
 export default function BlogRoot() {

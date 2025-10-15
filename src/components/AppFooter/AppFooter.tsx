@@ -7,7 +7,7 @@ import {
   CMSRichText,
   BrandLogo,
 } from 'enjanga-components-library';
-import { ContentfulDataProvider } from '@/libs/contentful/dataProvider';
+import ContentfulDataProvider from '@/libs/contentful/dataProvider';
 
 const AppFooter = () => {
   const { brand } = AppUseUtility();

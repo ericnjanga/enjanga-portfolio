@@ -13,7 +13,7 @@ import './../home/styles/expertises/_tabs.scss';
 import './../home/styles/_about.scss';
 import './../home/styles/_quotes.scss';
 import './../home/_home-theming.scss';
-import { ContentfulDataProvider } from '@/libs/contentful/dataProvider';
+import ContentfulDataProvider from '@/libs/contentful/dataProvider';
 import { BackgroundSection } from '@/components/BackgroundSection';
 import { contentfulContentIds } from '@/libs/contentful/contentful-queryConfig';
 import { ContentModel2 } from '@/libs/contentful/types'; 
