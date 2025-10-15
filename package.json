@@ -36,6 +36,7 @@
     "@types/node": "^20.0.0",
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",
+    "@types/smoothscroll-polyfill": "^0.3.4",
     "@vitejs/plugin-react": "^5.0.3",
     "dotenv": "^17.2.2",
     "eslint": "8.44.0",
