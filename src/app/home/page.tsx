@@ -20,8 +20,6 @@ import { ContentModel2 } from '@/libs/contentful/types';
 
 export default function LandingPage() {
   
-  console.log('********* RENDER LANDING PAGE');
-  
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const section = searchParams.get('section');
