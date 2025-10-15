@@ -1,11 +1,12 @@
 'use client';
 
 import { HeaderMenuItem } from '@carbon/react';
-import { Link, usePathname } from "enjanga-core-setup/next";
+import { Link } from "enjanga-core-setup/next";
 import { useSectionNavigation } from '@utils/navigation';
+import { useRouter } from 'next/navigation';
 
 export const GlobalNav = () => {
-  const pathname = usePathname();
+  const router = useRouter();
   const { navigateToSection } = useSectionNavigation();
 
   return (
@@ -19,9 +20,9 @@ export const GlobalNav = () => {
       <HeaderMenuItem onClick={() => navigateToSection('best-work')}>
         Best Work
       </HeaderMenuItem>
-      <Link href="/blog" passHref legacyBehavior>
-        <HeaderMenuItem>Blog</HeaderMenuItem>
-      </Link>
+      <HeaderMenuItem onClick={() => router.push('/blog')}>
+        Blog
+      </HeaderMenuItem>
     </>
   );
 };

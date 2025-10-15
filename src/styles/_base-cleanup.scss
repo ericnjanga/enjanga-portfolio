@@ -34,3 +34,9 @@
   --enjanga-top-nav-height: 3rem;
   margin-top: var(--enjanga-top-nav-height);
 }
+
+
+// Global nav quick cleanup
+.enj-AppHeader a {
+  text-decoration: none;
+}

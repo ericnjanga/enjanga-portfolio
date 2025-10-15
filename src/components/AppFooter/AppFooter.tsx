@@ -28,7 +28,7 @@ const AppFooter = () => {
                     {({ items }) => {
                       return items?.map((item) => {
                         return (
-                          <Column key={item?.sys.id} lg={4} md={4} sm={4}>
+                          <Column key={item?.sys?.id} lg={4} md={4} sm={4}>
                             <CMSRichText data={item?.description} />
                           </Column>
                         );
