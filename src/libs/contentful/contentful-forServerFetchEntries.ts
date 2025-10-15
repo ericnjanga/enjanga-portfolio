@@ -1,7 +1,8 @@
 // src/libs/contentful-forServerFetchEntries.ts
 import { normalizeContentfulResponse } from './contentful-contentNormalizer';
-import { getContentfulQueryConfig, DataFor } from './contentful-queryConfig';
+import { getContentfulQueryConfig } from './contentful-queryConfig';
 import { contentfulDataQuery } from './contentful-dataQuery';
+import type { DataFor1, DataFor2, DataFor3, DataFor4, DataFor5 } from './types';
 
 
 
@@ -10,7 +11,7 @@ import { contentfulDataQuery } from './contentful-dataQuery';
  * Can be used in generateStaticParams() or getStaticProps().
  */
 export async function contentfulForServerEntriesFetch(
-  dataFor: DataFor,
+  dataFor: DataFor1 | DataFor2 | DataFor3 | DataFor4 | DataFor5,
   contentId?: string
 ) {
   const { query, variables, trackingInfo } = getContentfulQueryConfig(dataFor, contentId);

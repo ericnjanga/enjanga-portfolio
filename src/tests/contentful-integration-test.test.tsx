@@ -34,10 +34,13 @@ import footerLinksCollectionFixture from './fixtures/footerLinksCollection.fixtu
 
 const createWrapper = () => {
   const queryClient = new QueryClient();
-  return ({ children }: { children: React.ReactNode }) => (
+  const Wrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => (
     <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
   );
+  Wrapper.displayName = 'QueryClientTestWrapper';
+  return Wrapper;
 };
+
  
 
 
