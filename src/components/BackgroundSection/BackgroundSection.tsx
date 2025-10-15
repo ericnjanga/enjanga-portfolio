@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import type { BackgroundSectionProps } from './types';
-
+import './_background-section.scss';
 
 const BackgroundSection = ({
   id,
@@ -12,9 +12,7 @@ const BackgroundSection = ({
   children,
 }: BackgroundSectionProps) => {
   const [imageUrl, setImageUrl] = useState<string | null>(null);
-
-  // Dark gradient overlay (mobile-safe)
-  const gradient = 'linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.8))';
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const fetchImage = async () => {
@@ -35,31 +33,38 @@ const BackgroundSection = ({
       }
     };
 
-    if (imageId) fetchImage();
-  }, [imageId]);
+    fetchImage();
 
-  // Mobile detection to avoid parallax issues
-  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+    // Detect mobile once on mount
+    if (typeof window !== 'undefined') {
+      setIsMobile(window.innerWidth < 768);
+    }
+  }, [imageId]);
 
   return (
     <section
       id={id}
-      className={className}
+      className={`background-section ${className ?? ''}`}
       aria-labelledby={ariaLabelledby}
       tabIndex={tabIndex}
-      style={{
-        backgroundImage: imageUrl ? `${gradient}, url(${imageUrl})` : undefined,
-        backgroundBlendMode: 'multiply', // ✅ critical for the gradient to apply correctly
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-        backgroundSize: 'cover',
-        backgroundAttachment: parallax && !isMobile ? 'fixed' : 'scroll', // ✅ avoids mobile rendering bugs
-      }}
     >
-      {children}
+
+      {/* ✅ Foreground content */}
+      <div className="background-content">{children}</div>
+
+
+      {/* ✅ Background image layer */}
+      {imageUrl && (
+        <div
+          className={`background-layer${parallax && !isMobile ? ' parallax' : ''}`}
+          style={{ backgroundImage: `url(${imageUrl})` }}
+        />
+      )}
+
+      {/* ✅ Dark overlay gradient */}
+      <div className="background-overlay" />
     </section>
   );
 };
-
 
 export default BackgroundSection;
