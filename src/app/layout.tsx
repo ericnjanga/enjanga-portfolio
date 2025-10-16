@@ -7,6 +7,7 @@ import { ReactNode } from "react";
 import ClientProviders from "./client-providers";
 import Script from "next/script";
 import { AnalyticsProvider } from "@/components/AnalyticsProvider";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title:
@@ -39,7 +40,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         {/* 👇 Client-only providers and analytics */}
         <ClientProviders>
           {children}
-          <AnalyticsProvider /> {/* 👈 Google Analytics Tracking */}
+          <Suspense>
+            <AnalyticsProvider /> {/* 👈 Google Analytics Tracking */}
+          </Suspense>
         </ClientProviders>
       </body>
     </html>
