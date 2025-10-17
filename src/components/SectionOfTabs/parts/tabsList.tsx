@@ -22,25 +22,19 @@ const iconMap: Record<string, React.ComponentType> = {
   Platforms,
 };
 
-const SectionTabsList = ({ listOfItems, className }: SectionTabsListProps) => {
-  // if (!listOfItems) {
-  //   return <div className="skeleton-animation">Skeleton - SectionTabsList</div>;
-  // }
+const SectionTabsList = ({ listOfItems, className }: SectionTabsListProps) => (
+  <TabList aria-label="Scope of Expertise tabs" className={className}>
+    {listOfItems?.map((item, index) => {
+      const IconComponent = iconMap[item?.icon || ''] || Code; // fallback to Code if not found
 
-  return (
-    <TabList aria-label="Scope of Expertise tabs" className={className}>
-      {listOfItems?.map((item, index) => {
-        const IconComponent = iconMap[item?.icon || ''] || Code; // fallback to Code if not found
-
-        return (
-          <Tab key={item?.sys?.id ?? index} renderIcon={IconComponent}>
-            {!item?.title && <div className='skeleton skeleton-text' role="presentation" style={{ width: '115px' }}></div>}
-            {item?.title}
-          </Tab>
-        );
-      })}
-    </TabList>
-  );
-};
+      return (
+        <Tab key={item?.sys?.id ?? index} renderIcon={IconComponent}>
+          {!item?.title && <div className='skeleton skeleton-text' role="presentation" style={{ width: '115px' }}></div>}
+          {item?.title}
+        </Tab>
+      );
+    })}
+  </TabList>
+);
 
 export default SectionTabsList;
