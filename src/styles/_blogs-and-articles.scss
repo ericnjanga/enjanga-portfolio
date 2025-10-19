@@ -7,6 +7,7 @@
   --enj-articlePage-Banner-marg: #{core.$spacing-07};
   --enj-articlePage-grid-col-2n-1-marg: 0 0 2.2rem 0;
   --enj-articlePage-grid-col-2n-marg: 0 0 2.2rem 0;
+  --enj-CMSRichText-hr-gap-override: #{core.$spacing-08};
 
   // Declarations ...
   .page-banner {
@@ -18,17 +19,29 @@
 
   @include core.breakpoint('md') {
     --enj-articlePage-Banner-marg: #{core.$spacing-08};
+    --enj-CMSRichText-hr-gap-override: #{core.$spacing-09};
   }
 
   @include core.breakpoint('lg') {
     --enj-articlePage-Banner-marg: #{core.$spacing-10};
     --enj-articlePage-grid-col-2n-1-marg: 0 2rem calc(2rem * 2.7) 0;
     --enj-articlePage-grid-col-2n-marg: 0 0 calc(2rem * 2.7) 2rem;
+    --enj-CMSRichText-hr-gap-override: #{core.$spacing-10};
   }
 
   @include core.breakpoint('xlg') {
     --enj-articlePage-grid-col-2n-1-marg: 0 2.5rem calc(2.5rem * 2.7) 0;
     --enj-articlePage-grid-col-2n-marg: 0 0 calc(2.5rem * 2.7) 2.5rem;
+    --enj-CMSRichText-hr-gap-override: #{core.$spacing-11};
+  }
+
+
+  // HR separators
+  // -----------
+  .enj-CMSRichText {
+    hr {
+      margin: var(--enj-CMSRichText-hr-gap-override) 0;
+    }
   }
 
   /**
