@@ -57,10 +57,6 @@ function getFormatedDataForContext(
         } as ContentModel1,
         __isNormalized: true,
       } as ContextType1;
-
-      // if (dataFor === 'BlogPost Entry') {
-      //   console.log('.....>', contextValue);
-      // }
       break;
 
     case 'scopeOfExp Parent Entry Collection':
@@ -94,14 +90,6 @@ function getFormatedDataForContext(
       } as ContextType5;
       break;
   }
-
-
-        
-        console.log('.....>', dataFor, contextValue);
-     
-
-
-
   return contextValue;
 }
 
