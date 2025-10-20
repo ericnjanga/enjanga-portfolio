@@ -85,7 +85,7 @@ function getFormatedDataForContext(
 
     case 'FooterLinks Entry Collection':
       contextValue = {
-        items: data as ContentModel4[],
+        items: sortByOrderProp(data) as ContentModel4[],
         __isNormalized: true,
       } as ContextType5;
       break;
