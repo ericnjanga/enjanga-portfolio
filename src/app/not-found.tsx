@@ -5,8 +5,10 @@ import { Link, useRouter } from "enjanga-core-setup/next";
 import { AppHeader, BrandLogo } from 'enjanga-components-library';
 import { GlobalActions, GlobalNav } from '../components/GlobalMenus';
 import { Content } from '@carbon/react';
+import { AppUseUtility } from '../utils/UtilityContext';
 
 export default function NotFound() {
+  const { brand } = AppUseUtility();
   const router = useRouter();
 
   // Fix for sticky 404 content
@@ -20,7 +22,7 @@ export default function NotFound() {
       <AppHeader
         brandLabel="Eric Njanga"
         brandRoute="/"
-        brand={<BrandLogo value="Brand Logo Here ..." />}
+        brand={<BrandLogo value={brand.name} />}
         navigation={<GlobalNav />}
         globalBarItems={<GlobalActions />}
       />
