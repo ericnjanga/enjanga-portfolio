@@ -12,6 +12,16 @@ import ContentfulDataProvider from '@/libs/contentful/dataProvider';
 const AppFooter = () => {
   const { brand } = AppUseUtility();
 
+  // I need column sizes to vary
+  const setColSize = (index: number) => {
+    switch(index) {
+      case 0: return 3;
+      case 1: return 5;
+      case 2: return 4;
+    }
+    return 2;
+  }
+
   return (
     <footer className="app-footer">
       <Content>
@@ -26,9 +36,9 @@ const AppFooter = () => {
                 <Grid className="app-footer__list-links">
                   <ContentfulDataProvider dataFor="FooterLinks Entry Collection">
                     {({ items }) => {
-                      return items?.map((item) => {
+                      return items?.map((item, index) => {
                         return (
-                          <Column key={item?.sys?.id} lg={4} md={4} sm={4}>
+                          <Column key={item?.sys?.id} lg={setColSize(index)} md={4} sm={4}>
                             <CMSRichText data={item?.description} />
                           </Column>
                         );
