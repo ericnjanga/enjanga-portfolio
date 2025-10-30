@@ -17,7 +17,7 @@
 
   // Declarations ...
   padding: var(--enj-footer-padd) 0;
-  background-color: core.$cool-gray-90;
+  background-color: #191947; // TODO: Convert to enjanga-core-setup color token
 
   &__logo {
     font-size: 1.9rem;
@@ -55,11 +55,15 @@
       }
     }
 
+    ul, ol {
+      padding-left: 1.2rem;
+    }
+
     // List headings ...
     h3 {
       font-size: 1.2rem;
       font-weight: bold;
-      color: #00d5ff;
+      color: #F81C9A; // TODO: Convert to enjanga-core-setup color token
     }
 
     a {

@@ -23,12 +23,17 @@
     // Active tab (selected)
     button.cds--tabs__nav-item.cds--tabs__nav-item--selected {
       background-color: #3E3E3E;
-      border-top: 2px solid #0F62FE; // TODO: Convert to enjanga-core-setup color token
+      border-top: 2px solid #F81C9A; // TODO: Convert to enjanga-core-setup color token
       color: #ffffff; // Ensure text is visible on dark background
       
       .cds--tabs__nav-item--icon svg {
         color: #ffffff; // Match icon color to text
       }
+    }
+
+    button.cds--tabs .cds--tabs__nav-link:active, 
+    button.cds--tabs .cds--tabs__nav-link:focus {
+      outline: 2px solid #F81C9A; // TODO: Convert to enjanga-core-setup color token 
     }
 
     // Inactive tabs (not selected)

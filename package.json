@@ -20,7 +20,7 @@
     "test:coverage": "vitest run --coverage"
   },
   "dependencies": {
-    "enjanga-components-library": "^1.0.29",
+    "enjanga-components-library": "^1.0.30",
     "enjanga-core-setup": "^1.0.20",
     "next": "^15.5.3",
     "react": "^19.1.1",
