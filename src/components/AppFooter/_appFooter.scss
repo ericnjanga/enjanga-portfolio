@@ -1,105 +1,80 @@
 @use 'enjanga-core-setup/styles' as core;
 
-/**
- * TO DO:
- --------
-  Find these design tokens and replace them in the code:
-  - #00D5FF 
- */
 
 .app-footer {
   // Variables ...
   --enj-footer-padd: #{core.$spacing-09};
-  --enj-footer-marg: #{core.$spacing-07};
-  --enj-block-marg: #{core.$spacing-06};
-  --enj-footer-listLink-mrg: #{core.$spacing-06};
-  --enj-footer-listLink-first-child-mrg: #{core.$spacing-06};
+  --enj-footer-title-mrg: 0.75rem;
+  // TODO: Convert to enjanga-core-setup color token
+  --enjanga-color1: #E3EBF9;
+  --enjanga-color2: #526890;
+  --enjanga-color3: #F96DBD;
+  --enjanga-color4: #191947;
 
   // Declarations ...
   padding: var(--enj-footer-padd) 0;
-  background-color: #191947; // TODO: Convert to enjanga-core-setup color token
+  background-color: var(--enjanga-color4); 
 
-  &__logo {
-    font-size: 1.9rem;
+
+  h3 {
+    border-bottom: 1px solid var(--enjanga-color2);
+    margin-bottom: var(--enj-footer-title-mrg);
   }
 
-  .app-footer__list-links {
-    .cds--css-grid-column {
-      margin-top: var(--enj-footer-listLink-mrg);
+  h3, p {
+    color: var(--enjanga-color1);
+  }
 
-      &:first-of-type {
-        margin-top: var(--enj-footer-listLink-first-child-mrg);
-      }
+  a {
+    color: var(--enjanga-color3);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
     }
   }
 
-  .enj-BrandLogo--text {
-    color: core.$cool-gray-40;
+  ul, ol {
+    padding: 0;
+
+    li {
+      margin-bottom: 1rem;
+    }
+    p {
+      > span:first-of-type {
+        display: block;
+      }
+    }
   }
 
   .enj-CMSRichText {
-    p:last-of-type,
-    ul {
-      margin-bottom: 0;
-      li {
-        color: core.$text-on-color;
+    figure {
+      background-color: transparent;
+      padding: 0;
 
-        a {
-          color: core.$text-on-color;
-          text-decoration: underline;
-          &:hover {
-            color: #00d5ff;
-            text-decoration: none;
-          }
-        }
+      img {
+        margin: 0;
+        width: 100%;
       }
     }
-
-    ul, ol {
-      padding-left: 1.2rem;
-    }
-
-    // List headings ...
-    h3 {
-      font-size: 1.2rem;
-      font-weight: bold;
-      color: #F81C9A; // TODO: Convert to enjanga-core-setup color token
-    }
-
-    a {
-      color: core.$purple-70;
-      &:hover {
-        text-decoration: none;
-      }
+    figcaption {
+      display: none;
     }
   }
 
-  .copyright {
-    margin-bottom: var(--enj-block-marg);
-
-    .enj-CMSRichText {
-      color: core.$cool-gray-30;
-    }
-  }
+  // @include core.breakpoint('sm') {
+  // }
 
   @include core.breakpoint('md') {
     --enj-footer-padd: #{core.$spacing-10};
-    --enj-footer-listLink-first-child-mrg: 0;
   }
 
   @include core.breakpoint('lg') {
+    --enj-footer-title-mrg: 1.5rem;
     --enj-footer-padd: #{core.$spacing-11};
-    --enj-footer-marg: #{core.$spacing-07};
-    --enj-block-marg: 0;
-    --enj-footer-listLink-mrg: 0;
   }
 
   @include core.breakpoint('xlg') {
     --enj-footer-padd: #{core.$spacing-12};
-  }
-
-  hr {
-    margin: var(--enj-footer-marg) 0;
-    border-color: core.$cool-gray-60;
   }
 }

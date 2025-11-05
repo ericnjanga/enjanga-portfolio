@@ -16,6 +16,12 @@ export const contentfulContentIds = {
     'Featured Image': '2eSLi2IP4sZrrPK0AeQPk7',
     'FooterLinks Entry Collection': '2uxFOT0LB1ET4SfM4dNWvo',
   },
+  singleEntries: {
+    'Footer links (Navigation)': '2ywSJ82pI7PZQ7f8YkeTaZ',
+    'Footer links (Published Work)': '3Fo2dEcwjF2C7hCjGzLitJ',
+    'Footer QR code': '2a4z7rYXGHCmtaspj0REbl',
+    'Footer QR code text': '6ZKYDI1P6NazFQdUxF4JhL',
+  }
 };
 
 
@@ -66,6 +72,11 @@ export function getContentfulQueryConfig(dataFor: DataFor1 | DataFor2 | DataFor3
     case 'FooterCopyright Entry':
       query = queryData.infoBlockById;
       variables.sectionId = contentfulContentIds.categories[dataFor];
+      break;
+
+    case 'FooterLinks --Entry--':
+      query = queryData.infoBlockById;
+      variables.sectionId = contentId ?? '';
       break;
 
     case 'CaseStudy Entry':

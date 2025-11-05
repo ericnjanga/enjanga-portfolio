@@ -49,6 +49,7 @@ function getFormatedDataForContext(
     case 'FooterCopyright Entry':
     case 'CaseStudy Entry':
     case 'BlogPost Entry':
+    case 'FooterLinks --Entry--':
       const value = data?.shift();
       contextValue = {
         item: {

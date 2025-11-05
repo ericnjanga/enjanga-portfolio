@@ -32,14 +32,34 @@ export const queryData = {
         blurb
         description {
           json
-        } 
+          links {
+            assets {
+              block {
+                sys { id }
+                url
+                title
+                description
+              }
+            }
+          }
+        }
       }
       fr: infoBlock(id: $sectionId, locale: $locale2) {  
         title
         blurb
         description {
           json
-        } 
+          links {
+            assets {
+              block {
+                sys { id }
+                url
+                title
+                description
+              }
+            }
+          }
+        }
       }
     }
   `,
