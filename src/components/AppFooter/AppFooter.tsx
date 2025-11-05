@@ -4,7 +4,6 @@ import { Content, Grid, Column } from '@carbon/react';
 // ENJ NPM component library
 import {
   CMSRichText,
-  BrandLogo,
   useContainerSize,
 } from 'enjanga-components-library';
 import ContentfulDataProvider from '@/libs/contentful/dataProvider';
@@ -20,9 +19,8 @@ const AppFooter = () => {
     contentfulContentIds.singleEntries['Footer QR code'],
   ];
 
-
   return (
-    <footer className="app-footer" ref={containerRef}>
+    <footer className="app-footer" ref={containerRef as React.RefObject<HTMLElement>}>
       <Content>
         <Grid className="app-footer__wrapper">
           {/** Only on smaller screens:
@@ -76,45 +74,7 @@ const AppFooter = () => {
               )}
             </ContentfulDataProvider>
           </Column>
-          {/* <Column lg={4} md={3} sm={4} className="app-footer__logo-wrapper">
-            <BrandLogo value={brand.name} className="app-footer__logo" />
-          </Column>
 
-          <Column lg={12} md={5} sm={4}>
-            <Grid>
-              <Column lg={12} md={4} sm={4}>
-                <Grid className="app-footer__list-links">
-                  <ContentfulDataProvider dataFor="FooterLinks Entry Collection">
-                    {({ items }) => {
-                      return items?.map((item, index) => {
-                        return (
-                          <Column key={item?.sys?.id} lg={setColSize(index)} md={4} sm={4}>
-                            <CMSRichText data={item?.description} />
-                          </Column>
-                        );
-                      });
-                    }}
-                  </ContentfulDataProvider>
-                </Grid>
-              </Column>
-
-              <Column lg={12} md={4} sm={4}>
-                <hr />
-              </Column>
-
-              <Column lg={12} md={4} sm={4}>
-                <Grid>
-                  <Column lg={8} md={4} sm={4} className="copyright">
-                    <ContentfulDataProvider dataFor="FooterCopyright Entry">
-                      {({ item }) => (
-                        <CMSRichText data={item?.description} />
-                      )}
-                    </ContentfulDataProvider>
-                  </Column>
-                </Grid>
-              </Column>
-            </Grid>
-          </Column> */}
         </Grid>
       </Content>
     </footer>
