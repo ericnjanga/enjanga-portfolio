@@ -62,9 +62,6 @@
     }
   }
 
-  // @include core.breakpoint('sm') {
-  // }
-
   @include core.breakpoint('md') {
     --enj-footer-padd: #{core.$spacing-10};
   }
