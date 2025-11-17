@@ -8,6 +8,7 @@ import {
 } from 'enjanga-components-library';
 import ContentfulDataProvider from '@/libs/contentful/dataProvider';
 import { contentfulContentIds } from '@/libs/contentful/contentful-queryConfig';
+import { GlobalNav } from '../GlobalMenus';
 
 const AppFooter = () => { 
   const { containerRef, activeBreakpoint } = useContainerSize();
@@ -66,6 +67,9 @@ const AppFooter = () => {
                 <CMSRichText data={item?.description} />
               )}
             </ContentfulDataProvider>
+
+            <h3>Navigation</h3>
+            <GlobalNav />
           </Column>
           <Column xlg={3} lg={4} md={4} sm={4}>
             <ContentfulDataProvider dataFor="FooterLinks --Entry--" contentId={footerIds[2]}>
