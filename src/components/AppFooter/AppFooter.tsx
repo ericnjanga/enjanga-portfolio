@@ -69,7 +69,9 @@ const AppFooter = () => {
             </ContentfulDataProvider>
 
             <h3>Navigation</h3>
-            <GlobalNav />
+            <ul>
+              <GlobalNav />
+            </ul>
           </Column>
           <Column xlg={3} lg={4} md={4} sm={4}>
             <ContentfulDataProvider dataFor="FooterLinks --Entry--" contentId={footerIds[2]}>

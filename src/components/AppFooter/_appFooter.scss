@@ -29,6 +29,12 @@
     color: var(--enjanga-color3);
     text-decoration: none;
 
+    // Overriding Carbon's styles
+    padding: 0;
+    border-width: 0;
+    font-size: 100%;
+    background-color: transparent;
+
     &:hover {
       text-decoration: underline;
     }

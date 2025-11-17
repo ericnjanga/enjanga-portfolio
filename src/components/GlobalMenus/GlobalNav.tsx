@@ -1,7 +1,6 @@
 'use client';
 
 import { HeaderMenuItem } from '@carbon/react';
-import { Link } from "enjanga-core-setup/next";
 import { useSectionNavigation } from '@utils/navigation';
 import { useRouter } from 'next/navigation';
 
@@ -11,6 +10,9 @@ export const GlobalNav = () => {
 
   return (
     <>
+      <HeaderMenuItem onClick={() => navigateToSection('introduction')}>
+        Introduction
+      </HeaderMenuItem>
       <HeaderMenuItem onClick={() => navigateToSection('scope-of-expertise')}>
         Scope of expertise
       </HeaderMenuItem>
