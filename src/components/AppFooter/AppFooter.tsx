@@ -62,12 +62,6 @@ const AppFooter = () => {
           )}
 
           <Column xlg={{ span: 3, offset: 10 }} lg={{ span: 4, offset: 8 }} md={4} sm={4}>
-            <ContentfulDataProvider dataFor="FooterLinks --Entry--" contentId={footerIds[1]}>
-              {({ item }) => (
-                <CMSRichText data={item?.description} />
-              )}
-            </ContentfulDataProvider>
-
             <h3>Navigation</h3>
             <ul>
               <GlobalNav />
