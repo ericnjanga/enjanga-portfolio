@@ -4,15 +4,21 @@ import { HeaderMenuItem } from '@carbon/react';
 import { useSectionNavigation } from '@utils/navigation';
 import { useRouter } from 'next/navigation';
 
-export const GlobalNav = () => {
+type GlobalNavType = {
+  parent?: 'top nav' | 'footer'
+};
+
+export const GlobalNav = ({ parent = 'top nav' }: GlobalNavType) => {
   const router = useRouter();
   const { navigateToSection } = useSectionNavigation();
 
   return (
     <>
-      <HeaderMenuItem onClick={() => navigateToSection('introduction')}>
-        Introduction
-      </HeaderMenuItem>
+      {parent === 'footer' && (
+        <HeaderMenuItem onClick={() => navigateToSection('introduction')}>
+          Introduction
+        </HeaderMenuItem>
+      )}
       <HeaderMenuItem onClick={() => navigateToSection('scope-of-expertise')}>
         Scope of expertise
       </HeaderMenuItem>

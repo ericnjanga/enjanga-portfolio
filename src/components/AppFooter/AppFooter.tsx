@@ -64,7 +64,7 @@ const AppFooter = () => {
           <Column xlg={{ span: 3, offset: 10 }} lg={{ span: 4, offset: 8 }} md={4} sm={4}>
             <h3>Navigation</h3>
             <ul>
-              <GlobalNav />
+              <GlobalNav parent='footer' />
             </ul>
           </Column>
           <Column xlg={3} lg={4} md={4} sm={4}>
