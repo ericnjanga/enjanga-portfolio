@@ -2320,10 +2320,10 @@ enjanga-components-library@^1.0.12:
   resolved "https://registry.npmjs.org/enjanga-components-library/-/enjanga-components-library-1.0.26.tgz"
   integrity sha512-TVmdS8Gndnkj+Di6TMspSs8rkC4MJ6GSYkU5eayKZnCdwRdQ4tJ21HQMH/DN8UIfmM0R/zmiAUj/WoneSrmeGg==
 
-enjanga-components-library@^1.0.33:
-  version "1.0.33"
-  resolved "https://registry.yarnpkg.com/enjanga-components-library/-/enjanga-components-library-1.0.33.tgz#0bda0a9159afd8df655dc9f6f0ed85edc088e6e7"
-  integrity sha512-u1ZAsDCnLoPKv7ZI4hXTL/kMNtzNJJLLWUyttUFg/H8juvMyU0Qd7rwYCtfmklDB1lPwcO3RaNyfSYmZ1K3Agw==
+enjanga-components-library@^1.0.34:
+  version "1.0.34"
+  resolved "https://registry.yarnpkg.com/enjanga-components-library/-/enjanga-components-library-1.0.34.tgz#0978b6add24996239a190ac816916c9fdfe98424"
+  integrity sha512-0+DNNV0zcl/8Rr2i45/p7cQbIZ5rY8vYeFzC6yrwwqSt6zRrnwTMYpiY0KwYjKTaLexmIiq1w+w6iyvAx/nEkw==
 
 enjanga-core-setup@^1.0.20:
   version "1.0.20"

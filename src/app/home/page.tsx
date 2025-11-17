@@ -28,6 +28,7 @@ export default function LandingPage() {
         <ContentfulDataProvider dataFor="BannerHomePage Entry">
           {({ item }) => (
             <Banner
+              id="introduction"
               featuredText={{
                 heading: {
                   children: item?.title,
