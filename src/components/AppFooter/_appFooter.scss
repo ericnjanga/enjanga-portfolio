@@ -36,6 +36,17 @@
     background-color: transparent;
 
     &:hover {
+      // Adjusting hover state experience
+      cursor: pointer;
+      color: var(--enjanga-color1);
+      background-color: transparent;
+      text-decoration: underline;
+    }
+
+    &:active,
+    &:focus {
+      // Adjusting acrive and focus state experience
+      color: var(--enjanga-color1);
       text-decoration: underline;
     }
   }
