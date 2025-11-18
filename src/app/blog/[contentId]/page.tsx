@@ -13,10 +13,10 @@ import type { DynamicPageServer } from '@/libs/types';
 */
 export async function generateStaticParams() {
   /**
-   * Although generateStaticParams() is asynchronous, Next.js automatically
+   * Although generateStaticPar***() is asynchronous, Next.js automatically
    * awaits it internally when pre-generating static pages.
    * 
-   * In other words, generateStaticParams() itself returns a Promise, but by the time
+   * In other words, generateStaticPar***() itself returns a Promise, but by the time
    * the static build completes, Next.js has already resolved that Promise.
    */
   return generateParamsForContent('BlogPost Entry Collection');
