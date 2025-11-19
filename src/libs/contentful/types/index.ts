@@ -16,7 +16,7 @@ import { ReactNode } from 'react';
  */
 
 // DataFor1: ContentModel1 -> ContextType1
-export type DataFor1 = 'BannerHomePage Entry' | 'BannerBlogPage Entry' | 'FooterCopyright Entry' | 'CaseStudy Entry' | 'BlogPost Entry' | 'FooterLinks --Entry--';
+export type DataFor1 = 'Metadata Entry' | 'BannerHomePage Entry' | 'BannerBlogPage Entry' | 'FooterCopyright Entry' | 'CaseStudy Entry' | 'BlogPost Entry' | 'FooterLinks --Entry--';
 
 // DataFor2: ContentModel2[] -> ContextType2
 export type DataFor2 = 'scopeOfExp Parent Entry Collection' | 'scopeOfExp Entry Collection' | 'AboutInfo Entry Collection';
@@ -31,6 +31,7 @@ export type DataFor4 = 'CaseStudy Entry Collection' | 'BlogPost Entry Collection
 export type DataFor5 = 'FooterLinks Entry Collection';
 export const getDataType = (dataFor: DataFor1 | DataFor2 | DataFor3 | DataFor4 | DataFor5): string => {
   switch(dataFor) {
+    case 'Metadata Entry':
     case 'BannerHomePage Entry':
     case 'BannerBlogPage Entry':
     case 'FooterCopyright Entry':

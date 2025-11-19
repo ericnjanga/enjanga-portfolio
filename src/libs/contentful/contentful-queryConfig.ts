@@ -17,6 +17,7 @@ export const contentfulContentIds = {
     'FooterLinks Entry Collection': '2uxFOT0LB1ET4SfM4dNWvo',
   },
   singleEntries: {
+    'Metadata Entry': '5RBmqkxse1dXyVizogH2oH',
     'Footer links (Navigation)': '2ywSJ82pI7PZQ7f8YkeTaZ',
     'Footer links (Published Work)': '3Fo2dEcwjF2C7hCjGzLitJ',
     'Footer QR code': '2a4z7rYXGHCmtaspj0REbl',
@@ -72,6 +73,11 @@ export function getContentfulQueryConfig(dataFor: DataFor1 | DataFor2 | DataFor3
     case 'FooterCopyright Entry':
       query = queryData.infoBlockById;
       variables.sectionId = contentfulContentIds.categories[dataFor];
+      break;
+
+    case 'Metadata Entry':
+      query = queryData.infoBlockById;
+      variables.sectionId = contentfulContentIds.singleEntries[dataFor];
       break;
 
     case 'FooterLinks --Entry--':

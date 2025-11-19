@@ -44,6 +44,7 @@ function getFormatedDataForContext(
   let contextValue;
 
   switch (dataFor) {
+    case 'Metadata Entry':
     case 'BannerHomePage Entry':
     case 'BannerBlogPage Entry':
     case 'FooterCopyright Entry':

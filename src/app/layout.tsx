@@ -8,13 +8,46 @@ import ClientProviders from "./client-providers";
 import Script from "next/script";
 import { AnalyticsProvider } from "@/components/AnalyticsProvider";
 import { Suspense } from "react";
+import { contentfulForServerEntriesFetch } from '@/libs/contentful/contentful-forServerFetchEntries';
+import { contentfulContentIds } from '@/libs/contentful/contentful-queryConfig';
+import { formatAsMetadata } from "@/libs/metadata";
 
-export const metadata: Metadata = {
-  title:
-    "Bilingual Software Engineer | Front-End & Design Technology Specialist | Building UX-Focused Engineering Solutions | Turning Ideas into Business-Ready Solutions",
-  description:
-    "Solution Engineer with 10+ years of experience creating high-performance web applications, showcasing business impact through technical storytelling.",
-};
+
+
+
+/**
+ * Fetch metadata directly from Contentful (no API route)
+ */
+async function getMetadata(): Promise<Metadata> {
+  try {
+    const contentId = contentfulContentIds.singleEntries['Metadata Entry'];
+    const entries = formatAsMetadata(await contentfulForServerEntriesFetch('Metadata Entry', contentId));
+
+    return {
+      ...entries
+    };
+  } catch (error) {
+    console.error('Error fetching metadata from Contentful:', error);
+    // Fallback metadata
+    return {
+      title: '[title]',
+      description: '[description]',
+    };
+  }
+}
+
+
+
+
+/**
+ * 
+ * @returns 
+ */
+export async function generateMetadata(): Promise<Metadata> {
+  return await getMetadata();
+}
+
+
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
