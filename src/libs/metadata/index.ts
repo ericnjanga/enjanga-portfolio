@@ -1,3 +1,8 @@
+import type { Metadata } from "next";
+import { contentfulForServerEntriesFetch } from '@/libs/contentful/contentful-forServerFetchEntries';
+import { contentfulContentIds } from '@/libs/contentful/contentful-queryConfig'; 
+
+
 export type IncomingMetadataVal = {
   title: string;
   blurb: string;
@@ -80,3 +85,29 @@ export const formatAsMetadata = (val: IncomingMetadataVal[]): MetadataValueType 
     };
   }
 };
+
+
+
+
+
+
+/**
+ * Fetch metadata directly from Contentful (no API route)
+ */
+export async function getMetadata(): Promise<Metadata> {
+  try {
+    const contentId = contentfulContentIds.singleEntries['Metadata Entry'];
+    const entries = formatAsMetadata(await contentfulForServerEntriesFetch('Metadata Entry', contentId));
+
+    return {
+      ...entries
+    };
+  } catch (error) {
+    console.error('Error fetching metadata from Contentful:', error);
+    // Fallback metadata
+    return {
+      title: '[title]',
+      description: '[description]',
+    };
+  }
+}
