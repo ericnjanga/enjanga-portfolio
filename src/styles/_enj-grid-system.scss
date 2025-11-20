@@ -1,5 +1,5 @@
-@use 'enjanga-core-setup/styles' as core;
-@use './utils/mixins';
+@use 'enjanga-core-setup/styles' as core; 
+@use 'styles/utils' as utils; // mixins, vars, ...
 
 
 
@@ -56,7 +56,7 @@
   }
 
   &.enj-gridSys-padding {
-    @include mixins.PCS-paddingTop;
+    @include utils.PCS-paddingTop;
   }
 }
 

@@ -1,0 +1,26 @@
+@use 'enjanga-core-setup/styles' as core; 
+
+
+
+// HR separators
+// -----------
+.enj-CMSRichText { 
+  // Declarations ...
+  --enj-CMSRichText-hr-gap-override: #{core.$spacing-08};
+
+  @include core.breakpoint('md') { 
+    --enj-CMSRichText-hr-gap-override: #{core.$spacing-09};
+  }
+
+  @include core.breakpoint('lg') { 
+    --enj-CMSRichText-hr-gap-override: #{core.$spacing-10};
+  }
+
+  @include core.breakpoint('xlg') { 
+    --enj-CMSRichText-hr-gap-override: #{core.$spacing-11};
+  }
+
+  hr {
+    margin: var(--enj-CMSRichText-hr-gap-override) 0;
+  }
+}

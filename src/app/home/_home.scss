@@ -1,5 +1,5 @@
 @use 'enjanga-core-setup/styles' as core;
-@use './../../styles/utils/mixins';
+@use 'styles/utils' as utils; // mixins, vars, ...
 
 /**
  * TO DO:
@@ -16,7 +16,7 @@
 
   .pageSection {
     position: relative;
-    @include mixins.PSS-marginBottom-xxl;
+    @include utils.PSS-marginBottom-xxl;
   }
 
   // Custom tile found in many places all over the app

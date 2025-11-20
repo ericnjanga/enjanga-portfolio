@@ -1,0 +1,6 @@
+// Global partial imports
+@use './utils/mixins';
+@use './utils/vars'; 
+
+// Composite overrides
+@use './global-overrides';

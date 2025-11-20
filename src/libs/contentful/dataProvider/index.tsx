@@ -1,5 +1,5 @@
 // src/libs/ContentfulDataProvider.tsx
-'use client';
+// 'use client';
 
 import React, { createContext } from 'react';
 import { useContentfulForClientEntries } from '../hooks/useContentfulForClientEntries';
@@ -55,6 +55,8 @@ function ContentfulDataProvider(props: CDP_EG4): React.ReactElement<ContextType4
 function ContentfulDataProvider(props: CDP_EG5): React.ReactElement<ContextType5>; 
 
 function ContentfulDataProvider(props: CDP_EG1 | CDP_EG2 | CDP_EG3 | CDP_EG4 | CDP_EG5): React.ReactElement<ContextType1 | ContextType2 | ContextType3 | ContextType4 | ContextType5> {
+
+  console.log('Rendering on:', typeof window === 'undefined' ? 'server' : 'client');
 
   const { dataFor, contentId = '' } = props;
   const contextType = getDataType(dataFor);

@@ -7,7 +7,7 @@ import {
 } from 'enjanga-components-library';
 import { Grid, Column } from '@carbon/react';
 import ContentfulDataProvider from '@/libs/contentful/dataProvider'; 
-import './../../styles/_blogs-and-articles.scss';
+import 'styles/blogs-and-articles/index.scss';
 
 export default function BlogRoot() {
   return (
