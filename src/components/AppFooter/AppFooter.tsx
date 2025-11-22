@@ -1,4 +1,3 @@
-// import styles from './_appFooter.module.scss';
 import './_appFooter.scss';
 import { Content, Grid, Column } from '@carbon/react';
 // ENJ NPM component library

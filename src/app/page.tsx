@@ -15,9 +15,6 @@ export default async function Page() {
   const dataListBestWork: ContextType4     = await getDataEntry('CaseStudy Entry Collection' as DataFor4);
   const bgImgUrl = await fetchImageUrl(contentfulContentIds.categories['Featured Image']);
 
-  
-  // console.log('...dataListBestWork=', dataListBestWork);
-
   return (
     <LandingPage 
       banner={dataBanner}
