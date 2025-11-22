@@ -1,5 +1,5 @@
 import LandingPage from './home/page';
-import type { DataFor1, DataFor2, DataFor3, ContextType1, ContextType2, ContextType3 } from '@utils/dataProcessing/types';
+import type { DataFor1, DataFor2, DataFor3, DataFor4, ContextType1, ContextType2, ContextType3, ContextType4 } from '@utils/dataProcessing/types';
 import { getDataEntry } from '@utils/dataProcessing';
 import { contentfulContentIds } from '@/libs/contentful/contentful-queryConfig';
 import { fetchImageUrl } from '@utils/dataProcessing/fetchImageUrl';
@@ -12,10 +12,11 @@ export default async function Page() {
   const dataListExpertise: ContextType2  = await getDataEntry('scopeOfExp Parent Entry Collection' as DataFor2);
   const dataAbout: ContextType2          = await getDataEntry('AboutInfo Entry Collection' as DataFor2);
   const dataListQuotes: ContextType3     = await getDataEntry('Quotes Entry Collection' as DataFor3);
+  const dataListBestWork: ContextType4     = await getDataEntry('CaseStudy Entry Collection' as DataFor4);
   const bgImgUrl = await fetchImageUrl(contentfulContentIds.categories['Featured Image']);
 
   
-  // console.log('...dataListQuotes=', dataListQuotes);
+  // console.log('...dataListBestWork=', dataListBestWork);
 
   return (
     <LandingPage 
@@ -24,6 +25,7 @@ export default async function Page() {
       listAbout={dataAbout}
       backgroundImgUrl={bgImgUrl}
       listQuotes={dataListQuotes}
+      listBestWork={dataListBestWork}
     />
   );
 }

@@ -10,7 +10,6 @@ import {
 import SectionOfTabs from '../../components/SectionOfTabs/index';
 import ContentAbout from './ContentAbout';
 import ContentBestWork from './ContentBestWork';
-import ContentfulDataProvider from '@/libs/contentful/dataProvider';
 import { BackgroundSection } from '@/components/BackgroundSection';
 import { ContentModel2 } from '@utils/dataProcessing/types';
 import ScrollHandler from './utils/ScrollHandler';
@@ -20,7 +19,7 @@ import './../home/styles/expertises/_tabs.scss';
 import './../home/styles/_about.scss';
 import './../home/styles/_quotes.scss';
 import './../home/_home-theming.scss';
-import type { ContextType1, ContextType2, ContextType3 } from '@utils/dataProcessing/types';
+import type { ContextType1, ContextType2, ContextType3, ContextType4 } from '@utils/dataProcessing/types';
 
 type LandingPageType = {
   banner: ContextType1;
@@ -28,6 +27,7 @@ type LandingPageType = {
   listAbout: ContextType2;
   backgroundImgUrl: string | null;
   listQuotes: ContextType3;
+  listBestWork: ContextType4;
 };
 
 export default function LandingPage({
@@ -35,7 +35,8 @@ export default function LandingPage({
   listExpertise,
   listAbout,
   backgroundImgUrl,
-  listQuotes
+  listQuotes,
+  listBestWork
 }: LandingPageType) {
   return (
     <>
@@ -122,10 +123,7 @@ export default function LandingPage({
               <h2 id="best-work-heading" className="sectionTitle">
                 Best Work
               </h2>
-
-              <ContentfulDataProvider dataFor="CaseStudy Entry Collection">
-                {({ items }) => <ContentBestWork listOfItems={items} />}
-              </ContentfulDataProvider>
+              <ContentBestWork listOfItems={listBestWork.items} />
             </section>
           </Column>
         </Grid>
