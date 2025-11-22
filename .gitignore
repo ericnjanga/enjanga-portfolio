@@ -1,4 +1,5 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# Manual deployment #1 (I'll be changing this # eachtime I need a Vercel deplpoyement just for the sake of regenerating stati pages)
 
 # dependencies
 /node_modules
@@ -13,7 +14,6 @@
 /out/
 
 # production
-/build
 
 # misc
 .DS_Store
