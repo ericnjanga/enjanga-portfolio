@@ -2,7 +2,7 @@
 import { normalizeContentfulResponse } from './contentful-contentNormalizer';
 import { getContentfulQueryConfig } from './contentful-queryConfig';
 import { contentfulDataQuery } from './contentful-dataQuery';
-import type { DataFor1, DataFor2, DataFor3, DataFor4, DataFor5 } from './types';
+import type { DataFor1, DataFor2, DataFor3, DataFor4, DataFor5 } from '../../utils/dataProcessing/types';
 
 
 

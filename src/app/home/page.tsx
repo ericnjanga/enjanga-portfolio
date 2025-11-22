@@ -9,7 +9,7 @@ import ContentBestWork from './ContentBestWork';
 import ContentfulDataProvider from '@/libs/contentful/dataProvider';
 import { BackgroundSection } from '@/components/BackgroundSection';
 import { contentfulContentIds } from '@/libs/contentful/contentful-queryConfig';
-import { ContentModel2 } from '@/libs/contentful/types'; 
+import { ContentModel2 } from '@utils/dataProcessing/types'; 
 import ScrollHandler from './utils/ScrollHandler';
 import './../home/_home.scss';
 import './../home/styles/expertises/_panels.scss';

@@ -4,7 +4,7 @@
 import React, { useState } from 'react';
 import { Tabs } from '@carbon/react';
 import { Grid, Column } from '@carbon/react';
-import { ContentModel2 } from '@/libs/contentful/types';
+import { ContentModel2 } from '@utils/dataProcessing/types';
 import SectionTabsList from './parts/tabsList';
 import SectionTabPanels from './parts/tabPanels';
 

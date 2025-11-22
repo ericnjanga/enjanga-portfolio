@@ -1,5 +1,5 @@
 import { TabPanels, TabPanel } from '@carbon/react';
-import { ContentModel2 } from '@/libs/contentful/types';
+import { ContentModel2 } from '@utils/dataProcessing/types';
 import SectionTabContent from './TabContent';
 
 interface SectionTabPanelsProps {

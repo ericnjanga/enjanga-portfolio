@@ -14,7 +14,7 @@ import type {
   ContentModel2,
   ContentModel3,
   ContentModel4,
-} from '../types';
+} from './types';
 
 function getFormatedDataForContext(
   data: any[],

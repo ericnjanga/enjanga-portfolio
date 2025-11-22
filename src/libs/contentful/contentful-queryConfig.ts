@@ -1,6 +1,6 @@
 
 import { queryData } from './GraphQL-query';
-import type { DataFor1, DataFor2, DataFor3, DataFor4, DataFor5 } from './types';
+import type { DataFor1, DataFor2, DataFor3, DataFor4, DataFor5 } from '../../utils/dataProcessing/types';
 
 
 
@@ -33,7 +33,7 @@ export const contentfulContentIds = {
  *
  * This function centralizes all query/variable logic so that
  * both client-side (ContentfulDataProvider) and server-side utilities
- * (like `contentfulForServerEntriesFetch` and `generateStaticParams`) can reuse
+ * (like `contentfulForServerEntriesFetch` and `generateStaticPar***`) can reuse
  * the same configuration without duplicating switch statements.
  *
  * @param dataFor   One of the supported `DataFor` values

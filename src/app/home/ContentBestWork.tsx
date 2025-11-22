@@ -1,6 +1,6 @@
 import { Grid, Column } from '@carbon/react';
 import { CustomTile } from 'enjanga-components-library'; 
-import { ContentModel3 } from '@/libs/contentful/types';
+import { ContentModel3 } from '@utils/dataProcessing/types';
 
 
 

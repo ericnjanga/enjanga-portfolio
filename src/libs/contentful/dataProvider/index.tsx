@@ -3,11 +3,11 @@
 
 import React, { createContext } from 'react';
 import { useContentfulForClientEntries } from '../hooks/useContentfulForClientEntries';
-import { CDP_EG1, CDP_EG2, CDP_EG3, CDP_EG4, CDP_EG5 } from '../types';
+import { CDP_EG1, CDP_EG2, CDP_EG3, CDP_EG4, CDP_EG5 } from '../../../utils/dataProcessing/types';
 import type { 
   DataFor1, DataFor2, DataFor3, DataFor4, DataFor5,
   ContextType1, ContextType2, ContextType3, ContextType4, ContextType5
-} from '../types';
+} from '../../../utils/dataProcessing/types';
 import { 
   skeleton_context1,
   skeleton_context2,
@@ -15,8 +15,8 @@ import {
   skeleton_context4,
   skeleton_context5,
   getDataType
-} from '../types'; 
-import getFormatedDataForContext from './getFormatedDataForContext';
+} from '../../../utils/dataProcessing/types'; 
+import getFormatedDataForContext from '../../../utils/dataProcessing/getFormatedDataForContext';
 import { useEffect, useState } from 'react';
 
 
