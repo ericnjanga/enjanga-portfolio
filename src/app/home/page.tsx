@@ -2,14 +2,18 @@
 
 import { Suspense } from 'react';
 import { Grid, Column } from '@carbon/react';
-import { Banner, CustomQuotes, CQ_quote_propsType } from 'enjanga-components-library';
+import {
+  Banner,
+  CustomQuotes,
+  CQ_quote_propsType,
+} from 'enjanga-components-library';
 import SectionOfTabs from '../../components/SectionOfTabs/index';
 import ContentAbout from './ContentAbout';
 import ContentBestWork from './ContentBestWork';
 import ContentfulDataProvider from '@/libs/contentful/dataProvider';
 import { BackgroundSection } from '@/components/BackgroundSection';
 import { contentfulContentIds } from '@/libs/contentful/contentful-queryConfig';
-import { ContentModel2 } from '@utils/dataProcessing/types'; 
+import { ContentModel2 } from '@utils/dataProcessing/types';
 import ScrollHandler from './utils/ScrollHandler';
 import './../home/_home.scss';
 import './../home/styles/expertises/_panels.scss';
@@ -17,51 +21,45 @@ import './../home/styles/expertises/_tabs.scss';
 import './../home/styles/_about.scss';
 import './../home/styles/_quotes.scss';
 import './../home/_home-theming.scss';
+import type { ContextType1, ContextType2 } from '@utils/dataProcessing/types';
 
+type LandingPageType = {
+  banner: ContextType1;
+  listExpertise: ContextType2;
+};
 
-
-export default function LandingPage() {
-
+export default function LandingPage({
+  banner,
+  listExpertise,
+}: LandingPageType) {
   return (
     <>
       <div className="homePage">
-        <ContentfulDataProvider dataFor="BannerHomePage Entry">
-          {({ item }) => (
-            <Banner
-              id="introduction"
-              featuredText={{
-                heading: {
-                  children: item?.title,
-                },
-                smartText: {
-                  richText: item?.description,
-                },
-              }}
-              isHuge={true}
-            /> 
-          )}
-        </ContentfulDataProvider>
-
-
-        <ContentfulDataProvider dataFor="scopeOfExp Parent Entry Collection">
-          {({ items }) => {
-            return (
-              <section
-                className="pageSection smt-box section-expertises"
-                id="scope-of-expertise"
-                aria-labelledby="scope-of-expertise-heading"
-                tabIndex={-1} // Make focusable by default
-              >
-                <SectionOfTabs
-                  title="Scope of Expertise"
-                  className="expertise-section-tabs-wrapper"
-                  listOfItems={items as ContentModel2[]}
-                />
-              </section>
-            );
+        <Banner
+          id="introduction"
+          featuredText={{
+            heading: {
+              children: banner?.item?.title,
+            },
+            smartText: {
+              richText: banner?.item?.description,
+            },
           }}
-        </ContentfulDataProvider>
+          isHuge={true}
+        />
 
+        <section
+          className="pageSection smt-box section-expertises"
+          id="scope-of-expertise"
+          aria-labelledby="scope-of-expertise-heading"
+          tabIndex={-1} // Make focusable by default
+        >
+          <SectionOfTabs
+            title="Scope of Expertise"
+            className="expertise-section-tabs-wrapper"
+            listOfItems={listExpertise?.items as ContentModel2[]}
+          />
+        </section>
 
         <BackgroundSection
           className="pageSection aboutSection smt-box"
@@ -69,8 +67,7 @@ export default function LandingPage() {
           ariaLabelledby="about-me-heading"
           tabIndex={-1} // Make focusable by default
           parallax={true}
-          imageId={contentfulContentIds.categories['Featured Image']}
-        >
+          imageId={contentfulContentIds.categories['Featured Image']}>
           <>
             <Grid className="sectionTitle">
               {' '}
@@ -79,14 +76,13 @@ export default function LandingPage() {
               </Column>
             </Grid>
             <Grid>
-              {' '} 
+              {' '}
               <Column lg={16} md={8} sm={4}>
                 <ContentAbout />
               </Column>
             </Grid>
           </>
         </BackgroundSection>
-
 
         <Grid>
           <Column lg={16} md={8} sm={4}>
@@ -96,10 +92,9 @@ export default function LandingPage() {
               aria-labelledby="best-work-heading"
               tabIndex={-1} // Make focusable by default
             >
-              <h2 id="engineer-quotes-heading" style={{ display: 'none'}}>
+              <h2 id="engineer-quotes-heading" style={{ display: 'none' }}>
                 Quotes
               </h2>
-
 
               <ContentfulDataProvider dataFor="Quotes Entry Collection">
                 {({ items }) => (
@@ -113,9 +108,8 @@ export default function LandingPage() {
           </Column>
         </Grid>
 
-
         <Grid>
-          {' '} 
+          {' '}
           <Column lg={16} md={8} sm={4}>
             <section
               className="pageSection smt-box"
@@ -128,9 +122,7 @@ export default function LandingPage() {
               </h2>
 
               <ContentfulDataProvider dataFor="CaseStudy Entry Collection">
-                {({ items }) => (
-                  <ContentBestWork listOfItems={items} />
-                )}
+                {({ items }) => <ContentBestWork listOfItems={items} />}
               </ContentfulDataProvider>
             </section>
           </Column>

@@ -34,6 +34,6 @@ export default async function Page(props: DynamicPageServer) {
    * like `contentId`.
    */
   const { contentId } = await props.params; 
-  const data:ContextType1 = await getDataEntry(contentId, dataFor);
+  const data:ContextType1 = await getDataEntry(dataFor, contentId);
   return <PageEntry {...data} />;
 }
