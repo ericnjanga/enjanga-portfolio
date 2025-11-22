@@ -12,7 +12,6 @@ import ContentAbout from './ContentAbout';
 import ContentBestWork from './ContentBestWork';
 import ContentfulDataProvider from '@/libs/contentful/dataProvider';
 import { BackgroundSection } from '@/components/BackgroundSection';
-import { contentfulContentIds } from '@/libs/contentful/contentful-queryConfig';
 import { ContentModel2 } from '@utils/dataProcessing/types';
 import ScrollHandler from './utils/ScrollHandler';
 import './../home/_home.scss';
@@ -21,18 +20,22 @@ import './../home/styles/expertises/_tabs.scss';
 import './../home/styles/_about.scss';
 import './../home/styles/_quotes.scss';
 import './../home/_home-theming.scss';
-import type { ContextType1, ContextType2 } from '@utils/dataProcessing/types';
+import type { ContextType1, ContextType2, ContextType3 } from '@utils/dataProcessing/types';
 
 type LandingPageType = {
   banner: ContextType1;
   listExpertise: ContextType2;
   listAbout: ContextType2;
+  backgroundImgUrl: string | null;
+  listQuotes: ContextType3;
 };
 
 export default function LandingPage({
   banner,
   listExpertise,
-  listAbout
+  listAbout,
+  backgroundImgUrl,
+  listQuotes
 }: LandingPageType) {
   return (
     <>
@@ -68,8 +71,9 @@ export default function LandingPage({
           id="about-me"
           ariaLabelledby="about-me-heading"
           tabIndex={-1} // Make focusable by default
+          imageUrl={backgroundImgUrl}
           parallax={true}
-          imageId={contentfulContentIds.categories['Featured Image']}>
+        >
           <>
             <Grid className="sectionTitle">
               {' '}
@@ -98,14 +102,10 @@ export default function LandingPage({
                 Quotes
               </h2>
 
-              <ContentfulDataProvider dataFor="Quotes Entry Collection">
-                {({ items }) => (
-                  <CustomQuotes
-                    className="engineer-quotes-component"
-                    quotes={items as CQ_quote_propsType[]}
-                  />
-                )}
-              </ContentfulDataProvider>
+              <CustomQuotes
+                className="engineer-quotes-component"
+                quotes={listQuotes.items as CQ_quote_propsType[]}
+              />
             </section>
           </Column>
         </Grid>

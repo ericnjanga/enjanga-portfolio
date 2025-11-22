@@ -3,7 +3,7 @@ export type BackgroundSectionProps = {
   className?: string;
   ariaLabelledby?: string;
   tabIndex?: number;
-  imageId: string; // Contentful asset ID
+  imageUrl?: string | null;
   parallax?: boolean; // Enable/disable parallax
   children: React.ReactNode;
 };
