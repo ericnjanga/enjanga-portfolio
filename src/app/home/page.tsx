@@ -26,11 +26,13 @@ import type { ContextType1, ContextType2 } from '@utils/dataProcessing/types';
 type LandingPageType = {
   banner: ContextType1;
   listExpertise: ContextType2;
+  listAbout: ContextType2;
 };
 
 export default function LandingPage({
   banner,
   listExpertise,
+  listAbout
 }: LandingPageType) {
   return (
     <>
@@ -78,7 +80,7 @@ export default function LandingPage({
             <Grid>
               {' '}
               <Column lg={16} md={8} sm={4}>
-                <ContentAbout />
+                <ContentAbout {...listAbout} />
               </Column>
             </Grid>
           </>
