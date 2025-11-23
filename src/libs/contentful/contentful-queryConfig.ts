@@ -18,10 +18,9 @@ export const contentfulContentIds = {
   },
   singleEntries: {
     'Metadata Entry': '5RBmqkxse1dXyVizogH2oH',
-    'Footer links (Navigation)': '2ywSJ82pI7PZQ7f8YkeTaZ',
-    'Footer links (Published Work)': '3Fo2dEcwjF2C7hCjGzLitJ',
-    'Footer QR code': '2a4z7rYXGHCmtaspj0REbl',
-    'Footer QR code text': '6ZKYDI1P6NazFQdUxF4JhL',
+    'Links (Published Work)': '3Fo2dEcwjF2C7hCjGzLitJ',
+    'QR code': '2a4z7rYXGHCmtaspj0REbl',
+    'QR code text': '6ZKYDI1P6NazFQdUxF4JhL',
   }
 };
 

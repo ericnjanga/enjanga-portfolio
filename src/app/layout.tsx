@@ -9,6 +9,9 @@ import Script from "next/script";
 import { AnalyticsProvider } from "@/components/AnalyticsProvider";
 import { Suspense } from "react";
 import { getMetadata } from "@/libs/metadata";
+import { contentfulContentIds } from '@/libs/contentful/contentful-queryConfig';
+import { getDataEntry } from '@utils/dataProcessing';
+import type { DataFor1 } from '@utils/dataProcessing/types';
 
 
 
@@ -23,7 +26,20 @@ export async function generateMetadata(): Promise<Metadata> {
 
 
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default async function RootLayout({ children }: { children: ReactNode }) {
+  // ...
+  const footerIds = {
+    'QR code': contentfulContentIds.singleEntries['QR code'],
+    'QR code text': contentfulContentIds.singleEntries['QR code text'],
+    'Published Work': contentfulContentIds.singleEntries['Links (Published Work)'],
+};
+  // Fetching all data needed for this page
+  const dataFooter = [
+    await getDataEntry('FooterLinks --Entry--' as DataFor1, footerIds['QR code']),
+    await getDataEntry('FooterLinks --Entry--' as DataFor1, footerIds['QR code text']),
+    await getDataEntry('FooterLinks --Entry--' as DataFor1, footerIds['Published Work'])
+  ];
+
   return (
     <html lang="en">
       <head>
@@ -45,7 +61,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       </head>
       <body>
         {/* 👇 Client-only providers and analytics */}
-        <ClientProviders>
+        <ClientProviders footer={dataFooter}>
           {children}
           <Suspense>
             <AnalyticsProvider /> {/* 👈 Google Analytics Tracking */}

@@ -5,19 +5,12 @@ import {
   CMSRichText,
   useContainerSize,
 } from 'enjanga-components-library';
-import ContentfulDataProvider from '@/libs/contentful/dataProvider';
-import { contentfulContentIds } from '@/libs/contentful/contentful-queryConfig';
 import { GlobalNav } from '../GlobalMenus';
+import { useFooterData } from '@utils/context/FooterContext';
 
 const AppFooter = () => { 
   const { containerRef, activeBreakpoint } = useContainerSize();
-
-  const footerIds = [
-    contentfulContentIds.singleEntries['Footer QR code text'],
-    contentfulContentIds.singleEntries['Footer links (Navigation)'],
-    contentfulContentIds.singleEntries['Footer links (Published Work)'],
-    contentfulContentIds.singleEntries['Footer QR code'],
-  ];
+  const footerData = useFooterData();
 
   return (
     <footer className="app-footer" ref={containerRef as React.RefObject<HTMLElement>}>
@@ -29,20 +22,12 @@ const AppFooter = () => {
            */}
           {activeBreakpoint==='md' && (
             <Column sm={4}> 
-              <ContentfulDataProvider dataFor="FooterLinks --Entry--" contentId={footerIds[0]}>
-                {({ item }) => (
-                  <CMSRichText data={item?.description} />
-                )}
-              </ContentfulDataProvider>
+              <CMSRichText data={footerData[1]?.item?.description} />
             </Column>
           )} 
 
           <Column xlg={4} lg={4} md={4} sm={4}>
-            <ContentfulDataProvider dataFor="FooterLinks --Entry--" contentId={footerIds[3]}>
-              {({ item }) => (
-                <CMSRichText data={item?.description} />
-              )}
-            </ContentfulDataProvider>
+            <CMSRichText data={footerData[0]?.item?.description} />
           </Column>
 
           
@@ -52,11 +37,7 @@ const AppFooter = () => {
            */}
           {activeBreakpoint!=='md' && (
             <Column sm={4}> 
-              <ContentfulDataProvider dataFor="FooterLinks --Entry--" contentId={footerIds[0]}>
-                {({ item }) => (
-                  <CMSRichText data={item?.description} />
-                )}
-              </ContentfulDataProvider>
+              <CMSRichText data={footerData[1]?.item?.description} />
             </Column>
           )}
 
@@ -67,11 +48,7 @@ const AppFooter = () => {
             </ul>
           </Column>
           <Column xlg={3} lg={4} md={4} sm={4}>
-            <ContentfulDataProvider dataFor="FooterLinks --Entry--" contentId={footerIds[2]}>
-              {({ item }) => (
-                <CMSRichText data={item?.description} />
-              )}
-            </ContentfulDataProvider>
+            <CMSRichText data={footerData[2]?.item?.description} />
           </Column>
 
         </Grid>

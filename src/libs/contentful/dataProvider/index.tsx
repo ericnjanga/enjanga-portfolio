@@ -1,7 +1,7 @@
 // src/libs/ContentfulDataProvider.tsx
 // 'use client';
 
-import React, { createContext } from 'react';
+import React from 'react';
 import { useContentfulForClientEntries } from '../hooks/useContentfulForClientEntries';
 import { CDP_EG1, CDP_EG2, CDP_EG3, CDP_EG4, CDP_EG5 } from '../../../utils/dataProcessing/types';
 import type { 
@@ -18,33 +18,7 @@ import {
 } from '../../../utils/dataProcessing/types'; 
 import getFormatedDataForContext from '../../../utils/dataProcessing/getFormatedDataForContext';
 import { useEffect, useState } from 'react';
-
-
-/**
- * PROBLEM/TEMPORARY SOLUTION:
- * -------------
- * Returning a context based on a union type creates problems in the JSX as typescript get confused. 
- * The solution I will use for now is to create a context for each type.
- */
-// const ContentContext = createContext<ContextType1 | ContextType2 | ContextType3 | ContextType4 | ContextType5>(
-//   skeleton_context1
-// );
-const TheContextEG1 = createContext<ContextType1>( // For Entry Group1 (EG1)
-  skeleton_context1
-);
-const TheContextEG2 = createContext<ContextType2>( // For Entry Group2 (EG2)
-  skeleton_context2
-);
-const TheContextEG3 = createContext<ContextType3>( // For Entry Group3 (EG3)
-  skeleton_context3
-);
-const TheContextEG4 = createContext<ContextType4>( // For Entry Group4 (EG4)
-  skeleton_context4
-);
-const TheContextEG5 = createContext<ContextType5>( // For Entry Group5 (EG5)
-  skeleton_context5
-);
-
+import { TheContextEG1Provider, TheContextEG2Provider, TheContextEG3Provider, TheContextEG4Provider, TheContextEG5Provider } from '@utils/context/DataProviderContext';
 
 
 
@@ -114,37 +88,37 @@ function ContentfulDataProvider(props: CDP_EG1 | CDP_EG2 | CDP_EG3 | CDP_EG4 | C
   if (getDataType(dataFor)==='DataFor1') {
     const render = props.children as (v: ContextType1) => React.ReactNode;
     return (
-      <TheContextEG1.Provider value={contextEG1}>
+      <TheContextEG1Provider value={contextEG1}>
         {render(contextEG1)}
-      </TheContextEG1.Provider>
+      </TheContextEG1Provider>
     );
   } else if (getDataType(dataFor)==='DataFor2') {
     const render = props.children as (v: ContextType2) => React.ReactNode;
     return (
-      <TheContextEG2.Provider value={contextEG2}>
+      <TheContextEG2Provider value={contextEG2}>
         {render(contextEG2)}
-      </TheContextEG2.Provider>
+      </TheContextEG2Provider>
     );
   } else if (getDataType(dataFor)==='DataFor3') {
     const render = props.children as (v: ContextType3) => React.ReactNode;
     return (
-      <TheContextEG3.Provider value={contextEG3}>
+      <TheContextEG3Provider value={contextEG3}>
         {render(contextEG3)}
-      </TheContextEG3.Provider>
+      </TheContextEG3Provider>
     );
   } else if (getDataType(dataFor)==='DataFor4') {
     const render = props.children as (v: ContextType4) => React.ReactNode;
     return (
-      <TheContextEG4.Provider value={contextEG4}>
+      <TheContextEG4Provider value={contextEG4}>
         {render(contextEG4)}
-      </TheContextEG4.Provider>
+      </TheContextEG4Provider>
     );
   } else {
     const render = props.children as (v: ContextType5) => React.ReactNode;
     return (
-      <TheContextEG5.Provider value={contextEG5}>
+      <TheContextEG5Provider value={contextEG5}>
         {render(contextEG5)}
-      </TheContextEG5.Provider>
+      </TheContextEG5Provider>
     );
   }
 };
