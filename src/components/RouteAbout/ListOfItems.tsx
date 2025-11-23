@@ -2,9 +2,10 @@ import { Grid, Column } from '@carbon/react';
 import { CustomTile } from 'enjanga-components-library';
 import '@/styles/_enj-grid-system.scss';
 import { CP_nameType } from 'enjanga-components-library';
-import type { ContextType2 } from '@utils/dataProcessing/types';
+import type { ContentModel2 } from '@utils/dataProcessing/types';
 
-const ContentAbout = ({ items }: ContextType2) => {
+
+const ListOfItems = (items: ContentModel2[]) => {
   const card1 = items && items[0];
   const card2 = items && items[1];
   const card3 = items && items[2];
@@ -86,4 +87,4 @@ const ContentAbout = ({ items }: ContextType2) => {
   );
 };
 
-export default ContentAbout;
+export default ListOfItems;

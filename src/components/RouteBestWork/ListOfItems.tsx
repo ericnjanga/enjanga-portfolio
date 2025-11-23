@@ -5,9 +5,9 @@ import { ContentModel3 } from '@utils/dataProcessing/types';
 
 
 
-const ContentBestWork = ({ listOfItems }: { listOfItems: ContentModel3[] }) => (
+const ListOfItems = ({ items }:{ items: ContentModel3[] }) => (
   <Grid className="enj-gridSys enj-gridSys-type-3">
-    {listOfItems?.map((item, index) => {
+    {items?.map((item, index) => {
       return (
         <Column key={item?.sys?.id ?? index} lg={8} md={4} sm={4}>
           <CustomTile
@@ -30,4 +30,4 @@ const ContentBestWork = ({ listOfItems }: { listOfItems: ContentModel3[] }) => (
   </Grid>
 );
 
-export default ContentBestWork;
+export default ListOfItems;
