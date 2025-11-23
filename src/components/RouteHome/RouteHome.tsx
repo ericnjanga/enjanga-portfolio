@@ -1,7 +1,6 @@
 'use client';
 
 import { Suspense } from 'react';
-import { Grid, Column } from '@carbon/react';
 import { Banner } from 'enjanga-components-library';
 import RouteAbout from '../RouteAbout/RouteAbout';
 import RouteBestWork from '../RouteBestWork/RouteBestWork';
