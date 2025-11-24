@@ -7,6 +7,10 @@ import RouteBestWork from '../RouteBestWork/RouteBestWork';
 import RouteScopeOfExpertise from '../RouteScopeOfExpertise/RouteScopeOfExpertise';
 import WrapperQuotes from '../WrapperQuotes/WrapperQuotes';
 import ScrollHandler from '../../utils/ScrollHandler';
+import {
+  ScopeOfProvider,
+  ScopeOfExpDataType,
+} from '@utils/context/ScopeOfExpContext';
 import type {
   ContextType1,
   ContextType2,
@@ -17,7 +21,8 @@ import './styles/index.scss';
 
 type RouteHomeType = {
   banner: ContextType1;
-  listExpertise: ContextType2;
+  listExpertiseTabs: ContextType2;
+  listExpertisePanels: ScopeOfExpDataType;
   listAbout: ContextType2;
   backgroundImgUrl: string | null;
   listQuotes: ContextType3;
@@ -26,7 +31,8 @@ type RouteHomeType = {
 
 export default function RouteHome({
   banner,
-  listExpertise,
+  listExpertiseTabs,
+  listExpertisePanels,
   listAbout,
   backgroundImgUrl,
   listQuotes,
@@ -48,7 +54,9 @@ export default function RouteHome({
           isHuge={true}
         />
 
-        <RouteScopeOfExpertise {...listExpertise} />
+        <ScopeOfProvider value={listExpertisePanels}>
+          <RouteScopeOfExpertise {...listExpertiseTabs} />
+        </ScopeOfProvider>
 
         <RouteAbout {...listAbout} bgImgUrl={backgroundImgUrl} />
 

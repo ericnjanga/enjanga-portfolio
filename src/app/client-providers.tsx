@@ -10,20 +10,19 @@ import { FooterProvider } from '@utils/context/FooterContext';
 
 /**
  * ClientProviders:
+ * ---------------
  * Runs only on the client to set up polyfills and React contexts
  * without marking the root layout as dynamic.
  */
 
-
 type ClientProvidersProps = {
   children: React.ReactNode;
-  footer: ContextType1[]
-}
-
+  footer: ContextType1[];
+};
 
 export default function ClientProviders({
   children,
-  footer
+  footer,
 }: ClientProvidersProps) {
   useEffect(() => {
     smoothscroll.polyfill();

@@ -21,7 +21,6 @@ const ScrollHandler = () => {
 
   const handleScroll = () => {
     // Logic to detect which section is in view
-    // console.log('Which section is in view???');
   };
 
   /**

@@ -7,8 +7,6 @@
  * @returns 
  */
 export function normalizeContentfulResponse(data: any) { 
-  
-  // console.log('data >> ', data)
 
   // Always try to get items under `en.items`
   if (data?.en?.items) {

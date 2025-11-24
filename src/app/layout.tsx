@@ -27,18 +27,12 @@ export async function generateMetadata(): Promise<Metadata> {
 
 
 export default async function RootLayout({ children }: { children: ReactNode }) {
-  // ...
-  const footerIds = {
-    'QR code': contentfulContentIds.singleEntries['QR code'],
-    'QR code text': contentfulContentIds.singleEntries['QR code text'],
-    'Published Work': contentfulContentIds.singleEntries['Links (Published Work)'],
-};
   // Fetching all data needed for this page
-  const dataFooter = [
-    await getDataEntry('FooterLinks --Entry--' as DataFor1, footerIds['QR code']),
-    await getDataEntry('FooterLinks --Entry--' as DataFor1, footerIds['QR code text']),
-    await getDataEntry('FooterLinks --Entry--' as DataFor1, footerIds['Published Work'])
-  ];
+  const [qrCode, qrCodeText, pubWork] = await Promise.all([
+    getDataEntry('FooterLinks --Entry--' as DataFor1, contentfulContentIds.singleEntries['QR code']),
+    getDataEntry('FooterLinks --Entry--' as DataFor1, contentfulContentIds.singleEntries['QR code text']),
+    getDataEntry('FooterLinks --Entry--' as DataFor1, contentfulContentIds.singleEntries['Links (Published Work)'])
+  ]);
 
   return (
     <html lang="en">
@@ -61,7 +55,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
       </head>
       <body>
         {/* 👇 Client-only providers and analytics */}
-        <ClientProviders footer={dataFooter}>
+        <ClientProviders footer={[qrCode, qrCodeText, pubWork]}>
           {children}
           <Suspense>
             <AnalyticsProvider /> {/* 👈 Google Analytics Tracking */}

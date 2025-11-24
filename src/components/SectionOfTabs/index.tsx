@@ -1,6 +1,5 @@
 'use client';
 
-// components/Tabs.tsx
 import React, { useState } from 'react';
 import { Tabs } from '@carbon/react';
 import { Grid, Column } from '@carbon/react';
