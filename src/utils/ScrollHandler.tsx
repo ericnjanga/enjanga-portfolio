@@ -9,7 +9,7 @@ import { useSearchParams, usePathname } from "enjanga-core-setup/next";
  * 2. Detecting the `?section=` query parameter in the URL and automatically scrolling
  *    to that section when the user is on the home page (`/`).
  *
- * This component uses Next.js router hooks (`useSearchParams`, `usePathname`),
+ * This component uses Next.js router hooks (`useSearchPar***`, `usePathname`),
  * which must be wrapped in a <Suspense> boundary in the parent component.
  * It does not render any UI — it simply manages side effects related to scroll behavior.
  */

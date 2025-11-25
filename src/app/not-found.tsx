@@ -1,15 +1,13 @@
 'use client';
 
 import { useEffect } from 'react';
-import { Link, useRouter } from "enjanga-core-setup/next";
-import { AppHeader, BrandLogo } from 'enjanga-components-library';
-import { GlobalActions, GlobalNav } from '../components/GlobalMenus';
+import { Link } from "enjanga-core-setup/next";
+import { AppHeaderWrapper } from '@/components/AppHeader/AppHeader';
 import { Content } from '@carbon/react';
 import { AppUseUtility } from '../utils/UtilityContext';
 
 export default function NotFound() {
   const { brand } = AppUseUtility();
-  const router = useRouter();
 
   // Fix for sticky 404 content
   useEffect(() => {
@@ -19,13 +17,7 @@ export default function NotFound() {
 
   return (
     <div>
-      <AppHeader
-        brandLabel="Eric Njanga"
-        brandRoute="/"
-        brand={<BrandLogo value={brand.name} />}
-        navigation={<GlobalNav />}
-        globalBarItems={<GlobalActions />}
-      />
+      <AppHeaderWrapper />
       <Content>
         <div
           style={{

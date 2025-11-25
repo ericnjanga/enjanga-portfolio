@@ -70,7 +70,7 @@ export default function RouteHome({
        * it listens for the "section" query parameter (e.g., "/?section=about")
        * and automatically scrolls to that section on the home page.
        *
-       * Because it uses Next.js client router hooks like useSearchParams(),
+       * Because it uses Next.js client router hooks like useSearchPar***(),
        * it must be wrapped in <Suspense> to avoid hydration warnings during
        * client-side rendering. The fallback is omitted since it renders no UI.
        */}

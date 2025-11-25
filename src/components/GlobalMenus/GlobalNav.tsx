@@ -2,69 +2,76 @@
 
 import { HeaderMenuItem } from '@carbon/react';
 import { useSectionNavigation } from '@utils/navigation';
-import { useRouter, useSearchParams, usePathname } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
+import { useSearchParamData } from '@utils/context/SearchParamProvider';
+import { Suspense } from 'react';
 
 type GlobalNavType = {
-  parent?: 'top nav' | 'footer'
+  parent?: 'top nav' | 'footer';
 };
 
-export const GlobalNav = ({ parent = 'top nav' }: GlobalNavType) => {
+export const GlobalNavContent = ({ parent = 'top nav' }: GlobalNavType) => {
   const router = useRouter();
   const pathname = usePathname();
-  const searchParams = useSearchParams();
   const { navigateToSection } = useSectionNavigation();
-
-  // Get current active section from URL search params
-  const currentSection = searchParams.get('section');
-
-  // Determine if a menu item is active based on the current section
-  const isActive = (target: string) => {
-    // For introduction (homepage with no section param)
-    if (target === 'introduction') {
-      return !currentSection || currentSection === 'introduction';
-    }
-    
-    // For other sections
-    return currentSection === target;
-  };
+  const { section: currentSection } = useSearchParamData(); // Get from context
 
   // For blog route (separate page)
   const isBlogActive = pathname === '/blog' || pathname.startsWith('/blog/');
 
+  // Determine if a menu item is active based on the current section
+  const isActive = (target: string) => {
+    // For introduction section (true home route with no section param)
+    if (target === 'introduction') {
+      return !currentSection || currentSection === 'introduction';
+    }
+
+    // For other sections
+    return currentSection === target;
+  };
+
   return (
     <>
       {parent === 'footer' && (
-        <HeaderMenuItem 
+        <HeaderMenuItem
           onClick={() => navigateToSection('introduction')}
-          isCurrentPage={isActive('introduction')}
+          aria-current={isActive('introduction') ? 'page' : undefined}
         >
           Introduction
         </HeaderMenuItem>
       )}
-      <HeaderMenuItem 
+      <HeaderMenuItem
         onClick={() => navigateToSection('scope-of-expertise')}
-        isCurrentPage={isActive('scope-of-expertise')}
+        aria-current={isActive('scope-of-expertise') ? 'page' : undefined}
       >
         Scope of expertise
       </HeaderMenuItem>
-      <HeaderMenuItem 
+      <HeaderMenuItem
         onClick={() => navigateToSection('about-me')}
-        isCurrentPage={isActive('about-me')}
+        aria-current={isActive('about-me') ? 'page' : undefined}
       >
         About me
       </HeaderMenuItem>
-      <HeaderMenuItem 
+      <HeaderMenuItem
         onClick={() => navigateToSection('best-work')}
-        isCurrentPage={isActive('best-work')}
+        aria-current={isActive('best-work') ? 'page' : undefined}
       >
         Best Work
       </HeaderMenuItem>
-      <HeaderMenuItem 
+      <HeaderMenuItem
         onClick={() => router.push('/blog')}
-        isCurrentPage={isBlogActive}
+        aria-current={isBlogActive ? 'page' : undefined}
       >
         Blog
       </HeaderMenuItem>
     </>
+  );
+};
+
+export const GlobalNav = ({ parent = 'top nav' }: GlobalNavType) => {
+  return (
+    <Suspense>
+      <GlobalNavContent parent={parent} />
+    </Suspense>
   );
 };

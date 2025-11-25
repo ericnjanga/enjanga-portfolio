@@ -3,18 +3,15 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Content, Theme } from '@carbon/react';
 import { ReactNode } from 'react';
-import { AppHeader, BrandLogo } from 'enjanga-components-library';
-import { GlobalActions, GlobalNav } from '../components/GlobalMenus';
 import { SkipNavigationLink } from '@/components/SkipNavigationLink';
 import AppFooter from '../components/AppFooter/AppFooter';
-import { AppUseUtility } from '../utils/UtilityContext';
+import { AppHeaderWrapper } from '@/components/AppHeader/AppHeader';
 
 interface RootLayoutProps {
   children: ReactNode;
 }
 
 export function Providers({ children }: RootLayoutProps) {
-  const { brand } = AppUseUtility();
   const queryClient = new QueryClient();
 
   return (
@@ -22,13 +19,7 @@ export function Providers({ children }: RootLayoutProps) {
       <div>
         <SkipNavigationLink destinationId="main-content" />
         <Theme theme="g10">
-          <AppHeader
-            brandLabel={brand.name}
-            brandRoute="/"
-            brand={<BrandLogo value={brand.name} />}
-            navigation={<GlobalNav />}
-            globalBarItems={<GlobalActions />}
-          />
+          <AppHeaderWrapper />
         </Theme>
         <main id="main-content">
           <Content>{children}</Content>
@@ -38,3 +29,4 @@ export function Providers({ children }: RootLayoutProps) {
     </QueryClientProvider>
   );
 }
+

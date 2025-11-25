@@ -93,10 +93,9 @@
     }
 
     // Current menu items
-    a.cds--header__menu-item--current {
+    a.cds--header__menu-item[aria-current=page] {
       color: var(--enjanga-appHead-color2);
     }
-    .cds--header__menu-item--current:after,
     a.cds--header__menu-item[aria-current='page']:after {
       background-color: var(--enjanga-appHead-color2);
     }
