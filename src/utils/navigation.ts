@@ -1,6 +1,6 @@
 'use client';
 
-import { useRouter, useSearchParams, usePathname } from "enjanga-core-setup/next";
+import { useRouter, usePathname } from "enjanga-core-setup/next";
 
 /**
  * 

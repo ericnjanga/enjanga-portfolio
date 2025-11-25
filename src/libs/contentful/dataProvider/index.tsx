@@ -1,6 +1,3 @@
-// src/libs/ContentfulDataProvider.tsx
-// 'use client';
-
 import React from 'react';
 import { useContentfulForClientEntries } from '../hooks/useContentfulForClientEntries';
 import { CDP_EG1, CDP_EG2, CDP_EG3, CDP_EG4, CDP_EG5 } from '../../../utils/dataProcessing/types';

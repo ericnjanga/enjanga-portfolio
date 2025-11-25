@@ -1,4 +1,4 @@
-'use client'; // Add this if using client-side components
+'use client';
 
 import { useEffect } from 'react';
 import { Link, useRouter } from "enjanga-core-setup/next";

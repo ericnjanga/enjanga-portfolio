@@ -12,10 +12,6 @@ interface SectionOfTabsProps {
   className: string;
   listOfItems?: ContentModel2[];
 }
-interface TabsProps {
-  title: string;
-  className: string;
-}
 
 const SectionOfTabs = ({
   className,
