@@ -1,45 +1,87 @@
+@use 'enjanga-core-setup/styles' as core;
 
 .enj-AppHeader {
   // Declarations ...
   --enjanga-appHead-color0: #fff;
   --enjanga-appHead-color1: #191947;
-  --enjanga-appHead-color2: #F81C9A;
+  --enjanga-appHead-color2: #f81c9a;
   --enjanga-appHead-color3: #526890;
 
+  --enjanga-appHead-header__height: 48px;
   --enjanga-appHead-header__nav-ml: auto;
   --enjanga-appHead-header__menu-item-ml: 1rem;
 
-  
+  // ...
+  height: var(--enjanga-appHead-header__height);
   border-block-end: 0px solid; // eliminate bottom border
   background-color: var(--enjanga-appHead-color1);
 
 
   .header-inner {
-    border-block-end: 1ch solid var(--enjanga-appHead-color3);
+    height: var(--enjanga-appHead-header__height);
+    border-block-end: 1px solid var(--enjanga-appHead-color3); // Banner border ...
   }
 
 
-  .cds--header__menu-trigger>svg {
-    fill: var(--enjanga-appHead-color0);
+  // Hamburger button ...
+  .cds--header__menu-trigger {
+    &:not(.cds--header__action--active) {
+      > svg {
+        fill: var(--enjanga-appHead-color0); // inactive state color
+      }
+    }
+    &.cds--header__action--active {
+      > svg {
+        fill: var(--enjanga-appHead-color1);  // active state color
+      }
+    }
   }
+ 
 
-  
+  // Brand name (logo) ...
   .cds--header__name {
-    color: var(--enjanga-appHead-color2);
-  }
+    position: relative;
+    color: var(--enjanga-appHead-color0);
 
 
-  .cds--header__nav {
-    margin-left: var(--enjanga-appHead-header__nav-ml);
+    // Same state for ...
+    &.cds--header__name--current, // Active route ...
+    &:hover,    // Hover state ...
+    &:active {  // Active state ...
+      color: var(--enjanga-appHead-color2);
+      background-color: transparent;
 
-    &:before { // Eliminate vertical separation bar
-      display: none;
+      &::after {
+        background-color: var(--enjanga-appHead-color2);
+      }
+    }
+
+    // bottom border (consistent with Carbon Des style ...)
+    &::after {
+      content: "";
+      block-size: 3px;
+      inline-size: calc(100% + 4px);
+      inset-block-end: -2px;
+      inset-inline-start: -2px;
+      position: absolute;
     }
   }
 
 
+  // Navigation (from tablet >)
+  .cds--header__nav {
+    // Pushing it at the opposite end of the screen (far right)
+    margin-left: var(--enjanga-appHead-header__nav-ml);
 
+    &:before {
+      // Eliminate vertical separation bar
+      display: none;
+    }
+  }
+
+  // Large bar wrapper ...
   .cds--header__menu-bar {
+    // Styles of all links ...
     a.cds--header__menu-item {
       color: var(--enjanga-appHead-color0);
       background-color: var(--enjanga-appHead-color1);
@@ -50,23 +92,23 @@
       }
     }
 
-
-
-
-  // Current menu items
-  a.cds--header__menu-item--current {
-    color: var(--enjanga-appHead-color2);
-  } 
-  .cds--header__menu-item--current:after, a.cds--header__menu-item[aria-current=page]:after {
-    background-color: var(--enjanga-appHead-color2);
+    // Current menu items
+    a.cds--header__menu-item--current {
+      color: var(--enjanga-appHead-color2);
+    }
+    .cds--header__menu-item--current:after,
+    a.cds--header__menu-item[aria-current='page']:after {
+      background-color: var(--enjanga-appHead-color2);
+    }
   }
 
 
+  // Adjusting bar height based on viewport's width
+  @include core.breakpoint('lg') {
+    --enjanga-appHead-header__height: 60px;
+  }
 
+  @include core.breakpoint('xlg') { 
+    --enjanga-appHead-header__height: 70px;
   }
 }
-
-
-
-
-

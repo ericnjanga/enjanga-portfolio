@@ -10,6 +10,7 @@
   --enjanga-color2: #526890;
   --enjanga-color3: #F96DBD;
   --enjanga-color4: #191947;
+  --enjanga-color5: #00bcfe;
 
   // Declarations ...
   padding: var(--enj-footer-padd) 0;
@@ -23,6 +24,17 @@
 
   h3, p {
     color: var(--enjanga-color1);
+  }
+
+  // Menu ...
+  // Current menu items ...
+  a.cds--header__menu-item--current {
+    text-decoration: underline;
+    color: var(--enjanga-color1);
+
+    &::after {
+      block-size: 0px; // Eliminate bottom border
+    }
   }
 
   a {
