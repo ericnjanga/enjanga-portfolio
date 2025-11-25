@@ -1,0 +1,19 @@
+
+.enj-AppHeader {
+  // Declarations ...
+  --enjanga-appHead-color1: #191947;
+  --enjanga-appHead-color2: #F81C9A;
+
+
+  background-color: var(--enjanga-appHead-color1);
+
+
+  .cds--header__name {
+    color: var(--enjanga-appHead-color2);
+  }
+  .cds--header__menu-bar {
+    a.cds--header__menu-item {
+      background-color: var(--enjanga-appHead-color1);
+    }
+  }
+}
