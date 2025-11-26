@@ -6,11 +6,11 @@ import {
   useContainerSize,
 } from 'enjanga-components-library';
 import { GlobalNav } from '../GlobalMenus';
-import { useFooterData } from '@utils/context/FooterContext';
+import { useDataDistributorData } from '@utils/context/DataDistributorContext';
 
 const AppFooter = () => { 
   const { containerRef, activeBreakpoint } = useContainerSize();
-  const footerData = useFooterData();
+  const { footer: footerData } = useDataDistributorData();
 
   return (
     <footer className="app-footer" ref={containerRef as React.RefObject<HTMLElement>}>

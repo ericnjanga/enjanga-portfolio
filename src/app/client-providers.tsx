@@ -6,7 +6,7 @@ import smoothscroll from 'smoothscroll-polyfill';
 import { Providers } from './providers';
 import { AppUtilityProvider } from '@utils/UtilityContext';
 import type { ContextType1 } from '@utils/dataProcessing/types';
-import { FooterProvider } from '@utils/context/FooterContext';
+import { DataDistributorProvider } from '@utils/context/DataDistributorContext';
 
 /**
  * ClientProviders:
@@ -17,12 +17,17 @@ import { FooterProvider } from '@utils/context/FooterContext';
 
 type ClientProvidersProps = {
   children: React.ReactNode;
-  footer: ContextType1[];
+  dataValue: {
+    footer: ContextType1[];
+    banners: {
+      imgUrl: string | null;
+    }
+  },
 };
 
 export default function ClientProviders({
   children,
-  footer,
+  dataValue,
 }: ClientProvidersProps) {
   useEffect(() => {
     smoothscroll.polyfill();
@@ -37,9 +42,9 @@ export default function ClientProviders({
 
   return (
     <AppUtilityProvider>
-      <FooterProvider value={footer}>
+      <DataDistributorProvider value={dataValue}>
         <Providers>{children}</Providers>
-      </FooterProvider>
+      </DataDistributorProvider>
     </AppUtilityProvider>
   );
 }

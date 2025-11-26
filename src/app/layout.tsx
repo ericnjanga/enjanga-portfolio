@@ -12,6 +12,7 @@ import { getMetadata } from "@/libs/metadata";
 import { contentfulContentIds } from '@/libs/contentful/contentful-queryConfig';
 import { getDataEntry } from '@utils/dataProcessing';
 import type { DataFor1 } from '@utils/dataProcessing/types';
+import { fetchImageUrl } from '@utils/dataProcessing/fetchImageUrl';
 
 
 
@@ -28,10 +29,11 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function RootLayout({ children }: { children: ReactNode }) {
   // Fetching all data needed for this page
-  const [qrCode, qrCodeText, pubWork] = await Promise.all([
+  const [qrCode, qrCodeText, pubWork, imgUrl] = await Promise.all([
     getDataEntry('FooterLinks --Entry--' as DataFor1, contentfulContentIds.singleEntries['QR code']),
     getDataEntry('FooterLinks --Entry--' as DataFor1, contentfulContentIds.singleEntries['QR code text']),
-    getDataEntry('FooterLinks --Entry--' as DataFor1, contentfulContentIds.singleEntries['Links (Published Work)'])
+    getDataEntry('FooterLinks --Entry--' as DataFor1, contentfulContentIds.singleEntries['Links (Published Work)']),
+    fetchImageUrl(contentfulContentIds.categories['Banner Image']),
   ]);
 
   return (
@@ -55,7 +57,12 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
       </head>
       <body>
         {/* 👇 Client-only providers and analytics */}
-        <ClientProviders footer={[qrCode, qrCodeText, pubWork]}>
+        <ClientProviders 
+          dataValue={{
+            footer: [qrCode, qrCodeText, pubWork],
+            banners: { imgUrl }
+          }}
+        >
           {children}
           <Suspense>
             <AnalyticsProvider /> {/* 👈 Google Analytics Tracking */}

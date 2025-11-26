@@ -7,6 +7,7 @@ import {
 } from 'enjanga-components-library';
 import { Grid, Column } from '@carbon/react';
 import type { ContextType1, ContextType4 } from '@utils/dataProcessing/types';
+import { useDataDistributorData } from '@utils/context/DataDistributorContext';
 import 'styles/blogs-and-articles/index.scss';
 
 type PageListingType = {
@@ -18,6 +19,8 @@ export default function PageListing({
   banner,
   listOfEntries,
 }: PageListingType) {
+  const { banners } = useDataDistributorData();
+
   return (
     <div className="blogPage">
       <Banner
@@ -30,6 +33,7 @@ export default function PageListing({
             richText: banner?.item.description,
           },
         }}
+        style={{ backgroundImage: `url(${banners.imgUrl})` }}
       />
 
       <article className="page-content">

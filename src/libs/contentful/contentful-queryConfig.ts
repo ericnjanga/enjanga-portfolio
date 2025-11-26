@@ -14,6 +14,7 @@ export const contentfulContentIds = {
     'scopeOfExp Parent Entry Collection': '5OpXyMfZfJlGQzTKJSn9Hw',
     'AboutInfo Entry Collection': '2yc27jrBHSGwDBau6c8qfA',
     'Featured Image': '2eSLi2IP4sZrrPK0AeQPk7',
+    'Banner Image': '4inHKl5yMYfQHDc5en3FT2',
     'FooterLinks Entry Collection': '2uxFOT0LB1ET4SfM4dNWvo',
   },
   singleEntries: {

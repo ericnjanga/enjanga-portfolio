@@ -17,6 +17,7 @@ import type {
   ContextType3,
   ContextType4,
 } from '@utils/dataProcessing/types';
+import { useDataDistributorData } from '@utils/context/DataDistributorContext';
 import './styles/index.scss';
 
 type RouteHomeType = {
@@ -38,6 +39,8 @@ export default function RouteHome({
   listQuotes,
   listBestWork,
 }: RouteHomeType) {
+  const { banners } = useDataDistributorData();
+
   return (
     <>
       <div className="homePage">
@@ -51,6 +54,7 @@ export default function RouteHome({
               richText: banner?.item?.description,
             },
           }}
+          style={{ backgroundImage: `url(${banners.imgUrl})` }}
           isHuge={true}
         />
 
