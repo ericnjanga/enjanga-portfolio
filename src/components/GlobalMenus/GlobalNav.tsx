@@ -3,39 +3,42 @@
 import { HeaderMenuItem } from '@carbon/react';
 import { useSectionNavigation } from '@utils/navigation';
 import { useRouter, usePathname } from 'next/navigation';
-import { useSearchParamData } from '@utils/context/SearchParamProvider';
+import { 
+  useSearchParamData,
+  useIsHomeActiveFlag
+} from '@utils/context/SearchParamProvider';
+import {
+  SearchParamProvider
+} from '@utils/context/SearchParamProvider';
 import { Suspense } from 'react';
+
 
 type GlobalNavType = {
   parent?: 'top nav' | 'footer';
 };
 
+
 export const GlobalNavContent = ({ parent = 'top nav' }: GlobalNavType) => {
+
   const router = useRouter();
   const pathname = usePathname();
   const { navigateToSection } = useSectionNavigation();
   const { section: currentSection } = useSearchParamData(); // Get from context
+  const isHomeRoute = useIsHomeActiveFlag();
 
-  // For blog route (separate page)
+  // For 'blog' and 'best-w***' routes (separate pages)
   const isBlogActive = pathname === '/blog' || pathname.startsWith('/blog/');
+  const isBestWorkActive = pathname === '/best-work' || pathname.startsWith('/best-work/') || currentSection === 'best-work';
 
   // Determine if a menu item is active based on the current section
-  const isActive = (target: string) => {
-    // For introduction section (true home route with no section param)
-    if (target === 'introduction') {
-      return !currentSection || currentSection === 'introduction';
-    }
-
-    // For other sections
-    return currentSection === target;
-  };
+  const isActive = (target: string) => currentSection === target;
 
   return (
     <>
       {parent === 'footer' && (
         <HeaderMenuItem
           onClick={() => navigateToSection('introduction')}
-          aria-current={isActive('introduction') ? 'page' : undefined}
+          aria-current={isHomeRoute ? 'page' : undefined}
         >
           Introduction
         </HeaderMenuItem>
@@ -54,7 +57,7 @@ export const GlobalNavContent = ({ parent = 'top nav' }: GlobalNavType) => {
       </HeaderMenuItem>
       <HeaderMenuItem
         onClick={() => navigateToSection('best-work')}
-        aria-current={isActive('best-work') ? 'page' : undefined}
+        aria-current={isBestWorkActive ? 'page' : undefined}
       >
         Best Work
       </HeaderMenuItem>
@@ -68,10 +71,13 @@ export const GlobalNavContent = ({ parent = 'top nav' }: GlobalNavType) => {
   );
 };
 
+
 export const GlobalNav = ({ parent = 'top nav' }: GlobalNavType) => {
   return (
     <Suspense>
-      <GlobalNavContent parent={parent} />
+      <SearchParamProvider>
+        <GlobalNavContent parent={parent} />
+      </SearchParamProvider>
     </Suspense>
   );
 };

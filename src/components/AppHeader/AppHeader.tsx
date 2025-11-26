@@ -24,8 +24,6 @@ export const AppHeaderWrapper = () => (
  */
 const AppHeaderWithExtra = () => {
   const { brand } = AppUseUtility();
-
-  // Check if current route is home route
   const isHomeRoute = useIsHomeActiveFlag();
 
   return (

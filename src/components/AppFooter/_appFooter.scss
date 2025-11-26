@@ -28,7 +28,7 @@
 
   // Menu ...
   // Current menu items ...
-  a.cds--header__menu-item--current {
+  a.cds--header__menu-item[aria-current=page] {
     text-decoration: underline;
     color: var(--enjanga-color1);
 

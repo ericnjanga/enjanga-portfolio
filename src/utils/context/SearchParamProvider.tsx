@@ -45,5 +45,11 @@ export function useSearchParamData() {
 export function useIsHomeActiveFlag() {
   const searchParams = useSearchParams();
   const pathname = usePathname();
-  return pathname === '/' && !searchParams.has('section');
+  // Case 1: Path is clean and there are no sections at all
+  const hasCleanPathAndNoSections = pathname === '/' && !searchParams.has('section');
+  // Case 2: Path is clean and the active section is "introduct***"
+  const hasCleanPathAndIntroSection = searchParams.has('section') && searchParams.get('section') === 'introduction';
+
+  // The reoute is considered as home if either Case 1 or Case 2
+  return hasCleanPathAndNoSections || hasCleanPathAndIntroSection;
 }
