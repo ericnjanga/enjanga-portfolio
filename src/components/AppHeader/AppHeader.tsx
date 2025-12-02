@@ -6,7 +6,7 @@ import {
   SearchParamProvider,
   useIsHomeActiveFlag,
 } from '@utils/context/SearchParamProvider';
-import './_App-header.scss';
+import './_appHeader.scss';
 
 
 // Wrapping the entire component with <Suspen** /> to fulfill all requirements
