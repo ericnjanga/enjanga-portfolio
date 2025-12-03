@@ -2,6 +2,7 @@ import { CustomTile } from 'enjanga-components-library';
 import { Grid, Column } from '@carbon/react';
 import { ContentModel2, ContextType2 } from '@utils/dataProcessing/types';
 import { CP_nameType } from 'enjanga-components-library';
+import { IntroTextSkeleton } from '@/app/ui/Skeleton';
 
 interface SectionTabContentProps {
   tab: ContentModel2;
@@ -54,29 +55,5 @@ const SectionTabContent = ({
   </Grid>
 );
 
-/**
- * TODO: Move this skeleton somewhere else
- * @returns
- */
-const IntroTextSkeleton = () => (
-  <div className="skeleton-text-wrapper">
-    <p
-      className="skeleton skeleton-text skeleton-bot-spacing-2"
-      role="presentation"
-      style={{ width: '100%' }}></p>
-    <p
-      className="skeleton skeleton-text skeleton-bot-spacing-2"
-      role="presentation"
-      style={{ width: '100%' }}></p>
-    <p
-      className="skeleton skeleton-text skeleton-bot-spacing-2"
-      role="presentation"
-      style={{ width: '100%' }}></p>
-    <p
-      className="skeleton skeleton-text skeleton-bot-spacing-2"
-      role="presentation"
-      style={{ width: '100%' }}></p>
-  </div>
-);
 
 export default SectionTabContent;

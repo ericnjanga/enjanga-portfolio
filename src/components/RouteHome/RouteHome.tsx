@@ -2,10 +2,7 @@
 
 import { Suspense } from 'react';
 import { Banner } from 'enjanga-components-library';
-import RouteAbout from '../RouteAbout/RouteAbout';
-import RouteBestWork from '../RouteBestWork/RouteBestWork';
-import RouteScopeOfExpertise from '../RouteScopeOfExpertise/RouteScopeOfExpertise';
-import WrapperQuotes from '../WrapperQuotes/WrapperQuotes';
+import { SkeletonComponent } from '@/app/ui/Skeleton';
 import ScrollHandler from '../../utils/ScrollHandler';
 import {
   ScopeOfProvider,
@@ -18,6 +15,7 @@ import type {
   ContextType4,
 } from '@utils/dataProcessing/types';
 import { useDataDistributorData } from '@utils/context/DataDistributorContext';
+import dynamic from 'next/dynamic';
 import './styles/index.scss';
 
 type RouteHomeType = {
@@ -29,6 +27,44 @@ type RouteHomeType = {
   listQuotes: ContextType3;
   listBestWork: ContextType4;
 };
+
+/**
+ * Deferring (Dynamic imports) the following component (and their CSS):
+ * - RouteScopeOfExpertise
+ * - RouteAbout
+ * - WrapperQuotes
+ * - RouteBestWork
+ */
+const RouteScopeOfExpertise = dynamic(
+  () => import('@/components/RouteScopeOfExpertise/RouteScopeOfExpertise'),
+  {
+    ssr: false, // Ony render on the client
+    loading: () => (
+      <SkeletonComponent name="Scope of Expertise" minHeight={300} />
+    ),
+  }
+);
+
+const RouteAbout = dynamic(() => import('@/components/RouteAbout/RouteAbout'), {
+  ssr: false, // Ony render on the client
+  loading: () => <SkeletonComponent name="About" minHeight={300} />,
+});
+
+const WrapperQuotes = dynamic(
+  () => import('@/components/WrapperQuotes/WrapperQuotes'),
+  {
+    ssr: false, // Ony render on the client
+    loading: () => <SkeletonComponent name="Quotes" />,
+  }
+);
+
+const RouteBestWork = dynamic(
+  () => import('@/components/RouteBestWork/RouteBestWork'),
+  {
+    ssr: false, // Ony render on the client
+    loading: () => <SkeletonComponent name="Best Work" minHeight={300} />,
+  }
+);
 
 export default function RouteHome({
   banner,

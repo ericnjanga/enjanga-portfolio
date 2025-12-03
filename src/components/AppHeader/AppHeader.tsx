@@ -8,7 +8,6 @@ import {
 } from '@utils/context/SearchParamProvider';
 import './_appHeader.scss';
 
-
 // Wrapping the entire component with <Suspen** /> to fulfill all requirements
 export const AppHeaderWrapper = () => (
   <Suspense>
