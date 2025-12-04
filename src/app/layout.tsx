@@ -13,6 +13,7 @@ import { contentfulContentIds } from '@/libs/contentful/contentful-queryConfig';
 import { getDataEntry } from '@utils/dataProcessing';
 import type { DataFor1 } from '@utils/dataProcessing/types';
 import { fetchImageUrl } from '@utils/dataProcessing/fetchImageUrl';
+import { ibmPlexSans, ibmPlexMono } from './ui/fonts';
 
 /**
  *
@@ -45,7 +46,12 @@ export default async function RootLayout({
   ]);
 
   return (
-    <html lang="en">
+    <>
+    {/** 
+     * - ibmPlexSans.className → applies font-family: <hashed IBM Plex Sans> to <html> so everything inherits IBM Plex by default. 
+     * - ibmPlexSans.variable / ibmPlexMono.variable → still give you --font-plex-sans and --font-plex-mono if you want to use them in CSS.
+     * */}
+    <html lang="en" className={`${ibmPlexSans.className} ${ibmPlexSans.variable} ${ibmPlexMono.variable}`}>
       <head>
         {/* Google Analytics */}
         <Script
@@ -77,5 +83,6 @@ export default async function RootLayout({
         </ClientProviders>
       </body>
     </html>
+    </>
   );
 }
