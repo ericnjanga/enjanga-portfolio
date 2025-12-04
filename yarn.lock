@@ -2325,10 +2325,10 @@ enjanga-components-library@^1.0.44:
   resolved "https://registry.yarnpkg.com/enjanga-components-library/-/enjanga-components-library-1.0.44.tgz#6abfaa0fa36f9396038bed0d8024ae56c2940203"
   integrity sha512-m+kLyrk9rdCGKr5vo3eUUwJTVKVJ/z9ftbeXuPQA4P1y1+HbSS177YUhh78DcXBnxyycHrUnZiuHV5mjg5hJFA==
 
-enjanga-core-setup@^1.0.27:
-  version "1.0.27"
-  resolved "https://registry.yarnpkg.com/enjanga-core-setup/-/enjanga-core-setup-1.0.27.tgz#454d4676607e52cf1f7f8621fde961fdf0033040"
-  integrity sha512-l9aAf6nofNozBmFYk+Q7w9cGQQrnCuk61u38C4AjPli0hKWFTESfTGBsK2Bx1uVDQqtfRWdjlxU1K1WR8CFu7w==
+enjanga-core-setup@^1.0.28:
+  version "1.0.28"
+  resolved "https://registry.yarnpkg.com/enjanga-core-setup/-/enjanga-core-setup-1.0.28.tgz#f2dedf9cb4636400454db61b330fcf7897ba6b50"
+  integrity sha512-x/pifbC2ETddPhcBFz1H9Nko2Kyb1/B+W4PMEx2z9PXg5BpzVMRWmxszTiOfNiK3pk9pcmyHvIOSiFau+Uqijw==
   dependencies:
     "@carbon/icons-react" "^11.67.0"
     "@carbon/pictograms-react" "^11.67.0"
