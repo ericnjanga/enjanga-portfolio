@@ -18,7 +18,7 @@ const PageEntry = ({ item }: ContextType1) => {
           smartText: {},
           isHidden: 'smartText',
         }}
-        style={{ backgroundImage: `url(${banners.imgUrl})` }}
+        imgBgUrl={banners.imgUrl}
       /> 
       <article className="page-content">
         <Grid>

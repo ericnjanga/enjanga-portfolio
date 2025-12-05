@@ -90,7 +90,7 @@ export default function RouteHome({
               richText: banner?.item?.description,
             },
           }}
-          style={{ backgroundImage: `url(${banners.imgUrl})` }}
+          imgBgUrl={banners.imgUrl}
           isHuge={true}
         />
 

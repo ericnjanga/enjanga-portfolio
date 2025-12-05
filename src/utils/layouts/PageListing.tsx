@@ -33,7 +33,7 @@ export default function PageListing({
             richText: banner?.item.description,
           },
         }}
-        style={{ backgroundImage: `url(${banners.imgUrl})` }}
+        imgBgUrl={banners.imgUrl}
       />
 
       <article className="page-content">
