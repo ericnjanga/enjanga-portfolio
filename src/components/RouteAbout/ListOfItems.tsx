@@ -1,6 +1,8 @@
 import { Grid, Column } from '@carbon/react';
 import { CustomTile } from 'enjanga-components-library';
 import 'enjanga-components-library/custom-tile.css'; // Styling for <CustomT** /> component
+import 'enjanga-components-library/content-modal.css'; // Styling for <ContentMod** /> component (<CustomT** /> is triggering <ContentMod** /> in thid case)
+import 'enjanga-components-library/cms-rich-text.css'; // Styling for <ContentMod** /> contains (<CMSRichTe** /> component)
 import '@/styles/_enj-grid-system.scss';
 import { CP_nameType } from 'enjanga-components-library';
 import type { ContentModel2 } from '@utils/dataProcessing/types';
