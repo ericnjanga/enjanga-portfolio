@@ -5,6 +5,8 @@ import {
   CustomTile,
   CTL_valid_linkTo,
 } from 'enjanga-components-library';
+import 'enjanga-components-library/banner.css'; // Styling for <Bann** /> component
+import 'enjanga-components-library/custom-tile.css'; // Styling for <CustomT** /> component
 import { Grid, Column } from '@carbon/react';
 import type { ContextType1, ContextType4 } from '@utils/dataProcessing/types';
 import { useDataDistributorData } from '@utils/context/DataDistributorContext';

@@ -1,4 +1,5 @@
 import { CustomTile } from 'enjanga-components-library';
+import 'enjanga-components-library/custom-tile.css'; // Styling for <CustomT** /> component
 import { Grid, Column } from '@carbon/react';
 import { ContentModel2, ContextType2 } from '@utils/dataProcessing/types';
 import { CP_nameType } from 'enjanga-components-library';

@@ -1,5 +1,6 @@
 import { Grid, Column } from '@carbon/react';
 import { CustomQuotes, CQ_quote_propsType } from 'enjanga-components-library';
+import 'enjanga-components-library/custom-quotes.css'; // Styling for <CustomQuo** /> component
 import type { ContentModel1 } from '@utils/dataProcessing/types';
 import './index.scss';
 

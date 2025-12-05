@@ -6,6 +6,7 @@ import {
   SearchParamProvider,
   useIsHomeActiveFlag,
 } from '@utils/context/SearchParamProvider';
+import 'enjanga-components-library/app-header.css'; // Styling for <AppHea** /> component
 import './_appHeader.scss';
 
 // Wrapping the entire component with <Suspen** /> to fulfill all requirements

@@ -2,6 +2,7 @@
 
 import { Suspense } from 'react';
 import { Banner } from 'enjanga-components-library';
+import 'enjanga-components-library/banner.css'; // Styling for <Bann** /> component
 import { SkeletonComponent } from '@/app/ui/Skeleton';
 import ScrollHandler from '../../utils/ScrollHandler';
 import {

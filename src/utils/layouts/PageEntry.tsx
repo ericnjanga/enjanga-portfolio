@@ -2,6 +2,8 @@
 
 import { ContextType1 } from '@utils/dataProcessing/types'; 
 import { Banner, CMSRichText } from 'enjanga-components-library';
+import 'enjanga-components-library/banner.css'; // Styling for <Bann** /> component
+import 'enjanga-components-library/cms-rich-text.css'; // Styling for <CMSRichT** /> component
 import { Grid, Column } from '@carbon/react';
 import { useDataDistributorData } from '@utils/context/DataDistributorContext';
 import 'styles/blogs-and-articles/index.scss';

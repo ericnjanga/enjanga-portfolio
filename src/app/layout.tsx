@@ -1,7 +1,7 @@
 // src/app/layout.tsx
 import type { Metadata } from 'next';
 import 'enjanga-core-setup/carbon-css'; // Carbon global styles
-import 'enjanga-components-library/styles.css'; // Custom library styles
+import 'enjanga-components-library/styles-base.css'; // Custom library styles
 import '@/styles/globals.scss';
 import { ReactNode } from 'react';
 import ClientProviders from './client-providers';
