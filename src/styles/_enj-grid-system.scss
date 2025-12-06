@@ -1,4 +1,4 @@
-@use 'enjanga-core-setup/styles' as core; 
+@use 'enjanga-core-setup/styles-breakpoint' as bp;
 @use 'styles/utils' as utils; // mixins, vars, ...
 
 
@@ -44,7 +44,7 @@
 .enj-gridSys-type-1 {
   .enj-gridSys__cols-wrapper {
     .cds--css-grid-column {
-      @include core.breakpoint('md') {
+      @include bp.breakpoint('md') {
         &:nth-of-type(2n + 1) {
           margin-right: calc(var(--enj-grid-content-gap) / 2);
         }
@@ -70,7 +70,7 @@
 .enj-gridSys-type-2 {
   .enj-gridSys__offset-col {
     .cds--css-grid-column {
-      @include core.breakpoint('md') {
+      @include bp.breakpoint('md') {
         --enj-grid-content-gap: 6px;
         margin-left: calc(var(--enj-grid-content-gap) / 2);
       }
@@ -79,7 +79,7 @@
 
   .enj-gridSys__cols-wrapper {
     .cds--css-grid-column {
-      @include core.breakpoint('md') {
+      @include bp.breakpoint('md') {
         &:nth-of-type(2n + 1) {
           margin-right: calc(var(--enj-grid-content-gap) / 2);
         }
@@ -88,9 +88,9 @@
         }
       }
 
-      // @include core.breakpoint('lg') {
+      // @include bp.breakpoint('lg') {
       // }
-      // @include core.breakpoint('xlg') {
+      // @include bp.breakpoint('xlg') {
       // }
     }
   }
@@ -112,7 +112,7 @@
       margin-top: 0;
     }
 
-    @include core.breakpoint('md') {
+    @include bp.breakpoint('md') {
       --enj-grid-content-gap: 0;
     }
   }

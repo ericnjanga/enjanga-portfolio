@@ -1,4 +1,5 @@
-@use 'enjanga-core-setup/styles' as core; 
+@use 'enjanga-core-setup/styles-breakpoint' as bp;
+@use 'enjanga-core-setup/styles-spacing' as sp;
 
 
 
@@ -8,18 +9,18 @@
   // -----------
   .enj-CMSRichText { 
     // Declarations ...
-    --enj-CMSRichText-hr-gap-override: #{core.$spacing-08};
+    --enj-CMSRichText-hr-gap-override: #{sp.$spacing-08};
 
-    @include core.breakpoint('md') { 
-      --enj-CMSRichText-hr-gap-override: #{core.$spacing-09};
+    @include bp.breakpoint('md') { 
+      --enj-CMSRichText-hr-gap-override: #{sp.$spacing-09};
     }
 
-    @include core.breakpoint('lg') { 
-      --enj-CMSRichText-hr-gap-override: #{core.$spacing-10};
+    @include bp.breakpoint('lg') { 
+      --enj-CMSRichText-hr-gap-override: #{sp.$spacing-10};
     }
 
-    @include core.breakpoint('xlg') { 
-      --enj-CMSRichText-hr-gap-override: #{core.$spacing-11};
+    @include bp.breakpoint('xlg') { 
+      --enj-CMSRichText-hr-gap-override: #{sp.$spacing-11};
     }
 
     hr {

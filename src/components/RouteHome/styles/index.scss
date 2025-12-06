@@ -1,4 +1,4 @@
-@use 'enjanga-core-setup/styles' as core;
+@use 'enjanga-core-setup/styles-breakpoint' as bp;
 @use 'styles/utils' as utils; // mixins, vars, ...
 
 /**
@@ -27,9 +27,9 @@
   .sectionTitle {
     margin-bottom: var(--enj-home-section-title-mb);
 
-    // @include core.breakpoint('md') {}
+    // @include bp.breakpoint('md') {}
 
-    @include core.breakpoint('lg') {
+    @include bp.breakpoint('lg') {
       --enj-home-section-title-mb: 0.75rem;
     }
   }

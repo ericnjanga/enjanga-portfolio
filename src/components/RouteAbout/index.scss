@@ -1,4 +1,4 @@
-@use 'enjanga-core-setup/styles' as core; 
+@use 'enjanga-core-setup/styles-breakpoint' as bp;
 
 /**
  * About section
@@ -28,21 +28,21 @@
     }
   }
 
-  @include core.breakpoint('md') {
+  @include bp.breakpoint('md') {
     --enj-aboutSec-height: 840px;
     --enj-aboutSec-title-top: -2.5rem;
   }
 
-  @include core.breakpoint('lg') {
+  @include bp.breakpoint('lg') {
     --enj-aboutSec-height: 780px;
     --enj-aboutSec-title-top: -3.2rem;
   }
 
-  @include core.breakpoint('xlg') {
+  @include bp.breakpoint('xlg') {
     --enj-aboutSec-height: 750px;
   }
 
-  @include core.breakpoint('max') {
+  @include bp.breakpoint('max') {
     --enj-aboutSec-height: 850px;
   }
 

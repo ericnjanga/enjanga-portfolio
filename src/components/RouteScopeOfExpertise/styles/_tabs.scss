@@ -1,4 +1,4 @@
-@use 'enjanga-core-setup/styles' as core; 
+@use 'enjanga-core-setup/styles-breakpoint' as bp;
 
 /**
  * Expertise section (tabs)
@@ -27,15 +27,15 @@
   #scope-of-expertise-heading {
     top: var(--enj-tabs-heading-top);
 
-    @include core.breakpoint('md') {
+    @include bp.breakpoint('md') {
       --enj-tabs-heading-top: -120px;
     }
 
-    @include core.breakpoint('lg') {
+    @include bp.breakpoint('lg') {
       --enj-tabs-heading-top: -130px;
     }
 
-    @include core.breakpoint('xlg') {
+    @include bp.breakpoint('xlg') {
       --enj-tabs-heading-top: -140px;
     }
   }
@@ -81,22 +81,22 @@
    * Variables' responsiveness
    * --------------------
   */
-  @include core.breakpoint('md') { 
+  @include bp.breakpoint('md') { 
     --enj-tabs-section-marg-bot: 5.5rem;
   }
 
-  @include core.breakpoint('lg') { 
+  @include bp.breakpoint('lg') { 
     --enj-tabs-section-marg-bot: 10rem;
     --enj-tabs-label-display: inline-block;
     --enj-tabs-icon-padding-in-strt: 0.5rem;
   --enj-tabs-icon-dim: 1rem;
   }
 
-  @include core.breakpoint('xlg') { 
+  @include bp.breakpoint('xlg') { 
     --enj-tabs-section-marg-bot: 10rem;
   }
 
-  @include core.breakpoint('max') { 
+  @include bp.breakpoint('max') { 
     --enj-tabs-section-marg-bot: 10rem;
   } 
 }

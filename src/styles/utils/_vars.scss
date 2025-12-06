@@ -1,7 +1,7 @@
-@use 'enjanga-core-setup/styles' as core;
+@use 'enjanga-core-setup/styles-spacing' as sp;
 
 :root {
   // xxx ...
-  --enj-page-section-sapcing-xxl: #{core.$spacing-08};
+  --enj-page-section-sapcing-xxl: #{sp.$spacing-08};
   --enj-page-section-sapcing-xl: 1.5rem;
 }

@@ -1,4 +1,4 @@
-@use 'enjanga-core-setup/styles' as core;
+@use 'enjanga-core-setup/styles-breakpoint' as bp;
 
 .enj-AppHeader {
   // Declarations ...
@@ -103,11 +103,11 @@
 
 
   // Adjusting bar height based on viewport's width
-  @include core.breakpoint('lg') {
+  @include bp.breakpoint('lg') {
     --enjanga-appHead-header__height: 60px;
   }
 
-  @include core.breakpoint('xlg') { 
+  @include bp.breakpoint('xlg') { 
     --enjanga-appHead-header__height: 70px;
   }
 }

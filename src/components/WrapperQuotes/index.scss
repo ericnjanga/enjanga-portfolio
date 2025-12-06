@@ -1,4 +1,4 @@
-@use 'enjanga-core-setup/styles' as core; 
+@use 'enjanga-core-setup/styles-breakpoint' as bp;
 
 /**
  * Quote section
@@ -22,22 +22,22 @@
    * Variables' responsiveness
    * --------------------
   */
-  @include core.breakpoint('md') { 
+  @include bp.breakpoint('md') { 
     --enj-home-quotes-font-size: 1.25rem;
     --enj-home-quotes-line-height: 2rem;
   }
 
-  @include core.breakpoint('lg') { 
+  @include bp.breakpoint('lg') { 
     --enj-home-quotes-font-size: 1.4rem;
     --enj-home-quotes-line-height: 2.25rem;
   }
 
-  @include core.breakpoint('xlg') { 
+  @include bp.breakpoint('xlg') { 
     --enj-home-quotes-font-size: 1.563rem;
     --enj-home-quotes-line-height: 2.625rem;
   }
 
-  @include core.breakpoint('max') { 
+  @include bp.breakpoint('max') { 
     --enj-home-quotes-font-size: 1.75rem;
     --enj-home-quotes-line-height: 2.875rem;
   }

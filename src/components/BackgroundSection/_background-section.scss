@@ -1,4 +1,4 @@
-@use 'enjanga-core-setup/styles' as core;
+@use 'enjanga-core-setup/styles-breakpoint' as bp;
 
 .background-section {
   // Declarations:
@@ -48,7 +48,7 @@
 
 
 
-  @include core.breakpoint('md') {
+  @include bp.breakpoint('md') {
     --enj-bg-section-background-size: center; 
     --enj-bg-section-linear-gradient: linear-gradient(rgba(0, 0, 0, 0.0),rgba(0, 0, 0, 0.6));
   }

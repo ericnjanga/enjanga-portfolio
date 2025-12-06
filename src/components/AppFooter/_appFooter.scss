@@ -1,9 +1,10 @@
-@use 'enjanga-core-setup/styles' as core;
+@use 'enjanga-core-setup/styles-breakpoint' as bp;
+@use 'enjanga-core-setup/styles-spacing' as sp;
 
 
 .app-footer {
   // Variables ...
-  --enj-footer-padd: #{core.$spacing-09};
+  --enj-footer-padd: #{sp.$spacing-09};
   --enj-footer-title-mrg: 0.75rem;
   // TODO: Convert to enjanga-core-setup color token
   --enjanga-color1: #E3EBF9;
@@ -63,6 +64,8 @@
     }
   }
 
+  .enj-CMSRichText ul,
+  .enj-CMSRichText ol,
   ul, ol {
     padding: 0;
 
@@ -91,16 +94,16 @@
     }
   }
 
-  @include core.breakpoint('md') {
-    --enj-footer-padd: #{core.$spacing-10};
+  @include bp.breakpoint('md') {
+    --enj-footer-padd: #{sp.$spacing-10};
   }
 
-  @include core.breakpoint('lg') {
+  @include bp.breakpoint('lg') {
     --enj-footer-title-mrg: 1.5rem;
-    --enj-footer-padd: #{core.$spacing-11};
+    --enj-footer-padd: #{sp.$spacing-11};
   }
 
-  @include core.breakpoint('xlg') {
-    --enj-footer-padd: #{core.$spacing-12};
+  @include bp.breakpoint('xlg') {
+    --enj-footer-padd: #{sp.$spacing-12};
   }
 }

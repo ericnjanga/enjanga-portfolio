@@ -1,7 +1,32 @@
+/**
+ *
+ *
+**/
+.cds--content {
+  padding: 0;
+}
 
-// Global partial imports
-@use './utils/mixins';
-@use './utils/vars'; 
+/**
+ * smt-box: Scroll Margin Top Box
+ Gap between the viewport top and the component's top-edge 
+**/
+.smt-box {
+  scroll-margin-top: 80px;
 
-// Composite overrides
-@use './global-overrides';
+  // The gap is higher for this specific section
+  &#scope-of-expertise {
+    scroll-margin-top: 160px;
+  }
+}
+
+
+
+/**
+ * Prevent the fixed top nav from obstructing the main content.
+ * (For that, we push the main content down t a height equal to the top nav
+ * TODO: We need to check responsiveness
+*/
+#main-content {
+  --enjanga-top-nav-height: 3rem;
+  margin-top: var(--enjanga-top-nav-height);
+}

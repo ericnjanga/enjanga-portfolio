@@ -1,4 +1,4 @@
-@use 'enjanga-core-setup/styles' as core;
+@use 'enjanga-core-setup/styles-colors' as cl;
 
 /**
  * TO DO:
@@ -10,7 +10,7 @@
 
 .section-expertises {
   #scope-of-expertise-heading {
-    color: core.$text-on-color;
+    color: cl.$white;
   }
 
   .expertise-section-tabs-wrapper {

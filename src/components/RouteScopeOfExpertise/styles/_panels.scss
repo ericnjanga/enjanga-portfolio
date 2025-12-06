@@ -1,4 +1,4 @@
-@use 'enjanga-core-setup/styles' as core; 
+@use 'enjanga-core-setup/styles-breakpoint' as bp;
 
 /**
  * Expertise section (panels)
@@ -16,7 +16,7 @@
     }
 
     // Overrides ".enj-gridSys" margin-top feature
-    @include core.breakpoint('md') {  
+    @include bp.breakpoint('md') {  
       .enj-gridSys__cols-wrapper { 
         .cds--css-grid-column:nth-of-type(2) { 
           margin-top: 0;
@@ -41,7 +41,7 @@
    * Variables' responsiveness
    * --------------------
   */
-  @include core.breakpoint('lg') { 
+  @include bp.breakpoint('lg') { 
     --enj-tabspanel-introhead-font-size: 1.15rem;
   }
 }

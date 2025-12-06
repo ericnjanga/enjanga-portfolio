@@ -1,4 +1,5 @@
-@use 'enjanga-core-setup/styles' as core; 
+@use 'enjanga-core-setup/styles-breakpoint' as bp;
+@use 'enjanga-core-setup/styles-spacing' as sp;
 @use 'styles/utils' as utils; // mixins, vars, ...
 @use './enj-CMSRichText';
 
@@ -7,7 +8,7 @@
 .articlePage,
 .blogPage { 
   // Variables ...
-  --enj-articlePage-Banner-marg: #{core.$spacing-07};
+  --enj-articlePage-Banner-marg: #{sp.$spacing-07};
   --enj-articlePage-grid-col-2n-1-marg: 0 0 2.2rem 0;
   --enj-articlePage-grid-col-2n-marg: 0 0 2.2rem 0;
 
@@ -19,17 +20,17 @@
     @include utils.PSS-marginBottom-xxl;
   }
 
-  @include core.breakpoint('md') {
-    --enj-articlePage-Banner-marg: #{core.$spacing-08};
+  @include bp.breakpoint('md') {
+    --enj-articlePage-Banner-marg: #{sp.$spacing-08};
   }
 
-  @include core.breakpoint('lg') {
-    --enj-articlePage-Banner-marg: #{core.$spacing-10};
+  @include bp.breakpoint('lg') {
+    --enj-articlePage-Banner-marg: #{sp.$spacing-10};
     --enj-articlePage-grid-col-2n-1-marg: 0 2rem calc(2rem * 2.7) 0;
     --enj-articlePage-grid-col-2n-marg: 0 0 calc(2rem * 2.7) 2rem;
   }
 
-  @include core.breakpoint('xlg') {
+  @include bp.breakpoint('xlg') {
     --enj-articlePage-grid-col-2n-1-marg: 0 2.5rem calc(2.5rem * 2.7) 0;
     --enj-articlePage-grid-col-2n-marg: 0 0 calc(2.5rem * 2.7) 2.5rem;
   }

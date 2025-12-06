@@ -1,30 +1,31 @@
-@use 'enjanga-core-setup/styles' as core;
+@use 'enjanga-core-setup/styles-breakpoint' as bp;
+@use 'enjanga-core-setup/styles-spacing' as sp;
 @use './vars';
 
 // PSS: Page Section Spacing
 @mixin PSS-marginBottom-xxl {
   margin-bottom: var(--enj-page-section-sapcing-xxl);
 
-  @include core.breakpoint('md') {
-    --enj-page-section-sapcing-xxl: #{core.$spacing-11};
+  @include bp.breakpoint('md') {
+    --enj-page-section-sapcing-xxl: #{sp.$spacing-11};
   }
 
-  @include core.breakpoint('lg') {
-    --enj-page-section-sapcing-xxl: #{core.$spacing-13};
+  @include bp.breakpoint('lg') {
+    --enj-page-section-sapcing-xxl: #{sp.$spacing-13};
   }
 }
 @mixin PSS-marginBottom-xl {
   margin-bottom: var(--enj-page-section-sapcing-xl);
 
-  @include core.breakpoint('md') {
+  @include bp.breakpoint('md') {
     --enj-page-section-sapcing-xl: 2rem;
   }
 
-  @include core.breakpoint('lg') {
+  @include bp.breakpoint('lg') {
     --enj-page-section-sapcing-xl: 4rem;
   }
 
-  @include core.breakpoint('xlg') {
+  @include bp.breakpoint('xlg') {
     --enj-page-section-sapcing-xl: 6.5rem;
   }
 }
@@ -33,15 +34,15 @@
 @mixin PCS-paddingTop {
   padding-top: var(--enj-page-section-sapcing-xl);
 
-  @include core.breakpoint('md') {
+  @include bp.breakpoint('md') {
     --enj-page-section-sapcing-xl: 2rem;
   }
 
-  @include core.breakpoint('lg') {
+  @include bp.breakpoint('lg') {
     --enj-page-section-sapcing-xl: 4rem;
   }
 
-  @include core.breakpoint('xlg') {
+  @include bp.breakpoint('xlg') {
     --enj-page-section-sapcing-xl: 6.5rem;
   }
 }
