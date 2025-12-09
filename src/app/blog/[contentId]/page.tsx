@@ -24,8 +24,25 @@ export async function generateStaticParams() {
 }
 
 
+
+
+/**
+ * Metadata title and description route update
+ * @returns 
+ */
+const DATAFOR = 'BlogPost Entry';
+export async function generateMetadata(props: DynamicPageServer) {
+  const { contentId } = await props.params;
+  const data:ContextType1 = await getDataEntry(DATAFOR, contentId);
+
+  return {
+    title: data?.item?.title,
+    description: data?.item?.blurb
+  }
+}
+
+
 export default async function Page(props: DynamicPageServer) {
-  const dataFor = 'BlogPost Entry';
   /**
    * In the latest Next.js App Router, `params` can be a React-wrapped Promise
    * during server rendering. It must be awaited before accessing its properties.
@@ -34,7 +51,7 @@ export default async function Page(props: DynamicPageServer) {
    * like `contentId`.
    */
   const { contentId } = await props.params;
-  const data:ContextType1 = await getDataEntry(dataFor, contentId);
+  const data:ContextType1 = await getDataEntry(DATAFOR, contentId);
 
   return <PageEntry {...data} />;
 }

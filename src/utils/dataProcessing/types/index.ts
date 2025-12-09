@@ -66,6 +66,7 @@ export const getDataType = (dataFor: DataFor1 | DataFor2 | DataFor3 | DataFor4 |
  */
 export type ContentModel1 = {
   title?: string;
+  blurb?: string;
   description?: { json: { content: Node[] } };
 };
 

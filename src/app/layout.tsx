@@ -16,11 +16,18 @@ import { fetchImageUrl } from '@utils/dataProcessing/fetchImageUrl';
 import { ibmPlexSans, ibmPlexMono } from './ui/fonts';
 
 /**
- *
+ * Global metadata fallback, used only when a route does not provide custom metadata.
+ * (Serves home page metadata by default)
  * @returns
  */
+
 export async function generateMetadata(): Promise<Metadata> {
-  return await getMetadata();
+
+  // Todo: 1) Move this constant to contentfulContentIds
+  // Todo: 2) Ask chatGPT what would be a proper way to organize and rename contentfulContentIds
+  const HOME_PAGE_ID = '6uIC6XwEgQp1s1fU1mJey1';
+  
+  return await getMetadata(HOME_PAGE_ID);
 }
 
 export default async function RootLayout({

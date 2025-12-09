@@ -55,6 +55,7 @@ function getFormatedDataForContext(
       contextValue = {
         item: {
           title: value?.title,
+          blurb: value?.blurb,
           description: value?.description,
         } as ContentModel1,
         __isNormalized: true,
