@@ -36,10 +36,11 @@ export async function generateMetadata(props: DynamicPageServer) {
   const { contentId } = await props.params;
   const data:ContextType1 = await getDataEntry(DATAFOR, contentId);
 
-  return {
-    title: data?.item?.title,
-    description: data?.item?.blurb
-  }
+  // Extract metadata
+  const title = `${data?.item?.title} | Performance Case Study by Eric Njanga.`;
+  const description = `${data?.item?.blurb} | A performance-driven React/Next.js case study by consultant Eric Njanga.`;
+ 
+  return { title, description }
 }
 
 

@@ -35,10 +35,11 @@ export async function generateMetadata(props: DynamicPageServer) {
   const { contentId } = await props.params;
   const data:ContextType1 = await getDataEntry(DATAFOR, contentId);
 
-  return {
-    title: data?.item?.title,
-    description: data?.item?.blurb
-  }
+  // Extract metadata
+  const title = `${data?.item?.title} | Eric Njanga on Web Performance & UX.`;
+  const description = `${data?.item?.blurb} | Insights from consultant Eric Njanga on performance-focused UX and front-end strategy.`;
+ 
+  return { title, description }
 }
 
 
