@@ -17,10 +17,7 @@ type PageListingType = {
   listOfEntries: ContextType4;
 };
 
-export default function PageListing({
-  banner,
-  listOfEntries,
-}: PageListingType) {
+export default function PageListing({ banner, listOfEntries }: PageListingType) {
   const { banners } = useDataDistributorData();
 
   return (
