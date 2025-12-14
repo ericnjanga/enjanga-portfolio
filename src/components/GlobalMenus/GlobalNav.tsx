@@ -5,6 +5,7 @@ import { HeaderMenuItem } from '@carbon/react';
 import { useSectionNavigation } from '@utils/navigation';
 import { useRouter, usePathname } from 'next/navigation';
 import { useSearchParamData, useIsHomeActiveFlag } from '@utils/context/SearchParamProvider';
+import { Link } from 'enjanga-core-setup';
 
 type GlobalNavType = { parent?: 'top nav' | 'footer' };
 
@@ -55,10 +56,7 @@ export const GlobalNav = ({ parent = 'top nav' }: GlobalNavType) => {
         Best Work
       </HeaderMenuItem>
 
-      <HeaderMenuItem
-        onClick={() => router.push('/blog')}
-        aria-current={isBlogActive ? 'page' : undefined}
-      >
+      <HeaderMenuItem as={Link} href="/blog" aria-current={isBlogActive ? 'page' : undefined}>
         Blog
       </HeaderMenuItem>
     </>
