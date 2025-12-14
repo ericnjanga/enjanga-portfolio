@@ -2,7 +2,6 @@
 'use client';
 
 import { useEffect } from 'react';
-import smoothscroll from 'smoothscroll-polyfill';
 import { Providers } from './providers';
 import { AppUtilityProvider } from '@utils/UtilityContext';
 import type { ContextType1 } from '@utils/dataProcessing/types';
@@ -30,8 +29,13 @@ export default function ClientProviders({
   dataValue,
 }: ClientProvidersProps) {
   useEffect(() => {
-    smoothscroll.polyfill();
+    // Only load polyfill on the client, after mount
+    // (Don’t bundle smoothscroll-polyfill into the initial chunk)
+    import('smoothscroll-polyfill')
+      .then((m) => m.polyfill())
+      .catch(() => {});
 
+    // Conditionally load the wicg-inert polyfill if the 'inert' property is not natively supported on HTMLElement.
     if (
       typeof HTMLElement !== 'undefined' &&
       !('inert' in HTMLElement.prototype)

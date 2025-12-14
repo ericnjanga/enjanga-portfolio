@@ -41,21 +41,21 @@ const RouteScopeOfExpertise = dynamic(
   {
     ssr: false, // Ony render on the client
     loading: () => (
-      <SkeletonComponent name="Scope of Expertise" minHeight={300} />
+      <SkeletonComponent name="information about Eric Njanga's scope of expertise." minHeight={300} />
     ),
   }
 );
 
 const RouteAbout = dynamic(() => import('@/components/RouteAbout/RouteAbout'), {
   ssr: false, // Ony render on the client
-  loading: () => <SkeletonComponent name="About" minHeight={300} />,
+  loading: () => <SkeletonComponent name="information about Eric Njanga's vision and career objectives." minHeight={300} />,
 });
 
 const WrapperQuotes = dynamic(
   () => import('@/components/WrapperQuotes/WrapperQuotes'),
   {
     ssr: false, // Ony render on the client
-    loading: () => <SkeletonComponent name="Quotes" />,
+    loading: () => <SkeletonComponent name="insights on Eric Njanga's philosophy." />,
   }
 );
 
@@ -63,7 +63,7 @@ const RouteBestWork = dynamic(
   () => import('@/components/RouteBestWork/RouteBestWork'),
   {
     ssr: false, // Ony render on the client
-    loading: () => <SkeletonComponent name="Best Work" minHeight={300} />,
+    loading: () => <SkeletonComponent name="Eric Njanga's best Work." minHeight={300} />,
   }
 );
 

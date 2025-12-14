@@ -6,6 +6,7 @@ import {
   SearchParamProvider,
   useIsHomeActiveFlag,
 } from '@utils/context/SearchParamProvider';
+import { Theme } from "@carbon/react";
 import 'enjanga-components-library/app-header.css'; // Styling for <AppHea** /> component
 import './_appHeader.scss';
 
@@ -27,17 +28,19 @@ const AppHeaderWithExtra = () => {
   const isHomeRoute = useIsHomeActiveFlag();
 
   return (
-    <AppHeader
-      brandLabel={brand.name}
-      brandRoute="/"
-      brand={<BrandLogo value={brand.name} />}
-      isHomeRoute={isHomeRoute}
-      navigation={
-        <SearchParamProvider>
-          <GlobalNav />
-        </SearchParamProvider>
-      }
-      globalBarItems={<GlobalActions />}
-    />
+    <Theme theme="g10">
+      <AppHeader
+        brandLabel={brand.name}
+        brandRoute="/"
+        brand={<BrandLogo value={brand.name} />}
+        isHomeRoute={isHomeRoute}
+        navigation={
+          <SearchParamProvider>
+            <GlobalNav />
+          </SearchParamProvider>
+        }
+        globalBarItems={<GlobalActions />}
+      />
+    </Theme>
   );
 };
