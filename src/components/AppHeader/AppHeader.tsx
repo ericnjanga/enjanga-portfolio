@@ -35,9 +35,11 @@ const AppHeaderWithExtra = () => {
         brand={<BrandLogo value={brand.name} />}
         isHomeRoute={isHomeRoute}
         navigation={
-          <SearchParamProvider>
-            <GlobalNav />
-          </SearchParamProvider>
+          <Suspense fallback={null}>
+            <SearchParamProvider>
+              <GlobalNav />
+            </SearchParamProvider>
+          </Suspense>
         }
         globalBarItems={<GlobalActions />}
       />
