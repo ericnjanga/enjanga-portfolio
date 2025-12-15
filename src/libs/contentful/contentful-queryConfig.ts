@@ -47,6 +47,7 @@ export function getContentfulQueryConfig(dataFor: DataFor1 | DataFor2 | DataFor3
   let query = '';
   let variables: Record<string, any> = {
     locale1: 'en-CA',
+    order: ["sys_publishedAt_DESC"],
     locale2: 'fr',
     sectionId: '',
     parentRefId: '',

@@ -169,21 +169,8 @@ export const queryData = {
    * ------------------
    */
   projectsCollection: `
-    query getProjectCollectionQuery($locale1: String!, $locale2: String!) {
-      en: projectCollection(locale: $locale1) { 
-        items { 
-          sys {
-            id
-          }
-          title
-          blurb
-          description {
-            json
-          }
-          order
-        } 
-      }
-      fr: projectCollection(locale: $locale2) { 
+    query getProjectCollectionQuery($locale1: String!, $order: [ProjectOrder]) {
+      en: projectCollection(locale: $locale1, order: $order) { 
         items { 
           sys {
             id
@@ -262,24 +249,10 @@ export const queryData = {
   `,
   blogPostCollection: `
     query blogPostCollectionQuery(
-      $locale1: String!, 
-      $locale2: String!
+      $locale1: String!,
+      $order: [BlogPostOrder]
     ) {
-      en: blogPostCollection(locale: $locale1) {
-        items {
-          sys {
-            id
-          }
-          title
-          blurb
-          image {
-            url
-            title
-            description
-          }
-        }
-      }
-      fr: blogPostCollection(locale: $locale2) {
+      en: blogPostCollection(locale: $locale1, order: $order) {
         items {
           sys {
             id
