@@ -140,27 +140,6 @@ export const queryData = {
             }
           }
         }
-        fr: blogPost(id: $sectionId, locale: $locale2) {  
-          sys {
-            id
-          }
-          title
-          blurb
-          description {
-            json
-            links {
-              assets {
-                block {
-                  sys { id }
-                  url
-                  title
-                  description
-                }
-              }
-            }
-          }
-        }
-
       }
   `,
 
