@@ -5,14 +5,8 @@ export const queryData = {
    * ------------------
    */
   pageSection: `
-    query getPageSectionEntryQuery($sectionId: String!, $locale1: String!, $locale2: String!) {
-      en: pageSection(id: $sectionId, locale: $locale1) {  
-        title
-        description {
-          json
-        } 
-      }
-      fr: pageSection(id: $sectionId, locale: $locale2) {  
+    query getPageSectionEntryQuery($sectionId: String!, $locale: String!) {
+      en: pageSection(id: $sectionId, locale: $locale) {  
         title
         description {
           json
@@ -24,27 +18,9 @@ export const queryData = {
   infoBlockById: `
     query getInfoBlockEntryQuery(
       $sectionId: String!, 
-      $locale1: String!, 
-      $locale2: String!
+      $locale: String!
     ) {
-      en: infoBlock(id: $sectionId, locale: $locale1) {  
-        title
-        blurb
-        description {
-          json
-          links {
-            assets {
-              block {
-                sys { id }
-                url
-                title
-                description
-              }
-            }
-          }
-        }
-      }
-      fr: infoBlock(id: $sectionId, locale: $locale2) {  
+      en: infoBlock(id: $sectionId, locale: $locale) {  
         title
         blurb
         description {
@@ -68,10 +44,9 @@ export const queryData = {
   projectById: `
     query projectEntryQuery(
       $sectionId: String!, 
-      $locale1: String!, 
-      $locale2: String!
+      $locale: String!
     ) {
-        en: project(id: $sectionId, locale: $locale1) {  
+        en: project(id: $sectionId, locale: $locale) {  
           sys {
             id
           }
@@ -91,36 +66,14 @@ export const queryData = {
             }
           }
         }
-        fr: project(id: $sectionId, locale: $locale2) {  
-          sys {
-            id
-          }
-          title
-          blurb
-          description {
-            json
-            links {
-              assets {
-                block {
-                  sys { id }
-                  url
-                  title
-                  description
-                }
-              }
-            }
-          }
-        }
-
       }
   `,
   blogPostById: `
     query blogPostEntryQuery(
       $sectionId: String!, 
-      $locale1: String!, 
-      $locale2: String!
+      $locale: String!
     ) {
-      en: blogPost(id: $sectionId, locale: $locale1) {  
+      en: blogPost(id: $sectionId, locale: $locale) {  
         sys {
           id
         }
@@ -148,8 +101,8 @@ export const queryData = {
    * ------------------
    */
   projectsCollection: `
-    query getProjectCollectionQuery($locale1: String!, $order: [ProjectOrder]) {
-      en: projectCollection(locale: $locale1, order: $order) { 
+    query getProjectCollectionQuery($locale: String!, $order: [ProjectOrder]) {
+      en: projectCollection(locale: $locale, order: $order) { 
         items { 
           sys {
             id
@@ -165,22 +118,12 @@ export const queryData = {
     }
   `,
   quotesCollection: `
-    query getQuoteCollectionQuery($locale1: String!, $locale2: String!) {
-      en: quoteCollection(locale: $locale1) { 
+    query getQuoteCollectionQuery($locale: String!) {
+      en: quoteCollection(locale: $locale) { 
         items { 
           sys {
             id
           }  
-          description {
-            json
-          } 
-        } 
-      }
-      fr: quoteCollection(locale: $locale2) { 
-        items { 
-          sys {
-            id
-          } 
           description {
             json
           } 
@@ -191,25 +134,9 @@ export const queryData = {
   infoBlockByParentCollection: `
     query infoBlocksByParentQuery(
       $parentRefId: String!,
-      $locale1: String!, 
-      $locale2: String!
+      $locale: String!
     ) {
-      en: infoBlockCollection(where: { parentId: $parentRefId }, locale: $locale1) {
-        items {
-          sys {
-            id
-          }
-          parentId
-          order
-          icon
-          title
-          blurb
-          description {
-            json
-          }
-        }
-      }
-      fr: infoBlockCollection(where: { parentId: $parentRefId }, locale: $locale2) {
+      en: infoBlockCollection(where: { parentId: $parentRefId }, locale: $locale) {
         items {
           sys {
             id
@@ -228,10 +155,10 @@ export const queryData = {
   `,
   blogPostCollection: `
     query blogPostCollectionQuery(
-      $locale1: String!,
+      $locale: String!,
       $order: [BlogPostOrder]
     ) {
-      en: blogPostCollection(locale: $locale1, order: $order) {
+      en: blogPostCollection(locale: $locale, order: $order) {
         items {
           sys {
             id

@@ -46,7 +46,7 @@ export const contentfulContentIds = {
 export function getContentfulQueryConfig(dataFor: DataFor1 | DataFor2 | DataFor3 | DataFor4 | DataFor5, contentId?: string) {
   let query = '';
   let variables: Record<string, any> = {
-    locale1: 'en-CA',
+    locale: 'en-CA',
     order: ["sys_publishedAt_DESC"],
     locale2: 'fr',
     sectionId: '',
