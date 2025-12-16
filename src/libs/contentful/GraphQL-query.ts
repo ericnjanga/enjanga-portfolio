@@ -120,27 +120,27 @@ export const queryData = {
       $locale1: String!, 
       $locale2: String!
     ) {
-        en: blogPost(id: $sectionId, locale: $locale1) {  
-          sys {
-            id
-          }
-          title
-          blurb
-          description {
-            json
-            links {
-              assets {
-                block {
-                  sys { id }
-                  url
-                  title
-                  description
-                }
+      en: blogPost(id: $sectionId, locale: $locale1) {  
+        sys {
+          id
+        }
+        title
+        blurb
+        description {
+          json
+          links {
+            assets {
+              block {
+                sys { id }
+                url
+                title
+                description
               }
             }
           }
         }
       }
+    }
   `,
 
   /**
