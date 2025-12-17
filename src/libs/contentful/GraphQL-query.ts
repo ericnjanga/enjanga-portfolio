@@ -32,6 +32,8 @@ export const queryData = {
                 url
                 title
                 description
+                width
+                height
               }
             }
           }
@@ -61,6 +63,8 @@ export const queryData = {
                   url
                   title
                   description
+                  width
+                  height
                 }
               }
             }
@@ -88,6 +92,8 @@ export const queryData = {
                 url
                 title
                 description
+                width
+                height
               }
             }
           }
@@ -169,6 +175,8 @@ export const queryData = {
             url
             title
             description
+            width
+            height
           }
         }
       }

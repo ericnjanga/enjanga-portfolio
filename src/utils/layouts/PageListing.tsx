@@ -54,7 +54,12 @@ export default function PageListing({ banner, listOfEntries }: PageListingType) 
                   }}
                   layoutStyle="card"
                   media="image"
-                  mediaImage={item?.image?.url}
+                  mediaImage={{
+                    url: item?.image?.url || '',
+                    alt: item?.image?.description || '',
+                    width: item?.image?.width,
+                    height: item?.image?.height,
+                  }}
                   linksTo={`/blog/${item?.sys?.id}` as CTL_valid_linkTo}
                 />
               </Column>
