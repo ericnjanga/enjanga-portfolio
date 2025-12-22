@@ -24,7 +24,7 @@ const PageEntry = ({ item }: ContextType1) => {
       <article className="page-content">
         <div className="enj-container">
           <div 
-          //lg={10} md={8} sm={4}
+            style={{ maxWidth: 930 }}
           >
             <CMSRichText data={item?.description} />
           </div>
