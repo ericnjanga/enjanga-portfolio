@@ -2320,15 +2320,15 @@ enjanga-components-library@^1.0.12:
   resolved "https://registry.npmjs.org/enjanga-components-library/-/enjanga-components-library-1.0.26.tgz"
   integrity sha512-TVmdS8Gndnkj+Di6TMspSs8rkC4MJ6GSYkU5eayKZnCdwRdQ4tJ21HQMH/DN8UIfmM0R/zmiAUj/WoneSrmeGg==
 
-enjanga-components-library@^1.0.56:
-  version "1.0.56"
-  resolved "https://registry.yarnpkg.com/enjanga-components-library/-/enjanga-components-library-1.0.56.tgz#886d3216989f387a9ac5c1a09cc0908eff897275"
-  integrity sha512-SCrbvXaNa7qok/4k7ciJjDCGJBm7N3pTt6JsyVGmcuuglwQaP6F69bS0Srgr1kBN8QAfXUGYFd9/CA0W3RLQZw==
+enjanga-components-library@^1.0.58:
+  version "1.0.58"
+  resolved "https://registry.yarnpkg.com/enjanga-components-library/-/enjanga-components-library-1.0.58.tgz#3f3e138638f6c4790e87e722b28f02ebc6b180f6"
+  integrity sha512-xFSD3hscolyreUOwVSj2hnISQ1c2NQ0QpmvLgj890h2/J13zoj4EA3LbE89jvkZZAQb5lOXXLY7rfmFl5iVHLA==
 
-enjanga-core-setup@^1.0.37:
-  version "1.0.37"
-  resolved "https://registry.yarnpkg.com/enjanga-core-setup/-/enjanga-core-setup-1.0.37.tgz#5f18337ddb19379b98734a214dd68e0d24f686be"
-  integrity sha512-RiOaIxVcoc98Kf/JfULLTSTmYABzNNQrxytx8pETx7zcPSoPYSN80dI5OPFtkP/Azo8qDixEuhL3kCgVL/YMGw==
+enjanga-core-setup@^1.0.41:
+  version "1.0.41"
+  resolved "https://registry.yarnpkg.com/enjanga-core-setup/-/enjanga-core-setup-1.0.41.tgz#a1e600846a2621c66eb5e2a1224daacf63f7693d"
+  integrity sha512-OMlXvZdb9pkyIG1pSR1SZgWIUOgmjPiSPxM8O46AJpC3G1OLblmu2KUt6oUtGGOz/wnDkKvBKeO3hFNNmqtf3w==
   dependencies:
     "@carbon/icons-react" "^11.67.0"
     "@carbon/pictograms-react" "^11.67.0"

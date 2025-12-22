@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import { Tabs } from '@carbon/react';
-import { Grid, Column } from '@carbon/react';
 import { ContentModel2 } from '@utils/dataProcessing/types';
 import SectionTabsList from './parts/tabsList';
 import SectionTabPanels from './parts/tabPanels';
@@ -21,8 +20,10 @@ const SectionOfTabs = ({
   const [selectedTabIndex, setSelectedTabIndex] = useState(0);
 
   return (
-    <Grid className="SectionOfTabs">
-      <Column lg={16} md={8} sm={4} className="landing-page__r2">
+    <div className="enj-container SectionOfTabs">
+      <div 
+      //lg={16} md={8} sm={4} 
+      className="landing-page__r2">
         <h2 id="scope-of-expertise-heading" className="sectionTitle">
           {title}
         </h2>
@@ -34,8 +35,8 @@ const SectionOfTabs = ({
           <SectionTabsList className={className} listOfItems={listOfItems} />
           <SectionTabPanels listOfItems={listOfItems} />
         </Tabs>
-      </Column>
-    </Grid>
+      </div>
+    </div>
   );
 };
 

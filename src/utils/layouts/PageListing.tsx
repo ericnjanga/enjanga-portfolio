@@ -1,5 +1,6 @@
 'use client';
 
+import React from 'react';
 import {
   Banner,
   CustomTile,
@@ -7,9 +8,9 @@ import {
 } from 'enjanga-components-library';
 import 'enjanga-components-library/banner.css'; // Styling for <Bann** /> component
 import 'enjanga-components-library/custom-tile.css'; // Styling for <CustomT** /> component
-import { Grid, Column } from '@carbon/react';
 import type { ContextType1, ContextType4 } from '@utils/dataProcessing/types';
 import { useDataDistributorData } from '@utils/context/DataDistributorContext';
+import { enjGetLayout } from '@libs/layouts';
 import 'styles/blogs-and-articles/index.scss';
 
 type PageListingType = {
@@ -18,7 +19,10 @@ type PageListingType = {
 };
 
 export default function PageListing({ banner, listOfEntries }: PageListingType) {
-  const { banners } = useDataDistributorData();
+  const { banners } = useDataDistributorData(); 
+  const layoutGridStyle = React.useMemo(() => {
+    return enjGetLayout({ type: 'RAM', itemMaxWidth: 350, gridGap: 1.8 });
+  }, []);
 
   return (
     <div className="blogPage">
@@ -36,36 +40,35 @@ export default function PageListing({ banner, listOfEntries }: PageListingType) 
       />
 
       <article className="page-content">
-        <Grid>
+        <div className="enj-container" style={layoutGridStyle}>
           {listOfEntries?.items?.map((item) => {
-            return (
-              <Column key={item?.sys?.id} lg={8} md={4} sm={4} className="...">
-                <CustomTile
-                  featuredText={{
-                    heading: {
-                      children: item?.title,
-                      level: 2,
-                    },
-                    smartText: {
-                      plainText: item?.blurb,
-                    },
-                    headingMaxLength: 50,
-                    plainTextMaxLength: 120,
-                  }}
-                  layoutStyle="card"
-                  media="image"
-                  mediaImage={{
-                    url: item?.image?.url || '',
-                    alt: item?.image?.description || '',
-                    width: item?.image?.width,
-                    height: item?.image?.height,
-                  }}
-                  linksTo={`/blog/${item?.sys?.id}` as CTL_valid_linkTo}
-                />
-              </Column>
+            return ( 
+              <CustomTile
+                key={item?.sys?.id}
+                featuredText={{
+                  heading: {
+                    children: item?.title,
+                    level: 3,
+                  },
+                  smartText: {
+                    plainText: item?.blurb,
+                  },
+                  headingMaxLength: 50,
+                  plainTextMaxLength: 120,
+                }}
+                layoutStyle="card"
+                media="image"
+                mediaImage={{
+                  url: item?.image?.url || '',
+                  alt: item?.image?.description || '',
+                  width: item?.image?.width,
+                  height: item?.image?.height,
+                }}
+                linksTo={`/blog/${item?.sys?.id}` as CTL_valid_linkTo}
+              /> 
             );
           })}
-        </Grid>
+        </div>
       </article>
     </div>
   );

@@ -1,4 +1,3 @@
-import { Grid, Column } from '@carbon/react';
 import { CustomQuotes, CQ_quote_propsType } from 'enjanga-components-library';
 import 'enjanga-components-library/custom-quotes.css'; // Styling for <CustomQuo** /> component
 import type { ContentModel1 } from '@utils/dataProcessing/types';
@@ -10,8 +9,10 @@ type WrapperQuotesType = {
 
 const WrapperQuotes = ({ items }: WrapperQuotesType) => {
   return (
-    <Grid>
-      <Column lg={16} md={8} sm={4}>
+    <div className="enj-container">
+      <div 
+      //g={16} md={8} sm={4}
+      >
         <section
           className="pageSection smt-box"
           id="engineer-quotes"
@@ -27,8 +28,8 @@ const WrapperQuotes = ({ items }: WrapperQuotesType) => {
             quotes={items as CQ_quote_propsType[]}
           />
         </section>
-      </Column>
-    </Grid>
+      </div>
+    </div>
   );
 };
 

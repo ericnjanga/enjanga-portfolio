@@ -1,9 +1,10 @@
+import React from 'react';
 import { CustomTile } from 'enjanga-components-library';
 import 'enjanga-components-library/custom-tile.css'; // Styling for <CustomT** /> component
-import { Grid, Column } from '@carbon/react';
 import { ContentModel2, ContextType2 } from '@utils/dataProcessing/types';
 import { CP_nameType } from 'enjanga-components-library';
 import { IntroTextSkeleton } from '@/app/ui/Skeleton';
+import { enjGetLayout } from '@libs/layouts';
 
 interface SectionTabContentProps {
   tab: ContentModel2;
@@ -15,22 +16,39 @@ const SectionTabContent = ({
   tab,
   panel,
   className,
-}: SectionTabContentProps) => (
-  <Grid className={className}>
-    <Column lg={5} md={6} sm={4}>
-      {tab?.title && (
-        <article className="intro-text">
-          <h3>{tab?.title}</h3>
-          <p>{tab?.blurb}</p>
-        </article>
-      )}
-      {!tab?.title && <IntroTextSkeleton />}
-    </Column>
-    <Column lg={{ span: 10, offset: 6 }} md={8} sm={4}>
-      <Grid className="enj-gridSys__cols-wrapper">
-        {panel?.items?.map((panelItem, index) => (
-          <Column key={panelItem?.sys?.id ?? index} lg={5} md={4} sm={4}>
+}: SectionTabContentProps) => {
+
+  const itemMaxWidth = 350;
+  const gridGap = 0.7;
+  const tabContentWidth = itemMaxWidth * 2 + (gridGap * 16); // itemMaxWidth * 2 + gridGap
+  // layoutTabContentGridStyle
+  const lTCGridStyle = React.useMemo(() => {
+    return {
+      ...enjGetLayout({ type: 'RAM', itemMaxWidth: itemMaxWidth, gridGap: gridGap }),
+      maxWidth: `${tabContentWidth}px`,
+    };
+  }, [tabContentWidth, itemMaxWidth, gridGap]);
+
+  return (
+    <div className={className}>
+      <div 
+      //lg={5} md={6} sm={4}
+      >
+        {tab?.title && (
+          <article className="intro-text">
+            <h3>{tab?.title}</h3>
+            <p>{tab?.blurb}</p>
+          </article>
+        )}
+        {!tab?.title && <IntroTextSkeleton />}
+      </div>
+      <div 
+      //lg={{ span: 10, offset: 6 }} md={8} sm={4}
+      >
+        <div style={lTCGridStyle}>
+          {panel?.items?.map((panelItem, index) => (
             <CustomTile
+              key={panelItem?.sys?.id ?? index}
               featuredText={{
                 heading: {
                   children: panelItem?.title,
@@ -48,13 +66,13 @@ const SectionTabContent = ({
                   ? (panelItem?.icon as CP_nameType)
                   : ('App Developer' as CP_nameType)
               }
-            />
-          </Column>
-        ))}
-      </Grid>
-    </Column>
-  </Grid>
-);
+            /> 
+          ))}
+        </div>
+      </div>
+    </div>
+  )
+};
 
 
 export default SectionTabContent;

@@ -21,6 +21,7 @@
     "paths": {
       "*": ["src/types/*"],
       "@utils/*": ["utils/*"],
+      "@libs/*": ["libs/*"],
       "@styles/*": ["styles/*"],
       "enjanga-components-library": [
         "node_modules/enjanga-components-library"

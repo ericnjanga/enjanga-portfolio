@@ -1,4 +1,3 @@
-import { Grid, Column } from '@carbon/react';
 import ListOfItems from './ListOfItems';
 import { ContentModel3 } from '@utils/dataProcessing/types';
 
@@ -7,8 +6,10 @@ type RouteBestWorkType = {
 };
 
 const RouteBestWork = ({ items }: RouteBestWorkType) => (
-  <Grid>
-    <Column lg={16} md={8} sm={4}>
+  <div className='enj-container'>
+    <div 
+    //lg={16} md={8} sm={4}
+    >
       <section
         className="pageSection smt-box"
         id="best-work"
@@ -20,8 +21,8 @@ const RouteBestWork = ({ items }: RouteBestWorkType) => (
         </h2>
         <ListOfItems items={items} />
       </section>
-    </Column>
-  </Grid>
+    </div>
+  </div>
 );
 
 export default RouteBestWork;

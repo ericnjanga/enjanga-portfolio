@@ -1,9 +1,7 @@
-import { Grid, Column } from '@carbon/react';
 import { CustomTile } from 'enjanga-components-library';
 import 'enjanga-components-library/custom-tile.css'; // Styling for <CustomT** /> component
 import 'enjanga-components-library/content-modal.css'; // Styling for <ContentMod** /> component (<CustomT** /> is triggering <ContentMod** /> in thid case)
 import 'enjanga-components-library/cms-rich-text.css'; // Styling for <ContentMod** /> contains (<CMSRichTe** /> component)
-import '@/styles/_enj-grid-system.scss';
 import { CP_nameType } from 'enjanga-components-library';
 import type { ContentModel2 } from '@utils/dataProcessing/types';
 
@@ -14,14 +12,15 @@ const ListOfItems = (items: ContentModel2[]) => {
   const card3 = items && items[2];
 
   return (
-    <Grid className="enj-gridSys enj-gridSys-type-2">
-      <Column
-        lg={{ span: 5, offset: 11 }}
-        md={{ span: 4, offset: 4 }}
-        sm={4}
+    <section className="enj-container enj-gridSys enj-gridSys-type-2">
+      <div
+        // lg={{ span: 5, offset: 11 }}
+        // md={{ span: 4, offset: 4 }}
+        // sm={4}
         className="">
-        <Grid className="enj-gridSys__offset-col">
-          <Column lg={16} md={8} sm={4}>
+        <div className="enj-gridSys__offset-col"> {/* Grid */}
+          <div // lg={16} md={8} sm={4}
+          >
             <CustomTile
               className=""
               featuredText={{
@@ -39,13 +38,17 @@ const ListOfItems = (items: ContentModel2[]) => {
               media="pictogram"
               mediaPictogram={card1?.icon as CP_nameType}
             />
-          </Column>
-        </Grid>
-      </Column>
+          </div>
+        </div>
+      </div>
 
-      <Column lg={{ span: 10, offset: 6 }} md={8} sm={4} className="">
-        <Grid className="enj-gridSys__cols-wrapper">
-          <Column lg={5} md={4} sm={4}>
+      <div 
+      // lg={{ span: 10, offset: 6 }} md={8} sm={4} 
+      className="">
+        <div className="-----"> {/* Grid */}
+          <div 
+          // lg={5} md={4} sm={4}
+          >
             <CustomTile
               className=""
               featuredText={{
@@ -63,9 +66,11 @@ const ListOfItems = (items: ContentModel2[]) => {
               media="pictogram"
               mediaPictogram={card2?.icon as CP_nameType}
             />
-          </Column>
+          </div>
 
-          <Column lg={5} md={4} sm={4}>
+          <div 
+          //lg={5} md={4} sm={4}
+          >
             <CustomTile
               className=""
               featuredText={{
@@ -83,10 +88,10 @@ const ListOfItems = (items: ContentModel2[]) => {
               media="pictogram"
               mediaPictogram={card3?.icon as CP_nameType}
             />
-          </Column>
-        </Grid>
-      </Column>
-    </Grid>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 };
 
