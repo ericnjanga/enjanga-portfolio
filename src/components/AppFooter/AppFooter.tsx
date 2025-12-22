@@ -1,4 +1,6 @@
 import './_appFooter.scss';
+
+import React from 'react';
 import { Content } from '@carbon/react';
 // ENJ NPM component library
 import {
@@ -7,26 +9,30 @@ import {
 } from 'enjanga-components-library';
 import { GlobalNav } from '../GlobalMenus';
 import { useDataDistributorData } from '@utils/context/DataDistributorContext';
+import { enjGetLayout } from '@libs/layouts';
 
 const AppFooter = () => { 
   const { containerRef, activeBreakpoint } = useContainerSize();
   const { footer: footerData } = useDataDistributorData();
+    const layoutGridStyle = React.useMemo(() => {
+      return enjGetLayout({ type: 'RAM', itemMaxWidth: 220, gridGap: 1.8 });
+    }, []);
 
   return (
     <footer className="app-footer" ref={containerRef as React.RefObject<HTMLElement>}>
       <Content>
-        <div className="enj-container app-footer__wrapper">
+        <div className="enj-container app-footer__wrapper" style={layoutGridStyle}>
           {/** Only on smaller screens:
            * --------------------
            * Render supporting text "before" the QR code
            */}
           {activeBreakpoint==='md' && (
-            <div className='col-sm-4'> 
+            <div> 
               <CMSRichText data={footerData[1]?.item?.description} />
             </div>
           )} 
 
-          <div className='col-xlg-4 col-lg-4 col-md-4 col-sm-4'>
+          <div>
             <CMSRichText data={footerData[0]?.item?.description} />
           </div>
 
@@ -36,18 +42,18 @@ const AppFooter = () => {
            * Render supporting text "after" the QR code
            */}
           {activeBreakpoint!=='md' && (
-            <div className='col-sm-4'> 
+            <div> 
               <CMSRichText data={footerData[1]?.item?.description} />
             </div>
           )}
 
-          <div className='col-md-4 col-sm-4'> {/* xlg={{ span: 3, offset: 10 }} lg={{ span: 4, offset: 8 }} */}
+          <div>
             <h3>Navigation</h3>
             <ul>
               <GlobalNav parent='footer' />
             </ul>
           </div>
-          <div className='col-xlg-3 col-lg-4 col-md-4 col-sm-4'>
+          <div>
             <CMSRichText data={footerData[2]?.item?.description} />
           </div>
 
