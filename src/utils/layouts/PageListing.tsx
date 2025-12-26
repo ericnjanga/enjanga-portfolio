@@ -3,11 +3,11 @@
 import React from 'react';
 import {
   Banner,
-  CustomTile,
+  PostTile,
   CTL_valid_linkTo,
 } from 'enjanga-components-library';
 import 'enjanga-components-library/banner.css'; // Styling for <Bann** /> component
-import 'enjanga-components-library/custom-tile.css'; // Styling for <CustomT** /> component
+import 'enjanga-components-library/post-tile.css'; // Styling for <PostT** /> component
 import type { ContextType1, ContextType4 } from '@utils/dataProcessing/types';
 import { useDataDistributorData } from '@utils/context/DataDistributorContext';
 import { enjGetLayout } from '@libs/layouts';
@@ -43,7 +43,7 @@ export default function PageListing({ banner, listOfEntries }: PageListingType) 
         <div className="enj-container" style={layoutGridStyle}>
           {listOfEntries?.items?.map((item) => {
             return ( 
-              <CustomTile
+              <PostTile
                 key={item?.sys?.id}
                 featuredText={{
                   heading: {
@@ -55,9 +55,7 @@ export default function PageListing({ banner, listOfEntries }: PageListingType) 
                   },
                   headingMaxLength: 50,
                   plainTextMaxLength: 120,
-                }}
-                layoutStyle="card"
-                media="image"
+                }}  
                 mediaImage={{
                   url: item?.image?.url || '',
                   alt: item?.image?.description || '',
