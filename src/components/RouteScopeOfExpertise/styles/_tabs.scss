@@ -32,12 +32,8 @@
     }
 
     @include bp.breakpoint('lg') {
-      --enj-tabs-heading-top: -130px;
-    }
-
-    @include bp.breakpoint('xlg') {
-      --enj-tabs-heading-top: -140px;
-    }
+      --enj-tabs-heading-top: -125px;
+    } 
   }
 
 

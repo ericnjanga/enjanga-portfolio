@@ -16,7 +16,7 @@ const SectionTabPanels = ({ listOfItems }: SectionTabPanelsProps) => {
       {listOfItems?.map((item, index) => (
         <TabPanel
           key={item?.sys?.id ?? index}
-          className="enj-gridSys enj-gridSys-type-1 enj-gridSys-padding">
+          className="-----">
           <div className="tab-content">
             {panelData?.map((panel) => {
               return (
