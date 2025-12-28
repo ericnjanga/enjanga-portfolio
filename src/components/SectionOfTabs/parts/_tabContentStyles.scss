@@ -1,16 +1,11 @@
 :root {
   --enj-tabCont-grid-tc: unset;
   --enj-tabCont-mxw: 100%;
+  --enj-tabCont-wrap-padd: 1.5rem 0 0 0;
 }
 
-
-.tab-content {
-  .intro-text {
-    max-width: 710px;
-  }
-  .enj-CustomTile-wrapper {
-    display: flex;
-  }
+.tab-content-wrapper {
+  padding: var(--enj-tabCont-wrap-padd);
 }
 
 .tab-content-inner {
@@ -35,5 +30,14 @@
     gap: 0.7rem;
     max-width: var(--enj-tabCont-mxw);
     grid-template-columns: var(--enj-tabCont-grid-tc);
+  }
+}
+
+.tab-content {
+  .intro-text {
+    max-width: 710px;
+  }
+  .enj-CustomTile-wrapper {
+    display: flex;
   }
 }

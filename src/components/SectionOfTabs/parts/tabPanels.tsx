@@ -16,7 +16,7 @@ const SectionTabPanels = ({ listOfItems }: SectionTabPanelsProps) => {
       {listOfItems?.map((item, index) => (
         <TabPanel
           key={item?.sys?.id ?? index}
-          className="-----">
+          className="tab-content-wrapper">
           <div className="tab-content">
             {panelData?.map((panel) => {
               return (

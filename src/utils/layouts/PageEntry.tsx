@@ -11,9 +11,9 @@ const PageEntry = ({ item }: ContextType1) => {
   const { banners } = useDataDistributorData();
 
   return (
-    <div className="articlePage">
+    <div className="articlePage page-section-spacing">
       <Banner
-        className="page-banner"
+        className="page-banner section-block-bm"
         featuredText={{
           heading: { children: item?.title },
           smartText: {},

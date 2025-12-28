@@ -25,9 +25,9 @@ export default function PageListing({ banner, listOfEntries }: PageListingType) 
   }, []);
 
   return (
-    <div className="blogPage">
+    <div className="blogPage page-section-spacing">
       <Banner
-        className="page-banner"
+        className="page-banner section-block-bm"
         featuredText={{
           heading: {
             children: banner?.item.title,

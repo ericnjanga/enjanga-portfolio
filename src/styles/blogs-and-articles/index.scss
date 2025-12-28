@@ -11,14 +11,7 @@
   --enj-articlePage-Banner-marg: #{sp.$spacing-07};
   --enj-articlePage-grid-col-2n-1-marg: 0 0 2.2rem 0;
   --enj-articlePage-grid-col-2n-marg: 0 0 2.2rem 0;
-
-  // Declarations ...
-  .page-banner {
-    @include utils.PSS-marginBottom-xl;
-  }
-  .page-content {
-    @include utils.PSS-marginBottom-xxl;
-  }
+ 
 
   @include bp.breakpoint('md') {
     --enj-articlePage-Banner-marg: #{sp.$spacing-08};
@@ -33,24 +26,5 @@
   @include bp.breakpoint('xlg') {
     --enj-articlePage-grid-col-2n-1-marg: 0 2.5rem calc(2.5rem * 2.7) 0;
     --enj-articlePage-grid-col-2n-marg: 0 0 calc(2.5rem * 2.7) 2.5rem;
-  }
-
-  /**
-   * Grid styling
-   * ---------
-  */
-  .cds--css-grid { 
-    .cds--css-grid-column {
-      &:nth-of-type(2n + 1) {
-        .enj-CustomTile-wrapper {
-          margin: var(--enj-articlePage-grid-col-2n-1-marg);
-        }
-      }
-      &:nth-of-type(2n) {
-        .enj-CustomTile-wrapper {
-          margin: var(--enj-articlePage-grid-col-2n-marg);
-        }
-      }
-    }
-  }
+  } 
 }

@@ -1,0 +1,25 @@
+@use 'enjanga-core-setup/styles-breakpoint' as bp;
+
+:root {
+  --enj-spacing-gap: 4rem;
+}
+
+.page-section-spacing {
+  display: flex;
+  flex-direction: column;
+  gap: var(--enj-spacing-gap); //) 10rem;
+
+  // @include bp.breakpoint('md') {
+  //   --enj-spacing-gap: -120px;
+  // }
+
+  // @include bp.breakpoint('lg') {
+  //   --enj-spacing-gap: -125px;
+  // } 
+}
+
+
+.section-spcaing-wrapper {
+  padding-top: var(--enj-spacing-gap);
+  padding-bottom: var(--enj-spacing-gap);
+}

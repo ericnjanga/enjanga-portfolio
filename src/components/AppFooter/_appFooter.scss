@@ -4,7 +4,6 @@
 
 .app-footer {
   // Variables ...
-  --enj-footer-padd: #{sp.$spacing-09};
   --enj-footer-title-mrg: 0.75rem;
   // TODO: Convert to enjanga-core-setup color token
   --enjanga-color1: #E3EBF9;
@@ -14,7 +13,6 @@
   --enjanga-color5: #00bcfe;
 
   // Declarations ...
-  padding: var(--enj-footer-padd) 0;
   background-color: var(--enjanga-color4); 
 
 

@@ -80,24 +80,26 @@ export default function RouteHome({
 
   return (
     <>
-      <div className="homePage">
-        <Banner
-          id="introduction"
-          featuredText={{
-            heading: {
-              children: banner?.item?.title,
-            },
-            smartText: {
-              richText: banner?.item?.description,
-            },
-          }}
-          imgBgUrl={banners.imgUrl}
-          isHuge={true}
-        />
+      <div className="homePage page-section-spacing">
+        <div>
+          <Banner
+            id="introduction"
+            featuredText={{
+              heading: {
+                children: banner?.item?.title,
+              },
+              smartText: {
+                richText: banner?.item?.description,
+              },
+            }}
+            imgBgUrl={banners.imgUrl}
+            isHuge={true}
+          />
 
-        <ScopeOfProvider value={listExpertisePanels}>
-          <RouteScopeOfExpertise {...listExpertiseTabs} />
-        </ScopeOfProvider>
+          <ScopeOfProvider value={listExpertisePanels}>
+            <RouteScopeOfExpertise {...listExpertiseTabs} />
+          </ScopeOfProvider>
+        </div>
 
         <RouteAbout {...listAbout} bgImgUrl={backgroundImgUrl} />
 

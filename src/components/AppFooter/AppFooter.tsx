@@ -19,7 +19,7 @@ const AppFooter = () => {
     }, []);
 
   return (
-    <footer className="app-footer" ref={containerRef as React.RefObject<HTMLElement>}>
+    <footer className="app-footer section-spcaing-wrapper" ref={containerRef as React.RefObject<HTMLElement>}>
       <Content>
         <div className="enj-container app-footer__wrapper" style={layoutGridStyle}>
           {/** Only on smaller screens:

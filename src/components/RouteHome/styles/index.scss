@@ -13,8 +13,7 @@
   --enj-home-section-title-mb: 0.5rem;
 
   .pageSection {
-    position: relative;
-    @include utils.PSS-marginBottom-xxl;
+    position: relative; 
   }
 
   // Custom tile found in many places all over the app
@@ -25,9 +24,7 @@
   }
 
   .sectionTitle {
-    margin-bottom: var(--enj-home-section-title-mb);
-
-    // @include bp.breakpoint('md') {}
+    margin-bottom: var(--enj-home-section-title-mb); 
 
     @include bp.breakpoint('lg') {
       --enj-home-section-title-mb: 0.75rem;
