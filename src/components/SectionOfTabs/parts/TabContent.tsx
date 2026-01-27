@@ -1,6 +1,6 @@
 import React from 'react';
-import { CustomTile, useContainerSize, } from 'enjanga-components-library';
-import 'enjanga-components-library/custom-tile.css'; // Styling for <CustomT** /> component
+import { TilePictogram, useContainerSize, } from 'enjanga-components-library';
+import 'enjanga-components-library/tile-variants.css'; // Styling for <CustomT** /> component
 import { ContentModel2, ContextType2 } from '@utils/dataProcessing/types';
 import { CP_nameType } from 'enjanga-components-library';
 import { IntroTextSkeleton } from '@/app/ui/Skeleton';
@@ -31,7 +31,7 @@ const SectionTabContent = ({
     
       <div className="tab-tiles-wrapper">
         {panel?.items?.map((panelItem, index) => (
-          <CustomTile
+          <TilePictogram
             key={panelItem?.sys?.id ?? index}
             featuredText={{
               heading: {
@@ -42,9 +42,9 @@ const SectionTabContent = ({
                 plainText: panelItem?.blurb,
               },
             }}
-            layoutStyle="card"
-            modalIsAvailable={false}
-            media="pictogram"
+            // layoutStyle="card"
+            // modalIsAvailable={false}
+            // media="pictogram"
             mediaPictogram={
               panelItem?.icon
                 ? (panelItem?.icon as CP_nameType)

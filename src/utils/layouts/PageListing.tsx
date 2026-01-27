@@ -3,7 +3,7 @@
 import React from 'react';
 import {
   Banner,
-  PostTile,
+  TilePost,
   CTL_valid_linkTo,
 } from 'enjanga-components-library';
 import 'enjanga-components-library/banner.css'; // Styling for <Bann** /> component
@@ -43,7 +43,7 @@ export default function PageListing({ banner, listOfEntries }: PageListingType) 
         <div className="enj-container" style={layoutGridStyle}>
           {listOfEntries?.items?.map((item) => {
             return ( 
-              <PostTile
+              <TilePost
                 key={item?.sys?.id}
                 featuredText={{
                   heading: {

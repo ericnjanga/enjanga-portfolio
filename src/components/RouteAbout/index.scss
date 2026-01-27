@@ -1,9 +1,14 @@
 @use 'enjanga-core-setup/styles-breakpoint' as bp;
 
-/**
- * About section
- * ----------------------------
-**/ 
+
+:root {
+  --enj-spacing-gap: 4rem;
+  --enj-tabCont-grid-tc: unset;
+  --enj-tabCont-mxw: 100%;
+  --enj-tabCont-wrap-padd: 1.5rem 0 0 0;
+}
+
+
 .aboutSection {
   // Variables ...
   --enj-aboutSec-height: 950px;
@@ -18,15 +23,7 @@
   min-height: var(--enj-aboutSec-height);
 
 
-  // Override ":first-of-type" rule (_enj-grid-system) so that 
-  // the first element can have a top margin
-  .enj-gridSys {
-    .enj-gridSys__cols-wrapper {
-      .cds--css-grid-column:first-of-type {
-        margin-top: var(--enj-grid-content-gap);
-      }
-    }
-  }
+  
 
   @include bp.breakpoint('md') {
     --enj-aboutSec-height: 840px;
@@ -50,4 +47,21 @@
     position: absolute;
     top: var(--enj-aboutSec-title-top);
   }
+}
+
+
+
+
+
+.tiles-wrapper {
+  display: grid;
+  gap: 0.7rem;
+  max-width: var(--enj-tabCont-mxw);
+  grid-template-columns: var(--enj-tabCont-grid-tc);
+}
+
+
+.section-spcaing-wrapper {
+  padding-top: var(--enj-spacing-gap);
+  padding-bottom: var(--enj-spacing-gap);
 }

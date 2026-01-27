@@ -1,6 +1,6 @@
 import React from 'react';
-import { CustomTile } from 'enjanga-components-library'; 
-import 'enjanga-components-library/custom-tile.css'; // Styling for <CustomT** /> component
+import { TileVariants } from 'enjanga-components-library'; 
+import 'enjanga-components-library/tile-variants.css'; // Styling for <CustomT** /> component
 import { ContentModel3 } from '@utils/dataProcessing/types';
 import './index.scss';
 // import { enjGetLayout } from '@libs/layouts';
@@ -18,7 +18,7 @@ const ListOfItems = ({ items }:{ items: ContentModel3[] }) => {
     <div className='list-of-items'>{/* style={layoutGridStyle} */}
       {items?.map((item, index) => {
         return (
-          <CustomTile
+          <TileVariants
             key={item?.sys?.id ?? index} 
             featuredText={{
               heading: {
