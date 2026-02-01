@@ -1,6 +1,6 @@
 import React from 'react';
 import { TilePictogram, useContainerSize, } from 'enjanga-components-library';
-import 'enjanga-components-library/tile-variants.css'; // Styling for <CustomT** /> component
+import 'enjanga-components-library/tile-pictogram.css'; // Styling for <CustomT** /> component
 import { ContentModel2, ContextType2 } from '@utils/dataProcessing/types';
 import { CP_nameType } from 'enjanga-components-library';
 import { IntroTextSkeleton } from '@/app/ui/Skeleton';
@@ -45,7 +45,7 @@ const SectionTabContent = ({
             // layoutStyle="card"
             // modalIsAvailable={false}
             // media="pictogram"
-            mediaPictogram={
+            pictogram={
               panelItem?.icon
                 ? (panelItem?.icon as CP_nameType)
                 : ('App Developer' as CP_nameType)
