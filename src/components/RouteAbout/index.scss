@@ -1,14 +1,35 @@
 @use 'enjanga-core-setup/styles-breakpoint' as bp;
 
-
+// ============================================
+// Global CSS Custom Properties
+// ============================================
 :root {
+  // Spacing
   --enj-spacing-gap: 4rem;
-  --enj-tabCont-grid-tc: unset;
+  
+  // Tab content grid configuration
+  --enj-tabCont-display: grid;
+  --enj-tabCont-grid-tc: auto;
+  --enj-tabCont-grid-tr: auto;
   --enj-tabCont-mxw: 100%;
   --enj-tabCont-wrap-padd: 1.5rem 0 0 0;
+  
+  // Tile 1 positioning
+  --enj-tabCont-tile1-gc: auto;
+  --enj-tabCont-tile1-gr: auto;
+
+  // Tile 2 positioning
+  --enj-tabCont-tile2-gc: auto;
+  --enj-tabCont-tile2-gr: auto;
+
+  // Tile 3 positioning
+  --enj-tabCont-tile3-gc: auto;
+  --enj-tabCont-tile3-gr: auto;
 }
 
-
+// ============================================
+// About Section Container
+// ============================================
 .aboutSection {
   // Variables ...
   --enj-aboutSec-height: 950px;
@@ -22,9 +43,7 @@
   justify-content: flex-end;
   min-height: var(--enj-aboutSec-height);
 
-
-  
-
+  // Responsive breakpoints for different screen sizes
   @include bp.breakpoint('md') {
     --enj-aboutSec-height: 840px;
     --enj-aboutSec-title-top: -2.5rem;
@@ -43,24 +62,70 @@
     --enj-aboutSec-height: 850px;
   }
 
+  // Heading positioning
   #about-me-heading {
     position: absolute;
     top: var(--enj-aboutSec-title-top);
   }
 }
 
-
-
-
-
+// ============================================
+// Tiles Grid Wrapper
+// ============================================
 .tiles-wrapper {
-  display: grid;
+  display: var(--enj-tabCont-display);
   gap: 0.7rem;
   max-width: var(--enj-tabCont-mxw);
   grid-template-columns: var(--enj-tabCont-grid-tc);
+  grid-template-rows: var(--enj-tabCont-grid-tr);
+
+  .enj-PictogramTile {
+    height: 100%;
+  }
+
+  // Individual tile positioning
+  .tile1 {
+    grid-row: var(--enj-tabCont-tile1-gr);
+    grid-column: var(--enj-tabCont-tile1-gc);
+  }
+  .tile2 {
+    grid-row: var(--enj-tabCont-tile2-gr);
+    grid-column: var(--enj-tabCont-tile2-gc);
+  }
+  .tile3 {
+    grid-row: var(--enj-tabCont-tile3-gr);
+    grid-column: var(--enj-tabCont-tile3-gc);
+  }
+
+  // Responsive grid layout adjustments
+  @include bp.breakpoint('md') {
+    --enj-tabCont-grid-tc: repeat(2, 1fr);
+    --enj-tabCont-grid-tr: auto auto;
+    --enj-tabCont-tile1-gc: 2;
+ 
+    --enj-tabCont-tile1-gr: 1; 
+    --enj-tabCont-tile2-gr: 2; 
+    --enj-tabCont-tile3-gr: 2;
+  }
+
+  @include bp.breakpoint('lg') {
+    --enj-tabCont-grid-tc: repeat(3, 1fr);
+
+    --enj-tabCont-tile1-gc: 3;
+    --enj-tabCont-tile2-gc: 2;
+    --enj-tabCont-tile3-gc: 3;
+  }
+
+  // @include bp.breakpoint('xlg') {
+  // }
+
+  // @include bp.breakpoint('max') {
+  // }
 }
 
-
+// ============================================
+// Section Spacing Wrapper
+// ============================================
 .section-spcaing-wrapper {
   padding-top: var(--enj-spacing-gap);
   padding-bottom: var(--enj-spacing-gap);

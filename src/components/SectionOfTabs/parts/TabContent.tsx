@@ -42,9 +42,6 @@ const SectionTabContent = ({
                 plainText: panelItem?.blurb,
               },
             }}
-            // layoutStyle="card"
-            // modalIsAvailable={false}
-            // media="pictogram"
             pictogram={
               panelItem?.icon
                 ? (panelItem?.icon as CP_nameType)
