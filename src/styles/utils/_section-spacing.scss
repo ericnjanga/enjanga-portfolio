@@ -7,19 +7,23 @@
 .page-section-spacing {
   display: flex;
   flex-direction: column;
-  gap: var(--enj-spacing-gap); //) 10rem;
+  gap: var(--enj-spacing-gap);
 
-  // @include bp.breakpoint('md') {
-  //   --enj-spacing-gap: -120px;
-  // }
+  @include bp.breakpoint('md') {
+    --enj-spacing-gap: 5rem;
+  }
 
-  // @include bp.breakpoint('lg') {
-  //   --enj-spacing-gap: -125px;
-  // } 
+  @include bp.breakpoint('lg') {
+    --enj-spacing-gap: 6rem;
+  } 
+
+  @include bp.breakpoint('xlg') {
+    --enj-spacing-gap: 7rem;
+  } 
 }
 
 
-.section-spcaing-wrapper {
+.section-spacing-wrapper {
   padding-top: var(--enj-spacing-gap);
   padding-bottom: var(--enj-spacing-gap);
 }

@@ -1,24 +1,24 @@
 import React from 'react';
-import { TileVariants } from 'enjanga-components-library'; 
-import 'enjanga-components-library/tile-variants.css'; // Styling for <CustomT** /> component
+import { TileBanner } from 'enjanga-components-library'; 
+import 'enjanga-components-library/tile-banner.css'; // Styling for <CustomT** /> component
 import { ContentModel3 } from '@utils/dataProcessing/types';
 import './index.scss';
-// import { enjGetLayout } from '@libs/layouts';
+import { enjGetLayout } from '@libs/layouts';
 
 
 
 
 const ListOfItems = ({ items }:{ items: ContentModel3[] }) => {
 
-  // const layoutGridStyle = React.useMemo(() => {
-  //   return enjGetLayout({ type: 'RAM', itemMaxWidth: 430, gridGap: 1.5 });
-  // }, []);
+  const layoutGridStyle = React.useMemo(() => {
+    return enjGetLayout({ type: 'RAM', itemMaxWidth: 430, gridGap: 1.5 });
+  }, []);
 
   return (
-    <div className='list-of-items'>{/* style={layoutGridStyle} */}
+    <div className='list-of-items' style={layoutGridStyle}>
       {items?.map((item, index) => {
         return (
-          <TileVariants
+          <TileBanner
             key={item?.sys?.id ?? index} 
             featuredText={{
               heading: {
@@ -29,8 +29,6 @@ const ListOfItems = ({ items }:{ items: ContentModel3[] }) => {
                 plainText: item.blurb,
               },
             }}
-            layoutStyle="banner"
-            modalIsAvailable={false}
             linksTo={`/best-work/${item?.sys?.id}`}
           />
         );

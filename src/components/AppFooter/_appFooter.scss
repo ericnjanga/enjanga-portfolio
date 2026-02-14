@@ -1,6 +1,22 @@
 @use 'enjanga-core-setup/styles-breakpoint' as bp;
 @use 'enjanga-core-setup/styles-spacing' as sp;
 
+.app-footer {
+  margin-top: var(--enj-spacing-gap);
+
+  @include bp.breakpoint('md') {
+    --enj-spacing-gap: 5rem;
+  }
+
+  @include bp.breakpoint('lg') {
+    --enj-spacing-gap: 6rem;
+  }
+
+  @include bp.breakpoint('xlg') {
+    --enj-spacing-gap: 7rem;
+  }
+}
+
 
 .app-footer {
   // Variables ...
@@ -90,18 +106,5 @@
     figcaption {
       display: none;
     }
-  }
-
-  @include bp.breakpoint('md') {
-    --enj-footer-padd: #{sp.$spacing-10};
-  }
-
-  @include bp.breakpoint('lg') {
-    --enj-footer-title-mrg: 1.5rem;
-    --enj-footer-padd: #{sp.$spacing-11};
-  }
-
-  @include bp.breakpoint('xlg') {
-    --enj-footer-padd: #{sp.$spacing-12};
   }
 }

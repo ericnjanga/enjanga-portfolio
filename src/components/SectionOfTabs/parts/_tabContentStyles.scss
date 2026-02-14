@@ -1,3 +1,5 @@
+@use 'enjanga-core-setup/styles-breakpoint' as bp;
+
 :root {
   --enj-tabCont-grid-tc: unset;
   --enj-tabCont-mxw: 100%;
@@ -6,6 +8,18 @@
 
 .tab-content-wrapper {
   padding: var(--enj-tabCont-wrap-padd);
+
+  @include bp.breakpoint('md') {
+    --enj-tabCont-wrap-padd: 2rem 0 0 0;
+  }
+
+  @include bp.breakpoint('lg') {
+    --enj-tabCont-wrap-padd: 3.5rem 0 0 0;
+  }
+
+  @include bp.breakpoint('xlg') {
+    --enj-tabCont-wrap-padd: 3.5rem 0 0 0;
+  }
 }
 
 .tab-content-inner {
