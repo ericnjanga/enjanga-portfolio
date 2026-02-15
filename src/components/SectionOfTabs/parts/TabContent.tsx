@@ -20,7 +20,10 @@ const SectionTabContent = ({
   const { containerRef, activeBreakpoint } = useContainerSize<HTMLDivElement>();
 
   return (
-    <div className={`tab-content-inner tab-content-inner--${activeBreakpoint}`} ref={containerRef}>
+    <div
+      className={`tab-content-inner tab-content-inner--${activeBreakpoint}`}
+      ref={containerRef as React.RefObject<HTMLDivElement>}
+    >
       {tab?.title && (
         <article className="intro-text">
           <h3>{tab?.title}</h3>
