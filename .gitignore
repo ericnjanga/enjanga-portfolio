@@ -1,5 +1,5 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-# Manual deployment of Feb-15-2026 (part 1) (I'll be changing this # eachtime I need a Vercel deplpoyement just for the sake of regenerating stati pages)
+# Manual deployment of Feb-15-2026 (part 2) (I'll be changing this # eachtime I need a Vercel deplpoyement just for the sake of regenerating stati pages)
 
 # dependencies
 /node_modules
