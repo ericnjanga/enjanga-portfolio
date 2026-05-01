@@ -7,3 +7,6 @@ export type DynamicPageClient = {
 export type DynamicPageServer = {
   params: Promise<{ contentId: string }>
 };
+export type DynamicPageServerSlug = {
+  params: Promise<{ slug: string }>;
+};

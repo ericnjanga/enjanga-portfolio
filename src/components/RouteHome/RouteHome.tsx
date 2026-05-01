@@ -65,7 +65,7 @@ const RouteExperience = dynamic<{ organizations: OrganizationCollection }>(
   () => import('@/components/RouteExperience/RouteExperience'),
   {
     ssr: false, // Ony render on the client
-    loading: () => <SkeletonComponent name="Eric Njanga's portfolio." minHeight={300} />,
+    loading: () => <SkeletonComponent name="Eric Njanga's experience." minHeight={300} />,
   }
 );
 

@@ -12,11 +12,11 @@ const RouteExperience = ({ organizations }: RouteExperienceType) => (
     >
       <section
         className="pageSection smt-box"
-        id="portfolio"
-        aria-labelledby="portfolio-heading"
+        id="experience"
+        aria-labelledby="experience-heading"
         tabIndex={-1} // Make focusable by default
       >
-        <h2 id="portfolio-heading" className="sectionTitle">
+        <h2 id="experience-heading" className="sectionTitle">
           Where I`ve made an Impact
         </h2>
         <ListOfItems organizations={organizations} />

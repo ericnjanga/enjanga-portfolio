@@ -44,3 +44,12 @@ export async function fetchOrganizations(): Promise<OrganizationCollection> {
     })),
   }));
 }
+
+/**
+ * Fetches a single organization entry by its slug field.
+ * Returns null if no matching organization is found.
+ */
+export async function fetchOrganizationBySlug(slug: string): Promise<OrganizationCollection[number] | null> {
+  const orgs = await fetchOrganizations();
+  return orgs.find((org) => org.slug === slug) ?? null;
+}

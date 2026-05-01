@@ -18,9 +18,9 @@ export const GlobalNav = ({ parent = 'top nav' }: GlobalNavType) => {
 
   const isBlogActive = pathname === '/blog' || pathname.startsWith('/blog/');
   const isExperienceActive =
-    pathname === '/portfolio' ||
-    pathname.startsWith('/portfolio/') ||
-    currentSection === 'portfolio';
+    pathname === '/experience' ||
+    pathname.startsWith('/experience/') ||
+    currentSection === 'experience';
 
   const isActive = (target: string) => currentSection === target;
 
@@ -50,7 +50,7 @@ export const GlobalNav = ({ parent = 'top nav' }: GlobalNavType) => {
       </HeaderMenuItem>
 
       <HeaderMenuItem
-        onClick={() => navigateToSection('portfolio')}
+        onClick={() => navigateToSection('experience')}
         aria-current={isExperienceActive ? 'page' : undefined}
       >
         Experience

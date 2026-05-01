@@ -355,7 +355,7 @@
                             },
                             {
                               "data": {
-                                "uri": "http://localhost:3000/?section=portfolio"
+                                "uri": "http://localhost:3000/?section=experience"
                               },
                               "content": [
                                 {
