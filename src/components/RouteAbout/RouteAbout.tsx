@@ -12,8 +12,9 @@ const RouteAbout = ({ items, bgImgUrl }: RouteAboutType) => {
   return (
     <BackgroundSection
       className="pageSection aboutSection smt-box"
-      id="about-me"
-      ariaLabelledby="about-me-heading"
+      id="about"
+      title={<div className="enj-container"><h2 id="about-heading">My approach</h2></div>}
+      ariaLabelledby="about-heading"
       tabIndex={-1} // Make focusable by default
       imageUrl={bgImgUrl}
       parallax={true}>

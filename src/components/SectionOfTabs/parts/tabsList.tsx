@@ -23,7 +23,7 @@ const iconMap: Record<string, React.ComponentType> = {
 };
 
 const SectionTabsList = ({ listOfItems, className }: SectionTabsListProps) => (
-  <TabList aria-label="Scope of Expertise tabs" className={className}>
+  <TabList aria-label="Expertise tabs" className={className}>
     {listOfItems?.map((item, index) => {
       const IconComponent = iconMap[item?.icon || ''] || Code; // fallback to Code if not found
 

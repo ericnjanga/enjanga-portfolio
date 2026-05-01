@@ -17,10 +17,10 @@ export const GlobalNav = ({ parent = 'top nav' }: GlobalNavType) => {
   const isHomeRoute = useIsHomeActiveFlag();
 
   const isBlogActive = pathname === '/blog' || pathname.startsWith('/blog/');
-  const isBestWorkActive =
-    pathname === '/best-work' ||
-    pathname.startsWith('/best-work/') ||
-    currentSection === 'best-work';
+  const isExperienceActive =
+    pathname === '/portfolio' ||
+    pathname.startsWith('/portfolio/') ||
+    currentSection === 'portfolio';
 
   const isActive = (target: string) => currentSection === target;
 
@@ -36,24 +36,24 @@ export const GlobalNav = ({ parent = 'top nav' }: GlobalNavType) => {
       )}
 
       <HeaderMenuItem
-        onClick={() => navigateToSection('scope-of-expertise')}
-        aria-current={isActive('scope-of-expertise') ? 'page' : undefined}
+        onClick={() => navigateToSection('expertise')}
+        aria-current={isActive('expertise') ? 'page' : undefined}
       >
-        Scope of expertise
+        Expertise
       </HeaderMenuItem>
 
       <HeaderMenuItem
-        onClick={() => navigateToSection('about-me')}
-        aria-current={isActive('about-me') ? 'page' : undefined}
+        onClick={() => navigateToSection('about')}
+        aria-current={isActive('about') ? 'page' : undefined}
       >
-        About me
+        About
       </HeaderMenuItem>
 
       <HeaderMenuItem
-        onClick={() => navigateToSection('best-work')}
-        aria-current={isBestWorkActive ? 'page' : undefined}
+        onClick={() => navigateToSection('portfolio')}
+        aria-current={isExperienceActive ? 'page' : undefined}
       >
-        Best Work
+        Experience
       </HeaderMenuItem>
 
       <HeaderMenuItem as={Link} href="/blog" aria-current={isBlogActive ? 'page' : undefined}>

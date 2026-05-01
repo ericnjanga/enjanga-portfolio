@@ -6,9 +6,9 @@ import 'enjanga-components-library/banner.css'; // Styling for <Bann** /> compon
 import { SkeletonComponent } from '@/app/ui/Skeleton';
 import ScrollHandler from '../../utils/ScrollHandler';
 import {
-  ScopeOfProvider,
-  ScopeOfExpDataType,
-} from '@utils/context/ScopeOfExpContext';
+  ExpertiseProvider,
+  ExpertiseDataType,
+} from '@utils/context/ExpertiseContext';
 import type {
   ContextType1,
   ContextType2,
@@ -22,22 +22,22 @@ import './styles/index.scss';
 type RouteHomeType = {
   banner: ContextType1;
   listExpertiseTabs: ContextType2;
-  listExpertisePanels: ScopeOfExpDataType;
+  listExpertisePanels: ExpertiseDataType;
   listAbout: ContextType2;
   backgroundImgUrl: string | null;
   listQuotes: ContextType3;
-  listBestWork: ContextType4;
+  listExperience: ContextType4;
 };
 
 /**
  * Deferring (Dynamic imports) the following component (and their CSS):
- * - RouteScopeOfExpertise
+ * - RouteExpertise
  * - RouteAbout
  * - WrapperQuotes
- * - RouteBestWork
+ * - RouteExperience
  */
-const RouteScopeOfExpertise = dynamic(
-  () => import('@/components/RouteScopeOfExpertise/RouteScopeOfExpertise'),
+const RouteExpertise = dynamic(
+  () => import('@/components/RouteExpertise/RouteExpertise'),
   {
     ssr: false, // Ony render on the client
     loading: () => (
@@ -59,11 +59,11 @@ const WrapperQuotes = dynamic(
   }
 );
 
-const RouteBestWork = dynamic(
-  () => import('@/components/RouteBestWork/RouteBestWork'),
+const RouteExperience = dynamic(
+  () => import('@/components/RouteExperience/RouteExperience'),
   {
     ssr: false, // Ony render on the client
-    loading: () => <SkeletonComponent name="Eric Njanga's best Work." minHeight={300} />,
+    loading: () => <SkeletonComponent name="Eric Njanga's portfolio." minHeight={300} />,
   }
 );
 
@@ -74,7 +74,7 @@ export default function RouteHome({
   listAbout,
   backgroundImgUrl,
   listQuotes,
-  listBestWork,
+  listExperience,
 }: RouteHomeType) {
   const { banners } = useDataDistributorData();
 
@@ -96,16 +96,16 @@ export default function RouteHome({
             isHuge={true}
           />
 
-          <ScopeOfProvider value={listExpertisePanels}>
-            <RouteScopeOfExpertise {...listExpertiseTabs} />
-          </ScopeOfProvider>
+          <ExpertiseProvider value={listExpertisePanels}>
+            <RouteExpertise {...listExpertiseTabs} />
+          </ExpertiseProvider>
         </div>
 
         <RouteAbout {...listAbout} bgImgUrl={backgroundImgUrl} />
 
         <WrapperQuotes {...listQuotes} />
 
-        <RouteBestWork {...listBestWork} />
+        <RouteExperience {...listExperience} />
       </div>
 
       {/**

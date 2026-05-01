@@ -16,7 +16,7 @@ const WrapperQuotes = ({ items }: WrapperQuotesType) => {
         <section
           className="pageSection smt-box"
           id="engineer-quotes"
-          aria-labelledby="best-work-heading"
+          aria-labelledby="portfolio-heading"
           tabIndex={-1} // Make focusable by default
         >
           <h2 id="engineer-quotes-heading" style={{ display: 'none' }}>

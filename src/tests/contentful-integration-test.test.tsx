@@ -17,8 +17,8 @@ import bannerBlogPageEntryFixture from './fixtures/bannerBlogPageEntry.fixture.j
 import footerCopyrightEntryFixture from './fixtures/footerCopyrightEntry.fixture.json';
 import caseStudyEntryFixture from './fixtures/caseStudyEntry.fixture.json';
 
-import scopeOfExpCollectionFixture from './fixtures/scopeOfExpCollection.fixture.json';
-import scopeOfExpCollectionEntryFixture from './fixtures/scopeOfExpCollectionEntry.fixture.json';
+import ExpertiseCollectionFixture from './fixtures/ExpertiseCollection.fixture.json';
+import ExpertiseCollectionEntryFixture from './fixtures/ExpertiseCollectionEntry.fixture.json';
 
 import blogPostCollectionFixture from './fixtures/blogPostCollection.fixture.json';
 import blogPostsEntryFixture from './fixtures/blogPostEntry.fixture.json';
@@ -56,10 +56,10 @@ describe.runIf(process.env.RUN_INTEGRATION_TESTS === 'true')(
     const landingPageBannerId = contentfulContentIds.categories['BannerHomePage Entry'];
     const blogPageBannerId = contentfulContentIds.categories['BannerBlogPage Entry'];
     const footerCopyrightId = contentfulContentIds.categories['FooterCopyright Entry'];
-    const scopeOfExpCollRefId = contentfulContentIds.categories['scopeOfExp Parent Entry Collection'];
+    const ExpertiseCollRefId = contentfulContentIds.categories['Expertise Parent Entry Collection'];
     const footerLinksCollRefId = contentfulContentIds.categories['FooterLinks Entry Collection'];
     const caseStudyEntryId = '2UJqmr6lFkc80z1Qm3LUfr';
-    const scopeOfExpCollEntryId = '6Y19zH13dUQ6mRHnNSdJGY';
+    const ExpertiseCollEntryId = '6Y19zH13dUQ6mRHnNSdJGY';
     const caseStudyCollRefId = '5y2JSha3mykWdGkUf6XcQp';
 
 
@@ -155,15 +155,15 @@ describe.runIf(process.env.RUN_INTEGRATION_TESTS === 'true')(
 
 
 
-    it(`["scopeOfExp Parent Entry Collection"] fetches the same normalized data (server + client)`, async () => {
+    it(`["Expertise Parent Entry Collection"] fetches the same normalized data (server + client)`, async () => {
       const serverResult = await contentfulForServerEntriesFetch(
-        'scopeOfExp Parent Entry Collection',
-        scopeOfExpCollRefId
+        'Expertise Parent Entry Collection',
+        ExpertiseCollRefId
       );
       expect(serverResult.length).toBeGreaterThan(0);
 
       const { result } = renderHook(
-        () => useContentfulForClientEntries('scopeOfExp Parent Entry Collection', scopeOfExpCollRefId),
+        () => useContentfulForClientEntries('Expertise Parent Entry Collection', ExpertiseCollRefId),
         { wrapper: createWrapper() }
       );
 
@@ -173,20 +173,20 @@ describe.runIf(process.env.RUN_INTEGRATION_TESTS === 'true')(
 
       const clientResult = result.current.data;
       expect(serverResult).toEqual(clientResult);
-      expect(serverResult).toEqual(scopeOfExpCollectionFixture.data.en.items);
+      expect(serverResult).toEqual(ExpertiseCollectionFixture.data.en.items);
     });
 
 
 
-    it(`["scopeOfExp Entry Collection"] fetches the same normalized data (server + client)`, async () => {
+    it(`["Expertise Entry Collection"] fetches the same normalized data (server + client)`, async () => {
       const serverResult = await contentfulForServerEntriesFetch(
-        'scopeOfExp Entry Collection',
-        scopeOfExpCollEntryId
+        'Expertise Entry Collection',
+        ExpertiseCollEntryId
       );
       expect(serverResult.length).toBeGreaterThan(0);
 
       const { result } = renderHook(
-        () => useContentfulForClientEntries('scopeOfExp Entry Collection', scopeOfExpCollEntryId),
+        () => useContentfulForClientEntries('Expertise Entry Collection', ExpertiseCollEntryId),
         { wrapper: createWrapper() }
       );
 
@@ -196,7 +196,7 @@ describe.runIf(process.env.RUN_INTEGRATION_TESTS === 'true')(
 
       const clientResult = result.current.data;
       expect(serverResult).toEqual(clientResult);
-      expect(serverResult).toEqual(scopeOfExpCollectionEntryFixture.data.en.items);
+      expect(serverResult).toEqual(ExpertiseCollectionEntryFixture.data.en.items);
     });
 
 

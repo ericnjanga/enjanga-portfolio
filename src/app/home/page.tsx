@@ -19,11 +19,11 @@ export default async function LandingPage() {
     dataListExpertiseTabs,
     dataAbout,
     dataListQuotes,
-    dataListBestWork,
+    dataListExperience,
     bgImgUrl,
   ] = await Promise.all([
     getDataEntry('BannerHomePage Entry' as DataFor1),
-    getDataEntry('scopeOfExp Parent Entry Collection' as DataFor2),
+    getDataEntry('Expertise Parent Entry Collection' as DataFor2),
     getDataEntry('AboutInfo Entry Collection' as DataFor2),
     getDataEntry('Quotes Entry Collection' as DataFor3),
     getDataEntry('CaseStudy Entry Collection' as DataFor4),
@@ -35,7 +35,7 @@ export default async function LandingPage() {
     dataListExpertiseTabs?.items.map(async(_) => {
       return ({
         parentId: _.sys?.id,
-        data: await getDataEntry('scopeOfExp Entry Collection' as DataFor2, _.sys?.id)
+        data: await getDataEntry('Expertise Entry Collection' as DataFor2, _.sys?.id)
       });
     })
   );
@@ -48,7 +48,7 @@ export default async function LandingPage() {
       listAbout={dataAbout}
       backgroundImgUrl={bgImgUrl}
       listQuotes={dataListQuotes}
-      listBestWork={dataListBestWork}
+      listExperience={dataListExperience}
     />
   );
 }

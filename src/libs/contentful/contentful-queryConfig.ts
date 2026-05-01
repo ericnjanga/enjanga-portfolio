@@ -11,7 +11,7 @@ export const contentfulContentIds = {
     'BannerBlogPage Entry': '1KZzwxEzfTs7rLABpVpjX1',
     'FooterCopyright Entry': '2KSc8hw8VvMNS5rXQP8GEZ',
     'CaseStudy Entry Collection': ['5y2JSha3mykWdGkUf6XcQp'],
-    'scopeOfExp Parent Entry Collection': '5OpXyMfZfJlGQzTKJSn9Hw',
+    'Expertise Parent Entry Collection': '5OpXyMfZfJlGQzTKJSn9Hw',
     'AboutInfo Entry Collection': '2yc27jrBHSGwDBau6c8qfA',
     'Featured Image': '2eSLi2IP4sZrrPK0AeQPk7',
     'Banner Image': '4inHKl5yMYfQHDc5en3FT2',
@@ -55,11 +55,11 @@ export function getContentfulQueryConfig(dataFor: DataFor1 | DataFor2 | DataFor3
   let trackingInfo = dataFor;
 
   switch (dataFor) { 
-    case 'scopeOfExp Entry Collection':
-    case 'scopeOfExp Parent Entry Collection':
+    case 'Expertise Entry Collection':
+    case 'Expertise Parent Entry Collection':
     case 'AboutInfo Entry Collection':
     case 'FooterLinks Entry Collection':
-      if (dataFor==='scopeOfExp Entry Collection') {
+      if (dataFor==='Expertise Entry Collection') {
         const expertiseId = contentId;
         query = queryData.infoBlockByParentCollection;
         variables.parentRefId = expertiseId ?? '';

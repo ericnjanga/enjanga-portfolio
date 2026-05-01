@@ -7,10 +7,10 @@ import { getDataEntry } from '@utils/dataProcessing';
 /*
  * This function tells Next.js which dynamic routes to pre-render at build time
  * when running in static export mode (output: "export").
- * It uses our shared utility (getAllContent***) to fetch all "Best Work"
+ * It uses our shared utility (getAllContent***) to fetch all "Experience"
  * entries from Contentful, then returns their IDs as route params.
  * Example: if Contentful has works with sys.id = "alpha" and "beta",
- * Next.js will generate /best-work/alpha and /best-work/beta as static pages.
+ * Next.js will generate /portfolio/alpha and /portfolio/beta as static pages.
 */
 export async function generateStaticParams() {
   /**

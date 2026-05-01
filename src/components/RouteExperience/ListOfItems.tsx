@@ -29,7 +29,7 @@ const ListOfItems = ({ items }:{ items: ContentModel3[] }) => {
                 plainText: item.blurb,
               },
             }}
-            linksTo={`/best-work/${item?.sys?.id}`}
+            linksTo={`/portfolio/${item?.sys?.id}`}
           />
         );
       })}

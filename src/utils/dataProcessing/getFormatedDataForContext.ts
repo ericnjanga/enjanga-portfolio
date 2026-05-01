@@ -62,8 +62,8 @@ function getFormatedDataForContext(
       } as ContextType1;
       break;
 
-    case 'scopeOfExp Parent Entry Collection':
-    case 'scopeOfExp Entry Collection':
+    case 'Expertise Parent Entry Collection':
+    case 'Expertise Entry Collection':
     case 'AboutInfo Entry Collection':
       contextValue = {
         items: sortByOrderProp(data) as ContentModel2[],

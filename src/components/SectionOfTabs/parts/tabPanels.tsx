@@ -1,7 +1,7 @@
 import { TabPanels, TabPanel } from '@carbon/react';
 import { ContentModel2 } from '@utils/dataProcessing/types';
 import SectionTabContent from './TabContent';
-import { useScopeOfExpData } from '@utils/context/ScopeOfExpContext';
+import { useExpertiseData } from '@utils/context/ExpertiseContext';
 
 interface SectionTabPanelsProps {
   className?: string;
@@ -9,7 +9,7 @@ interface SectionTabPanelsProps {
 }
 
 const SectionTabPanels = ({ listOfItems }: SectionTabPanelsProps) => {
-  const panelData = useScopeOfExpData();
+  const panelData = useExpertiseData();
 
   return (
     <TabPanels>

@@ -279,13 +279,13 @@
                             },
                             {
                               "data": {
-                                "uri": "http://localhost:3000/?section=scope-of-expertise"
+                                "uri": "http://localhost:3000/?section=expertise"
                               },
                               "content": [
                                 {
                                   "data": {},
                                   "marks": [],
-                                  "value": "Scope of Expertise",
+                                  "value": "Expertise",
                                   "nodeType": "text"
                                 }
                               ],
@@ -317,7 +317,7 @@
                             },
                             {
                               "data": {
-                                "uri": "http://localhost:3000/?section=about-me"
+                                "uri": "http://localhost:3000/?section=about"
                               },
                               "content": [
                                 {
@@ -355,13 +355,13 @@
                             },
                             {
                               "data": {
-                                "uri": "http://localhost:3000/?section=best-work"
+                                "uri": "http://localhost:3000/?section=portfolio"
                               },
                               "content": [
                                 {
                                   "data": {},
                                   "marks": [],
-                                  "value": "Best Work",
+                                  "value": "Experience",
                                   "nodeType": "text"
                                 }
                               ],

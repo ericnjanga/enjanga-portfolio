@@ -24,7 +24,7 @@ const SectionOfTabs = ({
       <div 
       //lg={16} md={8} sm={4} 
       className="landing-page__r2">
-        <h2 id="scope-of-expertise-heading" className="sectionTitle">
+        <h2 id="expertise-heading" className="sectionTitle">
           {title}
         </h2>
 
