@@ -16,6 +16,7 @@ import type {
   ContextType4,
 } from '@utils/dataProcessing/types';
 import { useDataDistributorData } from '@utils/context/DataDistributorContext';
+import type { OrganizationCollection } from '@/libs/organizations/types';
 import dynamic from 'next/dynamic';
 import './styles/index.scss';
 
@@ -27,6 +28,7 @@ type RouteHomeType = {
   backgroundImgUrl: string | null;
   listQuotes: ContextType3;
   listExperience: ContextType4;
+  organizations: OrganizationCollection;
 };
 
 /**
@@ -59,7 +61,7 @@ const WrapperQuotes = dynamic(
   }
 );
 
-const RouteExperience = dynamic(
+const RouteExperience = dynamic<{ organizations: OrganizationCollection }>(
   () => import('@/components/RouteExperience/RouteExperience'),
   {
     ssr: false, // Ony render on the client
@@ -75,6 +77,7 @@ export default function RouteHome({
   backgroundImgUrl,
   listQuotes,
   listExperience,
+  organizations,
 }: RouteHomeType) {
   const { banners } = useDataDistributorData();
 
@@ -105,7 +108,7 @@ export default function RouteHome({
 
         <WrapperQuotes {...listQuotes} />
 
-        <RouteExperience {...listExperience} />
+        <RouteExperience organizations={organizations} />
       </div>
 
       {/**

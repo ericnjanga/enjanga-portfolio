@@ -1,14 +1,14 @@
 import React from 'react';
 import { TileBanner } from 'enjanga-components-library'; 
 import 'enjanga-components-library/tile-banner.css'; // Styling for <CustomT** /> component
-import { ContentModel3 } from '@utils/dataProcessing/types';
+import type { OrganizationCollection } from '@/libs/organizations/types';
 import './index.scss';
 import { enjGetLayout } from '@libs/layouts';
 
 
 
 
-const ListOfItems = ({ items }:{ items: ContentModel3[] }) => {
+const ListOfItems = ({ organizations }: { organizations: OrganizationCollection }) => {
 
   const layoutGridStyle = React.useMemo(() => {
     return enjGetLayout({ type: 'RAM', itemMaxWidth: 430, gridGap: 1.5 });
@@ -16,20 +16,20 @@ const ListOfItems = ({ items }:{ items: ContentModel3[] }) => {
 
   return (
     <div className='list-of-items' style={layoutGridStyle}>
-      {items?.map((item, index) => {
+      {organizations?.map((organization, index) => {
         return (
           <TileBanner
-            key={item?.sys?.id ?? index} 
+            key={organization.id ?? index} 
             featuredText={{
               heading: {
-                children: item.title,
+                children: organization.title,
                 level: 3,
               },
               smartText: {
-                plainText: item.blurb,
+                plainText: organization.subtitle,
               },
             }}
-            linksTo={`/portfolio/${item?.sys?.id}`}
+            linksTo={`/experience/${organization.slug}`}
           />
         );
       })}

@@ -1,11 +1,11 @@
 import ListOfItems from './ListOfItems';
-import { ContentModel3 } from '@utils/dataProcessing/types';
+import type { OrganizationCollection } from '@/libs/organizations/types';
 
 type RouteExperienceType = {
-  items: ContentModel3[];
+  organizations: OrganizationCollection;
 };
 
-const RouteExperience = ({ items }: RouteExperienceType) => (
+const RouteExperience = ({ organizations }: RouteExperienceType) => (
   <div className='enj-container'>
     <div 
     //lg={16} md={8} sm={4}
@@ -19,7 +19,7 @@ const RouteExperience = ({ items }: RouteExperienceType) => (
         <h2 id="portfolio-heading" className="sectionTitle">
           Where I`ve made an Impact
         </h2>
-        <ListOfItems items={items} />
+        <ListOfItems organizations={organizations} />
       </section>
     </div>
   </div>
