@@ -10,7 +10,7 @@ export const contentfulContentIds = {
     'BannerHomePage Entry': '4llAs4gW4mc1fikxbW6u4V',
     'BannerBlogPage Entry': '1KZzwxEzfTs7rLABpVpjX1',
     'FooterCopyright Entry': '2KSc8hw8VvMNS5rXQP8GEZ',
-    'CaseStudy Entry Collection': ['5y2JSha3mykWdGkUf6XcQp'],
+    // 'CaseStudy Entry Collection': ['5y2JSha3mykWdGkUf6XcQp'],
     'Expertise Parent Entry Collection': '5OpXyMfZfJlGQzTKJSn9Hw',
     'AboutInfo Entry Collection': '2yc27jrBHSGwDBau6c8qfA',
     'Featured Image': '2eSLi2IP4sZrrPK0AeQPk7',
@@ -47,8 +47,6 @@ export function getContentfulQueryConfig(dataFor: DataFor1 | DataFor2 | DataFor3
   let query = '';
   let variables: Record<string, any> = {
     locale: 'en-CA',
-    order: ["sys_publishedAt_DESC"],
-    locale2: 'fr',
     sectionId: '',
     parentRefId: '',
   };
@@ -97,7 +95,8 @@ export function getContentfulQueryConfig(dataFor: DataFor1 | DataFor2 | DataFor3
       break;
 
     case 'CaseStudy Entry Collection':
-      query = queryData.projectsCollection;
+      // `projectsCollection` was removed because the model no longer exists in Contentful.
+      // Keep this case temporarily so we can clean dead code safely in a later pass.
       break;
 
     case 'Quotes Entry Collection':
@@ -106,6 +105,7 @@ export function getContentfulQueryConfig(dataFor: DataFor1 | DataFor2 | DataFor3
 
     case 'BlogPost Entry Collection':
       query = queryData.blogPostCollection;
+      variables.order = ['sys_publishedAt_DESC'];
       break;
   }
 

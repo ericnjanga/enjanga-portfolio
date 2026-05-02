@@ -2,8 +2,7 @@ import RouteHome from '@/components/RouteHome/RouteHome';
 import type {
   DataFor1,
   DataFor2,
-  DataFor3,
-  DataFor4
+  DataFor3
 } from '@utils/dataProcessing/types';
 import { getDataEntry } from '@utils/dataProcessing';
 import { contentfulContentIds } from '@/libs/contentful/contentful-queryConfig';
@@ -20,7 +19,6 @@ export default async function LandingPage() {
     dataListExpertiseTabs,
     dataAbout,
     dataListQuotes,
-    dataListExperience,
     bgImgUrl,
     organizations,
   ] = await Promise.all([
@@ -28,7 +26,7 @@ export default async function LandingPage() {
     getDataEntry('Expertise Parent Entry Collection' as DataFor2),
     getDataEntry('AboutInfo Entry Collection' as DataFor2),
     getDataEntry('Quotes Entry Collection' as DataFor3),
-    getDataEntry('CaseStudy Entry Collection' as DataFor4),
+    // getDataEntry('CaseStudy Entry Collection' as DataFor4),
     fetchImageUrl(contentfulContentIds.categories['Featured Image']),
     fetchOrganizations(),
   ]);
@@ -51,7 +49,7 @@ export default async function LandingPage() {
       listAbout={dataAbout}
       backgroundImgUrl={bgImgUrl}
       listQuotes={dataListQuotes}
-      listExperience={dataListExperience}
+      // listExperience={dataListExperience}
       organizations={organizations}
     />
   );

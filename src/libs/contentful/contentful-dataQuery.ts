@@ -25,10 +25,24 @@ export const contentfulDataQuery = async ({
   });
 
   if (!res.ok) {
-    throw new Error(`Contentful fetch failed: ${res.statusText}`);
+    let details = '';
+    try {
+      const payload = await res.json();
+      if (Array.isArray(payload?.errors) && payload.errors.length > 0) {
+        details = ` - ${payload.errors.map((error: { message?: string }) => error?.message || 'Unknown GraphQL error').join(' | ')}`;
+      }
+    } catch {
+      // Ignore payload parsing errors and keep the fallback status text.
+    }
+
+    throw new Error(`Contentful fetch failed (${trackingInfo}): ${res.status} ${res.statusText}${details}`);
   }
 
-  const { data } = await res.json(); 
+  const { data, errors } = await res.json();
+
+  if (Array.isArray(errors) && errors.length > 0) {
+    throw new Error(`Contentful fetch failed (${trackingInfo}): ${errors.map((error: { message?: string }) => error?.message || 'Unknown GraphQL error').join(' | ')}`);
+  }
 
   return data;
 };

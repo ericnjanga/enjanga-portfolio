@@ -106,23 +106,23 @@ export const queryData = {
    * Collections (multiple records)
    * ------------------
    */
-  projectsCollection: `
-    query getProjectCollectionQuery($locale: String!, $order: [ProjectOrder]) {
-      en: projectCollection(locale: $locale, order: $order) { 
-        items { 
-          sys {
-            id
-          }
-          title
-          blurb
-          description {
-            json
-          }
-          order
-        } 
-      }
-    }
-  `,
+  // projectsCollection: `
+  //   query getProjectCollectionQuery($locale: String!, $order: [ProjectOrder]) {
+  //     en: projectCollection(locale: $locale, order: $order) {
+  //       items {
+  //         sys {
+  //           id
+  //         }
+  //         title
+  //         blurb
+  //         description {
+  //           json
+  //         }
+  //         order
+  //       }
+  //     }
+  //   }
+  // `,
   quotesCollection: `
     query getQuoteCollectionQuery($locale: String!) {
       en: quoteCollection(locale: $locale) { 

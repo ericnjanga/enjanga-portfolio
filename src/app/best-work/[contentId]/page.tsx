@@ -1,4 +1,4 @@
-import { getAllContentIds } from '@utils/SSG';
+// import { getAllContentIds } from '@utils/SSG';
 import type { DynamicPageServer } from '@/libs/types';
 import PageEntry from "@utils/layouts/PageEntry";
 import { ContextType1 } from "@utils/dataProcessing/types";
@@ -20,7 +20,10 @@ export async function generateStaticParams() {
    * In other words, generateStaticPar***() itself returns a Promise, but by the time
    * the static build completes, Next.js has already resolved that Promise.
    */
-  return getAllContentIds('CaseStudy Entry Collection');
+  // `CaseStudy Entry Collection` was removed from Contentful.
+  // Keep the route file temporarily, but stop generating static pages from it.
+  // return getAllContentIds('CaseStudy Entry Collection');
+  return [];
 }
 
 

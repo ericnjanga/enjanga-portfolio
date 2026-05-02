@@ -14,6 +14,11 @@ export async function contentfulForServerEntriesFetch(
   dataFor: DataFor1 | DataFor2 | DataFor3 | DataFor4 | DataFor5,
   contentId?: string
 ) {
+  if (dataFor === 'CaseStudy Entry Collection') {
+    // Temporarily disabled: model removed from Contentful.
+    return [];
+  }
+
   const { query, variables, trackingInfo } = getContentfulQueryConfig(dataFor, contentId);
   const data = await contentfulDataQuery({ query, variables, trackingInfo });
   

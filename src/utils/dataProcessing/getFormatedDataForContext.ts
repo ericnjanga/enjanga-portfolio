@@ -78,7 +78,7 @@ function getFormatedDataForContext(
       } as ContextType3;
       break;
 
-    case 'CaseStudy Entry Collection':
+    case 'CaseStudy Entry Collection': // Disabled upstream fetch path; kept for type exhaustiveness.
     case 'BlogPost Entry Collection':
       contextValue = {
         items: data as ContentModel3[],

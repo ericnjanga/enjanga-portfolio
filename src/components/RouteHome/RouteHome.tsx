@@ -13,7 +13,6 @@ import type {
   ContextType1,
   ContextType2,
   ContextType3,
-  ContextType4,
 } from '@utils/dataProcessing/types';
 import { useDataDistributorData } from '@utils/context/DataDistributorContext';
 import type { OrganizationCollection } from '@/libs/organizations/types';
@@ -27,7 +26,7 @@ type RouteHomeType = {
   listAbout: ContextType2;
   backgroundImgUrl: string | null;
   listQuotes: ContextType3;
-  listExperience: ContextType4;
+  // listExperience: ContextType4;
   organizations: OrganizationCollection;
 };
 
@@ -76,7 +75,7 @@ export default function RouteHome({
   listAbout,
   backgroundImgUrl,
   listQuotes,
-  listExperience,
+  // listExperience,
   organizations,
 }: RouteHomeType) {
   const { banners } = useDataDistributorData();

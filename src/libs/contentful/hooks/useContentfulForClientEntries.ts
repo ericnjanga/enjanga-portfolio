@@ -19,6 +19,11 @@ export const useContentfulForClientEntries = (
   return useQuery({
     queryKey: [query, variables],
     queryFn: async () => {
+      if (dataFor === 'CaseStudy Entry Collection') {
+        // Temporarily disabled: model removed from Contentful.
+        return [];
+      }
+
       const rawData = await contentfulDataQuery({ query, variables, trackingInfo });
       return normalizeContentfulResponse(rawData);
     },

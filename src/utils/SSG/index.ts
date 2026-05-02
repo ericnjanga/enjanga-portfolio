@@ -8,7 +8,8 @@ import { contentfulForServerEntriesFetch } from '../../libs/contentful/contentfu
  * Utility to generate static params for any content model
  */
 export async function getAllContentIds(
-  dataFor: 'BlogPost Entry Collection' | 'CaseStudy Entry Collection'
+  dataFor: 'BlogPost Entry Collection'
+  // dataFor: 'BlogPost Entry Collection' | 'CaseStudy Entry Collection'
 ) {
   const entries = await contentfulForServerEntriesFetch(dataFor);
 
