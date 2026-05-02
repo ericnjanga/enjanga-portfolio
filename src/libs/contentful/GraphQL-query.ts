@@ -171,13 +171,6 @@ export const queryData = {
           }
           title
           blurb
-          image {
-            url
-            title
-            description
-            width
-            height
-          }
         }
       }
     }

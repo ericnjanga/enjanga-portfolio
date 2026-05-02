@@ -55,13 +55,13 @@ export default function PageListing({ banner, listOfEntries }: PageListingType) 
                   },
                   headingMaxLength: 50,
                   plainTextMaxLength: 120,
-                }}  
-                mediaImage={{
-                  url: item?.image?.url || '',
-                  alt: item?.image?.description || '',
-                  width: item?.image?.width,
-                  height: item?.image?.height,
                 }}
+                // mediaImage={{
+                //   url: item?.image?.url || '',
+                //   alt: item?.image?.description || '',
+                //   width: item?.image?.width,
+                //   height: item?.image?.height,
+                // }}
                 linksTo={`/blog/${item?.sys?.id}` as CTL_valid_linkTo}
               /> 
             );

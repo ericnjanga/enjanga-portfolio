@@ -14,7 +14,7 @@ export async function contentfulForServerEntriesFetch(
   dataFor: DataFor1 | DataFor2 | DataFor3 | DataFor4 | DataFor5,
   contentId?: string
 ) {
-  if (dataFor === 'CaseStudy Entry Collection') {
+  if (dataFor === 'CaseStudy Entry' || dataFor === 'CaseStudy Entry Collection') {
     // Temporarily disabled: model removed from Contentful.
     return [];
   }

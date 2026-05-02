@@ -85,8 +85,8 @@ export function getContentfulQueryConfig(dataFor: DataFor1 | DataFor2 | DataFor3
       break;
 
     case 'CaseStudy Entry':
-      query = queryData.projectById;
-      variables.sectionId = contentId ?? '';
+      // `projectById` was removed because the model no longer exists in Contentful.
+      // Keep this case temporarily so we can clean dead code safely in a later pass.
       break;
 
     case 'BlogPost Entry':

@@ -19,7 +19,7 @@ export const useContentfulForClientEntries = (
   return useQuery({
     queryKey: [query, variables],
     queryFn: async () => {
-      if (dataFor === 'CaseStudy Entry Collection') {
+      if (dataFor === 'CaseStudy Entry' || dataFor === 'CaseStudy Entry Collection') {
         // Temporarily disabled: model removed from Contentful.
         return [];
       }

@@ -2,7 +2,9 @@
 import type { DynamicPageServer } from '@/libs/types';
 import PageEntry from "@utils/layouts/PageEntry";
 import { ContextType1 } from "@utils/dataProcessing/types";
-import { getDataEntry } from '@utils/dataProcessing';
+import { skeleton_context1 } from '@utils/dataProcessing/types';
+
+export const dynamicParams = false;
 
 /*
  * This function tells Next.js which dynamic routes to pre-render at build time
@@ -23,7 +25,8 @@ export async function generateStaticParams() {
   // `CaseStudy Entry Collection` was removed from Contentful.
   // Keep the route file temporarily, but stop generating static pages from it.
   // return getAllContentIds('CaseStudy Entry Collection');
-  return [];
+  // Next.js static export requires at least one static param for dynamic segments.
+  return [{ contentId: 'unavailable' }];
 }
 
 
@@ -33,17 +36,13 @@ export async function generateStaticParams() {
  * Metadata title and description route update
  * @returns 
  */
-const DATAFOR = 'CaseStudy Entry';
+// const DATAFOR = 'CaseStudy Entry';
 
-export async function generateMetadata(props: DynamicPageServer) {
-  const { contentId } = await props.params;
-  const data:ContextType1 = await getDataEntry(DATAFOR, contentId);
-
-  // Extract metadata
-  const title = `${data?.item?.title} | Performance Case Study by Eric Njanga.`;
-  const description = `${data?.item?.blurb} | A performance-driven React/Next.js case study by consultant Eric Njanga.`;
- 
-  return { title, description }
+export async function generateMetadata(_props: DynamicPageServer) {
+  return {
+    title: 'Case Study Unavailable | Eric Njanga',
+    description: 'This case study content model has been removed from Contentful.',
+  };
 }
 
 
@@ -55,7 +54,13 @@ export default async function Page(props: DynamicPageServer) {
    * This ensures that React has resolved the async boundary before we read values
    * like `contentId`.
    */
-  const { contentId } = await props.params; 
-  const data:ContextType1 = await getDataEntry(DATAFOR, contentId);
+  const _ = await props.params;
+  const data: ContextType1 = {
+    ...skeleton_context1,
+    item: {
+      ...skeleton_context1.item,
+      title: 'Case Study Unavailable',
+    },
+  };
   return <PageEntry {...data} />;
 }
