@@ -72,28 +72,31 @@ export const queryData = {
         }
       }
   `,
-  blogPostById: `
+  blogPostBySlug: `
     query blogPostEntryQuery(
-      $sectionId: String!, 
+      $slug: String!,
       $locale: String!
     ) {
-      en: blogPost(id: $sectionId, locale: $locale) {  
-        sys {
-          id
-        }
-        title
-        blurb
-        description {
-          json
-          links {
-            assets {
-              block {
-                sys { id }
-                url
-                title
-                description
-                width
-                height
+      en: blogPostCollection(locale: $locale, where: { slug: $slug }, limit: 1) {
+        items {
+          sys {
+            id
+          }
+          slug
+          title
+          blurb
+          description {
+            json
+            links {
+              assets {
+                block {
+                  sys { id }
+                  url
+                  title
+                  description
+                  width
+                  height
+                }
               }
             }
           }
@@ -169,6 +172,7 @@ export const queryData = {
           sys {
             id
           }
+          slug
           title
           blurb
         }

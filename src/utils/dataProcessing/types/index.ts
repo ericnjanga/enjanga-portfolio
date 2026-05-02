@@ -65,6 +65,10 @@ export const getDataType = (dataFor: DataFor1 | DataFor2 | DataFor3 | DataFor4 |
  * Shapes incoming content models from ContentFul into specific data structures.
  */
 export type ContentModel1 = {
+  sys?: {
+    id?: string;
+  };
+  slug?: string;
   title?: string;
   blurb?: string;
   description?: { json: { content: Node[] } };
@@ -86,6 +90,7 @@ export type ContentModel3 = {
   sys?: {
     id?: string;
   }; 
+  slug?: string;
   order?: number; 
   title?: string;
   blurb?: string;

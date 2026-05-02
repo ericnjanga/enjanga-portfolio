@@ -49,6 +49,7 @@ export function getContentfulQueryConfig(dataFor: DataFor1 | DataFor2 | DataFor3
     locale: 'en-CA',
     sectionId: '',
     parentRefId: '',
+    slug: '',
   };
   let trackingInfo = dataFor;
 
@@ -90,8 +91,8 @@ export function getContentfulQueryConfig(dataFor: DataFor1 | DataFor2 | DataFor3
       break;
 
     case 'BlogPost Entry':
-      query = queryData.blogPostById;
-      variables.sectionId = contentId ?? '';
+      query = queryData.blogPostBySlug;
+      variables.slug = contentId ?? '';
       break;
 
     case 'CaseStudy Entry Collection':

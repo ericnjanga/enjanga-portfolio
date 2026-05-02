@@ -1,4 +1,8 @@
-import { fetchOrganizationBySlug, fetchOrganizations } from '@/libs/organizations';
+import {
+  fetchOrganizationBySlug,
+  fetchOrganizationProjects,
+  fetchOrganizations,
+} from '@/libs/organizations';
 import type { DynamicPageServerSlug } from '@/libs/types';
 import type { ContentModel1 } from '@utils/dataProcessing/types';
 import ExperienceEntry from '../ExperienceEntry';
@@ -28,9 +32,8 @@ export default async function Page(props: DynamicPageServerSlug) {
   const { slug } = await props.params;
   const org = await fetchOrganizationBySlug(slug);
 
-  // `CaseStudy Entry` model was removed from Contentful.
-  // Temporarily keep the page and organization content, but omit project details.
-  const projects: ContentModel1[] = [];
+  const projectIds = org?.projects?.map((project) => project.sys.id) ?? [];
+  const projects: ContentModel1[] = await fetchOrganizationProjects(projectIds);
 
   return <ExperienceEntry org={org!} projects={projects} />;
 }
