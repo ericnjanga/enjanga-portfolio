@@ -60,7 +60,7 @@ export async function fetchOrganizationBySlug(slug: string): Promise<Organizatio
 }
 
 /**
- * Fetches blog posts by entry IDs using the Contentful CDA REST API.
+ * Fetches case study entries by ID using the Contentful CDA REST API.
  */
 export async function fetchOrganizationProjects(projectIds: string[]): Promise<ContentModel1[]> {
   if (!projectIds.length) {

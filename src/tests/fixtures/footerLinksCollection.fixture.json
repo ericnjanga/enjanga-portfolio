@@ -393,13 +393,13 @@
                             },
                             {
                               "data": {
-                                "uri": "http://localhost:3000/blog/"
+                                "uri": "http://localhost:3000/case-studies/"
                               },
                               "content": [
                                 {
                                   "data": {},
                                   "marks": [],
-                                  "value": "Blog",
+                                  "value": "Case Studies",
                                   "nodeType": "text"
                                 }
                               ],

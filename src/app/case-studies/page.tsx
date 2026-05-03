@@ -6,16 +6,16 @@ import { getMetadata } from '@/libs/metadata';
 
 // Todo: 1) Move this constant to contentfulContentIds
 // Todo: 2) Ask chatGPT what would be a proper way to organize and rename contentfulContentIds
-const BLOG_PAGE_ID = '4czA1kydEnYoXAWoLbdijZ';
+const CASE_STUDIES_PAGE_ID = '4czA1kydEnYoXAWoLbdijZ';
 
 /**
  * Metadata title and description route update
  * @returns 
  */
 export async function generateMetadata() {
-  const data = await getMetadata(BLOG_PAGE_ID);
+  const data = await getMetadata(CASE_STUDIES_PAGE_ID);
   return {
-    title: data.title,
+    title: data.title || 'Case Studies',
     description: data.description
   }
 }

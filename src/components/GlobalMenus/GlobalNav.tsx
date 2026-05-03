@@ -16,7 +16,8 @@ export const GlobalNav = ({ parent = 'top nav' }: GlobalNavType) => {
   const { section: currentSection } = useSearchParamData();
   const isHomeRoute = useIsHomeActiveFlag();
 
-  const isBlogActive = pathname === '/blog' || pathname.startsWith('/blog/');
+  const isCaseStudiesActive =
+    pathname === '/case-studies' || pathname.startsWith('/case-studies/');
   const isExperienceActive =
     pathname === '/experience' ||
     pathname.startsWith('/experience/') ||
@@ -56,8 +57,12 @@ export const GlobalNav = ({ parent = 'top nav' }: GlobalNavType) => {
         Experience
       </HeaderMenuItem>
 
-      <HeaderMenuItem as={Link} href="/blog" aria-current={isBlogActive ? 'page' : undefined}>
-        Blog
+      <HeaderMenuItem
+        as={Link}
+        href="/case-studies"
+        aria-current={isCaseStudiesActive ? 'page' : undefined}
+      >
+        Case Studies
       </HeaderMenuItem>
     </>
   );

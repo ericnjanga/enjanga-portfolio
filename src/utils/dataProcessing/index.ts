@@ -6,7 +6,7 @@ import { skeleton_context1, getDataType } from './types';
 
 
 /**
- * Fetch entry from ContentFul, then format it for the blog post context.
+ * Fetch entry from ContentFul, then format it for the requested page context.
  * @param slugId 
  * @param dataFor 
  * @returns 

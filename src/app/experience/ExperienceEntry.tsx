@@ -60,7 +60,7 @@ const ExperienceEntry = ({ org, projects }: ExperienceEntryProps) => {
                       headingMaxLength: 50,
                       plainTextMaxLength: 120,
                     }}
-                    linksTo={`/blog/${project?.slug}` as CTL_valid_linkTo}
+                    linksTo={`/case-studies/${project?.slug}` as CTL_valid_linkTo}
                   />
                 );
               })}

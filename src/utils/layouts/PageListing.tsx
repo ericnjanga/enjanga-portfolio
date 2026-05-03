@@ -56,7 +56,7 @@ export default function PageListing({ banner, listOfEntries }: PageListingType) 
                   headingMaxLength: 50,
                   plainTextMaxLength: 120,
                 }}
-                linksTo={`/blog/${item?.slug}` as CTL_valid_linkTo}
+                linksTo={`/case-studies/${item?.slug}` as CTL_valid_linkTo}
               /> 
             );
           })}
