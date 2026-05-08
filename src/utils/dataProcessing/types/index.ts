@@ -95,6 +95,7 @@ export type ContentModel3 = {
   title?: string;
   blurb?: string;
   description?: { json: { content: Node[] } };
+  organization?: { id: string; title: string; slug: string; pictogramName?: string };
   image?: {
     url: string;
     title: string;

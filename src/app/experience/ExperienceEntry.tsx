@@ -1,9 +1,10 @@
 'use client';
 
 import React from 'react';
+import { useRouter } from 'next/navigation';
 import type { Organization } from '@/libs/organizations/types';
 import type { ContentModel1 } from '@utils/dataProcessing/types';
-import { Banner, CMSRichText, TilePost, CTL_valid_linkTo } from 'enjanga-components-library';
+import { Banner, CMSRichText, TilePost } from 'enjanga-components-library';
 import 'enjanga-components-library/banner.css';
 import 'enjanga-components-library/cms-rich-text.css';
 import 'enjanga-components-library/tile-post.css';
@@ -17,12 +18,14 @@ type ExperienceEntryProps = {
 };
 
 const ExperienceEntry = ({ org, projects }: ExperienceEntryProps) => {
+  const router = useRouter();
   const { banners } = useDataDistributorData();
   const layoutGridStyle = React.useMemo(() => {
     return enjGetLayout({ type: 'RAM', itemMaxWidth: 350, gridGap: 1.8 });
   }, []);
 
   console.log('-----> ExperienceEntry rendered with org:', org);
+  const orgProps = { orgTitle: org.title, orgSlug: org.slug, orgPictogramName: org.pictogramName } as any;
 
   return (
     <div className="articlePage page-section-spacing">
@@ -49,6 +52,7 @@ const ExperienceEntry = ({ org, projects }: ExperienceEntryProps) => {
                 return (
                   <TilePost
                     key={project?.sys?.id ?? project?.title ?? i}
+                    {...orgProps} 
                     featuredText={{
                       heading: {
                         children: project?.title,
@@ -60,7 +64,7 @@ const ExperienceEntry = ({ org, projects }: ExperienceEntryProps) => {
                       headingMaxLength: 50,
                       plainTextMaxLength: 120,
                     }}
-                    linksTo={`/case-studies/${project?.slug}` as CTL_valid_linkTo}
+                    onClick={() => router.push(`/case-studies/${project?.slug}`)}
                   />
                 );
               })}

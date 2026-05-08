@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { useRouter } from 'next/navigation';
 import {
   Banner,
   TilePost,
@@ -19,6 +20,7 @@ type PageListingType = {
 };
 
 export default function PageListing({ banner, listOfEntries }: PageListingType) {
+  const router = useRouter();
   const { banners } = useDataDistributorData(); 
   const layoutGridStyle = React.useMemo(() => {
     return enjGetLayout({ type: 'RAM', itemMaxWidth: 350, gridGap: 1.8 });
@@ -42,9 +44,14 @@ export default function PageListing({ banner, listOfEntries }: PageListingType) 
       <article className="page-content">
         <div className="enj-container" style={layoutGridStyle}>
           {listOfEntries?.items?.map((item) => {
-            return ( 
+            const orgTitle = item?.organization?.title;
+            const orgSlug = item?.organization?.slug;
+            const orgPictogramName = item?.organization?.pictogramName;
+            const orgProps = { orgTitle, orgSlug, orgPictogramName } as any;
+            return (
               <TilePost
                 key={item?.sys?.id}
+                {...orgProps}
                 featuredText={{
                   heading: {
                     children: item?.title,
@@ -56,8 +63,8 @@ export default function PageListing({ banner, listOfEntries }: PageListingType) 
                   headingMaxLength: 50,
                   plainTextMaxLength: 120,
                 }}
-                linksTo={`/case-studies/${item?.slug}` as CTL_valid_linkTo}
-              /> 
+                onClick={() => router.push(`/case-studies/${item?.slug}`)}
+              />
             );
           })}
         </div>

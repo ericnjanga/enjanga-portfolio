@@ -2,7 +2,7 @@ import { getAllContentSlugs } from '@utils/SSG';
 import type { DynamicPageServerSlug } from '@/libs/types';
 import PageEntry from "@utils/layouts/PageEntry";
 import { ContextType1 } from "@utils/dataProcessing/types";
-import { getDataEntry } from '@utils/dataProcessing';
+import { fetchBlogPostBySlug } from '@/libs/blogPosts';
 
 /*
  * This function tells Next.js which dynamic routes to pre-render at build time
@@ -30,10 +30,18 @@ export async function generateStaticParams() {
  * Metadata title and description route update
  * @returns 
  */
-const DATAFOR = 'BlogPost Entry';
 export async function generateMetadata(props: DynamicPageServerSlug) {
   const { slug } = await props.params;
-  const data:ContextType1 = await getDataEntry(DATAFOR, slug);
+  const post = await fetchBlogPostBySlug(slug);
+  const data: ContextType1 = {
+    item: {
+      sys: { id: post?.id },
+      slug: post?.slug,
+      title: post?.title,
+      blurb: post?.blurb,
+      description: post?.description,
+    },
+  };
 
   // Extract metadata
   const title = `${data?.item?.title} | Case Studies by Eric Njanga.`;
@@ -52,7 +60,16 @@ export default async function Page(props: DynamicPageServerSlug) {
   * like `slug`.
    */
   const { slug } = await props.params;
-  const data:ContextType1 = await getDataEntry(DATAFOR, slug);
+  const post = await fetchBlogPostBySlug(slug);
+  const data: ContextType1 = {
+    item: {
+      sys: { id: post?.id },
+      slug: post?.slug,
+      title: post?.title,
+      blurb: post?.blurb,
+      description: post?.description,
+    },
+  };
 
   return <PageEntry {...data} />;
 }
