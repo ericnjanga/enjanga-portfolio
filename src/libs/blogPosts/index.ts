@@ -6,6 +6,53 @@ const ACCESS_TOKEN = process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN;
 
 const CDA_BASE = `https://cdn.contentful.com/spaces/${SPACE_ID}/environments/${ENVIRONMENT}`;
 
+type CdaAsset = {
+  sys?: { id?: string };
+  fields?: {
+    title?: string;
+    description?: string;
+    file?: {
+      url?: string;
+      details?: {
+        image?: {
+          width?: number;
+          height?: number;
+        };
+      };
+    };
+  };
+};
+
+const normalizeAssetUrl = (url?: string): string => {
+  if (!url) {
+    return '';
+  }
+  return url.startsWith('//') ? `https:${url}` : url;
+};
+
+const buildAssetLinks = (assets: CdaAsset[] | undefined) => {
+  return (assets ?? [])
+    .map((asset) => {
+      const id = asset.sys?.id;
+      const url = normalizeAssetUrl(asset.fields?.file?.url);
+      if (!id || !url) {
+        return null;
+      }
+
+      return {
+        sys: { id },
+        url,
+        title: asset.fields?.title ?? '',
+        width: asset.fields?.file?.details?.image?.width ?? 0,
+        height: asset.fields?.file?.details?.image?.height ?? 0,
+        ...(asset.fields?.description
+          ? { description: asset.fields.description }
+          : {}),
+      };
+    })
+    .filter((asset): asset is NonNullable<typeof asset> => asset !== null);
+};
+
 /**
  * Fetches all entries of content type "blogPost" from Contentful
  * using the Content Delivery REST API.
@@ -31,6 +78,7 @@ export async function fetchBlogPosts(): Promise<BlogPostCollection> {
   }
 
   const json = await res.json();
+  const assetLinks = buildAssetLinks(json.includes?.Asset as CdaAsset[] | undefined);
 
   // Build a lookup map of linked Organization entries from the CDA includes.
   const orgMap = new Map<string, { id: string; title: string; slug: string; pictogramName?: string }>();
@@ -55,9 +103,16 @@ export async function fetchBlogPosts(): Promise<BlogPostCollection> {
       : undefined,
     blurb: item.fields.blurb as string | undefined,
     // CDA returns the rich-text document directly (not wrapped in `{ json }`).
-    // Wrap it here to match the GraphQL shape that CMSRichText expects.
+    // CMSRichText also expects resolved asset links for embedded media nodes.
     description: item.fields.description
-      ? { json: item.fields.description as { content: any[] } }
+      ? {
+          json: item.fields.description as { content: any[] },
+          links: {
+            assets: {
+              block: assetLinks,
+            },
+          },
+        }
       : undefined,
   }));
 }

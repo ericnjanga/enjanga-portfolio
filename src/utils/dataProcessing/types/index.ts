@@ -71,7 +71,21 @@ export type ContentModel1 = {
   slug?: string;
   title?: string;
   blurb?: string;
-  description?: { json: { content: Node[] } };
+  description?: {
+    json: { content: Node[] };
+    links?: {
+      assets: {
+        block: {
+          sys: { id: string };
+          url: string;
+          title: string;
+          width: number;
+          height: number;
+          description?: string;
+        }[];
+      };
+    };
+  };
 };
 
 export type ContentModel2 = {
@@ -83,7 +97,21 @@ export type ContentModel2 = {
   icon?: string;
   title?: string;
   blurb?: string;
-  description?: { json: { content: Node[] } };
+  description?: {
+    json: { content: Node[] };
+    links?: {
+      assets: {
+        block: {
+          sys: { id: string };
+          url: string;
+          title: string;
+          width: number;
+          height: number;
+          description?: string;
+        }[];
+      };
+    };
+  };
 };
 
 export type ContentModel3 = {
@@ -94,7 +122,21 @@ export type ContentModel3 = {
   order?: number; 
   title?: string;
   blurb?: string;
-  description?: { json: { content: Node[] } };
+  description?: {
+    json: { content: Node[] };
+    links?: {
+      assets: {
+        block: {
+          sys: { id: string };
+          url: string;
+          title: string;
+          width: number;
+          height: number;
+          description?: string;
+        }[];
+      };
+    };
+  };
   organization?: { id: string; title: string; slug: string; pictogramName?: string };
   image?: {
     url: string;
@@ -111,7 +153,21 @@ export type ContentModel4 = {
   }; 
   order?: number; 
   title?: string; 
-  description?: { json: { content: Node[] } };
+  description?: {
+    json: { content: Node[] };
+    links?: {
+      assets: {
+        block: {
+          sys: { id: string };
+          url: string;
+          title: string;
+          width: number;
+          height: number;
+          description?: string;
+        }[];
+      };
+    };
+  };
 };
  
 

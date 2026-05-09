@@ -6,7 +6,21 @@ export type BlogPost = {
   slug: string;
   organization?: { id: string; title: string; slug: string; pictogramName?: string };
   blurb?: string;
-  description?: { json: { content: Node[] } };
+  description?: {
+    json: { content: Node[] };
+    links?: {
+      assets: {
+        block: {
+          sys: { id: string };
+          url: string;
+          title: string;
+          width: number;
+          height: number;
+          description?: string;
+        }[];
+      };
+    };
+  };
 };
 
 export type BlogPostCollection = BlogPost[];
