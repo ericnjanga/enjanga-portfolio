@@ -24,6 +24,34 @@ type CdaAsset = {
   };
 };
 
+type CdaEntry = {
+  sys?: {
+    id?: string;
+    contentType?: {
+      sys?: {
+        id?: string;
+      };
+    };
+  };
+  fields?: {
+    slug?: string;
+  };
+};
+
+type RichTextNode = {
+  nodeType?: string;
+  data?: {
+    target?: {
+      sys?: {
+        id?: string;
+      };
+    };
+    uri?: string;
+  };
+  content?: RichTextNode[];
+  [key: string]: unknown;
+};
+
 const normalizeAssetUrl = (url?: string): string => {
   if (!url) {
     return '';
@@ -54,6 +82,58 @@ const buildAssetLinks = (assets: CdaAsset[] | undefined) => {
     .filter((asset): asset is NonNullable<typeof asset> => asset !== null);
 };
 
+const buildEntryHrefMap = (entries: CdaEntry[] | undefined): Map<string, string> => {
+  const hrefMap = new Map<string, string>();
+
+  (entries ?? []).forEach((entry) => {
+    const id = entry.sys?.id;
+    const slug = entry.fields?.slug;
+    const contentType = entry.sys?.contentType?.sys?.id;
+
+    if (!id || !slug || !contentType) {
+      return;
+    }
+
+    if (contentType === 'blogPost' || contentType === 'project' || contentType === 'caseStudy') {
+      hrefMap.set(id, `/case-studies/${slug}`);
+      return;
+    }
+
+    if (contentType === 'organization') {
+      hrefMap.set(id, `/experience/${slug}`);
+    }
+  });
+
+  return hrefMap;
+};
+
+const rewriteEntryHyperlinks = <T>(document: T, hrefMap: Map<string, string>): T => {
+  const visit = (node: RichTextNode): RichTextNode => {
+    const nextNode: RichTextNode = { ...node };
+
+    if (node.nodeType === 'entry-hyperlink') {
+      const entryId = node.data?.target?.sys?.id;
+      const href = entryId ? hrefMap.get(entryId) : undefined;
+      if (href) {
+        nextNode.nodeType = 'hyperlink';
+        nextNode.data = { uri: href };
+      }
+    }
+
+    if (Array.isArray(node.content)) {
+      nextNode.content = node.content.map((child) => visit(child));
+    }
+
+    return nextNode;
+  };
+
+  if (!document || typeof document !== 'object') {
+    return document;
+  }
+
+  return visit(document as RichTextNode) as T;
+};
+
 /**
  * Fetches all entries of content type "organization" from Contentful
  * using the Content Delivery REST API.
@@ -65,6 +145,7 @@ export async function fetchOrganizations(): Promise<OrganizationCollection> {
     'select',
     'sys.id,fields.title,fields.slug,fields.subtitle,fields.description,fields.pictogramName,fields.website,fields.projects'
   );
+  url.searchParams.set('include', '1');
 
   const res = await fetch(url.toString(), {
     headers: {
@@ -79,6 +160,7 @@ export async function fetchOrganizations(): Promise<OrganizationCollection> {
 
   const json = await res.json();
   const assetLinks = buildAssetLinks(json.includes?.Asset as CdaAsset[] | undefined);
+  const entryHrefMap = buildEntryHrefMap(json.includes?.Entry as CdaEntry[] | undefined);
 
   return (json.items ?? []).map((item: any) => ({
     id: item.sys.id as string,
@@ -89,7 +171,10 @@ export async function fetchOrganizations(): Promise<OrganizationCollection> {
     // CMSRichText also expects resolved asset links for embedded media nodes.
     description: item.fields.description
       ? {
-          json: item.fields.description as { content: any[] },
+          json: rewriteEntryHyperlinks(
+            item.fields.description as { content: any[] },
+            entryHrefMap
+          ),
           links: {
             assets: {
               block: assetLinks,
@@ -142,6 +227,7 @@ export async function fetchOrganizationProjects(projectIds: string[]): Promise<C
   const json = await res.json();
   const items = json.items ?? [];
   const assetLinks = buildAssetLinks(json.includes?.Asset as CdaAsset[] | undefined);
+  const entryHrefMap = buildEntryHrefMap(json.includes?.Entry as CdaEntry[] | undefined);
 
   const byId = new Map<string, ContentModel1>(
     items.map((item: any) => [
@@ -155,7 +241,10 @@ export async function fetchOrganizationProjects(projectIds: string[]): Promise<C
         blurb: item.fields.blurb as string | undefined,
         description: item.fields.description
           ? {
-              json: item.fields.description as { content: any[] },
+              json: rewriteEntryHyperlinks(
+                item.fields.description as { content: any[] },
+                entryHrefMap
+              ),
               links: {
                 assets: {
                   block: assetLinks,
