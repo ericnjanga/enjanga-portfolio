@@ -4,6 +4,7 @@ export type Organization = {
   id: string;
   title: string;
   slug: string;
+  createdAt: string;
   subtitle?: string;
   description?: {
     json: { content: Node[] };

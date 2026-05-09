@@ -4,6 +4,7 @@ export type BlogPost = {
   id: string;
   title: string;
   slug: string;
+  createdAt: string;
   organization?: { id: string; title: string; slug: string; pictogramName?: string };
   blurb?: string;
   description?: {

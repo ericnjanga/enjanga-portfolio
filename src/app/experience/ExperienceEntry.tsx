@@ -24,7 +24,6 @@ const ExperienceEntry = ({ org, projects }: ExperienceEntryProps) => {
     return enjGetLayout({ type: 'RAM', itemMaxWidth: 350, gridGap: 1.8 });
   }, []);
 
-  console.log('-----> ExperienceEntry rendered with org:', org);
   const orgProps = { orgTitle: org.title, orgSlug: org.slug, orgPictogramName: org.pictogramName } as any;
 
   return (

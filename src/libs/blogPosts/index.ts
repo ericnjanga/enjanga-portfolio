@@ -154,6 +154,7 @@ const mapBlogPostsFromCda = (json: any): BlogPostCollection => {
     id: item.sys.id as string,
     title: item.fields.title as string,
     slug: item.fields.slug as string,
+    createdAt: item.sys.createdAt as string,
     organization: item.fields.organization
       ? orgMap.get(item.fields.organization.sys.id)
       : undefined,
@@ -185,7 +186,7 @@ export async function fetchBlogPosts(): Promise<BlogPostCollection> {
   url.searchParams.set('content_type', 'blogPost');
   url.searchParams.set(
     'select',
-    'sys.id,fields.title,fields.slug,fields.organization,fields.blurb,fields.description'
+    'sys.id,sys.createdAt,fields.title,fields.slug,fields.organization,fields.blurb,fields.description'
   );
   url.searchParams.set('include', '1');
 
@@ -215,7 +216,7 @@ export async function fetchBlogPostBySlug(slug: string): Promise<BlogPost | null
   url.searchParams.set('limit', '1');
   url.searchParams.set(
     'select',
-    'sys.id,fields.title,fields.slug,fields.organization,fields.blurb,fields.description'
+    'sys.id,sys.createdAt,fields.title,fields.slug,fields.organization,fields.blurb,fields.description'
   );
   url.searchParams.set('include', '2');
 

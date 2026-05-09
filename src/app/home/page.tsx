@@ -49,7 +49,6 @@ export default async function LandingPage() {
       listAbout={dataAbout}
       backgroundImgUrl={bgImgUrl}
       listQuotes={dataListQuotes}
-      // listExperience={dataListExperience}
       organizations={organizations}
     />
   );

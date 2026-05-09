@@ -143,7 +143,7 @@ export async function fetchOrganizations(): Promise<OrganizationCollection> {
   url.searchParams.set('content_type', 'organization');
   url.searchParams.set(
     'select',
-    'sys.id,fields.title,fields.slug,fields.subtitle,fields.description,fields.pictogramName,fields.website,fields.projects'
+    'sys.id,sys.createdAt,fields.title,fields.slug,fields.subtitle,fields.description,fields.pictogramName,fields.website,fields.projects'
   );
   url.searchParams.set('include', '1');
 
@@ -162,11 +162,14 @@ export async function fetchOrganizations(): Promise<OrganizationCollection> {
   const assetLinks = buildAssetLinks(json.includes?.Asset as CdaAsset[] | undefined);
   const entryHrefMap = buildEntryHrefMap(json.includes?.Entry as CdaEntry[] | undefined);
 
-  return (json.items ?? []).map((item: any) => ({
-    id: item.sys.id as string,
-    title: item.fields.title as string,
-    slug: item.fields.slug as string,
-    subtitle: item.fields.subtitle as string | undefined,
+  return (json.items ?? [])
+    .sort((a: any, b: any) => new Date(b.sys.createdAt).getTime() - new Date(a.sys.createdAt).getTime())
+    .map((item: any) => ({
+      id: item.sys.id as string,
+      title: item.fields.title as string,
+      slug: item.fields.slug as string,
+      createdAt: item.sys.createdAt as string,
+      subtitle: item.fields.subtitle as string | undefined,
     // CDA returns the rich-text document directly (not wrapped in `{ json }`).
     // CMSRichText also expects resolved asset links for embedded media nodes.
     description: item.fields.description

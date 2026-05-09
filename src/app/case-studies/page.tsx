@@ -26,14 +26,16 @@ export default async function Page() {
   const dataBanner: ContextType1 = await getDataEntry('BannerBlogPage Entry' as DataFor1);
   const posts = await fetchBlogPosts();
   const dataListOfEntries: ContextType4 = {
-    items: posts.map((post) => ({
-      sys: { id: post.id },
-      slug: post.slug,
-      title: post.title,
-      blurb: post.blurb,
-      description: post.description,
-      organization: post.organization,
-    })),
+    items: posts
+      .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
+      .map((post) => ({
+        sys: { id: post.id },
+        slug: post.slug,
+        title: post.title,
+        blurb: post.blurb,
+        description: post.description,
+        organization: post.organization,
+      })),
   };
 
   return (
