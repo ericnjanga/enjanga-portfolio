@@ -27,7 +27,7 @@ export default async function Page() {
   const posts = await fetchBlogPosts();
   const dataListOfEntries: ContextType4 = {
     items: posts
-      .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
+      .sort((a, b) => new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime())
       .map((post) => ({
         sys: { id: post.id },
         slug: post.slug,
