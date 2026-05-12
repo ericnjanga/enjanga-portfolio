@@ -33,21 +33,26 @@ const ScrollHandler = () => {
 
   /**
    * Only if we are on the home page, it will only scroll to the designated section
+   * 
+   * When navigating from another route, we need a delay to allow dynamically
+   * imported components to finish rendering before attempting to scroll.
    */
   useEffect(() => {
-    // Only scroll if we're on the home page already
+    // Only scroll if we're on the home page and we have a target section
     if (pathname === '/' && targetSection) {
-      const element = document.getElementById(targetSection);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
+      // Add a small delay to allow dynamically imported components to render
+      const timer = setTimeout(() => {
+        const element = document.getElementById(targetSection);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
 
-        // Set focus on keyboard/screen reader users
-        element.setAttribute('tabindex', '-1'); // Make focusable
-        element.focus({ preventScroll: true }); // Focus without re-scrolling
+          // Set focus on keyboard/screen reader users
+          element.setAttribute('tabindex', '-1'); // Make focusable
+          element.focus({ preventScroll: true }); // Focus without re-scrolling
+        }
+      }, 500); // 500ms delay as mentioned in your requirement
 
-        // Update URL without page reload
-        window.history.replaceState(null, '', `/?section=${targetSection}`);
-      }
+      return () => clearTimeout(timer);
     }
   }, [targetSection, pathname]);
 

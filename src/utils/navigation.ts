@@ -37,3 +37,26 @@ export function useSectionNavigation() {
 
   return { navigateToSection };
 }
+
+/**
+ * Logo click behavior:
+ * - On home route: scroll to top smoothly
+ * - On other routes: navigate to home
+ */
+export function useLogoClick() {
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const handleLogoClick = (e: React.MouseEvent) => {
+    // If on home route, scroll to top instead of reloading
+    if (pathname === '/') {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      // Clear any section query parameter
+      window.history.replaceState(null, '', '/');
+    }
+    // Otherwise, allow default navigation behavior
+  };
+
+  return { handleLogoClick };
+}

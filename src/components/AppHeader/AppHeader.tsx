@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, useEffect } from 'react';
 import { AppHeader, BrandLogo } from 'enjanga-components-library';
 import { GlobalActions, GlobalNav } from '../GlobalMenus';
 import { AppUseUtility } from '@utils/UtilityContext';
@@ -6,6 +6,7 @@ import {
   SearchParamProvider,
   useIsHomeActiveFlag,
 } from '@utils/context/SearchParamProvider';
+import { useLogoClick } from '@utils/navigation';
 import { Theme } from "@carbon/react";
 import 'enjanga-components-library/app-header.css'; // Styling for <AppHea** /> component
 import './_appHeader.scss';
@@ -26,6 +27,18 @@ export const AppHeaderWrapper = () => (
 const AppHeaderWithExtra = () => {
   const { brand } = AppUseUtility();
   const isHomeRoute = useIsHomeActiveFlag();
+  const { handleLogoClick } = useLogoClick();
+
+  useEffect(() => {
+    // Add click listener to logo/brand element
+    const brandElement = document.querySelector('.cds--header__name');
+    if (brandElement) {
+      brandElement.addEventListener('click', handleLogoClick as EventListener);
+      return () => {
+        brandElement.removeEventListener('click', handleLogoClick as EventListener);
+      };
+    }
+  }, [handleLogoClick]);
 
   return (
     <Theme theme="g10">
