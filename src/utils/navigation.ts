@@ -44,13 +44,12 @@ export function useSectionNavigation() {
  * - On other routes: navigate to home
  */
 export function useLogoClick() {
-  const router = useRouter();
   const pathname = usePathname();
 
-  const handleLogoClick = (e: React.MouseEvent) => {
+  const handleLogoClick = (event: MouseEvent) => {
     // If on home route, scroll to top instead of reloading
     if (pathname === '/') {
-      e.preventDefault();
+      event.preventDefault();
       window.scrollTo({ top: 0, behavior: 'smooth' });
       // Clear any section query parameter
       window.history.replaceState(null, '', '/');

@@ -31,13 +31,17 @@ const AppHeaderWithExtra = () => {
 
   useEffect(() => {
     // Add click listener to logo/brand element
-    const brandElement = document.querySelector('.cds--header__name');
-    if (brandElement) {
-      brandElement.addEventListener('click', handleLogoClick as EventListener);
-      return () => {
-        brandElement.removeEventListener('click', handleLogoClick as EventListener);
-      };
+    const brandElement = document.querySelector<HTMLElement>('.cds--header__name');
+
+    if (!brandElement) {
+      return undefined;
     }
+
+    brandElement.addEventListener('click', handleLogoClick);
+
+    return () => {
+      brandElement.removeEventListener('click', handleLogoClick);
+    };
   }, [handleLogoClick]);
 
   return (
