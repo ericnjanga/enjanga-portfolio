@@ -3,19 +3,10 @@ import { TileBanner } from 'enjanga-components-library';
 import 'enjanga-components-library/tile-banner.css'; // Styling for <CustomT** /> component
 import type { OrganizationCollection } from '@/libs/organizations/types';
 import './index.scss';
-import { enjGetLayout } from '@libs/layouts';
-
-
-
 
 const ListOfItems = ({ organizations }: { organizations: OrganizationCollection }) => {
-
-  const layoutGridStyle = React.useMemo(() => {
-    return enjGetLayout({ type: 'RAM', itemMaxWidth: 430, gridGap: 1.5 });
-  }, []);
-
   return (
-    <div className='list-of-items' style={layoutGridStyle}>
+    <div className='list-of-items'>
       {organizations?.map((organization, index) => {
         return (
           <TileBanner

@@ -65,6 +65,7 @@ function getFormatedDataForContext(
     case 'Expertise Parent Entry Collection':
     case 'Expertise Entry Collection':
     case 'AboutInfo Entry Collection':
+    case 'Service Entry Collection':
       contextValue = {
         items: sortByOrderProp(data) as ContentModel2[],
         __isNormalized: true,

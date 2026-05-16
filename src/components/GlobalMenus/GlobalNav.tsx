@@ -37,10 +37,10 @@ export const GlobalNav = ({ parent = 'top nav' }: GlobalNavType) => {
       )}
 
       <HeaderMenuItem
-        onClick={() => navigateToSection('expertise')}
-        aria-current={isActive('expertise') ? 'page' : undefined}
+        onClick={() => navigateToSection('service')}
+        aria-current={isActive('service') ? 'page' : undefined}
       >
-        Expertise
+        Service
       </HeaderMenuItem>
 
       <HeaderMenuItem

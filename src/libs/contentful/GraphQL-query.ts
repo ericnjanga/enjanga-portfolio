@@ -162,6 +162,25 @@ export const queryData = {
       }
     }
   `,
+  serviceCollection: `
+    query serviceCollectionQuery($locale: String!) {
+      en: serviceCollection(locale: $locale, where: { isEnabled: true }) {
+        items {
+          sys {
+            id
+          }
+          title
+          slugLabel
+          pictogramName
+          description {
+            json
+          }
+          isEnabled
+          order
+        }
+      }
+    }
+  `,
   blogPostCollection: `
     query blogPostCollectionQuery(
       $locale: String!,

@@ -19,7 +19,7 @@ import { ReactNode } from 'react';
 export type DataFor1 = 'Metadata Entry' | 'BannerHomePage Entry' | 'BannerBlogPage Entry' | 'FooterCopyright Entry' | 'CaseStudy Entry' | 'BlogPost Entry' | 'FooterLinks --Entry--';
 
 // DataFor2: ContentModel2[] -> ContextType2
-export type DataFor2 = 'Expertise Parent Entry Collection' | 'Expertise Entry Collection' | 'AboutInfo Entry Collection';
+export type DataFor2 = 'Expertise Parent Entry Collection' | 'Expertise Entry Collection' | 'AboutInfo Entry Collection' | 'Service Entry Collection';
 
 // DataFor3: ContentModel1[] -> ContextType3
 export type DataFor3 = 'Quotes Entry Collection';
@@ -43,6 +43,7 @@ export const getDataType = (dataFor: DataFor1 | DataFor2 | DataFor3 | DataFor4 |
     case 'Expertise Parent Entry Collection':
     case 'Expertise Entry Collection':
     case 'AboutInfo Entry Collection':
+    case 'Service Entry Collection':
       return 'DataFor2';
 
     case 'Quotes Entry Collection':

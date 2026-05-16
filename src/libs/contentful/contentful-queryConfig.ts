@@ -68,6 +68,10 @@ export function getContentfulQueryConfig(dataFor: DataFor1 | DataFor2 | DataFor3
       }
       break;
 
+    case 'Service Entry Collection':
+      query = queryData.serviceCollection;
+      break;
+
     case 'BannerHomePage Entry':
     case 'BannerBlogPage Entry':
     case 'FooterCopyright Entry':

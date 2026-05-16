@@ -1,4 +1,40 @@
+@use 'enjanga-core-setup/styles-breakpoint' as bp;
+
+/**
+ * List of Items Grid Layout
+ * Responsive grid that adapts to different screen sizes
+ */
 .list-of-items {
   display: grid;
   gap: 1.5rem;
+
+  /**
+   * Small screens (320px - 671px):
+   * Single column layout to fit mobile devices
+   */
+  grid-template-columns: 1fr;
+
+  /**
+   * Medium screens (672px and up):
+   * Use responsive auto-fit layout with smaller min-width for better fit
+   */
+  @include bp.breakpoint('md') {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+
+  /**
+   * Large screens (1056px and up):
+   * Expand to full 430px min-width for better display
+   */
+  @include bp.breakpoint('lg') {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  }
+
+  /**
+   * Extra large screens (1312px and up):
+   * Use original 430px configuration
+   */
+  @include bp.breakpoint('xlg') {
+    grid-template-columns: repeat(auto-fit, minmax(430px, 1fr));
+  }
 }

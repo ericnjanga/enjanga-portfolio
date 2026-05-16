@@ -9,7 +9,6 @@ const BackgroundSection = ({
   tabIndex, 
   parallax = false,
   imageUrl,
-  title,
   children,
 }: BackgroundSectionProps) => {
   
@@ -32,7 +31,6 @@ const BackgroundSection = ({
       
       {/* Foreground content */}
       <div className="background-content">
-        {title}
         {children}
       </div>
 

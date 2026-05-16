@@ -6,7 +6,6 @@ import 'enjanga-components-library/banner.css'; // Styling for <Bann** /> compon
 import { SkeletonComponent } from '@/app/ui/Skeleton';
 import ScrollHandler from '../../utils/ScrollHandler';
 import {
-  ExpertiseProvider,
   ExpertiseDataType,
 } from '@utils/context/ExpertiseContext';
 import type {
@@ -32,17 +31,17 @@ type RouteHomeType = {
 
 /**
  * Deferring (Dynamic imports) the following component (and their CSS):
- * - RouteExpertise
+ * - ServiceRoute
  * - RouteAbout
  * - WrapperQuotes
  * - RouteExperience
  */
-const RouteExpertise = dynamic(
-  () => import('@/components/RouteExpertise/RouteExpertise'),
+const ServiceRoute = dynamic(
+  () => import('@/components/RouteService/ServiceRoute'),
   {
     ssr: false, // Ony render on the client
     loading: () => (
-      <SkeletonComponent name="information about Eric Njanga's scope of expertise." minHeight={300} />
+      <SkeletonComponent name="information about Eric Njanga's services." minHeight={300} />
     ),
   }
 );
@@ -97,11 +96,9 @@ export default function RouteHome({
             imgBgUrl={banners.imgUrl}
             isHuge={true}
           />
-
-          <ExpertiseProvider value={listExpertisePanels}>
-            <RouteExpertise {...listExpertiseTabs} />
-          </ExpertiseProvider>
         </div>
+
+        <ServiceRoute />
 
         <RouteAbout {...listAbout} bgImgUrl={backgroundImgUrl} />
 

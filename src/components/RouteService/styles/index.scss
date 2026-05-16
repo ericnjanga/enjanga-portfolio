@@ -1,0 +1,25 @@
+@use 'enjanga-core-setup/styles-breakpoint' as bp;
+
+.section-services {
+  .sectionTitle {
+    margin-bottom: 1.5rem;
+  }
+
+  .services-grid {
+    display: grid;
+    gap: 0.8rem;
+    grid-template-columns: 1fr;
+  }
+
+  @include bp.breakpoint('md') {
+    .services-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @include bp.breakpoint('lg') {
+    .services-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
