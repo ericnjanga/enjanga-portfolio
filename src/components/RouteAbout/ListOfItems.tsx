@@ -1,5 +1,6 @@
 import { TilePictogram } from 'enjanga-components-library';
 import 'enjanga-components-library/tile-variants.css'; // Styling for <CustomT** /> component
+import 'enjanga-components-library/tile-pictogram.css'; // Styling for <CustomT** /> component
 import 'enjanga-components-library/content-modal.css'; // Styling for <ContentMod** /> component (<CustomT** /> is triggering <ContentMod** /> in thid case)
 import 'enjanga-components-library/cms-rich-text.css'; // Styling for <ContentMod** /> contains (<CMSRichTe** /> component)
 import { CP_nameType } from 'enjanga-components-library';
