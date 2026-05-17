@@ -70,6 +70,8 @@ export function getContentfulQueryConfig(dataFor: DataFor1 | DataFor2 | DataFor3
 
     case 'Service Entry Collection':
       query = queryData.serviceCollection;
+      variables.limit = 5;
+      variables.skip = 0;
       break;
 
     case 'BannerHomePage Entry':

@@ -2315,15 +2315,15 @@ emoji-regex@^9.2.2:
   resolved "https://registry.npmjs.org/emoji-regex/-/emoji-regex-9.2.2.tgz"
   integrity sha512-L18DaJsXSUk2+42pv8mLs5jJT2hqFkFE4j21wOmgbUqsZ2hL72NsUU785g9RXgo3s0ZNgVl42TiHp3ZtOv/Vyg==
 
+enjanga-components-library@^1.0.103:
+  version "1.0.103"
+  resolved "https://registry.yarnpkg.com/enjanga-components-library/-/enjanga-components-library-1.0.103.tgz#b4ff78135b7506f2e7946284aa35148aca8e6c87"
+  integrity sha512-2KQ6eKVwjpJ6+iKoabuHSuUpSMC+GIKl1ScU7hN84LEIXaJGYtjGXTsxNCpYKi9BLmcAj+q6zlc6Ohxi62E9+Q==
+
 enjanga-components-library@^1.0.12:
   version "1.0.26"
   resolved "https://registry.npmjs.org/enjanga-components-library/-/enjanga-components-library-1.0.26.tgz"
   integrity sha512-TVmdS8Gndnkj+Di6TMspSs8rkC4MJ6GSYkU5eayKZnCdwRdQ4tJ21HQMH/DN8UIfmM0R/zmiAUj/WoneSrmeGg==
-
-enjanga-components-library@^1.0.98:
-  version "1.0.98"
-  resolved "https://registry.yarnpkg.com/enjanga-components-library/-/enjanga-components-library-1.0.98.tgz#85c8d77642432e315b7708d5ab3018c9c61d8f9b"
-  integrity sha512-KdfmiFq6rp+Ru4vIZggiZCCulQs7FvBZMgZPzWu5gJm92zKOhJ9qw0zGG2XHZND3chS6zQNSWKjfxHEQPvGnmg==
 
 enjanga-core-setup@^1.0.41:
   version "1.0.41"

@@ -163,17 +163,34 @@ export const queryData = {
     }
   `,
   serviceCollection: `
-    query serviceCollectionQuery($locale: String!) {
-      en: serviceCollection(locale: $locale, where: { isEnabled: true }) {
+    query serviceCollectionQuery($locale: String!, $limit: Int!, $skip: Int!) {
+      en: serviceCollection(
+        locale: $locale
+        where: { isEnabled: true }
+        limit: $limit
+        skip: $skip
+      ) {
         items {
-          sys {
-            id
-          }
+          sys { id }
           title
           slugLabel
           pictogramName
           description {
             json
+            links {
+              entries {
+                inline { 
+                  __typename
+                  sys { id }
+                  ... on BlogPost { slug }
+                }
+                hyperlink { 
+                  __typename
+                  sys { id }
+                  ... on BlogPost { slug }
+                } 
+              }
+            }
           }
           isEnabled
           order
