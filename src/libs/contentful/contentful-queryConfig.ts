@@ -50,6 +50,8 @@ export function getContentfulQueryConfig(dataFor: DataFor1 | DataFor2 | DataFor3
     sectionId: '',
     parentRefId: '',
     slug: '',
+    limit: 5,
+    skip: 0,
   };
   let trackingInfo = dataFor;
 
@@ -58,12 +60,11 @@ export function getContentfulQueryConfig(dataFor: DataFor1 | DataFor2 | DataFor3
     case 'Expertise Parent Entry Collection':
     case 'AboutInfo Entry Collection':
     case 'FooterLinks Entry Collection':
+      query = queryData.infoBlockByParentCollection;
       if (dataFor==='Expertise Entry Collection') {
         const expertiseId = contentId;
-        query = queryData.infoBlockByParentCollection;
         variables.parentRefId = expertiseId ?? '';
       } else {
-        query = queryData.infoBlockByParentCollection;
         variables.parentRefId = contentfulContentIds.categories[dataFor];
       }
       break;

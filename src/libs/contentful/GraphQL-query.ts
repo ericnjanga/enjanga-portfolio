@@ -144,8 +144,13 @@ export const queryData = {
     query infoBlocksByParentQuery(
       $parentRefId: String!,
       $locale: String!
+        $limit: Int!
+        $skip: Int!
     ) {
-      en: infoBlockCollection(where: { parentId: $parentRefId }, locale: $locale) {
+      en: infoBlockCollection(where: { parentId: $parentRefId }, locale: $locale, 
+        limit: $limit
+        skip: $skip
+        ) {
         items {
           sys {
             id
@@ -157,6 +162,20 @@ export const queryData = {
           blurb
           description {
             json
+            links {
+              entries {
+                inline {
+                  __typename
+                  sys { id }
+                  ... on Organization { slug }
+                }
+                hyperlink {
+                  __typename
+                  sys { id }
+                  ... on Organization { slug }
+                }
+              }
+            }
           }
         }
       }

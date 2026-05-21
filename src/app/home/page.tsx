@@ -26,7 +26,6 @@ export default async function LandingPage() {
     getDataEntry('Expertise Parent Entry Collection' as DataFor2),
     getDataEntry('AboutInfo Entry Collection' as DataFor2),
     getDataEntry('Quotes Entry Collection' as DataFor3),
-    // getDataEntry('CaseStudy Entry Collection' as DataFor4),
     fetchImageUrl(contentfulContentIds.categories['Featured Image']),
     fetchOrganizations(),
   ]);

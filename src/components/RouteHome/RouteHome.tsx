@@ -25,7 +25,6 @@ type RouteHomeType = {
   listAbout: ContextType2;
   backgroundImgUrl: string | null;
   listQuotes: ContextType3;
-  // listExperience: ContextType4;
   organizations: OrganizationCollection;
 };
 
@@ -74,7 +73,6 @@ export default function RouteHome({
   listAbout,
   backgroundImgUrl,
   listQuotes,
-  // listExperience,
   organizations,
 }: RouteHomeType) {
   const { banners } = useDataDistributorData();
