@@ -2331,10 +2331,10 @@ emoji-regex@^9.2.2:
   resolved "https://registry.npmjs.org/emoji-regex/-/emoji-regex-9.2.2.tgz"
   integrity sha512-L18DaJsXSUk2+42pv8mLs5jJT2hqFkFE4j21wOmgbUqsZ2hL72NsUU785g9RXgo3s0ZNgVl42TiHp3ZtOv/Vyg==
 
-enjanga-components-library@^1.0.107:
-  version "1.0.107"
-  resolved "https://registry.yarnpkg.com/enjanga-components-library/-/enjanga-components-library-1.0.107.tgz#fa2edb7ce34e2c91a9233df6bc74f5f6d351b51a"
-  integrity sha512-9zd+pC4KdK/DVlGlZJSLea3rF9dQo0Ca1uu83aGnEycun6CAAp0NcAzKMEFYKIDKxNJgEgL6DL8qpl5N3W4VmQ==
+enjanga-components-library@^1.0.109:
+  version "1.0.109"
+  resolved "https://registry.yarnpkg.com/enjanga-components-library/-/enjanga-components-library-1.0.109.tgz#b3cd08b91b41d94147c9e87d4874bc8dde5b9a91"
+  integrity sha512-ljrbR1brTu3c0cEN6+EzDtXyuKVFcF2NDcPTV3fT2YspLEbmcmLMyroaX0i8B1DPNiMbfuDziww6zusemC8mIg==
 
 enjanga-components-library@^1.0.12:
   version "1.0.26"

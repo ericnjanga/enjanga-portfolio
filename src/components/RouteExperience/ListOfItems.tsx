@@ -20,6 +20,7 @@ const ListOfItems = ({ organizations }: { organizations: OrganizationCollection 
                 plainText: organization.subtitle,
               },
             }}
+            pictogramName={organization.pictogramName}
             linksTo={`/experience/${organization.slug}`}
           />
         );
