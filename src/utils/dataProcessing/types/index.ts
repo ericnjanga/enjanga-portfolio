@@ -123,6 +123,29 @@ export type ContentModel3 = {
   order?: number; 
   title?: string;
   blurb?: string;
+  isFeatured?: boolean;
+  businessDomain?: string[];
+  techstack?: string[];
+  introVideo?: {
+    url: string;
+    contentType?: string;
+    fileName?: string;
+    size?: number;
+    width?: number;
+    height?: number;
+    title?: string;
+    description?: string;
+  };
+  introVideoImage?: {
+    url: string;
+    contentType?: string;
+    fileName?: string;
+    size?: number;
+    width?: number;
+    height?: number;
+    title?: string;
+    description?: string;
+  };
   description?: {
     json: { content: Node[] };
     links?: {

@@ -54,6 +54,8 @@ function getFormatedDataForContext(
       const value = data?.shift();
       contextValue = {
         item: {
+          sys: value?.sys,
+          slug: value?.slug,
           title: value?.title,
           blurb: value?.blurb,
           description: value?.description,

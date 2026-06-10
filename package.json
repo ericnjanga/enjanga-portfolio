@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "@carbon/pictograms-react": "^11.102.0",
-    "enjanga-components-library": "^1.0.109",
+    "enjanga-components-library": "^1.0.111",
     "enjanga-core-setup": "^1.0.41",
     "next": "15.5.7",
     "react": "19.0.1",

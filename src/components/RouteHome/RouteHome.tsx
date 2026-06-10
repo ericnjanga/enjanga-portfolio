@@ -1,8 +1,8 @@
 'use client';
 
 import { Suspense } from 'react';
-import { Banner } from 'enjanga-components-library';
-import 'enjanga-components-library/banner.css'; // Styling for <Bann** /> component
+import { Banner, HeroVideo } from 'enjanga-components-library';
+import 'enjanga-components-library/hero-video.css'; // Styling for <Bann** /> component
 import { SkeletonComponent } from '@/app/ui/Skeleton';
 import ScrollHandler from '../../utils/ScrollHandler';
 import {
@@ -12,8 +12,8 @@ import type {
   ContextType1,
   ContextType2,
   ContextType3,
+  ContentModel3,
 } from '@utils/dataProcessing/types';
-import { useDataDistributorData } from '@utils/context/DataDistributorContext';
 import type { OrganizationCollection } from '@/libs/organizations/types';
 import dynamic from 'next/dynamic';
 import './styles/index.scss';
@@ -26,6 +26,7 @@ type RouteHomeType = {
   backgroundImgUrl: string | null;
   listQuotes: ContextType3;
   organizations: OrganizationCollection;
+  featuredBlogPost: ContentModel3 | null;
 };
 
 /**
@@ -74,14 +75,52 @@ export default function RouteHome({
   backgroundImgUrl,
   listQuotes,
   organizations,
+  featuredBlogPost,
 }: RouteHomeType) {
-  const { banners } = useDataDistributorData();
+  const informationBlockPayload = {
+    data: {
+      infoBlock: {
+        sys: {
+          id: banner?.item?.sys?.id,
+        },
+        title: banner?.item?.title,
+        description: banner?.item?.description,
+      },
+    },
+  };
+
+  const featuredObjectPayload = {
+    data: {
+      blogPost: featuredBlogPost,
+    },
+  };
+
+  const mappedArgs =
+    informationBlockPayload.data.infoBlock?.title && featuredObjectPayload.data.blogPost?.title && featuredObjectPayload.data.blogPost?.slug
+      ? {
+          informationBlock: {
+            title: informationBlockPayload.data.infoBlock.title,
+            description: informationBlockPayload.data.infoBlock.description,
+          },
+          featuredObject: {
+            title: featuredObjectPayload.data.blogPost.title,
+            slug: featuredObjectPayload.data.blogPost.slug,
+            businessDomain: featuredObjectPayload.data.blogPost.businessDomain,
+            teckStack: featuredObjectPayload.data.blogPost.techstack,
+            video: featuredObjectPayload.data.blogPost.introVideo,
+            videoImage: featuredObjectPayload.data.blogPost.introVideoImage,
+          },
+        }
+      : null;
 
   return (
     <>
       <div className="homePage page-section-spacing">
         <div>
-          <Banner
+          {mappedArgs ? <HeroVideo {...mappedArgs} /> : null}
+
+
+          {/* <Banner
             id="introduction"
             featuredText={{
               heading: {
@@ -93,7 +132,7 @@ export default function RouteHome({
             }}
             imgBgUrl={banners.imgUrl}
             isHuge={true}
-          />
+          /> */}
         </div>
 
         <ServiceRoute />

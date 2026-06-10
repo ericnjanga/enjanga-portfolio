@@ -8,6 +8,7 @@ import { getDataEntry } from '@utils/dataProcessing';
 import { contentfulContentIds } from '@/libs/contentful/contentful-queryConfig';
 import { fetchImageUrl } from '@utils/dataProcessing/fetchImageUrl';
 import { fetchOrganizations } from '@/libs/organizations';
+import { fetchLatestFeaturedBlogPost } from '@/libs/blogPosts';
 
 export default async function LandingPage() {
   /**
@@ -21,6 +22,7 @@ export default async function LandingPage() {
     dataListQuotes,
     bgImgUrl,
     organizations,
+    featuredBlogPost,
   ] = await Promise.all([
     getDataEntry('BannerHomePage Entry' as DataFor1),
     getDataEntry('Expertise Parent Entry Collection' as DataFor2),
@@ -28,6 +30,7 @@ export default async function LandingPage() {
     getDataEntry('Quotes Entry Collection' as DataFor3),
     fetchImageUrl(contentfulContentIds.categories['Featured Image']),
     fetchOrganizations(),
+    fetchLatestFeaturedBlogPost(),
   ]);
 
   // Fetch expertise panel data once we have the tabs
@@ -49,6 +52,7 @@ export default async function LandingPage() {
       backgroundImgUrl={bgImgUrl}
       listQuotes={dataListQuotes}
       organizations={organizations}
+      featuredBlogPost={featuredBlogPost}
     />
   );
 }

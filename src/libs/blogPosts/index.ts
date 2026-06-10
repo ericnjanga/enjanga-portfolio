@@ -13,13 +13,22 @@ type CdaAsset = {
     description?: string;
     file?: {
       url?: string;
+      fileName?: string;
+      contentType?: string;
       details?: {
+        size?: number;
         image?: {
           width?: number;
           height?: number;
         };
       };
     };
+  };
+};
+
+type CdaLink = {
+  sys?: {
+    id?: string;
   };
 };
 
@@ -56,6 +65,45 @@ const normalizeAssetUrl = (url?: string): string => {
     return '';
   }
   return url.startsWith('//') ? `https:${url}` : url;
+};
+
+const getAssetMap = (assets: CdaAsset[] | undefined): Map<string, CdaAsset> => {
+  const map = new Map<string, CdaAsset>();
+  (assets ?? []).forEach((asset) => {
+    const id = asset.sys?.id;
+    if (id) {
+      map.set(id, asset);
+    }
+  });
+  return map;
+};
+
+const getLinkedAsset = (
+  target: CdaLink | undefined,
+  assetMap: Map<string, CdaAsset>
+): BlogPost['introVideo'] | undefined => {
+  const targetId = target?.sys?.id;
+  if (!targetId) {
+    return undefined;
+  }
+
+  const asset = assetMap.get(targetId);
+  const rawUrl = asset?.fields?.file?.url;
+  const url = normalizeAssetUrl(rawUrl);
+  if (!url) {
+    return undefined;
+  }
+
+  return {
+    url,
+    contentType: asset?.fields?.file?.contentType,
+    fileName: asset?.fields?.file?.fileName,
+    size: asset?.fields?.file?.details?.size,
+    width: asset?.fields?.file?.details?.image?.width,
+    height: asset?.fields?.file?.details?.image?.height,
+    title: asset?.fields?.title,
+    description: asset?.fields?.description,
+  };
 };
 
 const buildAssetLinks = (assets: CdaAsset[] | undefined) => {
@@ -134,10 +182,11 @@ const rewriteEntryHyperlinks = <T>(document: T, hrefMap: Map<string, string>): T
 };
 
 const mapBlogPostsFromCda = (json: any): BlogPostCollection => {
-  const assetLinks = buildAssetLinks(json.includes?.Asset as CdaAsset[] | undefined);
+  const assets = json.includes?.Asset as CdaAsset[] | undefined;
+  const assetLinks = buildAssetLinks(assets);
+  const assetMap = getAssetMap(assets);
   const entryHrefMap = buildEntryHrefMap(json.includes?.Entry as CdaEntry[] | undefined);
 
-  // Build a lookup map of linked Organization entries from the CDA includes.
   const orgMap = new Map<string, { id: string; title: string; slug: string; pictogramName?: string }>();
   (json.includes?.Entry ?? []).forEach((entry: any) => {
     if (entry.sys?.contentType?.sys?.id === 'organization') {
@@ -155,12 +204,15 @@ const mapBlogPostsFromCda = (json: any): BlogPostCollection => {
     title: item.fields.title as string,
     slug: item.fields.slug as string,
     createdAt: item.sys.createdAt as string,
+    isFeatured: item.fields.isFeatured as boolean | undefined,
+    businessDomain: item.fields.businessDomain as string[] | undefined,
+    techstack: item.fields.techstack as string[] | undefined,
+    introVideo: getLinkedAsset(item.fields.introVideo as CdaLink | undefined, assetMap),
+    introVideoImage: getLinkedAsset(item.fields.introVideoImage as CdaLink | undefined, assetMap),
     organization: item.fields.organization
       ? orgMap.get(item.fields.organization.sys.id)
       : undefined,
     blurb: item.fields.blurb as string | undefined,
-    // CDA returns the rich-text document directly (not wrapped in `{ json }`).
-    // CMSRichText also expects resolved asset links for embedded media nodes.
     description: item.fields.description
       ? {
           json: rewriteEntryHyperlinks(
@@ -186,9 +238,9 @@ export async function fetchBlogPosts(): Promise<BlogPostCollection> {
   url.searchParams.set('content_type', 'blogPost');
   url.searchParams.set(
     'select',
-    'sys.id,sys.createdAt,fields.title,fields.slug,fields.organization,fields.blurb,fields.description'
+    'sys.id,sys.createdAt,fields.title,fields.slug,fields.organization,fields.blurb,fields.description,fields.isFeatured,fields.businessDomain,fields.techstack,fields.introVideo,fields.introVideoImage'
   );
-  url.searchParams.set('include', '1');
+  url.searchParams.set('include', '2');
 
   const res = await fetch(url.toString(), {
     headers: {
@@ -206,6 +258,50 @@ export async function fetchBlogPosts(): Promise<BlogPostCollection> {
 }
 
 /**
+ * Fetches the latest featured blog post (`isFeatured = true`).
+ * Falls back to the latest blog post when no featured post exists.
+ * Returns null only when there are no blog posts.
+ */
+export async function fetchLatestFeaturedBlogPost(): Promise<BlogPost | null> {
+  const loadOnePost = async (featuredOnly: boolean): Promise<BlogPost | null> => {
+    const url = new URL(`${CDA_BASE}/entries`);
+    url.searchParams.set('content_type', 'blogPost');
+    if (featuredOnly) {
+      url.searchParams.set('fields.isFeatured', 'true');
+    }
+    url.searchParams.set('order', '-sys.createdAt');
+    url.searchParams.set('limit', '1');
+    url.searchParams.set(
+      'select',
+      'sys.id,sys.createdAt,fields.title,fields.slug,fields.organization,fields.blurb,fields.description,fields.isFeatured,fields.businessDomain,fields.techstack,fields.introVideo,fields.introVideoImage'
+    );
+    url.searchParams.set('include', '2');
+
+    const res = await fetch(url.toString(), {
+      headers: {
+        Authorization: `Bearer ${ACCESS_TOKEN}`,
+      },
+      next: { revalidate: 60 },
+    });
+
+    if (!res.ok) {
+      throw new Error(`Failed to fetch featured blog post: ${res.status} ${res.statusText}`);
+    }
+
+    const json = await res.json();
+    const posts = mapBlogPostsFromCda(json);
+    return posts[0] ?? null;
+  };
+
+  const featuredPost = await loadOnePost(true);
+  if (featuredPost) {
+    return featuredPost;
+  }
+
+  return loadOnePost(false);
+}
+
+/**
  * Fetches a single blog post entry by its slug field.
  * Returns null if no matching blog post is found.
  */
@@ -216,7 +312,7 @@ export async function fetchBlogPostBySlug(slug: string): Promise<BlogPost | null
   url.searchParams.set('limit', '1');
   url.searchParams.set(
     'select',
-    'sys.id,sys.createdAt,fields.title,fields.slug,fields.organization,fields.blurb,fields.description'
+    'sys.id,sys.createdAt,fields.title,fields.slug,fields.organization,fields.blurb,fields.description,fields.isFeatured,fields.businessDomain,fields.techstack,fields.introVideo,fields.introVideoImage'
   );
   url.searchParams.set('include', '2');
 
