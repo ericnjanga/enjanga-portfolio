@@ -5,9 +5,6 @@ import { Banner, HeroVideo } from 'enjanga-components-library';
 import 'enjanga-components-library/hero-video.css'; // Styling for <Bann** /> component
 import { SkeletonComponent } from '@/app/ui/Skeleton';
 import ScrollHandler from '../../utils/ScrollHandler';
-import {
-  ExpertiseDataType,
-} from '@utils/context/ExpertiseContext';
 import type {
   ContextType1,
   ContextType2,
@@ -20,8 +17,6 @@ import './styles/index.scss';
 
 type RouteHomeType = {
   banner: ContextType1;
-  listExpertiseTabs: ContextType2;
-  listExpertisePanels: ExpertiseDataType;
   listAbout: ContextType2;
   backgroundImgUrl: string | null;
   listQuotes: ContextType3;
@@ -69,8 +64,6 @@ const RouteExperience = dynamic<{ organizations: OrganizationCollection }>(
 
 export default function RouteHome({
   banner,
-  listExpertiseTabs,
-  listExpertisePanels,
   listAbout,
   backgroundImgUrl,
   listQuotes,
@@ -118,21 +111,6 @@ export default function RouteHome({
       <div className="homePage page-section-spacing">
         <div>
           {mappedArgs ? <HeroVideo {...mappedArgs} /> : null}
-
-
-          {/* <Banner
-            id="introduction"
-            featuredText={{
-              heading: {
-                children: banner?.item?.title,
-              },
-              smartText: {
-                richText: banner?.item?.description,
-              },
-            }}
-            imgBgUrl={banners.imgUrl}
-            isHuge={true}
-          /> */}
         </div>
 
         <ServiceRoute />
