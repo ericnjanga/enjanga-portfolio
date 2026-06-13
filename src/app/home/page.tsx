@@ -31,23 +31,11 @@ export default async function LandingPage() {
     fetchImageUrl(contentfulContentIds.categories['Featured Image']),
     fetchOrganizations(),
     fetchLatestFeaturedBlogPost(),
-  ]);
-
-  // Fetch expertise panel data once we have the tabs
-  const dataListExpertisePanels = await Promise.all(
-    dataListExpertiseTabs?.items.map(async(_) => {
-      return ({
-        parentId: _.sys?.id,
-        data: await getDataEntry('Expertise Entry Collection' as DataFor2, _.sys?.id)
-      });
-    })
-  );
+  ]); 
 
   return (
     <RouteHome
       banner={dataBanner}
-      listExpertiseTabs={dataListExpertiseTabs}
-      listExpertisePanels={dataListExpertisePanels}
       listAbout={dataAbout}
       backgroundImgUrl={bgImgUrl}
       listQuotes={dataListQuotes}
