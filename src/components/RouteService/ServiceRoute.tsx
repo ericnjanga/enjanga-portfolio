@@ -56,9 +56,12 @@ export default function ServiceRoute() {
       aria-labelledby="service-heading"
       tabIndex={-1}
     >
-      <h2 id="service-heading" className="sectionTitle">
-        How I deliver Value
-      </h2>
+      <section style={{ maxWidth: '50rem', marginBottom: '2rem' }}>
+        <h2 id="service-heading" className="sectionTitle">
+          How I deliver Value
+        </h2>
+        <p>I engineer enterprise user interfaces that are scalable, accessible, high-performing, and built to last—from architecture and implementation to design systems, API integration, testing, and long-term maintainability.</p>
+      </section>
 
       <div className="services-grid">
         {items.map((item, index) => {

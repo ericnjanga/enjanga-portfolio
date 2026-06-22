@@ -1,10 +1,6 @@
 @use 'enjanga-core-setup/styles-breakpoint' as bp;
 
 .section-services {
-  .sectionTitle {
-    margin-bottom: 1.5rem;
-  }
-
   .services-grid {
     display: grid;
     gap: 0.8rem;
