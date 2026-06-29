@@ -35,4 +35,11 @@
       line-height: 1.9rem;
     }
   }
+
+  &__copyright {
+    p {
+      margin-bottom: 0!important;
+      border: 2px solid var(--enjanga-color2);
+    }
+  }
 }
