@@ -1,110 +1,38 @@
-@use 'enjanga-core-setup/styles-breakpoint' as bp;
-@use 'enjanga-core-setup/styles-spacing' as sp;
-
-.app-footer {
-  margin-top: var(--enj-spacing-gap);
-
-  @include bp.breakpoint('md') {
-    --enj-spacing-gap: 5rem;
-  }
-
-  @include bp.breakpoint('lg') {
-    --enj-spacing-gap: 6rem;
-  }
-
-  @include bp.breakpoint('xlg') {
-    --enj-spacing-gap: 7rem;
-  }
-}
-
-
 .app-footer {
   // Variables ...
   --enj-footer-title-mrg: 0.75rem;
   // TODO: Convert to enjanga-core-setup color token
   --enjanga-color1: #E3EBF9;
   --enjanga-color2: #526890;
-  --enjanga-color3: #F96DBD;
+  --enjanga-color3: #C7DBFF;
   --enjanga-color4: #191947;
-  --enjanga-color5: #00bcfe;
 
   // Declarations ...
+  margin-top: var(--enj-spacing-gap);
   background-color: var(--enjanga-color4); 
-
+  text-align: center;
 
   h3 {
-    border-bottom: 1px solid var(--enjanga-color2);
-    margin-bottom: var(--enj-footer-title-mrg);
-  }
-
-  h3, p {
     color: var(--enjanga-color1);
   }
-
-  // Menu ...
-  // Current menu items ...
-  a.cds--header__menu-item[aria-current=page] {
-    text-decoration: underline;
-    color: var(--enjanga-color1);
-
-    &::after {
-      block-size: 0px; // Eliminate bottom border
-    }
-  }
-
-  a {
+  p {
     color: var(--enjanga-color3);
-    text-decoration: none;
+  }
 
-    // Overriding Carbon's styles
-    padding: 0;
-    border-width: 0;
-    font-size: 100%;
-    background-color: transparent;
+  &__wrapper {
+    margin: 0 auto;
+    max-width: 634px;
 
-    &:hover {
-      // Adjusting hover state experience
-      cursor: pointer;
-      color: var(--enjanga-color1);
-      background-color: transparent;
-      text-decoration: underline;
-    }
-
-    &:active,
-    &:focus {
-      // Adjusting acrive and focus state experience
-      color: var(--enjanga-color1);
-      text-decoration: underline;
+    hr {
+      margin: 2rem 0;
+      border-color: var(--enjanga-color2);  
     }
   }
 
-  .enj-CMSRichText ul,
-  .enj-CMSRichText ol,
-  ul, ol {
-    padding: 0;
-
-    li {
-      margin-bottom: 1rem;
-    }
+  &__text {
     p {
-      > span:first-of-type {
-        display: block;
-      }
-    }
-  }
-
-  .enj-CMSRichText {
-    figure {
-      background-color: transparent;
-      padding: 0;
-
-      img {
-        margin: 0;
-        width: 100%;
-      }
-    }
-    figcaption {
-      display: none;
+      font-size: 1.2rem;
+      line-height: 1.9rem;
     }
   }
 }

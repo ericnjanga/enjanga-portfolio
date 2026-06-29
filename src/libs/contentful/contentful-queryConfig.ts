@@ -18,10 +18,9 @@ export const contentfulContentIds = {
     'FooterLinks Entry Collection': '2uxFOT0LB1ET4SfM4dNWvo',
   },
   singleEntries: {
-    'Metadata Entry': '5RBmqkxse1dXyVizogH2oH',
-    'Links (Published Work)': '3Fo2dEcwjF2C7hCjGzLitJ',
-    'QR code': '2a4z7rYXGHCmtaspj0REbl',
-    'QR code text': '6ZKYDI1P6NazFQdUxF4JhL',
+    // 'Metadata Entry': '5RBmqkxse1dXyVizogH2oH',
+    'Footer Copyright': '2a4z7rYXGHCmtaspj0REbl',
+    'Footer text': '6ZKYDI1P6NazFQdUxF4JhL',
   }
 };
 
@@ -82,10 +81,10 @@ export function getContentfulQueryConfig(dataFor: DataFor1 | DataFor2 | DataFor3
       variables.sectionId = contentfulContentIds.categories[dataFor];
       break;
 
-    case 'Metadata Entry':
-      query = queryData.infoBlockById;
-      variables.sectionId = contentfulContentIds.singleEntries[dataFor];
-      break;
+    // case 'Metadata Entry':
+    //   query = queryData.infoBlockById;
+    //   variables.sectionId = contentfulContentIds.singleEntries[dataFor];
+    //   break;
 
     case 'FooterLinks --Entry--':
       query = queryData.infoBlockById;

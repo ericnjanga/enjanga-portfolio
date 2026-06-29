@@ -36,18 +36,14 @@ export default async function RootLayout({
   children: ReactNode;
 }) {
   // Fetching all data needed for this page
-  const [qrCode, qrCodeText, pubWork, imgUrl] = await Promise.all([
+  const [footerCopyright, footerText, imgUrl] = await Promise.all([
     getDataEntry(
       'FooterLinks --Entry--' as DataFor1,
-      contentfulContentIds.singleEntries['QR code']
+      contentfulContentIds.singleEntries['Footer Copyright']
     ),
     getDataEntry(
       'FooterLinks --Entry--' as DataFor1,
-      contentfulContentIds.singleEntries['QR code text']
-    ),
-    getDataEntry(
-      'FooterLinks --Entry--' as DataFor1,
-      contentfulContentIds.singleEntries['Links (Published Work)']
+      contentfulContentIds.singleEntries['Footer text']
     ),
     fetchImageUrl(contentfulContentIds.categories['Banner Image']),
   ]);
@@ -80,7 +76,7 @@ export default async function RootLayout({
         {/* 👇 Client-only providers and analytics */}
         <ClientProviders
           dataValue={{
-            footer: [qrCode, qrCodeText, pubWork],
+            footer: [footerCopyright, footerText],
             banners: { imgUrl },
           }}>
           {children}
