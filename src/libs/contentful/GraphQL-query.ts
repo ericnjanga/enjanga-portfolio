@@ -199,8 +199,10 @@ export const queryData = {
     query blogPostCollectionQuery(
       $locale: String!,
       $order: [BlogPostOrder]
+      $limit: Int!
+      $skip: Int!
     ) {
-      en: blogPostCollection(locale: $locale, order: $order) {
+      en: blogPostCollection(locale: $locale, order: $order, limit: $limit, skip: $skip) {
         items {
           sys {
             id

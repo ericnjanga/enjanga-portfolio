@@ -113,6 +113,8 @@ export function getContentfulQueryConfig(dataFor: DataFor1 | DataFor2 | DataFor3
     case 'BlogPost Entry Collection':
       query = queryData.blogPostCollection;
       variables.order = ['sys_publishedAt_DESC'];
+      variables.limit = 5;
+      variables.skip = 0;
       break;
   }
 
