@@ -104,28 +104,6 @@ export const queryData = {
       }
     }
   `,
-
-  /**
-   * Collections (multiple records)
-   * ------------------
-   */
-  // projectsCollection: `
-  //   query getProjectCollectionQuery($locale: String!, $order: [ProjectOrder]) {
-  //     en: projectCollection(locale: $locale, order: $order) {
-  //       items {
-  //         sys {
-  //           id
-  //         }
-  //         title
-  //         blurb
-  //         description {
-  //           json
-  //         }
-  //         order
-  //       }
-  //     }
-  //   }
-  // `,
   quotesCollection: `
     query getQuoteCollectionQuery($locale: String!) {
       en: quoteCollection(locale: $locale) { 
@@ -230,6 +208,21 @@ export const queryData = {
           slug
           title
           blurb
+          description {
+            json
+            links {
+              assets {
+                block {
+                  sys { id }
+                  url
+                  title
+                  description
+                  width
+                  height
+                }
+              }
+            }
+          }
         }
       }
     }
