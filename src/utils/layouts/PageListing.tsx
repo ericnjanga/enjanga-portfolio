@@ -1,6 +1,5 @@
 'use client';
 
-import React from 'react';
 import { useRouter } from 'next/navigation';
 import {
   Banner,
@@ -9,11 +8,11 @@ import {
   CTL_valid_linkTo,
 } from 'enjanga-components-library';
 import 'enjanga-components-library/banner.css'; // Styling for <Bann** /> component
-import 'enjanga-components-library/tile-post.css'; // Styling for <PostT** /> component
 import 'enjanga-components-library/video-thumbnail.css';
+import 'enjanga-components-library/tile-post.css'; // Styling for <PostT** /> component
 import type { ContextType1, ContextType4 } from '@utils/dataProcessing/types';
 import { useDataDistributorData } from '@utils/context/DataDistributorContext';
-import { enjGetLayout } from '@libs/layouts';
+import MasonryGrid from '@/components/MasonryGrid';
 import 'styles/blogs-and-articles/index.scss';
 
 type PageListingType = {
@@ -27,9 +26,6 @@ export default function PageListing({
 }: PageListingType) {
   const router = useRouter();
   const { banners } = useDataDistributorData();
-  const layoutGridStyle = React.useMemo(() => {
-    return enjGetLayout({ type: 'RAM', itemMaxWidth: 350, gridGap: 1.8 });
-  }, []);
 
   return (
     <div className="blogPage page-section-spacing">
@@ -47,7 +43,7 @@ export default function PageListing({
       />
 
       <article className="page-content">
-        <div className="enj-container" style={layoutGridStyle}>
+        <MasonryGrid className="enj-container caseStudyMasonry">
           {listOfEntries?.items?.map((item) => {
             const hasVideo = Boolean(item?.introVideo?.url);
             const hasPosterImage = Boolean(item?.introVideoImage?.url);
@@ -94,7 +90,7 @@ export default function PageListing({
               />
             );
           })}
-        </div>
+        </MasonryGrid>
       </article>
     </div>
   );

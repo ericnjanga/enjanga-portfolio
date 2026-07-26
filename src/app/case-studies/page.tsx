@@ -34,7 +34,7 @@ export default async function Page() {
     items: posts
       .sort(
         (a, b) =>
-          new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime()
+          new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
       )
       .map((post) => ({
         sys: { id: post.id },

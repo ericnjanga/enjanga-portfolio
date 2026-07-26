@@ -1,29 +1,50 @@
 @use 'enjanga-core-setup/styles-breakpoint' as bp;
 @use 'enjanga-core-setup/styles-spacing' as sp;
 
-
 .articlePage,
-.blogPage { 
+.blogPage {
   // HR separators
   // -----------
-  .enj-CMSRichText { 
+  .enj-CMSRichText {
     // Declarations ...
     --enj-CMSRichText-hr-gap-override: #{sp.$spacing-08};
 
-    @include bp.breakpoint('md') { 
+    @include bp.breakpoint('md') {
       --enj-CMSRichText-hr-gap-override: #{sp.$spacing-09};
     }
 
-    @include bp.breakpoint('lg') { 
+    @include bp.breakpoint('lg') {
       --enj-CMSRichText-hr-gap-override: #{sp.$spacing-10};
     }
 
-    @include bp.breakpoint('xlg') { 
+    @include bp.breakpoint('xlg') {
       --enj-CMSRichText-hr-gap-override: #{sp.$spacing-11};
     }
 
     hr {
       margin: var(--enj-CMSRichText-hr-gap-override) 0;
     }
+  }
+}
+
+.caseStudyMasonry {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 21.875rem), 1fr));
+  grid-auto-rows: 0.5rem;
+  gap: 1.8rem;
+  align-items: start;
+
+  .masonryGrid__item {
+    min-width: 0;
+  }
+
+  .masonryGrid__item > * {
+    width: 100%;
+  }
+
+  .enj-VideoThumbnail--tilePost .enj-VideoThumbnail-featuredTitle,
+  .enj-postTile-title {
+    font-size: 1.6rem;
+    line-height: 1.25;
   }
 }
