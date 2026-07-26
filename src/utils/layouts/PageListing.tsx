@@ -5,10 +5,12 @@ import { useRouter } from 'next/navigation';
 import {
   Banner,
   TilePost,
+  VideoThumbnail,
   CTL_valid_linkTo,
 } from 'enjanga-components-library';
 import 'enjanga-components-library/banner.css'; // Styling for <Bann** /> component
 import 'enjanga-components-library/tile-post.css'; // Styling for <PostT** /> component
+import 'enjanga-components-library/video-thumbnail.css';
 import type { ContextType1, ContextType4 } from '@utils/dataProcessing/types';
 import { useDataDistributorData } from '@utils/context/DataDistributorContext';
 import { enjGetLayout } from '@libs/layouts';
@@ -19,9 +21,12 @@ type PageListingType = {
   listOfEntries: ContextType4;
 };
 
-export default function PageListing({ banner, listOfEntries }: PageListingType) {
+export default function PageListing({
+  banner,
+  listOfEntries,
+}: PageListingType) {
   const router = useRouter();
-  const { banners } = useDataDistributorData(); 
+  const { banners } = useDataDistributorData();
   const layoutGridStyle = React.useMemo(() => {
     return enjGetLayout({ type: 'RAM', itemMaxWidth: 350, gridGap: 1.8 });
   }, []);
@@ -44,6 +49,28 @@ export default function PageListing({ banner, listOfEntries }: PageListingType) 
       <article className="page-content">
         <div className="enj-container" style={layoutGridStyle}>
           {listOfEntries?.items?.map((item) => {
+            const hasVideo = Boolean(item?.introVideo?.url);
+            const hasPosterImage = Boolean(item?.introVideoImage?.url);
+
+            if (hasVideo && hasPosterImage) {
+              return (
+                <VideoThumbnail
+                  key={item?.sys?.id}
+                  title={item?.title || 'Case study'}
+                  hasPosterImage={hasPosterImage}
+                  hasVideo={hasVideo}
+                  posterAsset={item.introVideoImage || {}}
+                  videoAsset={item.introVideo || {}}
+                  businessDomains={[]}
+                  stackValues={[]}
+                  caseStudyHref={`/case-studies/${item?.slug}`}
+                  ariaLabel={`Open featured case study for ${
+                    item?.title || 'Case study'
+                  }`}
+                />
+              );
+            }
+
             const orgTitle = item?.organization?.title;
             const orgSlug = item?.organization?.slug;
             const orgPictogramName = item?.organization?.pictogramName;
