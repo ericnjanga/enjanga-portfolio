@@ -1,11 +1,9 @@
 'use client';
 
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { ReactNode, useState } from 'react';
+import { ReactNode } from 'react';
 import { SkipNavigationLink } from '@/components/SkipNavigationLink';
 import dynamic from 'next/dynamic';
 import { SkeletonComponent } from '@/app/ui/Skeleton';
-
 
 /**
  * Deferring (Dynamic imports) the following component (and their CSS):
@@ -49,17 +47,12 @@ interface RootLayoutProps {
 }
 
 export function Providers({ children }: RootLayoutProps) {
-  // Prevents the recreation of QueryClient on each render.
-  const [queryClient] = useState(() => new QueryClient());
-
   return (
-    <QueryClientProvider client={queryClient}>
-      <div>
-        <SkipNavigationLink destinationId="main-content" />
-        <AppHeaderWrapper />
-        <CarbonShell>{children}</CarbonShell>
-        <AppFooter />
-      </div>
-    </QueryClientProvider>
+    <div>
+      <SkipNavigationLink destinationId="main-content" />
+      <AppHeaderWrapper />
+      <CarbonShell>{children}</CarbonShell>
+      <AppFooter />
+    </div>
   );
 }

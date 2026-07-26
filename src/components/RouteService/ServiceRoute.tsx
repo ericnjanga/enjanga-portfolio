@@ -1,5 +1,3 @@
-'use client';
-
 import type { Node } from '@contentful/rich-text-types';
 import {
   CP_nameType,
@@ -9,24 +7,8 @@ import {
 import 'enjanga-components-library/tile-value.css';
 import 'enjanga-components-library/content-modal.css';
 import 'enjanga-components-library/cms-rich-text.css';
-import { useContentfulForClientEntries } from '@/libs/contentful/hooks/useContentfulForClientEntries';
+import type { ContentModel2 } from '@utils/dataProcessing/types';
 import './styles/index.scss';
-
-type ServiceEntry = {
-  sys?: {
-    id?: string;
-  };
-  title?: string;
-  slugLabel?: string;
-  pictogramName?: string;
-  description?: {
-    json: {
-      content: Node[];
-    };
-  };
-  isEnabled?: boolean;
-  order?: number;
-};
 
 const EMPTY_DESCRIPTION = {
   json: {
@@ -42,18 +24,14 @@ const getSafePictogramName = (value?: string): CP_nameType => {
   return 'Goals';
 };
 
-export default function ServiceRoute() {
-  const { data, isLoading, isError, error } = useContentfulForClientEntries(
-    'Service Entry Collection'
-  );
-
-  const items = [...((Array.isArray(data) ? data : []) as ServiceEntry[])]
+export default function ServiceRoute({
+  items: serviceItems,
+}: {
+  items: ContentModel2[];
+}) {
+  const items = [...serviceItems]
     .filter((entry) => entry?.isEnabled !== false)
     .sort((a, b) => (a?.order ?? 0) - (b?.order ?? 0));
-
-  if (isError) {
-    console.error('ServiceRoute: failed to load service entries', error);
-  }
 
   return (
     <section
@@ -66,7 +44,6 @@ export default function ServiceRoute() {
         <h2 id="service-heading" className="sectionTitle">
           How I deliver Value
         </h2>
-        {isError ? <p role="alert">Service entries failed to load.</p> : null}
         <p>
           I engineer enterprise user interfaces that are scalable, accessible,
           high-performing, and built to last—from architecture and
@@ -75,8 +52,7 @@ export default function ServiceRoute() {
         </p>
       </div>
 
-      <div className="services-grid" aria-busy={isLoading}>
-        {isLoading ? <p role="status">Loading services…</p> : null}
+      <div className="services-grid">
         {items.map((item, index) => {
           const fallbackTitle = `Service ${index + 1}`;
           const title = item?.title || fallbackTitle;

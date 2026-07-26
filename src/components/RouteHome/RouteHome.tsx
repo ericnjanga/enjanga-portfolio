@@ -1,10 +1,10 @@
 'use client';
 
 import { Suspense } from 'react';
-import { Banner, HeroVideo } from 'enjanga-components-library';
+import { HeroVideo } from 'enjanga-components-library';
 import 'enjanga-components-library/hero-video.css'; // Styling for <Bann** /> component
-import { SkeletonComponent } from '@/app/ui/Skeleton';
 import ScrollHandler from '../../utils/ScrollHandler';
+import dynamic from 'next/dynamic';
 import type {
   ContextType1,
   ContextType2,
@@ -12,61 +12,37 @@ import type {
   ContentModel3,
 } from '@utils/dataProcessing/types';
 import type { OrganizationCollection } from '@/libs/organizations/types';
-import dynamic from 'next/dynamic';
 import './styles/index.scss';
+
+// These sections remain code-split, but SSR stays enabled so their final
+// markup and dimensions are present in the initial HTML.
+const ServiceRoute = dynamic(
+  () => import('@/components/RouteService/ServiceRoute')
+);
+const RouteAbout = dynamic(() => import('@/components/RouteAbout/RouteAbout'));
+const WrapperQuotes = dynamic(
+  () => import('@/components/WrapperQuotes/WrapperQuotes')
+);
+const RouteExperience = dynamic(
+  () => import('@/components/RouteExperience/RouteExperience')
+);
 
 type RouteHomeType = {
   banner: ContextType1;
   listAbout: ContextType2;
   backgroundImgUrl: string | null;
   listQuotes: ContextType3;
+  listServices: ContextType2;
   organizations: OrganizationCollection;
   featuredBlogPost: ContentModel3 | null;
 };
-
-/**
- * Deferring (Dynamic imports) the following component (and their CSS):
- * - ServiceRoute
- * - RouteAbout
- * - WrapperQuotes
- * - RouteExperience
- */
-const ServiceRoute = dynamic(
-  () => import('@/components/RouteService/ServiceRoute'),
-  {
-    ssr: false, // Ony render on the client
-    loading: () => (
-      <SkeletonComponent name="information about Eric Njanga's services." minHeight={300} />
-    ),
-  }
-);
-
-const RouteAbout = dynamic(() => import('@/components/RouteAbout/RouteAbout'), {
-  ssr: false, // Ony render on the client
-  loading: () => <SkeletonComponent name="information about Eric Njanga's vision and career objectives." minHeight={300} />,
-});
-
-const WrapperQuotes = dynamic(
-  () => import('@/components/WrapperQuotes/WrapperQuotes'),
-  {
-    ssr: false, // Ony render on the client
-    loading: () => <SkeletonComponent name="insights on Eric Njanga's philosophy." />,
-  }
-);
-
-const RouteExperience = dynamic<{ organizations: OrganizationCollection }>(
-  () => import('@/components/RouteExperience/RouteExperience'),
-  {
-    ssr: false, // Ony render on the client
-    loading: () => <SkeletonComponent name="Eric Njanga's experience." minHeight={300} />,
-  }
-);
 
 export default function RouteHome({
   banner,
   listAbout,
   backgroundImgUrl,
   listQuotes,
+  listServices,
   organizations,
   featuredBlogPost,
 }: RouteHomeType) {
@@ -89,7 +65,9 @@ export default function RouteHome({
   };
 
   const mappedArgs =
-    informationBlockPayload.data.infoBlock?.title && featuredObjectPayload.data.blogPost?.title && featuredObjectPayload.data.blogPost?.slug
+    informationBlockPayload.data.infoBlock?.title &&
+    featuredObjectPayload.data.blogPost?.title &&
+    featuredObjectPayload.data.blogPost?.slug
       ? {
           informationBlock: {
             title: informationBlockPayload.data.infoBlock.title,
@@ -109,11 +87,9 @@ export default function RouteHome({
   return (
     <>
       <div className="homePage page-section-spacing">
-        <div>
-          {mappedArgs ? <HeroVideo {...mappedArgs} /> : null}
-        </div>
+        <div>{mappedArgs ? <HeroVideo {...mappedArgs} /> : null}</div>
 
-        <ServiceRoute />
+        <ServiceRoute items={listServices.items} />
 
         <RouteAbout {...listAbout} bgImgUrl={backgroundImgUrl} />
 

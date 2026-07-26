@@ -1,9 +1,5 @@
 import RouteHome from '@/components/RouteHome/RouteHome';
-import type {
-  DataFor1,
-  DataFor2,
-  DataFor3
-} from '@utils/dataProcessing/types';
+import type { DataFor1, DataFor2, DataFor3 } from '@utils/dataProcessing/types';
 import { getDataEntry } from '@utils/dataProcessing';
 import { contentfulContentIds } from '@/libs/contentful/contentful-queryConfig';
 import { fetchImageUrl } from '@utils/dataProcessing/fetchImageUrl';
@@ -20,6 +16,7 @@ export default async function LandingPage() {
     dataListExpertiseTabs,
     dataAbout,
     dataListQuotes,
+    dataServices,
     bgImgUrl,
     organizations,
     featuredBlogPost,
@@ -28,10 +25,11 @@ export default async function LandingPage() {
     getDataEntry('Expertise Parent Entry Collection' as DataFor2),
     getDataEntry('AboutInfo Entry Collection' as DataFor2),
     getDataEntry('Quotes Entry Collection' as DataFor3),
+    getDataEntry('Service Entry Collection' as DataFor2),
     fetchImageUrl(contentfulContentIds.categories['Featured Image']),
     fetchOrganizations(),
     fetchLatestFeaturedBlogPost(),
-  ]); 
+  ]);
 
   return (
     <RouteHome
@@ -39,6 +37,7 @@ export default async function LandingPage() {
       listAbout={dataAbout}
       backgroundImgUrl={bgImgUrl}
       listQuotes={dataListQuotes}
+      listServices={dataServices}
       organizations={organizations}
       featuredBlogPost={featuredBlogPost}
     />
