@@ -24,7 +24,11 @@ const ExperienceEntry = ({ org, projects }: ExperienceEntryProps) => {
     return enjGetLayout({ type: 'RAM', itemMaxWidth: 350, gridGap: 1.8 });
   }, []);
 
-  const orgProps = { orgTitle: org.title, orgSlug: org.slug, orgPictogramName: org.pictogramName } as any;
+  const orgProps = {
+    orgTitle: org.title,
+    orgSlug: org.slug,
+    orgPictogramName: org.pictogramName,
+  } as any;
 
   return (
     <div className="articlePage page-section-spacing">
@@ -37,7 +41,7 @@ const ExperienceEntry = ({ org, projects }: ExperienceEntryProps) => {
         }}
         imgBgUrl={banners.imgUrl}
       />
-      <article className="page-content">
+      <article className="page-content" aria-label={`${org.title} experience`}>
         <div className="enj-container">
           <div style={{ maxWidth: 930 }}>
             <section>
@@ -46,31 +50,34 @@ const ExperienceEntry = ({ org, projects }: ExperienceEntryProps) => {
             </section>
 
             <h2>Best work done for this organization</h2>
-            <div style={layoutGridStyle}>
+            <div style={layoutGridStyle} role="list" aria-label="Case studies">
               {projects?.map((project, i) => {
                 return (
-                  <TilePost
+                  <div
                     key={project?.sys?.id ?? project?.title ?? i}
-                    {...orgProps} 
-                    featuredText={{
-                      heading: {
-                        children: project?.title,
-                        level: 3,
-                      },
-                      smartText: {
-                        plainText: project?.blurb,
-                      },
-                      headingMaxLength: 50,
-                      plainTextMaxLength: 120,
-                    }}
-                    onClick={() => router.push(`/case-studies/${project?.slug}`)}
-                  />
+                    role="listitem"
+                  >
+                    <TilePost
+                      {...orgProps}
+                      featuredText={{
+                        heading: {
+                          children: project?.title,
+                          level: 3,
+                        },
+                        smartText: {
+                          plainText: project?.blurb,
+                        },
+                        headingMaxLength: 50,
+                        plainTextMaxLength: 120,
+                      }}
+                      onClick={() =>
+                        router.push(`/case-studies/${project?.slug}`)
+                      }
+                    />
+                  </div>
                 );
               })}
             </div>
-
-
-            
           </div>
         </div>
       </article>

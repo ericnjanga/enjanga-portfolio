@@ -1,0 +1,72 @@
+@use 'enjanga-core-setup/styles-colors' as cl;
+
+:root {
+  --enj-skeleton-anim-title-h: 24px;
+  --enj-skeleton-anim-text-h: 16px;
+}
+
+.skeleton {
+  background-color: cl.$gray-40;
+  border-radius: 4px;
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+}
+
+.skeleton::after {
+  animation: skeleton-shimmer 1.5s infinite;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  content: '';
+  height: 100%;
+  left: -150%;
+  position: absolute;
+  top: 0;
+  width: 150%;
+}
+
+@keyframes skeleton-shimmer {
+  100% {
+    transform: translateX(150%);
+  }
+}
+
+.skeleton-bot-spacing-1 {
+  margin-bottom: 12px;
+}
+
+.skeleton-bot-spacing-2 {
+  margin-bottom: 5px;
+}
+
+.skeleton-title {
+  height: var(--enj-skeleton-anim-title-h);
+  margin-bottom: 12px;
+  width: 70%;
+}
+
+.skeleton-text-wrapper .skeleton-list-item {
+  display: flex;
+  gap: 10px;
+}
+
+.skeleton-text,
+.skeleton-list-item,
+.skeleton-dot {
+  height: var(--enj-skeleton-anim-text-h);
+  width: 100%;
+}
+
+.skeleton-dot {
+  width: var(--enj-skeleton-anim-text-h);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skeleton::after {
+    animation: none;
+  }
+}

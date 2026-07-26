@@ -3,14 +3,17 @@
 
 import { HeaderMenuItem } from '@carbon/react';
 import { useSectionNavigation } from '@utils/navigation';
-import { useRouter, usePathname } from 'next/navigation';
-import { useSearchParamData, useIsHomeActiveFlag } from '@utils/context/SearchParamProvider';
+import { usePathname } from 'next/navigation';
+import {
+  useSearchParamData,
+  useIsHomeActiveFlag,
+} from '@utils/context/SearchParamProvider';
 import { Link } from 'enjanga-core-setup';
+import type { MouseEvent } from 'react';
 
 type GlobalNavType = { parent?: 'top nav' | 'footer' };
 
 export const GlobalNav = ({ parent = 'top nav' }: GlobalNavType) => {
-  const router = useRouter();
   const pathname = usePathname();
   const { navigateToSection } = useSectionNavigation();
   const { section: currentSection } = useSearchParamData();
@@ -29,7 +32,12 @@ export const GlobalNav = ({ parent = 'top nav' }: GlobalNavType) => {
     <>
       {parent === 'footer' && (
         <HeaderMenuItem
-          onClick={() => navigateToSection('introduction')}
+          as={Link}
+          href="/?section=introduction"
+          onClick={(event: MouseEvent<HTMLElement>) => {
+            event.preventDefault();
+            navigateToSection('introduction');
+          }}
           aria-current={isHomeRoute ? 'page' : undefined}
         >
           Introduction
@@ -37,22 +45,37 @@ export const GlobalNav = ({ parent = 'top nav' }: GlobalNavType) => {
       )}
 
       <HeaderMenuItem
-        onClick={() => navigateToSection('service')}
-        aria-current={isActive('service') ? 'page' : undefined}
+        as={Link}
+        href="/?section=service"
+        onClick={(event: MouseEvent<HTMLElement>) => {
+          event.preventDefault();
+          navigateToSection('service');
+        }}
+        aria-current={isActive('service') ? 'location' : undefined}
       >
         Service
       </HeaderMenuItem>
 
       <HeaderMenuItem
-        onClick={() => navigateToSection('about')}
-        aria-current={isActive('about') ? 'page' : undefined}
+        as={Link}
+        href="/?section=about"
+        onClick={(event: MouseEvent<HTMLElement>) => {
+          event.preventDefault();
+          navigateToSection('about');
+        }}
+        aria-current={isActive('about') ? 'location' : undefined}
       >
         About
       </HeaderMenuItem>
 
       <HeaderMenuItem
-        onClick={() => navigateToSection('experience')}
-        aria-current={isExperienceActive ? 'page' : undefined}
+        as={Link}
+        href="/?section=experience"
+        onClick={(event: MouseEvent<HTMLElement>) => {
+          event.preventDefault();
+          navigateToSection('experience');
+        }}
+        aria-current={isExperienceActive ? 'location' : undefined}
       >
         Experience
       </HeaderMenuItem>

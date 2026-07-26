@@ -6,8 +6,8 @@ type RouteExperienceType = {
 };
 
 const RouteExperience = ({ organizations }: RouteExperienceType) => (
-  <div className='enj-container'>
-    <div 
+  <div className="enj-container">
+    <div
     //lg={16} md={8} sm={4}
     >
       <section
@@ -17,7 +17,7 @@ const RouteExperience = ({ organizations }: RouteExperienceType) => (
         tabIndex={-1} // Make focusable by default
       >
         <h2 id="experience-heading" className="sectionTitle">
-          Where I`ve made an Impact
+          Where I’ve made an impact
         </h2>
         <ListOfItems organizations={organizations} />
       </section>

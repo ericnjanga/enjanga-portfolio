@@ -6,7 +6,9 @@ const SkipNavigationLink = ({ destinationId }: { destinationId: string }) => (
     className={styles.skipLink}
     onClick={(e) => {
       e.preventDefault();
-      document.querySelector('main')?.focus();
+      const destination = document.getElementById(destinationId);
+      destination?.focus();
+      window.history.replaceState(null, '', `#${destinationId}`);
     }}
   >
     Skip to content

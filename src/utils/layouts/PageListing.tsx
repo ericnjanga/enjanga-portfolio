@@ -42,7 +42,7 @@ export default function PageListing({
         imgBgUrl={banners.imgUrl}
       />
 
-      <article className="page-content">
+      <section className="page-content" aria-label="Case studies">
         <MasonryGrid className="enj-container caseStudyMasonry">
           {listOfEntries?.items?.map((item) => {
             const hasVideo = Boolean(item?.introVideo?.url);
@@ -91,7 +91,7 @@ export default function PageListing({
             );
           })}
         </MasonryGrid>
-      </article>
+      </section>
     </div>
   );
 }

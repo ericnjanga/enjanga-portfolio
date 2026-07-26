@@ -6,7 +6,7 @@ import {
   Platforms,
 } from '@carbon/icons-react';
 import { Tab, TabList } from '@carbon/react';
-import { ContentModel2 } from '@utils/dataProcessing/types'; 
+import { ContentModel2 } from '@utils/dataProcessing/types';
 
 interface SectionTabsListProps {
   className?: string;
@@ -29,7 +29,13 @@ const SectionTabsList = ({ listOfItems, className }: SectionTabsListProps) => (
 
       return (
         <Tab key={item?.sys?.id ?? index} renderIcon={IconComponent}>
-          {!item?.title && <div className='skeleton skeleton-text' role="presentation" style={{ width: '115px' }}></div>}
+          {!item?.title && (
+            <div
+              className="skeleton skeleton-text"
+              aria-hidden="true"
+              style={{ width: '115px' }}
+            />
+          )}
           {item?.title}
         </Tab>
       );

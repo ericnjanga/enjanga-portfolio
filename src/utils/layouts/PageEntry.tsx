@@ -1,13 +1,13 @@
 'use client';
 
-import { ContextType1 } from '@utils/dataProcessing/types'; 
+import { ContextType1 } from '@utils/dataProcessing/types';
 import { Banner, CMSRichText } from 'enjanga-components-library';
 import 'enjanga-components-library/banner.css'; // Styling for <Bann** /> component
 import 'enjanga-components-library/cms-rich-text.css'; // Styling for <CMSRichT** /> component
 import { useDataDistributorData } from '@utils/context/DataDistributorContext';
 import 'styles/blogs-and-articles/index.scss';
-  
-const PageEntry = ({ item }: ContextType1) => { 
+
+const PageEntry = ({ item }: ContextType1) => {
   const { banners } = useDataDistributorData();
 
   return (
@@ -20,18 +20,19 @@ const PageEntry = ({ item }: ContextType1) => {
           isHidden: 'smartText',
         }}
         imgBgUrl={banners.imgUrl}
-      /> 
-      <article className="page-content">
+      />
+      <article
+        className="page-content"
+        aria-label={item?.title || 'Case study content'}
+      >
         <div className="enj-container">
-          <div 
-            style={{ maxWidth: 930 }}
-          >
+          <div style={{ maxWidth: 930 }}>
             <CMSRichText data={item?.description} />
           </div>
         </div>
       </article>
     </div>
-  )
+  );
 };
 
 export default PageEntry;

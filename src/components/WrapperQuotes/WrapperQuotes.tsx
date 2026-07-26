@@ -10,7 +10,7 @@ type WrapperQuotesType = {
 const WrapperQuotes = ({ items }: WrapperQuotesType) => {
   return (
     <div className="enj-container">
-      <div 
+      <div
       //g={16} md={8} sm={4}
       >
         <section
@@ -19,7 +19,7 @@ const WrapperQuotes = ({ items }: WrapperQuotesType) => {
           aria-labelledby="engineer-quotes-heading"
           tabIndex={-1} // Make focusable by default
         >
-          <h2 id="engineer-quotes-heading" style={{ display: 'none' }}>
+          <h2 id="engineer-quotes-heading" className="visually-hidden">
             Quotes
           </h2>
 

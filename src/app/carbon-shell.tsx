@@ -4,13 +4,13 @@
  */
 // "use client";
 
-import { ReactNode } from "react";
-import { Content, Theme } from "@carbon/react";
+import { ReactNode } from 'react';
+import { Content, Theme } from '@carbon/react';
 
 export default function CarbonShell({ children }: { children: ReactNode }) {
   return (
     <Theme theme="g10">
-      <main id="main-content">
+      <main id="main-content" tabIndex={-1}>
         <Content>{children}</Content>
       </main>
     </Theme>

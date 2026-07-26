@@ -43,12 +43,9 @@ const getSafePictogramName = (value?: string): CP_nameType => {
 };
 
 export default function ServiceRoute() {
-  const {
-    data,
-    isLoading,
-    isError,
-    error,
-  } = useContentfulForClientEntries('Service Entry Collection');
+  const { data, isLoading, isError, error } = useContentfulForClientEntries(
+    'Service Entry Collection'
+  );
 
   const items = [...((Array.isArray(data) ? data : []) as ServiceEntry[])]
     .filter((entry) => entry?.isEnabled !== false)
@@ -65,15 +62,21 @@ export default function ServiceRoute() {
       aria-labelledby="service-heading"
       tabIndex={-1}
     >
-      <section style={{ maxWidth: '50rem', marginBottom: '2rem' }}>
+      <div style={{ maxWidth: '50rem', marginBottom: '2rem' }}>
         <h2 id="service-heading" className="sectionTitle">
           How I deliver Value
         </h2>
-        {isError ? <p>Service entries failed to load. Check console for details.</p> : null}
-        <p>I engineer enterprise user interfaces that are scalable, accessible, high-performing, and built to last—from architecture and implementation to design systems, API integration, testing, and long-term maintainability.</p>
-      </section>
+        {isError ? <p role="alert">Service entries failed to load.</p> : null}
+        <p>
+          I engineer enterprise user interfaces that are scalable, accessible,
+          high-performing, and built to last—from architecture and
+          implementation to design systems, API integration, testing, and
+          long-term maintainability.
+        </p>
+      </div>
 
-      <div className="services-grid">
+      <div className="services-grid" aria-busy={isLoading}>
+        {isLoading ? <p role="status">Loading services…</p> : null}
         {items.map((item, index) => {
           const fallbackTitle = `Service ${index + 1}`;
           const title = item?.title || fallbackTitle;
@@ -93,4 +96,3 @@ export default function ServiceRoute() {
     </section>
   );
 }
-

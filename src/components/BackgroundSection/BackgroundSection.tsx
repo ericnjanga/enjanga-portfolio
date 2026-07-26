@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import type { BackgroundSectionProps } from './types';
 import './_background-section.scss';
 
@@ -6,21 +6,11 @@ const BackgroundSection = ({
   id,
   className,
   ariaLabelledby,
-  tabIndex, 
+  tabIndex,
   parallax = false,
   imageUrl,
   children,
 }: BackgroundSectionProps) => {
-  
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    // Detect mobile once on mount
-    if (typeof window !== 'undefined') {
-      setIsMobile(window.innerWidth < 768);
-    }
-  }, []);
-
   return (
     <section
       id={id}
@@ -28,22 +18,20 @@ const BackgroundSection = ({
       aria-labelledby={ariaLabelledby}
       tabIndex={tabIndex}
     >
-      
       {/* Foreground content */}
-      <div className="background-content">
-        {children}
-      </div>
+      <div className="background-content">{children}</div>
 
       {/* Background image layer */}
       {imageUrl && (
         <div
-          className={`background-layer${parallax && !isMobile ? ' parallax' : ''}`}
+          className={`background-layer${parallax ? ' parallax' : ''}`}
           style={{ backgroundImage: `url(${imageUrl})` }}
+          aria-hidden="true"
         />
       )}
 
       {/* Dark overlay gradient */}
-      <div className="background-overlay" />
+      <div className="background-overlay" aria-hidden="true" />
     </section>
   );
 };

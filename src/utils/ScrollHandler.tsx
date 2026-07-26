@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { useSearchParams, usePathname } from "enjanga-core-setup/next";
+import { useSearchParams, usePathname } from 'enjanga-core-setup/next';
 
 /**
  * ScrollHandler
@@ -14,26 +14,13 @@ import { useSearchParams, usePathname } from "enjanga-core-setup/next";
  * It does not render any UI — it simply manages side effects related to scroll behavior.
  */
 const ScrollHandler = () => {
-  
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const targetSection = searchParams.get('section');
 
-  const handleScroll = () => {
-    // Logic to detect which section is in view
-  };
-
-  /**
-   * Listen to when the page scrolls and do something
-   */
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   /**
    * Only if we are on the home page, it will only scroll to the designated section
-   * 
+   *
    * When navigating from another route, we need a delay to allow dynamically
    * imported components to finish rendering before attempting to scroll.
    */
@@ -44,10 +31,14 @@ const ScrollHandler = () => {
       const timer = setTimeout(() => {
         const element = document.getElementById(targetSection);
         if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
+          const reduceMotion = window.matchMedia(
+            '(prefers-reduced-motion: reduce)'
+          ).matches;
+          element.scrollIntoView({
+            behavior: reduceMotion ? 'auto' : 'smooth',
+          });
 
           // Set focus on keyboard/screen reader users
-          element.setAttribute('tabindex', '-1'); // Make focusable
           element.focus({ preventScroll: true }); // Focus without re-scrolling
         }
       }, 500); // 500ms delay as mentioned in your requirement

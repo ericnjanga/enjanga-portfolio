@@ -1,6 +1,6 @@
 'use client';
 
-import { useRouter, usePathname } from "enjanga-core-setup/next";
+import { useRouter, usePathname } from 'enjanga-core-setup/next';
 
 /**
  * 
@@ -26,7 +26,13 @@ export function useSectionNavigation() {
       // Already on home - smooth scroll
       const element = document.getElementById(sectionId);
       if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
+        const reduceMotion = window.matchMedia(
+          '(prefers-reduced-motion: reduce)'
+        ).matches;
+        element.scrollIntoView({
+          behavior: reduceMotion ? 'auto' : 'smooth',
+        });
+        element.focus({ preventScroll: true });
         window.history.replaceState(null, '', `/?section=${sectionId}`);
       }
     } else {
@@ -50,7 +56,13 @@ export function useLogoClick() {
     // If on home route, scroll to top instead of reloading
     if (pathname === '/') {
       event.preventDefault();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      const reduceMotion = window.matchMedia(
+        '(prefers-reduced-motion: reduce)'
+      ).matches;
+      window.scrollTo({
+        top: 0,
+        behavior: reduceMotion ? 'auto' : 'smooth',
+      });
       // Clear any section query parameter
       window.history.replaceState(null, '', '/');
     }
