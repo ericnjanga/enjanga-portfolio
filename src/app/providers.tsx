@@ -32,7 +32,7 @@ const CarbonShell = dynamic(() => import('@/app/carbon-shell'), {
 
 // Dynamically importing the AppFooter so it loads after initial render.
 const AppFooter = dynamic(() => import('@/components/AppFooter/AppFooter'), {
-  ssr: false, // Ony render on the client
+  ssr: true,
   loading: () => (
     <SkeletonComponent
       name="contact information, navigation links, and published work."

@@ -1,6 +1,6 @@
 import React, { Suspense, useEffect } from 'react';
 import { AppHeader, BrandLogo } from 'enjanga-components-library';
-import { GlobalActions, GlobalNav } from '../GlobalMenus';
+import { GlobalNav } from '../GlobalMenus';
 import { AppUseUtility } from '@utils/UtilityContext';
 import {
   SearchParamProvider,
@@ -30,8 +30,8 @@ const AppHeaderWithExtra = () => {
   const { handleLogoClick } = useLogoClick();
 
   useEffect(() => {
-    // Add click listener to logo/brand element
-    const brandElement = document.querySelector<HTMLElement>('.cds--header__name');
+    const brandElement =
+      document.querySelector<HTMLElement>('.cds--header__name');
 
     if (!brandElement) {
       return undefined;
@@ -51,6 +51,7 @@ const AppHeaderWithExtra = () => {
         brandRoute="/"
         brand={<BrandLogo value={brand.name} />}
         isHomeRoute={isHomeRoute}
+        globalBarItems={null}
         navigation={
           <Suspense fallback={null}>
             <SearchParamProvider>
@@ -58,7 +59,6 @@ const AppHeaderWithExtra = () => {
             </SearchParamProvider>
           </Suspense>
         }
-        globalBarItems={<GlobalActions />}
       />
     </Theme>
   );

@@ -13,7 +13,6 @@ export default async function LandingPage() {
    */
   const [
     dataBanner,
-    dataListExpertiseTabs,
     dataAbout,
     dataListQuotes,
     dataServices,
@@ -22,7 +21,6 @@ export default async function LandingPage() {
     featuredBlogPost,
   ] = await Promise.all([
     getDataEntry('BannerHomePage Entry' as DataFor1),
-    getDataEntry('Expertise Parent Entry Collection' as DataFor2),
     getDataEntry('AboutInfo Entry Collection' as DataFor2),
     getDataEntry('Quotes Entry Collection' as DataFor3),
     getDataEntry('Service Entry Collection' as DataFor2),

@@ -17,7 +17,7 @@
  * > Separation of Concerns - Clear division between client and server components
  * > Scalability - Context structure allows for easy future expansion
  */
-import { createContext, useContext, ReactNode, useMemo } from 'react';
+import { createContext, useContext, ReactNode } from 'react';
 
 interface UtilityContextType {
   brand: {
@@ -47,17 +47,8 @@ const defaultUtilityContext: UtilityContextType = {
 const UtilityContext = createContext<UtilityContextType | undefined>(undefined);
 
 export const AppUtilityProvider = ({ children }: { children: ReactNode }) => {
-  // Context values ...
-  // Can be fetched from an external API ...
-  const contextValues = useMemo(
-    () => ({
-      brand: { ...defaultUtilityContext.brand },
-    }),
-    []
-  ); // Will only conpute once
-
   return (
-    <UtilityContext.Provider value={contextValues}>
+    <UtilityContext.Provider value={defaultUtilityContext}>
       {children}
     </UtilityContext.Provider>
   );
