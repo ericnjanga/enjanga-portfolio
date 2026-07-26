@@ -83,9 +83,21 @@ export default function RouteHome({
           },
         }
       : null;
+  const rawHeroPosterUrl = featuredBlogPost?.introVideoImage?.url;
+  const heroPosterUrl = rawHeroPosterUrl?.startsWith('//')
+    ? `https:${rawHeroPosterUrl}`
+    : rawHeroPosterUrl;
 
   return (
     <>
+      {heroPosterUrl ? (
+        <link
+          rel="preload"
+          as="image"
+          href={heroPosterUrl}
+          fetchPriority="high"
+        />
+      ) : null}
       <div className="homePage page-section-spacing">
         <div>{mappedArgs ? <HeroVideo {...mappedArgs} /> : null}</div>
 

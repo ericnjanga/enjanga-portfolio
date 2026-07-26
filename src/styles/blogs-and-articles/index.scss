@@ -28,11 +28,17 @@
 }
 
 .caseStudyMasonry {
+  --masonry-row-height: 8px;
+
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 21.875rem), 1fr));
-  grid-auto-rows: 0.5rem;
+  grid-auto-rows: auto;
   gap: 1.8rem;
   align-items: start;
+
+  &[data-masonry-ready='true'] {
+    grid-auto-rows: var(--masonry-row-height);
+  }
 
   .masonryGrid__item {
     min-width: 0;
