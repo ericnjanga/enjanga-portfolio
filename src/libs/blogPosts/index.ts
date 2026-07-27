@@ -129,7 +129,9 @@ const buildAssetLinks = (assets: CdaAsset[] | undefined) => {
     .filter((asset): asset is NonNullable<typeof asset> => asset !== null);
 };
 
-const buildEntryHrefMap = (entries: CdaEntry[] | undefined): Map<string, string> => {
+const buildEntryHrefMap = (
+  entries: CdaEntry[] | undefined
+): Map<string, string> => {
   const hrefMap = new Map<string, string>();
 
   (entries ?? []).forEach((entry) => {
@@ -141,7 +143,11 @@ const buildEntryHrefMap = (entries: CdaEntry[] | undefined): Map<string, string>
       return;
     }
 
-    if (contentType === 'blogPost' || contentType === 'project' || contentType === 'caseStudy') {
+    if (
+      contentType === 'blogPost' ||
+      contentType === 'project' ||
+      contentType === 'caseStudy'
+    ) {
       hrefMap.set(id, `/case-studies/${slug}`);
       return;
     }
@@ -154,7 +160,10 @@ const buildEntryHrefMap = (entries: CdaEntry[] | undefined): Map<string, string>
   return hrefMap;
 };
 
-const rewriteEntryHyperlinks = <T>(document: T, hrefMap: Map<string, string>): T => {
+const rewriteEntryHyperlinks = <T>(
+  document: T,
+  hrefMap: Map<string, string>
+): T => {
   const visit = (node: RichTextNode): RichTextNode => {
     const nextNode: RichTextNode = { ...node };
 
@@ -185,9 +194,14 @@ const mapBlogPostsFromCda = (json: any): BlogPostCollection => {
   const assets = json.includes?.Asset as CdaAsset[] | undefined;
   const assetLinks = buildAssetLinks(assets);
   const assetMap = getAssetMap(assets);
-  const entryHrefMap = buildEntryHrefMap(json.includes?.Entry as CdaEntry[] | undefined);
+  const entryHrefMap = buildEntryHrefMap(
+    json.includes?.Entry as CdaEntry[] | undefined
+  );
 
-  const orgMap = new Map<string, { id: string; title: string; slug: string; pictogramName?: string }>();
+  const orgMap = new Map<
+    string,
+    { id: string; title: string; slug: string; pictogramName?: string }
+  >();
   (json.includes?.Entry ?? []).forEach((entry: any) => {
     if (entry.sys?.contentType?.sys?.id === 'organization') {
       orgMap.set(entry.sys.id, {
@@ -199,34 +213,42 @@ const mapBlogPostsFromCda = (json: any): BlogPostCollection => {
     }
   });
 
-  return (json.items ?? []).map((item: any): BlogPost => ({
-    id: item.sys.id as string,
-    title: item.fields.title as string,
-    slug: item.fields.slug as string,
-    createdAt: item.sys.createdAt as string,
-    isFeatured: item.fields.isFeatured as boolean | undefined,
-    businessDomain: item.fields.businessDomain as string[] | undefined,
-    techstack: item.fields.techstack as string[] | undefined,
-    introVideo: getLinkedAsset(item.fields.introVideo as CdaLink | undefined, assetMap),
-    introVideoImage: getLinkedAsset(item.fields.introVideoImage as CdaLink | undefined, assetMap),
-    organization: item.fields.organization
-      ? orgMap.get(item.fields.organization.sys.id)
-      : undefined,
-    blurb: item.fields.blurb as string | undefined,
-    description: item.fields.description
-      ? {
-          json: rewriteEntryHyperlinks(
-            item.fields.description as { content: any[] },
-            entryHrefMap
-          ),
-          links: {
-            assets: {
-              block: assetLinks,
+  return (json.items ?? []).map(
+    (item: any): BlogPost => ({
+      id: item.sys.id as string,
+      title: item.fields.title as string,
+      slug: item.fields.slug as string,
+      createdAt: item.sys.createdAt as string,
+      isFeatured: item.fields.isFeatured as boolean | undefined,
+      businessDomain: item.fields.businessDomain as string[] | undefined,
+      techstack: item.fields.techstack as string[] | undefined,
+      introVideo: getLinkedAsset(
+        item.fields.introVideo as CdaLink | undefined,
+        assetMap
+      ),
+      introVideoImage: getLinkedAsset(
+        item.fields.introVideoImage as CdaLink | undefined,
+        assetMap
+      ),
+      organization: item.fields.organization
+        ? orgMap.get(item.fields.organization.sys.id)
+        : undefined,
+      blurb: item.fields.blurb as string | undefined,
+      description: item.fields.description
+        ? {
+            json: rewriteEntryHyperlinks(
+              item.fields.description as { content: any[] },
+              entryHrefMap
+            ),
+            links: {
+              assets: {
+                block: assetLinks,
+              },
             },
-          },
-        }
-      : undefined,
-  }));
+          }
+        : undefined,
+    })
+  );
 };
 
 /**
@@ -234,27 +256,48 @@ const mapBlogPostsFromCda = (json: any): BlogPostCollection => {
  * using the Content Delivery REST API.
  */
 export async function fetchBlogPosts(): Promise<BlogPostCollection> {
-  const url = new URL(`${CDA_BASE}/entries`);
-  url.searchParams.set('content_type', 'blogPost');
-  url.searchParams.set(
-    'select',
-    'sys.id,sys.createdAt,fields.title,fields.slug,fields.organization,fields.blurb,fields.description,fields.isFeatured,fields.businessDomain,fields.techstack,fields.introVideo,fields.introVideoImage'
-  );
-  url.searchParams.set('include', '2');
+  const pageSize = 100;
+  const posts: BlogPostCollection = [];
+  let skip = 0;
+  let total = 0;
 
-  const res = await fetch(url.toString(), {
-    headers: {
-      Authorization: `Bearer ${ACCESS_TOKEN}`,
-    },
-    next: { revalidate: 60 },
-  });
+  do {
+    const url = new URL(`${CDA_BASE}/entries`);
+    url.searchParams.set('content_type', 'blogPost');
+    url.searchParams.set('order', '-sys.createdAt');
+    url.searchParams.set('limit', String(pageSize));
+    url.searchParams.set('skip', String(skip));
+    url.searchParams.set(
+      'select',
+      'sys.id,sys.createdAt,fields.title,fields.slug,fields.organization,fields.blurb,fields.description,fields.isFeatured,fields.businessDomain,fields.techstack,fields.introVideo,fields.introVideoImage'
+    );
+    url.searchParams.set('include', '2');
 
-  if (!res.ok) {
-    throw new Error(`Failed to fetch blog posts: ${res.status} ${res.statusText}`);
-  }
+    const res = await fetch(url.toString(), {
+      headers: {
+        Authorization: `Bearer ${ACCESS_TOKEN}`,
+      },
+      next: { revalidate: 60 },
+    });
 
-  const json = await res.json();
-  return mapBlogPostsFromCda(json);
+    if (!res.ok) {
+      throw new Error(
+        `Failed to fetch blog posts: ${res.status} ${res.statusText}`
+      );
+    }
+
+    const json = await res.json();
+    const pagePosts = mapBlogPostsFromCda(json);
+    if (pagePosts.length === 0) {
+      break;
+    }
+    posts.push(...pagePosts);
+
+    total = Number(json.total) || pagePosts.length;
+    skip += pagePosts.length;
+  } while (skip < total);
+
+  return posts;
 }
 
 /**
@@ -263,7 +306,9 @@ export async function fetchBlogPosts(): Promise<BlogPostCollection> {
  * Returns null only when there are no blog posts.
  */
 export async function fetchLatestFeaturedBlogPost(): Promise<BlogPost | null> {
-  const loadOnePost = async (featuredOnly: boolean): Promise<BlogPost | null> => {
+  const loadOnePost = async (
+    featuredOnly: boolean
+  ): Promise<BlogPost | null> => {
     const url = new URL(`${CDA_BASE}/entries`);
     url.searchParams.set('content_type', 'blogPost');
     if (featuredOnly) {
@@ -285,7 +330,9 @@ export async function fetchLatestFeaturedBlogPost(): Promise<BlogPost | null> {
     });
 
     if (!res.ok) {
-      throw new Error(`Failed to fetch featured blog post: ${res.status} ${res.statusText}`);
+      throw new Error(
+        `Failed to fetch featured blog post: ${res.status} ${res.statusText}`
+      );
     }
 
     const json = await res.json();
@@ -305,7 +352,9 @@ export async function fetchLatestFeaturedBlogPost(): Promise<BlogPost | null> {
  * Fetches a single blog post entry by its slug field.
  * Returns null if no matching blog post is found.
  */
-export async function fetchBlogPostBySlug(slug: string): Promise<BlogPost | null> {
+export async function fetchBlogPostBySlug(
+  slug: string
+): Promise<BlogPost | null> {
   const url = new URL(`${CDA_BASE}/entries`);
   url.searchParams.set('content_type', 'blogPost');
   url.searchParams.set('fields.slug', slug);
@@ -324,7 +373,9 @@ export async function fetchBlogPostBySlug(slug: string): Promise<BlogPost | null
   });
 
   if (!res.ok) {
-    throw new Error(`Failed to fetch blog post by slug: ${res.status} ${res.statusText}`);
+    throw new Error(
+      `Failed to fetch blog post by slug: ${res.status} ${res.statusText}`
+    );
   }
 
   const json = await res.json();

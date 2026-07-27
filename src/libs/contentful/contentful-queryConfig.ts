@@ -70,7 +70,7 @@ export function getContentfulQueryConfig(dataFor: DataFor1 | DataFor2 | DataFor3
 
     case 'Service Entry Collection':
       query = queryData.serviceCollection;
-      variables.limit = 5;
+      variables.limit = 1000;
       variables.skip = 0;
       break;
 
@@ -120,4 +120,3 @@ export function getContentfulQueryConfig(dataFor: DataFor1 | DataFor2 | DataFor3
 
   return { query, variables, trackingInfo };
 }
-
