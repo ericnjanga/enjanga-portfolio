@@ -1,28 +1,29 @@
 'use client';
 
-import React from 'react';
-import { useRouter } from 'next/navigation';
 import type { Organization } from '@/libs/organizations/types';
-import type { ContentModel1 } from '@utils/dataProcessing/types';
-import { Banner, CMSRichText, TilePost } from 'enjanga-components-library';
+import type { ContentModel3 } from '@utils/dataProcessing/types';
+import {
+  Banner,
+  CMSRichText,
+  CTL_valid_linkTo,
+  TilePost,
+  VideoThumbnail,
+} from 'enjanga-components-library';
 import 'enjanga-components-library/banner.css';
 import 'enjanga-components-library/cms-rich-text.css';
 import 'enjanga-components-library/tile-post.css';
+import 'enjanga-components-library/video-thumbnail.css';
 import { useDataDistributorData } from '@utils/context/DataDistributorContext';
-import { enjGetLayout } from '@libs/layouts';
+import MasonryGrid from '@/components/MasonryGrid';
 import 'styles/blogs-and-articles/index.scss';
 
 type ExperienceEntryProps = {
   org: Organization;
-  projects: ContentModel1[];
+  projects: ContentModel3[];
 };
 
 const ExperienceEntry = ({ org, projects }: ExperienceEntryProps) => {
-  const router = useRouter();
   const { banners } = useDataDistributorData();
-  const layoutGridStyle = React.useMemo(() => {
-    return enjGetLayout({ type: 'RAM', itemMaxWidth: 350, gridGap: 1.8 });
-  }, []);
 
   const orgProps = {
     orgTitle: org.title,
@@ -48,37 +49,56 @@ const ExperienceEntry = ({ org, projects }: ExperienceEntryProps) => {
               {org.subtitle && <h2>{org.subtitle}</h2>}
               <CMSRichText data={org.description} />
             </section>
+          </div>
+          <section>
+            <h2 style={{ marginBottom: '1.5rem' }}>Best work done for this organization</h2>
+            <MasonryGrid className="caseStudyMasonry">
+              {projects?.map((project) => {
+                const hasVideo = Boolean(project?.introVideo?.url);
+                const hasPosterImage = Boolean(project?.introVideoImage?.url);
 
-            <h2>Best work done for this organization</h2>
-            <div style={layoutGridStyle} role="list" aria-label="Case studies">
-              {projects?.map((project, i) => {
-                return (
-                  <div
-                    key={project?.sys?.id ?? project?.title ?? i}
-                    role="listitem"
-                  >
-                    <TilePost
-                      {...orgProps}
-                      featuredText={{
-                        heading: {
-                          children: project?.title,
-                          level: 3,
-                        },
-                        smartText: {
-                          plainText: project?.blurb,
-                        },
-                        headingMaxLength: 50,
-                        plainTextMaxLength: 120,
-                      }}
-                      onClick={() =>
-                        router.push(`/case-studies/${project?.slug}`)
-                      }
+                if (hasVideo && hasPosterImage) {
+                  return (
+                    <VideoThumbnail
+                      key={project?.sys?.id}
+                      title={project?.title || 'Case study'}
+                      hasPosterImage={hasPosterImage}
+                      hasVideo={hasVideo}
+                      posterAsset={project.introVideoImage || {}}
+                      videoAsset={project.introVideo || {}}
+                      businessDomains={[]}
+                      stackValues={[]}
+                      caseStudyHref={`/case-studies/${project?.slug}`}
+                      ariaLabel={`Open featured case study for ${
+                        project?.title || 'Case study'
+                      }`}
                     />
-                  </div>
+                  );
+                }
+
+                return (
+                  <TilePost
+                    key={project?.sys?.id}
+                    {...orgProps}
+                    featuredText={{
+                      heading: {
+                        children: project?.title,
+                        level: 3,
+                      },
+                      smartText: {
+                        plainText: project?.blurb,
+                      },
+                      headingMaxLength: 50,
+                      plainTextMaxLength: 120,
+                    }}
+                    linksTo={
+                      `/case-studies/${project?.slug}` as CTL_valid_linkTo
+                    }
+                  />
                 );
               })}
-            </div>
-          </div>
+            </MasonryGrid>
+          </section>
         </div>
       </article>
     </div>

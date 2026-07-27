@@ -86,7 +86,7 @@ export default function PageListing({
                   headingMaxLength: 50,
                   plainTextMaxLength: 120,
                 }}
-                onClick={() => router.push(`/case-studies/${item?.slug}`)}
+                linksTo={`/case-studies/${item?.slug}` as CTL_valid_linkTo}
               />
             );
           })}

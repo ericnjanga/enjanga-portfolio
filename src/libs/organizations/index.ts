@@ -1,5 +1,5 @@
 import type { OrganizationCollection } from './types';
-import type { ContentModel1 } from '@utils/dataProcessing/types';
+import type { ContentModel3 } from '@utils/dataProcessing/types';
 
 const SPACE_ID = process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID;
 const ENVIRONMENT = process.env.NEXT_PUBLIC_CONTENTFUL_ENVIRONMENT;
@@ -14,13 +14,22 @@ type CdaAsset = {
     description?: string;
     file?: {
       url?: string;
+      fileName?: string;
+      contentType?: string;
       details?: {
+        size?: number;
         image?: {
           width?: number;
           height?: number;
         };
       };
     };
+  };
+};
+
+type CdaLink = {
+  sys?: {
+    id?: string;
   };
 };
 
@@ -59,6 +68,35 @@ const normalizeAssetUrl = (url?: string): string => {
   return url.startsWith('//') ? `https:${url}` : url;
 };
 
+const getAssetMap = (assets: CdaAsset[] | undefined): Map<string, CdaAsset> => {
+  const map = new Map<string, CdaAsset>();
+  (assets ?? []).forEach((asset) => {
+    const id = asset.sys?.id;
+    if (id) map.set(id, asset);
+  });
+  return map;
+};
+
+const getLinkedAsset = (
+  target: CdaLink | undefined,
+  assetMap: Map<string, CdaAsset>
+): ContentModel3['introVideo'] | undefined => {
+  const asset = target?.sys?.id ? assetMap.get(target.sys.id) : undefined;
+  const url = normalizeAssetUrl(asset?.fields?.file?.url);
+  if (!url) return undefined;
+
+  return {
+    url,
+    contentType: asset?.fields?.file?.contentType,
+    fileName: asset?.fields?.file?.fileName,
+    size: asset?.fields?.file?.details?.size,
+    width: asset?.fields?.file?.details?.image?.width,
+    height: asset?.fields?.file?.details?.image?.height,
+    title: asset?.fields?.title,
+    description: asset?.fields?.description,
+  };
+};
+
 const buildAssetLinks = (assets: CdaAsset[] | undefined) => {
   return (assets ?? [])
     .map((asset) => {
@@ -82,7 +120,9 @@ const buildAssetLinks = (assets: CdaAsset[] | undefined) => {
     .filter((asset): asset is NonNullable<typeof asset> => asset !== null);
 };
 
-const buildEntryHrefMap = (entries: CdaEntry[] | undefined): Map<string, string> => {
+const buildEntryHrefMap = (
+  entries: CdaEntry[] | undefined
+): Map<string, string> => {
   const hrefMap = new Map<string, string>();
 
   (entries ?? []).forEach((entry) => {
@@ -94,7 +134,11 @@ const buildEntryHrefMap = (entries: CdaEntry[] | undefined): Map<string, string>
       return;
     }
 
-    if (contentType === 'blogPost' || contentType === 'project' || contentType === 'caseStudy') {
+    if (
+      contentType === 'blogPost' ||
+      contentType === 'project' ||
+      contentType === 'caseStudy'
+    ) {
       hrefMap.set(id, `/case-studies/${slug}`);
       return;
     }
@@ -107,7 +151,10 @@ const buildEntryHrefMap = (entries: CdaEntry[] | undefined): Map<string, string>
   return hrefMap;
 };
 
-const rewriteEntryHyperlinks = <T>(document: T, hrefMap: Map<string, string>): T => {
+const rewriteEntryHyperlinks = <T>(
+  document: T,
+  hrefMap: Map<string, string>
+): T => {
   const visit = (node: RichTextNode): RichTextNode => {
     const nextNode: RichTextNode = { ...node };
 
@@ -155,49 +202,61 @@ export async function fetchOrganizations(): Promise<OrganizationCollection> {
   });
 
   if (!res.ok) {
-    throw new Error(`Failed to fetch organizations: ${res.status} ${res.statusText}`);
+    throw new Error(
+      `Failed to fetch organizations: ${res.status} ${res.statusText}`
+    );
   }
 
   const json = await res.json();
-  const assetLinks = buildAssetLinks(json.includes?.Asset as CdaAsset[] | undefined);
-  const entryHrefMap = buildEntryHrefMap(json.includes?.Entry as CdaEntry[] | undefined);
+  const assetLinks = buildAssetLinks(
+    json.includes?.Asset as CdaAsset[] | undefined
+  );
+  const entryHrefMap = buildEntryHrefMap(
+    json.includes?.Entry as CdaEntry[] | undefined
+  );
 
   return (json.items ?? [])
-    .sort((a: any, b: any) => new Date(b.sys.createdAt).getTime() - new Date(a.sys.createdAt).getTime())
+    .sort(
+      (a: any, b: any) =>
+        new Date(b.sys.createdAt).getTime() -
+        new Date(a.sys.createdAt).getTime()
+    )
     .map((item: any) => ({
       id: item.sys.id as string,
       title: item.fields.title as string,
       slug: item.fields.slug as string,
       createdAt: item.sys.createdAt as string,
       subtitle: item.fields.subtitle as string | undefined,
-    // CDA returns the rich-text document directly (not wrapped in `{ json }`).
-    // CMSRichText also expects resolved asset links for embedded media nodes.
-    description: item.fields.description
-      ? {
-          json: rewriteEntryHyperlinks(
-            item.fields.description as { content: any[] },
-            entryHrefMap
-          ),
-          links: {
-            assets: {
-              block: assetLinks,
+      // CDA returns the rich-text document directly (not wrapped in `{ json }`).
+      // CMSRichText also expects resolved asset links for embedded media nodes.
+      description: item.fields.description
+        ? {
+            json: rewriteEntryHyperlinks(
+              item.fields.description as { content: any[] },
+              entryHrefMap
+            ),
+            links: {
+              assets: {
+                block: assetLinks,
+              },
             },
-          },
-        }
-      : undefined,
-    pictogramName: item.fields.pictogramName as string | undefined,
-    website: item.fields.website as string | undefined,
-    projects: (item.fields.projects as any[] | undefined)?.map((ref) => ({
-      sys: { id: ref.sys.id as string },
-    })),
-  }));
+          }
+        : undefined,
+      pictogramName: item.fields.pictogramName as string | undefined,
+      website: item.fields.website as string | undefined,
+      projects: (item.fields.projects as any[] | undefined)?.map((ref) => ({
+        sys: { id: ref.sys.id as string },
+      })),
+    }));
 }
 
 /**
  * Fetches a single organization entry by its slug field.
  * Returns null if no matching organization is found.
  */
-export async function fetchOrganizationBySlug(slug: string): Promise<OrganizationCollection[number] | null> {
+export async function fetchOrganizationBySlug(
+  slug: string
+): Promise<OrganizationCollection[number] | null> {
   const orgs = await fetchOrganizations();
   return orgs.find((org) => org.slug === slug) ?? null;
 }
@@ -205,7 +264,9 @@ export async function fetchOrganizationBySlug(slug: string): Promise<Organizatio
 /**
  * Fetches case study entries by ID using the Contentful CDA REST API.
  */
-export async function fetchOrganizationProjects(projectIds: string[]): Promise<ContentModel1[]> {
+export async function fetchOrganizationProjects(
+  projectIds: string[]
+): Promise<ContentModel3[]> {
   if (!projectIds.length) {
     return [];
   }
@@ -213,7 +274,10 @@ export async function fetchOrganizationProjects(projectIds: string[]): Promise<C
   const url = new URL(`${CDA_BASE}/entries`);
   url.searchParams.set('content_type', 'blogPost');
   url.searchParams.set('sys.id[in]', projectIds.join(','));
-  url.searchParams.set('select', 'sys.id,fields.slug,fields.title,fields.blurb,fields.description');
+  url.searchParams.set(
+    'select',
+    'sys.id,fields.slug,fields.title,fields.blurb,fields.description,fields.introVideo,fields.introVideoImage'
+  );
   url.searchParams.set('include', '1');
 
   const res = await fetch(url.toString(), {
@@ -224,24 +288,39 @@ export async function fetchOrganizationProjects(projectIds: string[]): Promise<C
   });
 
   if (!res.ok) {
-    throw new Error(`Failed to fetch organization projects: ${res.status} ${res.statusText}`);
+    throw new Error(
+      `Failed to fetch organization projects: ${res.status} ${res.statusText}`
+    );
   }
 
   const json = await res.json();
   const items = json.items ?? [];
-  const assetLinks = buildAssetLinks(json.includes?.Asset as CdaAsset[] | undefined);
-  const entryHrefMap = buildEntryHrefMap(json.includes?.Entry as CdaEntry[] | undefined);
+  const assetMap = getAssetMap(json.includes?.Asset as CdaAsset[] | undefined);
+  const assetLinks = buildAssetLinks(
+    json.includes?.Asset as CdaAsset[] | undefined
+  );
+  const entryHrefMap = buildEntryHrefMap(
+    json.includes?.Entry as CdaEntry[] | undefined
+  );
 
-  const byId = new Map<string, ContentModel1>(
+  const byId = new Map<string, ContentModel3>(
     items.map((item: any) => [
       item.sys.id as string,
       {
         sys: {
           id: item.sys.id as string,
         },
-          slug: item.fields.slug as string | undefined,
+        slug: item.fields.slug as string | undefined,
         title: item.fields.title as string | undefined,
         blurb: item.fields.blurb as string | undefined,
+        introVideo: getLinkedAsset(
+          item.fields.introVideo as CdaLink | undefined,
+          assetMap
+        ),
+        introVideoImage: getLinkedAsset(
+          item.fields.introVideoImage as CdaLink | undefined,
+          assetMap
+        ),
         description: item.fields.description
           ? {
               json: rewriteEntryHyperlinks(
@@ -259,5 +338,7 @@ export async function fetchOrganizationProjects(projectIds: string[]): Promise<C
     ])
   );
 
-  return projectIds.map((id) => byId.get(id)).filter((item): item is ContentModel1 => !!item);
+  return projectIds
+    .map((id) => byId.get(id))
+    .filter((item): item is ContentModel3 => !!item);
 }

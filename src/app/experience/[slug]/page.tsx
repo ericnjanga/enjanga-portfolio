@@ -4,7 +4,7 @@ import {
   fetchOrganizations,
 } from '@/libs/organizations';
 import type { DynamicPageServerSlug } from '@/libs/types';
-import type { ContentModel1 } from '@utils/dataProcessing/types';
+import type { ContentModel3 } from '@utils/dataProcessing/types';
 import ExperienceEntry from '../ExperienceEntry';
 
 /*
@@ -33,7 +33,7 @@ export default async function Page(props: DynamicPageServerSlug) {
   const org = await fetchOrganizationBySlug(slug);
 
   const projectIds = org?.projects?.map((project) => project.sys.id) ?? [];
-  const projects: ContentModel1[] = await fetchOrganizationProjects(projectIds);
+  const projects: ContentModel3[] = await fetchOrganizationProjects(projectIds);
 
   return <ExperienceEntry org={org!} projects={projects} />;
 }
