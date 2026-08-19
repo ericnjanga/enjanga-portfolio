@@ -125,6 +125,7 @@ yarn start
 
 ## 🧪 Testing
 
+For more information about testing strategy, read the "_README.md" files inside the "/tests" folders.
 This project uses **Jest** and **React Testing Library** for unit and integration tests.
 
 Run tests:
