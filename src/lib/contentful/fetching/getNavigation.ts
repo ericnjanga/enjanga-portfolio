@@ -40,6 +40,8 @@ export async function getNavigation(): Promise<NavigationItem[]> {
   const navigation = result.data?.navigationCollection?.items[0];
   const items = navigation?.itemsCollection?.items ?? [];
 
+  console.log('nav items = ', items);
+
   return items
     .filter((item): item is ContentFulNavigationItem => item?.__typename === 'NavigationItem' && item?.isVisible !== false && Boolean(item.name))
     .map((item): NavigationItem => ({

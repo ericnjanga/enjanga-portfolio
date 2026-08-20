@@ -9,8 +9,8 @@ export type Navigation = {
 export type NavigationItem = {
   id: string;
   name: string;
-  href: string;  
-  openInNewTab: boolean; 
+  href: string;
+  openInNewTab: boolean;
 };
 
 export type ContentFulNavigationItem = {
@@ -20,10 +20,10 @@ export type ContentFulNavigationItem = {
   };
   name: string | null;
   destinationType: 'page' | 'homeSection' | 'external' | null;
-  path: string | null; 
-  sectionId: string | null; 
-  openInNewTab: boolean | null; 
-  isVisible: boolean | null; 
+  path: string | null;
+  sectionId: string | null;
+  openInNewTab: boolean | null;
+  isVisible: boolean | null;
 };
 
 export type NavigationResponse = {
@@ -38,7 +38,7 @@ export type NavigationResponse = {
   }>;
 };
 
-export type FooterLink = {
+export type ContentFulFooterLink = {
   label: string | null;
   linkType: 'internal' | 'external' | null;
   externalUrl: string | null;
@@ -46,27 +46,46 @@ export type FooterLink = {
   accessibleLabel: string | null;
 };
 
+export type FooterLink = {
+  label: string;
+  href: string;
+  openInNewTab: boolean;
+  accessibleLabel?: string;
+};
+
+export type NavbarData = {
+  siteName: string;
+  navigation: NavigationItem[];
+};
+
+export type FooterData = {
+  siteName: string;
+  copyrightText: string;
+  location: string;
+  links: FooterLink[];
+};
+
 export type SiteSettingsResponse = {
+  navbar: NavbarData;
+  footer: FooterData;
+};
+
+export type ContentfulSiteSettingsResponse = {
   data?: {
     siteSettingsCollection?: {
       items: Array<{
         siteName: string | null;
+        primaryNavigation: Navigation | null;
         footerLinksCollection: {
-          items: Array<FooterLink | null>;
-        } | null; 
-      }>;
+          items: Array<ContentFulFooterLink | null>;
+        } | null;
+        copyrightText: string | null;
+        location: string | null;
+      } | null>;
     };
-    // siteName: string | null;
-    // footerLinksCollection: {
-    //   items: Array<{
-    //     label: string | null;
-    //     linkType: 'internal' | 'external' | null;
-    //     externalUrl: string | null;     
-    //   } | null>;
-    // } | null; 
   };
   errors?: Array<{
     message: string;
     locations?: Array<{ line: number; column: number }>;
-  }>; 
+  }>;
 };

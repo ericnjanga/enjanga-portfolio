@@ -1,17 +1,18 @@
-import Link from 'next/link'; 
-import type { NavigationItem } from '@/lib/contentful/types';
+import Link from 'next/link';
+import type { NavbarData } from '@/lib/contentful/types';
 import { navFallback } from './utils';
 import { Brand } from './Brand';
 import MobileNavigation from './MobileNavigation';
 
-type ServerNavbarProps = {
-  navigation: NavigationItem[];
+type NavbarProps = Omit<NavbarData, 'siteName'> & {
+  siteName?: string;
 };
 
-export default function ServerNavbar({ 
-  navigation
-}: ServerNavbarProps) { 
-  const items = navigation?.length > 0 ? navigation : navFallback; 
+export default function ServerNavbar({
+  siteName = 'Eric Njanga',
+  navigation,
+}: NavbarProps) {
+  const items = navigation?.length > 0 ? navigation : navFallback;
 
   return (
     <header className="bg-white">
@@ -19,9 +20,9 @@ export default function ServerNavbar({
         aria-label="Global"
         className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
       >
-        <Brand />
+        <Brand siteName={siteName} />
 
-        <MobileNavigation navigation={items} />
+        <MobileNavigation navigation={items} siteName={siteName} />
 
         <div className="hidden items-center gap-x-12 lg:flex">
           {items.map((item) => (
