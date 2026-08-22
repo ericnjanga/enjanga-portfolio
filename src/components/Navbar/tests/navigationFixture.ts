@@ -1,6 +1,6 @@
-import type { NavigationItem } from '@/lib/contentful/types';
+import type { NavigationItemData } from '@/lib/contentful/models';
 
-export const navigationFixture: NavigationItem[] = [
+export const navigationFixture: NavigationItemData[] = [
   {
     id: 'work',
     name: 'Work',

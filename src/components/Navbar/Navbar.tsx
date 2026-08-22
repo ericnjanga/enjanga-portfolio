@@ -1,19 +1,13 @@
 import Link from 'next/link';
-import type { NavbarData } from '@/lib/contentful/types';
-import { navFallback } from './utils';
+import type { NavbarData } from '@/lib/contentful/models'; 
 import { Brand } from './Brand';
-import MobileNavigation from './MobileNavigation';
+import MobileNavigation from './MobileNavigation'; 
 
-type NavbarProps = Omit<NavbarData, 'siteName'> & {
-  siteName?: string;
-};
-
+// Note: No need to provide default values here, as the data is already filtered and defaults are applied in getSiteSettings.ts
 export default function ServerNavbar({
-  siteName = 'Eric Njanga',
+  siteName,
   navigation,
-}: NavbarProps) {
-  const items = navigation?.length > 0 ? navigation : navFallback;
-
+}: NavbarData) { 
   return (
     <header className="bg-white">
       <nav
@@ -22,10 +16,10 @@ export default function ServerNavbar({
       >
         <Brand siteName={siteName} />
 
-        <MobileNavigation navigation={items} siteName={siteName} />
+        <MobileNavigation navigation={navigation} siteName={siteName} />
 
         <div className="hidden items-center gap-x-12 lg:flex">
-          {items.map((item) => (
+          {navigation.map((item) => (
             <Link
               key={item.id}
               href={item.href}

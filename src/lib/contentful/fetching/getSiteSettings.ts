@@ -1,54 +1,13 @@
 import { siteSettingsQuery } from '../queries';
 import type {
-  ContentfulSiteSettingsResponse,
-  ContentFulFooterLink,
-  ContentFulNavigationItem,
-  FooterLink,
-  NavigationItem,
-  SiteSettingsResponse,
-} from '../types';
-import { resolveHref } from '../utils';
+  ContentfulSiteSettingsResponse,  
+} from '../contentful-types'; 
+import { getFilteredNavItems, getFilteredFooterLinks } from '../transformations';
+import { SiteSettingsData } from '../models';
+import { siteSettingsFallback } from './fallbacks';
 
-const getFilteredNavItems = (
-  items: Array<ContentFulNavigationItem | null> | null | undefined
-): NavigationItem[] => {
-  if (!items) return [];
 
-  return items
-    .filter(
-      (item): item is ContentFulNavigationItem =>
-        item?.__typename === 'NavigationItem' &&
-        item?.isVisible !== false &&
-        Boolean(item.name)
-    )
-    .map(
-      (item): NavigationItem => ({
-        id: item.sys.id,
-        name: item.name ?? '',
-        href: resolveHref(item),
-        openInNewTab: item.openInNewTab ?? false,
-      })
-    );
-};
-
-const getFilteredFooterLinks = (
-  links: Array<ContentFulFooterLink | null> | null | undefined
-): FooterLink[] => {
-  if (!links) return [];
-
-  return links
-    .filter((link): link is ContentFulFooterLink =>
-      Boolean(link?.label && link.externalUrl)
-    )
-    .map((link) => ({
-      label: link.label ?? '',
-      href: link.externalUrl ?? '',
-      openInNewTab: link.openInNewTab ?? false,
-      accessibleLabel: link.accessibleLabel || undefined,
-    }));
-};
-
-export async function getSiteSettings(): Promise<SiteSettingsResponse> {
+export async function getSiteSettings(): Promise<SiteSettingsData> {
   const spaceId = process.env.CONTENTFUL_SPACE_ID;
   const environment = process.env.CONTENTFUL_ENVIRONMENT ?? 'master';
   const deliveryToken = process.env.CONTENTFUL_DELIVERY_TOKEN;
@@ -83,22 +42,23 @@ export async function getSiteSettings(): Promise<SiteSettingsResponse> {
   }
 
   const globalSettings = result?.data?.siteSettingsCollection?.items[0];
-  const siteName = globalSettings?.siteName ?? 'Eric Njanga';
+  const siteName = globalSettings?.siteName ?? siteSettingsFallback.siteName;
 
   return {
+    siteName, 
     navbar: {
       siteName,
       navigation: getFilteredNavItems(
         globalSettings?.primaryNavigation?.itemsCollection?.items
-      ),
+      ) ?? [...siteSettingsFallback.navbar.navigation] as SiteSettingsData['navbar']['navigation'],
     },
     footer: {
       siteName,
-      copyrightText: globalSettings?.copyrightText ?? 'Copyright',
-      location: globalSettings?.location ?? 'Toronto, Canada',
+      copyrightText: globalSettings?.copyrightText ?? siteSettingsFallback.footer.copyrightText,
+      location: globalSettings?.location ?? siteSettingsFallback.footer.location,
       links: getFilteredFooterLinks(
         globalSettings?.footerLinksCollection?.items
-      ),
+      ) ?? [...siteSettingsFallback.footer.links] as SiteSettingsData['footer']['links'],
     },
   };
 }

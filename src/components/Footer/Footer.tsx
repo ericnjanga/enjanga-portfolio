@@ -1,14 +1,13 @@
 import Link from 'next/link';
-import type { FooterData } from '@/lib/contentful/types';
-import { fallbackLinks } from './utils';
+import type { FooterData } from '@/lib/contentful/models';
 
+// Note: No need to provide default values here, as the data is already filtered and defaults are applied in getSiteSettings.ts
 export default function Footer({
   siteName,
   links,
   copyrightText,
   location,
 }: FooterData) {
-  const footerLinks = links.length > 0 ? links : fallbackLinks;
 
   return (
     <footer className="bg-white text-slate-800">
@@ -24,7 +23,7 @@ export default function Footer({
         <div className="flex flex-col gap-8">
           <nav aria-label="Footer navigation">
             <ul className="flex flex-wrap gap-x-16 gap-y-4">
-              {footerLinks.map((link) => (
+              {links.map((link) => (
                 <li key={`${link.label}-${link.href}`}>
                   <Link
                     href={link.href}

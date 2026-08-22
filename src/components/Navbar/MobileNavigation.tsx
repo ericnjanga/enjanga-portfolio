@@ -2,11 +2,11 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
-import type { NavigationItem } from '@/lib/contentful/types';
+import type { NavigationItemData } from '@/lib/contentful/models';
 import { Brand } from './Brand';
 
 type MobileNavigationProps = {
-  navigation: NavigationItem[];
+  navigation: NavigationItemData[];
   siteName?: string;
 };
 
