@@ -1,13 +1,15 @@
 import Link from 'next/link';
-import type { NavbarData } from '@/lib/contentful/models'; 
+import { getSiteSettings } from '@/lib/contentful/fetching/getSiteSettings';
 import { Brand } from './Brand';
-import MobileNavigation from './MobileNavigation'; 
+import MobileNavigation from './MobileNavigation';
 
 // Note: No need to provide default values here, as the data is already filtered and defaults are applied in getSiteSettings.ts
-export default function ServerNavbar({
-  siteName,
-  navigation,
-}: NavbarData) { 
+export default async function ServerNavbar() {
+  const {
+    siteName,
+    navbar: { navigation },
+  } = await getSiteSettings();
+
   return (
     <header className="bg-white">
       <nav

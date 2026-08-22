@@ -1,13 +1,16 @@
+import 'server-only';
+
+import { cache } from 'react';
 import { siteSettingsQuery } from '../queries';
-import type {
-  ContentfulSiteSettingsResponse,  
-} from '../contentful-types'; 
-import { getFilteredNavItems, getFilteredFooterLinks } from '../transformations';
+import type { ContentfulSiteSettingsResponse } from '../contentful-types';
+import {
+  getFilteredNavItems,
+  getFilteredFooterLinks,
+} from '../transformations';
 import { SiteSettingsData } from '../models';
 import { siteSettingsFallback } from './fallbacks';
 
-
-export async function getSiteSettings(): Promise<SiteSettingsData> {
+export const getSiteSettings = cache(async (): Promise<SiteSettingsData> => {
   const spaceId = process.env.CONTENTFUL_SPACE_ID;
   const environment = process.env.CONTENTFUL_ENVIRONMENT ?? 'master';
   const deliveryToken = process.env.CONTENTFUL_DELIVERY_TOKEN;
@@ -45,20 +48,27 @@ export async function getSiteSettings(): Promise<SiteSettingsData> {
   const siteName = globalSettings?.siteName ?? siteSettingsFallback.siteName;
 
   return {
-    siteName, 
+    siteName,
     navbar: {
-      siteName,
-      navigation: getFilteredNavItems(
-        globalSettings?.primaryNavigation?.itemsCollection?.items
-      ) ?? [...siteSettingsFallback.navbar.navigation] as SiteSettingsData['navbar']['navigation'],
+      navigation:
+        getFilteredNavItems(
+          globalSettings?.primaryNavigation?.itemsCollection?.items
+        ) ??
+        ([
+          ...siteSettingsFallback.navbar.navigation,
+        ] as SiteSettingsData['navbar']['navigation']),
     },
     footer: {
-      siteName,
-      copyrightText: globalSettings?.copyrightText ?? siteSettingsFallback.footer.copyrightText,
-      location: globalSettings?.location ?? siteSettingsFallback.footer.location,
-      links: getFilteredFooterLinks(
-        globalSettings?.footerLinksCollection?.items
-      ) ?? [...siteSettingsFallback.footer.links] as SiteSettingsData['footer']['links'],
+      copyrightText:
+        globalSettings?.copyrightText ??
+        siteSettingsFallback.footer.copyrightText,
+      location:
+        globalSettings?.location ?? siteSettingsFallback.footer.location,
+      links:
+        getFilteredFooterLinks(globalSettings?.footerLinksCollection?.items) ??
+        ([
+          ...siteSettingsFallback.footer.links,
+        ] as SiteSettingsData['footer']['links']),
     },
   };
-}
+});

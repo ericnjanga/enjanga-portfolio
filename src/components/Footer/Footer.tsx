@@ -1,13 +1,12 @@
 import Link from 'next/link';
-import type { FooterData } from '@/lib/contentful/models';
+import { getSiteSettings } from '@/lib/contentful/fetching/getSiteSettings';
 
 // Note: No need to provide default values here, as the data is already filtered and defaults are applied in getSiteSettings.ts
-export default function Footer({
-  siteName,
-  links,
-  copyrightText,
-  location,
-}: FooterData) {
+export default async function Footer() {
+  const {
+    siteName,
+    footer: { links, copyrightText, location },
+  } = await getSiteSettings();
 
   return (
     <footer className="bg-white text-slate-800">

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Footer from '@/components/Footer/Footer';
 import ServerNavbar from '@/components/Navbar/Navbar';
+import { SiteSettingsProvider } from '@/components/SiteSettings/SiteSettingsProvider';
 import './globals.css';
 import { getSiteSettings } from '@/lib/contentful/fetching/getSiteSettings';
 
@@ -15,14 +16,16 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const { navbar, footer } = await getSiteSettings();
+  const siteSettings = await getSiteSettings();
 
   return (
     <html lang="en">
       <body>
-        <ServerNavbar {...navbar} />
-        {children}
-        <Footer {...footer} />
+        <SiteSettingsProvider value={siteSettings}>
+          <ServerNavbar />
+          {children}
+          <Footer />
+        </SiteSettingsProvider>
       </body>
     </html>
   );
