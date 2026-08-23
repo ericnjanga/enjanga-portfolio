@@ -1,0 +1,101 @@
+query HomePage($slug: String!) {
+  homePageCollection(where: { slug: $slug },limit: 1) {
+    items {
+      sys {
+        id
+      } 
+      slug
+      seoTitle
+      seoDescription
+
+      hero {
+        __typename
+
+        ... on Hero {
+          sys {
+            id
+          } 
+          title
+          subtitle 
+        }
+      }
+
+      expertiseSection {
+        __typename
+
+        ... on ExpertiseSection {
+          sys {
+            id
+          } 
+          title
+
+          expertiseItemsCollection(limit: 10) {
+            items {
+              __typename
+
+              ... on ExpertiseItem {
+                sys {
+                  id    
+                }
+                title
+                description
+              }
+            }
+          }
+
+          image { 
+            url 
+            width
+            height
+            description
+          }
+
+          imageAltText
+
+          cta {
+            __typename 
+            
+            ... on Link {
+              ...LinkFields
+            }
+          }
+        }
+      }
+
+      aboutSection {
+        __typename
+
+        ... on ContentSection {
+          sys {
+            id
+          } 
+          title 
+
+          body {
+            json 
+          }
+
+          image { 
+            url 
+            width
+            height
+            description
+          }
+
+          imageAltText
+          imagePosition
+
+          cta {
+            __typename 
+            
+            ... on Link {
+              ...LinkFields
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+${linkFieldsFragment}

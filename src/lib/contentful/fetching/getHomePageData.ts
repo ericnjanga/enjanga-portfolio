@@ -1,8 +1,8 @@
-import { homePageQuery } from '../queries';
+import { homePageQuery } from '../queries/queries';
 import type { ContentfulHomePageResponse } from '../contentful-types';
 import type { ExpertiseItemData, HomePageData } from '../models';
-import { homePageFallback } from './fallbacks';
-import { getFilteredExpertiseItems, getFilteredAboutSection } from '../transformations';
+import { homePageFallback } from '../fallbacks';
+import { normalizeExpertiseItems, normalizeAboutSection } from '../transformations';
 
 export default async function getHomePageData(
   slug: string = '/'
@@ -28,7 +28,7 @@ export default async function getHomePageData(
         variables: {
           slug: slug,
         },
-      }), // Replace with your actual GraphQL query
+      }),
 
       // Refresh Contentful content at most every 5 minutes (300 seconds)
       next: { revalidate: 300 },
@@ -47,7 +47,7 @@ export default async function getHomePageData(
 
   const data = result?.data?.homePageCollection?.items[0];
 
-  
+
   return {
     seoTitle: data?.seoTitle ?? homePageFallback.seoTitle,
     seoDescription: data?.seoDescription ?? homePageFallback.seoDescription,
@@ -58,9 +58,9 @@ export default async function getHomePageData(
     expertiseSection: { 
       title: data?.expertiseSection?.title ?? homePageFallback.expertiseSection.title, 
       expertiseItemsCollection: {
-        items: getFilteredExpertiseItems(data?.expertiseSection?.expertiseItemsCollection?.items) ?? [...homePageFallback.expertiseSection.expertiseItemsCollection.items] as ExpertiseItemData[],
+        items: normalizeExpertiseItems(data?.expertiseSection?.expertiseItemsCollection?.items) ?? [...homePageFallback.expertiseSection.expertiseItemsCollection.items] as ExpertiseItemData[],
       }
     },
-    aboutSection: getFilteredAboutSection(data?.aboutSection) ?? homePageFallback.aboutSection, 
+    aboutSection: normalizeAboutSection(data?.aboutSection) ?? homePageFallback.aboutSection, 
   };
 }

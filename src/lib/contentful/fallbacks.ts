@@ -11,15 +11,15 @@ import type {
   NavigationItemData,
   HomePageData,
   ImageData,
-} from '../models';
+} from './models';
 
 export const navFallback: NavigationItemData[] = [
-  { id: '1', name: '* Home', href: '/', openInNewTab: false },
-  { id: '2', name: '* Expertise', href: '/expertise', openInNewTab: false },
-  { id: '3', name: '* About', href: '/about', openInNewTab: false },
+  { id: '1', name: 'Home', href: '/', openInNewTab: false },
+  { id: '2', name: 'Expertise', href: '/expertise', openInNewTab: false },
+  { id: '3', name: 'About', href: '/about', openInNewTab: false },
   {
     id: '4',
-    name: '* Case Studies',
+    name: 'Case Studies',
     href: '/case-studies',
     openInNewTab: false,
   },
@@ -115,7 +115,7 @@ export const homePageFallback: HomePageData = {
         ],
       },
     },
-    image: { ...aboutImgFallback },
+    image: { ...aboutImageFallback },
     imageAltText: 'Profile picture of Eric Njanga',
     imagePosition: 'left',
     cta: { ...aboutCtaFallback },

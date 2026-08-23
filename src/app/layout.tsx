@@ -21,11 +21,11 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body>
+        <ServerNavbar />
         <SiteSettingsProvider value={siteSettings}>
-          <ServerNavbar />
           {children}
-          <Footer />
         </SiteSettingsProvider>
+        <Footer />
       </body>
     </html>
   );

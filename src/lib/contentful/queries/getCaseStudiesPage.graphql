@@ -1,0 +1,24 @@
+query CaseStudiesPage($slug: String!) {
+  caseStudiesPageCollection(where: { slug: $slug },limit: 1) {
+    items {
+      sys {
+        id
+      } 
+      slug
+      seoTitle
+      seoDescription
+
+      hero {
+        __typename
+
+        ... on Hero {
+          sys {
+            id
+          } 
+          title
+          subtitle 
+        }
+      }
+    }
+  }
+}

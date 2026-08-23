@@ -33,6 +33,9 @@ export type ContentfulExpertiseSection = {
   expertiseItemsCollection: {
     items: Array<ContentfulExpertiseItem | null>;
   } | null;
+  image: ContentfulImage | null; 
+  imageAltText: string | null;
+  cta: ContentfulLink | null;
 };
 
 export type ContentfulExpertiseItem = {
@@ -70,6 +73,7 @@ export type ContentfulLink = { // Row data from contentful ...
   sys: ContentfulSys;
   label: string | null;
   linkType: 'internal' | 'external' | null;
+  internalDestination: ContentfulInternalDestination | null;
   externalUrl: string | null;
   openInNewTab: boolean | null;
   accessibleLabel: string | null;
@@ -83,6 +87,29 @@ export type ContentfulNavigation = {
   itemsCollection: {
     items: Array<ContentfulNavigationItem | null>;
   } | null;
+};
+
+export type ContentfulCaseStudyPage = {
+  __typename: 'CaseStudyPage';
+  sys: ContentfulSys;
+  slug: string | null;
+  seoTitle: string | null;
+  seoDescription: string | null;
+  hero: ContentfulHero | null;
+};
+
+export type ContentfulInternalDestination = ContentfulHomePageReference | ContentfulCaseStudyPageReference;
+
+export type ContentfulHomePageReference = {
+  __typename: 'HomePage';
+  sys: ContentfulSys;
+  slug: string | null;
+};
+
+export type ContentfulCaseStudyPageReference = {
+  __typename: 'CaseStudyPage';
+  sys: ContentfulSys;
+  slug: string | null;
 };
 
 
@@ -107,6 +134,18 @@ export type ContentfulHomePageResponse = { // Row data from contentful ...
         expertiseSection: ContentfulExpertiseSection | null; 
         aboutSection: ContentfulContentSection | null;
       } | null>;
+    };
+  };
+  errors?: Array<{
+    message: string;
+    locations?: Array<{ line: number; column: number }>;
+  }>;
+};
+
+export type ContentfulCaseStudiesPageResponse = { // Row data from contentful ...
+  data?: {
+    caseStudiesPageCollection?: {
+      items: Array<ContentfulCaseStudyPage | null>;
     };
   };
   errors?: Array<{

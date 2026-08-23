@@ -1,14 +1,14 @@
 import 'server-only';
 
 import { cache } from 'react';
-import { siteSettingsQuery } from '../queries';
+import { siteSettingsQuery } from '../queries/queries';
 import type { ContentfulSiteSettingsResponse } from '../contentful-types';
 import {
-  getFilteredNavItems,
-  getFilteredFooterLinks,
+  normalizeNavItems,
+  normalizeFooterLinks,
 } from '../transformations';
 import { SiteSettingsData } from '../models';
-import { siteSettingsFallback } from './fallbacks';
+import { siteSettingsFallback } from '../fallbacks';
 
 export const getSiteSettings = cache(async (): Promise<SiteSettingsData> => {
   const spaceId = process.env.CONTENTFUL_SPACE_ID;
@@ -46,14 +46,16 @@ export const getSiteSettings = cache(async (): Promise<SiteSettingsData> => {
 
   const globalSettings = result?.data?.siteSettingsCollection?.items[0];
   const siteName = globalSettings?.siteName ?? siteSettingsFallback.siteName;
+  const navigation = normalizeNavItems(
+          globalSettings?.primaryNavigation?.itemsCollection?.items
+        );
+  const footerLinks = normalizeFooterLinks(globalSettings?.footerLinksCollection?.items);
 
   return {
     siteName,
     navbar: {
       navigation:
-        getFilteredNavItems(
-          globalSettings?.primaryNavigation?.itemsCollection?.items
-        ) ??
+        navigation.length > 0 ? navigation :
         ([
           ...siteSettingsFallback.navbar.navigation,
         ] as SiteSettingsData['navbar']['navigation']),
@@ -65,7 +67,7 @@ export const getSiteSettings = cache(async (): Promise<SiteSettingsData> => {
       location:
         globalSettings?.location ?? siteSettingsFallback.footer.location,
       links:
-        getFilteredFooterLinks(globalSettings?.footerLinksCollection?.items) ??
+        footerLinks.length > 0 ? footerLinks :
         ([
           ...siteSettingsFallback.footer.links,
         ] as SiteSettingsData['footer']['links']),

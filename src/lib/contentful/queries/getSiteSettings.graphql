@@ -1,0 +1,54 @@
+query SiteSettings {
+  siteSettingsCollection(limit: 1) {
+    items {
+      sys {
+        id
+      }
+      siteName
+      primaryNavigation {
+        __typename
+
+        ... on Navigation {
+          sys {
+            id
+          }
+          name
+          location
+
+          itemsCollection(limit: 20) {
+            items {
+              sys {
+                id
+              }
+              __typename
+
+              ... on NavigationItem {
+                name
+                destinationType
+                path
+                sectionId
+                openInNewTab
+                isVisible
+              }
+            }
+          }
+        }
+      }
+      footerLinksCollection(limit: 10) { 
+        items {
+          __typename
+
+          ... on Link {
+            label  
+            linkType 
+            externalUrl
+            openInNewTab 
+            accessibleLabel
+          }
+        }
+      }
+      copyrightText
+      location
+    }
+  }
+}

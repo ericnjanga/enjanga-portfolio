@@ -1,0 +1,28 @@
+fragment LinkFields on Link {
+  sys {
+    id
+  }
+  label
+  linkType
+  externalUrl
+  openInNewTab
+  accessibleLabel
+    
+  internalDestination {
+    __typename 
+
+    ... on HomePage {
+      sys {
+        id
+      }
+      slug
+    }
+
+    ... on CaseStudiesPage {
+      sys {
+        id
+      }
+      slug
+    }
+  }
+}
