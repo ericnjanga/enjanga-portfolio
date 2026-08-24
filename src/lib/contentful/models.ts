@@ -23,6 +23,12 @@ export type HomePageData = { // Component-ready data structure ...
   aboutSection: ContentSectionData; 
 };
 
+export type CaseStudiesPageData = { // Component-ready data structure ...
+  seoTitle: string;
+  seoDescription: string; 
+  hero: HeroData; 
+};
+
 export type ContentSectionData = { // Component-ready data structure ...
   title: string; 
   body: RichTextData;

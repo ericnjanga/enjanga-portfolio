@@ -62,22 +62,19 @@ export const normalizeNavItems = (
     );
 };
 
-export const normalizeFooterLinks = (
-  links: Array<ContentfulLink | null> | null | undefined
-): LinkData[] => {
-  if (!links || containsNothingOfValue(links)) return [];
+export const normalizeLink = (link: RawLink | null): LinkData | null => {
+  if (!link?.label) return null;
+  
+  const href = link.linkType === 'internal' ? resolveInternalDestination(link.internalDestination) : link.externalUrl;
 
-  return links
-    .filter(
-      (link): link is ContentfulLink =>
-        link?.__typename === 'Link' && Boolean(link?.label && link.externalUrl)
-    )
-    .map((link) => ({
-      label: link.label ?? '',
-      href: link.externalUrl ?? '',
-      openInNewTab: link.openInNewTab ?? false,
-      accessibleLabel: link.accessibleLabel || undefined,
-    }));
+  if (!href) return null;
+
+  return {
+    label: link.label,
+    href,
+    openInNewTab: link.linkType === 'external' ? (link.openInNewTab ?? false),
+    accessibleLabel: link.accessibleLabel || undefined,
+  };
 };
 
 export const normalizeExpertiseItems = (
@@ -129,7 +126,7 @@ export function getRichTextData(
 export const getAboutSectionCtaData = (
   cta: ContentfulLink | null
 ): LinkData => {
-  if (!cta || isEmptyOrContainsOnlyNull(cta)) return { ...aboutCtaFallback };
+  if (!cta?.label) return { ...aboutCtaFallback };
 
   return {
     label: cta.label ?? '',

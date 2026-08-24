@@ -1,55 +1,26 @@
 import 'server-only';
 
 import { cache } from 'react';
-import { siteSettingsQuery } from '../queries/queries';
-import type { ContentfulSiteSettingsResponse } from '../contentful-types';
+import { SiteSettingsDocument } from '../generated/graphql';
+import { execute } from '../client/execute';
+
+// import type { ContentfulSiteSettingsResponse } from '../contentful-types';
 import {
   normalizeNavItems,
-  normalizeFooterLinks,
+  normalizeLink,
 } from '../transformations';
 import { SiteSettingsData } from '../models';
 import { siteSettingsFallback } from '../fallbacks';
 
-export const getSiteSettings = cache(async (): Promise<SiteSettingsData> => {
-  const spaceId = process.env.CONTENTFUL_SPACE_ID;
-  const environment = process.env.CONTENTFUL_ENVIRONMENT ?? 'master';
-  const deliveryToken = process.env.CONTENTFUL_DELIVERY_TOKEN;
+export const getSiteSettings = cache(async ()=> {
+  const result = await execute(SiteSettingsDocument, {});
 
-  if (!spaceId || !environment || !deliveryToken) {
-    throw new Error('Contentful environment variables are not set.');
-  }
-
-  const response = await fetch(
-    `https://graphql.contentful.com/content/v1/spaces/${spaceId}/environments/${environment}`,
-    {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${deliveryToken}`,
-      },
-      body: JSON.stringify({ query: siteSettingsQuery }),
-
-      // Refresh Contentful content at most every 5 minutes (300 seconds)
-      next: { revalidate: 300 },
-    }
-  );
-
-  const result: ContentfulSiteSettingsResponse = await response.json();
-
-  if (!response.ok || result.errors?.length) {
-    const details =
-      result.errors?.map(({ message }) => message).join(', ') ||
-      `HTTP ${response.status}`;
-
-    throw new Error(`Contentful request failed: ${details}`);
-  }
-
-  const globalSettings = result?.data?.siteSettingsCollection?.items[0];
+  const globalSettings = result?.siteSettingsCollection?.items[0];
   const siteName = globalSettings?.siteName ?? siteSettingsFallback.siteName;
   const navigation = normalizeNavItems(
           globalSettings?.primaryNavigation?.itemsCollection?.items
         );
-  const footerLinks = normalizeFooterLinks(globalSettings?.footerLinksCollection?.items);
+  const footerLinks = normalizeLink(globalSettings?.footerLinksCollection?.items);
 
   return {
     siteName,
@@ -67,7 +38,7 @@ export const getSiteSettings = cache(async (): Promise<SiteSettingsData> => {
       location:
         globalSettings?.location ?? siteSettingsFallback.footer.location,
       links:
-        footerLinks.length > 0 ? footerLinks :
+        footerLinks?.length > 0 ? footerLinks :
         ([
           ...siteSettingsFallback.footer.links,
         ] as SiteSettingsData['footer']['links']),

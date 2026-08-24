@@ -1,0 +1,21 @@
+fragment ContentSectionFields {
+  sys {
+    id
+  } 
+  title 
+
+  body {
+    json 
+  }
+
+  ...ImageFields
+  imagePosition
+
+  cta {
+    __typename 
+    
+    ... on Link {
+      ...LinkFields
+    }
+  }
+}

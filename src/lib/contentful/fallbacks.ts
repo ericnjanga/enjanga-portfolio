@@ -10,6 +10,7 @@ import type {
   LinkData,
   NavigationItemData,
   HomePageData,
+  CaseStudiesPageData,
   ImageData,
 } from './models';
 
@@ -55,7 +56,7 @@ export const siteSettingsFallback: SiteSettingsData = {
 };
 
 export const aboutImageFallback: ImageData = {
-  url: '/images/profile-fallbak.jpg',
+  url: '/images/profile-fallback.jpg',
   description: 'A picture of me.',
   width: 1052,
   height: 800,
@@ -119,5 +120,15 @@ export const homePageFallback: HomePageData = {
     imageAltText: 'Profile picture of Eric Njanga',
     imagePosition: 'left',
     cta: { ...aboutCtaFallback },
+  },
+};
+
+
+export const caseStudiesPageFallback: CaseStudiesPageData = {
+  seoTitle: 'case studies title...',
+  seoDescription: 'case studies description...',
+  hero: {
+    title: 'case studies...',
+    subtitle: 'case studies subtitle...',
   },
 };

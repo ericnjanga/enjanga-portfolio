@@ -1,0 +1,7 @@
+fragment HeroFields on Hero {
+  sys {
+    id
+  } 
+  title
+  subtitle  
+}

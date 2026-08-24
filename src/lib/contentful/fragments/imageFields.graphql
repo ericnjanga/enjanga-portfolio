@@ -1,0 +1,10 @@
+fragment ImageFields {
+  image { 
+    url 
+    width
+    height
+    description
+  }
+
+  imageAltText
+}

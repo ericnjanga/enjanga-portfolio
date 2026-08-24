@@ -89,8 +89,8 @@ export type ContentfulNavigation = {
   } | null;
 };
 
-export type ContentfulCaseStudyPage = {
-  __typename: 'CaseStudyPage';
+export type ContentfulCaseStudiesPage = {
+  __typename: 'CaseStudiesPage';
   sys: ContentfulSys;
   slug: string | null;
   seoTitle: string | null;
@@ -98,7 +98,7 @@ export type ContentfulCaseStudyPage = {
   hero: ContentfulHero | null;
 };
 
-export type ContentfulInternalDestination = ContentfulHomePageReference | ContentfulCaseStudyPageReference;
+export type ContentfulInternalDestination = ContentfulHomePageReference | ContentfulCaseStudiesPageReference;
 
 export type ContentfulHomePageReference = {
   __typename: 'HomePage';
@@ -106,8 +106,8 @@ export type ContentfulHomePageReference = {
   slug: string | null;
 };
 
-export type ContentfulCaseStudyPageReference = {
-  __typename: 'CaseStudyPage';
+export type ContentfulCaseStudiesPageReference = {
+  __typename: 'CaseStudiesPage';
   sys: ContentfulSys;
   slug: string | null;
 };
@@ -145,7 +145,7 @@ export type ContentfulHomePageResponse = { // Row data from contentful ...
 export type ContentfulCaseStudiesPageResponse = { // Row data from contentful ...
   data?: {
     caseStudiesPageCollection?: {
-      items: Array<ContentfulCaseStudyPage | null>;
+      items: Array<ContentfulCaseStudiesPage | null>;
     };
   };
   errors?: Array<{

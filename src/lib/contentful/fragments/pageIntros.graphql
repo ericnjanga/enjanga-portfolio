@@ -1,0 +1,8 @@
+fragment PageIntros {
+  sys {
+    id
+  } 
+  slug
+  seoTitle
+  seoDescription
+}
