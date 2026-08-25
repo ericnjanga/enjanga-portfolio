@@ -3,6 +3,12 @@
   background: #edf5ff;
 }
 
+.hero,
+.expertise,
+.about {
+  scroll-margin-top: 2rem;
+}
+
 .container {
   width: min(100% - 3rem, 76rem);
   margin-inline: auto;
