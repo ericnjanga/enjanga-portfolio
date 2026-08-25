@@ -1,0 +1,32 @@
+.reveal > section > * {
+  filter: blur(3px);
+  opacity: 0;
+  transform: translateY(4rem) scale(0.985);
+  transition: filter 900ms cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 1000ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1150ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: filter, opacity, transform;
+}
+
+.reveal > section > :nth-child(2) {
+  transition-delay: 180ms;
+}
+
+.reveal[data-visible='true'] > section > * {
+  filter: blur(0);
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.reveal[data-visible='true'] > section > :nth-child(2) {
+  transition-delay: 180ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal > section > * {
+    filter: none;
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

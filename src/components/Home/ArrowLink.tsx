@@ -11,8 +11,10 @@ export default function ArrowLink({ link }: { link: LinkData }) {
       rel={link.openInNewTab ? 'noopener noreferrer' : undefined}
       className={styles.cta}
     >
-      {link.label}
-      <span aria-hidden="true">→</span>
+      <span className={styles.ctaLabel}>{link.label}</span>
+      <span className={styles.ctaArrow} aria-hidden="true">
+        →
+      </span>
     </Link>
   );
 }
