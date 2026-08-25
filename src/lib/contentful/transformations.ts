@@ -4,30 +4,114 @@
  * These functions transform raw Contentful records into application-ready data.
  * ---------------
  * */
-import type {
-  ContentfulLink,
-  ContentfulNavigationItem,
-  ContentfulExpertiseItem,
-  ContentfulContentSection,
-  ContentfulImage,
-  ContentfulRichText,
+import type { 
+  ContentfulNavigationItem, 
+  ContentfulRichText, 
 } from './contentful-types';
 import type {
   ContentSectionData,
+  ExpertiseSectionData,
   ExpertiseItemData,
   LinkData,
   NavigationItemData,
   ImageData,
   RichTextData,
 } from './models';
-import { 
+import {
   containsNothingOfValue,
   isEmptyOrContainsOnlyNull,
 } from '../utils/predicates';
 import { aboutImageFallback, aboutCtaFallback } from './fallbacks';
- 
+import type {
+  NavigationItemFieldsFragment,
+  LinkFieldsFragment,
+  ContentSectionFieldsFragment,
+  ExpertiseSectionFieldsFragment,
+  ExpertiseCollectionItemsFragment,
+  ImageFieldsFragment,
+  HomePageIntroFieldsFragment,
+  CaseStudiesPageIntroFieldsFragment,
+} from './generated/graphql';
 
-export function resolveHref(item: ContentfulNavigationItem): string {
+export const normalizeLink = (link: LinkFieldsFragment | null): LinkData | null => {
+  if (!link || !link?.label) return null;
+
+  const href =
+    link.linkType === 'internal'
+      ? resolveHrefInternalDestination(link)
+      : link.externalUrl;
+
+  if (!href) return null;
+
+  return {
+    label: link.label,
+    href,
+    openInNewTab:
+      link.linkType === 'external' ? link.openInNewTab ?? false : false,
+    accessibleLabel: link.accessibleLabel || undefined,
+  };
+};
+
+// Extranc image props and provide a fallback
+export const getAboutSectionImgData = (
+  image: ImageFieldsFragment | null
+): ImageData => {
+  if (!image || !image?.url || image.width == null || image.height == null) {
+    return { ...aboutImageFallback };
+  }
+
+  return {
+    url: image.url,
+    width: image.width,
+    height: image.height,
+    description: image.description ?? '',
+  };
+};
+
+export const normalizeNavigationItem = (
+  item: NavigationItemFieldsFragment
+): NavigationItemData[] => {
+  if (item.isVisible === false || !item.name) {
+    return [];
+  }
+
+  return [
+    {
+      id: item.sys.id,
+      name: item.name ?? '',
+      href: resolveNavigationItemHref(item),
+      openInNewTab: item.openInNewTab ?? false,
+    },
+  ];
+};
+
+const resolveHrefInternalDestination = (
+  link: LinkFieldsFragment
+): string | null =>
+  link.internalDestination?.__typename === 'CaseStudiesPage' ||
+  link.internalDestination?.__typename === 'HomePage'
+    ? link.internalDestination.slug
+    : null;
+
+export const normalizeAboutSection = (
+  section: ContentSectionFieldsFragment | null
+): ContentSectionData | null => {
+  if (!section || isEmptyOrContainsOnlyNull(section)) return null;
+
+  return {
+    title: section.title ?? '',
+    body: getRichTextData(section.body),
+    image: getAboutSectionImgData(section.image),
+    imageAltText: section.imageAltText ?? '',
+    imagePosition: section.imagePosition ?? '',
+    cta: normalizeLink(section.cta ?? null) ?? null,
+  };
+};
+
+
+
+
+export function resolveNavigationItemHref(item: NavigationItemFieldsFragment): string {
   switch (item.destinationType) {
     case 'homeSection':
       return item.sectionId ? `/#${item.sectionId}` : '/';
@@ -40,73 +124,35 @@ export function resolveHref(item: ContentfulNavigationItem): string {
 }
 
 
-export const normalizeNavItems = (
-  items: Array<ContentfulNavigationItem | null> | null | undefined
-): NavigationItemData[] => {
-  if (!items || containsNothingOfValue(items)) return [];
 
-  return items
-    .filter(
-      (item): item is ContentfulNavigationItem =>
-        item?.__typename === 'NavigationItem' &&
-        item?.isVisible !== false &&
-        Boolean(item.name)
-    )
-    .map(
-      (item): NavigationItemData => ({
-        id: item.sys.id,
-        name: item.name ?? '',
-        href: resolveHref(item),
-        openInNewTab: item.openInNewTab ?? false,
-      })
-    );
-};
 
-export const normalizeLink = (link: RawLink | null): LinkData | null => {
-  if (!link?.label) return null;
-  
-  const href = link.linkType === 'internal' ? resolveInternalDestination(link.internalDestination) : link.externalUrl;
-
-  if (!href) return null;
+export const normalizeExpertiseCollectionItem = (fragment: ExpertiseCollectionItemsFragment | null): ExpertiseItemData | null => {
+  if (!fragment) return null; 
 
   return {
-    label: link.label,
-    href,
-    openInNewTab: link.linkType === 'external' ? (link.openInNewTab ?? false),
-    accessibleLabel: link.accessibleLabel || undefined,
+    title: fragment.title ?? '',
+    description: fragment.description ?? ''
   };
 };
 
-export const normalizeExpertiseItems = (
-  items: Array<ContentfulExpertiseItem | null> | null | undefined
-): Array<ExpertiseItemData> => {
-  if (!items || containsNothingOfValue(items)) return [];
-
-  return items
-    .filter(
-      (item): item is ContentfulExpertiseItem =>
-        item?.__typename === 'ExpertiseItem' &&
-        Boolean(item?.title && item.description)
-    )
-    .map((item) => ({
-      title: item.title ?? '',
-      description: item.description ?? '',
-    }));
-};
-
-// Extranc image props and provide a fallback
-export const getAboutSectionImgData = (
-  image: ContentfulImage | null
-): ImageData => {
-  if (!image?.url || image.width == null || image.height == null) {
-    return { ...aboutImageFallback };
-  }
+export const normalizeExpertiseSectionFields = (
+  fragment: ExpertiseSectionFieldsFragment | null
+): ExpertiseSectionData | null => {
+  if (!fragment) return null;
 
   return {
-    url: image.url,
-    width: image.width,
-    height: image.height,
-    description: image.description ?? '',
+    title: fragment.title ?? '',
+    expertiseItemsCollection: {
+      items: (fragment.expertiseItemsCollection?.items ?? []).flatMap(entry => {
+        if (entry?.__typename !== 'ExpertiseItem') {
+          return [];
+        }
+
+        const item = normalizeExpertiseCollectionItem(entry);
+
+        return item ? [item] : [];
+      }),
+    }
   };
 };
 
@@ -121,32 +167,3 @@ export function getRichTextData(
     },
   };
 }
-
-// Extranc image props and provide a fallback
-export const getAboutSectionCtaData = (
-  cta: ContentfulLink | null
-): LinkData => {
-  if (!cta?.label) return { ...aboutCtaFallback };
-
-  return {
-    label: cta.label ?? '',
-    href: cta.externalUrl ?? '',
-    openInNewTab: cta.openInNewTab ?? false,
-    accessibleLabel: cta.accessibleLabel || undefined,
-  };
-};
-
-export const normalizeAboutSection = (
-  section: ContentfulContentSection | null | undefined
-): ContentSectionData | null => {
-  if (!section || isEmptyOrContainsOnlyNull(section)) return null;
-
-  return {
-    title: section.title ?? '',
-    body: getRichTextData(section.body),
-    image: getAboutSectionImgData(section.image),
-    imageAltText: section.imageAltText ?? '',
-    imagePosition: section.imagePosition ?? '',
-    cta: getAboutSectionCtaData(section.cta),
-  };
-};

@@ -1,0 +1,7 @@
+fragment expertiseCollectionItems on ExpertiseItem {
+  sys {
+    id    
+  }
+  title
+  description
+}

@@ -4,292 +4,62 @@ type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
 /** Internal type. DO NOT USE DIRECTLY. */
 export type Incremental<T> = T | { [P in keyof T]?: P extends ' $fragmentName' | '__typename' ? T[P] : never };
 import { DocumentTypeDecoration } from '@graphql-typed-document-node/core';
-export type LinkFieldsFragment = { label: string | null, linkType: string | null, externalUrl: string | null, openInNewTab: boolean | null, accessibleLabel: string | null, sys: { id: string }, internalDestination:
-    | { __typename: 'BlogPost' }
+export type CaseStudiesPageIntroFieldsFragment = { slug: string | null, seoTitle: string | null, seoDescription: string | null, sys: { id: string } };
+
+export type ContentSectionFieldsFragment = { title: string | null, imageAltText: string | null, imagePosition: string | null, sys: { id: string }, body: { json: unknown } | null, image: { url: string | null, width: number | null, height: number | null, description: string | null } | null, cta: { __typename: 'Link', label: string | null, linkType: string | null, externalUrl: string | null, openInNewTab: boolean | null, accessibleLabel: string | null, sys: { id: string }, internalDestination:
+      | { __typename: 'CaseStudiesPage', slug: string | null, sys: { id: string } }
+      | { __typename: 'HomePage', slug: string | null, sys: { id: string } }
+     | null } | null };
+
+export type ExpertiseCollectionItemsFragment = { title: string | null, description: string | null, sys: { id: string } };
+
+export type ExpertiseSectionFieldsFragment = { title: string | null, imageAltText: string | null, sys: { id: string }, expertiseItemsCollection: { items: Array<{ __typename: 'ExpertiseItem', title: string | null, description: string | null, sys: { id: string } } | null> } | null, image: { url: string | null, width: number | null, height: number | null, description: string | null } | null, cta: { __typename: 'Link', label: string | null, linkType: string | null, externalUrl: string | null, openInNewTab: boolean | null, accessibleLabel: string | null, sys: { id: string }, internalDestination:
+      | { __typename: 'CaseStudiesPage', slug: string | null, sys: { id: string } }
+      | { __typename: 'HomePage', slug: string | null, sys: { id: string } }
+     | null } | null };
+
+export type HeroFieldsFragment = { title: string | null, subtitle: string | null, sys: { id: string } };
+
+export type HomePageIntroFieldsFragment = { slug: string | null, seoTitle: string | null, seoDescription: string | null, sys: { id: string } };
+
+export type ImageFieldsFragment = { url: string | null, width: number | null, height: number | null, description: string | null };
+
+export type LinkFieldsFragment = { __typename: 'Link', label: string | null, linkType: string | null, externalUrl: string | null, openInNewTab: boolean | null, accessibleLabel: string | null, sys: { id: string }, internalDestination:
     | { __typename: 'CaseStudiesPage', slug: string | null, sys: { id: string } }
-    | { __typename: 'Category' }
-    | { __typename: 'ContentSection' }
-    | { __typename: 'ExpertiseItem' }
-    | { __typename: 'ExpertiseSection' }
-    | { __typename: 'ExpertiseSpecification' }
-    | { __typename: 'Hero' }
     | { __typename: 'HomePage', slug: string | null, sys: { id: string } }
-    | { __typename: 'InfoBlock' }
-    | { __typename: 'Link' }
-    | { __typename: 'Navigation' }
-    | { __typename: 'NavigationItem' }
-    | { __typename: 'Organization' }
-    | { __typename: 'Page' }
-    | { __typename: 'Quote' }
-    | { __typename: 'Service' }
-    | { __typename: 'SiteSettings' }
    | null };
+
+export type NavigationFieldsFragment = { __typename: 'Navigation', name: string | null, location: string | null, sys: { id: string }, itemsCollection: { items: Array<{ __typename: 'NavigationItem', name: string | null, destinationType: string | null, path: string | null, sectionId: string | null, openInNewTab: boolean | null, isVisible: boolean | null, sys: { id: string } } | null> } | null };
+
+export type NavigationItemFieldsFragment = { __typename: 'NavigationItem', name: string | null, destinationType: string | null, path: string | null, sectionId: string | null, openInNewTab: boolean | null, isVisible: boolean | null, sys: { id: string } };
 
 export type CaseStudiesPageQueryVariables = Exact<{
   slug: string;
 }>;
 
 
-export type CaseStudiesPageQuery = { caseStudiesPageCollection: { items: Array<{ slug: string | null, seoTitle: string | null, seoDescription: string | null, sys: { id: string }, hero:
-        | { __typename: 'BlogPost' }
-        | { __typename: 'CaseStudiesPage' }
-        | { __typename: 'Category' }
-        | { __typename: 'ContentSection' }
-        | { __typename: 'ExpertiseItem' }
-        | { __typename: 'ExpertiseSection' }
-        | { __typename: 'ExpertiseSpecification' }
-        | { __typename: 'Hero', title: string | null, subtitle: string | null, sys: { id: string } }
-        | { __typename: 'HomePage' }
-        | { __typename: 'InfoBlock' }
-        | { __typename: 'Link' }
-        | { __typename: 'Navigation' }
-        | { __typename: 'NavigationItem' }
-        | { __typename: 'Organization' }
-        | { __typename: 'Page' }
-        | { __typename: 'Quote' }
-        | { __typename: 'Service' }
-        | { __typename: 'SiteSettings' }
-       | null } | null> } | null };
+export type CaseStudiesPageQuery = { caseStudiesPageCollection: { items: Array<{ slug: string | null, seoTitle: string | null, seoDescription: string | null, hero: { __typename: 'Hero', title: string | null, subtitle: string | null, sys: { id: string } } | null, sys: { id: string } } | null> } | null };
 
 export type HomePageQueryVariables = Exact<{
   slug: string;
 }>;
 
 
-export type HomePageQuery = { homePageCollection: { items: Array<{ slug: string | null, seoTitle: string | null, seoDescription: string | null, sys: { id: string }, hero:
-        | { __typename: 'BlogPost' }
-        | { __typename: 'CaseStudiesPage' }
-        | { __typename: 'Category' }
-        | { __typename: 'ContentSection' }
-        | { __typename: 'ExpertiseItem' }
-        | { __typename: 'ExpertiseSection' }
-        | { __typename: 'ExpertiseSpecification' }
-        | { __typename: 'Hero', title: string | null, subtitle: string | null, sys: { id: string } }
-        | { __typename: 'HomePage' }
-        | { __typename: 'InfoBlock' }
-        | { __typename: 'Link' }
-        | { __typename: 'Navigation' }
-        | { __typename: 'NavigationItem' }
-        | { __typename: 'Organization' }
-        | { __typename: 'Page' }
-        | { __typename: 'Quote' }
-        | { __typename: 'Service' }
-        | { __typename: 'SiteSettings' }
-       | null, expertiseSection:
-        | { __typename: 'BlogPost' }
-        | { __typename: 'CaseStudiesPage' }
-        | { __typename: 'Category' }
-        | { __typename: 'ContentSection' }
-        | { __typename: 'ExpertiseItem' }
-        | { __typename: 'ExpertiseSection', title: string | null, imageAltText: string | null, sys: { id: string }, expertiseItemsCollection: { items: Array<
-              | { __typename: 'BlogPost' }
-              | { __typename: 'CaseStudiesPage' }
-              | { __typename: 'Category' }
-              | { __typename: 'ContentSection' }
-              | { __typename: 'ExpertiseItem', title: string | null, description: string | null, sys: { id: string } }
-              | { __typename: 'ExpertiseSection' }
-              | { __typename: 'ExpertiseSpecification' }
-              | { __typename: 'Hero' }
-              | { __typename: 'HomePage' }
-              | { __typename: 'InfoBlock' }
-              | { __typename: 'Link' }
-              | { __typename: 'Navigation' }
-              | { __typename: 'NavigationItem' }
-              | { __typename: 'Organization' }
-              | { __typename: 'Page' }
-              | { __typename: 'Quote' }
-              | { __typename: 'Service' }
-              | { __typename: 'SiteSettings' }
-             | null> } | null, image: { url: string | null, width: number | null, height: number | null, description: string | null } | null, cta:
-            | { __typename: 'BlogPost' }
-            | { __typename: 'CaseStudiesPage' }
-            | { __typename: 'Category' }
-            | { __typename: 'ContentSection' }
-            | { __typename: 'ExpertiseItem' }
-            | { __typename: 'ExpertiseSection' }
-            | { __typename: 'ExpertiseSpecification' }
-            | { __typename: 'Hero' }
-            | { __typename: 'HomePage' }
-            | { __typename: 'InfoBlock' }
-            | { __typename: 'Link', label: string | null, linkType: string | null, externalUrl: string | null, openInNewTab: boolean | null, accessibleLabel: string | null, sys: { id: string }, internalDestination:
-                | { __typename: 'BlogPost' }
-                | { __typename: 'CaseStudiesPage', slug: string | null, sys: { id: string } }
-                | { __typename: 'Category' }
-                | { __typename: 'ContentSection' }
-                | { __typename: 'ExpertiseItem' }
-                | { __typename: 'ExpertiseSection' }
-                | { __typename: 'ExpertiseSpecification' }
-                | { __typename: 'Hero' }
-                | { __typename: 'HomePage', slug: string | null, sys: { id: string } }
-                | { __typename: 'InfoBlock' }
-                | { __typename: 'Link' }
-                | { __typename: 'Navigation' }
-                | { __typename: 'NavigationItem' }
-                | { __typename: 'Organization' }
-                | { __typename: 'Page' }
-                | { __typename: 'Quote' }
-                | { __typename: 'Service' }
-                | { __typename: 'SiteSettings' }
-               | null }
-            | { __typename: 'Navigation' }
-            | { __typename: 'NavigationItem' }
-            | { __typename: 'Organization' }
-            | { __typename: 'Page' }
-            | { __typename: 'Quote' }
-            | { __typename: 'Service' }
-            | { __typename: 'SiteSettings' }
-           | null }
-        | { __typename: 'ExpertiseSpecification' }
-        | { __typename: 'Hero' }
-        | { __typename: 'HomePage' }
-        | { __typename: 'InfoBlock' }
-        | { __typename: 'Link' }
-        | { __typename: 'Navigation' }
-        | { __typename: 'NavigationItem' }
-        | { __typename: 'Organization' }
-        | { __typename: 'Page' }
-        | { __typename: 'Quote' }
-        | { __typename: 'Service' }
-        | { __typename: 'SiteSettings' }
-       | null, aboutSection:
-        | { __typename: 'BlogPost' }
-        | { __typename: 'CaseStudiesPage' }
-        | { __typename: 'Category' }
-        | { __typename: 'ContentSection', title: string | null, imageAltText: string | null, imagePosition: string | null, sys: { id: string }, body: { json: unknown } | null, image: { url: string | null, width: number | null, height: number | null, description: string | null } | null, cta:
-            | { __typename: 'BlogPost' }
-            | { __typename: 'CaseStudiesPage' }
-            | { __typename: 'Category' }
-            | { __typename: 'ContentSection' }
-            | { __typename: 'ExpertiseItem' }
-            | { __typename: 'ExpertiseSection' }
-            | { __typename: 'ExpertiseSpecification' }
-            | { __typename: 'Hero' }
-            | { __typename: 'HomePage' }
-            | { __typename: 'InfoBlock' }
-            | { __typename: 'Link', label: string | null, linkType: string | null, externalUrl: string | null, openInNewTab: boolean | null, accessibleLabel: string | null, sys: { id: string }, internalDestination:
-                | { __typename: 'BlogPost' }
-                | { __typename: 'CaseStudiesPage', slug: string | null, sys: { id: string } }
-                | { __typename: 'Category' }
-                | { __typename: 'ContentSection' }
-                | { __typename: 'ExpertiseItem' }
-                | { __typename: 'ExpertiseSection' }
-                | { __typename: 'ExpertiseSpecification' }
-                | { __typename: 'Hero' }
-                | { __typename: 'HomePage', slug: string | null, sys: { id: string } }
-                | { __typename: 'InfoBlock' }
-                | { __typename: 'Link' }
-                | { __typename: 'Navigation' }
-                | { __typename: 'NavigationItem' }
-                | { __typename: 'Organization' }
-                | { __typename: 'Page' }
-                | { __typename: 'Quote' }
-                | { __typename: 'Service' }
-                | { __typename: 'SiteSettings' }
-               | null }
-            | { __typename: 'Navigation' }
-            | { __typename: 'NavigationItem' }
-            | { __typename: 'Organization' }
-            | { __typename: 'Page' }
-            | { __typename: 'Quote' }
-            | { __typename: 'Service' }
-            | { __typename: 'SiteSettings' }
-           | null }
-        | { __typename: 'ExpertiseItem' }
-        | { __typename: 'ExpertiseSection' }
-        | { __typename: 'ExpertiseSpecification' }
-        | { __typename: 'Hero' }
-        | { __typename: 'HomePage' }
-        | { __typename: 'InfoBlock' }
-        | { __typename: 'Link' }
-        | { __typename: 'Navigation' }
-        | { __typename: 'NavigationItem' }
-        | { __typename: 'Organization' }
-        | { __typename: 'Page' }
-        | { __typename: 'Quote' }
-        | { __typename: 'Service' }
-        | { __typename: 'SiteSettings' }
-       | null } | null> } | null };
+export type HomePageQuery = { homePageCollection: { items: Array<{ slug: string | null, seoTitle: string | null, seoDescription: string | null, hero: { __typename: 'Hero', title: string | null, subtitle: string | null, sys: { id: string } } | null, expertiseSection: { __typename: 'ExpertiseSection', title: string | null, imageAltText: string | null, sys: { id: string }, expertiseItemsCollection: { items: Array<{ __typename: 'ExpertiseItem', title: string | null, description: string | null, sys: { id: string } } | null> } | null, image: { url: string | null, width: number | null, height: number | null, description: string | null } | null, cta: { __typename: 'Link', label: string | null, linkType: string | null, externalUrl: string | null, openInNewTab: boolean | null, accessibleLabel: string | null, sys: { id: string }, internalDestination:
+            | { __typename: 'CaseStudiesPage', slug: string | null, sys: { id: string } }
+            | { __typename: 'HomePage', slug: string | null, sys: { id: string } }
+           | null } | null } | null, aboutSection: { __typename: 'ContentSection', title: string | null, imageAltText: string | null, imagePosition: string | null, sys: { id: string }, body: { json: unknown } | null, image: { url: string | null, width: number | null, height: number | null, description: string | null } | null, cta: { __typename: 'Link', label: string | null, linkType: string | null, externalUrl: string | null, openInNewTab: boolean | null, accessibleLabel: string | null, sys: { id: string }, internalDestination:
+            | { __typename: 'CaseStudiesPage', slug: string | null, sys: { id: string } }
+            | { __typename: 'HomePage', slug: string | null, sys: { id: string } }
+           | null } | null } | null, sys: { id: string } } | null> } | null };
 
 export type SiteSettingsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type SiteSettingsQuery = { siteSettingsCollection: { items: Array<{ siteName: string | null, copyrightText: string | null, location: string | null, sys: { id: string }, primaryNavigation:
-        | { __typename: 'BlogPost' }
-        | { __typename: 'CaseStudiesPage' }
-        | { __typename: 'Category' }
-        | { __typename: 'ContentSection' }
-        | { __typename: 'ExpertiseItem' }
-        | { __typename: 'ExpertiseSection' }
-        | { __typename: 'ExpertiseSpecification' }
-        | { __typename: 'Hero' }
-        | { __typename: 'HomePage' }
-        | { __typename: 'InfoBlock' }
-        | { __typename: 'Link' }
-        | { __typename: 'Navigation', name: string | null, location: string | null, sys: { id: string }, itemsCollection: { items: Array<
-              | { __typename: 'BlogPost', sys: { id: string } }
-              | { __typename: 'CaseStudiesPage', sys: { id: string } }
-              | { __typename: 'Category', sys: { id: string } }
-              | { __typename: 'ContentSection', sys: { id: string } }
-              | { __typename: 'ExpertiseItem', sys: { id: string } }
-              | { __typename: 'ExpertiseSection', sys: { id: string } }
-              | { __typename: 'ExpertiseSpecification', sys: { id: string } }
-              | { __typename: 'Hero', sys: { id: string } }
-              | { __typename: 'HomePage', sys: { id: string } }
-              | { __typename: 'InfoBlock', sys: { id: string } }
-              | { __typename: 'Link', sys: { id: string } }
-              | { __typename: 'Navigation', sys: { id: string } }
-              | { __typename: 'NavigationItem', name: string | null, destinationType: string | null, path: string | null, sectionId: string | null, openInNewTab: boolean | null, isVisible: boolean | null, sys: { id: string } }
-              | { __typename: 'Organization', sys: { id: string } }
-              | { __typename: 'Page', sys: { id: string } }
-              | { __typename: 'Quote', sys: { id: string } }
-              | { __typename: 'Service', sys: { id: string } }
-              | { __typename: 'SiteSettings', sys: { id: string } }
-             | null> } | null }
-        | { __typename: 'NavigationItem' }
-        | { __typename: 'Organization' }
-        | { __typename: 'Page' }
-        | { __typename: 'Quote' }
-        | { __typename: 'Service' }
-        | { __typename: 'SiteSettings' }
-       | null, footerLinksCollection: { items: Array<
-          | { __typename: 'BlogPost' }
-          | { __typename: 'CaseStudiesPage' }
-          | { __typename: 'Category' }
-          | { __typename: 'ContentSection' }
-          | { __typename: 'ExpertiseItem' }
-          | { __typename: 'ExpertiseSection' }
-          | { __typename: 'ExpertiseSpecification' }
-          | { __typename: 'Hero' }
-          | { __typename: 'HomePage' }
-          | { __typename: 'InfoBlock' }
-          | { __typename: 'Link', label: string | null, linkType: string | null, externalUrl: string | null, openInNewTab: boolean | null, accessibleLabel: string | null, sys: { id: string }, internalDestination:
-              | { __typename: 'BlogPost' }
-              | { __typename: 'CaseStudiesPage', slug: string | null, sys: { id: string } }
-              | { __typename: 'Category' }
-              | { __typename: 'ContentSection' }
-              | { __typename: 'ExpertiseItem' }
-              | { __typename: 'ExpertiseSection' }
-              | { __typename: 'ExpertiseSpecification' }
-              | { __typename: 'Hero' }
-              | { __typename: 'HomePage', slug: string | null, sys: { id: string } }
-              | { __typename: 'InfoBlock' }
-              | { __typename: 'Link' }
-              | { __typename: 'Navigation' }
-              | { __typename: 'NavigationItem' }
-              | { __typename: 'Organization' }
-              | { __typename: 'Page' }
-              | { __typename: 'Quote' }
-              | { __typename: 'Service' }
-              | { __typename: 'SiteSettings' }
-             | null }
-          | { __typename: 'Navigation' }
-          | { __typename: 'NavigationItem' }
-          | { __typename: 'Organization' }
-          | { __typename: 'Page' }
-          | { __typename: 'Quote' }
-          | { __typename: 'Service' }
-          | { __typename: 'SiteSettings' }
-         | null> } | null } | null> } | null };
+export type SiteSettingsQuery = { siteSettingsCollection: { items: Array<{ siteName: string | null, copyrightText: string | null, location: string | null, sys: { id: string }, primaryNavigation: { __typename: 'Navigation', name: string | null, location: string | null, sys: { id: string }, itemsCollection: { items: Array<{ __typename: 'NavigationItem', name: string | null, destinationType: string | null, path: string | null, sectionId: string | null, openInNewTab: boolean | null, isVisible: boolean | null, sys: { id: string } } | null> } | null } | null, footerLinksCollection: { items: Array<{ __typename: 'Link', label: string | null, linkType: string | null, externalUrl: string | null, openInNewTab: boolean | null, accessibleLabel: string | null, sys: { id: string }, internalDestination:
+            | { __typename: 'CaseStudiesPage', slug: string | null, sys: { id: string } }
+            | { __typename: 'HomePage', slug: string | null, sys: { id: string } }
+           | null } | null> } | null } | null> } | null };
 
 export class TypedDocumentString<TResult, TVariables>
   extends String
@@ -309,8 +79,27 @@ export class TypedDocumentString<TResult, TVariables>
     return this.value;
   }
 }
+export const CaseStudiesPageIntroFieldsFragmentDoc = new TypedDocumentString(`
+    fragment CaseStudiesPageIntroFields on CaseStudiesPage {
+  sys {
+    id
+  }
+  slug
+  seoTitle
+  seoDescription
+}
+    `, {"fragmentName":"CaseStudiesPageIntroFields"}) as unknown as TypedDocumentString<CaseStudiesPageIntroFieldsFragment, unknown>;
+export const ImageFieldsFragmentDoc = new TypedDocumentString(`
+    fragment ImageFields on Asset {
+  url
+  width
+  height
+  description
+}
+    `, {"fragmentName":"ImageFields"}) as unknown as TypedDocumentString<ImageFieldsFragment, unknown>;
 export const LinkFieldsFragmentDoc = new TypedDocumentString(`
     fragment LinkFields on Link {
+  __typename
   sys {
     id
   }
@@ -336,114 +125,301 @@ export const LinkFieldsFragmentDoc = new TypedDocumentString(`
   }
 }
     `, {"fragmentName":"LinkFields"}) as unknown as TypedDocumentString<LinkFieldsFragment, unknown>;
+export const ContentSectionFieldsFragmentDoc = new TypedDocumentString(`
+    fragment ContentSectionFields on ContentSection {
+  sys {
+    id
+  }
+  title
+  body {
+    json
+  }
+  image {
+    ...ImageFields
+  }
+  imageAltText
+  imagePosition
+  cta {
+    __typename
+    ...LinkFields
+  }
+}
+    fragment ImageFields on Asset {
+  url
+  width
+  height
+  description
+}
+fragment LinkFields on Link {
+  __typename
+  sys {
+    id
+  }
+  label
+  linkType
+  externalUrl
+  openInNewTab
+  accessibleLabel
+  internalDestination {
+    __typename
+    ... on HomePage {
+      sys {
+        id
+      }
+      slug
+    }
+    ... on CaseStudiesPage {
+      sys {
+        id
+      }
+      slug
+    }
+  }
+}`, {"fragmentName":"ContentSectionFields"}) as unknown as TypedDocumentString<ContentSectionFieldsFragment, unknown>;
+export const ExpertiseCollectionItemsFragmentDoc = new TypedDocumentString(`
+    fragment expertiseCollectionItems on ExpertiseItem {
+  sys {
+    id
+  }
+  title
+  description
+}
+    `, {"fragmentName":"expertiseCollectionItems"}) as unknown as TypedDocumentString<ExpertiseCollectionItemsFragment, unknown>;
+export const ExpertiseSectionFieldsFragmentDoc = new TypedDocumentString(`
+    fragment ExpertiseSectionFields on ExpertiseSection {
+  sys {
+    id
+  }
+  title
+  expertiseItemsCollection(limit: 10) {
+    items {
+      __typename
+      ...expertiseCollectionItems
+    }
+  }
+  image {
+    ...ImageFields
+  }
+  imageAltText
+  cta {
+    __typename
+    ...LinkFields
+  }
+}
+    fragment expertiseCollectionItems on ExpertiseItem {
+  sys {
+    id
+  }
+  title
+  description
+}
+fragment ImageFields on Asset {
+  url
+  width
+  height
+  description
+}
+fragment LinkFields on Link {
+  __typename
+  sys {
+    id
+  }
+  label
+  linkType
+  externalUrl
+  openInNewTab
+  accessibleLabel
+  internalDestination {
+    __typename
+    ... on HomePage {
+      sys {
+        id
+      }
+      slug
+    }
+    ... on CaseStudiesPage {
+      sys {
+        id
+      }
+      slug
+    }
+  }
+}`, {"fragmentName":"ExpertiseSectionFields"}) as unknown as TypedDocumentString<ExpertiseSectionFieldsFragment, unknown>;
+export const HeroFieldsFragmentDoc = new TypedDocumentString(`
+    fragment HeroFields on Hero {
+  sys {
+    id
+  }
+  title
+  subtitle
+}
+    `, {"fragmentName":"HeroFields"}) as unknown as TypedDocumentString<HeroFieldsFragment, unknown>;
+export const HomePageIntroFieldsFragmentDoc = new TypedDocumentString(`
+    fragment HomePageIntroFields on HomePage {
+  sys {
+    id
+  }
+  slug
+  seoTitle
+  seoDescription
+}
+    `, {"fragmentName":"HomePageIntroFields"}) as unknown as TypedDocumentString<HomePageIntroFieldsFragment, unknown>;
+export const NavigationItemFieldsFragmentDoc = new TypedDocumentString(`
+    fragment NavigationItemFields on NavigationItem {
+  __typename
+  sys {
+    id
+  }
+  name
+  destinationType
+  path
+  sectionId
+  openInNewTab
+  isVisible
+}
+    `, {"fragmentName":"NavigationItemFields"}) as unknown as TypedDocumentString<NavigationItemFieldsFragment, unknown>;
+export const NavigationFieldsFragmentDoc = new TypedDocumentString(`
+    fragment NavigationFields on Navigation {
+  __typename
+  sys {
+    id
+  }
+  name
+  location
+  itemsCollection(limit: 20) {
+    items {
+      __typename
+      ...NavigationItemFields
+    }
+  }
+}
+    fragment NavigationItemFields on NavigationItem {
+  __typename
+  sys {
+    id
+  }
+  name
+  destinationType
+  path
+  sectionId
+  openInNewTab
+  isVisible
+}`, {"fragmentName":"NavigationFields"}) as unknown as TypedDocumentString<NavigationFieldsFragment, unknown>;
 export const CaseStudiesPageDocument = new TypedDocumentString(`
     query CaseStudiesPage($slug: String!) {
   caseStudiesPageCollection(where: {slug: $slug}, limit: 1) {
     items {
-      sys {
-        id
-      }
-      slug
-      seoTitle
-      seoDescription
+      ...CaseStudiesPageIntroFields
       hero {
         __typename
-        ... on Hero {
-          sys {
-            id
-          }
-          title
-          subtitle
-        }
+        ...HeroFields
       }
     }
   }
 }
-    `) as unknown as TypedDocumentString<CaseStudiesPageQuery, CaseStudiesPageQueryVariables>;
+    fragment CaseStudiesPageIntroFields on CaseStudiesPage {
+  sys {
+    id
+  }
+  slug
+  seoTitle
+  seoDescription
+}
+fragment HeroFields on Hero {
+  sys {
+    id
+  }
+  title
+  subtitle
+}`) as unknown as TypedDocumentString<CaseStudiesPageQuery, CaseStudiesPageQueryVariables>;
 export const HomePageDocument = new TypedDocumentString(`
     query HomePage($slug: String!) {
   homePageCollection(where: {slug: $slug}, limit: 1) {
     items {
-      sys {
-        id
-      }
-      slug
-      seoTitle
-      seoDescription
+      ...HomePageIntroFields
       hero {
         __typename
-        ... on Hero {
-          sys {
-            id
-          }
-          title
-          subtitle
-        }
+        ...HeroFields
       }
       expertiseSection {
         __typename
-        ... on ExpertiseSection {
-          sys {
-            id
-          }
-          title
-          expertiseItemsCollection(limit: 10) {
-            items {
-              __typename
-              ... on ExpertiseItem {
-                sys {
-                  id
-                }
-                title
-                description
-              }
-            }
-          }
-          image {
-            url
-            width
-            height
-            description
-          }
-          imageAltText
-          cta {
-            __typename
-            ... on Link {
-              ...LinkFields
-            }
-          }
-        }
+        ...ExpertiseSectionFields
       }
       aboutSection {
         __typename
-        ... on ContentSection {
-          sys {
-            id
-          }
-          title
-          body {
-            json
-          }
-          image {
-            url
-            width
-            height
-            description
-          }
-          imageAltText
-          imagePosition
-          cta {
-            __typename
-            ... on Link {
-              ...LinkFields
-            }
-          }
-        }
+        ...ContentSectionFields
       }
     }
   }
 }
-    fragment LinkFields on Link {
+    fragment ContentSectionFields on ContentSection {
+  sys {
+    id
+  }
+  title
+  body {
+    json
+  }
+  image {
+    ...ImageFields
+  }
+  imageAltText
+  imagePosition
+  cta {
+    __typename
+    ...LinkFields
+  }
+}
+fragment expertiseCollectionItems on ExpertiseItem {
+  sys {
+    id
+  }
+  title
+  description
+}
+fragment ExpertiseSectionFields on ExpertiseSection {
+  sys {
+    id
+  }
+  title
+  expertiseItemsCollection(limit: 10) {
+    items {
+      __typename
+      ...expertiseCollectionItems
+    }
+  }
+  image {
+    ...ImageFields
+  }
+  imageAltText
+  cta {
+    __typename
+    ...LinkFields
+  }
+}
+fragment HeroFields on Hero {
+  sys {
+    id
+  }
+  title
+  subtitle
+}
+fragment HomePageIntroFields on HomePage {
+  sys {
+    id
+  }
+  slug
+  seoTitle
+  seoDescription
+}
+fragment ImageFields on Asset {
+  url
+  width
+  height
+  description
+}
+fragment LinkFields on Link {
+  __typename
   sys {
     id
   }
@@ -478,36 +454,12 @@ export const SiteSettingsDocument = new TypedDocumentString(`
       siteName
       primaryNavigation {
         __typename
-        ... on Navigation {
-          sys {
-            id
-          }
-          name
-          location
-          itemsCollection(limit: 20) {
-            items {
-              sys {
-                id
-              }
-              __typename
-              ... on NavigationItem {
-                name
-                destinationType
-                path
-                sectionId
-                openInNewTab
-                isVisible
-              }
-            }
-          }
-        }
+        ...NavigationFields
       }
       footerLinksCollection(limit: 10) {
         items {
           __typename
-          ... on Link {
-            ...LinkFields
-          }
+          ...LinkFields
         }
       }
       copyrightText
@@ -516,6 +468,7 @@ export const SiteSettingsDocument = new TypedDocumentString(`
   }
 }
     fragment LinkFields on Link {
+  __typename
   sys {
     id
   }
@@ -539,4 +492,30 @@ export const SiteSettingsDocument = new TypedDocumentString(`
       slug
     }
   }
+}
+fragment NavigationFields on Navigation {
+  __typename
+  sys {
+    id
+  }
+  name
+  location
+  itemsCollection(limit: 20) {
+    items {
+      __typename
+      ...NavigationItemFields
+    }
+  }
+}
+fragment NavigationItemFields on NavigationItem {
+  __typename
+  sys {
+    id
+  }
+  name
+  destinationType
+  path
+  sectionId
+  openInNewTab
+  isVisible
 }`) as unknown as TypedDocumentString<SiteSettingsQuery, SiteSettingsQueryVariables>;

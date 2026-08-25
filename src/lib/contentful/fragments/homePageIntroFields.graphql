@@ -1,7 +1,8 @@
-fragment PageIntros {
+fragment HomePageIntroFields on HomePage {
   sys {
     id
-  } 
+  }
+
   slug
   seoTitle
   seoDescription

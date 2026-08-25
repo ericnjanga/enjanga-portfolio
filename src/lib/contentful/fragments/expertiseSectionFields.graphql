@@ -1,0 +1,26 @@
+fragment ExpertiseSectionFields on ExpertiseSection {
+  sys {
+    id
+  } 
+  title
+
+  expertiseItemsCollection(limit: 10) {
+    items {
+      __typename
+
+      ...expertiseCollectionItems
+    }
+  }
+
+  image {
+    ...ImageFields
+  }
+  
+  imageAltText
+
+  cta {
+    __typename 
+    
+    ...LinkFields
+  }
+}

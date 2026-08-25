@@ -1,4 +1,4 @@
-fragment ContentSectionFields {
+fragment ContentSectionFields on ContentSection {
   sys {
     id
   } 
@@ -6,16 +6,18 @@ fragment ContentSectionFields {
 
   body {
     json 
-  }
+  } 
 
-  ...ImageFields
+  image {
+    ...ImageFields
+  }
+  
+  imageAltText 
   imagePosition
 
   cta {
     __typename 
     
-    ... on Link {
-      ...LinkFields
-    }
+    ...LinkFields
   }
 }

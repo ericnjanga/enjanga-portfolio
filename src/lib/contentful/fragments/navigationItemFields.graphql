@@ -1,27 +1,14 @@
-fragment NavigationFields {
-  ... on Navigation {
-    sys {
-      id
-    }
-    name
-    location
+fragment NavigationItemFields on NavigationItem {
+  __typename
 
-    itemsCollection(limit: 20) {
-      items {
-        sys {
-          id
-        }
-        __typename
-
-        ... on NavigationItem {
-          name
-          destinationType
-          path
-          sectionId
-          openInNewTab
-          isVisible
-        }
-      }
-    }
+  sys {
+    id
   }
+
+  name
+  destinationType
+  path
+  sectionId
+  openInNewTab
+  isVisible
 }

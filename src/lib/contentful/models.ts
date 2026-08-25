@@ -35,7 +35,7 @@ export type ContentSectionData = { // Component-ready data structure ...
   image: ImageData; 
   imageAltText: string;
   imagePosition: string; 
-  cta: LinkData;
+  cta: LinkData | null;
 };
 
 export type SiteSettingsData = { // Component-ready data structure ...

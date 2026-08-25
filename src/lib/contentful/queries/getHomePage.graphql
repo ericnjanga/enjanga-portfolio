@@ -1,7 +1,7 @@
 query HomePage($slug: String!) {
   homePageCollection(where: { slug: $slug },limit: 1) {
     items {
-      ...PageIntros
+      ...HomePageIntroFields
 
       hero {
         __typename 
@@ -10,7 +10,7 @@ query HomePage($slug: String!) {
 
       expertiseSection {
         __typename 
-        ...ExpertiseItemFields
+        ...ExpertiseSectionFields
       }
 
       aboutSection {

@@ -1,7 +1,10 @@
 fragment LinkFields on Link {
+  __typename
+
   sys {
     id
   }
+  
   label
   linkType
   externalUrl

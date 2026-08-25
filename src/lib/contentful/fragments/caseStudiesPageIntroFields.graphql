@@ -1,0 +1,9 @@
+fragment CaseStudiesPageIntroFields on CaseStudiesPage {
+  sys {
+    id
+  }
+
+  slug
+  seoTitle
+  seoDescription
+}

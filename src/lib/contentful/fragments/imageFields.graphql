@@ -1,10 +1,6 @@
-fragment ImageFields {
-  image { 
-    url 
-    width
-    height
-    description
-  }
-
-  imageAltText
+fragment ImageFields on Asset { 
+  url 
+  width
+  height
+  description 
 }

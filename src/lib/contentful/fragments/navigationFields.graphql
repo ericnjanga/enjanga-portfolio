@@ -1,0 +1,17 @@
+fragment NavigationFields on Navigation {
+  __typename
+
+  sys {
+    id
+  }
+
+  name
+  location
+
+  itemsCollection(limit: 20) {
+    items {
+      __typename
+      ...NavigationItemFields
+    }
+  }
+}
