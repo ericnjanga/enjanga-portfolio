@@ -57,7 +57,10 @@ export default function MobileNavigation({
             className={styles.drawer}
           >
             <div className={styles.drawerHeader}>
-              <Brand siteName={siteName} />
+              <Brand
+                siteName={siteName}
+                onNavigate={() => setIsOpen(false)}
+              />
               <button
                 type="button"
                 onClick={() => setIsOpen(false)}

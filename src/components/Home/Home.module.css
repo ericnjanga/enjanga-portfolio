@@ -35,7 +35,7 @@
 .hero p {
   max-width: 41rem;
   margin-top: 1.35rem;
-  font-size: clamp(1.05rem, 1.7vw, 1.25rem);
+  font-size: clamp(1rem, 1.4vw, 1.25rem);
   line-height: 1.45;
 }
 
@@ -49,7 +49,7 @@
 
 .expertiseCopy h2,
 .about h2 {
-  font-size: clamp(2.25rem, 3.5vw, 3rem);
+  font-size: clamp(2.25rem, 4vw, 2.5rem);
 }
 
 .expertiseList {
@@ -74,13 +74,13 @@
   border-radius: 999px;
   color: white;
   background: #4647f2;
-  font-size: 0.75rem;
+  font-size: clamp(0.7rem, 1vw, 0.75rem);
   font-weight: 900;
 }
 
 .expertiseList h3 {
   color: #202020;
-  font-size: 1.35rem;
+  font-size: clamp(1.125rem, 1.65vw, 1.35rem);
   font-weight: 800;
   line-height: 1.25;
 }
@@ -88,7 +88,7 @@
 .expertiseList p {
   margin-top: 0.4rem;
   color: #262626;
-  font-size: 1rem;
+  font-size: clamp(0.95rem, 1.15vw, 1rem);
   line-height: 1.45;
 }
 
@@ -102,7 +102,7 @@
   padding: 0.55rem 1.35rem;
   color: white;
   background: #222;
-  font-size: 0.9rem;
+  font-size: clamp(0.85rem, 1vw, 0.9rem);
   font-weight: 700;
   text-decoration: none;
   transition: transform 160ms ease, background-color 160ms ease;
@@ -149,7 +149,7 @@
   gap: 1.35rem;
   margin: 1.8rem 0;
   color: #202020;
-  font-size: 1rem;
+  font-size: clamp(0.95rem, 1.15vw, 1rem);
   line-height: 1.45;
 }
 
@@ -162,6 +162,11 @@
 }
 
 @media (max-width: 900px) {
+  .expertiseCopy h2,
+  .about h2 {
+    font-size: clamp(2rem, 4.5vw, 2.25rem);
+  }
+
   .hero {
     padding-bottom: 5rem;
   }
@@ -191,6 +196,15 @@
 
   .hero {
     padding-top: 2.5rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.5rem, 12vw, 3rem);
+  }
+
+  .expertiseCopy h2,
+  .about h2 {
+    font-size: clamp(1.75rem, 8vw, 2.125rem);
   }
 
   .expertise,
