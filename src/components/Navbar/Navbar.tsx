@@ -3,6 +3,7 @@ import { getSiteSettings } from '@/lib/contentful/fetching/getSiteSettings';
 import { Brand } from './Brand';
 import MobileNavigation from './MobileNavigation';
 import styles from './Navbar.module.css';
+import ThemeToggle from './ThemeToggle';
 
 // Note: No need to provide default values here, as the data is already filtered and defaults are applied in getSiteSettings.ts
 export default async function ServerNavbar() {
@@ -30,6 +31,7 @@ export default async function ServerNavbar() {
               {item.name}
             </Link>
           ))}
+          <ThemeToggle />
         </div>
       </nav>
     </header>

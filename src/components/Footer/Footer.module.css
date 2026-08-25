@@ -1,6 +1,6 @@
 .footer {
-  color: #263b54;
-  background: white;
+  color: var(--foreground);
+  background: var(--surface);
 }
 
 .inner {
@@ -36,7 +36,7 @@
 }
 
 .links a {
-  color: #202020;
+  color: var(--text-strong);
   font-size: clamp(0.9rem, 1.2vw, 1rem);
   font-weight: 800;
   text-decoration: none;
@@ -44,11 +44,11 @@
 }
 
 .links a:hover {
-  color: #4647f2;
+  color: var(--accent);
 }
 
 .copyright {
-  color: #334155;
+  color: var(--text-muted);
   font-size: clamp(0.825rem, 1.05vw, 0.9rem);
 }
 

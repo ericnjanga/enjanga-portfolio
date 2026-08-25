@@ -4,9 +4,9 @@
   top: 0;
   right: 0;
   left: 0;
-  color: #263b54;
-  background: #edf5ff;
-  box-shadow: 0 1px 0 rgb(38 59 84 / 8%);
+  color: var(--foreground);
+  background: var(--surface-muted);
+  box-shadow: 0 1px 0 var(--divider);
 }
 
 .nav {
@@ -19,7 +19,7 @@
 }
 
 .brand {
-  color: #263b54;
+  color: var(--foreground);
   font-size: clamp(1.4rem, 2.2vw, 1.75rem);
   font-weight: 800;
   letter-spacing: -0.04em;
@@ -28,7 +28,7 @@
 }
 
 .brand:hover {
-  color: #4647f2;
+  color: var(--accent);
 }
 
 .desktopNavigation {
@@ -40,7 +40,7 @@
 .navLink {
   border-radius: 999px;
   padding: 0.35rem 1rem;
-  color: #263b54;
+  color: var(--foreground);
   font-size: clamp(0.875rem, 1.15vw, 0.95rem);
   font-weight: 700;
   text-decoration: none;
@@ -49,13 +49,70 @@
 
 .navLink:hover,
 .active {
-  color: white;
-  background: #263b54;
+  color: var(--surface);
+  background: var(--nav-active);
+}
+
+.themeToggle {
+  display: grid;
+  width: 2.5rem;
+  height: 2.5rem;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid var(--divider);
+  border-radius: 999px;
+  color: var(--foreground);
+  background: var(--surface);
+  cursor: pointer;
+  transition: color 160ms ease, background-color 160ms ease,
+    transform 160ms ease;
+}
+
+.themeToggle:hover {
+  color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.themeToggle:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.themeToggle svg {
+  width: 1.2rem;
+  height: 1.2rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.desktopNavigation .themeToggle {
+  position: relative;
+  margin-left: 0.5rem;
+}
+
+.desktopNavigation .themeToggle::before {
+  position: absolute;
+  top: 50%;
+  left: -0.9rem;
+  width: 1px;
+  height: 1.5rem;
+  background: var(--foreground);
+  content: '';
+  pointer-events: none;
+  transform: translateY(-50%);
 }
 
 .mobileNavigation,
 .menuButton {
   display: none;
+}
+
+.mobileNavigation {
+  align-items: center;
+  gap: 0.45rem;
 }
 
 .overlay {
@@ -72,7 +129,7 @@
   inset: 0 0 0 auto;
   width: min(86vw, 23rem);
   padding: 1.5rem;
-  background: white;
+  background: var(--surface);
   box-shadow: -1rem 0 2rem rgb(15 23 42 / 15%);
 }
 
@@ -85,7 +142,7 @@
 .closeButton,
 .menuButton {
   border: 0;
-  color: #263b54;
+  color: var(--foreground);
   background: transparent;
   cursor: pointer;
 }

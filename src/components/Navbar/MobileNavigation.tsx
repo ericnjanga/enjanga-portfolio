@@ -5,6 +5,7 @@ import { useState } from 'react';
 import type { NavigationItemData } from '@/lib/contentful/models';
 import { Brand } from './Brand';
 import styles from './Navbar.module.css';
+import ThemeToggle from './ThemeToggle';
 
 type MobileNavigationProps = {
   navigation: NavigationItemData[];
@@ -19,6 +20,7 @@ export default function MobileNavigation({
 
   return (
     <div className={styles.mobileNavigation}>
+      <ThemeToggle />
       <button
         type="button"
         onClick={() => setIsOpen(true)}

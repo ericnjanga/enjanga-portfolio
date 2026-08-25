@@ -1,6 +1,6 @@
 .main {
-  color: #263b54;
-  background: #edf5ff;
+  color: var(--foreground);
+  background: var(--surface-muted);
 }
 
 .hero,
@@ -72,14 +72,14 @@
   margin-top: 0.2rem;
   place-items: center;
   border-radius: 999px;
-  color: white;
-  background: #4647f2;
+  color: var(--surface);
+  background: var(--accent);
   font-size: clamp(0.7rem, 1vw, 0.75rem);
   font-weight: 900;
 }
 
 .expertiseList h3 {
-  color: #202020;
+  color: var(--text-strong);
   font-size: clamp(1.125rem, 1.65vw, 1.35rem);
   font-weight: 800;
   line-height: 1.25;
@@ -87,7 +87,7 @@
 
 .expertiseList p {
   margin-top: 0.4rem;
-  color: #262626;
+  color: var(--text-strong);
   font-size: clamp(0.95rem, 1.15vw, 1rem);
   line-height: 1.45;
 }
@@ -100,8 +100,8 @@
   justify-content: center;
   border-radius: 999px;
   padding: 0.55rem 1.35rem;
-  color: white;
-  background: #222;
+  color: var(--surface);
+  background: var(--text-strong);
   font-size: clamp(0.85rem, 1vw, 0.9rem);
   font-weight: 700;
   text-decoration: none;
@@ -110,14 +110,14 @@
 
 .cta:hover {
   transform: translateY(-2px);
-  background: #4647f2;
+  background: var(--accent);
 }
 
 .productImage,
 .portrait {
   overflow: hidden;
   border-radius: 0.85rem;
-  box-shadow: 0 1.35rem 1.6rem rgb(15 23 42 / 28%);
+  box-shadow: 0 1.35rem 1.6rem var(--shadow);
 }
 
 .productImage img,
@@ -148,17 +148,17 @@
   display: grid;
   gap: 1.35rem;
   margin: 1.8rem 0;
-  color: #202020;
+  color: var(--text-strong);
   font-size: clamp(0.95rem, 1.15vw, 1rem);
   line-height: 1.45;
 }
 
 .about .cta {
-  background: #4647f2;
+  background: var(--accent);
 }
 
 .about .cta:hover {
-  background: #222;
+  background: var(--text-strong);
 }
 
 @media (max-width: 900px) {

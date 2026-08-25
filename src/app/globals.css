@@ -3,6 +3,27 @@
 :root {
   --background: #edf5ff;
   --foreground: #263b54;
+  --surface: #ffffff;
+  --surface-muted: #edf5ff;
+  --text-strong: #202020;
+  --text-muted: #334155;
+  --accent: #4647f2;
+  --nav-active: #263b54;
+  --shadow: rgb(15 23 42 / 28%);
+  --divider: rgb(38 59 84 / 8%);
+}
+
+:root[data-theme='dark'] {
+  --background: #0d1726;
+  --foreground: #dbeafe;
+  --surface: #121f31;
+  --surface-muted: #0d1726;
+  --text-strong: #f8fafc;
+  --text-muted: #b8c7da;
+  --accent: #818cf8;
+  --nav-active: #e2e8f0;
+  --shadow: rgb(0 0 0 / 48%);
+  --divider: rgb(226 232 240 / 12%);
 }
 
 * {
@@ -26,6 +47,7 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
   padding-top: 6rem;
+  transition: color 180ms ease, background-color 180ms ease;
 }
 
 a,
