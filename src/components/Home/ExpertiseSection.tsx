@@ -1,5 +1,6 @@
 import type { ExpertiseSectionData } from '@/lib/contentful/models';
 import ArrowLink from './ArrowLink';
+import InteractiveImage from './InteractiveImage';
 import styles from './Home.module.css';
 
 export default function ExpertiseSection({
@@ -29,13 +30,11 @@ export default function ExpertiseSection({
 
       {data.image && (
         <div className={styles.productImage}>
-          {/* Contentful image URLs are already sized and optimized at source. */}
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={data.image.url}
-            alt={data.imageAltText || data.image.description}
-            width={data.image.width}
-            height={data.image.height}
+          <InteractiveImage
+            image={data.image}
+            alt={data.imageAltText}
+            link={data.cta}
+            interactionLabel={data.cta?.label}
           />
         </div>
       )}

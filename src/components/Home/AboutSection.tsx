@@ -1,5 +1,6 @@
 import type { ContentSectionData } from '@/lib/contentful/models';
 import ArrowLink from './ArrowLink';
+import InteractiveImage from './InteractiveImage';
 import styles from './Home.module.css';
 
 type RichNode = {
@@ -27,12 +28,11 @@ export default function AboutSection({ data }: { data: ContentSectionData }) {
   return (
     <section id="about" className={styles.about}>
       <div className={styles.portrait}>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={data.image.url}
-          alt={data.imageAltText || data.image.description}
-          width={data.image.width}
-          height={data.image.height}
+        <InteractiveImage
+          image={data.image}
+          alt={data.imageAltText}
+          link={data.cta}
+          interactionLabel={data.cta?.label}
         />
       </div>
       <div className={styles.aboutCopy}>
