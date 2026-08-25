@@ -1,44 +1,53 @@
 /**
- *
- * (Transformation Layer)
- * These functions transform raw Contentful records into application-ready data.
- * ---------------
- * */
-import type { 
-  ContentfulNavigationItem, 
-  ContentfulRichText, 
-} from './contentful-types';
+ * Transforms generated Contentful fragment data into application models.
+ */
 import type {
   ContentSectionData,
-  ExpertiseSectionData,
   ExpertiseItemData,
+  ExpertiseSectionData,
+  HeroData,
+  ImageData,
   LinkData,
   NavigationItemData,
-  ImageData,
   RichTextData,
 } from './models';
-import {
-  containsNothingOfValue,
-  isEmptyOrContainsOnlyNull,
-} from '../utils/predicates';
-import { aboutImageFallback, aboutCtaFallback } from './fallbacks';
 import type {
-  NavigationItemFieldsFragment,
-  LinkFieldsFragment,
   ContentSectionFieldsFragment,
-  ExpertiseSectionFieldsFragment,
   ExpertiseCollectionItemsFragment,
+  ExpertiseSectionFieldsFragment,
+  HeroFieldsFragment,
   ImageFieldsFragment,
-  HomePageIntroFieldsFragment,
-  CaseStudiesPageIntroFieldsFragment,
+  LinkFieldsFragment,
+  NavigationItemFieldsFragment,
 } from './generated/graphql';
+import { aboutImageFallback, homePageFallback } from './fallbacks';
 
-export const normalizeLink = (link: LinkFieldsFragment | null): LinkData | null => {
-  if (!link || !link?.label) return null;
+function normalizeInternalPath(slug: string): string {
+  return slug === '/' ? '/' : `/${slug.replace(/^\/+/, '')}`;
+}
+
+function resolveInternalDestination(
+  destination: LinkFieldsFragment['internalDestination']
+): string | null {
+  if (!destination?.slug) return null;
+
+  switch (destination.__typename) {
+    case 'HomePage':
+    case 'CaseStudiesPage':
+      return normalizeInternalPath(destination.slug);
+  }
+
+  return null;
+}
+
+export function normalizeLink(
+  link: LinkFieldsFragment | null
+): LinkData | null {
+  if (!link?.label) return null;
 
   const href =
     link.linkType === 'internal'
-      ? resolveHrefInternalDestination(link)
+      ? resolveInternalDestination(link.internalDestination)
       : link.externalUrl;
 
   if (!href) return null;
@@ -50,13 +59,10 @@ export const normalizeLink = (link: LinkFieldsFragment | null): LinkData | null 
       link.linkType === 'external' ? link.openInNewTab ?? false : false,
     accessibleLabel: link.accessibleLabel || undefined,
   };
-};
+}
 
-// Extranc image props and provide a fallback
-export const getAboutSectionImgData = (
-  image: ImageFieldsFragment | null
-): ImageData => {
-  if (!image || !image?.url || image.width == null || image.height == null) {
+export function normalizeImage(image: ImageFieldsFragment | null): ImageData {
+  if (!image?.url || image.width == null || image.height == null) {
     return { ...aboutImageFallback };
   }
 
@@ -66,52 +72,11 @@ export const getAboutSectionImgData = (
     height: image.height,
     description: image.description ?? '',
   };
-};
+}
 
-export const normalizeNavigationItem = (
+export function resolveNavigationItemHref(
   item: NavigationItemFieldsFragment
-): NavigationItemData[] => {
-  if (item.isVisible === false || !item.name) {
-    return [];
-  }
-
-  return [
-    {
-      id: item.sys.id,
-      name: item.name ?? '',
-      href: resolveNavigationItemHref(item),
-      openInNewTab: item.openInNewTab ?? false,
-    },
-  ];
-};
-
-const resolveHrefInternalDestination = (
-  link: LinkFieldsFragment
-): string | null =>
-  link.internalDestination?.__typename === 'CaseStudiesPage' ||
-  link.internalDestination?.__typename === 'HomePage'
-    ? link.internalDestination.slug
-    : null;
-
-export const normalizeAboutSection = (
-  section: ContentSectionFieldsFragment | null
-): ContentSectionData | null => {
-  if (!section || isEmptyOrContainsOnlyNull(section)) return null;
-
-  return {
-    title: section.title ?? '',
-    body: getRichTextData(section.body),
-    image: getAboutSectionImgData(section.image),
-    imageAltText: section.imageAltText ?? '',
-    imagePosition: section.imagePosition ?? '',
-    cta: normalizeLink(section.cta ?? null) ?? null,
-  };
-};
-
-
-
-
-export function resolveNavigationItemHref(item: NavigationItemFieldsFragment): string {
+): string {
   switch (item.destinationType) {
     case 'homeSection':
       return item.sectionId ? `/#${item.sectionId}` : '/';
@@ -123,41 +88,21 @@ export function resolveNavigationItemHref(item: NavigationItemFieldsFragment): s
   }
 }
 
-
-
-
-export const normalizeExpertiseCollectionItem = (fragment: ExpertiseCollectionItemsFragment | null): ExpertiseItemData | null => {
-  if (!fragment) return null; 
-
-  return {
-    title: fragment.title ?? '',
-    description: fragment.description ?? ''
-  };
-};
-
-export const normalizeExpertiseSectionFields = (
-  fragment: ExpertiseSectionFieldsFragment | null
-): ExpertiseSectionData | null => {
-  if (!fragment) return null;
+export function normalizeNavigationItem(
+  item: NavigationItemFieldsFragment
+): NavigationItemData | null {
+  if (item.isVisible === false || !item.name) return null;
 
   return {
-    title: fragment.title ?? '',
-    expertiseItemsCollection: {
-      items: (fragment.expertiseItemsCollection?.items ?? []).flatMap(entry => {
-        if (entry?.__typename !== 'ExpertiseItem') {
-          return [];
-        }
-
-        const item = normalizeExpertiseCollectionItem(entry);
-
-        return item ? [item] : [];
-      }),
-    }
+    id: item.sys.id,
+    name: item.name,
+    href: resolveNavigationItemHref(item),
+    openInNewTab: item.openInNewTab ?? false,
   };
-};
+}
 
 export function getRichTextData(
-  richText: ContentfulRichText | null
+  richText: ContentSectionFieldsFragment['body']
 ): RichTextData {
   return {
     json: richText?.json ?? {
@@ -165,5 +110,75 @@ export function getRichTextData(
       data: {},
       content: [],
     },
+  };
+}
+
+export function normalizeHomePageAboutSection(
+  section: ContentSectionFieldsFragment | null
+): ContentSectionData | null {
+  if (!section) return null;
+
+  return {
+    title: section.title ?? '',
+    body: getRichTextData(section.body),
+    image: normalizeImage(section.image),
+    imageAltText: section.imageAltText ?? '',
+    imagePosition: section.imagePosition ?? '',
+    cta: normalizeLink(section.cta),
+  };
+}
+
+export function normalizeExpertiseCollectionItem(
+  fragment: ExpertiseCollectionItemsFragment | null
+): ExpertiseItemData | null {
+  if (!fragment) return null;
+
+  return {
+    title: fragment.title ?? '',
+    description: fragment.description ?? '',
+  };
+}
+
+export function normalizeHomePageExpertiseSectionFields(
+  fragment: ExpertiseSectionFieldsFragment | null
+): ExpertiseSectionData {
+  if (!fragment) {
+    return {
+      ...homePageFallback.expertiseSection,
+      expertiseItemsCollection: {
+        items: [
+          ...homePageFallback.expertiseSection.expertiseItemsCollection.items,
+        ],
+      },
+    };
+  }
+
+  const items = (fragment.expertiseItemsCollection?.items ?? []).flatMap(
+    (entry) => {
+      const item = normalizeExpertiseCollectionItem(entry);
+      return item ? [item] : [];
+    }
+  );
+
+  return {
+    title: fragment.title ?? homePageFallback.expertiseSection.title,
+    expertiseItemsCollection: {
+      items:
+        items.length > 0
+          ? items
+          : [
+              ...homePageFallback.expertiseSection.expertiseItemsCollection
+                .items,
+            ],
+    },
+  };
+}
+
+export function normalizeHomePageHeroFields(
+  fragment: HeroFieldsFragment | null
+): HeroData {
+  return {
+    title: fragment?.title ?? homePageFallback.hero.title,
+    subtitle: fragment?.subtitle ?? homePageFallback.hero.subtitle,
   };
 }

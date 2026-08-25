@@ -5,9 +5,7 @@ fragment ExpertiseSectionFields on ExpertiseSection {
   title
 
   expertiseItemsCollection(limit: 10) {
-    items {
-      __typename
-
+    items { 
       ...expertiseCollectionItems
     }
   }

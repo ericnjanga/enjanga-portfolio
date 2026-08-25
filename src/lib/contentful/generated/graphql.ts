@@ -11,7 +11,7 @@ export type ContentSectionFieldsFragment = { title: string | null, imageAltText:
       | { __typename: 'HomePage', slug: string | null, sys: { id: string } }
      | null } | null };
 
-export type ExpertiseCollectionItemsFragment = { title: string | null, description: string | null, sys: { id: string } };
+export type ExpertiseCollectionItemsFragment = { __typename: 'ExpertiseItem', title: string | null, description: string | null, sys: { id: string } };
 
 export type ExpertiseSectionFieldsFragment = { title: string | null, imageAltText: string | null, sys: { id: string }, expertiseItemsCollection: { items: Array<{ __typename: 'ExpertiseItem', title: string | null, description: string | null, sys: { id: string } } | null> } | null, image: { url: string | null, width: number | null, height: number | null, description: string | null } | null, cta: { __typename: 'Link', label: string | null, linkType: string | null, externalUrl: string | null, openInNewTab: boolean | null, accessibleLabel: string | null, sys: { id: string }, internalDestination:
       | { __typename: 'CaseStudiesPage', slug: string | null, sys: { id: string } }
@@ -178,6 +178,7 @@ fragment LinkFields on Link {
 }`, {"fragmentName":"ContentSectionFields"}) as unknown as TypedDocumentString<ContentSectionFieldsFragment, unknown>;
 export const ExpertiseCollectionItemsFragmentDoc = new TypedDocumentString(`
     fragment expertiseCollectionItems on ExpertiseItem {
+  __typename
   sys {
     id
   }
@@ -193,7 +194,6 @@ export const ExpertiseSectionFieldsFragmentDoc = new TypedDocumentString(`
   title
   expertiseItemsCollection(limit: 10) {
     items {
-      __typename
       ...expertiseCollectionItems
     }
   }
@@ -207,6 +207,7 @@ export const ExpertiseSectionFieldsFragmentDoc = new TypedDocumentString(`
   }
 }
     fragment expertiseCollectionItems on ExpertiseItem {
+  __typename
   sys {
     id
   }
@@ -371,6 +372,7 @@ export const HomePageDocument = new TypedDocumentString(`
   }
 }
 fragment expertiseCollectionItems on ExpertiseItem {
+  __typename
   sys {
     id
   }
@@ -384,7 +386,6 @@ fragment ExpertiseSectionFields on ExpertiseSection {
   title
   expertiseItemsCollection(limit: 10) {
     items {
-      __typename
       ...expertiseCollectionItems
     }
   }

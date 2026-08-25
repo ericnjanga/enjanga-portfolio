@@ -1,4 +1,6 @@
 fragment expertiseCollectionItems on ExpertiseItem {
+  __typename
+
   sys {
     id    
   }

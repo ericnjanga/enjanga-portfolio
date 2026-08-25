@@ -17,8 +17,8 @@ import * as types from './graphql';
 type Documents = {
     "fragment CaseStudiesPageIntroFields on CaseStudiesPage {\n  sys {\n    id\n  }\n  slug\n  seoTitle\n  seoDescription\n}": typeof types.CaseStudiesPageIntroFieldsFragmentDoc,
     "fragment ContentSectionFields on ContentSection {\n  sys {\n    id\n  }\n  title\n  body {\n    json\n  }\n  image {\n    ...ImageFields\n  }\n  imageAltText\n  imagePosition\n  cta {\n    __typename\n    ...LinkFields\n  }\n}": typeof types.ContentSectionFieldsFragmentDoc,
-    "fragment expertiseCollectionItems on ExpertiseItem {\n  sys {\n    id\n  }\n  title\n  description\n}": typeof types.ExpertiseCollectionItemsFragmentDoc,
-    "fragment ExpertiseSectionFields on ExpertiseSection {\n  sys {\n    id\n  }\n  title\n  expertiseItemsCollection(limit: 10) {\n    items {\n      __typename\n      ...expertiseCollectionItems\n    }\n  }\n  image {\n    ...ImageFields\n  }\n  imageAltText\n  cta {\n    __typename\n    ...LinkFields\n  }\n}": typeof types.ExpertiseSectionFieldsFragmentDoc,
+    "fragment expertiseCollectionItems on ExpertiseItem {\n  __typename\n  sys {\n    id\n  }\n  title\n  description\n}": typeof types.ExpertiseCollectionItemsFragmentDoc,
+    "fragment ExpertiseSectionFields on ExpertiseSection {\n  sys {\n    id\n  }\n  title\n  expertiseItemsCollection(limit: 10) {\n    items {\n      ...expertiseCollectionItems\n    }\n  }\n  image {\n    ...ImageFields\n  }\n  imageAltText\n  cta {\n    __typename\n    ...LinkFields\n  }\n}": typeof types.ExpertiseSectionFieldsFragmentDoc,
     "fragment HeroFields on Hero {\n  sys {\n    id\n  }\n  title\n  subtitle\n}": typeof types.HeroFieldsFragmentDoc,
     "fragment HomePageIntroFields on HomePage {\n  sys {\n    id\n  }\n  slug\n  seoTitle\n  seoDescription\n}": typeof types.HomePageIntroFieldsFragmentDoc,
     "fragment ImageFields on Asset {\n  url\n  width\n  height\n  description\n}": typeof types.ImageFieldsFragmentDoc,
@@ -32,8 +32,8 @@ type Documents = {
 const documents: Documents = {
     "fragment CaseStudiesPageIntroFields on CaseStudiesPage {\n  sys {\n    id\n  }\n  slug\n  seoTitle\n  seoDescription\n}": types.CaseStudiesPageIntroFieldsFragmentDoc,
     "fragment ContentSectionFields on ContentSection {\n  sys {\n    id\n  }\n  title\n  body {\n    json\n  }\n  image {\n    ...ImageFields\n  }\n  imageAltText\n  imagePosition\n  cta {\n    __typename\n    ...LinkFields\n  }\n}": types.ContentSectionFieldsFragmentDoc,
-    "fragment expertiseCollectionItems on ExpertiseItem {\n  sys {\n    id\n  }\n  title\n  description\n}": types.ExpertiseCollectionItemsFragmentDoc,
-    "fragment ExpertiseSectionFields on ExpertiseSection {\n  sys {\n    id\n  }\n  title\n  expertiseItemsCollection(limit: 10) {\n    items {\n      __typename\n      ...expertiseCollectionItems\n    }\n  }\n  image {\n    ...ImageFields\n  }\n  imageAltText\n  cta {\n    __typename\n    ...LinkFields\n  }\n}": types.ExpertiseSectionFieldsFragmentDoc,
+    "fragment expertiseCollectionItems on ExpertiseItem {\n  __typename\n  sys {\n    id\n  }\n  title\n  description\n}": types.ExpertiseCollectionItemsFragmentDoc,
+    "fragment ExpertiseSectionFields on ExpertiseSection {\n  sys {\n    id\n  }\n  title\n  expertiseItemsCollection(limit: 10) {\n    items {\n      ...expertiseCollectionItems\n    }\n  }\n  image {\n    ...ImageFields\n  }\n  imageAltText\n  cta {\n    __typename\n    ...LinkFields\n  }\n}": types.ExpertiseSectionFieldsFragmentDoc,
     "fragment HeroFields on Hero {\n  sys {\n    id\n  }\n  title\n  subtitle\n}": types.HeroFieldsFragmentDoc,
     "fragment HomePageIntroFields on HomePage {\n  sys {\n    id\n  }\n  slug\n  seoTitle\n  seoDescription\n}": types.HomePageIntroFieldsFragmentDoc,
     "fragment ImageFields on Asset {\n  url\n  width\n  height\n  description\n}": types.ImageFieldsFragmentDoc,
@@ -56,11 +56,11 @@ export function graphql(source: "fragment ContentSectionFields on ContentSection
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "fragment expertiseCollectionItems on ExpertiseItem {\n  sys {\n    id\n  }\n  title\n  description\n}"): typeof import('./graphql').ExpertiseCollectionItemsFragmentDoc;
+export function graphql(source: "fragment expertiseCollectionItems on ExpertiseItem {\n  __typename\n  sys {\n    id\n  }\n  title\n  description\n}"): typeof import('./graphql').ExpertiseCollectionItemsFragmentDoc;
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "fragment ExpertiseSectionFields on ExpertiseSection {\n  sys {\n    id\n  }\n  title\n  expertiseItemsCollection(limit: 10) {\n    items {\n      __typename\n      ...expertiseCollectionItems\n    }\n  }\n  image {\n    ...ImageFields\n  }\n  imageAltText\n  cta {\n    __typename\n    ...LinkFields\n  }\n}"): typeof import('./graphql').ExpertiseSectionFieldsFragmentDoc;
+export function graphql(source: "fragment ExpertiseSectionFields on ExpertiseSection {\n  sys {\n    id\n  }\n  title\n  expertiseItemsCollection(limit: 10) {\n    items {\n      ...expertiseCollectionItems\n    }\n  }\n  image {\n    ...ImageFields\n  }\n  imageAltText\n  cta {\n    __typename\n    ...LinkFields\n  }\n}"): typeof import('./graphql').ExpertiseSectionFieldsFragmentDoc;
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
