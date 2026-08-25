@@ -171,6 +171,17 @@ export function normalizeHomePageExpertiseSectionFields(
                 .items,
             ],
     },
+    image:
+      fragment.image?.url &&
+      fragment.image.width != null &&
+      fragment.image.height != null
+        ? normalizeImage(fragment.image)
+        : null,
+    imageAltText: fragment.imageAltText ?? '',
+    cta:
+      fragment.cta?.__typename === 'Link'
+        ? normalizeLink(fragment.cta)
+        : homePageFallback.expertiseSection.cta,
   };
 }
 

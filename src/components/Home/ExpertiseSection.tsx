@@ -1,0 +1,44 @@
+import type { ExpertiseSectionData } from '@/lib/contentful/models';
+import ArrowLink from './ArrowLink';
+import styles from './Home.module.css';
+
+export default function ExpertiseSection({
+  data,
+}: {
+  data: ExpertiseSectionData;
+}) {
+  return (
+    <section id="expertise" className={styles.expertise}>
+      <div className={styles.expertiseCopy}>
+        <h2>{data.title}</h2>
+        <ul className={styles.expertiseList}>
+          {data.expertiseItemsCollection.items.map((item) => (
+            <li key={item.title}>
+              <span className={styles.check} aria-hidden="true">
+                ✓
+              </span>
+              <div>
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+        {data.cta && <ArrowLink link={data.cta} />}
+      </div>
+
+      {data.image && (
+        <div className={styles.productImage}>
+          {/* Contentful image URLs are already sized and optimized at source. */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={data.image.url}
+            alt={data.imageAltText || data.image.description}
+            width={data.image.width}
+            height={data.image.height}
+          />
+        </div>
+      )}
+    </section>
+  );
+}

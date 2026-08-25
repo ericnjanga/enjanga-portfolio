@@ -13,7 +13,7 @@ export type ImageData = {
   width: number;
   height: number;
   description: string;
-}; 
+};
 
 export type HomePageData = { // Component-ready data structure ...
   seoTitle: string;
@@ -83,4 +83,7 @@ export type ExpertiseSectionData = {
   expertiseItemsCollection: {
     items: Array<ExpertiseItemData>;
   };
+  image: ImageData | null;
+  imageAltText: string;
+  cta: LinkData | null;
 }; 

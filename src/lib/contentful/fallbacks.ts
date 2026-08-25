@@ -93,6 +93,13 @@ export const homePageFallback: HomePageData = {
         },
       ],
     },
+    image: null,
+    imageAltText: '',
+    cta: {
+      label: 'View case studies',
+      href: '/case-studies',
+      openInNewTab: false,
+    },
   },
   aboutSection: {
     title: 'About Me',

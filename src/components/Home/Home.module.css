@@ -1,0 +1,198 @@
+.main {
+  color: #263b54;
+  background: #edf5ff;
+}
+
+.container {
+  width: min(100% - 3rem, 76rem);
+  margin-inline: auto;
+}
+
+.hero {
+  max-width: 42rem;
+  padding: 3.75rem 0 7.75rem;
+}
+
+.hero h1,
+.expertise h2,
+.about h2 {
+  font-weight: 800;
+  letter-spacing: -0.045em;
+  line-height: 1.06;
+}
+
+.hero h1 {
+  max-width: 40rem;
+  font-size: clamp(3rem, 4.2vw, 3.6rem);
+}
+
+.hero p {
+  max-width: 41rem;
+  margin-top: 1.35rem;
+  font-size: clamp(1.05rem, 1.7vw, 1.25rem);
+  line-height: 1.45;
+}
+
+.expertise {
+  display: grid;
+  grid-template-columns: minmax(18rem, 0.74fr) minmax(30rem, 1.4fr);
+  align-items: center;
+  gap: clamp(3rem, 6vw, 6.5rem);
+  padding-bottom: 8.25rem;
+}
+
+.expertiseCopy h2,
+.about h2 {
+  font-size: clamp(2.25rem, 3.5vw, 3rem);
+}
+
+.expertiseList {
+  display: grid;
+  gap: 2rem;
+  margin: 2.75rem 0 2.25rem;
+  list-style: none;
+}
+
+.expertiseList li {
+  display: grid;
+  grid-template-columns: 1.45rem 1fr;
+  gap: 0.75rem;
+}
+
+.check {
+  display: grid;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-top: 0.2rem;
+  place-items: center;
+  border-radius: 999px;
+  color: white;
+  background: #4647f2;
+  font-size: 0.75rem;
+  font-weight: 900;
+}
+
+.expertiseList h3 {
+  color: #202020;
+  font-size: 1.35rem;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.expertiseList p {
+  margin-top: 0.4rem;
+  color: #262626;
+  font-size: 1rem;
+  line-height: 1.45;
+}
+
+.cta {
+  display: inline-flex;
+  min-height: 2.55rem;
+  align-items: center;
+  gap: 1rem;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 0.55rem 1.35rem;
+  color: white;
+  background: #222;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 160ms ease, background-color 160ms ease;
+}
+
+.cta:hover {
+  transform: translateY(-2px);
+  background: #4647f2;
+}
+
+.productImage,
+.portrait {
+  overflow: hidden;
+  border-radius: 0.85rem;
+  box-shadow: 0 1.35rem 1.6rem rgb(15 23 42 / 28%);
+}
+
+.productImage img,
+.portrait img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about {
+  display: grid;
+  grid-template-columns: minmax(18rem, 0.82fr) minmax(22rem, 1.18fr);
+  align-items: center;
+  gap: clamp(3.5rem, 7vw, 7rem);
+  padding-bottom: 7.5rem;
+}
+
+.portrait {
+  aspect-ratio: 0.88;
+}
+
+.aboutCopy {
+  max-width: 35rem;
+}
+
+.bodyCopy {
+  display: grid;
+  gap: 1.35rem;
+  margin: 1.8rem 0;
+  color: #202020;
+  font-size: 1rem;
+  line-height: 1.45;
+}
+
+.about .cta {
+  background: #4647f2;
+}
+
+.about .cta:hover {
+  background: #222;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    padding-bottom: 5rem;
+  }
+
+  .expertise,
+  .about {
+    grid-template-columns: 1fr;
+  }
+
+  .expertise {
+    padding-bottom: 6rem;
+  }
+
+  .productImage {
+    order: -1;
+  }
+
+  .portrait {
+    max-width: 31rem;
+  }
+}
+
+@media (max-width: 540px) {
+  .container {
+    width: min(100% - 2rem, 76rem);
+  }
+
+  .hero {
+    padding-top: 2.5rem;
+  }
+
+  .expertise,
+  .about {
+    gap: 2.5rem;
+  }
+
+  .about {
+    padding-bottom: 5rem;
+  }
+}

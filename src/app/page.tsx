@@ -1,17 +1,15 @@
-import styles from './page.module.css';
+import type { Metadata } from 'next';
+import HomePage from '@/components/Home/HomePage';
 import getHomePageData from '@/lib/contentful/fetching/getHomePageData';
 
+export async function generateMetadata(): Promise<Metadata> {
+  const { seoTitle, seoDescription } = await getHomePageData('/');
+
+  return { title: seoTitle, description: seoDescription };
+}
+
 export default async function Home() {
-  // const homePageData = await getHomePageData('/');
+  const homePageData = await getHomePageData('/');
 
-
-
-  // console.log('-----> homePageData = ', homePageData);
-
-  return (
-    <main className={styles.main}>
-      <h1>Welcome to Next.js!</h1>
-      <p>Get started by editing src/app/page.tsx.</p>
-    </main>
-  );
+  return <HomePage data={homePageData} />;
 }

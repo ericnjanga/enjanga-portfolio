@@ -1,0 +1,120 @@
+.header {
+  color: #263b54;
+  background: #edf5ff;
+}
+
+.nav {
+  display: flex;
+  width: min(100% - 3rem, 76rem);
+  min-height: 6rem;
+  align-items: center;
+  justify-content: space-between;
+  margin-inline: auto;
+}
+
+.brand {
+  color: #263b54;
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  text-decoration: none;
+  transition: color 160ms ease;
+}
+
+.brand:hover {
+  color: #4647f2;
+}
+
+.desktopNavigation {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.navLink {
+  border-radius: 999px;
+  padding: 0.35rem 1rem;
+  color: #263b54;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 160ms ease, background-color 160ms ease;
+}
+
+.navLink:hover,
+.active {
+  color: white;
+  background: #263b54;
+}
+
+.mobileNavigation,
+.menuButton {
+  display: none;
+}
+
+.overlay {
+  position: fixed;
+  z-index: 40;
+  inset: 0;
+  border: 0;
+  background: rgb(15 23 42 / 35%);
+}
+
+.drawer {
+  position: fixed;
+  z-index: 50;
+  inset: 0 0 0 auto;
+  width: min(86vw, 23rem);
+  padding: 1.5rem;
+  background: white;
+  box-shadow: -1rem 0 2rem rgb(15 23 42 / 15%);
+}
+
+.drawerHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.closeButton,
+.menuButton {
+  border: 0;
+  color: #263b54;
+  background: transparent;
+  cursor: pointer;
+}
+
+.menuButton svg,
+.closeButton svg {
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
+.mobileLinks {
+  display: grid;
+  gap: 0.5rem;
+  margin-top: 2.5rem;
+}
+
+.mobileLinks .navLink {
+  display: block;
+  padding: 0.75rem 1rem;
+}
+
+@media (max-width: 900px) {
+  .desktopNavigation {
+    display: none;
+  }
+
+  .mobileNavigation,
+  .menuButton {
+    display: flex;
+  }
+}
+
+@media (max-width: 540px) {
+  .nav {
+    width: min(100% - 2rem, 76rem);
+    min-height: 5rem;
+  }
+}

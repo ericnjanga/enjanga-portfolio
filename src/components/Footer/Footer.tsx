@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { getSiteSettings } from '@/lib/contentful/fetching/getSiteSettings';
+import styles from './Footer.module.css';
 
 // Note: No need to provide default values here, as the data is already filtered and defaults are applied in getSiteSettings.ts
 export default async function Footer() {
@@ -9,19 +10,19 @@ export default async function Footer() {
   } = await getSiteSettings();
 
   return (
-    <footer className="bg-white text-slate-800">
-      <div className="mx-auto grid max-w-[76rem] gap-10 px-6 py-14 sm:py-16 lg:grid-cols-[2fr_3fr] lg:px-0">
+    <footer className={styles.footer}>
+      <div className={styles.inner}>
         <Link
           href="/"
           aria-label={`${siteName} home`}
-          className="w-fit text-2xl font-bold tracking-tight"
+          className={styles.brand}
         >
           {siteName}
         </Link>
 
-        <div className="flex flex-col gap-8">
+        <div className={styles.details}>
           <nav aria-label="Footer navigation">
-            <ul className="flex flex-wrap gap-x-16 gap-y-4">
+            <ul className={styles.links}>
               {links.map((link) => (
                 <li key={`${link.label}-${link.href}`}>
                   <Link
@@ -29,7 +30,6 @@ export default async function Footer() {
                     aria-label={link.accessibleLabel || link.label}
                     target={link.openInNewTab ? '_blank' : undefined}
                     rel={link.openInNewTab ? 'noopener noreferrer' : undefined}
-                    className="text-base font-bold transition-colors hover:text-indigo-600 focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-indigo-600"
                   >
                     {link.label}
                   </Link>
@@ -38,7 +38,7 @@ export default async function Footer() {
             </ul>
           </nav>
 
-          <p className="text-sm text-slate-700">
+          <p className={styles.copyright}>
             {copyrightText} @ {location}
           </p>
         </div>

@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { getSiteSettings } from '@/lib/contentful/fetching/getSiteSettings';
 import { Brand } from './Brand';
 import MobileNavigation from './MobileNavigation';
+import styles from './Navbar.module.css';
 
 // Note: No need to provide default values here, as the data is already filtered and defaults are applied in getSiteSettings.ts
 export default async function ServerNavbar() {
@@ -11,23 +12,20 @@ export default async function ServerNavbar() {
   } = await getSiteSettings();
 
   return (
-    <header className="bg-white">
-      <nav
-        aria-label="Global"
-        className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
-      >
+    <header className={styles.header}>
+      <nav aria-label="Global" className={styles.nav}>
         <Brand siteName={siteName} />
 
         <MobileNavigation navigation={navigation} siteName={siteName} />
 
-        <div className="hidden items-center gap-x-12 lg:flex">
+        <div className={styles.desktopNavigation}>
           {navigation.map((item) => (
             <Link
               key={item.id}
               href={item.href}
               target={item.openInNewTab ? '_blank' : undefined}
               rel={item.openInNewTab ? 'noopener noreferrer' : undefined}
-              className="text-sm/6 font-semibold text-gray-900"
+              className={`${styles.navLink} ${item.href === '/' ? styles.active : ''}`}
             >
               {item.name}
             </Link>
