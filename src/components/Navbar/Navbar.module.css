@@ -1,6 +1,12 @@
 .header {
+  position: fixed;
+  z-index: 30;
+  top: 0;
+  right: 0;
+  left: 0;
   color: #263b54;
   background: #edf5ff;
+  box-shadow: 0 1px 0 rgb(38 59 84 / 8%);
 }
 
 .nav {
