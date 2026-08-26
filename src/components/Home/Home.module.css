@@ -352,6 +352,7 @@
 
   .productImage {
     width: calc(100% + 2rem);
+    order: -1;
   }
 
   .about {
