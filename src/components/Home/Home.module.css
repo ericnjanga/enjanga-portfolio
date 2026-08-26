@@ -1,4 +1,5 @@
 .main {
+  overflow: hidden;
   color: var(--foreground);
   background: var(--surface-muted);
 }
@@ -6,111 +7,108 @@
 .hero,
 .expertise,
 .about {
-  scroll-margin-top: 7rem;
+  scroll-margin-top: 6.25rem;
 }
 
 .container {
-  width: min(100% - 3rem, 76rem);
+  width: min(100% - 10rem, 80rem);
   margin-inline: auto;
 }
 
 .hero {
-  max-width: 42rem;
-  padding: 3.75rem 0 7.75rem;
+  display: flex;
+  min-height: 41.75rem;
+  max-width: 45.2rem;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-top: 1.25rem;
 }
 
 .hero h1,
 .expertise h2,
 .about h2 {
-  font-weight: 800;
-  letter-spacing: -0.045em;
-  line-height: 1.06;
+  font-weight: 700;
+  letter-spacing: 0.01rem;
 }
 
 .hero h1 {
-  max-width: 40rem;
-  font-size: clamp(3rem, 4.2vw, 3.6rem);
+  max-width: 40.4rem;
+  font-size: clamp(3rem, 3.75vw, 3.375rem);
+  line-height: 1.167;
 }
 
 .hero p {
-  max-width: 41rem;
-  margin-top: 1.35rem;
-  font-size: clamp(1rem, 1.4vw, 1.25rem);
-  line-height: 1.45;
+  max-width: 45.2rem;
+  margin-top: 1.25rem;
+  font-size: clamp(1.2rem, 1.67vw, 1.5rem);
+  font-weight: 500;
+  letter-spacing: 0.01rem;
+  line-height: 1.417;
 }
 
 .expertise {
-  display: grid;
-  grid-template-columns: minmax(18rem, 0.74fr) minmax(30rem, 1.4fr);
-  align-items: center;
-  gap: clamp(3rem, 6vw, 6.5rem);
-  padding-bottom: 8.25rem;
+  position: relative;
+  min-height: 49.45rem;
+}
+
+.expertiseCopy {
+  width: min(100%, 44.5rem);
 }
 
 .expertiseCopy h2,
 .about h2 {
-  font-size: clamp(2.25rem, 4vw, 2.5rem);
+  font-size: clamp(2.25rem, 2.78vw, 2.5rem);
+  line-height: 1.2;
 }
 
 .expertiseList {
   display: grid;
-  gap: 2rem;
-  margin: 2rem 0;
+  grid-template-columns: repeat(2, minmax(0, 20.625rem));
+  gap: 3.25rem;
+  margin: 2rem 0 2.75rem;
   list-style: none;
 }
 
 .expertiseList li {
-  display: grid;
-  grid-template-columns: 1.45rem 1fr;
-  gap: 0.75rem;
-}
-
-.check {
-  display: grid;
-  width: 1.25rem;
-  height: 1.25rem;
-  margin-top: 0.2rem;
-  place-items: center;
-  border-radius: 999px;
-  color: var(--surface);
-  background: var(--accent);
-  font-size: clamp(0.7rem, 1vw, 0.75rem);
-  font-weight: 900;
+  min-width: 0;
 }
 
 .expertiseList h3 {
-  color: var(--text-strong);
-  font-size: clamp(1.125rem, 1.65vw, 1.35rem);
-  font-weight: 800;
-  line-height: 1.25;
+  color: var(--foreground);
+  font-weight: 700;
+  letter-spacing: 0.01rem;
+  line-height: 1.28;
 }
 
 .expertiseList p {
-  margin-top: 0.4rem;
-  color: var(--text-strong);
-  font-size: clamp(0.95rem, 1.15vw, 1rem);
-  line-height: 1.45;
+  margin-top: 0.8rem;
+  color: var(--foreground);
+  font-weight: 400;
+  letter-spacing: 0.01rem;
+  line-height: 1.556;
 }
 
 .cta {
   position: relative;
   display: inline-flex;
-  min-height: 2.55rem;
+  min-height: 2.625rem;
   align-items: center;
-  gap: 1rem;
   justify-content: center;
-  border-radius: 999px;
-  padding: 0.55rem 1.35rem;
-  color: var(--surface);
-  background: var(--text-strong);
-  font-size: clamp(0.85rem, 1vw, 0.9rem);
-  font-weight: 700;
+  gap: 0.625rem;
+  overflow: hidden;
+  border-radius: 1.875rem;
+  padding: 0.625rem 0.95rem 0.625rem 1.56rem;
+  color: #fff;
+  background: #4342ea;
+  box-shadow: 0 0.45rem 1rem rgb(15 23 42 / 12%);
+  font-size: 1.125rem;
+  font-weight: 600;
+  letter-spacing: 0.01rem;
+  line-height: 1.22;
   text-decoration: none;
   isolation: isolate;
-  overflow: hidden;
-  box-shadow: 0 0.45rem 1rem rgb(15 23 42 / 12%);
   transition: transform 220ms cubic-bezier(0.22, 1, 0.36, 1),
-    background-color 220ms ease, box-shadow 220ms ease;
+    box-shadow 220ms ease, color 260ms ease, background-color 260ms ease;
 }
 
 .cta::before {
@@ -129,6 +127,13 @@
   z-index: 1;
 }
 
+.ctaArrow,
+.ctaArrow img {
+  display: block;
+  width: 1.125rem;
+  height: 1.125rem;
+}
+
 .ctaArrow {
   transition: transform 260ms cubic-bezier(0.22, 1, 0.36, 1);
 }
@@ -144,7 +149,7 @@
 }
 
 .cta:hover .ctaArrow {
-  transform: translateX(0.25rem);
+  transform: translateX(0.2rem);
 }
 
 .cta:focus-visible {
@@ -155,8 +160,18 @@
 .productImage,
 .portrait {
   overflow: hidden;
-  border-radius: 0.85rem;
-  box-shadow: 0 1.35rem 1.6rem var(--shadow);
+  border-radius: 0.95rem;
+  box-shadow: 0 1.25rem 2.125rem rgb(0 0 0 / 65%);
+}
+
+.productImage {
+  position: absolute;
+  top: -12.2rem;
+  left: 53.75rem;
+  width: 67.375rem;
+  height: 48.75rem;
+  border-radius: 1.3rem;
+  box-shadow: 0 1.73rem 2.95rem rgb(0 0 0 / 65%);
 }
 
 .productImage img,
@@ -169,102 +184,188 @@
 
 .about {
   display: grid;
-  grid-template-columns: minmax(18rem, 0.82fr) minmax(22rem, 1.18fr);
-  align-items: center;
-  gap: clamp(3.5rem, 7vw, 7rem);
-  padding-bottom: 7.5rem;
+  min-height: 46.1rem;
+  grid-template-columns: 30.75rem minmax(0, 44.5rem);
+  align-items: start;
+  gap: 4.75rem;
 }
 
 .portrait {
-  aspect-ratio: 0.88;
+  width: 30.75rem;
+  height: 37.3125rem;
+}
+
+.portrait img {
+  object-position: center 64%;
 }
 
 .aboutCopy {
-  max-width: 35rem;
+  padding-top: 0;
 }
 
 .bodyCopy {
   display: grid;
-  gap: 2rem;
-  margin: 2rem 0;
-  color: var(--text-strong);
-  font-size: clamp(0.95rem, 1.15vw, 1rem);
-  line-height: 1.45;
+  grid-template-columns: repeat(2, minmax(0, 20.625rem));
+  gap: 2.875rem;
+  margin: 2rem 0 2.75rem;
+  color: var(--foreground);
 }
 
-.about .cta {
-  background: var(--accent);
+.bodyCopy p {
+  font-weight: 400;
+  letter-spacing: 0.01rem;
+  line-height: 1.556;
 }
 
-.about .cta:hover {
-  background: var(--accent);
-}
-
-@media (max-width: 900px) {
-  .expertiseList,
-  .bodyCopy {
-    gap: 1.75rem;
-    margin-block: 1.75rem;
-  }
-
-  .expertiseCopy h2,
-  .about h2 {
-    font-size: clamp(2rem, 4.5vw, 2.25rem);
+@media (max-width: 1200px) {
+  .container {
+    width: min(100% - 4rem, 80rem);
   }
 
   .hero {
-    padding-bottom: 5rem;
-  }
-
-  .expertise,
-  .about {
-    grid-template-columns: 1fr;
+    min-height: 36rem;
   }
 
   .expertise {
-    padding-bottom: 6rem;
+    min-height: auto;
+    padding-bottom: 8rem;
+  }
+
+  .expertiseCopy {
+    width: min(58%, 44.5rem);
+  }
+
+  .expertiseList {
+    grid-template-columns: 1fr;
+    gap: 2rem;
   }
 
   .productImage {
-    order: -1;
+    top: 3rem;
+    left: 64%;
+    width: 52rem;
+    height: 37.5rem;
+  }
+
+  .about {
+    min-height: auto;
+    grid-template-columns: minmax(18rem, 38%) minmax(0, 1fr);
+    gap: clamp(3rem, 6vw, 4.75rem);
+    padding: 7rem 0 8rem;
   }
 
   .portrait {
-    max-width: 31rem;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 0.824;
+  }
+
+  .bodyCopy {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .hero {
+    min-height: 32rem;
+    max-width: 42rem;
+  }
+
+  .expertise {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding-bottom: 6.5rem;
+  }
+
+  .expertiseCopy {
+    width: 100%;
+  }
+
+  .expertiseList {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .productImage {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: calc(100% + 4rem);
+    height: auto;
+    aspect-ratio: 4 / 3;
+    margin-left: 0;
+  }
+
+  .about {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+    padding-top: 0;
+  }
+
+  .portrait {
+    width: min(100%, 30.75rem);
+  }
+
+  .bodyCopy {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
   }
 }
 
 @media (max-width: 540px) {
+  .hero,
+  .expertise,
+  .about {
+    scroll-margin-top: 5rem;
+  }
+
   .container {
-    width: min(100% - 2rem, 76rem);
+    width: min(100% - 2rem, 80rem);
   }
 
   .hero {
-    padding-top: 2.5rem;
+    min-height: 31rem;
+    padding-top: 2rem;
   }
 
   .hero h1 {
-    font-size: clamp(2.5rem, 12vw, 3rem);
+    font-size: clamp(2.55rem, 12vw, 3rem);
+  }
+
+  .hero p {
+    font-size: 1.125rem;
+    line-height: 1.5;
   }
 
   .expertiseCopy h2,
   .about h2 {
-    font-size: clamp(1.75rem, 8vw, 2.125rem);
+    font-size: 2rem;
   }
 
   .expertiseList,
   .bodyCopy {
-    gap: 1.5rem;
-    margin-block: 1.5rem;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-block: 1.75rem 2.25rem;
   }
 
-  .expertise,
-  .about {
-    gap: 2.5rem;
+  .productImage {
+    width: calc(100% + 2rem);
   }
 
   .about {
-    padding-bottom: 5rem;
+    gap: 2.75rem;
+    padding-bottom: 6rem;
+  }
+
+  .portrait {
+    width: 100%;
+    max-height: 34rem;
+  }
+
+  .cta {
+    font-size: 1rem;
   }
 }
 

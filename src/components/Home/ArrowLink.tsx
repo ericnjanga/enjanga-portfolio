@@ -13,7 +13,9 @@ export default function ArrowLink({ link }: { link: LinkData }) {
     >
       <span className={styles.ctaLabel}>{link.label}</span>
       <span className={styles.ctaArrow} aria-hidden="true">
-        →
+        {/* Figma-exported icon. */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/icons/chevron-right.svg" alt="" />
       </span>
     </Link>
   );

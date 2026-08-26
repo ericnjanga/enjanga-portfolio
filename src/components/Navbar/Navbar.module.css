@@ -6,13 +6,12 @@
   left: 0;
   color: var(--foreground);
   background: var(--surface-muted);
-  box-shadow: 0 1px 0 var(--divider);
 }
 
 .nav {
   display: flex;
-  width: min(100% - 3rem, 76rem);
-  min-height: 6rem;
+  width: min(100% - 10rem, 80rem);
+  min-height: 6.25rem;
   align-items: center;
   justify-content: space-between;
   margin-inline: auto;
@@ -20,37 +19,44 @@
 
 .brand {
   color: var(--foreground);
-  font-size: clamp(1.4rem, 2.2vw, 1.75rem);
+  font-size: 1.875rem;
   font-weight: 800;
-  letter-spacing: -0.04em;
+  letter-spacing: 0.01rem;
+  line-height: 1;
   text-decoration: none;
-  transition: color 160ms ease;
+  transition: color 260ms ease;
 }
 
 .brand:hover {
-  color: var(--accent);
+  color: #f81c9a;
 }
 
 .desktopNavigation {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
+  gap: 0.625rem;
 }
 
 .navLink {
   border-radius: 999px;
-  padding: 0.35rem 1rem;
+  padding: 0.4375rem 1rem;
   color: var(--foreground);
-  font-size: clamp(0.875rem, 1.15vw, 0.95rem);
-  font-weight: 700;
+  font-size: 1.125rem;
+  font-weight: 600;
+  letter-spacing: 0.01rem;
+  line-height: 1.22;
   text-decoration: none;
-  transition: color 160ms ease, background-color 160ms ease;
+  transition: color 260ms ease, background-color 260ms ease;
 }
 
-.navLink:hover,
 .active {
-  color: var(--surface);
-  background: var(--nav-active);
+  color: var(--nav-active-foreground);
+  background: var(--foreground);
+}
+
+.navLink:hover {
+  color: #fff;
+  background: #f81c9a;
 }
 
 .themeToggle {
@@ -59,18 +65,27 @@
   height: 2.5rem;
   flex: 0 0 auto;
   place-items: center;
-  border: 1px solid var(--divider);
+  border-width: 0;
   border-radius: 999px;
   color: var(--foreground);
-  background: var(--surface);
+  background: #c5d3e3;
   cursor: pointer;
   transition: color 160ms ease, background-color 160ms ease,
     transform 160ms ease;
 }
 
+:global(:root[data-theme='dark']) .themeToggle {
+  background: #293849;
+}
+
 .themeToggle:hover {
-  color: var(--accent);
+  color: var(--foreground);
+  background: #f81c9a;
   transform: translateY(-1px);
+}
+
+:global(:root[data-theme='dark']) .themeToggle:hover {
+  background: #f81c9a;
 }
 
 .themeToggle:focus-visible {
@@ -90,7 +105,7 @@
 
 .desktopNavigation .themeToggle {
   position: relative;
-  margin-left: 0.5rem;
+  margin-left: 0.75rem;
 }
 
 .desktopNavigation .themeToggle::before {
@@ -165,6 +180,10 @@
 }
 
 @media (max-width: 900px) {
+  .nav {
+    width: min(100% - 4rem, 80rem);
+  }
+
   .desktopNavigation {
     display: none;
   }
@@ -177,7 +196,11 @@
 
 @media (max-width: 540px) {
   .nav {
-    width: min(100% - 2rem, 76rem);
+    width: min(100% - 2rem, 80rem);
     min-height: 5rem;
+  }
+
+  .brand {
+    font-size: 1.5rem;
   }
 }

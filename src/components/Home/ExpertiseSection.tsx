@@ -15,13 +15,8 @@ export default function ExpertiseSection({
         <ul className={styles.expertiseList}>
           {data.expertiseItemsCollection.items.map((item) => (
             <li key={item.title}>
-              <span className={styles.check} aria-hidden="true">
-                ✓
-              </span>
-              <div>
-                <h3>{item.title}</h3>
-                <p>{item.description}</p>
-              </div>
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
             </li>
           ))}
         </ul>

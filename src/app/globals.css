@@ -1,14 +1,24 @@
 @import 'tailwindcss';
 
+@font-face {
+  font-family: 'Mona Sans';
+  src: url('/fonts/MonaSansVF.woff2') format('woff2-variations');
+  font-style: normal;
+  font-weight: 200 900;
+  font-stretch: 75% 125%;
+  font-display: swap;
+}
+
 :root {
   --background: #edf5ff;
-  --foreground: #263b54;
+  --foreground: #314255;
   --surface: #ffffff;
   --surface-muted: #edf5ff;
   --text-strong: #202020;
   --text-muted: #334155;
   --accent: #4647f2;
-  --nav-active: #263b54;
+  --nav-active: #c5d3e3;
+  --nav-active-foreground: #f8f8f8;
   --shadow: rgb(15 23 42 / 28%);
   --divider: rgb(38 59 84 / 8%);
 }
@@ -21,7 +31,8 @@
   --text-strong: #f8fafc;
   --text-muted: #b8c7da;
   --accent: #818cf8;
-  --nav-active: #e2e8f0;
+  --nav-active: #293849;
+  --nav-active-foreground: #0d1726;
   --shadow: rgb(0 0 0 / 48%);
   --divider: rgb(226 232 240 / 12%);
 }
@@ -45,8 +56,9 @@ html {
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  padding-top: 6rem;
+  font-family: 'Mona Sans', Arial, Helvetica, sans-serif;
+  font-optical-sizing: auto;
+  padding-top: 6.25rem;
   transition: color 180ms ease, background-color 180ms ease;
 }
 
@@ -55,9 +67,21 @@ button {
   -webkit-tap-highlight-color: transparent;
 }
 
+a {
+  transition: color 260ms ease, background-color 260ms ease;
+}
+
 button,
 a {
   font: inherit;
+}
+
+p {
+  font-size: clamp(1.115rem, 1.4vw, 1.25rem);
+}
+
+h3 {
+  font-size: clamp(1.6rem, 1.55rem + 0.2vw, 1.7rem);
 }
 
 @media (prefers-reduced-motion: reduce) {

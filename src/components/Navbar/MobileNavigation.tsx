@@ -10,11 +10,15 @@ import ThemeToggle from './ThemeToggle';
 type MobileNavigationProps = {
   navigation: NavigationItemData[];
   siteName?: string;
+  activeHref?: string;
+  onNavigate?: (href: string) => void;
 };
 
 export default function MobileNavigation({
   navigation,
   siteName,
+  activeHref,
+  onNavigate,
 }: MobileNavigationProps) {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -59,10 +63,7 @@ export default function MobileNavigation({
             className={styles.drawer}
           >
             <div className={styles.drawerHeader}>
-              <Brand
-                siteName={siteName}
-                onNavigate={() => setIsOpen(false)}
-              />
+              <Brand siteName={siteName} onNavigate={() => setIsOpen(false)} />
               <button
                 type="button"
                 onClick={() => setIsOpen(false)}
@@ -96,8 +97,16 @@ export default function MobileNavigation({
                       rel={
                         item.openInNewTab ? 'noopener noreferrer' : undefined
                       }
-                      onClick={() => setIsOpen(false)}
-                      className={styles.navLink}
+                      aria-current={
+                        activeHref === item.href ? 'page' : undefined
+                      }
+                      onClick={() => {
+                        onNavigate?.(item.href);
+                        setIsOpen(false);
+                      }}
+                      className={`${styles.navLink} ${
+                        activeHref === item.href ? styles.active : ''
+                      }`}
                     >
                       {item.name}
                     </Link>

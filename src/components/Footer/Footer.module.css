@@ -1,61 +1,106 @@
 .footer {
+  min-height: 25rem;
   color: var(--foreground);
   background: var(--surface);
 }
 
 .inner {
   display: grid;
-  width: min(100% - 3rem, 76rem);
-  grid-template-columns: 2fr 3fr;
-  gap: 2.5rem;
+  width: min(100% - 10rem, 80rem);
+  min-height: 25rem;
+  grid-template-columns: 30.5rem minmax(0, 1fr);
+  align-items: center;
   margin-inline: auto;
-  padding: 4rem 0;
 }
 
 .brand {
   width: fit-content;
-  height: fit-content;
   color: inherit;
-  font-size: clamp(1.4rem, 2.1vw, 1.65rem);
+  font-size: 1.875rem;
   font-weight: 800;
-  letter-spacing: -0.03em;
+  letter-spacing: 0.01rem;
+  line-height: 1;
   text-decoration: none;
+}
+
+.brand:hover {
+  color: #f81c9a;
 }
 
 .details {
   display: flex;
   flex-direction: column;
-  gap: 1.75rem;
+  gap: 1.25rem;
 }
 
 .links {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem 5rem;
+  align-items: center;
+  gap: 1.5rem;
   list-style: none;
 }
 
+.links li + li {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.links li + li::before {
+  width: 1px;
+  height: 1.5625rem;
+  background: var(--foreground);
+  content: '';
+}
+
 .links a {
-  color: var(--text-strong);
-  font-size: clamp(0.9rem, 1.2vw, 1rem);
-  font-weight: 800;
+  color: var(--foreground);
+  font-size: 1.375rem;
+  font-weight: 700;
+  letter-spacing: 0.01rem;
+  line-height: 1;
   text-decoration: none;
-  transition: color 160ms ease;
 }
 
 .links a:hover {
-  color: var(--accent);
+  color: #f81c9a;
 }
 
 .copyright {
-  color: var(--text-muted);
-  font-size: clamp(0.825rem, 1.05vw, 0.9rem);
+  color: var(--foreground);
+  font-size: 1.125rem;
+  font-weight: 500;
+  letter-spacing: 0.01rem;
+  line-height: 1.55;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 900px) {
   .inner {
-    width: min(100% - 2rem, 76rem);
+    width: min(100% - 4rem, 80rem);
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer,
+  .inner {
+    min-height: 20rem;
+  }
+
+  .inner {
+    width: min(100% - 2rem, 80rem);
     grid-template-columns: 1fr;
-    padding: 3rem 0;
+    align-content: center;
+    gap: 3rem;
+  }
+
+  .brand {
+    font-size: 1.5rem;
+  }
+
+  .links a {
+    font-size: 1.2rem;
   }
 }

@@ -16,8 +16,8 @@ import type {
 
 export const navFallback: NavigationItemData[] = [
   { id: '1', name: 'Home', href: '/', openInNewTab: false },
-  { id: '2', name: 'Expertise', href: '/expertise', openInNewTab: false },
-  { id: '3', name: 'About', href: '/about', openInNewTab: false },
+  { id: '2', name: 'Expertise', href: '/#expertise', openInNewTab: false },
+  { id: '3', name: 'About', href: '/#about', openInNewTab: false },
   {
     id: '4',
     name: 'Case Studies',
@@ -56,53 +56,54 @@ export const siteSettingsFallback: SiteSettingsData = {
 };
 
 export const aboutImageFallback: ImageData = {
-  url: '/images/profile-fallback.jpg',
+  url: '/images/eric-njanga-portrait.jpeg',
   description: 'A picture of me.',
-  width: 1052,
-  height: 800,
+  width: 341,
+  height: 512,
 };
 
 export const aboutCtaFallback: LinkData = {
-  label: 'Contact Me',
-  href: '/contact',
-  openInNewTab: false,
+  label: 'LinkedIn Profile',
+  href: 'https://www.linkedin.com/in/ericnjanga',
+  openInNewTab: true,
 };
 
 export const homePageFallback: HomePageData = {
-  seoTitle: 'Welcome to My Portfolio',
-  seoDescription: 'Explore my work and expertise in web development.',
+  seoTitle: 'Eric Njanga — React and Next.js Engineer',
+  seoDescription:
+    'Front-end architecture, product engineering, and enterprise modernization.',
   hero: {
-    title: 'Welcome to My Portfolio',
-    subtitle: 'Explore my work and expertise in web development.',
+    title: 'Architecting modern enterprise interfaces.',
+    subtitle:
+      'I engineer scalable front-end systems that transform complex business requirements into intuitive, maintainable digital experiences.',
   },
   expertiseSection: {
-    title: 'My Expertise',
+    title: 'Engineering beyond the interface.',
     expertiseItemsCollection: {
       items: [
         {
-          title: 'Web Development',
-          description: 'Building responsive and dynamic web applications.',
+          title: 'Core web app architecture',
+          description:
+            'I design scalable front-end architectures that turn complex business requirements into maintainable systems—connecting UI components, data, APIs, state, accessibility, performance, and testing into a cohesive application.',
         },
         {
-          title: 'UI/UX Design',
-          description: 'Creating user-friendly interfaces and experiences.',
-        },
-        {
-          title: 'Content Management',
-          description: 'Managing and optimizing content for the web.',
+          title: 'Product engineering',
+          description:
+            'I approach software as both an engineering system and a business product—balancing user experience, technical constraints, maintainability, and evolving business needs throughout the product lifecycle.',
         },
       ],
     },
-    image: null,
-    imageAltText: '',
-    cta: {
-      label: 'View case studies',
-      href: '/case-studies',
-      openInNewTab: false,
+    image: {
+      url: '/images/enterprise-dashboard.png',
+      width: 1024,
+      height: 768,
+      description: 'A dark enterprise task-management dashboard.',
     },
+    imageAltText: 'Enterprise task-management dashboard interface',
+    cta: { ...aboutCtaFallback },
   },
   aboutSection: {
-    title: 'About Me',
+    title: 'Technology in the modern enterprise context.',
     body: {
       json: {
         nodeType: 'document',
@@ -113,7 +114,20 @@ export const homePageFallback: HomePageData = {
               {
                 nodeType: 'text',
                 value:
-                  'I am a passionate web developer with experience in building modern web applications. I specialize in creating responsive designs and seamless user experiences.',
+                  'My career has been shaped by large organizations, complex systems, and the challenge of bringing established software forward. Over the years, I’ve learned that successful modernization is about more than technology—it requires understanding users, business priorities, organizational constraints, and the people responsible for delivering change.',
+                marks: [],
+                data: {},
+              },
+            ],
+            data: {},
+          },
+          {
+            nodeType: 'paragraph',
+            content: [
+              {
+                nodeType: 'text',
+                value:
+                  'That perspective shapes how I work today: combining front-end architecture, product thinking, and enterprise experience to help build software that remains useful, adaptable, and maintainable as organizations evolve.',
                 marks: [],
                 data: {},
               },
@@ -124,12 +138,11 @@ export const homePageFallback: HomePageData = {
       },
     },
     image: { ...aboutImageFallback },
-    imageAltText: 'Profile picture of Eric Njanga',
+    imageAltText: 'Eric Njanga wearing a pink blazer in downtown Toronto',
     imagePosition: 'left',
     cta: { ...aboutCtaFallback },
   },
 };
-
 
 export const caseStudiesPageFallback: CaseStudiesPageData = {
   seoTitle: 'case studies title...',
