@@ -3,7 +3,6 @@
 const path = require('path');
 
 const nextConfig = {
-  output: 'export',
   trailingSlash: true,
 
   // ⬇️ let Next process JS + CSS coming from the library

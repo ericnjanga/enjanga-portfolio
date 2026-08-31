@@ -40,6 +40,15 @@ function resolveInternalDestination(
   return null;
 }
 
+/**
+ * TESTING CONDITIONS:
+ * -------------------
+ * - External links should have tests covering true, false, and null/missing (defaulting to false).
+ * - Internal links should also verify that an erroneous true value is overridden to false.
+ * - The existing Contentful test only covers navigation items, not normalizeLink.
+ * @param link 
+ * @returns 
+ */
 export function normalizeLink(
   link: LinkFieldsFragment | null
 ): LinkData | null {
