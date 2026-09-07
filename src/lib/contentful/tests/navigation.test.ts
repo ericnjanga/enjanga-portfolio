@@ -1,57 +1,48 @@
-import { afterEach, describe, expect, test, vi } from 'vitest';
-import { getNavigation } from '@/lib/contentful/fetching/getNavigation';
+import { afterEach, expect, test, vi } from 'vitest';
+import { getSiteSettings } from '@/lib/contentful/fetching/getSiteSettings';
+import { execute } from '@/lib/contentful/client/execute';
 
-afterEach(() => {
-  vi.restoreAllMocks();
-  vi.unstubAllEnvs();
-});
+vi.mock('server-only', () => ({}));
+vi.mock('@/lib/contentful/client/execute', () => ({ execute: vi.fn() }));
 
-test('maps visible Contentful navigation items', async () => {
-  vi.stubEnv('CONTENTFUL_SPACE_ID', 'test-space');
-  vi.stubEnv('CONTENTFUL_ENVIRONMENT', 'master');
-  vi.stubEnv('CONTENTFUL_DELIVERY_TOKEN', 'test-token');
+afterEach(() => vi.clearAllMocks());
 
-  vi.spyOn(globalThis, 'fetch').mockResolvedValue(
-    new Response(
-      JSON.stringify({
-        data: {
-          navigationCollection: {
-            items: [
-              {
-                name: 'Primary navigation',
-                location: 'header',
-                itemsCollection: {
-                  items: [
-                    {
-                      __typename: 'NavigationItem',
-                      sys: { id: 'home' },
-                      name: 'Home',
-                      destinationType: 'page',
-                      path: '/',
-                      sectionId: null,
-                      openInNewTab: false,
-                      isVisible: true,
-                    },
-                  ],
+test('maps visible Contentful navigation items and excludes hidden items', async () => {
+  vi.mocked(execute).mockResolvedValue({
+    siteSettingsCollection: {
+      items: [
+        {
+          primaryNavigation: {
+            __typename: 'Navigation',
+            itemsCollection: {
+              items: [
+                {
+                  __typename: 'NavigationItem',
+                  sys: { id: 'home' },
+                  name: 'Home',
+                  destinationType: 'page',
+                  path: '/',
+                  openInNewTab: false,
+                  isVisible: true,
                 },
-              },
-            ],
+                {
+                  __typename: 'NavigationItem',
+                  sys: { id: 'hidden' },
+                  name: 'Hidden',
+                  destinationType: 'page',
+                  path: '/hidden',
+                  isVisible: false,
+                },
+                null,
+              ],
+            },
           },
         },
-      }),
-      {
-        status: 200,
-        headers: { 'Content-Type': 'application/json' },
-      }
-    )
-  );
-
-  await expect(getNavigation()).resolves.toEqual([
-    {
-      id: 'home',
-      name: 'Home',
-      href: '/',
-      openInNewTab: false,
+      ],
     },
+  });
+
+  expect((await getSiteSettings()).navbar.navigation).toEqual([
+    { id: 'home', name: 'Home', href: '/', openInNewTab: false },
   ]);
 });
