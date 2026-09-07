@@ -145,10 +145,11 @@ export const homePageFallback: HomePageData = {
 };
 
 export const caseStudiesPageFallback: CaseStudiesPageData = {
-  seoTitle: 'case studies title...',
-  seoDescription: 'case studies description...',
+  seoTitle: 'Case Studies — Eric Njanga',
+  seoDescription: 'Explore front-end architecture, product engineering, and enterprise modernization case studies by Eric Njanga.',
   hero: {
-    title: 'case studies...',
-    subtitle: 'case studies subtitle...',
+    title: 'Engineering complex workflows into clear experiences.',
+    subtitle: 'Case studies in front-end architecture, product engineering, and enterprise modernization.',
   },
+  caseStudies: [],
 };
