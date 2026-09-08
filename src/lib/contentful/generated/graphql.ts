@@ -33,6 +33,45 @@ export type NavigationFieldsFragment = { __typename: 'Navigation', name: string 
 
 export type NavigationItemFieldsFragment = { __typename: 'NavigationItem', name: string | null, destinationType: string | null, path: string | null, sectionId: string | null, openInNewTab: boolean | null, isVisible: boolean | null, sys: { id: string } };
 
+export type CaseStudiesQueryVariables = Exact<{
+  skip: number;
+  limit: number;
+}>;
+
+
+export type CaseStudiesQuery = { blogPostCollection: { total: number, items: Array<{ title: string | null, slug: string | null, blurb: string | null, sys: { id: string }, introVideo: { url: string | null, contentType: string | null } | null, introVideoImage: { url: string | null, width: number | null, height: number | null, description: string | null } | null } | null> } | null };
+
+export type CaseStudyQueryVariables = Exact<{
+  slug: string;
+}>;
+
+
+export type CaseStudyQuery = { blogPostCollection: { items: Array<{ title: string | null, slug: string | null, blurb: string | null, sys: { id: string }, description: { json: unknown, links: { assets: { block: Array<{ title: string | null, url: string | null, width: number | null, height: number | null, description: string | null, sys: { id: string } } | null> }, entries: { hyperlink: Array<
+              | { __typename: 'BlogPost', slug: string | null, sys: { id: string } }
+              | { __typename: 'CaseStudiesPage', sys: { id: string } }
+              | { __typename: 'ContentSection', sys: { id: string } }
+              | { __typename: 'ExpertiseItem', sys: { id: string } }
+              | { __typename: 'ExpertiseSection', sys: { id: string } }
+              | { __typename: 'Hero', sys: { id: string } }
+              | { __typename: 'HomePage', sys: { id: string } }
+              | { __typename: 'Link', sys: { id: string } }
+              | { __typename: 'Navigation', sys: { id: string } }
+              | { __typename: 'NavigationItem', sys: { id: string } }
+              | { __typename: 'SiteSettings', sys: { id: string } }
+             | null>, inline: Array<
+              | { __typename: 'BlogPost', slug: string | null, sys: { id: string } }
+              | { __typename: 'CaseStudiesPage', sys: { id: string } }
+              | { __typename: 'ContentSection', sys: { id: string } }
+              | { __typename: 'ExpertiseItem', sys: { id: string } }
+              | { __typename: 'ExpertiseSection', sys: { id: string } }
+              | { __typename: 'Hero', sys: { id: string } }
+              | { __typename: 'HomePage', sys: { id: string } }
+              | { __typename: 'Link', sys: { id: string } }
+              | { __typename: 'Navigation', sys: { id: string } }
+              | { __typename: 'NavigationItem', sys: { id: string } }
+              | { __typename: 'SiteSettings', sys: { id: string } }
+             | null> } } } | null, introVideo: { url: string | null, contentType: string | null } | null, introVideoImage: { url: string | null, width: number | null, height: number | null, description: string | null } | null } | null> } | null };
+
 export type CaseStudiesPageQueryVariables = Exact<{
   slug: string;
 }>;
@@ -306,6 +345,97 @@ export const NavigationFieldsFragmentDoc = new TypedDocumentString(`
   openInNewTab
   isVisible
 }`, {"fragmentName":"NavigationFields"}) as unknown as TypedDocumentString<NavigationFieldsFragment, unknown>;
+export const CaseStudiesDocument = new TypedDocumentString(`
+    query CaseStudies($skip: Int!, $limit: Int!) {
+  blogPostCollection(
+    skip: $skip
+    limit: $limit
+    order: [sys_firstPublishedAt_DESC, sys_id_ASC]
+  ) {
+    total
+    items {
+      sys {
+        id
+      }
+      title
+      slug
+      blurb
+      introVideo {
+        url
+        contentType
+      }
+      introVideoImage {
+        ...ImageFields
+      }
+    }
+  }
+}
+    fragment ImageFields on Asset {
+  url
+  width
+  height
+  description
+}`) as unknown as TypedDocumentString<CaseStudiesQuery, CaseStudiesQueryVariables>;
+export const CaseStudyDocument = new TypedDocumentString(`
+    query CaseStudy($slug: String!) {
+  blogPostCollection(where: {slug: $slug}, limit: 1) {
+    items {
+      sys {
+        id
+      }
+      title
+      slug
+      blurb
+      description {
+        json
+        links {
+          assets {
+            block {
+              sys {
+                id
+              }
+              title
+              ...ImageFields
+            }
+          }
+          entries {
+            hyperlink {
+              sys {
+                id
+              }
+              __typename
+              ... on BlogPost {
+                slug
+              }
+            }
+            inline {
+              sys {
+                id
+              }
+              __typename
+              ... on BlogPost {
+                slug
+              }
+            }
+          }
+        }
+      }
+      introVideo {
+        url
+        contentType
+      }
+      introVideoImage {
+        ...ImageFields
+      }
+    }
+  }
+}
+    fragment ImageFields on Asset {
+  url
+  width
+  height
+  description
+}`) as unknown as TypedDocumentString<CaseStudyQuery, CaseStudyQueryVariables>;
 export const CaseStudiesPageDocument = new TypedDocumentString(`
     query CaseStudiesPage($slug: String!) {
   caseStudiesPageCollection(where: {slug: $slug}, limit: 1) {

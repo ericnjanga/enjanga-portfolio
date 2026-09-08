@@ -1,0 +1,78 @@
+query CaseStudies($skip: Int!, $limit: Int!) {
+  blogPostCollection(
+    skip: $skip
+    limit: $limit
+    order: [sys_firstPublishedAt_DESC, sys_id_ASC]
+  ) {
+    total
+    items {
+      sys {
+        id
+      }
+      title
+      slug
+      blurb
+      introVideo {
+        url
+        contentType
+      }
+      introVideoImage {
+        ...ImageFields
+      }
+    }
+  }
+}
+
+query CaseStudy($slug: String!) {
+  blogPostCollection(where: { slug: $slug }, limit: 1) {
+    items {
+      sys {
+        id
+      }
+      title
+      slug
+      blurb
+      description {
+        json
+        links {
+          assets {
+            block {
+              sys {
+                id
+              }
+              title
+              ...ImageFields
+            }
+          }
+          entries {
+            hyperlink {
+              sys {
+                id
+              }
+              __typename
+              ... on BlogPost {
+                slug
+              }
+            }
+            inline {
+              sys {
+                id
+              }
+              __typename
+              ... on BlogPost {
+                slug
+              }
+            }
+          }
+        }
+      }
+      introVideo {
+        url
+        contentType
+      }
+      introVideoImage {
+        ...ImageFields
+      }
+    }
+  }
+}
