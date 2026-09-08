@@ -1,7 +1,6 @@
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { vi } from 'vitest';
-import MobileNavigation from '../MobileNavigation';
 import NavbarNavigation from '../NavbarNavigation';
 import { navigationFixture } from './navigationFixture';
 
@@ -12,19 +11,19 @@ vi.mock('next/navigation', () => ({
 test('opens and closes the mobile menu', async () => {
   const user = userEvent.setup();
 
-  render(<MobileNavigation navigation={navigationFixture} />);
+  render(<NavbarNavigation navigation={navigationFixture} />);
 
   await user.click(screen.getByRole('button', { name: /open main menu/i }));
 
-  expect(screen.getByRole('dialog', { name: /main menu/i })).toBeVisible();
+  expect(screen.getByRole('dialog', { name: /global/i })).toBeVisible();
 
   const [closeButton] = screen.getAllByRole('button', {
-    name: /close menu/i,
+    name: /close main menu/i,
   });
   await user.click(closeButton);
 
   expect(
-    screen.queryByRole('dialog', { name: /main menu/i })
+    screen.queryByRole('dialog', { name: /global/i })
   ).not.toBeInTheDocument();
 });
 
