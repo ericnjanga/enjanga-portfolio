@@ -1,10 +1,9 @@
 'use client';
 
-import Link from 'next/link';
+import { Navbar } from 'enjanga-components-library';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import type { NavigationItemData } from '@/lib/contentful/models';
-import MobileNavigation from './MobileNavigation';
 import styles from './Navbar.module.css';
 import ThemeToggle from './ThemeToggle';
 
@@ -30,7 +29,7 @@ export default function NavbarNavigation({
 }: NavbarNavigationProps) {
   const pathname = usePathname();
   const pathnameLink = navigation.find(
-    ({ href }) => !href.includes('#') && href.split('?')[0] === pathname
+    ({ href }) => !href.includes('#') && (href.split('?')[0] === pathname || (href !== '/' && pathname?.startsWith(`${href}/`)))
   );
   const [activeHref, setActiveHref] = useState(pathnameLink?.href ?? '/');
 
@@ -111,33 +110,8 @@ export default function NavbarNavigation({
     };
   }, [navigation, pathname, pathnameLink?.href]);
 
-  return (
-    <>
-      <MobileNavigation
-        navigation={navigation}
-        siteName={siteName}
-        activeHref={activeHref}
-        onNavigate={setActiveHref}
-      />
-
-      <div className={styles.desktopNavigation}>
-        {navigation.map((item) => (
-          <Link
-            key={item.id}
-            href={item.href}
-            target={item.openInNewTab ? '_blank' : undefined}
-            rel={item.openInNewTab ? 'noopener noreferrer' : undefined}
-            aria-current={activeHref === item.href ? 'page' : undefined}
-            onClick={() => setActiveHref(item.href)}
-            className={`${styles.navLink} ${
-              activeHref === item.href ? styles.active : ''
-            }`}
-          >
-            {item.name}
-          </Link>
-        ))}
-        <ThemeToggle />
-      </div>
-    </>
-  );
+  return <Navbar brand={siteName ?? 'Eric Njanga'} brandLabel={`${siteName ?? 'Eric Njanga'} home`}
+    className={styles.libraryNavbar} ariaLabel="Global" activeHref={activeHref}
+    items={navigation.map(item => ({ id: item.id, label: item.name, href: item.href, openInNewTab: item.openInNewTab }))}
+    actions={<ThemeToggle />} onNavigate={({ item }) => setActiveHref(item.href)} />;
 }
