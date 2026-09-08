@@ -23,7 +23,17 @@ export type HomePageData = { // Component-ready data structure ...
   aboutSection: ContentSectionData; 
 };
 
-export type CaseStudiesPageData = { // Component-ready data structure ...
+export type CaseStudySummaryData = {
+  id: string;
+  title: string;
+  slug: string;
+  summary: string;
+  image: ImageData | null;
+  video: { url: string; contentType: string } | null;
+};
+
+export type CaseStudiesPageData = {
+  caseStudies: CaseStudySummaryData[];
   seoTitle: string;
   seoDescription: string; 
   hero: HeroData; 
