@@ -24,26 +24,10 @@
   padding-top: 1.25rem;
 }
 
-.hero h1,
 .expertise h2,
 .about h2 {
   font-weight: 700;
   letter-spacing: 0.01rem;
-}
-
-.hero h1 {
-  max-width: 40.4rem;
-  font-size: clamp(3rem, 3.75vw, 3.375rem);
-  line-height: 1.167;
-}
-
-.hero p {
-  max-width: 45.2rem;
-  margin-top: 1.25rem;
-  font-size: clamp(1.2rem, 1.67vw, 1.5rem);
-  font-weight: 500;
-  letter-spacing: 0.01rem;
-  line-height: 1.417;
 }
 
 .expertise {
@@ -327,15 +311,6 @@
   .hero {
     min-height: 31rem;
     padding-top: 2rem;
-  }
-
-  .hero h1 {
-    font-size: clamp(2.55rem, 12vw, 3rem);
-  }
-
-  .hero p {
-    font-size: 1.125rem;
-    line-height: 1.5;
   }
 
   .expertiseCopy h2,

@@ -2,7 +2,14 @@ import type { Metadata } from 'next';
 import Footer from '@/components/Footer/Footer';
 import ServerNavbar from '@/components/Navbar/Navbar';
 import { SiteSettingsProvider } from '@/components/SiteSettings/SiteSettingsProvider';
+import 'enjanga-core-setup/typography.css';
+import 'enjanga-core-setup/design-tokens.css';
 import './globals.css';
+import 'enjanga-components-library/navbar.css';
+import 'enjanga-components-library/button.css';
+import 'enjanga-components-library/page-hero.css';
+import 'enjanga-components-library/case-studies-page.css';
+import 'enjanga-components-library/case-study-page.css';
 import { getSiteSettings } from '@/lib/contentful/fetching/getSiteSettings';
 
 export const metadata: Metadata = {

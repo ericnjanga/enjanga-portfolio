@@ -204,3 +204,10 @@
     font-size: 1.5rem;
   }
 }
+
+.libraryNavbar {
+  position: fixed;
+  inset: 0 0 auto;
+  --enj-navbar-background: var(--surface-muted);
+  --enj-navbar-foreground: var(--foreground);
+}

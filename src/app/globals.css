@@ -1,14 +1,5 @@
 @import 'tailwindcss';
 
-@font-face {
-  font-family: 'Mona Sans';
-  src: url('/fonts/MonaSansVF.woff2') format('woff2-variations');
-  font-style: normal;
-  font-weight: 200 900;
-  font-stretch: 75% 125%;
-  font-display: swap;
-}
-
 :root {
   --background: #edf5ff;
   --foreground: #314255;
@@ -56,7 +47,12 @@ html {
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: 'Mona Sans', Arial, Helvetica, sans-serif;
+  font-family: var(
+    --enj-font-family-sans,
+    Arial,
+    Helvetica,
+    sans-serif
+  );
   font-optical-sizing: auto;
   padding-top: 6.25rem;
   transition: color 180ms ease, background-color 180ms ease;
@@ -94,4 +90,10 @@ h3 {
   body {
     padding-top: 5rem;
   }
+}
+
+/* Keep application-wide paragraph presets out of library article typography. */
+.enj-case-study-page__article p {
+  font-size: inherit;
+  line-height: inherit;
 }

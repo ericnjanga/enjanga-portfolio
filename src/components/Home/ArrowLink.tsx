@@ -1,22 +1,11 @@
-import Link from 'next/link';
+import { Button } from 'enjanga-components-library';
 import type { LinkData } from '@/lib/contentful/models';
-import styles from './Home.module.css';
 
 export default function ArrowLink({ link }: { link: LinkData }) {
-  return (
-    <Link
-      href={link.href}
-      aria-label={link.accessibleLabel || link.label}
-      target={link.openInNewTab ? '_blank' : undefined}
-      rel={link.openInNewTab ? 'noopener noreferrer' : undefined}
-      className={styles.cta}
-    >
-      <span className={styles.ctaLabel}>{link.label}</span>
-      <span className={styles.ctaArrow} aria-hidden="true">
-        {/* Figma-exported icon. */}
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/icons/chevron-right.svg" alt="" />
-      </span>
-    </Link>
-  );
+  return <Button variant="primary" icon="chevron-right" href={link.href}
+    aria-label={link.accessibleLabel || link.label}
+    target={link.openInNewTab ? '_blank' : undefined}
+    rel={link.openInNewTab ? 'noopener noreferrer' : undefined}>
+    {link.label}
+  </Button>;
 }
