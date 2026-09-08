@@ -28,7 +28,5 @@ jobs:
         run: yarn install --immutable --immutable-cache
       - name: Run ci checks
         run: yarn ci-check
-      - name: Build project
+      - name: Test and build project
         run: yarn build
-    #   - name: Run tests
-    #     run: yarn test
