@@ -1,3 +1,4 @@
+import LibraryNavigationProvider from '@/components/LibraryNavigationProvider';
 import type { Metadata } from 'next';
 import Footer from '@/components/Footer/Footer';
 import ServerNavbar from '@/components/Navbar/Navbar';
@@ -35,11 +36,13 @@ export default async function RootLayout({
         />
       </head>
       <body>
-        <ServerNavbar />
-        <SiteSettingsProvider value={siteSettings}>
-          {children}
-        </SiteSettingsProvider>
-        <Footer />
+        <LibraryNavigationProvider>
+          <ServerNavbar />
+          <SiteSettingsProvider value={siteSettings}>
+            {children}
+          </SiteSettingsProvider>
+          <Footer />
+        </LibraryNavigationProvider>
       </body>
     </html>
   );
