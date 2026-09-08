@@ -6,7 +6,7 @@ export default function RecoveryScreen({ retry, caseStudy = false }: {
   retry: () => void;
   caseStudy?: boolean;
 }) {
-  return <main style={{ maxWidth: 720, margin: '0 auto', padding: '80px 24px', minHeight: '60vh' }}>
+  return <main style={{ fontFamily: 'var(--enj-font-family-sans, Arial, sans-serif)', fontSize: 'var(--enj-body-font-size, 18px)', lineHeight: 'var(--enj-body-line-height, 28px)', boxSizing: 'border-box', maxWidth: 720, margin: '0 auto', padding: '80px 24px', minHeight: '60vh' }}>
     <h1>{caseStudy ? 'This case study is temporarily unavailable' : 'This page is temporarily unavailable'}</h1>
     <p style={{ margin: '24px 0' }}>We couldn’t load the page. Please try again in a moment.</p>
     <div style={{ display: 'flex', flexWrap: 'wrap', gap: 16 }}>
