@@ -19,9 +19,9 @@
     "clean:hard": "rimraf node_modules .next dist yarn.lock && yarn cache clean && yarn install",
     "format": "prettier --write \"**/*.{js,ts,md,scss}\"",
     "format:diff": "prettier --list-different \"**/*.{js,ts,md,scss}\"",
-    "test": "vitest run",
-    "test:watch": "vitest --watch",
-    "test:coverage": "vitest run --coverage",
+    "test": "NODE_ENV=test vitest run",
+    "test:watch": "NODE_ENV=test vitest --watch",
+    "test:coverage": "NODE_ENV=test vitest run --coverage",
     "codegen": "graphql-codegen --config codegen.ts",
     "codegen:watch": "graphql-codegen --config codegen.ts --watch"
   },
