@@ -2,6 +2,10 @@
   "name": "enjanga-portfolio",
   "version": "0.2.0",
   "private": true,
+  "packageManager": "yarn@1.22.22",
+  "engines": {
+    "node": "22.x"
+  },
   "repository": "git@github.com:ericnjanga/enjanga-portfolio.git",
   "bugs": "https://github.com/ericnjanga/enjanga-portfolio/issues",
   "license": "Apache-2.0",
@@ -28,7 +32,7 @@
     "@contentful/rich-text-types": "^17.2.7",
     "clsx": "^2.1.1",
     "enjanga-components-library": "1.0.122",
-    "enjanga-core-setup": "file:../enjanga-core-setup",
+    "enjanga-core-setup": "file:vendor/enjanga-core-setup-1.0.41.tgz",
     "next": "15.5.7",
     "react": "19.0.1",
     "react-dom": "19.0.1",
