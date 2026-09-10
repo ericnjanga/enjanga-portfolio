@@ -8,6 +8,12 @@ import { CaseStudyPage } from 'enjanga-components-library';
 
 type Props = { params: Promise<{ slug: string }> };
 
+export const revalidate = 300; // 5 minutes, same as the Contentful cache. See https://nextjs.org/docs/app/building-your-application/data-fetching/revalidating#incremental-static-regeneration
+
+export async function generateStaticParams() {
+  return []; // Static generation, but on-demand for each case study page. See https://nextjs.org/docs/app/building-your-application/routing/dynamic-routes#on-demand-dynamic-routes
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const study = await getCaseStudy((await params).slug);
   return study
