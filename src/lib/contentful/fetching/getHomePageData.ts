@@ -1,5 +1,6 @@
 import 'server-only';
 
+import { cache } from 'react';
 import { HomePageDocument } from '../generated/graphql';
 import { execute } from '../client/execute';
 import type { HomePageData } from '../models';
@@ -10,7 +11,7 @@ import {
   normalizeHomePageHeroFields,
 } from '../transformations';
 
-export default async function getHomePageData(
+export default cache(async function getHomePageData(
   slug: string = '/'
 ): Promise<HomePageData> {
   const result = await execute(HomePageDocument, { slug });
@@ -37,4 +38,4 @@ export default async function getHomePageData(
       normalizeHomePageAboutSection(pageAboutSection) ??
       homePageFallback.aboutSection,
   };
-}
+});
