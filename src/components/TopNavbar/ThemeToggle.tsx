@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import styles from './Navbar.module.css';
+import styles from './TopNavbar.module.css';
 
 type Theme = 'light' | 'dark';
 

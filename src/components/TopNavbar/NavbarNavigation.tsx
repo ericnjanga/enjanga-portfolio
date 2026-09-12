@@ -4,24 +4,20 @@ import { Navbar } from 'enjanga-components-library';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import type { NavigationItemData } from '@/lib/contentful/models';
-import styles from './Navbar.module.css';
+import styles from './TopNavbar.module.css';
 import ThemeToggle from './ThemeToggle';
+import { getSectionId } from './utils';
 
 type NavbarNavigationProps = {
   navigation: NavigationItemData[];
   siteName?: string;
 };
 
-function getSectionId(href: string) {
-  if (href === '/') return 'home';
-
-  try {
-    const url = new URL(href, window.location.origin);
-    return url.pathname === '/' && url.hash ? url.hash.slice(1) : null;
-  } catch {
-    return null;
-  }
-}
+/**
+ * 
+ * @param param0 
+ * @returns 
+ */
 
 export default function NavbarNavigation({
   navigation,
@@ -33,7 +29,7 @@ export default function NavbarNavigation({
   );
   const [activeHref, setActiveHref] = useState(pathnameLink?.href ?? '/');
 
-  useEffect(() => {
+  useEffect(() => { console.log('----pathname=', pathname, 'pathnameLink=',  'activeHref=', activeHref);
     if (pathname !== '/') {
       setActiveHref(pathnameLink?.href ?? '');
       return;

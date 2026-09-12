@@ -1,7 +1,10 @@
 import { render, screen } from '@testing-library/react';
 import { vi } from 'vitest';
-import Navbar from '../Navbar';
+import TopNavbar from '../TopNavbar';
 import { navigationFixture } from './navigationFixture';
+
+// Vitest runs outside Next.js's server environment; mock only the marker.
+vi.mock('server-only', () => ({}));
 
 const getSiteSettingsMock = vi.hoisted(() => vi.fn());
 
@@ -20,7 +23,7 @@ test('renders navigation links', async () => {
     },
   });
 
-  render(await Navbar());
+  render(await TopNavbar());
 
   expect(screen.getByRole('link', { name: 'Home' })).toHaveAttribute(
     'href',

@@ -1,7 +1,7 @@
 import LibraryNavigationProvider from '@/components/LibraryNavigationProvider';
 import type { Metadata } from 'next';
 import Footer from '@/components/Footer/Footer';
-import ServerNavbar from '@/components/Navbar/Navbar';
+import TopNavbar from '@/components/TopNavbar/TopNavbar';
 import { SiteSettingsProvider } from '@/components/SiteSettings/SiteSettingsProvider';
 import 'enjanga-core-setup/typography.css';
 import 'enjanga-core-setup/design-tokens.css';
@@ -37,7 +37,7 @@ export default async function RootLayout({
       </head>
       <body>
         <LibraryNavigationProvider>
-          <ServerNavbar />
+          <TopNavbar />
           <SiteSettingsProvider value={siteSettings}>
             {children}
           </SiteSettingsProvider>
