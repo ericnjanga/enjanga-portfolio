@@ -1,14 +1,14 @@
 import { createRef } from 'react';
 import { render, screen } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
-import { Button } from 'enjanga-components-library';
+import { Button, Navbar } from 'enjanga-components-library';
 import LibraryNavigationProvider from './LibraryNavigationProvider';
 
 vi.mock('next/link', async () => { const { forwardRef } = await import('react'); return ({ default: forwardRef<HTMLAnchorElement, React.AnchorHTMLAttributes<HTMLAnchorElement>>(
   function MockLink(props, ref) { return <a {...props} ref={ref} data-next-link="true" />; }
 )}); });
 
-describe('portfolio Button routing', () => {
+describe('portfolio library routing', () => {
   it.each(['/case-studies/example', '/#about', '#section', '?page=2', './example'])(
     'uses Next Link for %s and forwards its ref and appearance', href => {
       const ref = createRef<HTMLAnchorElement>();
@@ -35,5 +35,22 @@ describe('portfolio Button routing', () => {
     expect(screen.getByRole('link', { name: 'Download' })).not.toHaveAttribute('data-next-link');
     expect(screen.getByRole('link', { name: 'New tab' })).toHaveAttribute('rel', 'noopener noreferrer');
     expect(screen.getByRole('button')).toBeDisabled();
+  });
+});
+
+ describe('portfolio Navbar routing', () => {
+  it('uses Next Link for menu and brand links and native anchors for external destinations', () => {
+    render(<LibraryNavigationProvider><Navbar brand="Site" items={[
+      { id: 'work', label: 'Work', href: '/case-studies' },
+      { id: 'about', label: 'About', href: '/#about' },
+      { id: 'external', label: 'External', href: 'https://example.com' },
+      { id: 'tab', label: 'New tab', href: '/case-studies', openInNewTab: true },
+    ]} /></LibraryNavigationProvider>);
+    for (const name of ['Home', 'Work', 'About']) {
+      expect(screen.getByRole('link', { name })).toHaveAttribute('data-next-link', 'true');
+    }
+    for (const name of ['External', 'New tab']) {
+      expect(screen.getByRole('link', { name })).not.toHaveAttribute('data-next-link');
+    }
   });
 });

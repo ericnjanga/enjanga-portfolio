@@ -31,7 +31,7 @@
     "@carbon/react": "^1.115.0",
     "@contentful/rich-text-types": "^17.2.7",
     "clsx": "^2.1.1",
-    "enjanga-components-library": "1.0.122",
+    "enjanga-components-library": "1.0.124",
     "enjanga-core-setup": "file:vendor/enjanga-core-setup-1.0.41.tgz",
     "next": "15.5.7",
     "react": "19.0.1",
