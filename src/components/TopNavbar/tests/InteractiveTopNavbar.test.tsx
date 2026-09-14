@@ -1,7 +1,7 @@
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { vi } from 'vitest';
-import NavbarNavigation from '../NavbarNavigation';
+import InteractiveTopNavbar from '../InteractiveTopNavbar';
 import { navigationFixture } from './navigationFixture';
 
 vi.mock('next/navigation', () => ({
@@ -11,7 +11,7 @@ vi.mock('next/navigation', () => ({
 test('opens and closes the mobile menu', async () => {
   const user = userEvent.setup();
 
-  render(<NavbarNavigation navigation={navigationFixture} />);
+  render(<InteractiveTopNavbar navigation={navigationFixture} />);
 
   await user.click(screen.getByRole('button', { name: /open main menu/i }));
 
@@ -47,7 +47,7 @@ test('updates the active link and URL hash when the visible section changes', as
     document.body.appendChild(section);
   });
 
-  render(<NavbarNavigation navigation={navigationFixture} />);
+  render(<InteractiveTopNavbar navigation={navigationFixture} />);
 
   await waitFor(() =>
     expect(screen.getByRole('link', { name: 'Home' })).toHaveAttribute(

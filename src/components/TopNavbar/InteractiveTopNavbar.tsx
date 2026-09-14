@@ -8,28 +8,31 @@ import styles from './TopNavbar.module.css';
 import ThemeToggle from './ThemeToggle';
 import { getSectionId } from './utils';
 
-type NavbarNavigationProps = {
+type InteractiveTopNavbarProps = {
   navigation: NavigationItemData[];
   siteName?: string;
 };
 
 /**
- * 
- * @param param0 
- * @returns 
+ *
+ * @param param0
+ * @returns
  */
 
-export default function NavbarNavigation({
+export default function InteractiveTopNavbar({
   navigation,
   siteName,
-}: NavbarNavigationProps) {
+}: InteractiveTopNavbarProps) {
   const pathname = usePathname();
   const pathnameLink = navigation.find(
-    ({ href }) => !href.includes('#') && (href.split('?')[0] === pathname || (href !== '/' && pathname?.startsWith(`${href}/`)))
+    ({ href }) =>
+      !href.includes('#') &&
+      (href.split('?')[0] === pathname ||
+        (href !== '/' && pathname?.startsWith(`${href}/`)))
   );
   const [activeHref, setActiveHref] = useState(pathnameLink?.href ?? '/');
 
-  useEffect(() => { console.log('----pathname=', pathname, 'pathnameLink=',  'activeHref=', activeHref);
+  useEffect(() => {
     if (pathname !== '/') {
       setActiveHref(pathnameLink?.href ?? '');
       return;
@@ -106,8 +109,21 @@ export default function NavbarNavigation({
     };
   }, [navigation, pathname, pathnameLink?.href]);
 
-  return <Navbar brand={siteName ?? 'Eric Njanga'} brandLabel={`${siteName ?? 'Eric Njanga'} home`}
-    className={styles.libraryNavbar} ariaLabel="Global" activeHref={activeHref}
-    items={navigation.map(item => ({ id: item.id, label: item.name, href: item.href, openInNewTab: item.openInNewTab }))}
-    actions={<ThemeToggle />} onNavigate={({ item }) => setActiveHref(item.href)} />;
+  return (
+    <Navbar
+      brand={siteName ?? 'Eric Njanga'}
+      brandLabel={`${siteName ?? 'Eric Njanga'} home`}
+      className={styles.libraryNavbar}
+      ariaLabel="Global"
+      activeHref={activeHref}
+      items={navigation.map((item) => ({
+        id: item.id,
+        label: item.name,
+        href: item.href,
+        openInNewTab: item.openInNewTab,
+      }))}
+      actions={<ThemeToggle />}
+      onNavigate={({ item }) => setActiveHref(item.href)}
+    />
+  );
 }
