@@ -1,4 +1,4 @@
-.reveal > section > * {
+.reveal > :is(section, article) > * {
   filter: blur(3px);
   opacity: 0;
   transform: translateY(4rem) scale(0.985);
@@ -8,22 +8,22 @@
   will-change: filter, opacity, transform;
 }
 
-.reveal > section > :nth-child(2) {
+.reveal > :is(section, article) > :nth-child(2) {
   transition-delay: 180ms;
 }
 
-.reveal[data-visible='true'] > section > * {
+.reveal[data-visible='true'] > :is(section, article) > * {
   filter: blur(0);
   opacity: 1;
   transform: translateY(0) scale(1);
 }
 
-.reveal[data-visible='true'] > section > :nth-child(2) {
+.reveal[data-visible='true'] > :is(section, article) > :nth-child(2) {
   transition-delay: 180ms;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .reveal > section > * {
+  .reveal > :is(section, article) > * {
     filter: none;
     opacity: 1;
     transform: none;

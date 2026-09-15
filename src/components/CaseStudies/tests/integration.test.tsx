@@ -1,9 +1,18 @@
 import { render, screen } from '@testing-library/react';
-import { expect, test } from 'vitest';
+import { afterEach, beforeEach, expect, test, vi } from 'vitest';
 import type { Document } from '@contentful/rich-text-types';
 import CaseStudiesPage from '../CaseStudiesPage';
 import CaseStudyBody from '../CaseStudyBody';
 import { CaseStudyPage } from 'enjanga-components-library';
+
+beforeEach(() => {
+  vi.stubGlobal('IntersectionObserver', class {
+    observe = vi.fn();
+    disconnect = vi.fn();
+  });
+});
+
+afterEach(() => vi.unstubAllGlobals());
 
 test('maps Contentful summaries to published library cards', () => {
   render(<CaseStudiesPage data={{ seoTitle: '', seoDescription: '', hero: { title: 'Work', subtitle: '' }, caseStudies: [{ id: 'one', slug: 'sample', title: 'Sample project', summary: 'Project summary', image: null, video: null }] }} />);
