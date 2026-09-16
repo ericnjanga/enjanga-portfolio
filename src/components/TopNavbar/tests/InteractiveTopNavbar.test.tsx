@@ -67,3 +67,20 @@ test('updates the active link and URL hash when the visible section changes', as
     );
   });
 });
+
+test('keeps desktop and mobile theme controls synchronized', async () => {
+  document.documentElement.dataset.theme = 'light';
+  const user = userEvent.setup();
+  render(<InteractiveTopNavbar navigation={[]} />);
+
+  const controls = screen.getAllByRole('button', { name: 'Switch to dark theme' });
+  await user.click(controls[0]);
+
+  expect(screen.getAllByRole('button', { name: 'Switch to light theme' })).toHaveLength(2);
+  expect(document.documentElement.dataset.theme).toBe('dark');
+  expect(localStorage.getItem('theme')).toBe('dark');
+
+  await user.click(screen.getAllByRole('button', { name: 'Switch to light theme' })[1]);
+  expect(screen.getAllByRole('button', { name: 'Switch to dark theme' })).toHaveLength(2);
+  expect(localStorage.getItem('theme')).toBe('light');
+});

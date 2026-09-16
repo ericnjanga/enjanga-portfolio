@@ -54,7 +54,6 @@ body {
     sans-serif
   );
   font-optical-sizing: auto;
-  padding-top: 6.25rem;
   transition: color 180ms ease, background-color 180ms ease;
 }
 
@@ -75,11 +74,5 @@ a {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
-  }
-}
-
-@media (max-width: 540px) {
-  body {
-    padding-top: 5rem;
   }
 }

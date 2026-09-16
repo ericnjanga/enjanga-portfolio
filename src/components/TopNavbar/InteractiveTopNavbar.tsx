@@ -1,11 +1,10 @@
 'use client';
 
-import { Navbar } from 'enjanga-components-library';
+import { Navbar, NavbarThemeToggle } from 'enjanga-components-library';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import type { NavigationItemData } from '@/lib/contentful/models';
-import styles from './TopNavbar.module.css';
-import ThemeToggle from './ThemeToggle';
+import useTheme from './useTheme';
 import { getSectionId } from './utils';
 
 type InteractiveTopNavbarProps = {
@@ -24,6 +23,7 @@ export default function InteractiveTopNavbar({
   siteName,
 }: InteractiveTopNavbarProps) {
   const pathname = usePathname();
+  const { theme, toggleTheme } = useTheme();
   const pathnameLink = navigation.find(
     ({ href }) =>
       !href.includes('#') &&
@@ -113,7 +113,7 @@ export default function InteractiveTopNavbar({
     <Navbar
       brand={siteName ?? 'Eric Njanga'}
       brandLabel={`${siteName ?? 'Eric Njanga'} home`}
-      className={styles.libraryNavbar}
+      context="page"
       ariaLabel="Global"
       activeHref={activeHref}
       items={navigation.map((item) => ({
@@ -122,7 +122,7 @@ export default function InteractiveTopNavbar({
         href: item.href,
         openInNewTab: item.openInNewTab,
       }))}
-      actions={<ThemeToggle />}
+      actions={<NavbarThemeToggle theme={theme} onThemeChange={toggleTheme} />}
       onNavigate={({ item }) => setActiveHref(item.href)}
     />
   );
