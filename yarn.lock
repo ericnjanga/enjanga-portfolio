@@ -3171,9 +3171,9 @@ enhanced-resolve@^5.24.1:
     graceful-fs "^4.2.4"
     tapable "^2.3.3"
 
-"enjanga-components-library@file:vendor/enjanga-components-library-1.0.124-expertise-spacing.tgz":
+"enjanga-components-library@file:vendor/enjanga-components-library-1.0.124-footer-responsive.tgz":
   version "1.0.124"
-  resolved "file:vendor/enjanga-components-library-1.0.124-expertise-spacing.tgz#a773b0372fc2eeedd06026141977e93544c28a6b"
+  resolved "file:vendor/enjanga-components-library-1.0.124-footer-responsive.tgz#2069c7e4c0a12a1e433c6f5a0de93d95d48bcae6"
   dependencies:
     clsx "^2.1.1"
 

@@ -6,9 +6,9 @@ Commit both archives with the manifest and Yarn lockfile.
 
 - `enjanga-core-setup-1.0.41-expertise-spacing.tgz`: typography, theme assets,
   the 10px h3 bottom margin, and responsive Home and case studies spacing tokens.
-- `enjanga-components-library-1.0.124-expertise-spacing.tgz`: shared components,
+- `enjanga-components-library-1.0.124-footer-responsive.tgz`: shared components,
   expertise item dividers, single-column biography, responsive page spacing, case study separators, and
-  centered cover posters.
+  centered cover posters, and stacked footer links at 1100px and below.
 
 Use Node 22 and `yarn install --frozen-lockfile`, then `yarn build`. Yarn is the
 package manager for this repository; do not generate a package-lock.json.
