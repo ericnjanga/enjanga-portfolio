@@ -76,3 +76,10 @@ a {
     scroll-behavior: auto;
   }
 }
+
+.route-loading {
+  min-height: 60vh;
+  display: grid;
+  place-items: center;
+  color: var(--text-muted);
+}
