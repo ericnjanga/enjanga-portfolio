@@ -7,6 +7,7 @@ import 'enjanga-core-setup/typography.css';
 import 'enjanga-core-setup/design-tokens.css';
 import './globals.css';
 import 'enjanga-components-library/navbar.css';
+import 'enjanga-components-library/home-page.css';
 import 'enjanga-components-library/button.css';
 import 'enjanga-components-library/page-hero.css';
 import 'enjanga-components-library/case-studies-page.css';
