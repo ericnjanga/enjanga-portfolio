@@ -72,14 +72,6 @@ a {
   font: inherit;
 }
 
-p {
-  font-size: clamp(1.115rem, 1.4vw, 1.25rem);
-}
-
-h3 {
-  font-size: clamp(1.6rem, 1.55rem + 0.2vw, 1.7rem);
-}
-
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -90,10 +82,4 @@ h3 {
   body {
     padding-top: 5rem;
   }
-}
-
-/* Keep application-wide paragraph presets out of library article typography. */
-.enj-case-study-page__article p {
-  font-size: inherit;
-  line-height: inherit;
 }

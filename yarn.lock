@@ -3177,9 +3177,9 @@ enhanced-resolve@^5.24.1:
   dependencies:
     clsx "^2.1.1"
 
-"enjanga-core-setup@file:vendor/enjanga-core-setup-1.0.41.tgz":
+"enjanga-core-setup@file:vendor/enjanga-core-setup-1.0.41-fluid-typography.tgz":
   version "1.0.41"
-  resolved "file:vendor/enjanga-core-setup-1.0.41.tgz#ec5fa71c95c3af5a5e2fa8e90c4dc754b2a46f92"
+  resolved "file:vendor/enjanga-core-setup-1.0.41-fluid-typography.tgz#f61f1e401881ee1632490be499e2ecf997169672"
   dependencies:
     "@carbon/icons-react" "^11.67.0"
     "@carbon/react" "^1.91.0"
