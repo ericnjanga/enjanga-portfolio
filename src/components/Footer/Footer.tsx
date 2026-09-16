@@ -1,48 +1,29 @@
-import Link from 'next/link';
-import { getSiteSettings } from '@/lib/contentful/fetching/getSiteSettings';
-import styles from './Footer.module.css';
+import 'server-only';
+import { Footer as LibraryFooter } from 'enjanga-components-library';
+import type { SiteSettingsData } from '@/lib/contentful/models';
 
-// Note: No need to provide default values here, as the data is already filtered and defaults are applied in getSiteSettings.ts
-export default async function Footer() {
-  const {
-    siteName,
-    footer: { links, copyrightText, location },
-  } = await getSiteSettings();
+type FooterProps = {
+  siteSettings: Pick<SiteSettingsData, 'siteName' | 'footer'>;
+};
 
+/** Map server-fetched settings into the library's CMS-independent presentation. */
+export default function Footer({ siteSettings }: FooterProps) {
+  const { siteName, footer } = siteSettings;
   return (
-    <footer className={styles.footer}>
-      <div className={styles.inner}>
-        <Link
-          href="/"
-          aria-label={`${siteName} home`}
-          className={styles.brand}
-        >
-          {siteName}
-        </Link>
-
-        <div className={styles.details}>
-          <nav aria-label="Footer navigation">
-            <ul className={styles.links}>
-              {links.map((link) => (
-                <li key={`${link.label}-${link.href}`}>
-                  <Link
-                    href={link.href}
-                    aria-label={link.accessibleLabel || link.label}
-                    target={link.openInNewTab ? '_blank' : undefined}
-                    rel={link.openInNewTab ? 'noopener noreferrer' : undefined}
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-
-          <p className={styles.copyright}>
-            {copyrightText} @ {location}
-          </p>
-        </div>
-      </div>
-    </footer>
+    <LibraryFooter
+      siteName={siteName}
+      homeHref="/"
+      links={footer.links.map(
+        ({ label, href, accessibleLabel, openInNewTab }) => ({
+          label,
+          href,
+          accessibleLabel,
+          openInNewTab,
+        })
+      )}
+      copyright={[footer.copyrightText, footer.location]
+        .filter(Boolean)
+        .join(' @ ')}
+    />
   );
 }
