@@ -1,8 +1,9 @@
-import { HomePage as LibraryHomePage } from 'enjanga-components-library';
+import {
+  HomePage as LibraryHomePage,
+  Button,
+  InteractiveImage,
+} from 'enjanga-components-library';
 import type { HomePageData } from '@/lib/contentful/models';
-import ArrowLink from './ArrowLink';
-import InteractiveImage from './InteractiveImage';
-import ScrollReveal from './ScrollReveal';
 
 type RichNode = {
   nodeType?: string;
@@ -30,16 +31,29 @@ export default function HomePage({ data }: { data: HomePageData }) {
     <LibraryHomePage
       title={data.hero.title}
       description={data.hero.subtitle}
-      SectionWrapper={ScrollReveal}
       expertise={{
         title: expertise.title,
         items: expertise.expertiseItemsCollection.items,
-        action: expertise.cta && <ArrowLink link={expertise.cta} />,
+        action: expertise.cta && (
+          <Button
+            variant="primary"
+            icon="chevron-right"
+            href={expertise.cta.href}
+            aria-label={expertise.cta.accessibleLabel || expertise.cta.label}
+            target={expertise.cta.openInNewTab ? '_blank' : undefined}
+          >
+            {expertise.cta.label}
+          </Button>
+        ),
         image: expertise.image && (
           <InteractiveImage
-            image={expertise.image}
-            alt={expertise.imageAltText}
-            link={expertise.cta}
+            src={expertise.image.url}
+            width={expertise.image.width}
+            height={expertise.image.height}
+            alt={expertise.imageAltText || expertise.image.description}
+            href={expertise.cta?.href}
+            target={expertise.cta?.openInNewTab ? '_blank' : undefined}
+            aria-label={expertise.cta?.accessibleLabel || expertise.cta?.label}
             interactionLabel={expertise.cta?.label}
           />
         ),
@@ -47,12 +61,26 @@ export default function HomePage({ data }: { data: HomePageData }) {
       about={{
         title: about.title,
         paragraphs: getParagraphs(about.body.json),
-        action: about.cta && <ArrowLink link={about.cta} />,
+        action: about.cta && (
+          <Button
+            variant="primary"
+            icon="chevron-right"
+            href={about.cta.href}
+            aria-label={about.cta.accessibleLabel || about.cta.label}
+            target={about.cta.openInNewTab ? '_blank' : undefined}
+          >
+            {about.cta.label}
+          </Button>
+        ),
         image: (
           <InteractiveImage
-            image={about.image}
-            alt={about.imageAltText}
-            link={about.cta}
+            src={about.image.url}
+            width={about.image.width}
+            height={about.image.height}
+            alt={about.imageAltText || about.image.description}
+            href={about.cta?.href}
+            target={about.cta?.openInNewTab ? '_blank' : undefined}
+            aria-label={about.cta?.accessibleLabel || about.cta?.label}
             interactionLabel={about.cta?.label}
           />
         ),

@@ -31,7 +31,7 @@
     "@carbon/react": "^1.115.0",
     "@contentful/rich-text-types": "^17.2.7",
     "clsx": "^2.1.1",
-    "enjanga-components-library": "file:vendor/enjanga-components-library-1.0.124-page-navbar.tgz",
+    "enjanga-components-library": "file:vendor/enjanga-components-library-1.0.124-home-interactions.tgz",
     "enjanga-core-setup": "file:vendor/enjanga-core-setup-1.0.41-fluid-typography.tgz",
     "next": "15.5.7",
     "react": "19.0.1",

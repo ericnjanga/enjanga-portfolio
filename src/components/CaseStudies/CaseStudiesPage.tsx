@@ -1,7 +1,6 @@
 import { Fragment } from 'react';
-import { CaseStudyCard, PageHero } from 'enjanga-components-library';
+import { CaseStudyCard, PageHero, ScrollReveal } from 'enjanga-components-library';
 import type { CaseStudiesPageData } from '@/lib/contentful/models';
-import ScrollReveal from '../Home/ScrollReveal';
 import styles from './CaseStudiesPage.module.css';
 
 export default function CaseStudiesPage({ data }: { data: CaseStudiesPageData }) {
