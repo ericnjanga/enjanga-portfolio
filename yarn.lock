@@ -3171,9 +3171,9 @@ enhanced-resolve@^5.24.1:
     graceful-fs "^4.2.4"
     tapable "^2.3.3"
 
-"enjanga-components-library@file:vendor/enjanga-components-library-1.0.124-navigation-ux.tgz":
+"enjanga-components-library@file:vendor/enjanga-components-library-1.0.124-cursor-label.tgz":
   version "1.0.124"
-  resolved "file:vendor/enjanga-components-library-1.0.124-navigation-ux.tgz#8f8d5732c2b2ffefe95e710daea728ce019e789a"
+  resolved "file:vendor/enjanga-components-library-1.0.124-cursor-label.tgz#9d1a89a5c091324a15580a1de535c2b3f88a133c"
   dependencies:
     clsx "^2.1.1"
 

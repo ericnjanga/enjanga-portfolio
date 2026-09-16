@@ -74,6 +74,7 @@ export default function HomePage({ data }: { data: HomePageData }) {
         ),
         image: (
           <InteractiveImage
+            variant="portrait"
             src={about.image.url}
             width={about.image.width}
             height={about.image.height}
