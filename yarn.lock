@@ -3171,10 +3171,10 @@ enhanced-resolve@^5.24.1:
     graceful-fs "^4.2.4"
     tapable "^2.3.3"
 
-enjanga-components-library@1.0.126:
-  version "1.0.126"
-  resolved "https://registry.yarnpkg.com/enjanga-components-library/-/enjanga-components-library-1.0.126.tgz#d5159a10b08c432c0c8e5c1e38e2c69391550f95"
-  integrity sha512-G+9GWLt7jLrd2OV2SzZ2l6XJd9EHEP/fT6Xc2xaji8GGPmzar+qY1OeIW9QlUZmvuwvdMvBz82AHI3qnqrZEUg==
+enjanga-components-library@1.0.128:
+  version "1.0.128"
+  resolved "https://registry.yarnpkg.com/enjanga-components-library/-/enjanga-components-library-1.0.128.tgz#e7143bc35d6f4e1f553c1579821309d5e4ad9ec9"
+  integrity sha512-ZDEh7pNQpfZt/IIhP2Br8HS8DicxQSvlud20DKcsLcegEpOD9XIS69qi4NRp6MnGX4EXfSEQfQkJXHwLyfjctw==
   dependencies:
     clsx "^2.1.1"
 
