@@ -54,9 +54,12 @@ export function normalizeLink(
 ): LinkData | null {
   if (!link?.label) return null;
 
+  const destination = resolveInternalDestination(link.internalDestination);
+  const section = link.sectionId?.trim().replace(/^#/, '');
+  const fragment = section && /^[A-Za-z][A-Za-z0-9_-]*$/.test(section) ? `#${section}` : '';
   const href =
     link.linkType === 'internal'
-      ? resolveInternalDestination(link.internalDestination)
+      ? destination && `${destination}${fragment}`
       : link.externalUrl;
 
   if (!href) return null;
@@ -198,6 +201,7 @@ export function normalizeHomePageHeroFields(
   fragment: HeroFieldsFragment | null
 ): HeroData {
   return {
+    cta: fragment ? normalizeLink(fragment.cta) : homePageFallback.hero.cta,
     title: fragment?.title ?? homePageFallback.hero.title,
     subtitle: fragment?.subtitle ?? homePageFallback.hero.subtitle,
   };

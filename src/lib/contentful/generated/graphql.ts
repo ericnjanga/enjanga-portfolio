@@ -6,25 +6,28 @@ export type Incremental<T> = T | { [P in keyof T]?: P extends ' $fragmentName' |
 import { DocumentTypeDecoration } from '@graphql-typed-document-node/core';
 export type CaseStudiesPageIntroFieldsFragment = { slug: string | null, seoTitle: string | null, seoDescription: string | null, sys: { id: string } };
 
-export type ContentSectionFieldsFragment = { title: string | null, imageAltText: string | null, imagePosition: string | null, sys: { id: string }, body: { json: unknown } | null, image: { url: string | null, width: number | null, height: number | null, description: string | null } | null, cta: { __typename: 'Link', label: string | null, linkType: string | null, externalUrl: string | null, openInNewTab: boolean | null, accessibleLabel: string | null, sys: { id: string }, internalDestination:
+export type ContentSectionFieldsFragment = { title: string | null, imageAltText: string | null, imagePosition: string | null, sys: { id: string }, body: { json: unknown } | null, image: { url: string | null, width: number | null, height: number | null, description: string | null } | null, cta: { __typename: 'Link', label: string | null, linkType: string | null, sectionId: string | null, externalUrl: string | null, openInNewTab: boolean | null, accessibleLabel: string | null, sys: { id: string }, internalDestination:
       | { __typename: 'CaseStudiesPage', slug: string | null, sys: { id: string } }
       | { __typename: 'HomePage', slug: string | null, sys: { id: string } }
      | null } | null };
 
 export type ExpertiseCollectionItemsFragment = { __typename: 'ExpertiseItem', title: string | null, description: string | null, sys: { id: string } };
 
-export type ExpertiseSectionFieldsFragment = { title: string | null, imageAltText: string | null, sys: { id: string }, expertiseItemsCollection: { items: Array<{ __typename: 'ExpertiseItem', title: string | null, description: string | null, sys: { id: string } } | null> } | null, image: { url: string | null, width: number | null, height: number | null, description: string | null } | null, cta: { __typename: 'Link', label: string | null, linkType: string | null, externalUrl: string | null, openInNewTab: boolean | null, accessibleLabel: string | null, sys: { id: string }, internalDestination:
+export type ExpertiseSectionFieldsFragment = { title: string | null, imageAltText: string | null, sys: { id: string }, expertiseItemsCollection: { items: Array<{ __typename: 'ExpertiseItem', title: string | null, description: string | null, sys: { id: string } } | null> } | null, image: { url: string | null, width: number | null, height: number | null, description: string | null } | null, cta: { __typename: 'Link', label: string | null, linkType: string | null, sectionId: string | null, externalUrl: string | null, openInNewTab: boolean | null, accessibleLabel: string | null, sys: { id: string }, internalDestination:
       | { __typename: 'CaseStudiesPage', slug: string | null, sys: { id: string } }
       | { __typename: 'HomePage', slug: string | null, sys: { id: string } }
      | null } | null };
 
-export type HeroFieldsFragment = { title: string | null, subtitle: string | null, sys: { id: string } };
+export type HeroFieldsFragment = { title: string | null, subtitle: string | null, sys: { id: string }, cta: { __typename: 'Link', label: string | null, linkType: string | null, sectionId: string | null, externalUrl: string | null, openInNewTab: boolean | null, accessibleLabel: string | null, sys: { id: string }, internalDestination:
+      | { __typename: 'CaseStudiesPage', slug: string | null, sys: { id: string } }
+      | { __typename: 'HomePage', slug: string | null, sys: { id: string } }
+     | null } | null };
 
 export type HomePageIntroFieldsFragment = { slug: string | null, seoTitle: string | null, seoDescription: string | null, sys: { id: string } };
 
 export type ImageFieldsFragment = { url: string | null, width: number | null, height: number | null, description: string | null };
 
-export type LinkFieldsFragment = { __typename: 'Link', label: string | null, linkType: string | null, externalUrl: string | null, openInNewTab: boolean | null, accessibleLabel: string | null, sys: { id: string }, internalDestination:
+export type LinkFieldsFragment = { __typename: 'Link', label: string | null, linkType: string | null, sectionId: string | null, externalUrl: string | null, openInNewTab: boolean | null, accessibleLabel: string | null, sys: { id: string }, internalDestination:
     | { __typename: 'CaseStudiesPage', slug: string | null, sys: { id: string } }
     | { __typename: 'HomePage', slug: string | null, sys: { id: string } }
    | null };
@@ -77,17 +80,23 @@ export type CaseStudiesPageQueryVariables = Exact<{
 }>;
 
 
-export type CaseStudiesPageQuery = { caseStudiesPageCollection: { items: Array<{ slug: string | null, seoTitle: string | null, seoDescription: string | null, hero: { __typename: 'Hero', title: string | null, subtitle: string | null, sys: { id: string } } | null, sys: { id: string } } | null> } | null };
+export type CaseStudiesPageQuery = { caseStudiesPageCollection: { items: Array<{ slug: string | null, seoTitle: string | null, seoDescription: string | null, hero: { __typename: 'Hero', title: string | null, subtitle: string | null, sys: { id: string }, cta: { __typename: 'Link', label: string | null, linkType: string | null, sectionId: string | null, externalUrl: string | null, openInNewTab: boolean | null, accessibleLabel: string | null, sys: { id: string }, internalDestination:
+            | { __typename: 'CaseStudiesPage', slug: string | null, sys: { id: string } }
+            | { __typename: 'HomePage', slug: string | null, sys: { id: string } }
+           | null } | null } | null, sys: { id: string } } | null> } | null };
 
 export type HomePageQueryVariables = Exact<{
   slug: string;
 }>;
 
 
-export type HomePageQuery = { homePageCollection: { items: Array<{ slug: string | null, seoTitle: string | null, seoDescription: string | null, hero: { __typename: 'Hero', title: string | null, subtitle: string | null, sys: { id: string } } | null, expertiseSection: { __typename: 'ExpertiseSection', title: string | null, imageAltText: string | null, sys: { id: string }, expertiseItemsCollection: { items: Array<{ __typename: 'ExpertiseItem', title: string | null, description: string | null, sys: { id: string } } | null> } | null, image: { url: string | null, width: number | null, height: number | null, description: string | null } | null, cta: { __typename: 'Link', label: string | null, linkType: string | null, externalUrl: string | null, openInNewTab: boolean | null, accessibleLabel: string | null, sys: { id: string }, internalDestination:
+export type HomePageQuery = { homePageCollection: { items: Array<{ slug: string | null, seoTitle: string | null, seoDescription: string | null, hero: { __typename: 'Hero', title: string | null, subtitle: string | null, sys: { id: string }, cta: { __typename: 'Link', label: string | null, linkType: string | null, sectionId: string | null, externalUrl: string | null, openInNewTab: boolean | null, accessibleLabel: string | null, sys: { id: string }, internalDestination:
             | { __typename: 'CaseStudiesPage', slug: string | null, sys: { id: string } }
             | { __typename: 'HomePage', slug: string | null, sys: { id: string } }
-           | null } | null } | null, aboutSection: { __typename: 'ContentSection', title: string | null, imageAltText: string | null, imagePosition: string | null, sys: { id: string }, body: { json: unknown } | null, image: { url: string | null, width: number | null, height: number | null, description: string | null } | null, cta: { __typename: 'Link', label: string | null, linkType: string | null, externalUrl: string | null, openInNewTab: boolean | null, accessibleLabel: string | null, sys: { id: string }, internalDestination:
+           | null } | null } | null, expertiseSection: { __typename: 'ExpertiseSection', title: string | null, imageAltText: string | null, sys: { id: string }, expertiseItemsCollection: { items: Array<{ __typename: 'ExpertiseItem', title: string | null, description: string | null, sys: { id: string } } | null> } | null, image: { url: string | null, width: number | null, height: number | null, description: string | null } | null, cta: { __typename: 'Link', label: string | null, linkType: string | null, sectionId: string | null, externalUrl: string | null, openInNewTab: boolean | null, accessibleLabel: string | null, sys: { id: string }, internalDestination:
+            | { __typename: 'CaseStudiesPage', slug: string | null, sys: { id: string } }
+            | { __typename: 'HomePage', slug: string | null, sys: { id: string } }
+           | null } | null } | null, aboutSection: { __typename: 'ContentSection', title: string | null, imageAltText: string | null, imagePosition: string | null, sys: { id: string }, body: { json: unknown } | null, image: { url: string | null, width: number | null, height: number | null, description: string | null } | null, cta: { __typename: 'Link', label: string | null, linkType: string | null, sectionId: string | null, externalUrl: string | null, openInNewTab: boolean | null, accessibleLabel: string | null, sys: { id: string }, internalDestination:
             | { __typename: 'CaseStudiesPage', slug: string | null, sys: { id: string } }
             | { __typename: 'HomePage', slug: string | null, sys: { id: string } }
            | null } | null } | null, sys: { id: string } } | null> } | null };
@@ -95,7 +104,7 @@ export type HomePageQuery = { homePageCollection: { items: Array<{ slug: string 
 export type SiteSettingsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type SiteSettingsQuery = { siteSettingsCollection: { items: Array<{ siteName: string | null, copyrightText: string | null, location: string | null, sys: { id: string }, primaryNavigation: { __typename: 'Navigation', name: string | null, location: string | null, sys: { id: string }, itemsCollection: { items: Array<{ __typename: 'NavigationItem', name: string | null, destinationType: string | null, path: string | null, sectionId: string | null, openInNewTab: boolean | null, isVisible: boolean | null, sys: { id: string } } | null> } | null } | null, footerLinksCollection: { items: Array<{ __typename: 'Link', label: string | null, linkType: string | null, externalUrl: string | null, openInNewTab: boolean | null, accessibleLabel: string | null, sys: { id: string }, internalDestination:
+export type SiteSettingsQuery = { siteSettingsCollection: { items: Array<{ siteName: string | null, copyrightText: string | null, location: string | null, sys: { id: string }, primaryNavigation: { __typename: 'Navigation', name: string | null, location: string | null, sys: { id: string }, itemsCollection: { items: Array<{ __typename: 'NavigationItem', name: string | null, destinationType: string | null, path: string | null, sectionId: string | null, openInNewTab: boolean | null, isVisible: boolean | null, sys: { id: string } } | null> } | null } | null, footerLinksCollection: { items: Array<{ __typename: 'Link', label: string | null, linkType: string | null, sectionId: string | null, externalUrl: string | null, openInNewTab: boolean | null, accessibleLabel: string | null, sys: { id: string }, internalDestination:
             | { __typename: 'CaseStudiesPage', slug: string | null, sys: { id: string } }
             | { __typename: 'HomePage', slug: string | null, sys: { id: string } }
            | null } | null> } | null } | null> } | null };
@@ -144,6 +153,7 @@ export const LinkFieldsFragmentDoc = new TypedDocumentString(`
   }
   label
   linkType
+  sectionId
   externalUrl
   openInNewTab
   accessibleLabel
@@ -196,6 +206,7 @@ fragment LinkFields on Link {
   }
   label
   linkType
+  sectionId
   externalUrl
   openInNewTab
   accessibleLabel
@@ -266,6 +277,7 @@ fragment LinkFields on Link {
   }
   label
   linkType
+  sectionId
   externalUrl
   openInNewTab
   accessibleLabel
@@ -292,8 +304,37 @@ export const HeroFieldsFragmentDoc = new TypedDocumentString(`
   }
   title
   subtitle
+  cta {
+    ...LinkFields
+  }
 }
-    `, {"fragmentName":"HeroFields"}) as unknown as TypedDocumentString<HeroFieldsFragment, unknown>;
+    fragment LinkFields on Link {
+  __typename
+  sys {
+    id
+  }
+  label
+  linkType
+  sectionId
+  externalUrl
+  openInNewTab
+  accessibleLabel
+  internalDestination {
+    __typename
+    ... on HomePage {
+      sys {
+        id
+      }
+      slug
+    }
+    ... on CaseStudiesPage {
+      sys {
+        id
+      }
+      slug
+    }
+  }
+}`, {"fragmentName":"HeroFields"}) as unknown as TypedDocumentString<HeroFieldsFragment, unknown>;
 export const HomePageIntroFieldsFragmentDoc = new TypedDocumentString(`
     fragment HomePageIntroFields on HomePage {
   sys {
@@ -462,6 +503,36 @@ fragment HeroFields on Hero {
   }
   title
   subtitle
+  cta {
+    ...LinkFields
+  }
+}
+fragment LinkFields on Link {
+  __typename
+  sys {
+    id
+  }
+  label
+  linkType
+  sectionId
+  externalUrl
+  openInNewTab
+  accessibleLabel
+  internalDestination {
+    __typename
+    ... on HomePage {
+      sys {
+        id
+      }
+      slug
+    }
+    ... on CaseStudiesPage {
+      sys {
+        id
+      }
+      slug
+    }
+  }
 }`) as unknown as TypedDocumentString<CaseStudiesPageQuery, CaseStudiesPageQueryVariables>;
 export const HomePageDocument = new TypedDocumentString(`
     query HomePage($slug: String!) {
@@ -534,6 +605,9 @@ fragment HeroFields on Hero {
   }
   title
   subtitle
+  cta {
+    ...LinkFields
+  }
 }
 fragment HomePageIntroFields on HomePage {
   sys {
@@ -556,6 +630,7 @@ fragment LinkFields on Link {
   }
   label
   linkType
+  sectionId
   externalUrl
   openInNewTab
   accessibleLabel
@@ -605,6 +680,7 @@ export const SiteSettingsDocument = new TypedDocumentString(`
   }
   label
   linkType
+  sectionId
   externalUrl
   openInNewTab
   accessibleLabel

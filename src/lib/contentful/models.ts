@@ -79,6 +79,7 @@ export type LinkData = { // Component-ready data structure ...
 };
 
 export type HeroData = {
+  cta?: LinkData | null;
   title: string;
   subtitle: string;
 };

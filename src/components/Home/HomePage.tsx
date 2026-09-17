@@ -32,9 +32,17 @@ export default function HomePage({ data }: { data: HomePageData }) {
       title={data.hero.title}
       description={data.hero.subtitle}
       heroAction={
-        <Button variant="primary" icon="chevron-down" href="/#expertise">
-          Expertise
-        </Button>
+        data.hero.cta && (
+          <Button
+            variant="primary"
+            icon="chevron-down"
+            href={data.hero.cta.href}
+            aria-label={data.hero.cta.accessibleLabel || data.hero.cta.label}
+            target={data.hero.cta.openInNewTab ? '_blank' : undefined}
+          >
+            {data.hero.cta.label}
+          </Button>
+        )
       }
       expertise={{
         title: expertise.title,
