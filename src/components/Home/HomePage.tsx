@@ -32,7 +32,7 @@ export default function HomePage({ data }: { data: HomePageData }) {
       title={data.hero.title}
       description={data.hero.subtitle}
       heroAction={
-        <Button variant="tertiary" icon="chevron-down" href="/#expertise">
+        <Button variant="primary" icon="chevron-down" href="/#expertise">
           Expertise
         </Button>
       }
