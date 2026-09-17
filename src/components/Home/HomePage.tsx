@@ -31,6 +31,11 @@ export default function HomePage({ data }: { data: HomePageData }) {
     <LibraryHomePage
       title={data.hero.title}
       description={data.hero.subtitle}
+      heroAction={
+        <Button variant="tertiary" icon="chevron-down" href="/#expertise">
+          Expertise
+        </Button>
+      }
       expertise={{
         title: expertise.title,
         items: expertise.expertiseItemsCollection.items,
