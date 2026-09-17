@@ -3178,10 +3178,10 @@ enjanga-components-library@1.0.128:
   dependencies:
     clsx "^2.1.1"
 
-enjanga-core-setup@1.0.46:
-  version "1.0.46"
-  resolved "https://registry.yarnpkg.com/enjanga-core-setup/-/enjanga-core-setup-1.0.46.tgz#e90a517e75e214b026da1da2371bec6f1eb88fcc"
-  integrity sha512-RzsROF1YSV0ptPPFWmWtsvpUfrKHVB/e3iK59YtDlsFPfawsHw3JVPVdFVe80pn0QGppLercDrENv1B8ZRaSdA==
+enjanga-core-setup@1.0.47:
+  version "1.0.47"
+  resolved "https://registry.yarnpkg.com/enjanga-core-setup/-/enjanga-core-setup-1.0.47.tgz#8187b42c0b0b4d0a99b33a13a6a6542c0d480591"
+  integrity sha512-AZA/HV6HZa0508HMeigO07sEtWLCC0csoihM8N7rZIuL2V/vGme7E7m3jAT78vvxJcVXYK6LJC0nhf2ytiXjFw==
   dependencies:
     "@carbon/icons-react" "^11.67.0"
     "@carbon/react" "^1.91.0"
