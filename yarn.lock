@@ -3171,17 +3171,17 @@ enhanced-resolve@^5.24.1:
     graceful-fs "^4.2.4"
     tapable "^2.3.3"
 
-enjanga-components-library@1.0.125:
-  version "1.0.125"
-  resolved "https://registry.npmjs.org/enjanga-components-library/-/enjanga-components-library-1.0.125.tgz#459a902a28d1e048b4f65ae3e48528ce8ed694c9"
-  integrity sha512-hNg6INytGI+YGRmSFhiSfFICQP/TBbbeWCirQnTRwBXe5Iw5cBx+HjwhxNAMQWhTrrB7QzBvuhIvQUCXVGcnow==
+enjanga-components-library@1.0.126:
+  version "1.0.126"
+  resolved "https://registry.yarnpkg.com/enjanga-components-library/-/enjanga-components-library-1.0.126.tgz#d5159a10b08c432c0c8e5c1e38e2c69391550f95"
+  integrity sha512-G+9GWLt7jLrd2OV2SzZ2l6XJd9EHEP/fT6Xc2xaji8GGPmzar+qY1OeIW9QlUZmvuwvdMvBz82AHI3qnqrZEUg==
   dependencies:
     clsx "^2.1.1"
 
-enjanga-core-setup@1.0.42:
-  version "1.0.42"
-  resolved "https://registry.npmjs.org/enjanga-core-setup/-/enjanga-core-setup-1.0.42.tgz#8cabb0df069fae912bb44e8ea6792b88057cdff7"
-  integrity sha512-pqtEb3cwRYpGm7ZpIuHP7l8/dCqCS7gOb/ZBQVLI0nkmcwjfyFEvPmjaPLQ4pmqfgWl5fjBRKjqoiJw7FRfCWg==
+enjanga-core-setup@1.0.43:
+  version "1.0.43"
+  resolved "https://registry.yarnpkg.com/enjanga-core-setup/-/enjanga-core-setup-1.0.43.tgz#44b0beea06b186fe6074e5b4f275c3c61679cd0d"
+  integrity sha512-ns+2i66z4gSimaWL/Tk59GFSGFJQuqLyCVEtGx7YBdir2upYd25wJoepGpve2vEHCssweIqBXFDgJeZPyFJZHg==
   dependencies:
     "@carbon/icons-react" "^11.67.0"
     "@carbon/react" "^1.91.0"
