@@ -1,0 +1,74 @@
+[
+  {
+    "url": "https://www.enjanga.com/",
+    "dns_ms": 5005.06,
+    "connect_ms": 5013.8,
+    "tls_ms": 5054.75,
+    "ttfb_ms": 5086.96,
+    "status": 200
+  },
+  {
+    "url": "https://www.enjanga.com/",
+    "dns_ms": 1181.67,
+    "connect_ms": 1190.97,
+    "tls_ms": 1225.0,
+    "ttfb_ms": 1263.1,
+    "status": 200
+  },
+  {
+    "url": "https://www.enjanga.com/",
+    "dns_ms": 3.37,
+    "connect_ms": 12.27,
+    "tls_ms": 45.85,
+    "ttfb_ms": 71.5,
+    "status": 200
+  },
+  {
+    "url": "https://images.ctfassets.net/z41mabrhnu57/1BstJK0AHIiBFCt8tjXPat/42896f51d0e532eff41c0734b01e059c/Case_Study_-2-_featured_img.png",
+    "dns_ms": 9.09,
+    "connect_ms": 18.81,
+    "tls_ms": 31.55,
+    "ttfb_ms": 54.03,
+    "status": 200
+  },
+  {
+    "url": "https://images.ctfassets.net/z41mabrhnu57/1BstJK0AHIiBFCt8tjXPat/42896f51d0e532eff41c0734b01e059c/Case_Study_-2-_featured_img.png",
+    "dns_ms": 2.39,
+    "connect_ms": 10.39,
+    "tls_ms": 23.04,
+    "ttfb_ms": 32.33,
+    "status": 200
+  },
+  {
+    "url": "https://images.ctfassets.net/z41mabrhnu57/1BstJK0AHIiBFCt8tjXPat/42896f51d0e532eff41c0734b01e059c/Case_Study_-2-_featured_img.png",
+    "dns_ms": 2.6,
+    "connect_ms": 10.37,
+    "tls_ms": 22.95,
+    "ttfb_ms": 31.46,
+    "status": 200
+  },
+  {
+    "url": "https://videos.ctfassets.net/z41mabrhnu57/1tfuRVhofEWiPI8llhrfH4/b996fb175468621ed241442ed916d4c7/Case_Study_-2_-_Connecting_a_Bank_Deposit_Flow_to_Production_APIs.mp4",
+    "dns_ms": 54.58,
+    "connect_ms": 63.1,
+    "tls_ms": 74.47,
+    "ttfb_ms": 94.98,
+    "status": 200
+  },
+  {
+    "url": "https://videos.ctfassets.net/z41mabrhnu57/1tfuRVhofEWiPI8llhrfH4/b996fb175468621ed241442ed916d4c7/Case_Study_-2_-_Connecting_a_Bank_Deposit_Flow_to_Production_APIs.mp4",
+    "dns_ms": 2.09,
+    "connect_ms": 9.78,
+    "tls_ms": 21.23,
+    "ttfb_ms": 30.17,
+    "status": 200
+  },
+  {
+    "url": "https://videos.ctfassets.net/z41mabrhnu57/1tfuRVhofEWiPI8llhrfH4/b996fb175468621ed241442ed916d4c7/Case_Study_-2_-_Connecting_a_Bank_Deposit_Flow_to_Production_APIs.mp4",
+    "dns_ms": 2.02,
+    "connect_ms": 10.2,
+    "tls_ms": 20.61,
+    "ttfb_ms": 30.7,
+    "status": 200
+  }
+]

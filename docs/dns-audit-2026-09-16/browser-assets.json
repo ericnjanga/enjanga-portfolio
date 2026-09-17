@@ -1,0 +1,2561 @@
+{
+  "home": {
+    "assets": [
+      {
+        "id": "f81ba2d783028d24",
+        "kind": "image",
+        "name": "Enterprise_App_1.jpg",
+        "sources": [
+          {
+            "kind": "resource",
+            "property": "link"
+          },
+          {
+            "kind": "attribute",
+            "nodeId": 19,
+            "property": "href"
+          },
+          {
+            "kind": "attribute",
+            "nodeId": 95,
+            "property": "src"
+          }
+        ],
+        "url": "https://images.ctfassets.net/z41mabrhnu57/53KbdLSU7gB7DhZcoAwiTy/c71d33a2398f442788945fdf1d945906/Enterprise_App_1.jpg"
+      },
+      {
+        "id": "6d9b50ab0a4e2145",
+        "kind": "stylesheet",
+        "name": "10014c3c01ed88c3.css",
+        "sources": [
+          {
+            "kind": "resource",
+            "property": "link"
+          },
+          {
+            "kind": "attribute",
+            "nodeId": 21,
+            "property": "href"
+          }
+        ],
+        "url": "https://www.enjanga.com/_next/static/css/10014c3c01ed88c3.css?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+      },
+      {
+        "id": "907f7d988b70e3da",
+        "kind": "image",
+        "name": "Eric_Njanga_1.jpg",
+        "sources": [
+          {
+            "kind": "resource",
+            "property": "link"
+          },
+          {
+            "kind": "attribute",
+            "nodeId": 20,
+            "property": "href"
+          },
+          {
+            "kind": "attribute",
+            "nodeId": 106,
+            "property": "src"
+          }
+        ],
+        "url": "https://images.ctfassets.net/z41mabrhnu57/3E9crSjEaVktZX5ff9vvKP/ee1404e2006603937e2242f4ff237610/Eric_Njanga_1.jpg"
+      },
+      {
+        "id": "dce928c6ac452a2d",
+        "kind": "stylesheet",
+        "name": "bf7788ba9517e5fc.css",
+        "sources": [
+          {
+            "kind": "resource",
+            "property": "link"
+          },
+          {
+            "kind": "attribute",
+            "nodeId": 24,
+            "property": "href"
+          }
+        ],
+        "url": "https://www.enjanga.com/_next/static/css/bf7788ba9517e5fc.css?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+      },
+      {
+        "id": "acb421e55670e295",
+        "kind": "stylesheet",
+        "name": "d7aa28bf99761205.css",
+        "sources": [
+          {
+            "kind": "resource",
+            "property": "link"
+          },
+          {
+            "kind": "attribute",
+            "nodeId": 23,
+            "property": "href"
+          }
+        ],
+        "url": "https://www.enjanga.com/_next/static/css/d7aa28bf99761205.css?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+      },
+      {
+        "id": "d17c5453b1842a50",
+        "kind": "stylesheet",
+        "name": "7a1446189c269e36.css",
+        "sources": [
+          {
+            "kind": "resource",
+            "property": "link"
+          },
+          {
+            "kind": "attribute",
+            "nodeId": 22,
+            "property": "href"
+          }
+        ],
+        "url": "https://www.enjanga.com/_next/static/css/7a1446189c269e36.css?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+      },
+      {
+        "id": "7296154b827fe330",
+        "kind": "stylesheet",
+        "name": "c0f0312b1fcacbd1.css",
+        "sources": [
+          {
+            "kind": "resource",
+            "property": "link"
+          },
+          {
+            "kind": "attribute",
+            "nodeId": 25,
+            "property": "href"
+          }
+        ],
+        "url": "https://www.enjanga.com/_next/static/css/c0f0312b1fcacbd1.css?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+      },
+      {
+        "id": "684f7138e6cc9793",
+        "kind": "script",
+        "name": "main-app-e38890cadc2b084e.js",
+        "sources": [
+          {
+            "kind": "resource",
+            "property": "script"
+          },
+          {
+            "kind": "attribute",
+            "nodeId": 29,
+            "property": "src"
+          }
+        ],
+        "url": "https://www.enjanga.com/_next/static/chunks/main-app-e38890cadc2b084e.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+      },
+      {
+        "id": "06ad3fcc76b5df7a",
+        "kind": "script",
+        "name": "4bd1b696-c023c6e3521b1417.js",
+        "sources": [
+          {
+            "kind": "resource",
+            "property": "script"
+          },
+          {
+            "kind": "attribute",
+            "nodeId": 27,
+            "property": "src"
+          }
+        ],
+        "url": "https://www.enjanga.com/_next/static/chunks/4bd1b696-c023c6e3521b1417.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+      },
+      {
+        "id": "7bdafee7e91e3b21",
+        "kind": "script",
+        "name": "255-a8dafe9145bc138e.js",
+        "sources": [
+          {
+            "kind": "resource",
+            "property": "script"
+          },
+          {
+            "kind": "attribute",
+            "nodeId": 28,
+            "property": "src"
+          }
+        ],
+        "url": "https://www.enjanga.com/_next/static/chunks/255-a8dafe9145bc138e.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+      },
+      {
+        "id": "8e4cf49d02b326bd",
+        "kind": "script",
+        "name": "560-5ea3c83c0c8e214e.js",
+        "sources": [
+          {
+            "kind": "resource",
+            "property": "script"
+          },
+          {
+            "kind": "attribute",
+            "nodeId": 30,
+            "property": "src"
+          }
+        ],
+        "url": "https://www.enjanga.com/_next/static/chunks/560-5ea3c83c0c8e214e.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+      },
+      {
+        "id": "2d86cfae6f6f8fbe",
+        "kind": "script",
+        "name": "webpack-1b2bbc7e8235a2c6.js",
+        "sources": [
+          {
+            "kind": "resource",
+            "property": "link"
+          },
+          {
+            "kind": "attribute",
+            "nodeId": 26,
+            "property": "href"
+          },
+          {
+            "kind": "attribute",
+            "nodeId": 151,
+            "property": "src"
+          }
+        ],
+        "url": "https://www.enjanga.com/_next/static/chunks/webpack-1b2bbc7e8235a2c6.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+      },
+      {
+        "id": "f6d4685c9610eb04",
+        "kind": "script",
+        "name": "global-error-13e5544aae7105d3.js",
+        "sources": [
+          {
+            "kind": "resource",
+            "property": "script"
+          },
+          {
+            "kind": "attribute",
+            "nodeId": 31,
+            "property": "src"
+          }
+        ],
+        "url": "https://www.enjanga.com/_next/static/chunks/app/global-error-13e5544aae7105d3.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+      },
+      {
+        "id": "7abb7f4bced663a4",
+        "kind": "script",
+        "name": "layout-cd282372a47cd0bc.js",
+        "sources": [
+          {
+            "kind": "resource",
+            "property": "script"
+          },
+          {
+            "kind": "attribute",
+            "nodeId": 34,
+            "property": "src"
+          }
+        ],
+        "url": "https://www.enjanga.com/_next/static/chunks/app/layout-cd282372a47cd0bc.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+      },
+      {
+        "id": "b3cf013d214268b2",
+        "kind": "script",
+        "name": "page-1bc515e61e66b29b.js",
+        "sources": [
+          {
+            "kind": "resource",
+            "property": "script"
+          },
+          {
+            "kind": "attribute",
+            "nodeId": 32,
+            "property": "src"
+          }
+        ],
+        "url": "https://www.enjanga.com/_next/static/chunks/app/page-1bc515e61e66b29b.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+      },
+      {
+        "id": "3d7ecb5b2559da55",
+        "kind": "script",
+        "name": "619-ba102abea3e3d0e4.js",
+        "sources": [
+          {
+            "kind": "resource",
+            "property": "script"
+          },
+          {
+            "kind": "attribute",
+            "nodeId": 33,
+            "property": "src"
+          }
+        ],
+        "url": "https://www.enjanga.com/_next/static/chunks/619-ba102abea3e3d0e4.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+      },
+      {
+        "id": "709ae56bee4bd7a5",
+        "kind": "script",
+        "name": "error-d3a6ba0fa3b2ddca.js",
+        "sources": [
+          {
+            "kind": "resource",
+            "property": "script"
+          },
+          {
+            "kind": "attribute",
+            "nodeId": 35,
+            "property": "src"
+          }
+        ],
+        "url": "https://www.enjanga.com/_next/static/chunks/app/error-d3a6ba0fa3b2ddca.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+      },
+      {
+        "id": "6297e7f14fe4e1e0",
+        "kind": "font",
+        "name": "MonaSansVF.fa9a2f42.woff2",
+        "sources": [
+          {
+            "kind": "resource",
+            "property": "css"
+          }
+        ],
+        "url": "https://www.enjanga.com/_next/static/media/MonaSansVF.fa9a2f42.woff2"
+      },
+      {
+        "id": "e53760d46bc2241f",
+        "kind": "other",
+        "name": "case-studies",
+        "sources": [
+          {
+            "kind": "resource",
+            "property": "fetch"
+          }
+        ],
+        "url": "https://www.enjanga.com/case-studies?_rsc=3lb4g"
+      },
+      {
+        "id": "3c3285636ecf008f",
+        "kind": "script",
+        "name": "page-7c435e439ea78a5a.js",
+        "sources": [
+          {
+            "kind": "resource",
+            "property": "script"
+          }
+        ],
+        "url": "https://www.enjanga.com/_next/static/chunks/app/case-studies/page-7c435e439ea78a5a.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+      },
+      {
+        "id": "fd8fb9320bed1f33",
+        "kind": "image",
+        "name": "favicon.ico",
+        "sources": [
+          {
+            "kind": "resource",
+            "property": "other"
+          }
+        ],
+        "url": "https://www.enjanga.com/favicon.ico"
+      }
+    ],
+    "id": "c703e158-e72a-4d8d-8eb0-fb65e57ca56e",
+    "inlineSvgs": [
+      {
+        "id": "fe03e0a8c72233d6",
+        "markup": "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"4\"></circle><path d=\"M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41\"></path></svg>",
+        "name": "svg-1"
+      },
+      {
+        "id": "188f5ba10a2fcb20",
+        "markup": "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"4\"></circle><path d=\"M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41\"></path></svg>",
+        "name": "svg-2"
+      },
+      {
+        "id": "53737d0d1c527b04",
+        "markup": "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M4 7h16M4 12h16M4 17h16\"></path></svg>",
+        "name": "svg-3"
+      }
+    ],
+    "pageUrl": "https://www.enjanga.com/",
+    "summary": {
+      "byKind": {
+        "font": 1,
+        "image": 3,
+        "other": 1,
+        "script": 11,
+        "stylesheet": 5,
+        "video": 0
+      },
+      "inlineSvgCount": 3,
+      "totalCount": 21
+    }
+  },
+  "listing": {
+    "assets": [
+      {
+        "id": "6d9b50ab0a4e2145",
+        "kind": "stylesheet",
+        "name": "10014c3c01ed88c3.css",
+        "sources": [
+          {
+            "kind": "resource",
+            "property": "link"
+          },
+          {
+            "kind": "attribute",
+            "nodeId": 191,
+            "property": "href"
+          }
+        ],
+        "url": "https://www.enjanga.com/_next/static/css/10014c3c01ed88c3.css?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+      },
+      {
+        "id": "d17c5453b1842a50",
+        "kind": "stylesheet",
+        "name": "7a1446189c269e36.css",
+        "sources": [
+          {
+            "kind": "resource",
+            "property": "link"
+          },
+          {
+            "kind": "attribute",
+            "nodeId": 192,
+            "property": "href"
+          }
+        ],
+        "url": "https://www.enjanga.com/_next/static/css/7a1446189c269e36.css?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+      },
+      {
+        "id": "acb421e55670e295",
+        "kind": "stylesheet",
+        "name": "d7aa28bf99761205.css",
+        "sources": [
+          {
+            "kind": "resource",
+            "property": "link"
+          },
+          {
+            "kind": "attribute",
+            "nodeId": 193,
+            "property": "href"
+          }
+        ],
+        "url": "https://www.enjanga.com/_next/static/css/d7aa28bf99761205.css?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+      },
+      {
+        "id": "7296154b827fe330",
+        "kind": "stylesheet",
+        "name": "c0f0312b1fcacbd1.css",
+        "sources": [
+          {
+            "kind": "resource",
+            "property": "link"
+          },
+          {
+            "kind": "attribute",
+            "nodeId": 194,
+            "property": "href"
+          }
+        ],
+        "url": "https://www.enjanga.com/_next/static/css/c0f0312b1fcacbd1.css?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+      },
+      {
+        "id": "2d86cfae6f6f8fbe",
+        "kind": "script",
+        "name": "webpack-1b2bbc7e8235a2c6.js",
+        "sources": [
+          {
+            "kind": "resource",
+            "property": "link"
+          },
+          {
+            "kind": "attribute",
+            "nodeId": 195,
+            "property": "href"
+          },
+          {
+            "kind": "attribute",
+            "nodeId": 417,
+            "property": "src"
+          }
+        ],
+        "url": "https://www.enjanga.com/_next/static/chunks/webpack-1b2bbc7e8235a2c6.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+      },
+      {
+        "id": "06ad3fcc76b5df7a",
+        "kind": "script",
+        "name": "4bd1b696-c023c6e3521b1417.js",
+        "sources": [
+          {
+            "kind": "resource",
+            "property": "script"
+          },
+          {
+            "kind": "attribute",
+            "nodeId": 196,
+            "property": "src"
+          }
+        ],
+        "url": "https://www.enjanga.com/_next/static/chunks/4bd1b696-c023c6e3521b1417.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+      },
+      {
+        "id": "7bdafee7e91e3b21",
+        "kind": "script",
+        "name": "255-a8dafe9145bc138e.js",
+        "sources": [
+          {
+            "kind": "resource",
+            "property": "script"
+          },
+          {
+            "kind": "attribute",
+            "nodeId": 197,
+            "property": "src"
+          }
+        ],
+        "url": "https://www.enjanga.com/_next/static/chunks/255-a8dafe9145bc138e.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+      },
+      {
+        "id": "684f7138e6cc9793",
+        "kind": "script",
+        "name": "main-app-e38890cadc2b084e.js",
+        "sources": [
+          {
+            "kind": "resource",
+            "property": "script"
+          },
+          {
+            "kind": "attribute",
+            "nodeId": 198,
+            "property": "src"
+          }
+        ],
+        "url": "https://www.enjanga.com/_next/static/chunks/main-app-e38890cadc2b084e.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+      },
+      {
+        "id": "8e4cf49d02b326bd",
+        "kind": "script",
+        "name": "560-5ea3c83c0c8e214e.js",
+        "sources": [
+          {
+            "kind": "resource",
+            "property": "script"
+          },
+          {
+            "kind": "attribute",
+            "nodeId": 199,
+            "property": "src"
+          }
+        ],
+        "url": "https://www.enjanga.com/_next/static/chunks/560-5ea3c83c0c8e214e.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+      },
+      {
+        "id": "f6d4685c9610eb04",
+        "kind": "script",
+        "name": "global-error-13e5544aae7105d3.js",
+        "sources": [
+          {
+            "kind": "resource",
+            "property": "script"
+          },
+          {
+            "kind": "attribute",
+            "nodeId": 200,
+            "property": "src"
+          }
+        ],
+        "url": "https://www.enjanga.com/_next/static/chunks/app/global-error-13e5544aae7105d3.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+      },
+      {
+        "id": "3d7ecb5b2559da55",
+        "kind": "script",
+        "name": "619-ba102abea3e3d0e4.js",
+        "sources": [
+          {
+            "kind": "resource",
+            "property": "script"
+          },
+          {
+            "kind": "attribute",
+            "nodeId": 201,
+            "property": "src"
+          }
+        ],
+        "url": "https://www.enjanga.com/_next/static/chunks/619-ba102abea3e3d0e4.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+      },
+      {
+        "id": "7abb7f4bced663a4",
+        "kind": "script",
+        "name": "layout-cd282372a47cd0bc.js",
+        "sources": [
+          {
+            "kind": "resource",
+            "property": "script"
+          },
+          {
+            "kind": "attribute",
+            "nodeId": 202,
+            "property": "src"
+          }
+        ],
+        "url": "https://www.enjanga.com/_next/static/chunks/app/layout-cd282372a47cd0bc.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+      },
+      {
+        "id": "709ae56bee4bd7a5",
+        "kind": "script",
+        "name": "error-d3a6ba0fa3b2ddca.js",
+        "sources": [
+          {
+            "kind": "resource",
+            "property": "script"
+          },
+          {
+            "kind": "attribute",
+            "nodeId": 203,
+            "property": "src"
+          }
+        ],
+        "url": "https://www.enjanga.com/_next/static/chunks/app/error-d3a6ba0fa3b2ddca.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+      },
+      {
+        "id": "3c3285636ecf008f",
+        "kind": "script",
+        "name": "page-7c435e439ea78a5a.js",
+        "sources": [
+          {
+            "kind": "resource",
+            "property": "script"
+          },
+          {
+            "kind": "attribute",
+            "nodeId": 204,
+            "property": "src"
+          }
+        ],
+        "url": "https://www.enjanga.com/_next/static/chunks/app/case-studies/page-7c435e439ea78a5a.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+      },
+      {
+        "id": "deceaf181f34db7f",
+        "kind": "image",
+        "name": "Case_Study_-3_-_featured_img.jpg",
+        "sources": [
+          {
+            "kind": "resource",
+            "property": "video"
+          },
+          {
+            "kind": "attribute",
+            "nodeId": 253,
+            "property": "src"
+          },
+          {
+            "kind": "attribute",
+            "nodeId": 274,
+            "property": "poster"
+          }
+        ],
+        "url": "https://images.ctfassets.net/z41mabrhnu57/2N7se9MBEqMpwlwid1uvMG/fc6d760767b9d873f027cebd752be490/Case_Study_-3_-_featured_img.jpg"
+      },
+      {
+        "id": "ec62c6221c91bbc4",
+        "kind": "image",
+        "name": "Case_Study_-2-_featured_img.png",
+        "sources": [
+          {
+            "kind": "resource",
+            "property": "video"
+          },
+          {
+            "kind": "attribute",
+            "nodeId": 295,
+            "property": "src"
+          },
+          {
+            "kind": "attribute",
+            "nodeId": 318,
+            "property": "poster"
+          }
+        ],
+        "url": "https://images.ctfassets.net/z41mabrhnu57/1BstJK0AHIiBFCt8tjXPat/42896f51d0e532eff41c0734b01e059c/Case_Study_-2-_featured_img.png"
+      },
+      {
+        "id": "0e41be95677037c4",
+        "kind": "image",
+        "name": "Case_Study_1_-_featured_img.png",
+        "sources": [
+          {
+            "kind": "resource",
+            "property": "video"
+          },
+          {
+            "kind": "attribute",
+            "nodeId": 353,
+            "property": "src"
+          },
+          {
+            "kind": "attribute",
+            "nodeId": 376,
+            "property": "poster"
+          }
+        ],
+        "url": "https://images.ctfassets.net/z41mabrhnu57/UmhkYpi6PATbBicSJLceT/8ff20aab5bc17ae6b98ae6947794490f/Case_Study_1_-_featured_img.png"
+      },
+      {
+        "id": "6297e7f14fe4e1e0",
+        "kind": "font",
+        "name": "MonaSansVF.fa9a2f42.woff2",
+        "sources": [
+          {
+            "kind": "resource",
+            "property": "css"
+          }
+        ],
+        "url": "https://www.enjanga.com/_next/static/media/MonaSansVF.fa9a2f42.woff2"
+      },
+      {
+        "id": "c88357a3261d78c4",
+        "kind": "other",
+        "name": "https://www.enjanga.com/?_rsc=1z12i",
+        "sources": [
+          {
+            "kind": "resource",
+            "property": "fetch"
+          }
+        ],
+        "url": "https://www.enjanga.com/?_rsc=1z12i"
+      },
+      {
+        "id": "4c18bd385259d86d",
+        "kind": "other",
+        "name": "modernizing-financial-records-retrieval",
+        "sources": [
+          {
+            "kind": "resource",
+            "property": "fetch"
+          }
+        ],
+        "url": "https://www.enjanga.com/case-studies/modernizing-financial-records-retrieval?_rsc=1z12i"
+      },
+      {
+        "id": "dce928c6ac452a2d",
+        "kind": "stylesheet",
+        "name": "bf7788ba9517e5fc.css",
+        "sources": [
+          {
+            "kind": "resource",
+            "property": "link"
+          },
+          {
+            "kind": "attribute",
+            "nodeId": 211,
+            "property": "href"
+          }
+        ],
+        "url": "https://www.enjanga.com/_next/static/css/bf7788ba9517e5fc.css?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+      },
+      {
+        "id": "b3cf013d214268b2",
+        "kind": "script",
+        "name": "page-1bc515e61e66b29b.js",
+        "sources": [
+          {
+            "kind": "resource",
+            "property": "script"
+          }
+        ],
+        "url": "https://www.enjanga.com/_next/static/chunks/app/page-1bc515e61e66b29b.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+      },
+      {
+        "id": "ca60e43f6ca7dbbc",
+        "kind": "script",
+        "name": "error-ab8a51ce143fd6e1.js",
+        "sources": [
+          {
+            "kind": "resource",
+            "property": "script"
+          }
+        ],
+        "url": "https://www.enjanga.com/_next/static/chunks/app/case-studies/%5Bslug%5D/error-ab8a51ce143fd6e1.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+      },
+      {
+        "id": "a5ae8b934dd79c5b",
+        "kind": "script",
+        "name": "page-b6e2364ca3bb55d3.js",
+        "sources": [
+          {
+            "kind": "resource",
+            "property": "script"
+          }
+        ],
+        "url": "https://www.enjanga.com/_next/static/chunks/app/case-studies/%5Bslug%5D/page-b6e2364ca3bb55d3.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+      }
+    ],
+    "id": "fa74d61a-14e3-454f-bae1-3d0f7af733b4",
+    "inlineSvgs": [
+      {
+        "id": "fe03e0a8c72233d6",
+        "markup": "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"4\"></circle><path d=\"M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41\"></path></svg>",
+        "name": "svg-1"
+      },
+      {
+        "id": "188f5ba10a2fcb20",
+        "markup": "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"4\"></circle><path d=\"M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41\"></path></svg>",
+        "name": "svg-2"
+      },
+      {
+        "id": "53737d0d1c527b04",
+        "markup": "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M4 7h16M4 12h16M4 17h16\"></path></svg>",
+        "name": "svg-3"
+      }
+    ],
+    "pageUrl": "https://www.enjanga.com/case-studies",
+    "summary": {
+      "byKind": {
+        "font": 1,
+        "image": 3,
+        "other": 2,
+        "script": 13,
+        "stylesheet": 5,
+        "video": 0
+      },
+      "inlineSvgCount": 3,
+      "totalCount": 24
+    }
+  },
+  "videoModal": {
+    "assets": [
+      {
+        "id": "6d9b50ab0a4e2145",
+        "kind": "stylesheet",
+        "name": "10014c3c01ed88c3.css",
+        "sources": [
+          {
+            "kind": "resource",
+            "property": "link"
+          },
+          {
+            "kind": "attribute",
+            "nodeId": 191,
+            "property": "href"
+          }
+        ],
+        "url": "https://www.enjanga.com/_next/static/css/10014c3c01ed88c3.css?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+      },
+      {
+        "id": "d17c5453b1842a50",
+        "kind": "stylesheet",
+        "name": "7a1446189c269e36.css",
+        "sources": [
+          {
+            "kind": "resource",
+            "property": "link"
+          },
+          {
+            "kind": "attribute",
+            "nodeId": 192,
+            "property": "href"
+          }
+        ],
+        "url": "https://www.enjanga.com/_next/static/css/7a1446189c269e36.css?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+      },
+      {
+        "id": "acb421e55670e295",
+        "kind": "stylesheet",
+        "name": "d7aa28bf99761205.css",
+        "sources": [
+          {
+            "kind": "resource",
+            "property": "link"
+          },
+          {
+            "kind": "attribute",
+            "nodeId": 193,
+            "property": "href"
+          }
+        ],
+        "url": "https://www.enjanga.com/_next/static/css/d7aa28bf99761205.css?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+      },
+      {
+        "id": "7296154b827fe330",
+        "kind": "stylesheet",
+        "name": "c0f0312b1fcacbd1.css",
+        "sources": [
+          {
+            "kind": "resource",
+            "property": "link"
+          },
+          {
+            "kind": "attribute",
+            "nodeId": 194,
+            "property": "href"
+          }
+        ],
+        "url": "https://www.enjanga.com/_next/static/css/c0f0312b1fcacbd1.css?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+      },
+      {
+        "id": "2d86cfae6f6f8fbe",
+        "kind": "script",
+        "name": "webpack-1b2bbc7e8235a2c6.js",
+        "sources": [
+          {
+            "kind": "resource",
+            "property": "link"
+          },
+          {
+            "kind": "attribute",
+            "nodeId": 195,
+            "property": "href"
+          },
+          {
+            "kind": "attribute",
+            "nodeId": 417,
+            "property": "src"
+          }
+        ],
+        "url": "https://www.enjanga.com/_next/static/chunks/webpack-1b2bbc7e8235a2c6.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+      },
+      {
+        "id": "06ad3fcc76b5df7a",
+        "kind": "script",
+        "name": "4bd1b696-c023c6e3521b1417.js",
+        "sources": [
+          {
+            "kind": "resource",
+            "property": "script"
+          },
+          {
+            "kind": "attribute",
+            "nodeId": 196,
+            "property": "src"
+          }
+        ],
+        "url": "https://www.enjanga.com/_next/static/chunks/4bd1b696-c023c6e3521b1417.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+      },
+      {
+        "id": "7bdafee7e91e3b21",
+        "kind": "script",
+        "name": "255-a8dafe9145bc138e.js",
+        "sources": [
+          {
+            "kind": "resource",
+            "property": "script"
+          },
+          {
+            "kind": "attribute",
+            "nodeId": 197,
+            "property": "src"
+          }
+        ],
+        "url": "https://www.enjanga.com/_next/static/chunks/255-a8dafe9145bc138e.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+      },
+      {
+        "id": "684f7138e6cc9793",
+        "kind": "script",
+        "name": "main-app-e38890cadc2b084e.js",
+        "sources": [
+          {
+            "kind": "resource",
+            "property": "script"
+          },
+          {
+            "kind": "attribute",
+            "nodeId": 198,
+            "property": "src"
+          }
+        ],
+        "url": "https://www.enjanga.com/_next/static/chunks/main-app-e38890cadc2b084e.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+      },
+      {
+        "id": "8e4cf49d02b326bd",
+        "kind": "script",
+        "name": "560-5ea3c83c0c8e214e.js",
+        "sources": [
+          {
+            "kind": "resource",
+            "property": "script"
+          },
+          {
+            "kind": "attribute",
+            "nodeId": 199,
+            "property": "src"
+          }
+        ],
+        "url": "https://www.enjanga.com/_next/static/chunks/560-5ea3c83c0c8e214e.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+      },
+      {
+        "id": "f6d4685c9610eb04",
+        "kind": "script",
+        "name": "global-error-13e5544aae7105d3.js",
+        "sources": [
+          {
+            "kind": "resource",
+            "property": "script"
+          },
+          {
+            "kind": "attribute",
+            "nodeId": 200,
+            "property": "src"
+          }
+        ],
+        "url": "https://www.enjanga.com/_next/static/chunks/app/global-error-13e5544aae7105d3.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+      },
+      {
+        "id": "3d7ecb5b2559da55",
+        "kind": "script",
+        "name": "619-ba102abea3e3d0e4.js",
+        "sources": [
+          {
+            "kind": "resource",
+            "property": "script"
+          },
+          {
+            "kind": "attribute",
+            "nodeId": 201,
+            "property": "src"
+          }
+        ],
+        "url": "https://www.enjanga.com/_next/static/chunks/619-ba102abea3e3d0e4.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+      },
+      {
+        "id": "7abb7f4bced663a4",
+        "kind": "script",
+        "name": "layout-cd282372a47cd0bc.js",
+        "sources": [
+          {
+            "kind": "resource",
+            "property": "script"
+          },
+          {
+            "kind": "attribute",
+            "nodeId": 202,
+            "property": "src"
+          }
+        ],
+        "url": "https://www.enjanga.com/_next/static/chunks/app/layout-cd282372a47cd0bc.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+      },
+      {
+        "id": "709ae56bee4bd7a5",
+        "kind": "script",
+        "name": "error-d3a6ba0fa3b2ddca.js",
+        "sources": [
+          {
+            "kind": "resource",
+            "property": "script"
+          },
+          {
+            "kind": "attribute",
+            "nodeId": 203,
+            "property": "src"
+          }
+        ],
+        "url": "https://www.enjanga.com/_next/static/chunks/app/error-d3a6ba0fa3b2ddca.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+      },
+      {
+        "id": "3c3285636ecf008f",
+        "kind": "script",
+        "name": "page-7c435e439ea78a5a.js",
+        "sources": [
+          {
+            "kind": "resource",
+            "property": "script"
+          },
+          {
+            "kind": "attribute",
+            "nodeId": 204,
+            "property": "src"
+          }
+        ],
+        "url": "https://www.enjanga.com/_next/static/chunks/app/case-studies/page-7c435e439ea78a5a.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+      },
+      {
+        "id": "deceaf181f34db7f",
+        "kind": "image",
+        "name": "Case_Study_-3_-_featured_img.jpg",
+        "sources": [
+          {
+            "kind": "resource",
+            "property": "video"
+          },
+          {
+            "kind": "attribute",
+            "nodeId": 253,
+            "property": "src"
+          },
+          {
+            "kind": "attribute",
+            "nodeId": 274,
+            "property": "poster"
+          }
+        ],
+        "url": "https://images.ctfassets.net/z41mabrhnu57/2N7se9MBEqMpwlwid1uvMG/fc6d760767b9d873f027cebd752be490/Case_Study_-3_-_featured_img.jpg"
+      },
+      {
+        "id": "ec62c6221c91bbc4",
+        "kind": "image",
+        "name": "Case_Study_-2-_featured_img.png",
+        "sources": [
+          {
+            "kind": "resource",
+            "property": "video"
+          },
+          {
+            "kind": "attribute",
+            "nodeId": 295,
+            "property": "src"
+          },
+          {
+            "kind": "attribute",
+            "nodeId": 318,
+            "property": "poster"
+          }
+        ],
+        "url": "https://images.ctfassets.net/z41mabrhnu57/1BstJK0AHIiBFCt8tjXPat/42896f51d0e532eff41c0734b01e059c/Case_Study_-2-_featured_img.png"
+      },
+      {
+        "id": "0e41be95677037c4",
+        "kind": "image",
+        "name": "Case_Study_1_-_featured_img.png",
+        "sources": [
+          {
+            "kind": "resource",
+            "property": "video"
+          },
+          {
+            "kind": "attribute",
+            "nodeId": 353,
+            "property": "src"
+          },
+          {
+            "kind": "attribute",
+            "nodeId": 376,
+            "property": "poster"
+          }
+        ],
+        "url": "https://images.ctfassets.net/z41mabrhnu57/UmhkYpi6PATbBicSJLceT/8ff20aab5bc17ae6b98ae6947794490f/Case_Study_1_-_featured_img.png"
+      },
+      {
+        "id": "6297e7f14fe4e1e0",
+        "kind": "font",
+        "name": "MonaSansVF.fa9a2f42.woff2",
+        "sources": [
+          {
+            "kind": "resource",
+            "property": "css"
+          }
+        ],
+        "url": "https://www.enjanga.com/_next/static/media/MonaSansVF.fa9a2f42.woff2"
+      },
+      {
+        "id": "c88357a3261d78c4",
+        "kind": "other",
+        "name": "https://www.enjanga.com/?_rsc=1z12i",
+        "sources": [
+          {
+            "kind": "resource",
+            "property": "fetch"
+          }
+        ],
+        "url": "https://www.enjanga.com/?_rsc=1z12i"
+      },
+      {
+        "id": "4c18bd385259d86d",
+        "kind": "other",
+        "name": "modernizing-financial-records-retrieval",
+        "sources": [
+          {
+            "kind": "resource",
+            "property": "fetch"
+          }
+        ],
+        "url": "https://www.enjanga.com/case-studies/modernizing-financial-records-retrieval?_rsc=1z12i"
+      },
+      {
+        "id": "dce928c6ac452a2d",
+        "kind": "stylesheet",
+        "name": "bf7788ba9517e5fc.css",
+        "sources": [
+          {
+            "kind": "resource",
+            "property": "link"
+          },
+          {
+            "kind": "attribute",
+            "nodeId": 211,
+            "property": "href"
+          }
+        ],
+        "url": "https://www.enjanga.com/_next/static/css/bf7788ba9517e5fc.css?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+      },
+      {
+        "id": "b3cf013d214268b2",
+        "kind": "script",
+        "name": "page-1bc515e61e66b29b.js",
+        "sources": [
+          {
+            "kind": "resource",
+            "property": "script"
+          }
+        ],
+        "url": "https://www.enjanga.com/_next/static/chunks/app/page-1bc515e61e66b29b.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+      },
+      {
+        "id": "ca60e43f6ca7dbbc",
+        "kind": "script",
+        "name": "error-ab8a51ce143fd6e1.js",
+        "sources": [
+          {
+            "kind": "resource",
+            "property": "script"
+          }
+        ],
+        "url": "https://www.enjanga.com/_next/static/chunks/app/case-studies/%5Bslug%5D/error-ab8a51ce143fd6e1.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+      },
+      {
+        "id": "a5ae8b934dd79c5b",
+        "kind": "script",
+        "name": "page-b6e2364ca3bb55d3.js",
+        "sources": [
+          {
+            "kind": "resource",
+            "property": "script"
+          }
+        ],
+        "url": "https://www.enjanga.com/_next/static/chunks/app/case-studies/%5Bslug%5D/page-b6e2364ca3bb55d3.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+      }
+    ],
+    "id": "59c4aeb3-106b-4ca1-b0ce-3da717dfe4d1",
+    "inlineSvgs": [
+      {
+        "id": "fe03e0a8c72233d6",
+        "markup": "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"4\"></circle><path d=\"M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41\"></path></svg>",
+        "name": "svg-1"
+      },
+      {
+        "id": "188f5ba10a2fcb20",
+        "markup": "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"4\"></circle><path d=\"M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41\"></path></svg>",
+        "name": "svg-2"
+      },
+      {
+        "id": "53737d0d1c527b04",
+        "markup": "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M4 7h16M4 12h16M4 17h16\"></path></svg>",
+        "name": "svg-3"
+      }
+    ],
+    "pageUrl": "https://www.enjanga.com/case-studies",
+    "summary": {
+      "byKind": {
+        "font": 1,
+        "image": 3,
+        "other": 2,
+        "script": 13,
+        "stylesheet": 5,
+        "video": 0
+      },
+      "inlineSvgCount": 3,
+      "totalCount": 24
+    }
+  },
+  "details": [
+    {
+      "assets": [
+        {
+          "id": "6d9b50ab0a4e2145",
+          "kind": "stylesheet",
+          "name": "10014c3c01ed88c3.css",
+          "sources": [
+            {
+              "kind": "resource",
+              "property": "link"
+            },
+            {
+              "kind": "attribute",
+              "nodeId": 1956,
+              "property": "href"
+            }
+          ],
+          "url": "https://www.enjanga.com/_next/static/css/10014c3c01ed88c3.css?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+        },
+        {
+          "id": "d17c5453b1842a50",
+          "kind": "stylesheet",
+          "name": "7a1446189c269e36.css",
+          "sources": [
+            {
+              "kind": "resource",
+              "property": "link"
+            },
+            {
+              "kind": "attribute",
+              "nodeId": 1957,
+              "property": "href"
+            }
+          ],
+          "url": "https://www.enjanga.com/_next/static/css/7a1446189c269e36.css?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+        },
+        {
+          "id": "acb421e55670e295",
+          "kind": "stylesheet",
+          "name": "d7aa28bf99761205.css",
+          "sources": [
+            {
+              "kind": "resource",
+              "property": "link"
+            },
+            {
+              "kind": "attribute",
+              "nodeId": 1958,
+              "property": "href"
+            }
+          ],
+          "url": "https://www.enjanga.com/_next/static/css/d7aa28bf99761205.css?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+        },
+        {
+          "id": "2d86cfae6f6f8fbe",
+          "kind": "script",
+          "name": "webpack-1b2bbc7e8235a2c6.js",
+          "sources": [
+            {
+              "kind": "resource",
+              "property": "link"
+            },
+            {
+              "kind": "attribute",
+              "nodeId": 1959,
+              "property": "href"
+            },
+            {
+              "kind": "attribute",
+              "nodeId": 2188,
+              "property": "src"
+            }
+          ],
+          "url": "https://www.enjanga.com/_next/static/chunks/webpack-1b2bbc7e8235a2c6.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+        },
+        {
+          "id": "06ad3fcc76b5df7a",
+          "kind": "script",
+          "name": "4bd1b696-c023c6e3521b1417.js",
+          "sources": [
+            {
+              "kind": "resource",
+              "property": "script"
+            },
+            {
+              "kind": "attribute",
+              "nodeId": 1960,
+              "property": "src"
+            }
+          ],
+          "url": "https://www.enjanga.com/_next/static/chunks/4bd1b696-c023c6e3521b1417.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+        },
+        {
+          "id": "7bdafee7e91e3b21",
+          "kind": "script",
+          "name": "255-a8dafe9145bc138e.js",
+          "sources": [
+            {
+              "kind": "resource",
+              "property": "script"
+            },
+            {
+              "kind": "attribute",
+              "nodeId": 1961,
+              "property": "src"
+            }
+          ],
+          "url": "https://www.enjanga.com/_next/static/chunks/255-a8dafe9145bc138e.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+        },
+        {
+          "id": "684f7138e6cc9793",
+          "kind": "script",
+          "name": "main-app-e38890cadc2b084e.js",
+          "sources": [
+            {
+              "kind": "resource",
+              "property": "script"
+            },
+            {
+              "kind": "attribute",
+              "nodeId": 1962,
+              "property": "src"
+            }
+          ],
+          "url": "https://www.enjanga.com/_next/static/chunks/main-app-e38890cadc2b084e.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+        },
+        {
+          "id": "8e4cf49d02b326bd",
+          "kind": "script",
+          "name": "560-5ea3c83c0c8e214e.js",
+          "sources": [
+            {
+              "kind": "resource",
+              "property": "script"
+            },
+            {
+              "kind": "attribute",
+              "nodeId": 1963,
+              "property": "src"
+            }
+          ],
+          "url": "https://www.enjanga.com/_next/static/chunks/560-5ea3c83c0c8e214e.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+        },
+        {
+          "id": "ca60e43f6ca7dbbc",
+          "kind": "script",
+          "name": "error-ab8a51ce143fd6e1.js",
+          "sources": [
+            {
+              "kind": "resource",
+              "property": "script"
+            },
+            {
+              "kind": "attribute",
+              "nodeId": 1964,
+              "property": "src"
+            }
+          ],
+          "url": "https://www.enjanga.com/_next/static/chunks/app/case-studies/%5Bslug%5D/error-ab8a51ce143fd6e1.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+        },
+        {
+          "id": "f6d4685c9610eb04",
+          "kind": "script",
+          "name": "global-error-13e5544aae7105d3.js",
+          "sources": [
+            {
+              "kind": "resource",
+              "property": "script"
+            },
+            {
+              "kind": "attribute",
+              "nodeId": 1965,
+              "property": "src"
+            }
+          ],
+          "url": "https://www.enjanga.com/_next/static/chunks/app/global-error-13e5544aae7105d3.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+        },
+        {
+          "id": "3d7ecb5b2559da55",
+          "kind": "script",
+          "name": "619-ba102abea3e3d0e4.js",
+          "sources": [
+            {
+              "kind": "resource",
+              "property": "script"
+            },
+            {
+              "kind": "attribute",
+              "nodeId": 1966,
+              "property": "src"
+            }
+          ],
+          "url": "https://www.enjanga.com/_next/static/chunks/619-ba102abea3e3d0e4.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+        },
+        {
+          "id": "7abb7f4bced663a4",
+          "kind": "script",
+          "name": "layout-cd282372a47cd0bc.js",
+          "sources": [
+            {
+              "kind": "resource",
+              "property": "script"
+            },
+            {
+              "kind": "attribute",
+              "nodeId": 1967,
+              "property": "src"
+            }
+          ],
+          "url": "https://www.enjanga.com/_next/static/chunks/app/layout-cd282372a47cd0bc.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+        },
+        {
+          "id": "709ae56bee4bd7a5",
+          "kind": "script",
+          "name": "error-d3a6ba0fa3b2ddca.js",
+          "sources": [
+            {
+              "kind": "resource",
+              "property": "script"
+            },
+            {
+              "kind": "attribute",
+              "nodeId": 1968,
+              "property": "src"
+            }
+          ],
+          "url": "https://www.enjanga.com/_next/static/chunks/app/error-d3a6ba0fa3b2ddca.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+        },
+        {
+          "id": "a5ae8b934dd79c5b",
+          "kind": "script",
+          "name": "page-b6e2364ca3bb55d3.js",
+          "sources": [
+            {
+              "kind": "resource",
+              "property": "script"
+            },
+            {
+              "kind": "attribute",
+              "nodeId": 1969,
+              "property": "src"
+            }
+          ],
+          "url": "https://www.enjanga.com/_next/static/chunks/app/case-studies/%5Bslug%5D/page-b6e2364ca3bb55d3.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+        },
+        {
+          "id": "6297e7f14fe4e1e0",
+          "kind": "font",
+          "name": "MonaSansVF.fa9a2f42.woff2",
+          "sources": [
+            {
+              "kind": "resource",
+              "property": "css"
+            }
+          ],
+          "url": "https://www.enjanga.com/_next/static/media/MonaSansVF.fa9a2f42.woff2"
+        },
+        {
+          "id": "9802d188ecb3d2a1",
+          "kind": "other",
+          "name": "https://www.enjanga.com/?_rsc=1vq1t",
+          "sources": [
+            {
+              "kind": "resource",
+              "property": "fetch"
+            }
+          ],
+          "url": "https://www.enjanga.com/?_rsc=1vq1t"
+        },
+        {
+          "id": "5ca18f2b77bfdceb",
+          "kind": "other",
+          "name": "case-studies",
+          "sources": [
+            {
+              "kind": "resource",
+              "property": "fetch"
+            }
+          ],
+          "url": "https://www.enjanga.com/case-studies?_rsc=1vq1t"
+        },
+        {
+          "id": "dce928c6ac452a2d",
+          "kind": "stylesheet",
+          "name": "bf7788ba9517e5fc.css",
+          "sources": [
+            {
+              "kind": "resource",
+              "property": "link"
+            }
+          ],
+          "url": "https://www.enjanga.com/_next/static/css/bf7788ba9517e5fc.css?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+        },
+        {
+          "id": "7296154b827fe330",
+          "kind": "stylesheet",
+          "name": "c0f0312b1fcacbd1.css",
+          "sources": [
+            {
+              "kind": "resource",
+              "property": "link"
+            }
+          ],
+          "url": "https://www.enjanga.com/_next/static/css/c0f0312b1fcacbd1.css?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+        },
+        {
+          "id": "b3cf013d214268b2",
+          "kind": "script",
+          "name": "page-1bc515e61e66b29b.js",
+          "sources": [
+            {
+              "kind": "resource",
+              "property": "script"
+            }
+          ],
+          "url": "https://www.enjanga.com/_next/static/chunks/app/page-1bc515e61e66b29b.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+        },
+        {
+          "id": "3c3285636ecf008f",
+          "kind": "script",
+          "name": "page-7c435e439ea78a5a.js",
+          "sources": [
+            {
+              "kind": "resource",
+              "property": "script"
+            }
+          ],
+          "url": "https://www.enjanga.com/_next/static/chunks/app/case-studies/page-7c435e439ea78a5a.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+        }
+      ],
+      "id": "61695e24-850c-4e7a-86a9-7fa284e155f9",
+      "inlineSvgs": [
+        {
+          "id": "fe03e0a8c72233d6",
+          "markup": "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"4\"></circle><path d=\"M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41\"></path></svg>",
+          "name": "svg-1"
+        },
+        {
+          "id": "188f5ba10a2fcb20",
+          "markup": "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"4\"></circle><path d=\"M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41\"></path></svg>",
+          "name": "svg-2"
+        },
+        {
+          "id": "53737d0d1c527b04",
+          "markup": "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M4 7h16M4 12h16M4 17h16\"></path></svg>",
+          "name": "svg-3"
+        }
+      ],
+      "pageUrl": "https://www.enjanga.com/case-studies/modernizing-financial-records-retrieval",
+      "summary": {
+        "byKind": {
+          "font": 1,
+          "image": 0,
+          "other": 2,
+          "script": 13,
+          "stylesheet": 5,
+          "video": 0
+        },
+        "inlineSvgCount": 3,
+        "totalCount": 21
+      }
+    },
+    {
+      "assets": [
+        {
+          "id": "6d9b50ab0a4e2145",
+          "kind": "stylesheet",
+          "name": "10014c3c01ed88c3.css",
+          "sources": [
+            {
+              "kind": "resource",
+              "property": "link"
+            },
+            {
+              "kind": "attribute",
+              "nodeId": 2237,
+              "property": "href"
+            }
+          ],
+          "url": "https://www.enjanga.com/_next/static/css/10014c3c01ed88c3.css?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+        },
+        {
+          "id": "d17c5453b1842a50",
+          "kind": "stylesheet",
+          "name": "7a1446189c269e36.css",
+          "sources": [
+            {
+              "kind": "resource",
+              "property": "link"
+            },
+            {
+              "kind": "attribute",
+              "nodeId": 2238,
+              "property": "href"
+            }
+          ],
+          "url": "https://www.enjanga.com/_next/static/css/7a1446189c269e36.css?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+        },
+        {
+          "id": "acb421e55670e295",
+          "kind": "stylesheet",
+          "name": "d7aa28bf99761205.css",
+          "sources": [
+            {
+              "kind": "resource",
+              "property": "link"
+            },
+            {
+              "kind": "attribute",
+              "nodeId": 2239,
+              "property": "href"
+            }
+          ],
+          "url": "https://www.enjanga.com/_next/static/css/d7aa28bf99761205.css?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+        },
+        {
+          "id": "2d86cfae6f6f8fbe",
+          "kind": "script",
+          "name": "webpack-1b2bbc7e8235a2c6.js",
+          "sources": [
+            {
+              "kind": "resource",
+              "property": "link"
+            },
+            {
+              "kind": "attribute",
+              "nodeId": 2240,
+              "property": "href"
+            },
+            {
+              "kind": "attribute",
+              "nodeId": 2439,
+              "property": "src"
+            }
+          ],
+          "url": "https://www.enjanga.com/_next/static/chunks/webpack-1b2bbc7e8235a2c6.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+        },
+        {
+          "id": "06ad3fcc76b5df7a",
+          "kind": "script",
+          "name": "4bd1b696-c023c6e3521b1417.js",
+          "sources": [
+            {
+              "kind": "resource",
+              "property": "script"
+            },
+            {
+              "kind": "attribute",
+              "nodeId": 2241,
+              "property": "src"
+            }
+          ],
+          "url": "https://www.enjanga.com/_next/static/chunks/4bd1b696-c023c6e3521b1417.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+        },
+        {
+          "id": "7bdafee7e91e3b21",
+          "kind": "script",
+          "name": "255-a8dafe9145bc138e.js",
+          "sources": [
+            {
+              "kind": "resource",
+              "property": "script"
+            },
+            {
+              "kind": "attribute",
+              "nodeId": 2242,
+              "property": "src"
+            }
+          ],
+          "url": "https://www.enjanga.com/_next/static/chunks/255-a8dafe9145bc138e.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+        },
+        {
+          "id": "684f7138e6cc9793",
+          "kind": "script",
+          "name": "main-app-e38890cadc2b084e.js",
+          "sources": [
+            {
+              "kind": "resource",
+              "property": "script"
+            },
+            {
+              "kind": "attribute",
+              "nodeId": 2243,
+              "property": "src"
+            }
+          ],
+          "url": "https://www.enjanga.com/_next/static/chunks/main-app-e38890cadc2b084e.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+        },
+        {
+          "id": "8e4cf49d02b326bd",
+          "kind": "script",
+          "name": "560-5ea3c83c0c8e214e.js",
+          "sources": [
+            {
+              "kind": "resource",
+              "property": "script"
+            },
+            {
+              "kind": "attribute",
+              "nodeId": 2244,
+              "property": "src"
+            }
+          ],
+          "url": "https://www.enjanga.com/_next/static/chunks/560-5ea3c83c0c8e214e.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+        },
+        {
+          "id": "ca60e43f6ca7dbbc",
+          "kind": "script",
+          "name": "error-ab8a51ce143fd6e1.js",
+          "sources": [
+            {
+              "kind": "resource",
+              "property": "script"
+            },
+            {
+              "kind": "attribute",
+              "nodeId": 2245,
+              "property": "src"
+            }
+          ],
+          "url": "https://www.enjanga.com/_next/static/chunks/app/case-studies/%5Bslug%5D/error-ab8a51ce143fd6e1.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+        },
+        {
+          "id": "f6d4685c9610eb04",
+          "kind": "script",
+          "name": "global-error-13e5544aae7105d3.js",
+          "sources": [
+            {
+              "kind": "resource",
+              "property": "script"
+            },
+            {
+              "kind": "attribute",
+              "nodeId": 2246,
+              "property": "src"
+            }
+          ],
+          "url": "https://www.enjanga.com/_next/static/chunks/app/global-error-13e5544aae7105d3.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+        },
+        {
+          "id": "3d7ecb5b2559da55",
+          "kind": "script",
+          "name": "619-ba102abea3e3d0e4.js",
+          "sources": [
+            {
+              "kind": "resource",
+              "property": "script"
+            },
+            {
+              "kind": "attribute",
+              "nodeId": 2247,
+              "property": "src"
+            }
+          ],
+          "url": "https://www.enjanga.com/_next/static/chunks/619-ba102abea3e3d0e4.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+        },
+        {
+          "id": "7abb7f4bced663a4",
+          "kind": "script",
+          "name": "layout-cd282372a47cd0bc.js",
+          "sources": [
+            {
+              "kind": "resource",
+              "property": "script"
+            },
+            {
+              "kind": "attribute",
+              "nodeId": 2248,
+              "property": "src"
+            }
+          ],
+          "url": "https://www.enjanga.com/_next/static/chunks/app/layout-cd282372a47cd0bc.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+        },
+        {
+          "id": "709ae56bee4bd7a5",
+          "kind": "script",
+          "name": "error-d3a6ba0fa3b2ddca.js",
+          "sources": [
+            {
+              "kind": "resource",
+              "property": "script"
+            },
+            {
+              "kind": "attribute",
+              "nodeId": 2249,
+              "property": "src"
+            }
+          ],
+          "url": "https://www.enjanga.com/_next/static/chunks/app/error-d3a6ba0fa3b2ddca.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+        },
+        {
+          "id": "a5ae8b934dd79c5b",
+          "kind": "script",
+          "name": "page-b6e2364ca3bb55d3.js",
+          "sources": [
+            {
+              "kind": "resource",
+              "property": "script"
+            },
+            {
+              "kind": "attribute",
+              "nodeId": 2250,
+              "property": "src"
+            }
+          ],
+          "url": "https://www.enjanga.com/_next/static/chunks/app/case-studies/%5Bslug%5D/page-b6e2364ca3bb55d3.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+        },
+        {
+          "id": "6297e7f14fe4e1e0",
+          "kind": "font",
+          "name": "MonaSansVF.fa9a2f42.woff2",
+          "sources": [
+            {
+              "kind": "resource",
+              "property": "css"
+            }
+          ],
+          "url": "https://www.enjanga.com/_next/static/media/MonaSansVF.fa9a2f42.woff2"
+        }
+      ],
+      "id": "14438dfb-9efb-4276-8b9b-b90e9dcb2363",
+      "inlineSvgs": [
+        {
+          "id": "fe03e0a8c72233d6",
+          "markup": "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"4\"></circle><path d=\"M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41\"></path></svg>",
+          "name": "svg-1"
+        },
+        {
+          "id": "188f5ba10a2fcb20",
+          "markup": "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"4\"></circle><path d=\"M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41\"></path></svg>",
+          "name": "svg-2"
+        },
+        {
+          "id": "53737d0d1c527b04",
+          "markup": "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M4 7h16M4 12h16M4 17h16\"></path></svg>",
+          "name": "svg-3"
+        }
+      ],
+      "pageUrl": "https://www.enjanga.com/case-studies/bank-deposit-api-integration",
+      "summary": {
+        "byKind": {
+          "font": 1,
+          "image": 0,
+          "other": 0,
+          "script": 11,
+          "stylesheet": 3,
+          "video": 0
+        },
+        "inlineSvgCount": 3,
+        "totalCount": 15
+      }
+    },
+    {
+      "assets": [
+        {
+          "id": "6d9b50ab0a4e2145",
+          "kind": "stylesheet",
+          "name": "10014c3c01ed88c3.css",
+          "sources": [
+            {
+              "kind": "resource",
+              "property": "link"
+            },
+            {
+              "kind": "attribute",
+              "nodeId": 2488,
+              "property": "href"
+            }
+          ],
+          "url": "https://www.enjanga.com/_next/static/css/10014c3c01ed88c3.css?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+        },
+        {
+          "id": "d17c5453b1842a50",
+          "kind": "stylesheet",
+          "name": "7a1446189c269e36.css",
+          "sources": [
+            {
+              "kind": "resource",
+              "property": "link"
+            },
+            {
+              "kind": "attribute",
+              "nodeId": 2489,
+              "property": "href"
+            }
+          ],
+          "url": "https://www.enjanga.com/_next/static/css/7a1446189c269e36.css?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+        },
+        {
+          "id": "acb421e55670e295",
+          "kind": "stylesheet",
+          "name": "d7aa28bf99761205.css",
+          "sources": [
+            {
+              "kind": "resource",
+              "property": "link"
+            },
+            {
+              "kind": "attribute",
+              "nodeId": 2490,
+              "property": "href"
+            }
+          ],
+          "url": "https://www.enjanga.com/_next/static/css/d7aa28bf99761205.css?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+        },
+        {
+          "id": "2d86cfae6f6f8fbe",
+          "kind": "script",
+          "name": "webpack-1b2bbc7e8235a2c6.js",
+          "sources": [
+            {
+              "kind": "resource",
+              "property": "link"
+            },
+            {
+              "kind": "attribute",
+              "nodeId": 2491,
+              "property": "href"
+            },
+            {
+              "kind": "attribute",
+              "nodeId": 2821,
+              "property": "src"
+            }
+          ],
+          "url": "https://www.enjanga.com/_next/static/chunks/webpack-1b2bbc7e8235a2c6.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+        },
+        {
+          "id": "06ad3fcc76b5df7a",
+          "kind": "script",
+          "name": "4bd1b696-c023c6e3521b1417.js",
+          "sources": [
+            {
+              "kind": "resource",
+              "property": "script"
+            },
+            {
+              "kind": "attribute",
+              "nodeId": 2492,
+              "property": "src"
+            }
+          ],
+          "url": "https://www.enjanga.com/_next/static/chunks/4bd1b696-c023c6e3521b1417.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+        },
+        {
+          "id": "7bdafee7e91e3b21",
+          "kind": "script",
+          "name": "255-a8dafe9145bc138e.js",
+          "sources": [
+            {
+              "kind": "resource",
+              "property": "script"
+            },
+            {
+              "kind": "attribute",
+              "nodeId": 2493,
+              "property": "src"
+            }
+          ],
+          "url": "https://www.enjanga.com/_next/static/chunks/255-a8dafe9145bc138e.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+        },
+        {
+          "id": "684f7138e6cc9793",
+          "kind": "script",
+          "name": "main-app-e38890cadc2b084e.js",
+          "sources": [
+            {
+              "kind": "resource",
+              "property": "script"
+            },
+            {
+              "kind": "attribute",
+              "nodeId": 2494,
+              "property": "src"
+            }
+          ],
+          "url": "https://www.enjanga.com/_next/static/chunks/main-app-e38890cadc2b084e.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+        },
+        {
+          "id": "8e4cf49d02b326bd",
+          "kind": "script",
+          "name": "560-5ea3c83c0c8e214e.js",
+          "sources": [
+            {
+              "kind": "resource",
+              "property": "script"
+            },
+            {
+              "kind": "attribute",
+              "nodeId": 2495,
+              "property": "src"
+            }
+          ],
+          "url": "https://www.enjanga.com/_next/static/chunks/560-5ea3c83c0c8e214e.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+        },
+        {
+          "id": "ca60e43f6ca7dbbc",
+          "kind": "script",
+          "name": "error-ab8a51ce143fd6e1.js",
+          "sources": [
+            {
+              "kind": "resource",
+              "property": "script"
+            },
+            {
+              "kind": "attribute",
+              "nodeId": 2496,
+              "property": "src"
+            }
+          ],
+          "url": "https://www.enjanga.com/_next/static/chunks/app/case-studies/%5Bslug%5D/error-ab8a51ce143fd6e1.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+        },
+        {
+          "id": "f6d4685c9610eb04",
+          "kind": "script",
+          "name": "global-error-13e5544aae7105d3.js",
+          "sources": [
+            {
+              "kind": "resource",
+              "property": "script"
+            },
+            {
+              "kind": "attribute",
+              "nodeId": 2497,
+              "property": "src"
+            }
+          ],
+          "url": "https://www.enjanga.com/_next/static/chunks/app/global-error-13e5544aae7105d3.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+        },
+        {
+          "id": "3d7ecb5b2559da55",
+          "kind": "script",
+          "name": "619-ba102abea3e3d0e4.js",
+          "sources": [
+            {
+              "kind": "resource",
+              "property": "script"
+            },
+            {
+              "kind": "attribute",
+              "nodeId": 2498,
+              "property": "src"
+            }
+          ],
+          "url": "https://www.enjanga.com/_next/static/chunks/619-ba102abea3e3d0e4.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+        },
+        {
+          "id": "7abb7f4bced663a4",
+          "kind": "script",
+          "name": "layout-cd282372a47cd0bc.js",
+          "sources": [
+            {
+              "kind": "resource",
+              "property": "script"
+            },
+            {
+              "kind": "attribute",
+              "nodeId": 2499,
+              "property": "src"
+            }
+          ],
+          "url": "https://www.enjanga.com/_next/static/chunks/app/layout-cd282372a47cd0bc.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+        },
+        {
+          "id": "709ae56bee4bd7a5",
+          "kind": "script",
+          "name": "error-d3a6ba0fa3b2ddca.js",
+          "sources": [
+            {
+              "kind": "resource",
+              "property": "script"
+            },
+            {
+              "kind": "attribute",
+              "nodeId": 2500,
+              "property": "src"
+            }
+          ],
+          "url": "https://www.enjanga.com/_next/static/chunks/app/error-d3a6ba0fa3b2ddca.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+        },
+        {
+          "id": "a5ae8b934dd79c5b",
+          "kind": "script",
+          "name": "page-b6e2364ca3bb55d3.js",
+          "sources": [
+            {
+              "kind": "resource",
+              "property": "script"
+            },
+            {
+              "kind": "attribute",
+              "nodeId": 2501,
+              "property": "src"
+            }
+          ],
+          "url": "https://www.enjanga.com/_next/static/chunks/app/case-studies/%5Bslug%5D/page-b6e2364ca3bb55d3.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+        },
+        {
+          "id": "6297e7f14fe4e1e0",
+          "kind": "font",
+          "name": "MonaSansVF.fa9a2f42.woff2",
+          "sources": [
+            {
+              "kind": "resource",
+              "property": "css"
+            }
+          ],
+          "url": "https://www.enjanga.com/_next/static/media/MonaSansVF.fa9a2f42.woff2"
+        }
+      ],
+      "id": "e4c93d9a-2797-4b4a-bd82-3ce9bb7a490c",
+      "inlineSvgs": [
+        {
+          "id": "c20bf75c6dacf8b0",
+          "markup": "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M20.7 15.1A9 9 0 0 1 8.9 3.3 9 9 0 1 0 20.7 15.1Z\"></path></svg>",
+          "name": "svg-1"
+        },
+        {
+          "id": "a0a76aad87a7eff8",
+          "markup": "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M20.7 15.1A9 9 0 0 1 8.9 3.3 9 9 0 1 0 20.7 15.1Z\"></path></svg>",
+          "name": "svg-2"
+        },
+        {
+          "id": "53737d0d1c527b04",
+          "markup": "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M4 7h16M4 12h16M4 17h16\"></path></svg>",
+          "name": "svg-3"
+        }
+      ],
+      "pageUrl": "https://www.enjanga.com/case-studies/refund-cancellation-flow",
+      "summary": {
+        "byKind": {
+          "font": 1,
+          "image": 0,
+          "other": 0,
+          "script": 11,
+          "stylesheet": 3,
+          "video": 0
+        },
+        "inlineSvgCount": 3,
+        "totalCount": 15
+      }
+    },
+    {
+      "assets": [
+        {
+          "id": "6d9b50ab0a4e2145",
+          "kind": "stylesheet",
+          "name": "10014c3c01ed88c3.css",
+          "sources": [
+            {
+              "kind": "resource",
+              "property": "link"
+            },
+            {
+              "kind": "attribute",
+              "nodeId": 2873,
+              "property": "href"
+            }
+          ],
+          "url": "https://www.enjanga.com/_next/static/css/10014c3c01ed88c3.css?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+        },
+        {
+          "id": "d17c5453b1842a50",
+          "kind": "stylesheet",
+          "name": "7a1446189c269e36.css",
+          "sources": [
+            {
+              "kind": "resource",
+              "property": "link"
+            },
+            {
+              "kind": "attribute",
+              "nodeId": 2874,
+              "property": "href"
+            }
+          ],
+          "url": "https://www.enjanga.com/_next/static/css/7a1446189c269e36.css?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+        },
+        {
+          "id": "acb421e55670e295",
+          "kind": "stylesheet",
+          "name": "d7aa28bf99761205.css",
+          "sources": [
+            {
+              "kind": "resource",
+              "property": "link"
+            },
+            {
+              "kind": "attribute",
+              "nodeId": 2875,
+              "property": "href"
+            }
+          ],
+          "url": "https://www.enjanga.com/_next/static/css/d7aa28bf99761205.css?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+        },
+        {
+          "id": "2d86cfae6f6f8fbe",
+          "kind": "script",
+          "name": "webpack-1b2bbc7e8235a2c6.js",
+          "sources": [
+            {
+              "kind": "resource",
+              "property": "link"
+            },
+            {
+              "kind": "attribute",
+              "nodeId": 2876,
+              "property": "href"
+            },
+            {
+              "kind": "attribute",
+              "nodeId": 3391,
+              "property": "src"
+            }
+          ],
+          "url": "https://www.enjanga.com/_next/static/chunks/webpack-1b2bbc7e8235a2c6.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+        },
+        {
+          "id": "06ad3fcc76b5df7a",
+          "kind": "script",
+          "name": "4bd1b696-c023c6e3521b1417.js",
+          "sources": [
+            {
+              "kind": "resource",
+              "property": "script"
+            },
+            {
+              "kind": "attribute",
+              "nodeId": 2877,
+              "property": "src"
+            }
+          ],
+          "url": "https://www.enjanga.com/_next/static/chunks/4bd1b696-c023c6e3521b1417.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+        },
+        {
+          "id": "7bdafee7e91e3b21",
+          "kind": "script",
+          "name": "255-a8dafe9145bc138e.js",
+          "sources": [
+            {
+              "kind": "resource",
+              "property": "script"
+            },
+            {
+              "kind": "attribute",
+              "nodeId": 2878,
+              "property": "src"
+            }
+          ],
+          "url": "https://www.enjanga.com/_next/static/chunks/255-a8dafe9145bc138e.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+        },
+        {
+          "id": "684f7138e6cc9793",
+          "kind": "script",
+          "name": "main-app-e38890cadc2b084e.js",
+          "sources": [
+            {
+              "kind": "resource",
+              "property": "script"
+            },
+            {
+              "kind": "attribute",
+              "nodeId": 2879,
+              "property": "src"
+            }
+          ],
+          "url": "https://www.enjanga.com/_next/static/chunks/main-app-e38890cadc2b084e.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+        },
+        {
+          "id": "8e4cf49d02b326bd",
+          "kind": "script",
+          "name": "560-5ea3c83c0c8e214e.js",
+          "sources": [
+            {
+              "kind": "resource",
+              "property": "script"
+            },
+            {
+              "kind": "attribute",
+              "nodeId": 2880,
+              "property": "src"
+            }
+          ],
+          "url": "https://www.enjanga.com/_next/static/chunks/560-5ea3c83c0c8e214e.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+        },
+        {
+          "id": "ca60e43f6ca7dbbc",
+          "kind": "script",
+          "name": "error-ab8a51ce143fd6e1.js",
+          "sources": [
+            {
+              "kind": "resource",
+              "property": "script"
+            },
+            {
+              "kind": "attribute",
+              "nodeId": 2881,
+              "property": "src"
+            }
+          ],
+          "url": "https://www.enjanga.com/_next/static/chunks/app/case-studies/%5Bslug%5D/error-ab8a51ce143fd6e1.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+        },
+        {
+          "id": "f6d4685c9610eb04",
+          "kind": "script",
+          "name": "global-error-13e5544aae7105d3.js",
+          "sources": [
+            {
+              "kind": "resource",
+              "property": "script"
+            },
+            {
+              "kind": "attribute",
+              "nodeId": 2882,
+              "property": "src"
+            }
+          ],
+          "url": "https://www.enjanga.com/_next/static/chunks/app/global-error-13e5544aae7105d3.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+        },
+        {
+          "id": "3d7ecb5b2559da55",
+          "kind": "script",
+          "name": "619-ba102abea3e3d0e4.js",
+          "sources": [
+            {
+              "kind": "resource",
+              "property": "script"
+            },
+            {
+              "kind": "attribute",
+              "nodeId": 2883,
+              "property": "src"
+            }
+          ],
+          "url": "https://www.enjanga.com/_next/static/chunks/619-ba102abea3e3d0e4.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+        },
+        {
+          "id": "7abb7f4bced663a4",
+          "kind": "script",
+          "name": "layout-cd282372a47cd0bc.js",
+          "sources": [
+            {
+              "kind": "resource",
+              "property": "script"
+            },
+            {
+              "kind": "attribute",
+              "nodeId": 2884,
+              "property": "src"
+            }
+          ],
+          "url": "https://www.enjanga.com/_next/static/chunks/app/layout-cd282372a47cd0bc.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+        },
+        {
+          "id": "709ae56bee4bd7a5",
+          "kind": "script",
+          "name": "error-d3a6ba0fa3b2ddca.js",
+          "sources": [
+            {
+              "kind": "resource",
+              "property": "script"
+            },
+            {
+              "kind": "attribute",
+              "nodeId": 2885,
+              "property": "src"
+            }
+          ],
+          "url": "https://www.enjanga.com/_next/static/chunks/app/error-d3a6ba0fa3b2ddca.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+        },
+        {
+          "id": "a5ae8b934dd79c5b",
+          "kind": "script",
+          "name": "page-b6e2364ca3bb55d3.js",
+          "sources": [
+            {
+              "kind": "resource",
+              "property": "script"
+            },
+            {
+              "kind": "attribute",
+              "nodeId": 2886,
+              "property": "src"
+            }
+          ],
+          "url": "https://www.enjanga.com/_next/static/chunks/app/case-studies/%5Bslug%5D/page-b6e2364ca3bb55d3.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+        },
+        {
+          "id": "6297e7f14fe4e1e0",
+          "kind": "font",
+          "name": "MonaSansVF.fa9a2f42.woff2",
+          "sources": [
+            {
+              "kind": "resource",
+              "property": "css"
+            }
+          ],
+          "url": "https://www.enjanga.com/_next/static/media/MonaSansVF.fa9a2f42.woff2"
+        },
+        {
+          "id": "85c995f6b932c9b2",
+          "kind": "other",
+          "name": "https://www.enjanga.com/?_rsc=1q2mb",
+          "sources": [
+            {
+              "kind": "resource",
+              "property": "fetch"
+            }
+          ],
+          "url": "https://www.enjanga.com/?_rsc=1q2mb"
+        },
+        {
+          "id": "411bc67cd27372c9",
+          "kind": "other",
+          "name": "case-studies",
+          "sources": [
+            {
+              "kind": "resource",
+              "property": "fetch"
+            }
+          ],
+          "url": "https://www.enjanga.com/case-studies?_rsc=1q2mb"
+        },
+        {
+          "id": "dce928c6ac452a2d",
+          "kind": "stylesheet",
+          "name": "bf7788ba9517e5fc.css",
+          "sources": [
+            {
+              "kind": "resource",
+              "property": "link"
+            }
+          ],
+          "url": "https://www.enjanga.com/_next/static/css/bf7788ba9517e5fc.css?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+        },
+        {
+          "id": "7296154b827fe330",
+          "kind": "stylesheet",
+          "name": "c0f0312b1fcacbd1.css",
+          "sources": [
+            {
+              "kind": "resource",
+              "property": "link"
+            }
+          ],
+          "url": "https://www.enjanga.com/_next/static/css/c0f0312b1fcacbd1.css?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+        },
+        {
+          "id": "b3cf013d214268b2",
+          "kind": "script",
+          "name": "page-1bc515e61e66b29b.js",
+          "sources": [
+            {
+              "kind": "resource",
+              "property": "script"
+            }
+          ],
+          "url": "https://www.enjanga.com/_next/static/chunks/app/page-1bc515e61e66b29b.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+        },
+        {
+          "id": "3c3285636ecf008f",
+          "kind": "script",
+          "name": "page-7c435e439ea78a5a.js",
+          "sources": [
+            {
+              "kind": "resource",
+              "property": "script"
+            }
+          ],
+          "url": "https://www.enjanga.com/_next/static/chunks/app/case-studies/page-7c435e439ea78a5a.js?dpl=dpl_7fghcCGXQ965gxuNHkDG25TsLXRp"
+        }
+      ],
+      "id": "6934e57f-4b42-46a2-9040-4b52a4a97db2",
+      "inlineSvgs": [
+        {
+          "id": "fe03e0a8c72233d6",
+          "markup": "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"4\"></circle><path d=\"M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41\"></path></svg>",
+          "name": "svg-1"
+        },
+        {
+          "id": "188f5ba10a2fcb20",
+          "markup": "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"4\"></circle><path d=\"M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41\"></path></svg>",
+          "name": "svg-2"
+        },
+        {
+          "id": "53737d0d1c527b04",
+          "markup": "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M4 7h16M4 12h16M4 17h16\"></path></svg>",
+          "name": "svg-3"
+        }
+      ],
+      "pageUrl": "https://www.enjanga.com/case-studies/bank-deposit-flow",
+      "summary": {
+        "byKind": {
+          "font": 1,
+          "image": 0,
+          "other": 2,
+          "script": 13,
+          "stylesheet": 5,
+          "video": 0
+        },
+        "inlineSvgCount": 3,
+        "totalCount": 21
+      }
+    }
+  ]
+}

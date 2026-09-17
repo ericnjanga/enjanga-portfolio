@@ -1,0 +1,38 @@
+[
+  {
+    "resolver": "192.168.2.1",
+    "output": "\n; <<>> DiG 9.10.6 <<>> @192.168.2.1 www.enjanga.com A +noall +answer +stats +time=2 +tries=1\n; (1 server found)\n;; global options: +cmd\nwww.enjanga.com.\t14400\tIN\tCNAME\t0b955f022df13e7e.vercel-dns-016.com.\n0b955f022df13e7e.vercel-dns-016.com. 300 IN A\t216.198.79.1\n0b955f022df13e7e.vercel-dns-016.com. 300 IN A\t64.29.17.1\n;; Query time: 95 msec\n;; SERVER: 192.168.2.1#53(192.168.2.1)\n;; WHEN: Wed Sep 16 05:30:05 EDT 2026\n;; MSG SIZE  rcvd: 370\n\n"
+  },
+  {
+    "resolver": "192.168.2.1",
+    "output": "\n; <<>> DiG 9.10.6 <<>> @192.168.2.1 www.enjanga.com A +noall +answer +stats +time=2 +tries=1\n; (1 server found)\n;; global options: +cmd\nwww.enjanga.com.\t14400\tIN\tCNAME\t0b955f022df13e7e.vercel-dns-016.com.\n0b955f022df13e7e.vercel-dns-016.com. 300 IN A\t64.29.17.1\n0b955f022df13e7e.vercel-dns-016.com. 300 IN A\t216.198.79.1\n;; Query time: 3 msec\n;; SERVER: 192.168.2.1#53(192.168.2.1)\n;; WHEN: Wed Sep 16 05:30:05 EDT 2026\n;; MSG SIZE  rcvd: 125\n\n"
+  },
+  {
+    "resolver": "192.168.2.1",
+    "output": "\n; <<>> DiG 9.10.6 <<>> @192.168.2.1 www.enjanga.com A +noall +answer +stats +time=2 +tries=1\n; (1 server found)\n;; global options: +cmd\nwww.enjanga.com.\t14400\tIN\tCNAME\t0b955f022df13e7e.vercel-dns-016.com.\n0b955f022df13e7e.vercel-dns-016.com. 300 IN A\t216.198.79.1\n0b955f022df13e7e.vercel-dns-016.com. 300 IN A\t64.29.17.1\n;; Query time: 3 msec\n;; SERVER: 192.168.2.1#53(192.168.2.1)\n;; WHEN: Wed Sep 16 05:30:05 EDT 2026\n;; MSG SIZE  rcvd: 125\n\n"
+  },
+  {
+    "resolver": "1.1.1.1",
+    "output": "\n; <<>> DiG 9.10.6 <<>> @1.1.1.1 www.enjanga.com A +noall +answer +stats +time=2 +tries=1\n; (1 server found)\n;; global options: +cmd\nwww.enjanga.com.\t14400\tIN\tCNAME\t0b955f022df13e7e.vercel-dns-016.com.\n0b955f022df13e7e.vercel-dns-016.com. 300 IN A\t64.29.17.65\n0b955f022df13e7e.vercel-dns-016.com. 300 IN A\t216.198.79.65\n;; Query time: 297 msec\n;; SERVER: 1.1.1.1#53(1.1.1.1)\n;; WHEN: Wed Sep 16 05:30:05 EDT 2026\n;; MSG SIZE  rcvd: 122\n\n"
+  },
+  {
+    "resolver": "1.1.1.1",
+    "output": "\n; <<>> DiG 9.10.6 <<>> @1.1.1.1 www.enjanga.com A +noall +answer +stats +time=2 +tries=1\n; (1 server found)\n;; global options: +cmd\nwww.enjanga.com.\t14400\tIN\tCNAME\t0b955f022df13e7e.vercel-dns-016.com.\n0b955f022df13e7e.vercel-dns-016.com. 300 IN A\t64.29.17.1\n0b955f022df13e7e.vercel-dns-016.com. 300 IN A\t216.198.79.1\n;; Query time: 54 msec\n;; SERVER: 1.1.1.1#53(1.1.1.1)\n;; WHEN: Wed Sep 16 05:30:05 EDT 2026\n;; MSG SIZE  rcvd: 122\n\n"
+  },
+  {
+    "resolver": "1.1.1.1",
+    "output": "\n; <<>> DiG 9.10.6 <<>> @1.1.1.1 www.enjanga.com A +noall +answer +stats +time=2 +tries=1\n; (1 server found)\n;; global options: +cmd\nwww.enjanga.com.\t14400\tIN\tCNAME\t0b955f022df13e7e.vercel-dns-016.com.\n0b955f022df13e7e.vercel-dns-016.com. 300 IN A\t216.198.79.1\n0b955f022df13e7e.vercel-dns-016.com. 300 IN A\t64.29.17.1\n;; Query time: 58 msec\n;; SERVER: 1.1.1.1#53(1.1.1.1)\n;; WHEN: Wed Sep 16 05:30:05 EDT 2026\n;; MSG SIZE  rcvd: 122\n\n"
+  },
+  {
+    "resolver": "8.8.8.8",
+    "output": "\n; <<>> DiG 9.10.6 <<>> @8.8.8.8 www.enjanga.com A +noall +answer +stats +time=2 +tries=1\n; (1 server found)\n;; global options: +cmd\nwww.enjanga.com.\t14303\tIN\tCNAME\t0b955f022df13e7e.vercel-dns-016.com.\n0b955f022df13e7e.vercel-dns-016.com. 300 IN A\t216.198.79.1\n0b955f022df13e7e.vercel-dns-016.com. 300 IN A\t64.29.17.1\n;; Query time: 13 msec\n;; SERVER: 8.8.8.8#53(8.8.8.8)\n;; WHEN: Wed Sep 16 05:30:05 EDT 2026\n;; MSG SIZE  rcvd: 122\n\n"
+  },
+  {
+    "resolver": "8.8.8.8",
+    "output": "\n; <<>> DiG 9.10.6 <<>> @8.8.8.8 www.enjanga.com A +noall +answer +stats +time=2 +tries=1\n; (1 server found)\n;; global options: +cmd\nwww.enjanga.com.\t14400\tIN\tCNAME\t0b955f022df13e7e.vercel-dns-016.com.\n0b955f022df13e7e.vercel-dns-016.com. 300 IN A\t216.198.79.1\n0b955f022df13e7e.vercel-dns-016.com. 300 IN A\t64.29.17.1\n;; Query time: 37 msec\n;; SERVER: 8.8.8.8#53(8.8.8.8)\n;; WHEN: Wed Sep 16 05:30:05 EDT 2026\n;; MSG SIZE  rcvd: 122\n\n"
+  },
+  {
+    "resolver": "8.8.8.8",
+    "output": "\n; <<>> DiG 9.10.6 <<>> @8.8.8.8 www.enjanga.com A +noall +answer +stats +time=2 +tries=1\n; (1 server found)\n;; global options: +cmd\nwww.enjanga.com.\t14303\tIN\tCNAME\t0b955f022df13e7e.vercel-dns-016.com.\n0b955f022df13e7e.vercel-dns-016.com. 300 IN A\t216.198.79.1\n0b955f022df13e7e.vercel-dns-016.com. 300 IN A\t64.29.17.1\n;; Query time: 8 msec\n;; SERVER: 8.8.8.8#53(8.8.8.8)\n;; WHEN: Wed Sep 16 05:30:05 EDT 2026\n;; MSG SIZE  rcvd: 122\n\n"
+  }
+]
