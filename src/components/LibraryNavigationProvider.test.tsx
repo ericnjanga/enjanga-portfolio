@@ -4,6 +4,8 @@ import { describe, expect, it, vi } from 'vitest';
 import { Button, Navbar } from 'enjanga-components-library';
 import LibraryNavigationProvider from './LibraryNavigationProvider';
 
+vi.mock('next/navigation', () => ({ usePathname: () => '/' }));
+
 vi.mock('next/link', async () => { const { forwardRef } = await import('react'); return ({ default: forwardRef<HTMLAnchorElement, React.AnchorHTMLAttributes<HTMLAnchorElement>>(
   function MockLink(props, ref) { return <a {...props} ref={ref} data-next-link="true" />; }
 )}); });

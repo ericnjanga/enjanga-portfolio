@@ -1,8 +1,9 @@
 'use client';
 
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { forwardRef, type ReactNode } from 'react';
-import { LinkProvider, type LinkProps } from 'enjanga-components-library';
+import { LinkProvider, ScrollRevealProvider, type LinkProps } from 'enjanga-components-library';
 
 // Relative destinations belong to the portfolio. Absolute URLs and special
 // schemes retain native browser behavior, as do downloads and new-tab links.
@@ -17,5 +18,8 @@ export const PortfolioLink = forwardRef<HTMLAnchorElement, LinkProps>(
 );
 
 export default function LibraryNavigationProvider({ children }: { children: ReactNode }) {
-  return <LinkProvider component={PortfolioLink}>{children}</LinkProvider>;
+  const pathname = usePathname();
+  return <LinkProvider component={PortfolioLink}>
+    <ScrollRevealProvider routeKey={pathname ?? '/'}>{children}</ScrollRevealProvider>
+  </LinkProvider>;
 }

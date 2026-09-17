@@ -31,3 +31,15 @@ test('renders CMS formatting and media links inside the library detail page', ()
   expect(screen.getByRole('link', { name: /Watch walkthrough/ })).toHaveAttribute('href', 'https://videos.ctfassets.net/example.mp4');
   expect(screen.getByText('Unsafe link')).not.toHaveAttribute('href');
 });
+
+
+test('delegates page layout and separators to the library', () => {
+  const studies = ['one', 'two', 'three'].map(id => ({ id, slug: `${id} project`, title: id, summary: `${id} summary`, image: null, video: null }));
+  render(<CaseStudiesPage data={{ seoTitle: '', seoDescription: '', hero: { title: 'Selected work', subtitle: '' }, caseStudies: studies }} />);
+  expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('Selected work');
+  expect(screen.getAllByRole('article')).toHaveLength(3);
+  const separators = screen.getAllByRole('separator');
+  expect(separators).toHaveLength(2);
+  separators.forEach(separator => expect(separator).toHaveClass('enj-case-studies-page__separator'));
+  expect(screen.getByRole('link', { name: 'Read the full case study: one' })).toHaveAttribute('href', '/case-studies/one%20project');
+});
