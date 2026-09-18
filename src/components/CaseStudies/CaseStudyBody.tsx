@@ -1,3 +1,4 @@
+import PortfolioImage from '@/components/PortfolioImage';
 import { Fragment, type ReactNode } from 'react';
 import type { Document, Block, Inline, Text } from '@contentful/rich-text-types';
 
@@ -63,8 +64,7 @@ export default function CaseStudyBody({ data }: CaseStudyBodyProps) {
         if (node.nodeType === 'asset-hyperlink') return <a key={key} href={url}>{children}</a>;
         if (/\.(mp4|webm|ogv)(?:[?#]|$)/i.test(url)) return <p key={key}><a href={url}>▶ Watch walkthrough — {asset.title || 'Video'}</a></p>;
         if (!/\.(png|jpe?g|gif|webp|avif|svg)(?:[?#]|$)/i.test(url)) return <p key={key}><a href={url}>{asset.title || 'Download attachment'}</a></p>;
-        // eslint-disable-next-line @next/next/no-img-element
-        return <figure key={key}><img src={url} alt={asset.description || asset.title} width={asset.width} height={asset.height} loading="lazy" /></figure>;
+        return <figure key={key}><PortfolioImage sizes="(max-width: 1055px) 100vw, 960px" src={url} alt={asset.description || asset.title} width={asset.width} height={asset.height} loading="lazy" /></figure>;
       }
       case 'table': return <table key={key}><tbody>{children}</tbody></table>;
       case 'table-row': return <tr key={key}>{children}</tr>;

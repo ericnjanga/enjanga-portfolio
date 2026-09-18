@@ -1,3 +1,4 @@
+import LibraryImageProvider from '@/components/LibraryImageProvider';
 import LibraryNavigationProvider from '@/components/LibraryNavigationProvider';
 import type { Metadata } from 'next';
 import Footer from '@/components/Footer/Footer';
@@ -38,13 +39,15 @@ export default async function RootLayout({
         />
       </head>
       <body>
-        <LibraryNavigationProvider>
-          <TopNavbar />
-          <SiteSettingsProvider value={siteSettings}>
-            {children}
-          </SiteSettingsProvider>
-          <Footer siteSettings={siteSettings} />
-        </LibraryNavigationProvider>
+        <LibraryImageProvider>
+          <LibraryNavigationProvider>
+            <TopNavbar />
+            <SiteSettingsProvider value={siteSettings}>
+              {children}
+            </SiteSettingsProvider>
+            <Footer siteSettings={siteSettings} />
+          </LibraryNavigationProvider>
+        </LibraryImageProvider>
       </body>
     </html>
   );

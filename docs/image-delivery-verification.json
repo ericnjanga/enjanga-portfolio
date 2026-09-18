@@ -1,0 +1,148 @@
+{
+  "pages": {
+    "/": {
+      "images": 2,
+      "posters": 0,
+      "allSameOrigin": true
+    },
+    "/case-studies": {
+      "images": 3,
+      "posters": 3,
+      "allSameOrigin": true
+    },
+    "/case-studies/modernizing-financial-records-retrieval": {
+      "images": 1,
+      "posters": 0,
+      "allSameOrigin": true
+    },
+    "/case-studies/bank-deposit-api-integration": {
+      "images": 3,
+      "posters": 0,
+      "allSameOrigin": true
+    },
+    "/case-studies/refund-cancellation-flow": {
+      "images": 3,
+      "posters": 0,
+      "allSameOrigin": true
+    },
+    "/case-studies/bank-deposit-flow": {
+      "images": 3,
+      "posters": 0,
+      "allSameOrigin": true
+    }
+  },
+  "optimizedResponses": [
+    {
+      "url": "/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fz41mabrhnu57%2F1BstJK0AHIiBFCt8tjXPat%2F42896f51d0e532eff41c0734b01e059c%2FCase_Study_-2-_featured_img.png&w=1920&q=75",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 45324
+    },
+    {
+      "url": "/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fz41mabrhnu57%2F1BstJK0AHIiBFCt8tjXPat%2F42896f51d0e532eff41c0734b01e059c%2FCase_Study_-2-_featured_img.png&w=384&q=75",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 6042
+    },
+    {
+      "url": "/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fz41mabrhnu57%2F20xXLUWUyBqZhaJmquF8RS%2Fb5ef69146450b290129f644c988438db%2FScreenshot_2026-05-12_182857.png&w=640&q=75",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 18580
+    },
+    {
+      "url": "/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fz41mabrhnu57%2F2N7se9MBEqMpwlwid1uvMG%2Ffc6d760767b9d873f027cebd752be490%2FCase_Study_-3_-_featured_img.jpg&w=1920&q=75",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 41954
+    },
+    {
+      "url": "/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fz41mabrhnu57%2F2N7se9MBEqMpwlwid1uvMG%2Ffc6d760767b9d873f027cebd752be490%2FCase_Study_-3_-_featured_img.jpg&w=384&q=75",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 7186
+    },
+    {
+      "url": "/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fz41mabrhnu57%2F2Rfh9umoduSLauPbayopCR%2F22b11267268ebe0e0355cf1f3cb703a5%2FFrame_43__1_.png&w=640&q=75",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 19134
+    },
+    {
+      "url": "/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fz41mabrhnu57%2F33U0OzmqVgoK4I6TDsjeYq%2Fe8e7b10e737a550adf2a502da0c6d179%2FCase_Study_3_-_Figure_2.png&w=640&q=75",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 10810
+    },
+    {
+      "url": "/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fz41mabrhnu57%2F3E9crSjEaVktZX5ff9vvKP%2Fee1404e2006603937e2242f4ff237610%2FEric_Njanga_1.jpg&w=640&q=75",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 29776
+    },
+    {
+      "url": "/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fz41mabrhnu57%2F3kQFgLqtwsQbGoUksypCuT%2Fca32f43038d19620e66f069b5a41c62f%2FScreenshot_2026-06-08_142147.png&w=640&q=75",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 29362
+    },
+    {
+      "url": "/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fz41mabrhnu57%2F3xzjdNvv4BzYiIII3cW6I%2F5756ef1de77dcc790b98a721561d9a3e%2FScreenshot_2026-05-12_183253.png&w=640&q=75",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 15842
+    },
+    {
+      "url": "/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fz41mabrhnu57%2F4IiWmUU8HlWfT05wDzjYFO%2Fa7c54fa1fab38b1dedce2f0829714854%2FScreenshot_2026-05-12_150511.png&w=640&q=75",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 28896
+    },
+    {
+      "url": "/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fz41mabrhnu57%2F53KbdLSU7gB7DhZcoAwiTy%2Fc71d33a2398f442788945fdf1d945906%2FEnterprise_App_1.jpg&w=640&q=75",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 18830
+    },
+    {
+      "url": "/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fz41mabrhnu57%2F5PUp6WjcgkuoTDxbTZ85qP%2Ff61672244005aa69e86a54c93c0835c8%2FIMG_0114.jpeg&w=640&q=75",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 36348
+    },
+    {
+      "url": "/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fz41mabrhnu57%2F6b0I9bm0rOi9234dJ1Part%2Fc34a0141000189fba41f88dd25f1b1e5%2FFrame_44.png&w=640&q=75",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 23242
+    },
+    {
+      "url": "/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fz41mabrhnu57%2F70ADUA9nD6iUMv61CUn72R%2F702076e777c90630fdb828c991493030%2FCase_Study_3_-_Figure_3.png&w=640&q=75",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 24976
+    },
+    {
+      "url": "/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fz41mabrhnu57%2FUmhkYpi6PATbBicSJLceT%2F8ff20aab5bc17ae6b98ae6947794490f%2FCase_Study_1_-_featured_img.png&w=1920&q=75",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 31338
+    },
+    {
+      "url": "/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fz41mabrhnu57%2FUmhkYpi6PATbBicSJLceT%2F8ff20aab5bc17ae6b98ae6947794490f%2FCase_Study_1_-_featured_img.png&w=384&q=75",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 6282
+    },
+    {
+      "url": "/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fz41mabrhnu57%2FsAvItjEclsYromsrLhs5w%2F0288b7db26c2b743150795058f818e77%2FCase_Study_3_-_Figure_1.png&w=640&q=75",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 15870
+    }
+  ],
+  "disallowedSourceStatuses": [
+    400,
+    400
+  ]
+}

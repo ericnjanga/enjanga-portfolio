@@ -3,6 +3,17 @@
 const path = require('path');
 
 const nextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.ctfassets.net',
+        port: '',
+        pathname: `/${process.env.CONTENTFUL_SPACE_ID || 'z41mabrhnu57'}/**`,
+        search: '',
+      },
+    ],
+  },
   logging: {
     fetches: {
       fullUrl: true,

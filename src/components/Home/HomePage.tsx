@@ -60,6 +60,7 @@ export default function HomePage({ data }: { data: HomePageData }) {
         ),
         image: expertise.image && (
           <InteractiveImage
+            sizes="(max-width: 800px) 100vw, (max-width: 1200px) 832px, 1078px"
             src={expertise.image.url}
             width={expertise.image.width}
             height={expertise.image.height}
@@ -88,6 +89,7 @@ export default function HomePage({ data }: { data: HomePageData }) {
         image: (
           <InteractiveImage
             variant="portrait"
+            sizes="(max-width: 540px) 100vw, 440px"
             src={about.image.url}
             width={about.image.width}
             height={about.image.height}
