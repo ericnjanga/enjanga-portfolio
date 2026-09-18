@@ -5,6 +5,7 @@ import type { CaseStudiesPageData } from '@/lib/contentful/models';
 export default function CaseStudiesPage({ data }: { data: CaseStudiesPageData }) {
   return (
     <LibraryCaseStudiesPage
+      revealDelayMs={112.5}
       title={data.hero.title}
       caseStudies={data.caseStudies.map(study => ({
         id: study.id,

@@ -29,6 +29,7 @@ export default function HomePage({ data }: { data: HomePageData }) {
   const about = data.aboutSection;
   return (
     <LibraryHomePage
+      revealDelayMs={112.5}
       title={data.hero.title}
       description={data.hero.subtitle}
       heroAction={
