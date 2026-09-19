@@ -27,10 +27,8 @@
   },
   "dependencies": {
     "@carbon/icons-react": "^11.87.0",
-    "@carbon/pictograms-react": "^11.102.0",
     "@carbon/react": "^1.115.0",
     "@contentful/rich-text-types": "^17.2.7",
-    "clsx": "^2.1.1",
     "enjanga-components-library": "1.0.131",
     "enjanga-core-setup": "1.0.47",
     "next": "15.5.7",
@@ -47,12 +45,9 @@
     "@testing-library/jest-dom": "^6.8.0",
     "@testing-library/react": "^16.3.0",
     "@testing-library/user-event": "^14.6.5",
-    "@types/dotenv": "^8.2.3",
-    "@types/jest": "^30.0.0",
     "@types/node": "^20.0.0",
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",
-    "@types/smoothscroll-polyfill": "^0.3.4",
     "@vitejs/plugin-react": "^5.0.3",
     "dotenv": "^17.2.2",
     "eslint": "8.44.0",
@@ -65,8 +60,7 @@
     "tailwindcss": "^4.3.3",
     "typescript": "^5.0.0",
     "vite-tsconfig-paths": "^5.1.4",
-    "vitest": "^3.2.4",
-    "whatwg-fetch": "^3.6.20"
+    "vitest": "^3.2.4"
   },
   "browserslist": [
     ">0.2%",
