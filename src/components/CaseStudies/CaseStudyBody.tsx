@@ -1,4 +1,4 @@
-import PortfolioImage from '@/components/PortfolioImage';
+import PortfolioImage from '@/components/Adapters/PortfolioImage';
 import { Fragment, type ReactNode } from 'react';
 import type { Document, Block, Inline, Text } from '@contentful/rich-text-types';
 

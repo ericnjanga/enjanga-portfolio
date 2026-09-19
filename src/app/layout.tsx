@@ -1,5 +1,5 @@
-import LibraryImageProvider from '@/components/LibraryImageProvider';
-import LibraryNavigationProvider from '@/components/LibraryNavigationProvider';
+import LibraryImageProvider from '@/components/LibraryProviders/LibraryImageProvider';
+import LibraryNavigationProvider from '@/components/LibraryProviders/LibraryNavigationProvider';
 import type { Metadata } from 'next';
 import Footer from '@/components/Footer/Footer';
 import TopNavbar from '@/components/TopNavbar/TopNavbar';

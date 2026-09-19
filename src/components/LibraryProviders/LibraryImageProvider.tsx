@@ -2,7 +2,7 @@
 
 import type { ReactNode } from 'react';
 import { ImageProvider } from 'enjanga-components-library';
-import PortfolioImage from './PortfolioImage';
+import PortfolioImage from '../Adapters/PortfolioImage';
 
 export default function LibraryImageProvider({
   children,

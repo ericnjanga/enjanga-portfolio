@@ -1,7 +1,7 @@
 import { cleanup, render, screen } from '@testing-library/react';
 import { afterEach, expect, test } from 'vitest';
 import { InteractiveImage } from 'enjanga-components-library';
-import LibraryImageProvider from './LibraryImageProvider';
+import LibraryImageProvider from '../LibraryProviders/LibraryImageProvider';
 import PortfolioImage from './PortfolioImage';
 import { getVideoPosterSrc } from '@/lib/images';
 

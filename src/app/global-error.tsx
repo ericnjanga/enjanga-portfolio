@@ -1,6 +1,6 @@
 'use client';
 
-import RecoveryScreen from '@/components/RecoveryScreen';
+import RecoveryScreen from '@/components/RecoveryScreen/RecoveryScreen';
 import 'enjanga-core-setup/typography.css';
 import 'enjanga-core-setup/design-tokens.css';
 import 'enjanga-components-library/button.css';
