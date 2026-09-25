@@ -38,6 +38,14 @@ function networkCode(error: unknown): string | undefined {
   return value.cause?.code ?? value.code;
 }
 
+/** Only transient transport failures qualify for optional-content fallbacks. */
+export function isTemporaryContentfulError(error: unknown): boolean {
+  const code = networkCode(error);
+  return error instanceof TemporaryHttpError ||
+    (error instanceof Error && error.name === 'AbortError') ||
+    (code !== undefined && RETRYABLE_CODES.has(code));
+}
+
 /** Retry read-only queries only; keep the existing five-minute data cache. */
 export async function execute<TResult, TVariables>(
   document: TypedDocumentString<TResult, TVariables>,
@@ -85,8 +93,7 @@ export async function execute<TResult, TVariables>(
       return result.data;
     } catch (error) {
       const code = networkCode(error);
-      const temporary = controller.signal.aborted || error instanceof TemporaryHttpError ||
-        (code !== undefined && RETRYABLE_CODES.has(code));
+      const temporary = controller.signal.aborted || isTemporaryContentfulError(error);
       retry = temporary && attempt < attempts;
       // Preserve diagnostics without logging credentials, variables, or CMS content.
       console.error('[Contentful] request failed', {
