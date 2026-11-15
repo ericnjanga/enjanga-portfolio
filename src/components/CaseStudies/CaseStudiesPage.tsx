@@ -1,5 +1,5 @@
-import { getVideoPosterSrc } from '@/lib/images';
 import { CaseStudiesPage as LibraryCaseStudiesPage } from 'enjanga-components-library';
+import { getVideoPosterSrc } from '@/lib/images';
 import type { CaseStudiesPageData } from '@/lib/contentful/models';
 
 export default function CaseStudiesPage({ data }: { data: CaseStudiesPageData }) {
@@ -7,7 +7,8 @@ export default function CaseStudiesPage({ data }: { data: CaseStudiesPageData })
     <LibraryCaseStudiesPage
       revealDelayMs={112.5}
       title={data.hero.title}
-      caseStudies={data.caseStudies.map(study => ({
+      description={data.hero.subtitle}
+      caseStudies={data.caseStudies.map((study) => ({
         id: study.id,
         title: study.title,
         description: study.summary,

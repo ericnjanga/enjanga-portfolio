@@ -29,7 +29,7 @@
     "@carbon/icons-react": "^11.87.0",
     "@carbon/react": "^1.115.0",
     "@contentful/rich-text-types": "^17.2.7",
-    "enjanga-components-library": "1.0.131",
+    "enjanga-components-library": "1.0.134",
     "enjanga-core-setup": "1.0.47",
     "next": "15.5.7",
     "react": "19.0.1",
